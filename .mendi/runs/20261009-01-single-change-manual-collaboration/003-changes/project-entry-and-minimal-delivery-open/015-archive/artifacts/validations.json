@@ -1,0 +1,30 @@
+[
+  {
+    "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "args": [
+      "validate",
+      "--specs",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "status": 0,
+    "signal": null,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"delivery-workspace\",\n      \"type\": \"spec\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 13\n    },\n    {\n      \"id\": \"project-entry\",\n      \"type\": \"spec\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 2\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 2,\n      \"passed\": 2,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"spec\": {\n        \"items\": 2,\n        \"passed\": 2,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "args": [
+      "validate",
+      "--archived",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "status": 0,
+    "signal": null,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"2026-10-09-001-project-entry-and-minimal-delivery-open\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 15\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

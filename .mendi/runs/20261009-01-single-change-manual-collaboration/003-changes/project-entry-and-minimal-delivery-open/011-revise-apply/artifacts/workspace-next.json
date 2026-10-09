@@ -1,0 +1,196 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "manual-bootstrap",
+    "deliveryId": "20261009-01-single-change-manual-collaboration",
+    "title": "单 Change 手动协作",
+    "state": "open",
+    "goal": "Action 编排 Skills，通过 Runs 完成一个真实 Change 的 Explore proof、方案、实现、独立审核及原生 OpenSpec 归档。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D01-A",
+        "title": "项目入口与最小 Delivery Open",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D01-A：项目入口与最小 Delivery Open"
+      },
+      {
+        "slot": "MVP-D01-B",
+        "title": "Action 编排、Runs 与角色交接",
+        "dependsOn": [
+          "MVP-D01-A"
+        ],
+        "roadmapSection": "MVP-D01-B：Action 编排、Runs 与角色交接"
+      },
+      {
+        "slot": "MVP-D01-C",
+        "title": "Explore proof 与方案审核",
+        "dependsOn": [
+          "MVP-D01-B"
+        ],
+        "roadmapSection": "MVP-D01-C：Explore proof 与方案审核"
+      },
+      {
+        "slot": "MVP-D01-D",
+        "title": "Apply、修订与原生 Archive",
+        "dependsOn": [
+          "MVP-D01-C"
+        ],
+        "roadmapSection": "MVP-D01-D：Apply、修订与原生 Archive"
+      }
+    ],
+    "activeChangeId": "project-entry-and-minimal-delivery-open",
+    "changeBindings": [
+      {
+        "changeId": "project-entry-and-minimal-delivery-open",
+        "changeRef": "openspec/changes/project-entry-and-minimal-delivery-open",
+        "planningSlot": "MVP-D01-A",
+        "state": "awaiting-review-apply"
+      }
+    ],
+    "recorded": {
+      "id": "20261009-01-single-change-manual-collaboration",
+      "planningSlot": "MVP-D01",
+      "title": "单 Change 手动协作",
+      "state": "open",
+      "recordingMode": "manual-bootstrap",
+      "openedOn": "2026-10-09",
+      "openCheckpoint": {
+        "commit": "8cea0c96d6b2fe77c48a70fbf39c93d790ec1ee1",
+        "branch": "delivery/20261009-01-single-change-manual-collaboration"
+      },
+      "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+      "goal": "Action 编排 Skills，通过 Runs 完成一个真实 Change 的 Explore proof、方案、实现、独立审核及原生 OpenSpec 归档。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D01-A",
+          "title": "项目入口与最小 Delivery Open",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D01-A：项目入口与最小 Delivery Open"
+        },
+        {
+          "slot": "MVP-D01-B",
+          "title": "Action 编排、Runs 与角色交接",
+          "dependsOn": [
+            "MVP-D01-A"
+          ],
+          "roadmapSection": "MVP-D01-B：Action 编排、Runs 与角色交接"
+        },
+        {
+          "slot": "MVP-D01-C",
+          "title": "Explore proof 与方案审核",
+          "dependsOn": [
+            "MVP-D01-B"
+          ],
+          "roadmapSection": "MVP-D01-C：Explore proof 与方案审核"
+        },
+        {
+          "slot": "MVP-D01-D",
+          "title": "Apply、修订与原生 Archive",
+          "dependsOn": [
+            "MVP-D01-C"
+          ],
+          "roadmapSection": "MVP-D01-D：Apply、修订与原生 Archive"
+        }
+      ],
+      "changeBatches": [
+        {
+          "id": "003-changes",
+          "firstRun": "003",
+          "runsRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes",
+          "changeIds": [
+            "project-entry-and-minimal-delivery-open"
+          ]
+        }
+      ],
+      "changeBindings": [
+        {
+          "planningSlot": "MVP-D01-A",
+          "changeId": "project-entry-and-minimal-delivery-open",
+          "changeRef": "openspec/changes/project-entry-and-minimal-delivery-open",
+          "batchId": "003-changes",
+          "state": "awaiting-review-apply",
+          "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md"
+        }
+      ],
+      "activeChangeId": "project-entry-and-minimal-delivery-open",
+      "exitCriteria": [
+        "路线图 MVP-D01-A 至 MVP-D01-D 的范围、验收和验证成立，相关实现经过独立审核。",
+        "一个真实 Change 完成含 Explore 核心 proof、方案、Apply、必要修订、独立 Review 和原生 Archive 的手动闭环。",
+        "开发检查随各 Change 执行；正式 Delivery Test 能力尚未实现时，不声称已通过产品正式交付验收。"
+      ],
+      "outOfScope": [
+        "MVP-D02",
+        "MVP-D03",
+        "旧 Flowkit 能力与历史迁移"
+      ],
+      "openRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md",
+      "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+      "stopBoundary": "review-apply",
+      "next": {
+        "action": "review-apply",
+        "status": "awaiting-independent-review",
+        "role": "reviewer",
+        "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+        "proposalRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md",
+        "proposalReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/008-review-propose/run.md",
+        "revisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+        "exploreReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/run.md",
+        "repairReason": "007 补审批准 005；008 独立审核批准已有 006，无需方案修订。保留 006 先编写、007 后补审的实际顺序。",
+        "reviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/010-review-apply/run.md",
+        "priorAuthorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/009-apply/run.md",
+        "exploreRevisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md",
+        "revisionReason": "依据 010 的 RA-A-001 局部修订配置错误详情；Author 定向回归通过，待独立再次审核。"
+      }
+    }
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": true,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "done"
+      },
+      {
+        "id": "specs",
+        "status": "done"
+      },
+      {
+        "id": "design",
+        "status": "done"
+      },
+      {
+        "id": "tasks",
+        "status": "done"
+      }
+    ]
+  },
+  "next": {
+    "action": "review-apply",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+    "proposalRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md",
+    "proposalReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/008-review-propose/run.md",
+    "revisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+    "exploreReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/run.md",
+    "repairReason": "007 补审批准 005；008 独立审核批准已有 006，无需方案修订。保留 006 先编写、007 后补审的实际顺序。",
+    "reviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/010-review-apply/run.md",
+    "priorAuthorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/009-apply/run.md",
+    "exploreRevisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md",
+    "revisionReason": "依据 010 的 RA-A-001 局部修订配置错误详情；Author 定向回归通过，待独立再次审核。",
+    "source": "manual-bootstrap",
+    "executable": false
+  }
+}

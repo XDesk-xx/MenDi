@@ -8,5 +8,6 @@
       "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json"
     }
   ],
-  "deliveryGroupsDir": ".mendi/delivery-groups"
+  "deliveryGroupsDir": ".mendi/delivery-groups",
+  "archivedChangeCount": 1
 }

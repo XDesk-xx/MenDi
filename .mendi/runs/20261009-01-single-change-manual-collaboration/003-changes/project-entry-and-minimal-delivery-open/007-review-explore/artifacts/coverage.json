@@ -1,0 +1,134 @@
+{
+  "kind": "ocr-bounded-review-coverage",
+  "inputRun": "005-revise-explore",
+  "total_files": 39,
+  "reviewable_files": 18,
+  "reviewed_files": 5,
+  "skipped_files": 13,
+  "coverage_rate": 27.77777777777778,
+  "accounting_rate": 100,
+  "scoped_reviewable_files": 5,
+  "scoped_coverage_rate": 100,
+  "entries": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "当前交接入口由主会话修复；本 Reviewer 只审核 005 修订并新建 007，不审核或修改共享状态。"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "当前交接入口由主会话修复；本 Reviewer 只审核 005 修订并新建 007，不审核或修改共享状态。"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": "005 TypeScript 修订的直接输入，完成源码、检查接线或证据核验。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/coverage.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "已有 003/004 Explore 与独立审核证据，本次按 Owner 指令复用；与新结果比对的旧报告/命令作为参考阅读，不重新完整审核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "005 TypeScript 修订的直接输入，完成源码、检查接线或证据核验。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "005 TypeScript 修订的直接输入，完成源码、检查接线或证据核验。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/artifacts/planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "方案或既有 Change 元数据，不属于 005 修订；留给后续 review-propose。"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/.openspec.yaml",
+      "status": "added",
+      "review": "skipped",
+      "reason": "方案或既有 Change 元数据，不属于 005 修订；留给后续 review-propose。"
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "005 TypeScript 修订的直接输入，完成源码、检查接线或证据核验。"
+    },
+    {
+      "path": "tsconfig.scripts.json",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "005 TypeScript 修订的直接输入，完成源码、检查接线或证据核验。"
+    }
+  ],
+  "manuallyReadOutsideOcr": [
+    "AGENTS.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/pre-migration-source.txt",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/run.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/run.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md",
+    "openspec/changes/project-entry-and-minimal-delivery-open/design.md",
+    "openspec/changes/project-entry-and-minimal-delivery-open/tasks.md",
+    "tsconfig.json"
+  ],
+  "findings": []
+}

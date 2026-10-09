@@ -1,0 +1,151 @@
+{
+  "changeName": "project-entry-and-minimal-delivery-open",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\delivery-workspace\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\project-entry\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 16,
+    "complete": 16,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 添加直接运行时依赖 `yaml@2.9.1`，更新锁文件，并增加 TypeScript 测试的 noEmit 检查入口；验证固定依赖安装及 `pnpm typecheck`，产品 build 不编译脚本 / 测试到 dist。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 实现显式目标规范化、本地 YAML 选择与支持范围检查；用新项目、已有 context / rules、config.yml、坏主配置、store 声明、其他 schema、子目录和裸 openspec 夹具验证写前拒绝及原文件保留。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 实现公开 OpenSpec 进程适配器与必要 JSON 运行时校验；实际固定 1.14.1 验证 version / list / status / instructions 与目标 root，受控替身验证超时、信号 / 非零退出、坏 JSON、缺字段、版本不符和 root 不符均返回真实错误。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "1.4 接入 CLI 帮助、参数组合、`--project` / `--scope` 路径基准和 `--json` 输出；验证无项目的帮助、未知 / 重复参数、从其他 cwd 调用及含空格路径，补 README 工程入口与固定工具说明并实际执行示例。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 10
+    },
+    {
+      "id": "5",
+      "description": "2.1 定义 version 1 项目 / manifest / binding 类型及运行时校验、范围依赖检查与受管路径检查；验证合法范围、空目标、重复槽位、悬空 / 循环依赖、非法 ID、版本错误、越界引用及外部 junction / symlink 拒绝。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "2.2 实现首次 Open 的独占目录创建、锁、manifest 先写及 project 最后提交；真实 CLI 在最小 / 已有配置项目保存范围，独立进程读回；重复相同 / 不同 ID Open 均拒绝并验证已有文件字节不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "7",
+      "description": "2.3 实现同目录临时写入、正式记录读回、锁归属及部分失败诊断；通过定向故障注入验证 manifest 后 / project 前失败、读回失败、锁释放失败、残留锁与两个写者竞争，旧记录不截断、现场不自动清理、失败不输出完整成功。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 16
+    },
+    {
+      "id": "8",
+      "description": "2.4 为范围输入增加受控 JSON 示例，在 README 写出首次 Open 参数与冲突 / 不完整状态处理；由独立进程按示例执行，确认查询不再依赖原 scope 文件且目标文档、配置、Change 文件未变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 17
+    },
+    {
+      "id": "9",
+      "description": "3.1 实现 Open 可选成对 `--change` / `--slot`，验证真实既有 Change、schema、槽位后持久关联；真实上游验证关联成功，缺 Change、缺槽位、错误槽位与不支持 schema 在写前拒绝。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "10",
+      "description": "3.2 实现产品 open Delivery 的首次 `change bind`，取得锁后重新验证本地前置，同目录替换 manifest；独立进程验证正确关联、重复 / 替换关联拒绝、并发 bind 冲突及替换失败保留旧文件。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 22
+    },
+    {
+      "id": "11",
+      "description": "3.3 补 README 关联入口及首个 Change 的限制；实际按示例执行 Open 无 Change → bind → query，确认没有创建上游 Change、Run 或虚构批准。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "12",
+      "description": "4.1 实现 status / next 共享的只读查询，分别展示本地阶段、目标 / 工具、Delivery 范围和上游 readiness；验证未 Open、Open 无关联、Explore 关联、上游 planning complete 和绑定 Change 消失，不自动推进阶段或写入文件。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "13",
+      "description": "4.2 实现当前 manual-bootstrap 的只读解析与来源标识，保留 Run / Reviewer / checkpoint 引用；使用受控人工记录夹具验证正常查询、未知未版本化格式和损坏引用拒绝，产品 bind 不修改人工历史。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 28
+    },
+    {
+      "id": "14",
+      "description": "4.3 验证缺 project / manifest、坏 JSON、身份不一致及残留锁返回诊断；用查询前后快照证明 status / next 不修复、初始化、分配 Run 或改写任何记录，README 明确本地 next 与上游 ready 的区别。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "15",
+      "description": "5.1 在 fresh sandbox 从受控输入构建并运行真实最小项目和已有配置项目的 Open / bind / status / next，记录实际命令、退出与限制，核对路径、跨进程范围读回及原文档 / 配置保留；结果不依赖旧 `.tmp` 或 proof 原型。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 33
+    },
+    {
+      "id": "16",
+      "description": "5.2 执行 `pnpm typecheck`、`pnpm build`、本 Change 的集成测试与 `git diff --check`，按两份 specs 核对覆盖及边界，将必要结果与未决事项提交新的 Author Apply Run；不以全部任务完成替代独立审核。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+      "line": 34
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；MVP-D01-A 的项目入口与最小 Delivery Open 已实施，待独立 Review Apply。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\nMVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。\nOwner 已授权激活 MVP-D01-A：project-entry-and-minimal-delivery-open；007-review-explore 已独立补审批准 005-revise-explore，确认无需因补审调整方案。\nRun 006-propose 先行编写、007 后补审的顺序如实保留；008-review-propose 已独立批准原 006，方案无需修订，可作为实施基准。\nDelivery Open checkpoint 已补做（8cea0c9）；009-apply 已完成 16 项实施任务及定向验证，当前停在独立 Review Apply，主会话保持 Author。\nCLI 已实现首次 delivery open、首个已有 Change 的 bind、status 与 next；阶段执行和 Run 写入留待后续 Change，Author 验证不替代 Reviewer 批准或 Archive。\nD02、D03 仅为计划分组；未执行正式 Delivery Full Test、Close、后续 Git checkpoint 或 push。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；当前批次为 003-changes，首个实际 Run 为 003-explore。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

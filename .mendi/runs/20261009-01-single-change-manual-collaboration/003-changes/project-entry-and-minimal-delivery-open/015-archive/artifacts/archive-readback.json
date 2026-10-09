@@ -1,0 +1,23 @@
+{
+  "originalNativeName": "2026-10-09-project-entry-and-minimal-delivery-open",
+  "archiveRef": "openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open",
+  "archiveOrdinal": 1,
+  "completedCount": 1,
+  "activeChangeId": null,
+  "specs": [
+    {
+      "capability": "delivery-workspace",
+      "requirements": 8,
+      "scenarios": 21,
+      "purpose": "preserved",
+      "requirementBodies": "equal"
+    },
+    {
+      "capability": "project-entry",
+      "requirements": 5,
+      "scenarios": 14,
+      "purpose": "preserved",
+      "requirementBodies": "equal"
+    }
+  ]
+}

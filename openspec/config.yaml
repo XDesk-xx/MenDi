@@ -4,15 +4,22 @@ context: |
   Language: Chinese
   与 Owner 沟通及面向人阅读的产物正文使用中文。
   OpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。
-  项目：MenDi，当前是新的 TypeScript CLI 工程骨架。
+  项目：MenDi，TypeScript CLI；014 批准 013，Owner 随后授权 015 Archive，MVP-D01-A 已实际归档；主会话保持 Author。
   产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。
   具体规格、方案和任务在对应 OpenSpec Change 中细化。
   角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。
   MVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。
-  当前停在 delivery checkpoint，尚未执行 Git 提交；没有已激活或已完成的 Change。
-  D02、D03 仅为计划分组；当前 CLI 产品操作尚未实现，启动记录不代表 MVP-D01-A 完成。
+  MVP-D01-A 归档位置为 openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open；项目累计完成 Change 数为 1，activeChangeId 已清空。下一 Change 尚未授权或激活。
+  归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。
+  Owner 已授权激活 MVP-D01-A：project-entry-and-minimal-delivery-open；007-review-explore 已独立补审批准 005-revise-explore，确认无需因补审调整方案。
+  Run 006-propose 先行编写、007 后补审的顺序如实保留；008-review-propose 已独立批准原 006，方案无需修订，可作为实施基准。
+  Delivery Open checkpoint 已补做（8cea0c9）；010-review-apply 审核 009，结论 changes-requested；011 已修订 RA-A-001 的配置自引用错误输出问题；012 独立复核批准，关闭该 P2，类型检查、构建和 9 项定向检查通过，未执行 Archive。
+  CLI 已实现首次 delivery open、首个已有 Change 的 bind、status 与 next；阶段执行和 Run 写入留待后续 Change，Author 验证不替代 Reviewer 批准或 Archive。
+  013 收窄必要输入检查、只读兼容人工 archived 交接，并增加基础格式 / lint / check；Author check、34 项回归与 fresh proof 8/8 通过；014 独立 check、构建及 34 项回归通过，结论 approved，保留一项非阻断人读提示问题。
+  历史说明链接和未知 Ref 不成为查询运行依赖；实际归档后查询不补建旧目录或调用旧 Change 活动 status。015 原生同步了两份主规格并完成归档和编号改名；未执行 Git checkpoint / push 或正式 Delivery Full Test。
+  D02、D03 仅为计划分组；未执行正式 Delivery Full Test、Close、后续 Git checkpoint 或 push。
   Run 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。
-  正常范围内修复不因修复本身新增 Action / Run；当前没有 Change 批次。
+  正常范围内修复不因修复本身新增 Action / Run；当前批次为 003-changes，首个实际 Run 为 003-explore。
   Storybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。
 
 operations:

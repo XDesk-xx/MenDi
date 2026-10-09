@@ -1,0 +1,192 @@
+{
+  "kind": "review-propose-bounded-coverage",
+  "inputRun": "006-propose",
+  "exploreReviewRun": "007-review-explore",
+  "total_files": 46,
+  "reviewable_files": 23,
+  "reviewed_files": 0,
+  "skipped_files": 23,
+  "coverage_rate": 0,
+  "accounting_rate": 100,
+  "scoped_manual_files": 5,
+  "scoped_manual_reviewed": 5,
+  "scoped_coverage_rate": 100,
+  "entries": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "共享入口或既有 Change 元数据非本次规划正文审核对象；只读理解上下文，不作全工作区审核。"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "共享入口或既有 Change 元数据非本次规划正文审核对象；只读理解上下文，不作全工作区审核。"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/coverage.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "原 Explore 与独立审核作为已批准依据，复用结果，不重做全部 Explore。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/artifacts/planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 规划状态证据作为参考；本次使用 008 新的固定 OpenSpec status 与 strict validate 独立核验。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/command-parity.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/coverage.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/focused-check.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/ocr-preview.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/ocr-rules.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/.openspec.yaml",
+      "status": "added",
+      "review": "skipped",
+      "reason": "共享入口或既有 Change 元数据非本次规划正文审核对象；只读理解上下文，不作全工作区审核。"
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    },
+    {
+      "path": "tsconfig.scripts.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "005 的 TS 修订及审核由 007 approved 覆盖，本次复用，不重复检查。"
+    }
+  ],
+  "manualEntries": [
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/proposal.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除 Markdown；已逐份人工审查正确性、范围、错误路径、设计规格任务一致性。",
+      "sha256": "40f62b105f0918d885cd5073d4579e78ab56c41dce31065615550d95088282f2"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/design.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除 Markdown；已逐份人工审查正确性、范围、错误路径、设计规格任务一致性。",
+      "sha256": "c3dd9ab8eabdc7eb176fbefb3c7f4bb9af6a86972e680d64bcd958be7e49a4b5"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/specs/project-entry/spec.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除 Markdown；已逐份人工审查正确性、范围、错误路径、设计规格任务一致性。",
+      "sha256": "b9665be2a310eedcd695b90979c4e8873951651ff7dc96d53102e0fccccc835c"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除 Markdown；已逐份人工审查正确性、范围、错误路径、设计规格任务一致性。",
+      "sha256": "fdf3e2ba3c1fb08947234aeaf89ec11f30c18c87bfae70ffbd4b66ee3a3ac58a"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/tasks.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除 Markdown；已逐份人工审查正确性、范围、错误路径、设计规格任务一致性。",
+      "sha256": "af927294a21512e05893c1af28a80fca41e14cf1063d73f4b393d2ef9c03766b"
+    }
+  ],
+  "findings": []
+}

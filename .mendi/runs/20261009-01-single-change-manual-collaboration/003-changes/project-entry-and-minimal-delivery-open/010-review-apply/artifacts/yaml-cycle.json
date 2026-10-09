@@ -1,0 +1,8 @@
+{
+  "command": "node dist/drivers/cli.js status --project <fresh-target> --json",
+  "fixture": "schema: spec-driven\nstore: &loop\n  self: *loop\n",
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "file:///D:/Projects/MenDi/dist/drivers/cli.js:40\r\n        console.log(JSON.stringify(result, null, 2));\r\n                         ^\r\n\r\nTypeError: Converting circular structure to JSON\r\n    --> starting at object with constructor 'Object'\r\n    --- property 'self' closes the circle\r\n    at JSON.stringify (<anonymous>)\r\n    at file:///D:/Projects/MenDi/dist/drivers/cli.js:40:26\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\r\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\r\n\r\nNode.js v22.23.2\r\n",
+  "mendiCreated": false
+}

@@ -1,0 +1,305 @@
+Review complete: 25 finding(s) across 14 selected item(s).
+
+─── src/core/records.ts:43-43 ───
+[bug · medium] Edge case: if a hand-written bootstrap JSON file explicitly contains
+`"formatVersion": null` (instead of omitting the key), this check fails because `null !==
+undefined`, causing `unsupported-record-format` to be thrown even though the record is a valid
+manual-bootstrap record. `JSON.parse` preserves `null` as `null`, not as `undefined`. Consider using
+a null-safe check to accept both omitted and explicitly-null `formatVersion` for manual-bootstrap
+records.
+
+-   if (record.recordingMode === 'manual-bootstrap' && record.formatVersion === undefined) return 'manual-bootstrap';
++   if (record.recordingMode === 'manual-bootstrap' && (record.formatVersion === undefined || record.formatVersion === null)) return 'manual-bootstrap';
+
+
+─── src/core/records.ts:93-93 ───
+[maintainability · low] When `batch.changeIds` key is missing entirely from a batch object,
+`array()` throws `invalid-data` rather than `invalid-record`. The error message ("batch.changeIds
+必须是数组。") is clear, but the error code is inconsistent with the surrounding context — all other
+structural inconsistencies in `parseWorkspace` throw `invalid-record`. This makes it harder to
+distinguish between malformed batch records and genuinely missing fields when diagnosing bootstrap
+file issues. Consider catching the `array()` call and re-throwing with `invalid-record` code to
+align with the surrounding error category.
+
+
+
+─── src/core/errors.ts:25-27 ───
+[maintainability · low] `object` throws `invalid-data` with no `details` payload, unlike most other
+`MendiError` uses which include context (e.g. the offending value). The `text` and `identifier`
+guards below are inconsistent: `text` also omits the offending value in `details`, while
+`identifier` includes it. This makes it harder to diagnose which input caused the failure. Consider
+adding `{ value }` to `details` in `object` and `text` for consistency with `identifier`.
+
+
+
+─── src/application/project.ts:49-49 ───
+[security · high] The change id is treated as untrusted input and embedded into the scope JSON path
+via `path.resolve(root, input.scopePath)`, which bypasses the `managedPath` reference validation
+used elsewhere (e.g. in `managedPath(root, binding.changeRef)`). An attacker-supplied change id such
+as `../../etc` or a Windows drive-absolute id (note that `identifier()` only rejects reserved names,
+not ids containing path separators... actually the identifier regex rejects them, so the `..`
+traversal is blocked, but this defense-in-depth inconsistency remains) makes the scope lookup depend
+on raw user data while the managed-path contract is the project's stated approach for all file
+references. Use `managedPath(root, `scope/${identifier(input.id)}/changes.json`)` or similar so
+scope paths are validated and resolved by the same helper, consistent with how `binding.changeRef`
+is validated on the next line.
+
+
+
+─── src/application/project.ts:24-24 ───
+[maintainability · low] The write-observer path diagnostic (`options.observeWrite`) that this PR
+claims to add is only exercised for the primary manifest write; the `before-entry-commit` /
+`before-manifest-commit` and lock-release phases are emitted inside `createWorkspace` /
+`updateWorkspace`, so callers of `bindChange` here rely on those internal calls. No issue here — but
+the `state()` helper spreads `workspace.scope` which includes `plannedChanges` with nested
+`dependsOn` arrays; consider whether that's intended to be surfaced verbatim in the query/open/bind
+results or whether a normalized projection (e.g. goal + planned slot list only) is preferable so the
+response shape is stable and does not leak implementation keys like `roadmapSection` when present.
+
+
+
+─── src/application/project.ts:49-49 ───
+[security · high] The `identifier` regex only rejects Windows reserved names like `con`, `aux`,
+etc., but allows any value containing `..` or absolute path components as long as it's formed from
+lowercase alphanumeric + hyphen. `input.id` is not validated through `identifier()` here before
+being embedded into the scope path — it's used directly as a filesystem path element in
+`path.resolve(root, input.scopePath)`, so values like `../../x` or Windows absolute paths (`C:\...`
+via the CLI arg) escape the managed-root boundary, even though `managedPath` was designed to prevent
+this. Validate the id as a component-safe identifier (or route the scope path through `managedPath`)
+before joining it into `scopePath`.
+
+
+
+─── src/application/project.ts:24-24 ───
+[maintainability · low] The state projection spreads `workspace.scope` (which includes
+`plannedChanges` with nested `dependsOn`/`roadmapSection` keys) verbatim into the result object
+alongside `activeChangeId` and `changeBindings`. This leaks internal record keys (e.g.
+`roadmapSection` when present, `plannedChanges` as a full array) in the public `local` payload.
+Consider whether that's intended; if the API surface should be a stable, minimal projection,
+explicitly pick the fields to expose rather than spreading the whole scope object.
+
+
+
+─── src/drivers/cli.ts:22-22 ───
+[bug · low] The `slot` parameter name in the `.map()` callback shadows the outer `slot` property
+from `parsed.values.slot` (used on line 14/16), making it easy to misread. More importantly, this is
+fine at runtime but if `result.local.plannedChanges` is an empty array, this prints `槽位：` with an
+empty string, which is acceptable but could be more informative. However the more subtle concern:
+for `openDelivery`/`bindChange`, the result never has a `next` property, so the guard on line 24
+correctly skips it. But for `query` when `local` is null, `result.next` is present and would be
+printed — the `'reason' in result.next` check on line 26 is fine since the initial `query` return
+does include `reason`. No actual bug here, but the variable shadowing of `slot` is a readability
+risk.
+
+- console.log(`Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map(slot => slot.slot).join(', ')}\nChange：${result.local.activeChangeId ?? '尚未关联'}`);
++ console.log(`Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map(pc => pc.slot).join(', ')}\nChange：${result.local.activeChangeId ?? '尚未关联'}`);
+
+
+─── src/drivers/arguments.ts:20-20 ───
+[bug · low] When `flag` is something like `--` (two dashes with nothing after),
+`flag.startsWith('--')` is true, `flag.slice(2)` yields `''`, and `allowed.has('')` is false, so it
+throws `未知或重复参数：--`. The error message shows `--` which is correct. However, if `flag` is a single
+dash (like `-v`), `flag.startsWith('--')` is false so `key` becomes `''`, and the same error is
+thrown. The error message `未知或重复参数：-v` is fine, but the fact that single-dash flags (other than
+`--json`/`--help`) are silently mapped to key `''` rather than being explicitly rejected as
+unrecognized is a minor design gap — the user sees a generic error without knowing their flag format
+was wrong. Consider explicitly rejecting flags that start with a single `-` but not `--`.
+
+More critically, if a positional argument that happens to be a value (not a flag) is passed, `key`
+becomes `''` and it's rejected. But the loop only processes items starting from `i = consumed`, so
+this is fine for valid invocations.
+
+
+
+─── src/drivers/arguments.ts:22-23 ───
+[bug · low] If `value` (the next arg after a flag) is `undefined` (i.e., `--flag` is the last
+argument), `args[++i]` evaluates to `undefined`, and the check `value === undefined` catches it —
+good. But there's a subtle issue: the increment `args[++i]` advances `i` even when the value is
+invalid, meaning the next iteration of the loop starts from the position after the missing value.
+This is fine because we throw immediately. However, if `value` is `undefined` AND `i` was already at
+the last valid index, `++i` goes past the array bounds, which is safe in JS (returns `undefined`).
+No actual bug, just noting the interaction.
+
+
+
+─── src/core/errors.ts:38-38 ───
+[security · low] The `identifier` function validates against Windows reserved device names (con,
+prn, aux, nul, com1-9, lpt1-9). This is important for preventing path-related issues on Windows. The
+regex is correct.
+
+
+
+─── src/drivers/cli.ts:22-22 ───
+[maintainability · low] The parameter name `slot` in the `.map()` callback shadows the outer `slot`
+value from `parsed.values.slot`. While correct at runtime, this creates confusion: `slot.slot` reads
+ambiguously. Consider renaming to `pc` or `change` for clarity.
+
+- console.log(`Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map(slot => slot.slot).join(', ')}\nChange：${result.local.activeChangeId ?? '尚未关联'}`);
++ console.log(`Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map(pc => pc.slot).join(', ')}\nChange：${result.local.activeChangeId ?? '尚未关联'}`);
+
+
+─── src/drivers/arguments.ts:23-23 ───
+[maintainability · low] When a value starts with `--`, the error message says "需要非空值" (needs
+non-empty value), but the user actually did provide a value that just looks like a flag. Consider a
+more specific message like "值不能以 -- 开头" to reduce confusion.
+
+- if (value === undefined || value.startsWith('--') || !value.trim()) throw usage(`${flag} 需要非空值。`);
++ if (value === undefined || !value.trim()) throw usage(`${flag} 需要非空值。`);
++     if (value.startsWith('--')) throw usage(`${flag} 的值不能以 -- 开头。`);
+
+
+─── src/drivers/arguments.ts:22-23 ───
+[bug · low] On line 23, `args[++i]` increments `i` as part of the indexing expression. When `value`
+is `undefined` (the flag had no following argument), the loop's next iteration would start at `i +
+1` (i.e., one past the missing value's position). Since the function throws immediately, this is
+safe. However, if the `continue` statement on line 19 (`--json`) were ever modified, or if the throw
+on line 23 were replaced with a non-throwing check in the future, the silent advancement of `i`
+could skip a token. Consider using an explicit increment:
+```ts
+const value = args[i + 1];
+i++;
+```
+This is not a current bug but is a fragile pattern.
+
+- const value = args[++i];
++ const value = args[i + 1];
++     i++;
+      if (value === undefined || value.startsWith('--') || !value.trim()) throw usage(`${flag} 需要非空值。`);
+
+
+─── src/drivers/arguments.ts:29-29 ───
+[bug · low] The `text` import is used on line 29 to validate all collected values are non-empty
+strings. However, this is redundant: line 23 already rejects `!value.trim()` (empty/whitespace-only
+strings) and the `values` record is typed as `Record<string, string>`. The `text()` call will always
+succeed on values that passed line 23, making it dead code that adds no protection. If the intent
+was to add a second layer of validation (e.g., for future callers that bypass `parseArguments`),
+this is misleading because the function name implies general argument validation. Consider removing
+it or adding a comment explaining its purpose.
+
+
+
+─── src/drivers/cli.ts:34-34 ───
+[maintainability · low] The `args.includes('--json')` check on line 34 re-scans the raw process
+arguments. This is functionally correct but inconsistent with the try-block's `parsed.json` check.
+If `parseArguments` had thrown an error (e.g., unknown flag), the catch block would still use the
+raw `args.includes('--json')`, which means `--json` output would be selected even when the user also
+passed an unknown command. This is probably the desired behavior (consistent error output format),
+but it's worth a brief comment to document the intent, or consider using `parsed.json` if available
+with a fallback.
+
+
+
+─── src/drivers/arguments.ts:29-29 ───
+[maintainability · low] The `text(value, '参数')` call on line 29 validates that every collected value
+is a non-empty string. However, line 23 already rejects empty/whitespace values, and the `values`
+map is typed `Record<string, string>`. This makes the call redundant under the current parsing flow.
+If the intent is defensive (e.g., for direct API use bypassing `parseArguments`), a short comment
+clarifying the rationale would help future readers understand the redundancy is intentional.
+
+
+
+─── src/drivers/arguments.ts:22-23 ───
+[bug · low] On line 23, `args[++i]` mixes the increment into the indexing expression. When `i`
+points to the last valid index and `value` is `undefined`, `i` is advanced to `i+1` (past the array
+bounds). The `throw` on the same line makes this safe today, but the pattern is fragile: if this
+check were ever relaxed to a non-throwing path (e.g., default value), the silent advancement would
+skip the next token. Prefer an explicit increment for clarity and safety:
+```ts
+i++; // separate the increment from the read
+const value = args[i];
+```
+
+- const value = args[++i];
++ i++;
++     const value = args[i];
+      if (value === undefined || value.startsWith('--') || !value.trim()) throw usage(`${flag} 需要非空值。`);
+
+
+─── tests/helpers.ts:9-9 ───
+[maintainability · high] This hardcodes a machine-specific absolute path to the external OpenSpec
+1.14.1 binary. Every test using `openspecEntry` (i.e. `prepareChange` in cli/concurrency/query
+tests, and the `OpenSpec` adapter tests in `openspec.test.ts`) will fail on CI or any workstation
+where this exact path does not exist. I understand the MVP intentionally pins a fixed external
+OpenSpec 1.14.1 location, but a portability guard would help: allow an environment-variable override
+(e.g. `MENDI_OPENSPEC_ENTRY`) and/or assert `fs.existsSync(openspecEntry)` at call time so the
+failure message is clear rather than a raw ENOENT from spawnSync.
+
+
+
+─── tests/helpers.ts:11-11 ───
+[other · medium] The function is named `isolatedEnv` and is used as the isolation contract for the
+OpenSpec global config/data directories, but it spreads the entire ambient `process.env`. On Windows
+(the primary target) XDG variables are not honored; OpenSpec/node tooling may still read user-level
+config via `HOME`/`USERPROFILE`/global npm paths, so cross-machine or CI state can leak into tests
+and cause flakiness. Consider explicitly clearing or redirecting the user-level vars the spawned CLI
+actually consults (e.g. `HOME`, `USERPROFILE`, and any global node/openspec cache dir), or document
+precisely which vars the isolation relies on.
+
+
+
+─── tests/helpers.ts:19-19 ───
+[other · low] Using `process.pid` as the file discriminator means every `command()` invocation
+within one test process appends to the same JSONL file with no per-test identifier. Records are not
+self-describing (no test name/sequence), so when tests run in sequence under a single worker it is
+hard to attribute a line to a specific test. Consider including a stable test label or monotonically
+increasing index, or one file per test.
+
+
+
+─── tests/helpers.ts:35-38 ───
+[maintainability · medium] `sandbox()` creates a new temporary directory on every call but there is
+no paired `cleanupSandbox()` / `disposeSandbox()` helper. Every test that uses this helper must
+remember to `fs.rmSync(path, { recursive: true, force: true })` after itself, and any test that
+throws before that cleanup will leave stale directories in `.tmp/`. Consider providing a
+`disposeSandbox` helper (or exporting a `sandbox()` object with a `cleanup` method) so callers don't
+have to remember the manual `rm`.
+
+
+
+─── tests/helpers.ts:15-16 ───
+[bug · medium] `command()` uses `result.status` (a `number | null`) for the `exitCode` field, but on
+Windows when `spawnSync` fails to launch the process at all, `result.status` is `null` while
+`result.error` contains the actual `Error`. Because the assert only checks `result.error ===
+undefined`, the error is thrown as `AssertionError` with the error's message, and the `record`
+object is never written to the evidence file. Consider capturing `result.error?.message` in the
+record (or skipping the assert and handling `error` explicitly) so that failed launches are still
+logged to the evidence directory rather than silently lost to an uncaught AssertionError.
+
+
+
+─── tests/helpers.ts:30-34 ───
+[security · low] `scopeFile()` copies `tests/fixtures/delivery-scope.json` into the sandbox via
+`fs.copyFileSync` before calling it. If the fixture path does not exist, `copyFileSync` throws
+`ENOENT` with a raw Node error that the test caller will not have wrapped — the assertion in
+`prepareChange` won't catch it, and the error message will not make it obvious that the missing file
+is a test fixture rather than an OpenSpec artifact. Consider wrapping with a check and a clear error
+message: `if (!fs.existsSync(src)) throw new Error('Missing fixture: ' + src);`.
+
+
+
+─── tests/helpers.ts:51-51 ───
+[maintainability · low] `snapshot()` silently ignores files that `fs.readFileSync` cannot read
+(permission errors) — `readFileSync` will throw an unhandled exception that is not caught, and the
+entire snapshot call will crash. Given this is a test helper, that may be acceptable, but it would
+be more defensive to catch read errors and record them as error entries in the result map rather
+than crashing the whole test.
+
+
+
+LLM retry report summary: 27 of 152 requests affected -- 1 request failed, 26 requests recovered after retry
+
+Review planning (1 request):
+- tests/helpers.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> succeeded
+
+Core review (25 requests):
+- src/application/project.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+- package.json: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> succeeded
+- src/adapters/openspec.ts,src/adapters/paths.ts,src/adapters/project.ts,src/adapters/workspace.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> succeeded
+- src/adapters/openspec.ts,src/adapters/paths.ts,src/adapters/project.ts,src/adapters/workspace.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> succeeded
+- src/adapters/openspec.ts,src/adapters/paths.ts,src/adapters/project.ts,src/adapters/workspace.ts: rate limited (HTTP 429) -> succeeded
+- ... and 20 more
+
+File grouping (1 request):
+- __grouping__: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> succeeded
+
+Per-attempt detail: --format json (retry_report).

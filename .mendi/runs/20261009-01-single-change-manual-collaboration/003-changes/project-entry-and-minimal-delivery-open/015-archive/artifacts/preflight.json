@@ -1,0 +1,141 @@
+{
+  "list": {
+    "changes": [
+      {
+        "name": "project-entry-and-minimal-delivery-open",
+        "completedTasks": 20,
+        "totalTasks": 20,
+        "lastModified": "2026-10-09T14:54:49.427Z",
+        "status": "complete"
+      }
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "status": {
+    "changeName": "project-entry-and-minimal-delivery-open",
+    "schemaName": "spec-driven",
+    "planningHome": {
+      "kind": "repo",
+      "root": "D:\\Projects\\MenDi",
+      "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+      "defaultSchema": "spec-driven"
+    },
+    "changeRoot": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open",
+    "artifactPaths": {
+      "proposal": {
+        "outputPath": "proposal.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\proposal.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\proposal.md"
+        ]
+      },
+      "specs": {
+        "outputPath": "specs/**/*.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\**\\*.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\delivery-workspace\\spec.md",
+          "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\project-entry\\spec.md"
+        ]
+      },
+      "design": {
+        "outputPath": "design.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\design.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\design.md"
+        ]
+      },
+      "tasks": {
+        "outputPath": "tasks.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\tasks.md"
+        ]
+      }
+    },
+    "isPlanningComplete": true,
+    "isComplete": true,
+    "applyRequires": [
+      "tasks"
+    ],
+    "nextSteps": [
+      "All planning artifacts are complete. Run openspec instructions apply --change \"project-entry-and-minimal-delivery-open\" --json to inspect implementation progress."
+    ],
+    "actionContext": {
+      "mode": "repo-local",
+      "sourceOfTruth": "repo",
+      "planningArtifacts": [
+        "proposal",
+        "specs",
+        "design",
+        "tasks"
+      ],
+      "linkedContext": [],
+      "allowedEditRoots": [
+        "D:\\Projects\\MenDi"
+      ],
+      "requiresAffectedAreaSelection": false,
+      "constraints": [
+        "Repo-local change artifacts and implementation edits are scoped to this project."
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "proposal",
+        "outputPath": "proposal.md",
+        "status": "done",
+        "requires": []
+      },
+      {
+        "id": "specs",
+        "outputPath": "specs/**/*.md",
+        "status": "done",
+        "requires": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "design",
+        "outputPath": "design.md",
+        "status": "done",
+        "requires": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "tasks",
+        "outputPath": "tasks.md",
+        "status": "done",
+        "requires": [
+          "specs",
+          "design"
+        ]
+      }
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "nextArchiveOrdinal": 1,
+  "previousCompletedCount": 0,
+  "analysis": [
+    {
+      "capability": "delivery-workspace",
+      "delta": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\delivery-workspace\\spec.md",
+      "main": "D:\\Projects\\MenDi\\openspec\\specs\\delivery-workspace\\spec.md",
+      "addedRequirements": 8,
+      "scenarioCount": 21
+    },
+    {
+      "capability": "project-entry",
+      "delta": "D:\\Projects\\MenDi\\openspec\\changes\\project-entry-and-minimal-delivery-open\\specs\\project-entry\\spec.md",
+      "main": "D:\\Projects\\MenDi\\openspec\\specs\\project-entry\\spec.md",
+      "addedRequirements": 5,
+      "scenarioCount": 14
+    }
+  ],
+  "sync": "native archive once; no prior main-spec sync"
+}

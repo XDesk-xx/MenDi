@@ -1,0 +1,66 @@
+{
+  "kind": "mendi-mvp-d01-a-apply-verification",
+  "node": "v22.23.2",
+  "platform": "win32",
+  "openspecVersion": "1.14.1",
+  "testResult": {
+    "tests": 27,
+    "passed": 27,
+    "failed": 0,
+    "skipped": 0
+  },
+  "recordedCommands": 64,
+  "expectedNonzeroCommands": 28,
+  "controlledInputs": [
+    "tests\\fixtures\\minimal-project\\.gitkeep",
+    "tests\\fixtures\\minimal-project\\AGENTS.md",
+    "tests\\fixtures\\minimal-project\\openspec\\config.yaml",
+    "tests\\fixtures\\minimal-project\\README.md",
+    "tests\\fixtures\\existing-openspec-project\\AGENTS.md",
+    "tests\\fixtures\\existing-openspec-project\\openspec\\config.yaml",
+    "tests\\fixtures\\existing-openspec-project\\README.md"
+  ],
+  "sourceRefs": [
+    "src/core/",
+    "src/adapters/",
+    "src/application/",
+    "src/drivers/",
+    "tests/*.test.ts",
+    "tests/fixtures/delivery-scope.json",
+    "tests/fixtures/manual-bootstrap-records.json",
+    "tests/fixtures/store-writer.ts"
+  ],
+  "historicalFilesUnchanged": 33,
+  "checks": {
+    "typecheck": "passed",
+    "build": "passed via pnpm test",
+    "diffCheck": "passed",
+    "crossProcessCLI": "passed",
+    "concurrentWriters": "passed",
+    "originalTargetFiles": "passed",
+    "targetTmpInitiallyAbsent": "fixtures contain no .tmp; each integration target is reconstructed",
+    "manualHistoryReadOnly": "passed"
+  },
+  "limits": [
+    "Focused and integration checks, not formal Delivery Full Test.",
+    "Two-file Open is not an atomic transaction or a power-loss durability claim.",
+    "Controlled runners cover external-process faults; controlled filesystem hooks/mocks cover write and rename faults.",
+    "The whole host repository .tmp was not cleared.",
+    "No product Action/Run writer, additional Delivery/Change lifecycle, Archive or installation release acceptance."
+  ],
+  "handoff": {
+    "tasks": {
+      "total": 16,
+      "complete": 16,
+      "remaining": 0
+    },
+    "applyState": "all_done",
+    "strictValidation": "passed",
+    "next": "review-apply",
+    "status": "awaiting-independent-review",
+    "source": "manual-bootstrap",
+    "executable": false,
+    "querySnapshot": "unchanged-before-evidence-save",
+    "commandEvidence": "handoff-commands.json"
+  }
+}

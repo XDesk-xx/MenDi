@@ -1,0 +1,12 @@
+Review failed: 0 finding(s); 14 of 14 selected item(s) failed.
+
+LLM retry report summary: 5 of 19 requests affected -- 5 requests failed
+
+Core review (5 requests):
+- package.json,tsconfig.json,tsconfig.scripts.json,tsconfig.tests.json: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+- src/adapters/openspec.ts,src/adapters/paths.ts,src/adapters/project.ts,src/adapters/workspace.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+- src/application/project.ts,tests/helpers.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+- src/core/errors.ts,src/core/records.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+- src/drivers/arguments.ts,src/drivers/cli.ts: rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> rate limited (HTTP 429) -> failed
+
+Per-attempt detail: --format json (retry_report).

@@ -1,0 +1,59 @@
+{
+  "change": "project-entry-and-minimal-delivery-open",
+  "run": "011",
+  "role": "author",
+  "finding": "RA-A-001",
+  "result": "revision-verified",
+  "implementationFiles": [
+    "src/adapters/project.ts"
+  ],
+  "regressionFiles": [
+    "tests/cli.test.ts"
+  ],
+  "beforeFix": {
+    "tests": 4,
+    "failed": 4,
+    "evidence": "before-fix-tests.txt"
+  },
+  "afterFix": {
+    "tests": 4,
+    "passed": 4,
+    "commands": 8,
+    "evidence": "focused-tests.txt"
+  },
+  "relatedTests": {
+    "tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "related-tests.txt"
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "tasks": {
+    "total": 16,
+    "complete": 16,
+    "remaining": 0
+  },
+  "strictValidation": "passed",
+  "historicalFilesUnchanged": 54,
+  "diffCheck": "passed",
+  "git": {
+    "head": "8cea0c96d6b2fe77c48a70fbf39c93d790ec1ee1",
+    "index": "empty"
+  },
+  "next": {
+    "action": "review-apply",
+    "status": "awaiting-independent-review",
+    "source": "manual-bootstrap",
+    "executable": false,
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
+    "previousReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/010-review-apply/run.md"
+  },
+  "querySnapshot": "unchanged-before-evidence-save",
+  "limits": [
+    "Author verification only; no new Reviewer approval.",
+    "Focused related checks, not formal Delivery Full Test.",
+    "No Archive, Git checkpoint/push, Close or next Change."
+  ]
+}
