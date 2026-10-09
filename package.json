@@ -1,0 +1,27 @@
+{
+  "name": "mendi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.20.0 <23"
+  },
+  "bin": {
+    "mendi": "dist/drivers/cli.js"
+  },
+  "files": [
+    "dist/",
+    "skills/",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/drivers/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3"
+  }
+}

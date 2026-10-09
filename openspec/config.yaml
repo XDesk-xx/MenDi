@@ -1,0 +1,22 @@
+schema: spec-driven
+
+context: |
+  Language: Chinese
+  与 Owner 沟通及面向人阅读的产物正文使用中文。
+  OpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。
+  项目：MenDi，当前是新的 TypeScript CLI 工程骨架。
+  产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。
+  具体规格、方案和任务在对应 OpenSpec Change 中细化。
+  角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。
+  当前没有已激活或已完成的 Delivery / Change。
+  Storybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。
+
+operations:
+  apply:
+    guidance:
+      - 先执行当前修改需要的 focused 检查，验证结果简洁留痕。
+      - 独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。
+  archive:
+    guidance:
+      - 核对当前批准与实际归档效果，保留简短收口说明。
+      - 不自动执行 Git、下一 Change 或 Delivery Full Test。
