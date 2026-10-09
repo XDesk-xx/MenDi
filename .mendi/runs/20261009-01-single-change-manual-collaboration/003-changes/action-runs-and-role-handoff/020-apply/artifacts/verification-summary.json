@@ -1,0 +1,54 @@
+{
+  "role": "author",
+  "changeId": "action-runs-and-role-handoff",
+  "runRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md",
+  "result": "implementation-ready-for-review",
+  "tasks": {
+    "total": 14,
+    "complete": 14,
+    "remaining": 0
+  },
+  "validation": {
+    "valid": true,
+    "issues": []
+  },
+  "check": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "logRef": "check.log"
+  },
+  "regression": {
+    "command": "pnpm test",
+    "includesBuild": true,
+    "exitCode": 0,
+    "tests": 64,
+    "pass": 64,
+    "fail": 0,
+    "skipped": 0,
+    "logRef": "regression.log"
+  },
+  "next": {
+    "action": "review-apply",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "reason": "020 Author Apply 已完成 14 项实施任务和相关验证，等待独立审核；工具通过不代替批准。",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "archivedChangeCount": 1,
+  "limits": [
+    "actor labels do not authenticate real sessions",
+    "record commands do not execute phase semantics",
+    "partial writes retain the lock; no automatic recovery",
+    "test reviewers are fixtures; independent review-apply remains pending"
+  ],
+  "earlyCorrections": [
+    "TypeScript test union narrowing",
+    "CLI test guidance ref expectation"
+  ],
+  "authorizedBoundary": "independent review-apply",
+  "gitExecuted": false,
+  "archiveExecuted": false,
+  "formalDeliveryFullTestExecuted": false
+}

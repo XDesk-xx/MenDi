@@ -12,7 +12,9 @@ export type WritePhase =
   | 'before-manifest-commit'
   | 'before-readback'
   | 'before-lock-release';
-export type WriteObserver = (phase: WritePhase, file: string) => void;
+// Action writers use the same observer for focused interruption tests.
+export type ActionWritePhase = WritePhase | 'run-written' | 'before-run-commit';
+export type WriteObserver = (phase: ActionWritePhase, file: string) => void;
 
 function readJson(file: string): unknown {
   try {
@@ -75,12 +77,13 @@ function replaceJson(
   return file;
 }
 
-function lockedWrite(
+export function lockedWrite<T>(
   root: string,
   operation: string,
-  action: (committed: string[]) => Workspace,
+  action: (committed: string[]) => T,
   observe?: WriteObserver,
-): Workspace {
+  retainOnFailure = false,
+): T {
   const lock = managedPath(root, '.mendi/write.lock');
   const owner = JSON.stringify({ token: randomUUID(), pid: process.pid, operation });
   let descriptor: number;
@@ -95,7 +98,7 @@ function lockedWrite(
     );
   }
   const committed: string[] = [];
-  let output: Workspace | undefined;
+  let output: T | undefined;
   let actionError: unknown;
   let releaseError: unknown;
   try {
@@ -109,14 +112,15 @@ function lockedWrite(
   } catch (error) {
     actionError = error;
   }
-  try {
-    observe?.('before-lock-release', lock);
-    managedPath(root, '.mendi/write.lock');
-    if (fs.readFileSync(lock, 'utf8') !== owner) throw new Error('锁归属已变化，保留现有锁');
-    fs.unlinkSync(lock);
-  } catch (error) {
-    releaseError = error;
-  }
+  if (!(retainOnFailure && actionError && committed.length))
+    try {
+      observe?.('before-lock-release', lock);
+      managedPath(root, '.mendi/write.lock');
+      if (fs.readFileSync(lock, 'utf8') !== owner) throw new Error('锁归属已变化，保留现有锁');
+      fs.unlinkSync(lock);
+    } catch (error) {
+      releaseError = error;
+    }
   if (actionError || releaseError) {
     if (actionError instanceof MendiError && !committed.length && !releaseError) throw actionError;
     throw new MendiError(

@@ -1,7 +1,16 @@
 import { MendiError, text } from '../core/errors.ts';
 
 export interface Arguments {
-  command: 'help' | 'delivery-open' | 'change-bind' | 'status' | 'next';
+  command:
+    | 'help'
+    | 'delivery-open'
+    | 'change-bind'
+    | 'status'
+    | 'next'
+    | 'action-start'
+    | 'action-continue'
+    | 'run-save'
+    | 'run-submit';
   json: boolean;
   values: Record<string, string>;
 }
@@ -17,6 +26,12 @@ export function parseArguments(args: string[]): Arguments {
   } else if (args[0] === 'change' && args[1] === 'bind') {
     command = 'change-bind';
     consumed = 2;
+  } else if (args[0] === 'action' && (args[1] === 'start' || args[1] === 'continue')) {
+    command = args[1] === 'start' ? 'action-start' : 'action-continue';
+    consumed = 2;
+  } else if (args[0] === 'run' && (args[1] === 'save' || args[1] === 'submit')) {
+    command = args[1] === 'save' ? 'run-save' : 'run-submit';
+    consumed = 2;
   } else if (args[0] === 'status' || args[0] === 'next') {
     command = args[0];
     consumed = 1;
@@ -28,7 +43,15 @@ export function parseArguments(args: string[]): Arguments {
       ? ['id', 'title', 'scope', 'change', 'slot']
       : command === 'change-bind'
         ? ['change', 'slot']
-        : []),
+        : command === 'action-start'
+          ? ['change', 'type', 'role', 'actor', 'author-run', 'revises', 'tool']
+          : command === 'action-continue'
+            ? ['action', 'role', 'actor']
+            : command === 'run-save'
+              ? ['run', 'role', 'actor', 'body']
+              : command === 'run-submit'
+                ? ['run', 'role', 'actor', 'outcome', 'result', 'verdict']
+                : []),
   ]);
   const values: Record<string, string> = {};
   let json = false;
@@ -52,7 +75,15 @@ export function parseArguments(args: string[]): Arguments {
       ? ['id', 'title', 'scope']
       : command === 'change-bind'
         ? ['change', 'slot']
-        : []),
+        : command === 'action-start'
+          ? ['change', 'type', 'role', 'actor']
+          : command === 'action-continue'
+            ? ['action', 'role', 'actor']
+            : command === 'run-save'
+              ? ['run', 'role', 'actor', 'body']
+              : command === 'run-submit'
+                ? ['run', 'role', 'actor', 'outcome', 'result']
+                : []),
   ];
   for (const key of required) if (!values[key]) throw usage(`缺少 --${key}。`);
   if (command === 'delivery-open' && Boolean(values.change) !== Boolean(values.slot))
@@ -71,9 +102,17 @@ mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --
 mendi change bind --project <项目根> --change <既有 Change> --slot <槽位>
 mendi status --project <项目根>
 mendi next --project <项目根>
+mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
+mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
+mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
+mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
 
 项目命令支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口> 和 --json。
---project 相对于调用目录；--scope 相对于目标项目根。
+--project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
 首次 Open 要求目标无 .mendi；首版只关联第一个既有 Change。
-人工 bootstrap 仅支持查询。阶段执行、Run 写入及 Close / Reopen 尚未实现。
+阶段：explore / propose / apply，review-<阶段>，revise-<阶段>。
+Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 指导。
+start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
+submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
+actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询；Archive / Close / Reopen 未实现。
 操作仍须遵守 Owner 授权；命令成功不产生审核批准。`;

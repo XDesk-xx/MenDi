@@ -11,6 +11,8 @@ import {
 } from '../adapters/workspace.ts';
 import { bindingFor, readScope, type Workspace } from '../core/records.ts';
 import { errorInfo, identifier, MendiError, object, text } from '../core/errors.ts';
+import { actionNext } from '../core/actions.ts';
+import { currentRun } from '../adapters/runs.ts';
 
 export interface Selection {
   project: string;
@@ -32,13 +34,13 @@ export interface BindInput extends Selection {
   slot: string;
 }
 
-function selected(input: Selection, options: OperationOptions) {
+export function selected(input: Selection, options: OperationOptions) {
   const project = inspectProject(input.project);
   const upstream = new OpenSpec(project.root, input.openspecBin, options.runner);
   return { ...project, upstream };
 }
 
-function state(workspace: Workspace) {
+export function state(workspace: Workspace) {
   return {
     source: workspace.mode,
     deliveryId: workspace.id,
@@ -73,6 +75,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
       },
     };
   const facts = workspace.activeChangeId ? upstream.status(workspace.activeChangeId) : null;
+  const run = currentRun(root, workspace);
   const next =
     workspace.mode === 'manual-bootstrap'
       ? {
@@ -80,21 +83,29 @@ export function query(input: Selection, options: OperationOptions = {}) {
           source: 'manual-bootstrap',
           executable: false,
         }
-      : workspace.activeChangeId
-        ? {
-            action: 'explore',
-            source: 'local-state',
-            executable: false,
-            role: 'author',
-            reason: '关联已保存；阶段 Action 能力将在后续 Change 实现。',
-          }
-        : {
-            action: 'change-bind',
-            source: 'local-state',
-            executable: true,
-            reason: '需明确已有 Change、计划槽位及相应 Owner 授权。',
-          };
-  return { ...base, local: state(workspace), upstream: facts, next };
+      : run
+        ? actionNext(run.record, run.ref)
+        : workspace.activeChangeId
+          ? {
+              action: 'explore',
+              source: 'local-state',
+              executable: false,
+              role: 'author',
+              reason: '关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。',
+            }
+          : {
+              action: 'change-bind',
+              source: 'local-state',
+              executable: true,
+              reason: '需明确已有 Change、计划槽位及相应 Owner 授权。',
+            };
+  return {
+    ...base,
+    local: state(workspace),
+    upstream: facts,
+    ...(run ? { run: { ref: run.ref, ...run.record } } : {}),
+    next,
+  };
 }
 
 export function openDelivery(input: OpenInput, options: OperationOptions = {}) {

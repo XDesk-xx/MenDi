@@ -49,7 +49,8 @@
       "firstRun": "003",
       "runsRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes",
       "changeIds": [
-        "project-entry-and-minimal-delivery-open"
+        "project-entry-and-minimal-delivery-open",
+        "action-runs-and-role-handoff"
       ]
     }
   ],
@@ -62,6 +63,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/015-archive/run.md",
       "archiveOrdinal": 1
+    },
+    {
+      "planningSlot": "MVP-D01-B",
+      "changeId": "action-runs-and-role-handoff",
+      "changeRef": "openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff",
+      "batchId": "003-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md",
+      "archiveOrdinal": 2
     }
   ],
   "activeChangeId": null,
@@ -76,24 +86,13 @@
     "旧 Flowkit 能力与历史迁移"
   ],
   "openRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/015-archive/run.md",
+  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md",
   "stopBoundary": "archive",
   "next": {
-    "action": "change-activation",
-    "status": "awaiting-owner-authorization",
+    "action": "delivery-next",
+    "status": "awaiting-owner-instruction",
     "role": "author",
-    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/013-revise-apply/run.md",
-    "proposalRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md",
-    "proposalReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/008-review-propose/run.md",
-    "revisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/013-revise-apply/run.md",
-    "exploreReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/run.md",
-    "repairReason": "007 补审批准 005；008 独立审核批准已有 006，无需方案修订。保留 006 先编写、007 后补审的实际顺序。",
-    "priorAuthorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md",
-    "exploreRevisionRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md",
-    "revisionReason": "014 批准 013；Owner 随后授权 Archive 和累计编号命名，015 已执行。",
-    "previousReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/012-review-apply/run.md",
-    "reviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/014-review-apply/run.md",
-    "archiveRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/015-archive/run.md",
-    "reason": "MVP-D01-A 已归档；后续 Change 需 Owner 明确目标与范围，当前不自动激活。"
+    "reason": "MVP-D01-B 已归档，累计完成 2 个 Change；等待 Owner 明确下一 Change 的目标与范围。",
+    "archiveRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "nativeArchiveExitCode": 0,
+  "nativeArchiveSucceeded": true,
+  "localReadbackError": "expected result.change but CLI JSON wraps it in result.archive",
+  "actualEffectObserved": {
+    "sourceMissing": true,
+    "nativeArchiveExists": true,
+    "specsUpdated": true
+  },
+  "nativeArchiveRepeated": false,
+  "continuation": "consume retained native result, verify specs, then rename and update records"
+}

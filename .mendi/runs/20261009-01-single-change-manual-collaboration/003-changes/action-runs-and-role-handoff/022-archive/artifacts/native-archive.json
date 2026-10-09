@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "action-runs-and-role-handoff",
+    "archivedAs": "2026-10-10-action-runs-and-role-handoff",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-action-runs-and-role-handoff",
+    "specsUpdated": true,
+    "totals": {
+      "added": 10,
+      "modified": 2,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

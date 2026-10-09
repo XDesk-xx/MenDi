@@ -16,6 +16,8 @@ export interface Binding {
   changeRef: string;
   state: string;
   archiveOrdinal?: number;
+  latestRunRef?: string;
+  batchId?: string;
 }
 export interface Workspace {
   mode: 'product' | 'manual-bootstrap';
@@ -166,6 +168,12 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
       planningSlot,
       state: bindingState,
       ...(typeof archiveOrdinal === 'number' ? { archiveOrdinal } : {}),
+      ...(index.mode === 'product' && item.latestRunRef !== undefined
+        ? {
+            latestRunRef: text(item.latestRunRef, 'latestRunRef'),
+            batchId: text(item.batchId, 'batchId'),
+          }
+        : {}),
     };
   });
   if (
@@ -180,13 +188,36 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
     if (
       state !== 'open' ||
       bindings.length > 1 ||
-      batches.length ||
+      batches.length > 1 ||
       (bindings.length === 1 && activeChangeId === null) ||
-      bindings.some((b) => b.state !== 'explore')
+      bindings.some((b) => (b.latestRunRef ? b.state !== 'active' : b.state !== 'explore'))
     )
       throw new MendiError('invalid-record', '产品记录超出首次 Open / 首个 Change 的支持范围。');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(text(manifest.openedOn, 'openedOn')))
       throw new MendiError('invalid-record', 'openedOn 必须是日期。');
+    const binding = bindings[0];
+    if (binding?.latestRunRef) {
+      const batch = object(batches[0], '当前批次');
+      const firstRun = text(batch.firstRun, 'firstRun');
+      if (
+        !/^\d{3,}$/.test(firstRun) ||
+        Number(firstRun) < 1 ||
+        String(Number(firstRun)).padStart(3, '0') !== firstRun ||
+        batch.id !== `${firstRun}-changes` ||
+        batch.id !== binding.batchId ||
+        batch.runsRef !== `.mendi/runs/${index.id}/${batch.id}` ||
+        !Array.isArray(batch.changeIds) ||
+        batch.changeIds.length !== 1 ||
+        batch.changeIds[0] !== binding.changeId ||
+        !binding.latestRunRef.startsWith(`${batch.runsRef}/${binding.changeId}/`)
+      )
+        throw new MendiError('invalid-record', '当前批次、Run 引用与 binding 不一致。');
+    } else if (
+      batches.length ||
+      (bindings.length &&
+        object((manifest.changeBindings as unknown[])[0], 'binding').batchId !== undefined)
+    )
+      throw new MendiError('invalid-record', '无当前 Run 不应存在产品批次关联。');
   } else {
     const next = object(manifest.next, '人工 next');
     text(next.action, 'next.action');

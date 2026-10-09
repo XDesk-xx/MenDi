@@ -1,0 +1,7 @@
+首次准备执行：
+pnpm exec biome format --write scripts/proofs/mvp-d01-b-explore.ts
+pnpm typecheck:scripts
+node scripts/proofs/mvp-d01-b-explore.ts --output .mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-001
+
+格式与脚本类型检查通过。proof 在创建结果目录时失败：ENOENT，artifacts 父目录尚未建立；尚未运行任何实验子进程，也未生成 proof-001 结果。
+正常准备修复：先创建输出父目录，再独占创建新的结果目录；仍拒绝覆盖已有结果。未为该准备错误另建 Run。

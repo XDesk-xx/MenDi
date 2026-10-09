@@ -102,6 +102,18 @@ test('人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写', () 
   const historical = snapshot(root);
   assert.equal(json(['next', '--project', root], parent, env).next.authorRunRef, '../outside');
   assert.deepEqual(snapshot(root), historical);
+  for (const args of [
+    ['action', 'start', '--change', 'proof-entry', '--type', 'explore'],
+    ['action', 'continue', '--action', 'proof-entry-001-explore'],
+    ['run', 'save', '--run', 'missing.md', '--body', 'missing.md'],
+    ['run', 'submit', '--run', 'missing.md', '--outcome', 'complete', '--result', '说明'],
+  ])
+    assert.equal(
+      json([...args, '--project', root, '--role', 'author', '--actor', 'one'], parent, env, 1).error
+        .code,
+      'manual-state-read-only',
+    );
+  assert.deepEqual(snapshot(root), historical);
 });
 
 function manualTarget(folder: string) {
@@ -190,6 +202,10 @@ test('人工归档交接在旧目录缺失时只读查询，不调用活动 stat
     assert.deepEqual(snapshot(root), before);
   }
   assert.ok(!fs.existsSync(path.join(root, 'openspec/changes/proof-entry')));
+  const human = cli(['status', '--project', root], parent, env);
+  assert.equal(human.status, 0);
+  assert.ok(human.stdout.includes('已归档、当前无活动 Change'));
+  assert.deepEqual(snapshot(root), before);
   // Local handoff remains readable without treating archive contents as proof input.
   assert.ok(!fs.existsSync(path.join(root, records.manifest.changeBindings[0].changeRef)));
   const archive = path.join(root, records.manifest.changeBindings[0].changeRef);

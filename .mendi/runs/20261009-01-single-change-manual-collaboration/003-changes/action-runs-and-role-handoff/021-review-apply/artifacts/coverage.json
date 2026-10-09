@@ -1,0 +1,278 @@
+{
+  "mode": "delegate",
+  "total_files": 41,
+  "reviewed_files": 15,
+  "skipped_files": 26,
+  "coverage_rate": 36.59,
+  "accounted_rate": 100,
+  "files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/change-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/change-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-002/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/artifacts/proof/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/allocation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/validation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 / 019 已审核的 Explore 与方案结果，本轮实现不修改这些历史材料。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/allocation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/apply-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/final-commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/validation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "Author 工具输出留作历史；本轮独立执行 check、完整测试与 strict validate，不以旧输出代替验证。"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/.openspec.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-b-explore.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "沿用 017 已独立重放的 Explore 原型；本轮审阅实际产品实现和测试。"
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    },
+    {
+      "path": "tests/action-support.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": null
+    }
+  ],
+  "supplemental_reviewed": [
+    "README.md",
+    "openspec/changes/action-runs-and-role-handoff/proposal.md",
+    "openspec/changes/action-runs-and-role-handoff/design.md",
+    "openspec/changes/action-runs-and-role-handoff/tasks.md",
+    "openspec/changes/action-runs-and-role-handoff/specs/action-runs/spec.md",
+    "openspec/changes/action-runs-and-role-handoff/specs/delivery-workspace/spec.md",
+    "tests/query.test.ts",
+    "tests/action-cli.test.ts",
+    "tests/action-write.test.ts",
+    "tests/actions.test.ts",
+    "tests/methods-and-numbers.test.ts",
+    "tests/fixtures/action-writer.ts",
+    "skills/actions/apply/SKILL.md",
+    "skills/actions/explore/SKILL.md",
+    "skills/actions/propose/SKILL.md",
+    "skills/actions/review-apply/SKILL.md",
+    "skills/actions/review-explore/SKILL.md",
+    "skills/actions/review-propose/SKILL.md",
+    "skills/tools/openspec/SKILL.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md"
+  ]
+}

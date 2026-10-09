@@ -1,0 +1,10 @@
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+Checked 31 files in 16ms. No fixes applied.
+$ biome lint src scripts tests
+Checked 31 files in 16ms. No fixes applied.
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json
+tests/action-write.test.ts(192,55): error TS2339: Property 'role' does not exist on type '{ role: string; action: string; status: string; reason: string; source: string; executable: boolean; } | { source: string; executable: boolean; action?: undefined; role?: undefined; reason?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'role' does not exist on type '{ action: string; source: string; executable: boolean; reason: string; }'.
+[ELIFECYCLE] Command failed with exit code 2.
+[ELIFECYCLE] Command failed with exit code 2.
