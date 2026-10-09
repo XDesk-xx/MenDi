@@ -15,6 +15,16 @@ export type ActionType = (typeof actionTypes)[number];
 export type Role = 'author' | 'reviewer';
 export type Phase = 'explore' | 'propose' | 'apply';
 export type Verdict = 'approved' | 'changes-requested' | 'rejected';
+export interface OwnerDecision {
+  resolution: 'handoff' | 'revise';
+  role: 'owner';
+  actorId: string;
+  reason: string;
+  sourceRunRef: string;
+  targetRole: Role;
+  targetActorId: string;
+  phase: 'explore' | 'propose';
+}
 export interface RunRecord {
   formatVersion: 1;
   recordingMode: 'product';
@@ -33,6 +43,7 @@ export interface RunRecord {
   authorRunRef?: string;
   revisesRunRef?: string;
   verdict?: Verdict;
+  ownerDecision?: OwnerDecision;
 }
 export function actionDefinition(value: unknown) {
   if (!(actionTypes as readonly unknown[]).includes(value))
@@ -138,6 +149,34 @@ export function parseRun(
       throw new MendiError('invalid-run', 'Author 或未完成审核不能给 verdict。', { ref });
   } else if (data.outcome !== undefined || data.result !== undefined || data.verdict !== undefined)
     throw new MendiError('invalid-run', 'draft 不携带正式提交结果。', { ref });
+  if (data.ownerDecision !== undefined) {
+    const decision = object(data.ownerDecision, 'Owner 决策');
+    const sourceRunRef = text(decision.sourceRunRef, 'Owner 直接来源');
+    const source = runLocation(sourceRunRef, deliveryId, changeId);
+    if (
+      !['handoff', 'revise'].includes(String(decision.resolution)) ||
+      decision.role !== 'owner' ||
+      decision.targetRole !== record.role ||
+      decision.targetActorId !== record.actorId ||
+      decision.phase !== definition.phase ||
+      definition.phase === 'apply' ||
+      source.number >= location.number ||
+      source.phase !== definition.phase ||
+      (decision.resolution === 'handoff' && source.type !== definition.type) ||
+      (decision.resolution === 'revise' && (!source.review || !definition.revision))
+    )
+      throw new MendiError('invalid-run', 'Owner 决策与接收 Run 不一致。', { ref });
+    record.ownerDecision = {
+      resolution: decision.resolution as OwnerDecision['resolution'],
+      role: 'owner',
+      actorId: text(decision.actorId, 'Owner 标识'),
+      reason: text(decision.reason, 'Owner 原因'),
+      sourceRunRef,
+      targetRole: record.role,
+      targetActorId: record.actorId,
+      phase: definition.phase as 'explore' | 'propose',
+    };
+  }
   return record;
 }
 export function actionNext(record: RunRecord, ref: string) {

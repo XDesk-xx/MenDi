@@ -1,0 +1,30 @@
+{
+  "archivedTo": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-003-explore-proof-and-proposal-review",
+  "archiveOrdinal": 3,
+  "activeDirectoryAbsent": true,
+  "nativeIntermediateAbsent": true,
+  "metadataAndExploreBytesUnchanged": true,
+  "specs": [
+    {
+      "capability": "action-runs",
+      "requirements": 13,
+      "scenarios": 38,
+      "allDeltaBlocksMatch": true,
+      "purposeAndUntouchedRequirementsPreserved": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirements": 11,
+      "scenarios": 36,
+      "allDeltaBlocksMatch": true,
+      "purposeAndUntouchedRequirementsPreserved": true
+    },
+    {
+      "capability": "project-entry",
+      "requirements": 6,
+      "scenarios": 19,
+      "allDeltaBlocksMatch": true,
+      "purposeAndUntouchedRequirementsPreserved": true
+    }
+  ]
+}

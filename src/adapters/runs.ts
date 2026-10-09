@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { parse, stringify } from 'yaml';
 import { managedPath } from './paths.ts';
 import { errorInfo, MendiError } from '../core/errors.ts';
-import { parseRun, type RunRecord } from '../core/actions.ts';
+import { parseRun, runLocation, type RunRecord } from '../core/actions.ts';
 import type { Workspace } from '../core/records.ts';
 
 export interface RunDocument {
@@ -18,6 +18,7 @@ export function readRun(
   changeId: string,
 ): RunDocument {
   const file = managedPath(root, ref);
+  runLocation(ref, deliveryId, changeId);
   try {
     const source = fs.readFileSync(file, 'utf8');
     const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/.exec(source);

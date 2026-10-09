@@ -244,6 +244,12 @@ test('两个真实子进程 Action 写入竞争只允许一个编号，不删除
   const lock = path.join(root, '.mendi/write.lock');
   const owner = fs.readFileSync(lock);
   try {
+    const beforeDiagnosis = snapshot(root);
+    const diagnosis = invoke(['workspace', 'diagnose']);
+    assert.equal(diagnosis.lock.pid, writer.pid);
+    assert.equal(diagnosis.lock.liveness, 'alive');
+    assert.equal(diagnosis.blockedByLock, true);
+    assert.deepEqual(snapshot(root), beforeDiagnosis);
     assert.equal(
       invoke(
         [

@@ -1,0 +1,19 @@
+{
+  "node": "v22.23.2",
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "sandbox": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-c-explore-clJz46",
+  "cases": [],
+  "passed": 0,
+  "total": 8,
+  "observations": [],
+  "failure": {
+    "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'run-save-or-submit'\n- 'save-or-submit'\n"
+  },
+  "limitations": [
+    "fixture verdicts are not independent review of this Change",
+    "status outage is injected at ProcessRunner; version/list and all normal CLI paths are real",
+    "candidate local save exists only in this proof script",
+    "fault observers are controlled exceptions, not arbitrary power-loss durability",
+    "no Owner recovery/lock disposition product command is implemented or validated"
+  ]
+}

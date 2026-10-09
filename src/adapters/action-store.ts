@@ -65,6 +65,7 @@ export function createRun(
   seed: Omit<RunRecord, 'runNumber' | 'actionId'> & { actionId?: string },
   written: string[],
   observe?: WriteObserver,
+  initialBody = '',
 ) {
   const allocation = scanRunNumbers(root, workspace.id);
   const number = String(allocation.number).padStart(3, '0');
@@ -84,7 +85,7 @@ export function createRun(
   const directory = path.dirname(managedPath(root, ref));
   fs.mkdirSync(directory);
   written.push(directory);
-  const content = renderRun(header, '');
+  const content = renderRun(header, initialBody);
   writeExclusive(root, ref, content, written);
   observe?.('run-written', managedPath(root, ref));
   const manifest = {

@@ -49,7 +49,7 @@ node dist/drivers/cli.js next --project D:\work\target --json
 
 ```powershell
 $draft = node dist/drivers/cli.js action start --project D:\work\target --change example-change --type explore --role author --actor author-session-1 --tool openspec --json | ConvertFrom-Json
-node dist/drivers/cli.js run save --project D:\work\target --run $draft.run.ref --role author --actor author-session-1 --body D:\work\notes\explore.md --json
+node dist/drivers/cli.js run save --project D:\work\target --run $draft.run.ref --role author --actor author-session-1 --body D:\work\notes\work-notes.md --json
 node dist/drivers/cli.js run submit --project D:\work\target --run $draft.run.ref --role author --actor author-session-1 --outcome continuing --result "关键 proof 已完成，继续分析" --json
 $continued = node dist/drivers/cli.js action continue --project D:\work\target --action $draft.run.actionId --role author --actor author-session-1 --json | ConvertFrom-Json
 node dist/drivers/cli.js run save --project D:\work\target --run $continued.run.ref --role author --actor author-session-1 --body D:\work\notes\explore-complete.md --json
@@ -68,7 +68,45 @@ Reviewer 可先提交 `continuing`，此时不填 verdict；再以同 actionId �
 
 approved 后显式开始对应下一阶段，apply approved 只提示 Archive 边界。changes-requested 后用 `revise-<phase> --revises <明确 Author Run>`；Owner 范围内主动局部修订也可针对当前完成 Author 或当前 Review 固定的 Author。修订生成新 actionId，取代当前批准入口，再交独立 Review；旧 verdict 不改。rejected 停 Owner 决策，CLI 不自行续开。
 
-draft 可以反复 save，不分配新编号；submit 要求正文和 result 非空。submitted 永远不允许 save / 重提，只有 continuing 可 continue。body 相对于目标根或使用绝对路径，可在目标外，输入文件不被改写。写入仅支持 product；manual-bootstrap 的四类命令全部拒绝。
+draft 可以反复 save，不分配新编号；submit 要求正文和 result 非空。submitted 永远不允许 save / 重提，只有 continuing 可 continue。body 相对于目标根或使用绝对路径，可在目标外，输入文件不被改写。写入仅支持 product；manual-bootstrap 的所有 Action / Run 写命令均拒绝。
+
+save 只读取本地必要输入，不启动上游。`--openspec-bin` 仍接受但忽略，JSON 明确 `executionMode:local-only`、`openspec:null`、`upstreamAccess:not-required`；人读输出明确上游未访问。固定入口缺失、版本错误或 status 故障时可存 draft 说明，正式 submit / continue 仍拒绝。Reviewer 的固定 Author 缺失时也能存说明，不能提交审核结论。校验拒绝或替换前失败保持原正文；替换后读回失败可能已改变 draft，保留实际正文、锁和错误，不回滚，任何情况均不改旧 submitted Run。
+
+| 操作 | 必要输入 |
+|---|---|
+| save | 有效本地配置、入口 / manifest、活动路径、当前 draft / ref / role / actor、明确正文、独占写入和读回 |
+| start / continue / resolve | 实际上游 / status、当前工作和所选方法；Review / revise 另读固定完整 Author |
+| submit | 上游 / status、当前 draft、正文 / result / outcome；Review 另读固定 Author 与合法 verdict |
+| instructions | 上游、当前 Action / phase、显式 artifact 指引；不读取历史 Owner 来源正文 |
+| diagnose | 本地配置 / 入口 / manifest、锁、当前 product Run、可选显式同 Change 占号 |
+
+## 阶段指引与 Owner 处置
+
+```powershell
+node dist/drivers/cli.js action instructions --project D:\work\target --action $draft.run.actionId --artifact proposal --json
+```
+
+Explore（含 revise / review）只请求 proposal 背景，Propose 支持 proposal / specs / design / tasks；Apply 尚不支持此入口。返回真实 instruction、template、输出位置、直接 dependencies 及可选 context / rules；specs/**/*.md 是模式，不是单个文件。先读 done 依赖实际内容，按 false 的必要依赖补输入，说明当前约束如何影响范围与产物。指引不要求所有 artifact ready，也不生成文件、Run 或 verdict。Explore 摘要进 Run，原始输出进 artifacts / 受控位置，不新建 explore.md；旧受审文件保持原样。
+
+以下仅在 Owner 原始消息明确授权相应处置后执行，actor / role 参数只是声明，没有真人身份认证。
+
+```powershell
+node dist/drivers/cli.js action resolve --project D:\work\target --run $draft.run.ref --role owner --actor owner-session --resolution handoff --to-role author --to-actor author-session-2 --reason "未完成工作交给接收者" --json
+node dist/drivers/cli.js action resolve --project D:\work\target --run $rejectedReviewRef --role owner --actor owner-session --resolution revise --to-role author --to-actor author-session-2 --reason "要求同阶段修订" --json
+```
+
+handoff 仅允许未完成 Explore / Propose Author 或 Reviewer，必须同角色、不同 actor。新 draft 保持 Action / 方法 / 工具与固定对象，复制待继续笔记，不继承 verdict / result / outcome；Reviewer 重新独立检查，不要求 Author 重做。相同 actor 普通继续无需交接。revise 仅处理当前 rejected 的同阶段 Author，新 Action / 空 draft 直接关联被拒绝 Author；旧 verdict 保留，完成后仍须独立 Review。Apply、跨阶段回退、完整工作 handoff 或非 rejected resolve revise 拒绝。ownerDecision 内嵌接收 Run，仅保存最新直接决策，普通查询不读历史来源正文。
+
+## 只读故障现场诊断
+
+```powershell
+node dist/drivers/cli.js workspace diagnose --project D:\work\target --json
+node dist/drivers/cli.js workspace diagnose --project D:\work\target --run $explicitReservationRef --json
+```
+
+诊断不访问上游、不接受工具参数，也不开放普通 query / writer 的忽略锁模式。报告锁 token / pid / operation、进程 alive / not-found / unknown、实际 current / 显式 reservation、相关临时路径、必要错误和读中变化。manual-bootstrap 只报告入口 / manifest / 锁，不解析人工 Run，不支持 --run。错误或变化退出 1；成功只是可读观察，pid 存在不证明原写者身份，pid 不存在不证明无任务占用。没有 unlock、kill、ignore-lock 或自动恢复命令。
+
+人工处置另需 Owner 对该规范绝对目标的明确授权。核对同一 token / operation、实际 manifest / Run 和已写路径，停止或协调全部目标写者并确认任务与文件无占用；存活、复用、unknown、无法确认或读中变化时停止。排除并发期间再次核对同 token 与正式文件，仅可解除确认的残留锁；保留 Run、临时文件和占号，不修指针、不重提、不自动关联。之后只读查询：已提交按真实 next 后续，未关联占号由下次合法分配跳过，处置记当前工作记录。
 
 所有分配在同项目锁下，扫描同 Delivery 约定层级的实际 Run 目录，不读历史头部。批次复用首个 Run 编号，批次本身不占号；跨操作和 Change 连续增长、至少三位，超过 999 继续为 1000。空 Run 目录仍占号并报告，重复实际号拒绝，artifacts 内数字目录不参与。首个 Run 可以是：
 
@@ -110,6 +148,6 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-当前协作记录：MVP-D01 保持 open；MVP-D01-A、MVP-D01-B 均已归档，累计完成 Change 为 2，当前无活动 Change。B 位于 [2026-10-10-002-action-runs-and-role-handoff](openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff/proposal.md)，[022 Author Archive](.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md) 保存原生同步、实际归档和查询读回；020 / 021 的实施与独立批准保持原记录。独立 check、构建和 64 项回归仍适用，三份主规格 strict validate 通过。A 的本地 Change checkpoint 仍为 `8a702ff`，本次归档未执行 Git。等待 Owner 明确下一 Change 的目标与范围；当前交接见 [Delivery manifest](.mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json)。
+当前协作记录：MVP-D01 保持 open；A、B、C 已归档，累计完成 Change 为 3，B 的本地 Change checkpoint 为 `c1d0251`。MVP-D01-C [explore-proof-and-proposal-review](openspec/changes/archive/2026-10-10-003-explore-proof-and-proposal-review/proposal.md) 已由 028 独立 Review Apply 批准，并在 [029 Archive](.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/029-archive/run.md) 完成原生规格同步与编号 003 归档；3/3 主规格 strict validate 通过。028 的独立 check、build 和 84/84 回归继续适用。等待 Owner 明确后续操作。今后 Explore 分析 / proof 摘要统一进 Run，不新建 Change 级 explore.md；已受审旧文件原样保留。旧 Run、编号与 verdict 保留；当前交接见 [Delivery manifest](.mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json)。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。本次复用 `003-changes`，整个 Delivery 连续编号；批次不占号，Reopen 后再建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

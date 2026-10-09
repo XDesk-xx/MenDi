@@ -1,0 +1,697 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 104,
+  "reviewable_count": 45,
+  "excluded_count": 59,
+  "total_insertions": 13390,
+  "total_deletions": 72,
+  "reviewable_files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "insertions": 18,
+      "deletions": 9
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 3
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "status": "modified",
+      "insertions": 87,
+      "deletions": 3
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "insertions": 179,
+      "deletions": 2
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "insertions": 39,
+      "deletions": 0
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 37,
+      "deletions": 14
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "insertions": 84,
+      "deletions": 34
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 67,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/next-readback.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-001/commands.json",
+      "status": "added",
+      "insertions": 81,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-002/commands.json",
+      "status": "added",
+      "insertions": 928,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "insertions": 442,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-003/commands.json",
+      "status": "added",
+      "insertions": 928,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-003/report.json",
+      "status": "added",
+      "insertions": 473,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/status-readback.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions-current.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions-final.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/proof/commands.json",
+      "status": "added",
+      "insertions": 928,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "insertions": 473,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 75,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-design-final.json",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-proposal-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-specs.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-tasks.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/next-readback.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/status-before-tasks.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/status-readback.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/strict-validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/upstream-status-planned.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/apply-instructions-final.json",
+      "status": "added",
+      "insertions": 152,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/observations.json",
+      "status": "added",
+      "insertions": 150,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/rebuild-proof/commands.json",
+      "status": "added",
+      "insertions": 928,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/rebuild-proof/report.json",
+      "status": "added",
+      "insertions": 406,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/strict-validate-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/strict-validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/task-progress.json",
+      "status": "added",
+      "insertions": 242,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "status": "added",
+      "insertions": 678,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "added",
+      "insertions": 175,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": "AGENTS.md",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 41,
+      "deletions": 3,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "mendi-foundation-and-delivery-roadmap.md",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/explore/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/propose/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-explore/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-propose/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/tools/openspec/SKILL.md",
+      "status": "modified",
+      "insertions": 11,
+      "deletions": 1,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/action-cli.test.ts",
+      "status": "modified",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/check.txt",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/related-regression.txt",
+      "status": "added",
+      "insertions": 172,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/run.md",
+      "status": "added",
+      "insertions": 81,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/build.txt",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/check.txt",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/run.md",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/check.txt",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/run.md",
+      "status": "added",
+      "insertions": 57,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/026-review-propose/run.md",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/commands/commands-37896.jsonl",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression-commands/commands-32264.jsonl",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression-commands/commands-35672.jsonl",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression-commands/commands-37820.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression-commands/commands-4800.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression-commands/commands-540.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/final-regression.log",
+      "status": "added",
+      "insertions": 516,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/focused.log",
+      "status": "added",
+      "insertions": 118,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/design.md",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/proposal.md",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/001-explore/run.md",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/002-explore/run.md",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/003-review-explore/run.md",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/004-review-explore/run.md",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/005-revise-explore/run.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/006-review-explore/run.md",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/007-propose/run.md",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/008-review-propose/run.md",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/009-revise-propose/run.md",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/runs/010-review-propose/run.md",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/specs/bounded-proof/spec.md",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/tasks.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression-commands/commands-29664.jsonl",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression-commands/commands-40028.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression-commands/commands-41368.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression-commands/commands-44020.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression-commands/commands-4996.jsonl",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 504,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/run.md",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/design.md",
+      "status": "added",
+      "insertions": 140,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/explore.md",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/proposal.md",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 99,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "insertions": 67,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/specs/project-entry/spec.md",
+      "status": "added",
+      "insertions": 59,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/tasks.md",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/diagnosis.test.ts",
+      "status": "added",
+      "insertions": 178,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/action-resolver.ts",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/owner-resolution.test.ts",
+      "status": "added",
+      "insertions": 286,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/planning-cli.test.ts",
+      "status": "added",
+      "insertions": 444,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/planning-inputs.test.ts",
+      "status": "added",
+      "insertions": 239,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

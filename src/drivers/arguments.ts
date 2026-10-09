@@ -9,6 +9,9 @@ export interface Arguments {
     | 'next'
     | 'action-start'
     | 'action-continue'
+    | 'action-instructions'
+    | 'action-resolve'
+    | 'workspace-diagnose'
     | 'run-save'
     | 'run-submit';
   json: boolean;
@@ -26,8 +29,14 @@ export function parseArguments(args: string[]): Arguments {
   } else if (args[0] === 'change' && args[1] === 'bind') {
     command = 'change-bind';
     consumed = 2;
-  } else if (args[0] === 'action' && (args[1] === 'start' || args[1] === 'continue')) {
-    command = args[1] === 'start' ? 'action-start' : 'action-continue';
+  } else if (args[0] === 'workspace' && args[1] === 'diagnose') {
+    command = 'workspace-diagnose';
+    consumed = 2;
+  } else if (
+    args[0] === 'action' &&
+    ['start', 'continue', 'instructions', 'resolve'].includes(args[1])
+  ) {
+    command = `action-${args[1]}` as Arguments['command'];
     consumed = 2;
   } else if (args[0] === 'run' && (args[1] === 'save' || args[1] === 'submit')) {
     command = args[1] === 'save' ? 'run-save' : 'run-submit';
@@ -38,7 +47,11 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
-    'openspec-bin',
+    ...(command === 'workspace-diagnose' ? [] : ['openspec-bin']),
+    ...(command === 'workspace-diagnose' ? ['run'] : []),
+    ...(command === 'action-resolve'
+      ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason']
+      : []),
     ...(command === 'delivery-open'
       ? ['id', 'title', 'scope', 'change', 'slot']
       : command === 'change-bind'
@@ -47,11 +60,13 @@ export function parseArguments(args: string[]): Arguments {
           ? ['change', 'type', 'role', 'actor', 'author-run', 'revises', 'tool']
           : command === 'action-continue'
             ? ['action', 'role', 'actor']
-            : command === 'run-save'
-              ? ['run', 'role', 'actor', 'body']
-              : command === 'run-submit'
-                ? ['run', 'role', 'actor', 'outcome', 'result', 'verdict']
-                : []),
+            : command === 'action-instructions'
+              ? ['action', 'artifact']
+              : command === 'run-save'
+                ? ['run', 'role', 'actor', 'body']
+                : command === 'run-submit'
+                  ? ['run', 'role', 'actor', 'outcome', 'result', 'verdict']
+                  : []),
   ]);
   const values: Record<string, string> = {};
   let json = false;
@@ -71,6 +86,9 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'action-resolve'
+      ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason']
+      : []),
     ...(command === 'delivery-open'
       ? ['id', 'title', 'scope']
       : command === 'change-bind'
@@ -79,11 +97,13 @@ export function parseArguments(args: string[]): Arguments {
           ? ['change', 'type', 'role', 'actor']
           : command === 'action-continue'
             ? ['action', 'role', 'actor']
-            : command === 'run-save'
-              ? ['run', 'role', 'actor', 'body']
-              : command === 'run-submit'
-                ? ['run', 'role', 'actor', 'outcome', 'result']
-                : []),
+            : command === 'action-instructions'
+              ? ['action', 'artifact']
+              : command === 'run-save'
+                ? ['run', 'role', 'actor', 'body']
+                : command === 'run-submit'
+                  ? ['run', 'role', 'actor', 'outcome', 'result']
+                  : []),
   ];
   for (const key of required) if (!values[key]) throw usage(`缺少 --${key}。`);
   if (command === 'delivery-open' && Boolean(values.change) !== Boolean(values.slot))
@@ -104,10 +124,13 @@ mendi status --project <项目根>
 mendi next --project <项目根>
 mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
 mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
+mendi action instructions --project <项目根> --action <当前 Action ID> --artifact <proposal|specs|design|tasks>
+mendi action resolve --project <项目根> --run <当前 Run> --role owner --actor <Owner 标识> --resolution <handoff|revise> --to-role <author|reviewer> --to-actor <接收标识> --reason <原因>
+mendi workspace diagnose --project <项目根> [--run <同 Change 占号 Run>]
 mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
 mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
 
-项目命令支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口> 和 --json。
+项目命令支持 --json；除本地 diagnose 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
 --project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
 首次 Open 要求目标无 .mendi；首版只关联第一个既有 Change。
 阶段：explore / propose / apply，review-<阶段>，revise-<阶段>。

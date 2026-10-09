@@ -2,6 +2,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { MendiError, errorInfo, identifier, object, text } from '../core/errors.ts';
+import { managedPath } from './paths.ts';
+
+export const planningArtifacts = ['proposal', 'specs', 'design', 'tasks'] as const;
+export type PlanningArtifact = (typeof planningArtifacts)[number];
+export interface ArtifactInstructions {
+  root: UpstreamRoot;
+  changeName: string;
+  artifactId: PlanningArtifact;
+  schemaName: 'spec-driven';
+  instruction: string;
+  template: string;
+  outputPath: string;
+  resolvedOutputPath: string;
+  dependencies: { id: PlanningArtifact; done: boolean; path: string; description?: string }[];
+  context?: string;
+  rules?: string[];
+}
 
 export const selectedEntry =
   'D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js';
@@ -210,10 +227,68 @@ export class OpenSpec {
     };
   }
 
-  instructions(changeId: string): { context?: string; rules?: string[] } {
+  instructions(changeId: string, artifact: string = 'proposal'): ArtifactInstructions {
+    if (!(planningArtifacts as readonly string[]).includes(artifact))
+      throw new MendiError('invalid-artifact', '不支持该规划 artifact。', { artifact });
     this.status(changeId);
-    const value = this.json(['instructions', 'proposal', '--change', changeId, '--json']);
-    this.readRoot(value.root);
+    const value = this.json(['instructions', artifact, '--change', changeId, '--json']);
+    const root = this.readRoot(value.root);
+    if (
+      value.changeName !== changeId ||
+      value.artifactId !== artifact ||
+      (value.schemaName !== undefined && value.schemaName !== 'spec-driven')
+    )
+      throw this.protocol('instructions 身份与请求不一致。');
+    let instruction: string, template: string, outputPath: string, resolvedOutputPath: string;
+    let dependencies: ArtifactInstructions['dependencies'];
+    try {
+      instruction = text(value.instruction, 'instruction');
+      template = text(value.template, 'template');
+      outputPath = text(value.outputPath, 'outputPath');
+      resolvedOutputPath = text(value.resolvedOutputPath, 'resolvedOutputPath');
+      const changeRoot = managedPath(this.projectRoot, `openspec/changes/${changeId}`);
+      const checkedPattern = (pattern: string) => {
+        const parts = pattern.split(/[\\/]/);
+        // Only the public specs output pattern is a glob; validate its static prefix.
+        if (pattern.includes('*') && pattern !== 'specs/**/*.md')
+          throw new Error('不支持的输出 pattern');
+        const prefix = parts.slice(
+          0,
+          parts.findIndex((p) => p.includes('*')),
+        );
+        managedPath(changeRoot, pattern.includes('*') ? prefix.join('/') : pattern);
+        return path.resolve(changeRoot, pattern);
+      };
+      const expected = checkedPattern(outputPath);
+      if (
+        !path.isAbsolute(resolvedOutputPath) ||
+        path.relative(expected, resolvedOutputPath) !== ''
+      )
+        throw new Error('resolvedOutputPath 与输出不一致');
+      if (!Array.isArray(value.dependencies)) throw new Error('dependencies 必须是数组');
+      dependencies = value.dependencies.map((item) => {
+        const dep = object(item, 'dependency');
+        if (
+          !(planningArtifacts as readonly unknown[]).includes(dep.id) ||
+          typeof dep.done !== 'boolean'
+        )
+          throw new Error('dependency 身份或 done 不合法');
+        const depPath = text(dep.path, 'dependency.path');
+        checkedPattern(depPath);
+        if (dep.description !== undefined && typeof dep.description !== 'string')
+          throw new Error('dependency.description 必须是字符串');
+        return {
+          id: dep.id as PlanningArtifact,
+          done: dep.done,
+          path: depPath,
+          ...(typeof dep.description === 'string' ? { description: dep.description } : {}),
+        };
+      });
+      if (new Set(dependencies.map((d) => d.id)).size !== dependencies.length)
+        throw new Error('dependency ID 重复');
+    } catch (error) {
+      throw this.protocol('instructions 必要内容或路径不合法。', errorInfo(error));
+    }
     if (value.context !== undefined && typeof value.context !== 'string')
       throw this.protocol('instructions.context 必须是字符串。');
     if (
@@ -222,6 +297,15 @@ export class OpenSpec {
     )
       throw this.protocol('instructions.rules 必须是字符串数组。');
     return {
+      root,
+      changeName: changeId,
+      artifactId: artifact as PlanningArtifact,
+      schemaName: 'spec-driven',
+      instruction,
+      template,
+      outputPath,
+      resolvedOutputPath,
+      dependencies,
       ...(typeof value.context === 'string' ? { context: value.context } : {}),
       ...(Array.isArray(value.rules) ? { rules: value.rules as string[] } : {}),
     };

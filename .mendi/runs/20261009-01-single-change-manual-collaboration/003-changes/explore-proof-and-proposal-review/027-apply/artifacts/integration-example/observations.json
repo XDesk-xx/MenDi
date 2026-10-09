@@ -1,0 +1,150 @@
+{
+  "fixture": true,
+  "source": "tests/planning-cli.test.ts",
+  "targetRootTransient": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-QbGEnL\\minimal-project",
+  "limitation": "实验 actor、Owner 声明和 verdict，不是当前 Change 独立批准；受控输入由测试源码重建。",
+  "instructions": [
+    {
+      "artifact": "proposal",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "说明范围、失败行为和限制。"
+      ],
+      "dependencies": [],
+      "outputPath": "proposal.md"
+    },
+    {
+      "artifact": "proposal",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "说明范围、失败行为和限制。"
+      ],
+      "dependencies": [],
+      "outputPath": "proposal.md"
+    },
+    {
+      "artifact": "tasks",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "包含缺工具失败验证。"
+      ],
+      "dependencies": [
+        {
+          "id": "specs",
+          "done": false,
+          "path": "specs/**/*.md",
+          "description": "Detailed specifications for the change"
+        },
+        {
+          "id": "design",
+          "done": false,
+          "path": "design.md",
+          "description": "Technical design document with implementation details"
+        }
+      ],
+      "outputPath": "tasks.md"
+    },
+    {
+      "artifact": "specs",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "缺工具必须失败，不自动安装。"
+      ],
+      "dependencies": [
+        {
+          "id": "proposal",
+          "done": false,
+          "path": "proposal.md",
+          "description": "Initial proposal document outlining the change"
+        }
+      ],
+      "outputPath": "specs/**/*.md"
+    },
+    {
+      "artifact": "proposal",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "说明范围、失败行为和限制。"
+      ],
+      "dependencies": [],
+      "outputPath": "proposal.md"
+    },
+    {
+      "artifact": "specs",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "缺工具必须失败，不自动安装。"
+      ],
+      "dependencies": [
+        {
+          "id": "proposal",
+          "done": true,
+          "path": "proposal.md",
+          "description": "Initial proposal document outlining the change"
+        }
+      ],
+      "outputPath": "specs/**/*.md"
+    },
+    {
+      "artifact": "design",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "记录真实依赖与输入边界。"
+      ],
+      "dependencies": [
+        {
+          "id": "proposal",
+          "done": true,
+          "path": "proposal.md",
+          "description": "Initial proposal document outlining the change"
+        }
+      ],
+      "outputPath": "design.md"
+    },
+    {
+      "artifact": "tasks",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "包含缺工具失败验证。"
+      ],
+      "dependencies": [
+        {
+          "id": "specs",
+          "done": true,
+          "path": "specs/**/*.md",
+          "description": "Detailed specifications for the change"
+        },
+        {
+          "id": "design",
+          "done": true,
+          "path": "design.md",
+          "description": "Technical design document with implementation details"
+        }
+      ],
+      "outputPath": "tasks.md"
+    },
+    {
+      "artifact": "tasks",
+      "context": "中文产物。仅当前 Change，不自动安装工具。",
+      "rules": [
+        "包含缺工具失败验证。"
+      ],
+      "dependencies": [
+        {
+          "id": "specs",
+          "done": true,
+          "path": "specs/**/*.md",
+          "description": "Detailed specifications for the change"
+        },
+        {
+          "id": "design",
+          "done": true,
+          "path": "design.md",
+          "description": "Technical design document with implementation details"
+        }
+      ],
+      "outputPath": "tasks.md"
+    }
+  ],
+  "recordedRunCount": 10
+}

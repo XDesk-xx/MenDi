@@ -1,0 +1,28 @@
+{
+  "result": "archived",
+  "archivedChangeCount": 3,
+  "archiveOrdinal": 3,
+  "archivedTo": "openspec/changes/archive/2026-10-10-003-explore-proof-and-proposal-review",
+  "runRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/029-archive/run.md",
+  "deliveryState": "open",
+  "activeChangeId": null,
+  "openSpecActiveChanges": 0,
+  "archivedBindings": 3,
+  "upstream": null,
+  "next": {
+    "action": "delivery-next",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "029 已完成原生规格同步与累计编号 003 的归档；Delivery 保持 open，等待 Owner 明确后续操作。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "specValidation": {
+    "items": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "handoffCorrection": "handoff-correction.json",
+  "archiveRepeated": false,
+  "specSyncRepeated": false
+}

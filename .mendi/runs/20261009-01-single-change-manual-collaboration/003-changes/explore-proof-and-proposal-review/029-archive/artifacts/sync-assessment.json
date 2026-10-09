@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "capability": "action-runs",
+      "operations": [
+        {
+          "operation": "MODIFIED",
+          "name": "Draft save and immutable submission"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Stage-scoped artifact instructions"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Explicit owner resolution of blocked work"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Direct owner decision recorded in the receiving run"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Explore and proposal methods with independent review"
+        }
+      ]
+    },
+    {
+      "capability": "delivery-workspace",
+      "operations": [
+        {
+          "operation": "MODIFIED",
+          "name": "Operation-specific input checks"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Read-only interrupted workspace diagnosis"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Explicit manual lock disposition boundary"
+        }
+      ]
+    },
+    {
+      "capability": "project-entry",
+      "operations": [
+        {
+          "operation": "MODIFIED",
+          "name": "Selected external OpenSpec"
+        },
+        {
+          "operation": "MODIFIED",
+          "name": "Honest command results"
+        },
+        {
+          "operation": "ADDED",
+          "name": "Complete artifact instructions from the selected target"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "added": 7,
+    "modified": 4,
+    "removed": 0,
+    "renamed": 0
+  },
+  "archiveOrdinal": 3,
+  "native": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-explore-proof-and-proposal-review",
+  "numbered": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-003-explore-proof-and-proposal-review"
+}

@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+ok 1 - 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+  ---
+  duration_ms: 68449.6624
+  type: 'test'
+  ...
+# Subtest: CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+ok 2 - CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+  ---
+  duration_ms: 13552.9468
+  type: 'test'
+  ...
+# Subtest: 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+ok 3 - 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+  ---
+  duration_ms: 6812.9615
+  type: 'test'
+  ...
+# Subtest: 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+ok 4 - 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+  ---
+  duration_ms: 717.5057
+  type: 'test'
+  ...
+# Subtest: 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+ok 5 - 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+  ---
+  duration_ms: 189.0662
+  type: 'test'
+  ...
+# Subtest: 提交的必要内容与 verdict 规则，rejected 停止 Owner
+ok 6 - 提交的必要内容与 verdict 规则，rejected 停止 Owner
+  ---
+  duration_ms: 259.8652
+  type: 'test'
+  ...
+# Subtest: 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+ok 7 - 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+  ---
+  duration_ms: 305.9334
+  type: 'test'
+  ...
+# Subtest: Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+ok 8 - Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+  ---
+  duration_ms: 209.1156
+  type: 'test'
+  ...
+# Subtest: start 的 run-written 失败保留锁、路径与完整文件
+ok 9 - start 的 run-written 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 43.9425
+  type: 'test'
+  ...
+# Subtest: start 的 before-manifest-commit 失败保留锁、路径与完整文件
+ok 10 - start 的 before-manifest-commit 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 58.8435
+  type: 'test'
+  ...
+# Subtest: start 的 before-readback 失败保留锁、路径与完整文件
+ok 11 - start 的 before-readback 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 53.6948
+  type: 'test'
+  ...
+# Subtest: start 的 before-lock-release 失败保留锁、路径与完整文件
+ok 12 - start 的 before-lock-release 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 53.4771
+  type: 'test'
+  ...
+# Subtest: save 的 before-run-commit 失败保留现场及指针
+ok 13 - save 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 66.9571
+  type: 'test'
+  ...
+# Subtest: save 的 before-readback 失败保留现场及指针
+ok 14 - save 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 74.2286
+  type: 'test'
+  ...
+# Subtest: save 的 before-lock-release 失败保留现场及指针
+ok 15 - save 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 58.302
+  type: 'test'
+  ...
+# Subtest: submit 的 before-run-commit 失败保留现场及指针
+ok 16 - submit 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 72.9967
+  type: 'test'
+  ...
+# Subtest: submit 的 before-readback 失败保留现场及指针
+ok 17 - submit 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 80.9249
+  type: 'test'
+  ...
+# Subtest: submit 的 before-lock-release 失败保留现场及指针
+ok 18 - submit 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 82.3493
+  type: 'test'
+  ...
+# Subtest: 读回实际内容漂移与 rename 失败均不伪装成功
+ok 19 - 读回实际内容漂移与 rename 失败均不伪装成功
+  ---
+  duration_ms: 105.6851
+  type: 'test'
+  ...
+# Subtest: 实际分配跳过空占号、报告残留；重复号失败不修改现场
+ok 20 - 实际分配跳过空占号、报告残留；重复号失败不修改现场
+  ---
+  duration_ms: 178.8162
+  type: 'test'
+  ...
+# Subtest: save / submit 保留未知说明头部，无需读取所选方法正文
+ok 21 - save / submit 保留未知说明头部，无需读取所选方法正文
+  ---
+  duration_ms: 90.9759
+  type: 'test'
+  ...
+# Subtest: 真实上游 planning complete 不自动批准或推进本地 Explore
+ok 22 - 真实上游 planning complete 不自动批准或推进本地 Explore
+  ---
+  duration_ms: 4071.3323
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+ok 23 - 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+  ---
+  duration_ms: 8155.8854
+  type: 'test'
+  ...
+# Subtest: 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+ok 24 - 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+  ---
+  duration_ms: 3341.9664
+  type: 'test'
+  ...
+# Subtest: 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+ok 25 - 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+  ---
+  duration_ms: 4208.2392
+  type: 'test'
+  ...
+# Subtest: 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+ok 26 - 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+  ---
+  duration_ms: 7446.1022
+  type: 'test'
+  ...
+# Subtest: 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+ok 27 - 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+  ---
+  duration_ms: 11552.3993
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 89061.6932
