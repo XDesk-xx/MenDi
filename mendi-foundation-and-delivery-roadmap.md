@@ -128,15 +128,42 @@ target/
 │  └─ changes/
 ├─ .mendi/
 │  ├─ project.json
-│  ├─ deliveries/<delivery-id>/delivery.json
-│  └─ runs/<delivery-id>/001/
-│     ├─ run.md
-│     └─ artifacts/             # 有必要材料时才创建
+│  ├─ delivery-groups/<delivery-id>/manifest.json
+│  └─ runs/<delivery-id>/
+│     ├─ 001-delivery-open/
+│     │  ├─ run.md
+│     │  └─ artifacts/          # 有必要材料时才创建
+│     ├─ 003-changes/
+│     │  ├─ <change-a-id>/
+│     │  │  ├─ 003-explore/run.md
+│     │  │  ├─ 004-explore/run.md
+│     │  │  └─ 005-review-explore/run.md
+│     │  └─ <change-b-id>/      # 按实际执行保存后续 Run
+│     ├─ 015-delivery-full-test/run.md
+│     ├─ 016-delivery-close/run.md
+│     ├─ 017-delivery-reopen/run.md
+│     ├─ 018-changes/
+│     │  └─ <new-change-id>/
+│     │     └─ 018-explore/run.md
+│     ├─ 025-delivery-full-test/run.md
+│     └─ 026-delivery-close/run.md
 ├─ AGENTS.md
 └─ 项目源码、stories、测试和夹具
 ```
 
 每个 Delivery 的 Run 序号从 001 开始；同一 Delivery 跨 Change 和 Reopen 连续编号。编号由程序分配，恢复会话不能猜编号或覆盖旧记录。
+
+`delivery-groups/` 下每个已 Open Delivery 使用独立子目录，其 `manifest.json` 保存该 Delivery 的目标、计划槽位、实际 Change 关联与状态，不再另存重复的 Delivery manifest 或全项目 groups 汇总。未 Open 的后续 Delivery 只保留路线图规划，实际 Open 时再创建 group。
+
+以上展示布局示例，省略部分 Run；编号不是预分配，当前未激活 Change 时不提前创建 Changes 批次。
+
+Run 目录名采用 `<序号>-<操作名称>`。Delivery Open、Full Test、Close、Reopen 等操作的 Run 直接放在 `runs/<delivery-id>/` 下，彼此同级；一段 Change 工作放在同级的 `<批次首个Run序号>-changes/` 中，批次内按实际 `<change-id>` 保存该 Change 的多个 Run。OpenSpec Change 产物仍放在 `openspec/changes/`，这里仅组织执行记录。
+
+一个 Changes 批次可包含多个 Change；批次前缀复用其第一个实际 Run 的序号，例如 `003-changes/<change-id>/003-explore/`。批次目录不是 Run，不创建自己的 `run.md`，也不额外消耗序号。后续实际 Run 在整个 Delivery 内连续编号，不因进入另一个 Change 或 Reopen 而重新计数；分配编号时核对整个 Delivery 的实际 Run，不能把批次前缀当成额外 Run。
+
+Reopen 保留原 Close 和旧批次，新 Change 工作建立新批次，例如 `017-delivery-reopen/` 后的 `018-changes/`。manifest 记录已建立批次及实际 Change 关联；本轮范围与收口引用保存在相关记录中，不增加 Open / Reopen 轮次目录。分组只在实际进入新的 Change 工作批次时建立，不为每条命令或同阶段继续拆分目录；旧已归档 Change 与 Run 保持原归属。
+
+同一 Action 的多个 Run 通过记录中的 `actionId` 关联，不再增加 Action 目录。当前范围内的正常修复可更新现有工作材料，不因一次目录、引用或实现修复就新增 Action、Run 或 `run.md`。正式审核交接后的实质修订仍按实际阶段建立修订记录并保留原提交；正常修复不能用于改写旧 verdict 或执行结果。
 
 Run 最少包含：所属 Delivery / Change、Action 标识与类型、Role、使用的阶段 Skill 及必要工具指导引用、相关前序或 Author Run、工作摘要、结果、必要材料引用、未决问题和下一步。Review Run 增加 verdict 与必要 findings。机器需要的字段可放在 `run.md` 的结构化头部，正文供人阅读；具体字段在实施 Change 中确定。
 

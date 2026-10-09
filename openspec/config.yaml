@@ -8,7 +8,11 @@ context: |
   产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。
   具体规格、方案和任务在对应 OpenSpec Change 中细化。
   角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。
-  当前没有已激活或已完成的 Delivery / Change。
+  MVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。
+  当前停在 delivery checkpoint，尚未执行 Git 提交；没有已激活或已完成的 Change。
+  D02、D03 仅为计划分组；当前 CLI 产品操作尚未实现，启动记录不代表 MVP-D01-A 完成。
+  Run 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。
+  正常范围内修复不因修复本身新增 Action / Run；当前没有 Change 批次。
   Storybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。
 
 operations:

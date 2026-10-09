@@ -42,4 +42,10 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-下一项计划为 MVP-D01-A，需明确 Owner 授权后开始 Explore 与核心 proof。
+当前协作记录：MVP-D01 已由 Author 按 Owner 授权人工 Open，见 [Delivery group manifest](.mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json)、[Open Run 001](.mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md) 与 [目录修订 Run 002](.mendi/runs/20261009-01-single-change-manual-collaboration/002-revise-delivery-open/run.md)。CLI 的产品操作尚未实现，启动记录不代表 MVP-D01-A 完成。
+
+`.mendi/delivery-groups/<delivery-id>/manifest.json` 保存每个已 Open Delivery 的记录。Run 按路线图 §4.1 组织：Delivery 操作直接位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于 `.mendi/runs/<delivery-id>/<批次首个Run序号>-changes/<change-id>/<序号>-<操作名称>/`。Changes 批次与 Open、Full Test、Close、Reopen 操作目录同级；Reopen 后的新 Change 工作建立新批次。整个 Delivery 的实际 Run 连续编号，批次目录不占用额外编号。当前没有激活 Change，尚未建立批次目录。
+
+后续 Delivery 的规划保留在路线图，实际 Open 时再创建 group。当前范围内的正常修复按实际需要更新现有材料，不为每次修复新增 Action、Run 或 `run.md`。
+
+当前停在 delivery checkpoint，Git 提交尚未执行；没有激活 Change。下一项开发计划为 MVP-D01-A，需明确 Owner 授权后开始 Explore 与核心 proof。D02、D03 仅为计划分组。

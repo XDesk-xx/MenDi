@@ -1,0 +1,12 @@
+{
+  "name": "MenDi",
+  "recordingMode": "manual-bootstrap",
+  "activeDeliveryId": "20261009-01-single-change-manual-collaboration",
+  "deliveries": [
+    {
+      "id": "20261009-01-single-change-manual-collaboration",
+      "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json"
+    }
+  ],
+  "deliveryGroupsDir": ".mendi/delivery-groups"
+}
