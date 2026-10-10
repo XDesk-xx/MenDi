@@ -1,0 +1,86 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "args": [
+        "status",
+        "--project",
+        "D:\\Projects\\MenDi",
+        "--json"
+      ],
+      "exitCode": 0,
+      "deliveryId": "20261010-02-delivery-verification-and-close",
+      "state": "open",
+      "activeChangeId": null,
+      "plannedSlots": [
+        "MVP-D02-A",
+        "MVP-D02-B",
+        "MVP-D02-C"
+      ],
+      "next": {
+        "action": "delivery-checkpoint",
+        "status": "awaiting-owner-instruction",
+        "role": "author",
+        "reason": "MVP-D02 人工 Open 与三个规划槽位已记录；等待 Owner 授权 checkpoint，尚未激活 Change。",
+        "source": "manual-bootstrap",
+        "executable": false
+      },
+      "upstream": null
+    },
+    {
+      "args": [
+        "next",
+        "--project",
+        "D:\\Projects\\MenDi",
+        "--json"
+      ],
+      "exitCode": 0,
+      "deliveryId": "20261010-02-delivery-verification-and-close",
+      "state": "open",
+      "activeChangeId": null,
+      "plannedSlots": [
+        "MVP-D02-A",
+        "MVP-D02-B",
+        "MVP-D02-C"
+      ],
+      "next": {
+        "action": "delivery-checkpoint",
+        "status": "awaiting-owner-instruction",
+        "role": "author",
+        "reason": "MVP-D02 人工 Open 与三个规划槽位已记录；等待 Owner 授权 checkpoint，尚未激活 Change。",
+        "source": "manual-bootstrap",
+        "executable": false
+      },
+      "upstream": null
+    },
+    {
+      "args": [
+        "next",
+        "--project",
+        "D:\\Projects\\MenDi"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "openspec": {
+    "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "version": "1.14.1",
+    "listExitCode": 0,
+    "activeChanges": []
+  },
+  "project": {
+    "deliveryCount": 2,
+    "selectedDelivery": "20261010-02-delivery-verification-and-close",
+    "archivedChangeCount": 4
+  },
+  "previousDelivery": "closed manifest and 042 Close Run unchanged",
+  "batches": [],
+  "newRun": "001-delivery-open",
+  "writeLock": "absent",
+  "git": {
+    "diffCheck": "passed",
+    "head": "341844d18c5dbe3edc22ce0a3a8c9b8131651369",
+    "mutations": "none"
+  },
+  "rawCommands": "commands/commands-48032.jsonl"
+}
