@@ -1,0 +1,27 @@
+{
+  "name": "mendi-storybook-explore-target",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "scripts": {
+    "preview:components": "storybook dev --host 127.0.0.1 --port 6113 --ci --no-open --exact-port --disable-telemetry",
+    "verify:stories": "vitest run --project storybook",
+    "typecheck": "tsc --noEmit",
+    "inspect:browser": "node browser-proof.ts"
+  },
+  "mendi": { "tests": { "focused": "verify:stories" } },
+  "devDependencies": {
+    "@storybook/html-vite": "10.6.1",
+    "@storybook/addon-vitest": "10.6.1",
+    "@vitest/browser": "4.1.11",
+    "@vitest/browser-playwright": "4.1.11",
+    "@vitest/runner": "4.1.11",
+    "@types/node": "22.20.5",
+    "playwright": "1.60.0",
+    "storybook": "10.6.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.0",
+    "vitest": "4.1.11"
+  }
+}

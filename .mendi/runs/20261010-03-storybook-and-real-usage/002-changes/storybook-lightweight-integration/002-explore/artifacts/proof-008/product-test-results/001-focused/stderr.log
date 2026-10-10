@@ -1,0 +1,15 @@
+$ vitest run --project storybook
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |storybook (chromium)| src/Counter.stories.ts [ src/Counter.stories.ts ]
+Error: Failed to import test file D:/Projects/MenDi/.tmp/mendi-d03-a-57Pv6E/ui-target/.storybook/vitest.setup.ts
+Caused by: ReferenceError: global is not defined
+ ❯ node_modules/.pnpm/pretty-format@27.0.2/node_modules/pretty-format/build/plugins/AsymmetricMatcher.js:10:13
+ ❯ node_modules/.cache/storybook/10.6.1/c5d4e3263b920345bf5b6eaf17a04f9ca07cea6ffe906d87354286c74736ab7e/sb-vitest/deps/rolldown-runtime-B-lAHAz2.js?v=257d4251:8:49
+ ❯ node_modules/.pnpm/pretty-format@27.0.2/node_modules/pretty-format/build/index.js:13:25
+ ❯ node_modules/.cache/storybook/10.6.1/c5d4e3263b920345bf5b6eaf17a04f9ca07cea6ffe906d87354286c74736ab7e/sb-vitest/deps/rolldown-runtime-B-lAHAz2.js?v=257d4251:8:49
+ ❯ node_modules/.cache/storybook/10.6.1/c5d4e3263b920345bf5b6eaf17a04f9ca07cea6ffe906d87354286c74736ab7e/sb-vitest/deps/test-BtPbE2bU.js?v=257d4251:3594:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

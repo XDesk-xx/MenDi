@@ -1,0 +1,412 @@
+TAP version 13
+# Subtest: 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+ok 1 - 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+  ---
+  duration_ms: 103830.1196
+  type: 'test'
+  ...
+# Subtest: Storybook 指导在真实 CLI 保存 / 继续及无 UI 查询中读回，旧提交保持原样
+ok 2 - Storybook 指导在真实 CLI 保存 / 继续及无 UI 查询中读回，旧提交保持原样
+  ---
+  duration_ms: 14418.441
+  type: 'test'
+  ...
+# Subtest: CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+ok 3 - CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+  ---
+  duration_ms: 13577.4085
+  type: 'test'
+  ...
+# Subtest: 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+ok 4 - 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+  ---
+  duration_ms: 7921.7995
+  type: 'test'
+  ...
+# Subtest: 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+ok 5 - 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+  ---
+  duration_ms: 1373.6187
+  type: 'test'
+  ...
+# Subtest: 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+ok 6 - 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+  ---
+  duration_ms: 815.95
+  type: 'test'
+  ...
+# Subtest: 提交的必要内容与 verdict 规则，rejected 停止 Owner
+ok 7 - 提交的必要内容与 verdict 规则，rejected 停止 Owner
+  ---
+  duration_ms: 1316.1476
+  type: 'test'
+  ...
+# Subtest: 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+ok 8 - 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+  ---
+  duration_ms: 2254.3435
+  type: 'test'
+  ...
+# Subtest: Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+ok 9 - Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+  ---
+  duration_ms: 1380.3464
+  type: 'test'
+  ...
+# Subtest: start 的 run-written 失败保留锁、路径与完整文件
+ok 10 - start 的 run-written 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 211.0038
+  type: 'test'
+  ...
+# Subtest: start 的 before-manifest-commit 失败保留锁、路径与完整文件
+ok 11 - start 的 before-manifest-commit 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 173.6114
+  type: 'test'
+  ...
+# Subtest: start 的 before-readback 失败保留锁、路径与完整文件
+ok 12 - start 的 before-readback 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 294.444
+  type: 'test'
+  ...
+# Subtest: start 的 before-lock-release 失败保留锁、路径与完整文件
+ok 13 - start 的 before-lock-release 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 164.7075
+  type: 'test'
+  ...
+# Subtest: save 的 before-run-commit 失败保留现场及指针
+ok 14 - save 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 369.8843
+  type: 'test'
+  ...
+# Subtest: save 的 before-readback 失败保留现场及指针
+ok 15 - save 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 1011.3353
+  type: 'test'
+  ...
+# Subtest: save 的 before-lock-release 失败保留现场及指针
+ok 16 - save 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 440.7056
+  type: 'test'
+  ...
+# Subtest: submit 的 before-run-commit 失败保留现场及指针
+ok 17 - submit 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 658.917
+  type: 'test'
+  ...
+# Subtest: submit 的 before-readback 失败保留现场及指针
+ok 18 - submit 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 380.1312
+  type: 'test'
+  ...
+# Subtest: submit 的 before-lock-release 失败保留现场及指针
+ok 19 - submit 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 815.2938
+  type: 'test'
+  ...
+# Subtest: 读回实际内容漂移与 rename 失败均不伪装成功
+ok 20 - 读回实际内容漂移与 rename 失败均不伪装成功
+  ---
+  duration_ms: 764.9791
+  type: 'test'
+  ...
+# Subtest: 实际分配跳过空占号、报告残留；重复号失败不修改现场
+ok 21 - 实际分配跳过空占号、报告残留；重复号失败不修改现场
+  ---
+  duration_ms: 1114.9789
+  type: 'test'
+  ...
+# Subtest: save / submit 保留未知说明头部，无需读取所选方法正文
+ok 22 - save / submit 保留未知说明头部，无需读取所选方法正文
+  ---
+  duration_ms: 732.309
+  type: 'test'
+  ...
+# Subtest: 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+ok 23 - 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+  ---
+  duration_ms: 4.0068
+  type: 'test'
+  ...
+# Subtest: Run 进展、Author 完成和三种 Review verdict 产生最小 next
+ok 24 - Run 进展、Author 完成和三种 Review verdict 产生最小 next
+  ---
+  duration_ms: 0.8836
+  type: 'test'
+  ...
+# Subtest: 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+ok 25 - 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+  ---
+  duration_ms: 163.4794
+  type: 'test'
+  ...
+# Subtest: 当前 product 指针和批次身份矛盾不能回退猜历史
+ok 26 - 当前 product 指针和批次身份矛盾不能回退猜历史
+  ---
+  duration_ms: 72.0268
+  type: 'test'
+  ...
+# Subtest: 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+ok 27 - 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+  ---
+  duration_ms: 0.8341
+  type: 'test'
+  ...
+# Subtest: 读取真实产品阶段内容与按需指导；错阶段 / 缺方法拒绝
+ok 28 - 读取真实产品阶段内容与按需指导；错阶段 / 缺方法拒绝
+  ---
+  duration_ms: 151.7698
+  type: 'test'
+  ...
+# Subtest: Storybook 按需读取，缺失或身份无效在分配前失败，空指导保持可用
+ok 29 - Storybook 按需读取，缺失或身份无效在分配前失败，空指导保持可用
+  ---
+  duration_ms: 184.7781
+  type: 'test'
+  ...
+# Subtest: 占号仅扫描约定层级，跨 Change 连续，空目录占号，批次与 artifacts 不占号
+ok 30 - 占号仅扫描约定层级，跨 Change 连续，空目录占号，批次与 artifacts 不占号
+  ---
+  duration_ms: 81.8706
+  type: 'test'
+  ...
+# Subtest: 占号不能沿 junction 到项目外
+ok 31 - 占号不能沿 junction 到项目外
+  ---
+  duration_ms: 9.5573
+  type: 'test'
+  ...
+# Subtest: 完整 instructions 按当前阶段只读，坏内容和身份拒绝，blocked 依赖不伪报完成
+ok 32 - 完整 instructions 按当前阶段只读，坏内容和身份拒绝，blocked 依赖不伪报完成
+  ---
+  duration_ms: 460.1517
+  type: 'test'
+  ...
+# Subtest: local save 不构造上游，缺入口/版本/status 故障不影响保存，正式操作仍失败
+ok 33 - local save 不构造上游，缺入口/版本/status 故障不影响保存，正式操作仍失败
+  ---
+  duration_ms: 481.7266
+  type: 'test'
+  ...
+# Subtest: save 校验拒绝不改字节，替换后读回失败保留实际正文与锁
+ok 34 - save 校验拒绝不改字节，替换后读回失败保留实际正文与锁
+  ---
+  duration_ms: 265.1175
+  type: 'test'
+  ...
+# Subtest: Reviewer 无固定 Author 正文可保存，submit 和 continue 保留固定对象检查
+ok 35 - Reviewer 无固定 Author 正文可保存，submit 和 continue 保留固定对象检查
+  ---
+  duration_ms: 439.521
+  type: 'test'
+  ...
+# Subtest: local save 缺配置/活动目录/当前 Run、损坏配置/受管指针和 junction 逐项拒绝
+ok 36 - local save 缺配置/活动目录/当前 Run、损坏配置/受管指针和 junction 逐项拒绝
+  ---
+  duration_ms: 1798.6131
+  type: 'test'
+  ...
+# Subtest: 本地新 / 已有配置按显式目标读取并保留原字节
+ok 37 - 本地新 / 已有配置按显式目标读取并保留原字节
+  ---
+  duration_ms: 184.4259
+  type: 'test'
+  ...
+# Subtest: config.yml 仅在主配置不存在时使用，损坏主配置不回退
+ok 38 - config.yml 仅在主配置不存在时使用，损坏主配置不回退
+  ---
+  duration_ms: 180.9252
+  type: 'test'
+  ...
+# Subtest: 有效主配置存在时不解析未选用的 config.yml junction
+ok 39 - 有效主配置存在时不解析未选用的 config.yml junction
+  ---
+  duration_ms: 16.4889
+  type: 'test'
+  ...
+# Subtest: store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+ok 40 - store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+  ---
+  duration_ms: 104.0238
+  type: 'test'
+  ...
+# Subtest: 受管路径拒绝越界和指向外部的 junction
+ok 41 - 受管路径拒绝越界和指向外部的 junction
+  ---
+  duration_ms: 14.469
+  type: 'test'
+  ...
+# Subtest: 真实上游 planning complete 不自动批准或推进本地 Explore
+ok 42 - 真实上游 planning complete 不自动批准或推进本地 Explore
+  ---
+  duration_ms: 6684.7105
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+ok 43 - 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+  ---
+  duration_ms: 9113.8086
+  type: 'test'
+  ...
+# Subtest: 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+ok 44 - 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+  ---
+  duration_ms: 4691.6181
+  type: 'test'
+  ...
+# Subtest: 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+ok 45 - 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+  ---
+  duration_ms: 5777.701
+  type: 'test'
+  ...
+# Subtest: 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+ok 46 - 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+  ---
+  duration_ms: 14108.859
+  type: 'test'
+  ...
+# Subtest: 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+ok 47 - 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+  ---
+  duration_ms: 19663.7368
+  type: 'test'
+  ...
+# Subtest: RA-B-003：停止命令声称成功但实际 close 未到，普通 / 正式执行有界 unknown
+ok 48 - RA-B-003：停止命令声称成功但实际 close 未到，普通 / 正式执行有界 unknown
+  ---
+  duration_ms: 54373.6575
+  type: 'test'
+  ...
+# Subtest: RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+ok 49 - RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+  ---
+  duration_ms: 3392.0226
+  type: 'test'
+  ...
+# Subtest: 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+ok 50 - 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+  ---
+  duration_ms: 14994.1261
+  type: 'test'
+  ...
+# Subtest: 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+ok 51 - 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+  ---
+  duration_ms: 9283.1434
+  type: 'test'
+  ...
+# Subtest: 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+ok 52 - 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+  ---
+  duration_ms: 9343.1228
+  type: 'test'
+  ...
+# Subtest: 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+ok 53 - 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+  ---
+  duration_ms: 15678.8986
+  type: 'test'
+  ...
+# Subtest: 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+ok 54 - 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+  ---
+  duration_ms: 42.8991
+  type: 'test'
+  ...
+# Subtest: 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+ok 55 - 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+  ---
+  duration_ms: 23310.1825
+  type: 'test'
+  ...
+# Subtest: 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+ok 56 - 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+  ---
+  duration_ms: 2196.1938
+  type: 'test'
+  ...
+# Subtest: 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+ok 57 - 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+  ---
+  duration_ms: 3280.9469
+  type: 'test'
+  ...
+# Subtest: CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+ok 58 - CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+  ---
+  duration_ms: 955.9243
+  type: 'test'
+  ...
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+ok 59 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 16205.4792
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 60 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 8839.3054
+  type: 'test'
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+ok 61 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 35663.0566
+  type: 'test'
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+ok 62 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 11041.6774
+  type: 'test'
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+ok 63 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 7222.8863
+  type: 'test'
+  ...
+# Subtest: 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+ok 64 - 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+  ---
+  duration_ms: 4670.2092
+  type: 'test'
+  ...
+# Subtest: 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+ok 65 - 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+  ---
+  duration_ms: 7382.6511
+  type: 'test'
+  ...
+# Subtest: 缺 UI 依赖明确未执行，不创建 node_modules 或结果
+ok 66 - 缺 UI 依赖明确未执行，不创建 node_modules 或结果
+  ---
+  duration_ms: 27.2998
+  type: 'test'
+  ...
+# Subtest: 根检查隔离 UI 依赖，受控 UI TypeScript 仍参与格式 / lint
+ok 67 - 根检查隔离 UI 依赖，受控 UI TypeScript 仍参与格式 / lint
+  ---
+  duration_ms: 13610.3634
+  type: 'test'
+  ...
+1..67
+# tests 67
+# suites 0
+# pass 67
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 263034.2053

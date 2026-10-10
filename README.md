@@ -19,9 +19,36 @@ pnpm start
 
 `start` 无参数时显示帮助，不写项目。`pnpm typecheck` 同时检查 `src/**/*.ts`、`scripts/**/*.ts` 与 `tests/**/*.ts`，脚本也可单独执行 `pnpm typecheck:scripts`。`build` 仅把 src 编译到 dist；源码以 `.ts` 导入，TypeScript 构建时将相对扩展名重写为 `.js`，测试由 Node 原生运行 `.ts`。`test` 构建后执行工程回归，限制两个测试文件同时执行，避免大量真实工具子进程争用影响夹具闸门；单项竞争测试仍启动真实并发写者，不代表 Delivery 正式 Full Test。
 
-`check` 聚合 `format:check`、`lint` 和现有 `typecheck`；`pnpm format` 修正维护中 TypeScript 格式。固定开发依赖 Biome 2.5.15 的检查仅覆盖 `src/**/*.ts`、`scripts/**/*.ts` 和 `tests/**/*.ts`，排除整个受控 `tests/fixtures/`、历史 Run 及生成物；不设置行数门槛、hash gate 或额外补证流程。
+`check` 聚合 `format:check`、`lint` 和现有 `typecheck`；`pnpm format` 修正维护中 TypeScript 格式。固定开发依赖 Biome 2.5.15 检查维护的 `src/`、`scripts/`、`tests/` TypeScript，包括独立 Storybook fixture 的维护代码；其余历史 / 敏感 fixtures、lock、Run 及生成物不参与批量格式化。独立 UI fixture 使用自己的严格 typecheck，不引入根工程的 UI 依赖；不设置行数门槛、hash gate 或额外补证流程。
+
+## 独立 UI 场景验证
+
+根 `pnpm check` / `pnpm test` 不需要 Storybook 依赖。维护中的 UI 场景位于 `tests/ui/`，fixture 的源码、Storybook / Vitest 配置与浏览器脚本由其自身严格 typecheck 检查。先在独立目标按冻结锁文件显式准备依赖与 Chromium，再准备本轮新沙箱；下面的离线准备需要已有 package store，不认证冷安装：
+
+```powershell
+pnpm --dir tests/fixtures/storybook-project install --frozen-lockfile
+# 仅在 Chromium 尚未准备时，在目标目录显式执行 playwright install chromium。
+$env:MENDI_UI_TARGETS_DIR = Join-Path $PWD '.tmp/ui-new-attempt'
+pnpm prepare:ui-tests $env:MENDI_UI_TARGETS_DIR
+$env:MENDI_UI_EVIDENCE_DIR = 'D:\work\current-run\artifacts\ui'
+pnpm test:ui
+```
+
+`prepare:ui-tests` 只写明确指定的新 `.tmp` 子目录，按受控 fixture 的锁文件离线准备隔离目标；不会替换旧环境。`test:ui` 先检查 fixture 依赖 / 严格类型 / 实际浏览器，再构建并运行有限场景，不安装缺失工具 / 依赖；未准备时报具体缺项。每轮使用新沙箱、当前 Run 的输出位置，必要输入可由维护 fixture / 脚本重建，原始结果保留在指定输出位置。根格式 / lint 只纳入维护 TypeScript，其他敏感 fixtures、lock、历史 Run 和生成物不参与批量整理。
+
+目标 Storybook 10.6.1 的 `tools --help` / `skills --help` 与本地 `stories find-by-component --no-attach` / `skills stories` 使用目标 cwd；同时确认实际配置目录，不能只依赖 `--cwd` 从 MenDi 根推断配置。需要预览服务的 `stories preview --attach --port ...` 先核对服务归属，返回的管理页 URL 用真实浏览器进入其 preview iframe 检查。持续服务与有限 Vitest script 分别记录；未知端口 / HTTP 200 / 相同 ID 不赋予复用或停止权，确认外部归属后复用不取得停止权。
+
+本 Change 的场景范围为 Windows / Node 22.23.2 / pnpm 11.22.0 / HTML-Vite / Storybook 10.6.1 的受控目标；真实 Vue、稳定独立安装与完整交付由 D03-B / C 后续验证。fixture 没有 MCP；Vitest plugin、工具帮助或 Storybook review URL 不等于 MCP 认证 / MenDi verdict。MCP 由目标按需启用官方 addon、宿主连接，按框架 manifest、toolsets、测试 addon 启用及真实调用声明能力；无 MCP 继续脚本 / CLI / 浏览器路径。
 
 ## 当前产品命令
+
+Change Action 可显式选择 `--tool storybook`，读取 [目标 Storybook 指导](skills/tools/storybook/SKILL.md)；也可选择现有 `--tool openspec` 或省略。指导从 MenDi 所在包读取，UI 配置 / scripts / stories 与依赖属于目标，宿主连接实际工具。读取指导不自动安装、启动服务或执行阶段；未选择 Storybook 的非 UI 目标照常使用与查询。
+
+例如已有合法 Apply 交接的 UI Change 可执行：
+
+```powershell
+node dist/drivers/cli.js action start --project D:\work\ui-target --change ui-work --type apply --role author --actor author-session-1 --tool storybook --json
+```
 
 以下命令在 MenDi 仓库根运行。目标须已准备有效 repo-local OpenSpec 配置；执行写操作前仍需对应 Owner 授权。`--project` 相对于调用目录解析，旧首次无记录 Open 的 `--scope` 相对于目标项目根解析，也支持绝对路径；记录化生命周期输入使用项目内受管相对路径。
 
@@ -269,10 +296,10 @@ OpenSpec 1.14.1 使用稳定外部安装：
 node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js --version
 ```
 
-项目使用 repo-local `openspec/`、schema 缺省或 `spec-driven`；固定工具通过公开 CLI 接入并核对版本和实际 root。可用 `--openspec-bin <绝对入口>` 指定另一个稳定安装的 1.14.1，实际入口会显示在输出中；不从 PATH 切换、不自动安装或初始化。OpenSpec 配置、AGENTS、README 和既有 Change 文件不被接入命令改写。start / continue 从 MenDi 安装包位置加载实际方法，保存方法标识；仅 `--tool openspec` 明确选择时读取工具指导。save / submit 不重新读取方法正文，query 也不读取方法。
+项目使用 repo-local `openspec/`、schema 缺省或 `spec-driven`；固定工具通过公开 CLI 接入并核对版本和实际 root。可用 `--openspec-bin <绝对入口>` 指定另一个稳定安装的 1.14.1，实际入口会显示在输出中；不从 PATH 切换、不自动安装或初始化。OpenSpec 配置、AGENTS、README 和既有 Change 文件不被接入命令改写。start / continue 从 MenDi 安装包位置加载实际方法，保存方法标识；工具指导只在明确选择 `--tool openspec` 或 `--tool storybook` 时读取。save / submit 不重新读取方法正文，query 也不读取方法。
 
-Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
+Storybook 在 UI 目标项目中接入。D03-A 的受控探索目标位于 `tests/fixtures/storybook-project/`，其中维护真实 HTML 组件、stories、目标依赖和重建入口；MenDi 根依赖不包含 Storybook。当前未配置或启用 MCP，未安装 Impeccable 或 DBX。
 
-当前协作记录：MVP-D03“Storybook 与实际使用”已由 Owner 授权人工 Open，保持 manual-bootstrap；规划槽位为 A Storybook 轻量接入、B 独立安装与简短项目指导、C 最小真实交付验收。本地 Delivery checkpoint 保存 Open 范围与分组，尚无活动 Change，等待 Owner 授权激活。D01 / D02 保持 closed，累计完成 Change 为 7；新 Delivery 不继承 D02 已通过验收。范围与边界见 [D03 001 Run](.mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md)，当前入口见 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)；push、Change 激活及正式 Full Test / Close 保持单独授权。
+当前协作记录：MVP-D03 保持 open / manual-bootstrap。MVP-D03-A `storybook-lightweight-integration` 经 007 独立批准后由 [008 Archive](.mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md) 实际归档到 [2026-10-10-008-storybook-lightweight-integration](openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration/)，规格已同步，本次 change checkpoint 保存归档边界，等待 Owner 授权下一 Change；MCP 仍未启用 / 未认证。当前状态读取 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)。D01 / D02 保持 closed，累计完成 Change 为 8，无活动 Change；B / C 尚未激活，正式 Full Test / Close 与 Git 保持各自授权边界。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。新 Delivery 从 `001` 开始，Changes 批次在实际进入 Change 工作时建立；D01 的 `003-changes` 保留原归属，Reopen 沿原 Delivery 连续编号并建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

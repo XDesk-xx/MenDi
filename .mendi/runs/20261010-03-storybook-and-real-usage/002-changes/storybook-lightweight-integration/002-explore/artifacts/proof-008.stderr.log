@@ -1,0 +1,21 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at run (file:///D:/Projects/MenDi/scripts/proofs/d03-a/processes.ts:69:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async execute (file:///D:/Projects/MenDi/scripts/proofs/mvp-d03-a-explore.ts:72:20)
+    at async file:///D:/Projects/MenDi/scripts/proofs/mvp-d03-a-explore.ts:96:17 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

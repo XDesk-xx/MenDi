@@ -1,0 +1,50 @@
+{
+  "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/run.md",
+  "verdict": "approved",
+  "nodeVersion": "v22.23.2",
+  "check": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "maintainedFiles": 128,
+    "log": "check.log"
+  },
+  "regression": {
+    "command": "node --test --test-concurrency=2 tests/methods-and-numbers.test.ts tests/actions.test.ts tests/action-cli.test.ts tests/action-write.test.ts tests/queries.test.ts tests/test-entries.test.ts tests/ui-preparation.test.ts",
+    "exitCode": 0,
+    "passed": 38,
+    "failed": 0,
+    "skipped": 0,
+    "log": "regression.log",
+    "limitation": "Plural queries.test.ts was absent; actual query.test.ts independently run below."
+  },
+  "query": {
+    "command": "node --test tests/query.test.ts",
+    "exitCode": 0,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "log": "query-regression.log"
+  },
+  "ui": {
+    "prepareCommand": "node scripts/prepare-ui-tests.ts D:/Projects/MenDi/.tmp/d03-a-review007-ui",
+    "command": "pnpm test:ui",
+    "exitCode": 0,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 113301.4171,
+    "targetRoot": "D:/Projects/MenDi/.tmp/d03-a-review007-ui",
+    "evidenceDir": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/007-review-apply/artifacts/ui",
+    "mcp": "not-enabled-not-certified",
+    "log": "ui-suite.log"
+  },
+  "strictValidate": {
+    "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate storybook-lightweight-integration --strict --json",
+    "exitCode": 0,
+    "passed": 1,
+    "failed": 0,
+    "issues": []
+  },
+  "listener6113": [],
+  "scope": "Independent scoped review, not root Delivery Full Test or archive."
+}

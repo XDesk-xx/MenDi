@@ -23,6 +23,8 @@
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json",
     "typecheck:scripts": "tsc -p tsconfig.scripts.json",
     "test": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
+    "test:ui": "node scripts/test-ui.ts",
+    "prepare:ui-tests": "node scripts/prepare-ui-tests.ts",
     "build": "tsc",
     "start": "node dist/drivers/cli.js"
   },

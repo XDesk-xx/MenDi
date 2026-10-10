@@ -217,7 +217,7 @@ mendi delivery full-test run --project <项目根> --input <项目内 JSON> --ro
 mendi delivery full-test status --project <项目根> --run <所属登记 Delivery 正式 Run>
 mendi delivery repair start --project <项目根> --from <当前 failed 正式 Run> --reason <范围内原因> --role author --actor <标识> [--revises <当前完整 Author>]
 mendi delivery repair review --project <项目根> --author-run <当前完整修复 Author> --role reviewer --actor <独立标识>
-mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
+mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool <openspec|storybook>]
 mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
 mendi action instructions --project <项目根> --action <当前 Action ID> (--artifact <proposal|specs|design|tasks> | --operation <apply|archive>)
 mendi action resolve --project <项目根> --run <当前 Run> --role owner --actor <Owner 标识> --resolution <handoff|revise|rollback> --to-role <author|reviewer> --to-actor <接收标识> --reason <原因> [--phase <较早阶段> --revises <完整 Author Run>]
@@ -234,7 +234,7 @@ resume 只补本次缺失的本地提交；先由 Owner 核对停止写者并处
 test 仅读取本地配置；list 不要求 Open，run 要求 open product / Windows / Node 22 / pnpm 11.22.0；不自动下载或安装。
 依赖预检失败为 not-run；full 仍是普通 command，不代替正式 Full Test 或批准。取消只处理本次前台进程树。
 阶段：explore / propose / apply，review-<阶段>，revise-<阶段>；archive 仅 Author，准备与 execute / finish 分开。
-Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 指导。
+Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 或 Storybook 指导，不安装或运行工具。
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
 submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
 actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询，不通过产品 Open / Close / Reopen 迁移历史。

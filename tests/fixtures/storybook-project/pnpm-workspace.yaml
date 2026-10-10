@@ -1,0 +1,7 @@
+packages:
+  - .
+minimumReleaseAgeExclude:
+  - '@types/node@22.20.5'
+overrides:
+  playwright: 1.60.0
+  playwright-core: 1.60.0

@@ -1,0 +1,12 @@
+{
+  "change": {
+    "id": "storybook-lightweight-integration",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration",
+    "metadataPath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\.openspec.yaml",
+    "schema": "spec-driven"
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "capabilities": [
+    {
+      "name": "action-runs",
+      "added": 0,
+      "modified": 1
+    },
+    {
+      "name": "storybook-integration",
+      "added": 5,
+      "modified": 0,
+      "newMainSpec": true
+    }
+  ],
+  "removed": 0,
+  "renamed": 0,
+  "blocking": [],
+  "mode": "native-one-pass-sync",
+  "reason": "沿用 manual-bootstrap Archive 合同，原生 CLI 负责同步，不另做语义合并。"
+}

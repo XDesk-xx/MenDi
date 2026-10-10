@@ -111,7 +111,7 @@ export function parseRun(
     throw new MendiError('invalid-run', 'Run 头部、路径、方法或 Action 身份不一致。', { ref });
   if (
     !Array.isArray(data.toolGuidance) ||
-    data.toolGuidance.some((v) => v !== 'openspec') ||
+    data.toolGuidance.some((v) => v !== 'openspec' && v !== 'storybook') ||
     new Set(data.toolGuidance).size !== data.toolGuidance.length
   )
     throw new MendiError('invalid-run', '工具指导标识不符合支持范围。', { ref });

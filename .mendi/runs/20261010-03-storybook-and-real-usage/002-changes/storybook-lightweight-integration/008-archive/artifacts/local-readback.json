@@ -1,0 +1,121 @@
+{
+  "project": {
+    "name": "MenDi",
+    "recordingMode": "manual-bootstrap",
+    "activeDeliveryId": "20261010-03-storybook-and-real-usage",
+    "deliveries": [
+      {
+        "id": "20261009-01-single-change-manual-collaboration",
+        "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json"
+      },
+      {
+        "id": "20261010-02-delivery-verification-and-close",
+        "manifestRef": ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json"
+      },
+      {
+        "id": "20261010-03-storybook-and-real-usage",
+        "manifestRef": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json"
+      }
+    ],
+    "deliveryGroupsDir": ".mendi/delivery-groups",
+    "archivedChangeCount": 8
+  },
+  "manifest": {
+    "id": "20261010-03-storybook-and-real-usage",
+    "planningSlot": "MVP-D03",
+    "title": "Storybook 与实际使用",
+    "state": "open",
+    "recordingMode": "manual-bootstrap",
+    "openedOn": "2026-10-10",
+    "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+    "goal": "按目标项目现有 Storybook 配置、脚本与真实组件接入 UI 预览和交互验证；形成稳定独立安装与简短项目指导，在真实 UI / 非 UI 最小目标验证首版核心交付及 Reopen。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D03-A",
+        "title": "Storybook 轻量接入",
+        "dependsOn": [],
+        "externalDependsOn": [
+          "MVP-D02-C"
+        ],
+        "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+      },
+      {
+        "slot": "MVP-D03-B",
+        "title": "独立安装与简短项目指导",
+        "dependsOn": [
+          "MVP-D03-A"
+        ],
+        "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+      },
+      {
+        "slot": "MVP-D03-C",
+        "title": "最小真实交付验收",
+        "dependsOn": [
+          "MVP-D03-B"
+        ],
+        "roadmapSection": "MVP-D03-C：最小真实交付验收"
+      }
+    ],
+    "changeBatches": [
+      {
+        "id": "002-changes",
+        "firstRun": "002",
+        "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
+        "changeIds": [
+          "storybook-lightweight-integration"
+        ]
+      }
+    ],
+    "changeBindings": [
+      {
+        "planningSlot": "MVP-D03-A",
+        "changeId": "storybook-lightweight-integration",
+        "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+        "archiveOrdinal": 8
+      }
+    ],
+    "activeChangeId": null,
+    "exitCriteria": [
+      "A / B / C 按路线图完成、经独立审核并实际归档，首版范围可以独立安装和手动使用。",
+      "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+      "固定安装在真实 UI / 非 UI 最小目标完成核心交付与 Reopen，初始空 .tmp 下可准备与验收，必要结果独立保存。",
+      "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+    ],
+    "outOfScope": [
+      "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+      "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+      "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+      "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+    ],
+    "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+    "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+    "stopBoundary": "change-checkpoint",
+    "next": {
+      "action": "change-checkpoint",
+      "status": "awaiting-owner-instruction",
+      "role": "author",
+      "reason": "008 已实际归档 MVP-D03-A，项目累计完成 8 个 Change；D03 保持 open，checkpoint 和下一 Change 等待 Owner 独立授权。"
+    }
+  },
+  "archiveRun": {
+    "deliveryId": "20261010-03-storybook-and-real-usage",
+    "changeId": "storybook-lightweight-integration",
+    "planningSlot": "MVP-D03-A",
+    "batchId": "002-changes",
+    "actionId": "storybook-lightweight-integration-archive-01",
+    "actionType": "archive",
+    "role": "author",
+    "run": "008",
+    "status": "completed",
+    "actionStatus": "completed",
+    "result": "archived",
+    "date": "2026-10-10",
+    "stageSkillRef": ".agents/skills/openspec-archive-change/SKILL.md",
+    "previousRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/007-review-apply/run.md",
+    "archiveOrdinal": 8,
+    "archiveRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration"
+  }
+}

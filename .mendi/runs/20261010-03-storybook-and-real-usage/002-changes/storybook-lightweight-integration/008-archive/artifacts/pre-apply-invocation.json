@@ -1,0 +1,16 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "instructions",
+    "apply",
+    "--change",
+    "storybook-lightweight-integration",
+    "--json"
+  ],
+  "processId": 15640,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "exited": true
+}

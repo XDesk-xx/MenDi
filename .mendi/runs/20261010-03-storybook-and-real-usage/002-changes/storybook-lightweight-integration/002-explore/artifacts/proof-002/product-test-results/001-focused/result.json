@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "001-focused",
+  "kind": "focused",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-AnPwWs\\ui-target",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-AnPwWs\\ui-target",
+  "deliveryId": "proof-ui",
+  "changeId": null,
+  "actorId": "d03-a-proof-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "verify:stories"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "verify:stories",
+  "scriptText": "test-storybook --url http://127.0.0.1:6113 --maxWorkers=1 --no-cache",
+  "startedAt": "2026-10-10T12:48:50.740Z",
+  "finishedAt": "2026-10-10T12:49:01.062Z",
+  "executionState": "finished",
+  "outcome": "failed",
+  "exitCode": 1,
+  "signal": null,
+  "pid": 50044,
+  "stdoutRef": ".mendi/delivery-groups/proof-ui/tests/001-focused/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/proof-ui/tests/001-focused/stderr.log"
+}

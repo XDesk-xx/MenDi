@@ -1,0 +1,185 @@
+Usage: npx storybook tools [options] [toolset] [tool] [args...]
+
+Storybook tools from the Storybook configuration at D:\Projects\MenDi\tests\fixtures\storybook-project\.storybook.
+
+Options:
+  --cwd <path>                 Project directory of the target Storybook
+  -c, --config-dir <dir-name>  Storybook config directory of the target Storybook
+  -p, --port <number>          Port of a running Storybook; targets that instance directly, no --cwd or --config-dir needed
+  --attach                     Require attaching to a running Storybook; gate failures are errors instead of a local fallback
+  --no-attach                  Load the project configuration without attaching
+  --input <object>             Raw JSON object with the tool arguments (escape hatch for complex values)
+  --json                       Print the tool's structured result data as JSON instead of markdown
+  -o, --output <path>          Write the result to a file instead of stdout
+  -h, --help                   Show every tool of the target Storybook, or one tool with its arguments
+
+Commands:
+  stories preview            Get story preview URLs  [requires running Storybook]
+  stories changed            Get changed stories metadata  [local]
+  stories find-by-component  Get stories for component files  [local]
+  review create              Create Storybook review  [requires running Storybook]
+  docs list                  List All Documentation  [local]
+  docs show                  Get Documentation  [local]
+  docs show-story            Get Documentation for Story  [local]
+
+[local] tools run without a running Storybook.
+[requires running Storybook] tools need a running Storybook dev server; start it first.
+Tool results print as markdown; the Output blocks below describe the `--json` data.
+Individual `--key value` flags override entries of `--input`.
+
+Tool reference — every command in full (`npx storybook tools <toolset> <tool> --help` shows one alone):
+
+stories — Story discovery, change detection, and preview URL generation.
+
+  stories preview  [requires running Storybook]
+
+    Use this tool to get one or more Storybook preview URLs.
+    Call it after editing anything that changes how the UI looks — components, stories, styles, CSS, themes, colors, or design tokens — no exceptions. A shared file has no stories of its own: preview the stories of the components that consume it.
+    Include each returned preview URL in your final user-facing response so users can open them directly.
+
+    Arguments:
+    - `--stories` (array, required): Stories to preview.
+    Prefer { storyId } when you don't already have story file context, since this avoids filesystem discovery.
+    Use { storyId } when IDs were discovered from documentation tools.
+    Use { absoluteStoryPath + exportName } only when you're already working in a specific .stories.* file and already have that context.
+      each item:
+        option 1
+          - `exportName` (string, required): The export name of the story from the story file.
+    Use this path-based shape only when you're already editing a .stories.* file and know the export names in that file.
+    If you do not already have story file context, prefer the storyId shape instead of searching files.
+          - `explicitStoryName` (string): If the story has an explicit name set via the "name" property, that is different from the export name, provide it here.
+    Otherwise don't set this.
+          - `absoluteStoryPath` (string, required): Absolute path to the story file. Use together with exportName only when story file context is already available.
+          - `props` (object): Optional custom props to pass to the story for rendering. Use this when you don't want to render the default story,
+    but you want to customize some args or other props.
+    You can look up the component's documentation using the get-storybook-story-instructions tool to see what props are available.
+          - `globals` (object): Optional Storybook globals to set for the story preview. Globals are used for things like theme, locale, viewport, and other cross-cutting concerns.
+    Common globals include 'theme' (e.g., 'dark', 'light'), 'locale' (e.g., 'en', 'fr'), and 'backgrounds' (e.g., { value: '#000' }).
+        option 2
+          - `storyId` (string, required): The full Storybook story ID (for example "button--primary").
+    Prefer this shape whenever you are not already working in a specific story file.
+    Use IDs discovered from docs-list (withStoryIds=true) or docs-show.
+          - `props` (object): Optional custom props to pass to the story for rendering. Use this when you don't want to render the default story,
+    but you want to customize some args or other props.
+    You can look up the component's documentation using the get-storybook-story-instructions tool to see what props are available.
+          - `globals` (object): Optional Storybook globals to set for the story preview. Globals are used for things like theme, locale, viewport, and other cross-cutting concerns.
+    Common globals include 'theme' (e.g., 'dark', 'light'), 'locale' (e.g., 'en', 'fr'), and 'backgrounds' (e.g., { value: '#000' }).
+
+    Output (`--json`):
+    - `stories` (array, required)
+      each item:
+        option 1
+          - `title` (string, required)
+          - `name` (string, required)
+          - `previewUrl` (string, required): Direct URL to open the story preview. Include this URL in the final user-facing response so users can open it directly.
+        option 2
+          - `input` (one of, required)
+          - `error` (string, required)
+
+  stories changed  [local]
+
+    Get Storybook stories marked as new, modified, or related. Returns story metadata only (no URLs).
+
+    The result reflects the cumulative working-tree diff, not just your latest edit — after multiple edits in one session, a non-empty result may cover an earlier sub-change and miss your most recent one. Check that every file you touched is represented; for any that isn't, find its consumer components and pass their paths to npx storybook tools stories find-by-component instead. The response surfaces this gap with a "coverage sanity check" hint when it detects unreachable working-tree files.
+
+    Arguments: none.
+
+  stories find-by-component  [local]
+
+    Map component source files to the stories that render them, returning grounded `storyId` values from the live Storybook index — hand these to npx storybook tools stories preview instead of guessing.
+
+    Reach for this whenever you need story IDs, whatever shape the input has: files you just edited, a feature/domain/topic the user named, or a query like "all consumers of X". First resolve the input to a list of absolute component file paths using filesystem search (grep / Glob / find) and code reading — that bridge is yours to build; this tool starts where it ends. One common trap: when the changed file is _shared_ infrastructure (theme token, design token, util, hook, CSS module) it isn't itself a component — grep for its consumers and pass _their_ paths, not the shared file's. If the symbol you grepped looks like one member of a related group (sibling tokens, neighboring exports), widen to the rest of the group too — a too-narrow grep silently drops stories. Try `npx storybook tools stories changed` first for "I just edited X" when it's available; if a file you touched is missing from its response, treat that file as the shared-infrastructure case and route its consumers through this tool.
+
+    Results are sorted by `distance` (0 = the path you passed is itself a story file, 1 = direct importer, 2+ = transitive; lower = stronger). Shared primitives are usually consumed through wrapper components, so the distance-1 bucket is often empty — the default `maxDistance: 3` keeps that cascade visible while capping noise from wide decorators; raise it to widen recall, lower it to tighten precision. The distance buckets map onto the visual cascade (the component itself → direct importers → page-level context) — use them to decide which stories to preview; when several stories of a component share a distance, prefer the variant whose name signals it renders the changed surface.
+
+    Never invent IDs from file names, feature names, or memory; title strings can be overridden by story authors, so only IDs returned by discovery tools resolve. If a component has no matches here, it has no stories yet (say so, don't fabricate).
+
+    Backed by Storybook's live reverse dependency graph, available only when the dev server runs a builder that supports change detection (e.g. Vite) — otherwise returns a typed error.
+
+    Arguments:
+    - `--componentPaths` (array of string, required): Absolute paths to component source files (e.g. "/repo/src/Button.tsx").
+    Pass the components you actually want stories for — typically files you just read, edited, or that the user mentioned.
+    Relative paths are also accepted and resolved against the Storybook working directory, but absolute paths are preferred for unambiguous results.
+    Story files (`*.stories.*`) are accepted too: they appear at distance 0 as self-matches, plus any reverse-graph hits (other stories that import them).
+    - `--maxDistance` (integer): Ceiling on the import depth to include in results. Must be a positive integer.
+    - 1: only stories that directly import the component.
+    - 2+: also include stories that reach the component through N hops.
+    Defaults to 3; raise it to widen recall, lower it to tighten precision. Shared components (Button, Icon, …) accumulate noisy indirect matches at distance ≥ 3, so the default cap protects against runaway results.
+
+    Output (`--json`):
+    - `results` (array of object, required)
+      each item:
+        - `componentPath` (string, required)
+        - `matches` (array of object, required)
+          each item:
+        - `clipped` (object): Present only when `maxDistance` filtered out one or more matches. `count` is how many were dropped; `distances` lists the (sorted, distinct) distances those dropped matches sat at — widen `maxDistance` to include them.
+          - `count` (number, required)
+          - `distances` (array of number, required)
+        - `pathNotFound` (boolean): `true` when no file exists at the resolved absolute path. Distinguishes a typo from "this component has no stories yet". The agent should re-check the path it sent.
+
+review — Create a curated Storybook review.
+
+  review create  [requires running Storybook]
+
+    Publish a curated review to Storybook's review page for spot-checking **visual impact**. Each call replaces the single active review — call it again whenever the user iterates on the changes.
+
+    ## When to call
+    - **Trigger 1 — visual change** (components, stories, CSS, themes, colors, design tokens, i18n — anything that changes how the UI looks): when the user should spot-check rendering. A shared file (token, style, util) has no stories of its own — review its consumers' stories. Skip non-visual refactors unless side-effects are plausible. Start from `npx storybook tools stories changed`; fall back to `npx storybook tools stories find-by-component` if change detection is unavailable. Include `changedFiles`.
+    - **Trigger 2 — browse request** ("show me the Badge component"): resolve via `npx storybook tools stories find-by-component` / `npx storybook tools docs list`; you may consult other sources to interpret the ask, but IDs must still come from those tools. Pass `changedFiles: []` — no code changed.
+
+    ## Hard rules
+    1. Every `storyId` MUST come from those tools. Reject IDs derived from file paths, story names, or memory. Unknown IDs cause a runtime error; obtain real IDs via `npx storybook tools stories find-by-component` or `npx storybook tools docs list`, then retry.
+    2. Every story you CREATED in this change MUST appear in the review — including interaction/play-function stories. Showing the stories you modified is encouraged too. Curate by grouping, never by omission.
+    3. Prefer 2-5 collections; avoid one-story collections unless truly isolated.
+    4. Follow-up reviews: stabilize collection/story order to avoid disorientation from reshuffling.
+    5. Apply the field formatting rules from each schema property. Do not use em-dashes in review payload field values (title, rationale, description, etc.).
+    6. Do not instruct or tell the user what to do unless they explicitly ask for guidance.
+    7. "Collection" and "trigger" are internal terms for this tool's mechanics and mean nothing to users. Never use them in user-facing text unless the user used them first; say "group of stories" or just describe the contents in plain language.
+
+    ## Curating (Trigger 1)
+    Trace the **visual cascade** up the **import graph** to **page-level UI surfaces** — one collection per layer (`distance 0` → direct importers → page context). Include **control stories** where the change is **not supposed to be visible**. **Theme tokens**, **shared styles**, and **layout primitives** need page-level coverage even from a single-file edit. **Localized changes:** affected component → **usage locations** → outer surfaces. **Larger features:** central page/module → lower-level pieces → outer **usage locations**.
+
+    ## Curating (Trigger 2)
+    Exactly what the user asked for — **no more, no less**. Group logically or follow **story index hierarchy**.
+
+    Arguments:
+    - `--title` (string, required): Terse, human-readable title for the overall review. What is this review about? Avoid typographic marks and CamelCase. Plain text, no markdown.
+    - `--description` (string, required): Description of the review scope, including what's there, why it's relevant, and what to look for. Preferably one or two sentences. At most 2 paragraphs for reviews spanning multiple topics. Markdown formatting restricted to **bold**, _italic_, and `code` (backticks). Use emphasis for the key **what** and _why_, and backticks for literal source code references like component or token names.
+    - `--collections` (array of object, required): Groups of stories to show in the review, most relevant first. Prefer 2-5 groups.
+      each item:
+        - `title` (string, required): Title describing **what** this collection consists of, phrased the way a person would say it. Avoid typographic marks and CamelCase. Plain text, no markdown.
+        - `rationale` (string, required): Rationale explaining **why** this collection is relevant to the user. Shown alongside the title. One or two sentences. Plain text, no markdown.
+        - `storyIds` (array of string, required): Story IDs that represent this collection (e.g. "button--primary"). The page renders exactly these.
+    - `--changedFiles` (array of string, required): Paths of the files you changed, most central first. Pass an empty array `[]` only when no code changed (browse requests, Trigger 2).
+
+    Output (`--json`):
+    - `reviewUrl` (string, required): URL of the Storybook review page. Always include this URL in your final user-facing response so the user can open it directly.
+
+docs — Storybook component and docs documentation.
+
+  docs list  [local]
+
+    List all available UI components and documentation entries from the Storybook, returning the IDs the other documentation tools take as input. Call this first for any UI task — before writing a new component, check what the design system already provides and build on it instead of hand-rolling a duplicate; before answering any question about props, API, or usage, discover the relevant IDs here rather than reading component source. Then fetch the entries with npx storybook tools docs show, referencing only IDs returned here — never guess IDs. When multiple Storybook sources are configured, entries from every source are included; scope follow-up calls to one source via their `storybookId` input. Pass `withStoryIds: true` when you need story IDs for other tools.
+
+    Arguments:
+    - `--withStoryIds` (boolean): When true, includes story sub-bullets under each component with story name and story ID. Use this to discover IDs for downstream story-focused workflows without filesystem lookup.
+
+  docs show  [local]
+
+    Get documentation for a UI component or docs entry.
+
+    Returns the first 3 stories (including story IDs) with code snippets showing how props are used, plus TypeScript prop definitions. Call this before using a component to avoid hallucinating prop names, types, or valid combinations, and to answer any question about a component's props, API, or usage — reading or grepping the component source is not a substitute. Stories reveal real prop usage patterns, interactions, and edge cases that type definitions alone don't show. If the example stories don't show the prop you need, use the npx storybook tools docs show-story tool to fetch the story documentation for the specific story variant you need — its story ID can be passed directly as `storyId`.
+
+    Example: id="button" returns Primary, Secondary, Large stories with code like <Button variant="primary" size="large"> showing actual prop combinations.
+
+    Arguments:
+    - `--id` (string, required): The component or docs entry ID (e.g., "button")
+
+  docs show-story  [local]
+
+    Get detailed documentation for a specific story variant of a UI component. Use this when you need to see more usage examples of a component, via the stories written for it. Identify the story by its story ID (preferred), or by componentId plus storyName.
+
+    Arguments:
+    - `--storyId` (string): The story ID, as listed by the docs list tool with withStoryIds: true and shown next to each story in the component documentation (e.g., "button--primary"). Prefer this over componentId + storyName whenever you have a story ID.
+    - `--componentId` (string): The component ID (e.g., "button"). Use together with storyName, and only when you have no story ID.
+    - `--storyName` (string): The human-readable story name (e.g., "Primary"). Use together with componentId.

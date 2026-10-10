@@ -1,0 +1,11 @@
+{
+  "ok": false,
+  "error": {
+    "code": "unsafe-reference",
+    "message": "受管引用必须是目标内的相对路径。",
+    "details": {
+      "ref": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-z1iKRC\\ui-target\\delivery-scope.json"
+    },
+    "fix": "核对输入与相关路径后重试。"
+  }
+}

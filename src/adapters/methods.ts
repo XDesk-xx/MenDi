@@ -11,7 +11,10 @@ export function loadMethods(type: ActionType | DeliveryType, tools: string[], ro
   const definition = deliveryTypes.includes(type as DeliveryType)
     ? deliveryDefinition(type)
     : actionDefinition(type);
-  if (tools.some((tool) => tool !== 'openspec') || new Set(tools).size !== tools.length)
+  if (
+    tools.some((tool) => tool !== 'openspec' && tool !== 'storybook') ||
+    new Set(tools).size !== tools.length
+  )
     throw new MendiError('skill-unavailable', '不支持或重复的工具指导。');
   function read(ref: string, expected: Record<string, string>) {
     const file = path.join(root, ref);

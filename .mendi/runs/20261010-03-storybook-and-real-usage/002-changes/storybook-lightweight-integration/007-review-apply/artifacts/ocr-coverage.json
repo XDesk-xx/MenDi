@@ -1,0 +1,76 @@
+{
+  "mode": "workspace",
+  "total_files": 9,
+  "reviewed_files": 9,
+  "skipped_files": 0,
+  "coverage_rate": 1,
+  "files": [
+    {
+      "path": "biome.json",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "scripts/prepare-ui-tests.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "scripts/test-ui.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "tests/ui/support.ts",
+      "status": "added",
+      "review": "reviewed"
+    }
+  ],
+  "supplemental": [
+    "tests/action-cli.test.ts",
+    "tests/actions.test.ts",
+    "tests/methods-and-numbers.test.ts",
+    "tests/ui-preparation.test.ts",
+    "tests/ui/cli.test.ts",
+    "tests/ui/environment.test.ts",
+    "tests/ui/preview.test.ts",
+    "tests/ui/results.test.ts",
+    "tests/fixtures/storybook-project: maintained TypeScript, package/lock importer, workspace, configs and README",
+    "skills/tools/storybook/SKILL.md",
+    "skills/actions/apply/SKILL.md",
+    "skills/actions/review-apply/SKILL.md",
+    "README.md",
+    "current OpenSpec contract and direct 006 Apply evidence"
+  ],
+  "limits": [
+    "Coverage denominator is OCR selected files only, not all repository files.",
+    "Old Explore proofs and unrelated historical artifacts excluded; applicable Explore/Propose conclusions reused.",
+    "Lock transitive contents not audited as upstream implementation; frozen offline install independently passed."
+  ],
+  "findings": []
+}

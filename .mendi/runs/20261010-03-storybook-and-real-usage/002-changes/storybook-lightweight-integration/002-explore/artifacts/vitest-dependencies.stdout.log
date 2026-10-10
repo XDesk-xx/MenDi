@@ -1,0 +1,17 @@
+✓ Lockfile passes supply-chain policies (verified 15m ago)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+[ERR_PNPM_NO_MATCHING_VERSION] No matching version found for @vitest/runner@5.0.3 while fetching it from https://registry.npmmirror.com/
+
+This error happened while installing a direct dependency of D:\Projects\MenDi\tests\fixtures\storybook-project
+
+The latest release of @vitest/runner is "4.1.11". Published at 2026/8/18
+
+Other releases are:
+  * beta: 5.0.0-beta.4 published at 2026/6/1
+  * V3: 3.2.7 published at 2026/7/6
+
+If you need the full list of all 194 published versions run "pnpm view @vitest/runner versions".
+[WARN] GET https://registry.npmmirror.com/vitest/-/vitest-5.0.3.tgz error (UND_ERR_DESTROYED). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmmirror.com/@storybook%2Faddon-vitest error (unknown). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmmirror.com/@vitest%2Fbrowser-playwright error (UND_ERR_DESTROYED). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmmirror.com/@vitest%2Fbrowser error (UND_ERR_DESTROYED). Will retry in 10 seconds. 2 retries left.

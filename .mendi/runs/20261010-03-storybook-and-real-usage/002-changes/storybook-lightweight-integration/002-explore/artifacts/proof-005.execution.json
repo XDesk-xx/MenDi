@@ -1,0 +1,4 @@
+{
+  "exitCode": 1,
+  "command": "node scripts/proofs/mvp-d03-a-explore.ts <artifacts>/proof-005"
+}

@@ -8,6 +8,8 @@ role: author
 
 必要输入是当前 Change、已批准方案、设计、规格和实际 tasks。按依赖实施，每项行为成立后更新任务；运行针对当前变化的必要检查并保留实际失败 / 修正结果。缺少当前关键输入时明确问题，不猜历史或扩大授权。
 
+UI 范围按需使用产品 Storybook 指导：目标拥有配置 / scripts / stories，宿主执行实际工具连接。分别记录持续预览与有限测试，核对本次 / 外部 / 未知服务归属，修改后获取新结果；缺工具或 MCP 未启用按事实说明，不自动安装，不为非 UI 目标增加依赖。
+
 product 当前 Apply / revise-apply 可显式读取 `action instructions --action <当前 ID> --operation apply`。它与 `--artifact` 二选一，只返回真实 contextFiles、tasks（done / sourcePath / line）、progress / state、instruction 和可选 context / operationGuidance；blocked 明确缺失，ready / all_done 不代表实施、批准或任务被自动修改。人工 bootstrap 不使用产品写入命令迁移记录。
 
 作为 Owner 指定的 Author，在当前 Change 批准范围内完成 apply 工作。按当前阶段使用目标项目已安装的 OpenSpec 对应工作方法；编写产物前读取实际 instructions、context 与 rules。Explore 对关键疑点做真实 proof，Propose 形成连贯方案与任务，Apply 按受审方案实施并验证；记录操作本身不替代这些语义工作。

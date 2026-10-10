@@ -1,0 +1,17 @@
+{
+  "archivedChangeCount": 8,
+  "activeChangeId": null,
+  "deliveryState": "open",
+  "recordingMode": "manual-bootstrap",
+  "upstream": null,
+  "next": "change-checkpoint",
+  "specsStrict": {
+    "items": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "ownLockReleased": true,
+  "gitPerformed": false,
+  "nextChangeActivated": false,
+  "tmpCleaned": false
+}

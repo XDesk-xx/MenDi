@@ -1,0 +1,11 @@
+{
+  "localDocumentLinks": "all present",
+  "taskCount": 13,
+  "completedTaskCount": 0,
+  "canonicalSpecsEdited": false,
+  "productImplementationEditedThisRun": false,
+  "readonlyDiffCheck": {
+    "command": "git diff --check -- README.md openspec/config.yaml .mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json openspec/changes/storybook-lightweight-integration .mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose",
+    "exitCode": 0
+  }
+}

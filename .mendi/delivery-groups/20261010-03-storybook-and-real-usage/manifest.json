@@ -34,8 +34,27 @@
       "roadmapSection": "MVP-D03-C：最小真实交付验收"
     }
   ],
-  "changeBatches": [],
-  "changeBindings": [],
+  "changeBatches": [
+    {
+      "id": "002-changes",
+      "firstRun": "002",
+      "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
+      "changeIds": [
+        "storybook-lightweight-integration"
+      ]
+    }
+  ],
+  "changeBindings": [
+    {
+      "planningSlot": "MVP-D03-A",
+      "changeId": "storybook-lightweight-integration",
+      "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+      "archiveOrdinal": 8
+    }
+  ],
   "activeChangeId": null,
   "exitCriteria": [
     "A / B / C 按路线图完成、经独立审核并实际归档，首版范围可以独立安装和手动使用。",
@@ -50,12 +69,12 @@
     "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
   ],
   "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
-  "stopBoundary": "change-activation",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+  "stopBoundary": "awaiting-owner-instruction",
   "next": {
-    "action": "change-activate",
+    "action": "change-next",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D03 Open 本地 checkpoint 后，等待 Owner 明确授权 MVP-D03-A 的目标与范围；尚未激活 Change。"
+    "reason": "MVP-D03-A 已独立批准并实际归档，项目累计完成 8 个 Change；本次 change checkpoint 保存该边界，等待 Owner 明确激活 MVP-D03-B，正式 Full Test / Close 与 Git 后续操作保持独立授权。"
   }
 }

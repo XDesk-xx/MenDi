@@ -1,0 +1,3169 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 452,
+  "reviewable_count": 9,
+  "excluded_count": 443,
+  "total_insertions": 13161,
+  "total_deletions": 173,
+  "reviewable_files": [
+    {
+      "path": "biome.json",
+      "status": "modified",
+      "insertions": 7,
+      "deletions": 1
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 1
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 2
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "scripts/prepare-ui-tests.ts",
+      "status": "added",
+      "insertions": 39,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/test-ui.ts",
+      "status": "added",
+      "insertions": 113,
+      "deletions": 0
+    },
+    {
+      "path": "tests/ui/support.ts",
+      "status": "added",
+      "insertions": 148,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+      "status": "modified",
+      "insertions": 28,
+      "deletions": 9,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 60,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 82,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 31,
+      "deletions": 4,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "mendi-foundation-and-delivery-roadmap.md",
+      "status": "modified",
+      "insertions": 19,
+      "deletions": 10,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 2,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/action-cli.test.ts",
+      "status": "modified",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/actions.test.ts",
+      "status": "modified",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/methods-and-numbers.test.ts",
+      "status": "modified",
+      "insertions": 33,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/new-change.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/new-change.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/proposal-instructions.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/activation-commands/status.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/build.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/build.stdout.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/check.stderr.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/check.stdout.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/commands.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/current-proposal-guidance.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/current-proposal-guidance.stdout.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/native-status.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/native-status.stdout.log",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/next.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/next.stdout.log",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/proof-readback.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/status.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/status.stdout.log",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/test-execution-regression.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/final-checks/test-execution-regression.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001.execution.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001.stderr.log",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002.execution.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-002/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-003/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-004/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-005/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-006/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-007/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008.stderr.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/storybook-service.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-008/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/baseline-browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/baseline-browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/baseline-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/changed-browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/changed-browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/changed-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/baseline-browser.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/baseline-browser.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/changed-browser.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/changed-browser.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/changed-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/changed-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/defect-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/defect-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/no-ui-next.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/no-ui-next.stdout.log",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/no-ui-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/no-ui-open.stdout.log",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/old-result-readback.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/old-result-readback.stdout.log",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/storybook-service.stdout.log",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/defect-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/old-result-readback.json",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/002-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/002-focused/stderr.log",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/002-focused/stdout.log",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/003-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/003-focused/stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/product-test-results/003-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/report.json",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-009/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies-002.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies-002.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies-002.stdout.log",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies.execution.json",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/vitest-dependencies.stdout.log",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/run.md",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/build.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/openspec-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/baseline-browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/baseline-browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/baseline-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/changed-browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/changed-browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/changed-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/baseline-browser.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/baseline-browser.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/baseline-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/baseline-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/changed-browser.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/changed-browser.stdout.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/changed-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/changed-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/commands.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/defect-stories.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/defect-stories.stdout.log",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/dependencies.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/dependencies.stdout.log",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/entries.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/entries.stdout.log",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/no-ui-next.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/no-ui-next.stdout.log",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/no-ui-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/no-ui-open.stdout.log",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/old-result-readback.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/old-result-readback.stdout.log",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/stop-owned.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/storybook-service.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/storybook-service.stdout.log",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/target-open.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/target-open.stdout.log",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/target-typecheck.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/commands/target-typecheck.stdout.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/defect-stories.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/entries.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/old-result-readback.json",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/001-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/001-focused/stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/001-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/002-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/002-focused/stderr.log",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/002-focused/stdout.log",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/003-focused/result.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/003-focused/stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/product-test-results/003-focused/stdout.log",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proof/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/review-readback.json",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/003-review-explore/run.md",
+      "status": "added",
+      "insertions": 63,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "insertions": 130,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/artifact-assessment.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 332,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/openspec-status.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/storybook-skills-help.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/storybook-tools-help.log",
+      "status": "added",
+      "insertions": 185,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/004-propose/run.md",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "insertions": 130,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 165,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/run.md",
+      "status": "added",
+      "insertions": 56,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/apply-inputs-initial.json",
+      "status": "added",
+      "insertions": 130,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/check-attempt-01.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/cli-discovery-initial.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 462,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 412,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/commands-49488.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/environment/commands-49472.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/finite-results/commands-49732.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/official-cli/commands-22072.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/preview/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/preview/preview.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/preview/preview.stdout.log",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-01/unknown-service/external-service.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/commands-49144.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/commands-49704.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/environment/commands-13804.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/commands-45260.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/preview-stop.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/finite-results/results.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/official-cli/commands-13004.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/commands-48928.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/preview-stop.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/preview/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-02/unknown-service/external-service.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/commands-33860.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/commands-50068.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/environment/commands-49040.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/commands-19392.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/preview-stop.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/finite-results/results.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/official-cli/commands-3056.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/commands-49216.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/preview-stop.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/preview/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-attempt-03/unknown-service/external-service.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/commands-14772.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/commands-46460.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/environment/commands-10056.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/commands-3252.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/preview-stop.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/finite-results/results.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/official-cli/commands-9900.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/commands-49092.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/preview-stop.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/preview/story-index.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/suite.log",
+      "status": "added",
+      "insertions": 43,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/commands-49092.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/confirmed-external-reuse.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/external-service.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/preview-stop.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/ui-final/unknown-service/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/run.md",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/design.md",
+      "status": "added",
+      "insertions": 87,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/proposal.md",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/specs/storybook-integration/spec.md",
+      "status": "added",
+      "insertions": 83,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/storybook-lightweight-integration/tasks.md",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "scripts/proofs/d03-a/processes.ts",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "scripts/proofs/mvp-d03-a-explore.ts",
+      "status": "added",
+      "insertions": 260,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/tools/storybook/SKILL.md",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/.storybook/main.ts",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/README.md",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/browser-proof.ts",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/browser-ready.ts",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/delivery-scope.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/package.json",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/pnpm-lock.yaml",
+      "status": "added",
+      "insertions": 2256,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/pnpm-workspace.yaml",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/src/Counter.stories.ts",
+      "status": "added",
+      "insertions": 33,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/src/Counter.ts",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/tsconfig.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/storybook-project/vitest.config.ts",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/ui-preparation.test.ts",
+      "status": "added",
+      "insertions": 62,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/ui/cli.test.ts",
+      "status": "added",
+      "insertions": 43,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/ui/environment.test.ts",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/ui/preview.test.ts",
+      "status": "added",
+      "insertions": 131,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/ui/results.test.ts",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

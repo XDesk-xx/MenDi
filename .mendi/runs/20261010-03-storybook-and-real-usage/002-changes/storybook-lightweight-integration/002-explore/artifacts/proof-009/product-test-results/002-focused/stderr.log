@@ -1,0 +1,24 @@
+$ vitest run --project storybook
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |storybook (chromium)| src/Counter.stories.ts > Basic
+Error: 
+[34mClick to debug the error directly in Storybook: http://localhost:6006/?path=/story/proof-counter--basic&addonPanel=storybook/interactions/panel[39m
+
+expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  次数：2
+Received:
+  次数：4
+ ❯ toHaveTextContent src/Counter.stories.ts:20:45
+     18|     await userEvent.click(canvas.getByRole('button', { name: '增加' }));
+     19|     await userEvent.click(canvas.getByRole('button', { name: '增加' }));
+     20|     await expect(canvas.getByRole('status')).toHaveTextContent(counter…
+       |                                             ^
+     21|   },
+     22| };
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

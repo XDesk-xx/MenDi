@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-9EMNc1\\no-ui",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-9EMNc1\\no-ui",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "product",
+    "deliveryId": "no-ui",
+    "title": "No UI proof",
+    "state": "open",
+    "goal": "无 UI 项目不依赖 Storybook / MCP",
+    "plannedChanges": [
+      {
+        "slot": "Backend",
+        "title": "本地后台目标",
+        "dependsOn": []
+      }
+    ],
+    "activeChangeId": null,
+    "changeBindings": []
+  },
+  "upstream": null,
+  "next": {
+    "action": "change-bind",
+    "source": "local-state",
+    "executable": true,
+    "reason": "需明确已有 Change、计划槽位及相应 Owner 授权。"
+  }
+}

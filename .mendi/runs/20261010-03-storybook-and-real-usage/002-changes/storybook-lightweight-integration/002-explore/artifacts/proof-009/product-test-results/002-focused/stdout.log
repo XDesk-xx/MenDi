@@ -1,0 +1,12 @@
+
+ RUN  v4.1.11 D:/Projects/MenDi/.tmp/mendi-d03-a-YxJec4/ui-target
+
+ ❯ |storybook (chromium)| src/Counter.stories.ts (2 tests | 1 failed) 56ms
+   × Basic 31ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  21:01:40
+   Duration  2.76s (transform 0ms, setup 894ms, import 50ms, tests 56ms, environment 0ms)
+
+[ELIFECYCLE] Command failed with exit code 1.

@@ -1,0 +1,21 @@
+jest-haste-map: Haste module naming collision: execution-fixture
+  The following files share their name; please adjust your hasteImpl:
+    * <rootDir>\.tmp\mendi-apply-00PwjQ\minimal-project\package.json
+    * <rootDir>\.tmp\mendi-apply-05RwNt\project\package.json
+
+jest-haste-map: Haste module naming collision: mendi-storybook-explore-target
+  The following files share their name; please adjust your hasteImpl:
+    * <rootDir>\tests\fixtures\storybook-project\package.json
+    * <rootDir>\.tmp\mendi-d03-a-AnPwWs\ui-target\package.json
+
+jest-haste-map: Haste module naming collision: controlled-local-dep
+  The following files share their name; please adjust your hasteImpl:
+    * <rootDir>\.tmp\mendi-apply-9uz4sH\minimal-project\dependency\package.json
+    * <rootDir>\.tmp\mendi-apply-b8TShX\minimal-project\dependency\package.json
+
+jest-haste-map: Haste module naming collision: new-local-dep
+  The following files share their name; please adjust your hasteImpl:
+    * <rootDir>\.tmp\mendi-apply-9uz4sH\minimal-project\new-dependency\package.json
+    * <rootDir>\.tmp\mendi-apply-xvZTPk\minimal-project\new-dependency\package.json
+
+[ELIFECYCLE] Command failed with exit code 1.
