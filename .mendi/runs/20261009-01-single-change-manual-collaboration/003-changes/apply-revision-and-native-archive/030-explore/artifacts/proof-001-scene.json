@@ -1,0 +1,71 @@
+{
+  "reason": "首轮错误来自实验预期 error code；真实本地记录检查先于上游，实际为 incomplete-mendi-state。未修改产品实现。",
+  "originalNativeCommandExitCode": 0,
+  "nativeResult": {
+    "archive": {
+      "change": "proof-entry",
+      "archivedAs": "2026-10-10-proof-entry",
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-emer1l\\apply-flow\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+      "specsUpdated": true,
+      "totals": {
+        "added": 1,
+        "modified": 0,
+        "removed": 0,
+        "renamed": 0
+      }
+    },
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-emer1l\\apply-flow",
+      "source": "nearest"
+    }
+  },
+  "activeDirectoryAbsent": true,
+  "archivePresent": true,
+  "localFailureTargetIsDirectory": true,
+  "manifest": {
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "id": "d01",
+    "title": "D controlled target",
+    "state": "open",
+    "openedOn": "2026-10-10",
+    "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "项目入口",
+        "dependsOn": []
+      },
+      {
+        "slot": "B",
+        "title": "后续工作",
+        "dependsOn": [
+          "A"
+        ]
+      }
+    ],
+    "changeBindings": [
+      {
+        "planningSlot": "A",
+        "changeId": "proof-entry",
+        "changeRef": "openspec/changes/proof-entry",
+        "state": "active",
+        "latestRunRef": ".mendi/runs/d01/001-changes/proof-entry/011-review-apply/run.md",
+        "batchId": "001-changes"
+      }
+    ],
+    "activeChangeId": "proof-entry",
+    "changeBatches": [
+      {
+        "id": "001-changes",
+        "firstRun": "001",
+        "runsRef": ".mendi/runs/d01/001-changes",
+        "changeIds": [
+          "proof-entry"
+        ]
+      }
+    ]
+  },
+  "synchronizedSpec": "# proof-input Specification\n\n## Purpose\nTBD - created by archiving change proof-entry. Update Purpose after archive.\n\n## Requirements\n\n### Requirement: Explicit experiment input\nThe tool SHALL retain controlled input.\n\n#### Scenario: Read input\n- **WHEN** input is read\n- **THEN** controlled content is retained\n",
+  "archiveRepeatedOnThisTarget": false
+}

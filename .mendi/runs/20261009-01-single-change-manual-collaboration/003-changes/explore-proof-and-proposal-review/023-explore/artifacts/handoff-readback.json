@@ -1,0 +1,67 @@
+{
+  "activeChangeId": "explore-proof-and-proposal-review",
+  "next": {
+    "action": "review-explore",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "reason": "023 Author Explore 已完成，核心 proof 8/8、check 与相关回归 27/27 通过；独立 Reviewer 核对变化与限制。",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/run.md",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": false,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "ready"
+      },
+      {
+        "id": "specs",
+        "status": "blocked"
+      },
+      {
+        "id": "design",
+        "status": "blocked"
+      },
+      {
+        "id": "tasks",
+        "status": "blocked"
+      }
+    ]
+  },
+  "runNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "nextNumber": 24,
+  "proof": {
+    "passed": 8,
+    "total": 8
+  },
+  "directRunLinksChecked": 10,
+  "archivedChangeCount": 2
+}

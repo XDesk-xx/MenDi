@@ -1,0 +1,95 @@
+{
+  "change": "apply-revision-and-native-archive",
+  "requiredArtifacts": [
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/action-runs/spec.md",
+    "specs/delivery-workspace/spec.md",
+    "specs/project-entry/spec.md"
+  ],
+  "capabilities": [
+    {
+      "capability": "action-runs",
+      "requirements": 9,
+      "scenarios": 31,
+      "modifiedRequirements": [
+        {
+          "requirement": "Explicit action recording",
+          "originalScenarioTitles": [
+            "Start the initial author action",
+            "Wrong role or unsupported operation"
+          ],
+          "preserved": true
+        },
+        {
+          "requirement": "Explicit owner resolution of blocked work",
+          "originalScenarioTitles": [
+            "Hand off an unfinished author action",
+            "Hand off an unfinished reviewer action",
+            "Resolve a rejected stage with a new revision",
+            "Resolution is invalid or tries to bypass review",
+            "A resolution fails during persistence"
+          ],
+          "preserved": true
+        },
+        {
+          "requirement": "Direct owner decision recorded in the receiving run",
+          "originalScenarioTitles": [
+            "Read the receiving draft in a new process",
+            "Historical source is no longer readable"
+          ],
+          "preserved": true
+        }
+      ]
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirements": 4,
+      "scenarios": 19,
+      "modifiedRequirements": [
+        {
+          "requirement": "Read-only status and next",
+          "originalScenarioTitles": [
+            "Prepared project without a delivery",
+            "Delivery without a change",
+            "Upstream proposal is ready",
+            "Bound change disappears",
+            "Product run is read after process exit",
+            "Manual progress remains manual"
+          ],
+          "preserved": true
+        },
+        {
+          "requirement": "Operation-specific input checks",
+          "originalScenarioTitles": [
+            "Historical links and unknown extensions are unavailable",
+            "Required current input is unavailable",
+            "A review-only input is missing",
+            "Managed input escapes the project",
+            "The upstream process is unavailable for local work"
+          ],
+          "preserved": true
+        }
+      ]
+    },
+    {
+      "capability": "project-entry",
+      "requirements": 2,
+      "scenarios": 6,
+      "modifiedRequirements": []
+    }
+  ],
+  "summary": {
+    "requirements": 15,
+    "modified": 5,
+    "added": 10,
+    "scenarios": 56,
+    "pendingTasks": 21,
+    "completeTasks": 0
+  },
+  "newExploreFile": false,
+  "semanticReview": "awaiting-independent-review",
+  "implementation": "not-started",
+  "hashGate": false
+}

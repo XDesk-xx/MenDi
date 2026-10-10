@@ -1,0 +1,97 @@
+{
+  "scenario": "retired-last-requirement",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BeYlFk\\minimal-project",
+  "nativeStatus": 0,
+  "nativeResponse": {
+    "archive": {
+      "change": "proof-entry",
+      "archivedAs": "2026-10-10-proof-entry",
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BeYlFk\\minimal-project\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+      "specsUpdated": true,
+      "totals": {
+        "added": 0,
+        "modified": 0,
+        "removed": 1,
+        "renamed": 0
+      },
+      "warnings": [
+        "example - capability retired; deleted the main spec (all requirements removed, declared by retire_capabilities) at openspec/specs/example/spec.md. Its section(s) went with it: Purpose. If it was committed, restore it with: git checkout HEAD -- \":(top)openspec/specs/example/spec.md\""
+      ]
+    },
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BeYlFk\\minimal-project",
+      "source": "nearest"
+    }
+  },
+  "execute": {
+    "status": 1,
+    "signal": null,
+    "output": [
+      null,
+      "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+      ""
+    ],
+    "pid": 27504,
+    "stdout": "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+    "stderr": ""
+  },
+  "finish": {
+    "ok": false,
+    "error": {
+      "code": "workspace-write-failed",
+      "message": "MenDi 写入未完整成功。",
+      "details": {
+        "operation": "archive-finish",
+        "lock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BeYlFk\\minimal-project\\.mendi\\write.lock",
+        "committedPaths": [],
+        "error": {
+          "message": "ENOENT: no such file or directory, open 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-BeYlFk\\minimal-project\\openspec\\specs\\example\\spec.md'",
+          "code": "ENOENT"
+        }
+      },
+      "fix": "核对已提交路径、残留临时文件及锁；不会自动回滚或清理现场。"
+    }
+  },
+  "runPhase": "invoking"
+}
+{
+  "scenario": "attempt-before-invoking-commit",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ntE9MY\\minimal-project",
+  "first": {
+    "status": 88,
+    "signal": null,
+    "output": [
+      null,
+      "",
+      ""
+    ],
+    "pid": 45344,
+    "stdout": "",
+    "stderr": ""
+  },
+  "retry": {
+    "ok": false,
+    "error": {
+      "code": "workspace-write-failed",
+      "message": "MenDi 写入未完整成功。",
+      "details": {
+        "operation": "archive-execute",
+        "lock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ntE9MY\\minimal-project\\.mendi\\write.lock",
+        "committedPaths": [],
+        "error": {
+          "message": "EEXIST: file already exists, mkdir 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-ntE9MY\\minimal-project\\.mendi\\runs\\d01\\001-changes\\proof-entry\\007-archive\\artifacts\\attempt-001'",
+          "code": "EEXIST"
+        }
+      },
+      "fix": "核对已提交路径、残留临时文件及锁；不会自动回滚或清理现场。"
+    }
+  },
+  "archive": {
+    "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+    "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+    "countBasis": 0,
+    "ordinal": 1,
+    "phase": "prepared",
+    "attempt": 0
+  }
+}

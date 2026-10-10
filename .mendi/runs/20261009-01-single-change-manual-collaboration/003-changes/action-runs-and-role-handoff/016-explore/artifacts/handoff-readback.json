@@ -1,0 +1,45 @@
+{
+  "activeChangeId": "action-runs-and-role-handoff",
+  "runNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "batch": "003-changes",
+  "next": {
+    "action": "review-explore",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "reason": "016 Author Explore 与核心 proof 已完成；需独立 Reviewer 审核后再推进。",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/run.md"
+  },
+  "proof": {
+    "passed": 8,
+    "total": 8,
+    "subprocesses": 20,
+    "expectedRejections": 12
+  },
+  "checks": {
+    "check": "passed",
+    "relatedRegression": {
+      "passed": 9,
+      "total": 9
+    }
+  },
+  "currentMaterialLinks": 9,
+  "planningComplete": false,
+  "archivedChangeCount": 1
+}

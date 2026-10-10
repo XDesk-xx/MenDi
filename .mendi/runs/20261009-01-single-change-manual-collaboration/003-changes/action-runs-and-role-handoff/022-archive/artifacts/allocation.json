@@ -1,0 +1,92 @@
+{
+  "allocatedRun": 22,
+  "archiveOrdinal": 2,
+  "currentArchivedChangeCount": 1,
+  "targetArchiveRef": "openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff",
+  "occupied": [
+    {
+      "number": 1,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md"
+    },
+    {
+      "number": 2,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/002-revise-delivery-open/run.md"
+    },
+    {
+      "number": 3,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/run.md"
+    },
+    {
+      "number": 4,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/run.md"
+    },
+    {
+      "number": 5,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md"
+    },
+    {
+      "number": 6,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md"
+    },
+    {
+      "number": 7,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/run.md"
+    },
+    {
+      "number": 8,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/008-review-propose/run.md"
+    },
+    {
+      "number": 9,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/009-apply/run.md"
+    },
+    {
+      "number": 10,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/010-review-apply/run.md"
+    },
+    {
+      "number": 11,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/011-revise-apply/run.md"
+    },
+    {
+      "number": 12,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/012-review-apply/run.md"
+    },
+    {
+      "number": 13,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/013-revise-apply/run.md"
+    },
+    {
+      "number": 14,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/014-review-apply/run.md"
+    },
+    {
+      "number": 15,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/015-archive/run.md"
+    },
+    {
+      "number": 16,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/run.md"
+    },
+    {
+      "number": 17,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/run.md"
+    },
+    {
+      "number": 18,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/run.md"
+    },
+    {
+      "number": 19,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/019-review-propose/run.md"
+    },
+    {
+      "number": 20,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md"
+    },
+    {
+      "number": 21,
+      "ref": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/021-review-apply/run.md"
+    }
+  ]
+}

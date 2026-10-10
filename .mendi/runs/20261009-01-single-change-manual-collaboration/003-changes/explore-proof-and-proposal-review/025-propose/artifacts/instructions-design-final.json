@@ -1,0 +1,36 @@
+{
+  "changeName": "explore-proof-and-proposal-review",
+  "artifactId": "design",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\explore-proof-and-proposal-review",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi",
+    "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "outputPath": "design.md",
+  "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\explore-proof-and-proposal-review\\design.md",
+  "existingOutputPaths": [
+    "D:\\Projects\\MenDi\\openspec\\changes\\explore-proof-and-proposal-review\\design.md"
+  ],
+  "description": "Technical design document with implementation details",
+  "instruction": "Create the design document that explains HOW to implement the change.\n\nWhen to include design.md (create only if any apply):\n- Cross-cutting change (multiple services/modules) or new architectural pattern\n- New external dependency or significant data model changes\n- Security, performance, or migration complexity\n- Ambiguity that benefits from technical decisions before coding\n\nSections:\n- **Context**: Only the current state and constraints needed to explain the approach. Reference the proposal for motivation instead of restating it (e.g., \"See proposal.md - Why\").\n- **Goals / Non-Goals**: What this design achieves and explicitly excludes. Don't restate the proposal's scope - add only design-level boundaries.\n- **Decisions**: Key technical choices with rationale (why X over Y?). Include alternatives considered for each decision.\n- **Risks / Trade-offs**: Known limitations, things that could go wrong. Format: [Risk] → Mitigation\n- **Migration Plan**: Steps to deploy, rollback strategy (if applicable)\n- **Open Questions**: Unknowns that can safely be answered later without\n  changing the specs, the approach, or the task breakdown. Omit if none.\n\nOpen questions are for genuinely deferrable unknowns, not decisions you\nskipped. If a question would change the specs, the chosen approach, or\nthe task breakdown, resolve it now - ask the user instead of guessing.\n\nFocus on architecture and approach, not line-by-line implementation.\nThe proposal covers why and what; design covers how. Reference the\nproposal for motivation and, once written, the specs for requirements -\nif a section would only restate them, point to them instead.\n\nGood design docs explain the \"why\" behind technical decisions.\n",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\nMVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。\nMVP-D01-A 已归档到 openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open；其本地 Change checkpoint 为 8a702ff。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\nMVP-D01-B：action-runs-and-role-handoff 已独立批准并在 022 原生归档到 openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff，本地 Change checkpoint 为 c1d0251。累计完成 Change 数为 2。\nOwner 已授权 MVP-D01-C：explore-proof-and-proposal-review，025 Author Propose 已完成，四类规划产物和三份 delta 齐备、strict validate / check 通过，16 项任务待实施，当前停在独立 review-propose。023 / 024 的 Explore 与独立批准保持原样，新功能尚未实现。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、首个已有 Change 的 bind、status / next 与 action start / continue、run save / submit；记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\n当前记录为 .mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/run.md。已生效规格为 project-entry、delivery-workspace、action-runs；本次仅编写 delta，未同步主规格。B 的实现、独立批准及仍适用的结果保持原样。产品 Action 命令仍拒绝写入本项目人工记录。\nD01-B 已落实人读查询区分“尚未关联”与“已归档、当前无活动 Change”；人工记录保持只读。\nD02、D03 仅为计划分组；本次授权不包含 Git、正式 Delivery Full Test / Close 或下一 Change。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；本次复用 003-changes，整个 Delivery 实际 Run 连续编号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。",
+  "template": "# Design\n\n## Context\n\n<!-- Current state and constraints that shape the approach. See proposal.md for motivation - don't restate it -->\n\n## Goals / Non-Goals\n\n**Goals:**\n<!-- What this design aims to achieve -->\n\n**Non-Goals:**\n<!-- What is explicitly out of scope -->\n\n## Decisions\n\n<!-- Key design decisions with rationale and alternatives considered -->\n\n## Risks / Trade-offs\n\n<!-- Known risks and trade-offs -->\n",
+  "dependencies": [
+    {
+      "id": "proposal",
+      "done": true,
+      "path": "proposal.md",
+      "description": "Initial proposal document outlining the change"
+    }
+  ],
+  "unlocks": [
+    "tasks"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

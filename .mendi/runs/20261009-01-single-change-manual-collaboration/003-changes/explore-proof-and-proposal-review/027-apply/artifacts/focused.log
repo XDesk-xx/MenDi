@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: diagnose 本地只读 alive/unknown/not-found，无锁；普通 query 锁行为不变
+ok 1 - diagnose 本地只读 alive/unknown/not-found，无锁；普通 query 锁行为不变
+  ---
+  duration_ms: 170.2242
+  type: 'test'
+  ...
+# Subtest: 真实写入故障的未关联和实际 submitted 区分，临时路径只是观察，不改现场
+ok 2 - 真实写入故障的未关联和实际 submitted 区分，临时路径只是观察，不改现场
+  ---
+  duration_ms: 156.085
+  type: 'test'
+  ...
+# Subtest: 诊断坏锁、必要记录损坏、读中变化失败，路径/身份/junction不读取外部
+ok 3 - 诊断坏锁、必要记录损坏、读中变化失败，路径/身份/junction不读取外部
+  ---
+  duration_ms: 208.5166
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 不解析人工 Run，不支持 --run；参数无 unlock/kill/ignore-lock/工具入口
+ok 4 - 人工 bootstrap 不解析人工 Run，不支持 --run；参数无 unlock/kill/ignore-lock/工具入口
+  ---
+  duration_ms: 17.037
+  type: 'test'
+  ...
+# Subtest: handoff 保持 Action 和笔记，旧 actor 拒绝，新查询不读来源，continue 仅承接最近决策
+ok 5 - handoff 保持 Action 和笔记，旧 actor 拒绝，新查询不读来源，continue 仅承接最近决策
+  ---
+  duration_ms: 302.6462
+  type: 'test'
+  ...
+# Subtest: Reviewer handoff 不改 Author/原 Review，不产生 verdict；固定对象和自签写前拒绝
+ok 6 - Reviewer handoff 不改 Author/原 Review，不产生 verdict；固定对象和自签写前拒绝
+  ---
+  duration_ms: 195.6787
+  type: 'test'
+  ...
+# Subtest: rejected 只能 Owner 同阶段新修订，旧 verdict 不改；普通 start/continue 仍拒绝
+ok 7 - rejected 只能 Owner 同阶段新修订，旧 verdict 不改；普通 start/continue 仍拒绝
+  ---
+  duration_ms: 318.9203
+  type: 'test'
+  ...
+# Subtest: Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前无新增占号
+ok 8 - Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前无新增占号
+  ---
+  duration_ms: 613.9763
+  type: 'test'
+  ...
+# Subtest: Owner before-manifest-commit 故障保留旧记录和占号现场
+ok 9 - Owner before-manifest-commit 故障保留旧记录和占号现场
+  ---
+  duration_ms: 63.2705
+  type: 'test'
+  ...
+# Subtest: Owner before-readback 故障保留旧记录和占号现场
+ok 10 - Owner before-readback 故障保留旧记录和占号现场
+  ---
+  duration_ms: 104.9275
+  type: 'test'
+  ...
+# Subtest: resolve 锁内复核当前指针、正文；残留占号跳过，竞争锁不删除
+ok 11 - resolve 锁内复核当前指针、正文；残留占号跳过，竞争锁不删除
+  ---
+  duration_ms: 108.0057
+  type: 'test'
+  ...
+# Subtest: 真实 MenDi / OpenSpec：instructions、proof、修改要求、Author / Reviewer handoff、四产物和 rejected 同阶段修订
+ok 12 - 真实 MenDi / OpenSpec：instructions、proof、修改要求、Author / Reviewer handoff、四产物和 rejected 同阶段修订
+  ---
+  duration_ms: 55029.6171
+  type: 'test'
+  ...
+# Subtest: 两个真实进程 resolve 竞争只允许接收 Run，持锁 diagnose 观察存活且不改字节
+ok 13 - 两个真实进程 resolve 竞争只允许接收 Run，持锁 diagnose 观察存活且不改字节
+  ---
+  duration_ms: 7792.1702
+  type: 'test'
+  ...
+# Subtest: 完整 instructions 按当前阶段只读，坏内容和身份拒绝，blocked 依赖不伪报完成
+ok 14 - 完整 instructions 按当前阶段只读，坏内容和身份拒绝，blocked 依赖不伪报完成
+  ---
+  duration_ms: 188.523
+  type: 'test'
+  ...
+# Subtest: local save 不构造上游，缺入口/版本/status 故障不影响保存，正式操作仍失败
+ok 15 - local save 不构造上游，缺入口/版本/status 故障不影响保存，正式操作仍失败
+  ---
+  duration_ms: 129.2
+  type: 'test'
+  ...
+# Subtest: save 校验拒绝不改字节，替换后读回失败保留实际正文与锁
+ok 16 - save 校验拒绝不改字节，替换后读回失败保留实际正文与锁
+  ---
+  duration_ms: 88.3958
+  type: 'test'
+  ...
+# Subtest: Reviewer 无固定 Author 正文可保存，submit 和 continue 保留固定对象检查
+ok 17 - Reviewer 无固定 Author 正文可保存，submit 和 continue 保留固定对象检查
+  ---
+  duration_ms: 178.1434
+  type: 'test'
+  ...
+# Subtest: local save 缺配置/活动目录/当前 Run、损坏配置/受管指针和 junction 逐项拒绝
+ok 18 - local save 缺配置/活动目录/当前 Run、损坏配置/受管指针和 junction 逐项拒绝
+  ---
+  duration_ms: 608.0741
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63227.4982

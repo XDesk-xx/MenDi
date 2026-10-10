@@ -1,0 +1,14 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "validate",
+    "--specs",
+    "--strict",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"action-runs\",\n      \"type\": \"spec\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 14\n    },\n    {\n      \"id\": \"delivery-workspace\",\n      \"type\": \"spec\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 4\n    },\n    {\n      \"id\": \"project-entry\",\n      \"type\": \"spec\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 1\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 3,\n      \"passed\": 3,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"spec\": {\n        \"items\": 3,\n        \"passed\": 3,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

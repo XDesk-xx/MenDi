@@ -1,0 +1,137 @@
+{
+  "changeName": "action-runs-and-role-handoff",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\specs\\delivery-workspace\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 14,
+    "complete": 14,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 定义 product Run YAML 头部、Action 类型 / 角色 / 状态、当前 latestRunRef 与单批次扩展，保留无 Run 的 product v1 和人工只读格式；通过合法 / 坏头部、身份与路径不符、旧格式及未知说明字段的记录测试验证。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 实现当前 Run 的直接读取和状态解释，不解析无关历史头部；用缺当前输入失败、坏旧 Run / 失效历史链接 / 未知 Ref 仍可查询的测试验证，并同步字段说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 实现初始、continuing、完成、Review verdict 与局部 revise 的最小规则表；用错角色、draft 不可继续、完成不追加、陈旧输入、rejected 停 Owner 和修订新 actionId 的测试验证，记录与语义完成的区别同步到帮助说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 编写六个最小产品阶段 Skills 及 OpenSpec 工具指导，修订复用 Author 方法，接入安装包路径解析与按需读取；测试实际内容 / 角色 / 阶段、明确工具请求、缺方法和不匹配在占号前失败，并逐份核对停止边界不自动推进。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 实现约定层级内的全 Delivery 占号扫描和批次建立；用跨操作 / Change 连续号、批次不占号、artifacts 数字目录不参与、超过三位、空占号保留 / 报告和重复号拒绝的文件测试验证，同时给出目录样例。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "3.1 实现 Action start / continue 的独占写入、新 Run 独占落盘、manifest 指针替换和完整读回；以真实子进程竞争及 Run 落盘后 manifest 失败 / 读回失败的故障注入验证，断言原文件完整、修改后失败保留锁与已写路径，不自动清理。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "7",
+      "description": "3.2 实现当前 draft 的正文 save 与 submit，用临时文件替换、不更换当前指针；验证非空正文 / result、错误 actor / role、陈旧 Run、已提交 save / 重提拒绝、替换前后失败与锁释放失败，并用字节比较确认相关旧提交未改。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "3.3 接入同 Action 多 Run 继续，继承必要方法与固定 Author 输入；用独立进程保存 / 提交 continuing、continue、新 Run complete 和再次 continue 拒绝的测试验证，覆盖 Author 与 Reviewer，并同步继续用法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "4.1 实现初次 Review 固定当前完成 Author，校验相同身份 / 阶段 / 完成状态与不同操作者；测试缺失、未完成、旧 Author、错误阶段 / Change、明显自签和真实 Reviewer 跨进程继续，明确标签不认证真实会话。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 24
+    },
+    {
+      "id": "10",
+      "description": "4.2 实现 Review continuing 无 verdict、complete 必有合法 verdict、Author 禁止 verdict，以及 approved / changes-requested / rejected 最小 next；测试三类结论、修订后当前批准不沿用、旧 verdict 保留，以及固定 Author 丢失只阻止 Review continue / submit 而不阻止普通查询。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "11",
+      "description": "5.1 接入四类记录命令、参数白名单 / 互斥、退出码与中文 / JSON 输出；用实际 CLI 测试必填、错类型 / 角色、未知参数、目标外 body 输入与受管 Run 越界，并验证 help / 未支持 Archive、Delivery 命令无写入；在 README 落地可执行记录示例。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "12",
+      "description": "5.2 status / next 展示当前产品 Action / Run 和简短交接，人工记录不新增 Run 存在性要求；回归 product 无 Run、manual 写命令拒绝、归档后人读“已归档、当前无活动 Change”与 JSON 原身份 / upstream:null，验证查询不写文件或读取旧活动 Change。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "13",
+      "description": "6.1 在受控目标实际串联产品 Open / bind、方法选择、Author 两 Run、Reviewer 两 Run 和明确 verdict，退出进程后逐步读回；包括一次范围内修订与独立补审记录，验证直接对象 / 连续号 / 提交不可覆盖，所有结果按实际成功或失败留痕。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 34
+    },
+    {
+      "id": "14",
+      "description": "6.2 执行普通 `pnpm check`、构建、当前相关测试和既有行为回归，保留 A 的必要输入、路径 / junction、配置错误及写入回归；使用受控输入新建 fresh sandbox 验证不依赖旧临时状态，简记具体命令 / 结果 / 限制，不触发全历史 hash 或补证流程。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\action-runs-and-role-handoff\\tasks.md",
+      "line": 35
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\nMVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。\nMVP-D01-A 已归档到 openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open；累计完成 Change 数为 1。其本地 Change checkpoint 为 8a702ff。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\nOwner 已授权激活 MVP-D01-B：action-runs-and-role-handoff，范围为 Action 编排、Runs 与角色交接；019 已独立批准 018 方案；020 Author Apply 已完成 14 项实施任务，当前停在独立 Review Apply。\nCLI 已实现首次 delivery open、首个已有 Change 的 bind、status / next 与 action start / continue、run save / submit；记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\n最近交接为 .mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md；已完成当前 Run、draft / submit、固定 Author 审核与多 Run 继续，普通 check、构建及 64 项相关回归通过；尚无 Review Apply 批准。\nD01-B 已落实人读查询区分“尚未关联”与“已归档、当前无活动 Change”；人工记录保持只读。\nD02、D03 仅为计划分组；本次授权不包含 Git、正式 Delivery Full Test / Close 或下一 Change。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；本次复用 003-changes，整个 Delivery 实际 Run 连续编号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

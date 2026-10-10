@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: 真实 CLI Apply 回退参数接线，Review / revise 来源只回到较早阶段
+ok 1 - 真实 CLI Apply 回退参数接线，Review / revise 来源只回到较早阶段
+  ---
+  duration_ms: 4056.9186
+  type: 'test'
+  ...
+# Subtest: Apply / Review Apply handoff 和 rejected revise 保持直接对象与重新审核
+ok 2 - Apply / Review Apply handoff 和 rejected revise 保持直接对象与重新审核
+  ---
+  duration_ms: 3092.8983
+  type: 'test'
+  ...
+# Subtest: 显式 earlier rollback 建立新 Author 和审核链，不使用过去批准跳到 Apply
+ok 3 - 显式 earlier rollback 建立新 Author 和审核链，不使用过去批准跳到 Apply
+  ---
+  duration_ms: 4052.9824
+  type: 'test'
+  ...
+# Subtest: Owner 回退非法目标、陈旧对象、写前漂移和持久化失败保留现场
+ok 4 - Owner 回退非法目标、陈旧对象、写前漂移和持久化失败保留现场
+  ---
+  duration_ms: 3425.0003
+  type: 'test'
+  ...
+# Subtest: RA-D-002：prepared 调用标记提交前真实中断，保留占号并由另一次显式 execute 完成
+ok 5 - RA-D-002：prepared 调用标记提交前真实中断，保留占号并由另一次显式 execute 完成
+  ---
+  duration_ms: 21485.234
+  type: 'test'
+  ...
+# Subtest: RA-D-002：none 调用标记提交前真实中断，保留占号并由另一次显式 execute 完成
+ok 6 - RA-D-002：none 调用标记提交前真实中断，保留占号并由另一次显式 execute 完成
+  ---
+  duration_ms: 22286.2812
+  type: 'test'
+  ...
+# Subtest: RA-D-002：当前 attempt 非规范号、超出安全整数、非目录与外部 junction 占号在调用前拒绝
+ok 7 - RA-D-002：当前 attempt 非规范号、超出安全整数、非目录与外部 junction 占号在调用前拒绝
+  ---
+  duration_ms: 36047.932
+  type: 'test'
+  ...
+# Subtest: 两个真实执行进程 / finish 进程竞争同一锁，原生和累计计数只执行一次
+ok 8 - 两个真实执行进程 / finish 进程竞争同一锁，原生和累计计数只执行一次
+  ---
+  duration_ms: 29808.795
+  type: 'test'
+  ...
+# Subtest: finish 本身也可再次在真实 Run 提交点中断，后续收口不改已提交 Run
+ok 9 - finish 本身也可再次在真实 Run 提交点中断，后续收口不改已提交 Run
+  ---
+  duration_ms: 12831.1892
+  type: 'test'
+  ...
+# Subtest: 实际原生 MODIFIED / REMOVED / RENAMED 同步的定向读回保留未涉及需求
+ok 10 - 实际原生 MODIFIED / REMOVED / RENAMED 同步的定向读回保留未涉及需求
+  ---
+  duration_ms: 15290.7209
+  type: 'test'
+  ...
+# Subtest: 实际日期变更后本地定位；无 count 字段解释为零，编号依据保持不变
+ok 11 - 实际日期变更后本地定位；无 count 字段解释为零，编号依据保持不变
+  ---
+  duration_ms: 12889.0213
+  type: 'test'
+  ...
+# Subtest: 源目标并存、多个候选、编号冲突、元数据 / 规格改变、外链均停止收口且不降级 confirmed
+ok 12 - 源目标并存、多个候选、编号冲突、元数据 / 规格改变、外链均停止收口且不降级 confirmed
+  ---
+  duration_ms: 58173.7545
+  type: 'test'
+  ...
+# Subtest: 原生真实碰撞错误保留公开失败响应，不能凭非零退出证明无效果
+ok 13 - 原生真实碰撞错误保留公开失败响应，不能凭非零退出证明无效果
+  ---
+  duration_ms: 6659.3845
+  type: 'test'
+  ...
+# Subtest: 累计编号继续增长到四位，不从 Run 编号或本 Delivery 重置
+ok 14 - 累计编号继续增长到四位，不从 Run 编号或本 Delivery 重置
+  ---
+  duration_ms: 6646.5842
+  type: 'test'
+  ...
+# Subtest: 实际效果已发生但必要直接批准 / attempt 缺失时 finish 停止，不以源消失判完成
+ok 15 - 实际效果已发生但必要直接批准 / attempt 缺失时 finish 停止，不以源消失判完成
+  ---
+  duration_ms: 12422.1175
+  type: 'test'
+  ...
+# Subtest: Archive prepare 必须直接独立批准及 all_done；准备只建 typed draft，笔记只本地保存
+ok 16 - Archive prepare 必须直接独立批准及 all_done；准备只建 typed draft，笔记只本地保存
+  ---
+  duration_ms: 36030.3075
+  type: 'test'
+  ...
+# Subtest: 真实固定原生 Archive 同步、累计编号、local-only repeated finish 与 prepared Owner rollback
+ok 17 - 真实固定原生 Archive 同步、累计编号、local-only repeated finish 与 prepared Owner rollback
+  ---
+  duration_ms: 17481.1943
+  type: 'test'
+  ...
+# Subtest: 真实原生已完成但公开响应丢失 / 错身份 / 错 root / 越界返回非零，保留错误并由新进程 finish 收口
+ok 18 - 真实原生已完成但公开响应丢失 / 错身份 / 错 root / 越界返回非零，保留错误并由新进程 finish 收口
+  ---
+  duration_ms: 36927.2287
+  type: 'test'
+  ...
+# Subtest: execute 锁内直接批准变化在原生调用前拒绝，不建立 attempt
+ok 19 - execute 锁内直接批准变化在原生调用前拒绝，不建立 attempt
+  ---
+  duration_ms: 6418.7737
+  type: 'test'
+  ...
+# Subtest: RP-D-001：调用标记后真实中断，新进程 finish 仅观察 none；独立 execute 创建第二次尝试
+ok 20 - RP-D-001：调用标记后真实中断，新进程 finish 仅观察 none；独立 execute 创建第二次尝试
+  ---
+  duration_ms: 23118.872
+  type: 'test'
+  ...
+# Subtest: RP-D-001：真实原生验证失败后、none 保存前中断；保留原错误，观察后 Owner rollback 另建 revise
+ok 21 - RP-D-001：真实原生验证失败后、none 保存前中断；保留原错误，观察后 Owner rollback 另建 revise
+  ---
+  duration_ms: 13200.2078
+  type: 'test'
+  ...
+# Subtest: 真实提交点中断后 finish 只补缺失交接；一次计数、终态 Run 不重写、原生不重调
+ok 22 - 真实提交点中断后 finish 只补缺失交接；一次计数、终态 Run 不重写、原生不重调
+  ---
+  duration_ms: 59322.3456
+  type: 'test'
+  ...
+# Subtest: 无效果现场缺失 / 变化 / 候选 / 活跃或 unknown 写者、观察写入失败均不能伪报 none
+ok 23 - 无效果现场缺失 / 变化 / 候选 / 活跃或 unknown 写者、观察写入失败均不能伪报 none
+  ---
+  duration_ms: 44297.0038
+  type: 'test'
+  ...
+# Subtest: 已保存 none 后重新 execute 仍检查输入、批准和任务；变化不产生新 attempt / 原生调用
+ok 24 - 已保存 none 后重新 execute 仍检查输入、批准和任务；变化不产生新 attempt / 原生调用
+  ---
+  duration_ms: 20119.7662
+  type: 'test'
+  ...
+# Subtest: prepared / invoking / none / confirmed 和部分计数或终态 Run 的只读查询仅解释当前交接
+ok 25 - prepared / invoking / none / confirmed 和部分计数或终态 Run 的只读查询仅解释当前交接
+  ---
+  duration_ms: 61878.7998
+  type: 'test'
+  ...
+# Subtest: 最终查询只依赖当前必要记录，不依赖归档内容、历史说明 / 批准或未知 Ref，不激活下一 Change
+ok 26 - 最终查询只依赖当前必要记录，不依赖归档内容、历史说明 / 批准或未知 Ref，不激活下一 Change
+  ---
+  duration_ms: 12902.3062
+  type: 'test'
+  ...
+# Subtest: 普通活动源缺失仍失败，过渡记录不能用错误类型 / 身份伪装合法归档
+ok 27 - 普通活动源缺失仍失败，过渡记录不能用错误类型 / 身份伪装合法归档
+  ---
+  duration_ms: 2703.0945
+  type: 'test'
+  ...
+# Subtest: RA-D-001：真实退役删除最后需求；正常 execute与 repeated finish
+ok 28 - RA-D-001：真实退役删除最后需求；正常 execute与 repeated finish
+  ---
+  duration_ms: 15840.0288
+  type: 'test'
+  ...
+# Subtest: RA-D-001：真实退役删除最后需求；中断后新进程 local-only finish与 repeated finish
+ok 29 - RA-D-001：真实退役删除最后需求；中断后新进程 local-only finish与 repeated finish
+  ---
+  duration_ms: 12802.9989
+  type: 'test'
+  ...
+# Subtest: RA-D-001：未声明退役 / 剩余需求时的主规格丢失、退役元数据变化与必要输入缺失仍停止
+ok 30 - RA-D-001：未声明退役 / 剩余需求时的主规格丢失、退役元数据变化与必要输入缺失仍停止
+  ---
+  duration_ms: 44003.0029
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 160762.2633

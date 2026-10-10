@@ -1,0 +1,8 @@
+项目：D:\Projects\MenDi
+OpenSpec：1.14.1 (D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js)
+Delivery：20261009-01-single-change-manual-collaboration 单 Change 手动协作 (open)
+目标：Action 编排 Skills，通过 Runs 完成一个真实 Change 的 Explore proof、方案、实现、独立审核及原生 OpenSpec 归档。
+槽位：MVP-D01-A, MVP-D01-B, MVP-D01-C, MVP-D01-D
+Change：已归档、当前无活动 Change
+下一步：delivery-next，来源：manual-bootstrap
+MVP-D01-B 已归档，累计完成 2 个 Change；等待 Owner 明确下一 Change 的目标与范围。

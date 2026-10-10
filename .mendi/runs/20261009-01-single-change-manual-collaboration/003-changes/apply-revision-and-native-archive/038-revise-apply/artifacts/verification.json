@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "command": "pnpm format",
+      "exitCode": 0,
+      "formattedFiles": 2
+    },
+    {
+      "command": "pnpm check",
+      "exitCode": 0,
+      "log": "check.log"
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "node --test tests/archive-retirement.test.ts tests/archive-attempts.test.ts",
+      "exitCode": 0,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "log": "revision-tests.log"
+    },
+    {
+      "command": "node --test tests/archive-execute.test.ts tests/archive-effects.test.ts tests/archive-finish.test.ts tests/archive-query.test.ts tests/archive-concurrency.test.ts tests/apply-resolution.test.ts",
+      "exitCode": 0,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "log": "related-tests.log"
+    },
+    {
+      "command": "fixed OpenSpec validate apply-revision-and-native-archive --strict --json",
+      "exitCode": 0,
+      "valid": true,
+      "issues": []
+    }
+  ],
+  "reusedEvidence": "037 的完整 111/111 中未受影响领域；未重跑整套或正式 Delivery Full Test。",
+  "handoff": "review-apply",
+  "role": "author"
+}

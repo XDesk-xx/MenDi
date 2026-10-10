@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: 自引用 YAML store 返回完整人读错误且不写目标
+ok 1 - 自引用 YAML store 返回完整人读错误且不写目标
+  ---
+  duration_ms: 379.5012
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML store 返回完整 JSON错误且不写目标
+ok 2 - 自引用 YAML store 返回完整 JSON错误且不写目标
+  ---
+  duration_ms: 369.8072
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML schema 返回完整人读错误且不写目标
+ok 3 - 自引用 YAML schema 返回完整人读错误且不写目标
+  ---
+  duration_ms: 475.3938
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML schema 返回完整 JSON错误且不写目标
+ok 4 - 自引用 YAML schema 返回完整 JSON错误且不写目标
+  ---
+  duration_ms: 445.9674
+  type: 'test'
+  ...
+# Subtest: 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+ok 5 - 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+  ---
+  duration_ms: 2679.4574
+  type: 'test'
+  ...
+# Subtest: 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+ok 6 - 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+  ---
+  duration_ms: 6111.3406
+  type: 'test'
+  ...
+# Subtest: 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+ok 7 - 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+  ---
+  duration_ms: 12811.6725
+  type: 'test'
+  ...
+# Subtest: 关联与范围不成立的 Open 在写前拒绝
+ok 8 - 关联与范围不成立的 Open 在写前拒绝
+  ---
+  duration_ms: 1810.8866
+  type: 'test'
+  ...
+# Subtest: 本地新 / 已有配置按显式目标读取并保留原字节
+ok 9 - 本地新 / 已有配置按显式目标读取并保留原字节
+  ---
+  duration_ms: 26.6507
+  type: 'test'
+  ...
+# Subtest: config.yml 仅在主配置不存在时使用，损坏主配置不回退
+ok 10 - config.yml 仅在主配置不存在时使用，损坏主配置不回退
+  ---
+  duration_ms: 10.2288
+  type: 'test'
+  ...
+# Subtest: 有效主配置存在时不解析未选用的 config.yml junction
+ok 11 - 有效主配置存在时不解析未选用的 config.yml junction
+  ---
+  duration_ms: 6.5287
+  type: 'test'
+  ...
+# Subtest: store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+ok 12 - store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+  ---
+  duration_ms: 19.7937
+  type: 'test'
+  ...
+# Subtest: 受管路径拒绝越界和指向外部的 junction
+ok 13 - 受管路径拒绝越界和指向外部的 junction
+  ---
+  duration_ms: 6.134
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 25262.8957

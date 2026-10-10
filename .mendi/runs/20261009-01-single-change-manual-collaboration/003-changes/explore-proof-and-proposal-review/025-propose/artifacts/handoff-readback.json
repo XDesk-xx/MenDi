@@ -1,0 +1,75 @@
+{
+  "changeId": "explore-proof-and-proposal-review",
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "reason": "025 Author Propose 已完成，当前 Change strict validate 与 check 通过，16 项任务待实施；请独立核对方案与限制。",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/run.md",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": true,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "done"
+      },
+      {
+        "id": "specs",
+        "status": "done"
+      },
+      {
+        "id": "design",
+        "status": "done"
+      },
+      {
+        "id": "tasks",
+        "status": "done"
+      }
+    ]
+  },
+  "capabilities": [
+    "project-entry",
+    "action-runs",
+    "delivery-workspace"
+  ],
+  "modifiedRequirementsWithOriginalScenariosRetained": 4,
+  "tasks": {
+    "completed": 0,
+    "total": 16
+  },
+  "runNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "nextNumber": 26,
+  "directRunLinksChecked": 12,
+  "archivedChangeCount": 2
+}

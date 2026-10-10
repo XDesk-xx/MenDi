@@ -1,0 +1,11 @@
+{
+  "stage": "post-archive-local-handoff",
+  "error": {
+    "code": "invalid-record",
+    "message": "人工 next.role 不合法。"
+  },
+  "cause": "本次人工交接误写 next.role=owner，记录格式只允许 author / reviewer。",
+  "correction": "next.role 改为当前 author；保留 awaiting-owner-instruction 与 Owner 后续授权边界。",
+  "archiveRepeated": false,
+  "specSyncRepeated": false
+}

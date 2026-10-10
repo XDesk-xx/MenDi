@@ -1,0 +1,28 @@
+{
+  "project": {
+    "name": "manual-fixture",
+    "recordingMode": "manual-bootstrap",
+    "activeDeliveryId": "d01",
+    "deliveryGroupsDir": ".mendi/delivery-groups",
+    "deliveries": [{ "id": "d01", "manifestRef": ".mendi/delivery-groups/d01/manifest.json" }]
+  },
+  "manifest": {
+    "id": "d01", "title": "人工记录夹具", "state": "open", "recordingMode": "manual-bootstrap",
+    "goal": "验证人工交接只读兼容",
+    "plannedChanges": [{ "slot": "A", "title": "入口", "dependsOn": [] }],
+    "changeBindings": [{ "planningSlot": "A", "changeId": "proof-entry", "changeRef": "openspec/changes/proof-entry", "batchId": "003-changes", "state": "propose-approved" }],
+    "activeChangeId": "proof-entry",
+    "changeBatches": [{ "id": "003-changes", "firstRun": "003", "runsRef": ".mendi/runs/d01/003-changes", "changeIds": ["proof-entry"] }],
+    "openCheckpoint": { "commit": "fixture-only", "branch": "delivery/fixture" },
+    "latestRunRef": ".mendi/runs/d01/003-changes/proof-entry/006-propose/run.md",
+    "next": {
+      "action": "review-propose", "status": "awaiting-independent-review", "role": "reviewer",
+      "authorRunRef": ".mendi/runs/d01/003-changes/proof-entry/006-propose/run.md",
+      "reviewRunRef": ".mendi/runs/d01/003-changes/proof-entry/004-review-explore/run.md"
+    }
+  },
+  "fixtureReferences": [
+    ".mendi/runs/d01/003-changes/proof-entry/006-propose/run.md",
+    ".mendi/runs/d01/003-changes/proof-entry/004-review-explore/run.md"
+  ]
+}

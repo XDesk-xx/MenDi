@@ -1,0 +1,128 @@
+{
+  "total_files": 20,
+  "reviewed_files": 20,
+  "skipped_files": 0,
+  "coverage_rate": 100,
+  "files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/commands.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/report.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/commands.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/report.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-list.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-status.json",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/.openspec.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.mjs",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": false
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/run.md",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/declared-store-project/openspec/config.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/AGENTS.md",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/README.md",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/openspec/config.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/invalid-openspec-project/openspec/config.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/minimal-project/AGENTS.md",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/minimal-project/README.md",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    },
+    {
+      "path": "tests/fixtures/minimal-project/openspec/config.yaml",
+      "status": "added",
+      "review": "reviewed",
+      "ocrExcluded": true
+    }
+  ]
+}

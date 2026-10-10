@@ -1,0 +1,12 @@
+{
+  "compared": 31,
+  "result": "passed",
+  "oldRef": "004-review-explore/artifacts/replay-001/commands.json",
+  "newRef": "005-revise-explore/artifacts/replay-001/commands.json",
+  "normalized": [
+    "sandbox 随机后缀",
+    "脚本 .mjs 到 .ts 路径",
+    "上游 changes[].lastModified 时间字段"
+  ],
+  "otherFields": "全部一致，包含 executable、args、cwd、exitCode、signal、stdout、stderr"
+}

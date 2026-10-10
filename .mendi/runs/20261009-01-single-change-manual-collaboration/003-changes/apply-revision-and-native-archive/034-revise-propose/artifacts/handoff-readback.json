@@ -1,0 +1,38 @@
+{
+  "change": "apply-revision-and-native-archive",
+  "authorRun": "034",
+  "authorResult": "planning-ready-for-review",
+  "finding": "RP-D-001",
+  "planningComplete": true,
+  "strictValidation": {
+    "items": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "taskProgress": {
+    "total": 21,
+    "complete": 0,
+    "remaining": 21
+  },
+  "archiveCount": 3,
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/run.md",
+    "reason": "034 Author 已局部修订 RP-D-001 的 invoking 无效果观察入口、场景与任务；等待独立 Review Propose 补审，21 项任务未实施。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "queriesOk": true,
+  "directRunsUnchanged": [
+    "032",
+    "033"
+  ],
+  "newScenarios": [
+    "Invoking was saved before the native process started",
+    "Native no-effect exit was not classified before interruption",
+    "Observation cannot downgrade an effect or bypass uncertain writers"
+  ],
+  "implementationStarted": false
+}

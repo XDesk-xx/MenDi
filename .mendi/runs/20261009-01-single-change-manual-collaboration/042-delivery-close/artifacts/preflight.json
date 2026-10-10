@@ -1,0 +1,92 @@
+{
+  "ownerInstruction": "owner 授权 delivery close",
+  "deliveryId": "20261009-01-single-change-manual-collaboration",
+  "recordingMode": "manual-bootstrap",
+  "fullTestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/041-delivery-full-test/run.md",
+  "fullTestResult": "passed",
+  "tests": {
+    "command": "pnpm test",
+    "exitCode": 0,
+    "total": 117,
+    "passed": 117,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "durationMs": 192395.5663,
+    "fileCount": 27,
+    "log": "test.log"
+  },
+  "implementationBasis": {
+    "commit": "7c473bef3a76c44ced406f1f23690bdfb0be52ce",
+    "command": [
+      "git",
+      "-c",
+      "core.longpaths=true",
+      "diff",
+      "--name-only",
+      "7c473bef3a76c44ced406f1f23690bdfb0be52ce",
+      "--",
+      "src",
+      "tests",
+      "scripts",
+      "skills",
+      "package.json",
+      "pnpm-lock.yaml",
+      "tsconfig.json",
+      "tsconfig.scripts.json",
+      "tsconfig.tests.json",
+      "biome.json",
+      "biome.jsonc",
+      "AGENTS.md"
+    ],
+    "exitCode": 0,
+    "changedFiles": [],
+    "untrackedMaintainedCode": []
+  },
+  "bindings": [
+    {
+      "slot": "MVP-D01-A",
+      "changeId": "project-entry-and-minimal-delivery-open",
+      "archiveRef": "openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open",
+      "archiveOrdinal": 1,
+      "completedTasks": 20,
+      "reviewRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/014-review-apply/run.md",
+      "reviewVerdict": "approved"
+    },
+    {
+      "slot": "MVP-D01-B",
+      "changeId": "action-runs-and-role-handoff",
+      "archiveRef": "openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff",
+      "archiveOrdinal": 2,
+      "completedTasks": 14,
+      "reviewRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/021-review-apply/run.md",
+      "reviewVerdict": "approved"
+    },
+    {
+      "slot": "MVP-D01-C",
+      "changeId": "explore-proof-and-proposal-review",
+      "archiveRef": "openspec/changes/archive/2026-10-10-003-explore-proof-and-proposal-review",
+      "archiveOrdinal": 3,
+      "completedTasks": 16,
+      "reviewRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/028-review-apply/run.md",
+      "reviewVerdict": "approved"
+    },
+    {
+      "slot": "MVP-D01-D",
+      "changeId": "apply-revision-and-native-archive",
+      "archiveRef": "openspec/changes/archive/2026-10-10-004-apply-revision-and-native-archive",
+      "archiveOrdinal": 4,
+      "completedTasks": 24,
+      "reviewRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/039-review-apply/run.md",
+      "reviewVerdict": "approved"
+    }
+  ],
+  "blockingIssues": [],
+  "nonBlockingLimitations": [
+    "041 已记录两份未纳入 checkpoint 的长路径重复历史副本；不影响实现验收，本轮不执行 Git 处理。",
+    "本次为人工 Close，产品级 Full Test / Close / Reopen 命令仍属 D02。"
+  ],
+  "maxPriorRun": 41,
+  "projectSelector": "保留 activeDeliveryId 作为当前查询入口；是否收口由 manifest.state=closed 表达，当前无活动 Change。"
+}

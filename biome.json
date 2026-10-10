@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["src/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "!tests/fixtures/**"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100
+  },
+  "javascript": { "formatter": { "quoteStyle": "single" } },
+  "assist": { "enabled": false },
+  "linter": {
+    "rules": {
+      "recommended": false,
+      "correctness": { "noUnreachable": "error", "noUnusedImports": "error" },
+      "suspicious": {
+        "noDebugger": "error",
+        "noDoubleEquals": "error",
+        "noDuplicateObjectKeys": "error"
+      }
+    }
+  }
+}

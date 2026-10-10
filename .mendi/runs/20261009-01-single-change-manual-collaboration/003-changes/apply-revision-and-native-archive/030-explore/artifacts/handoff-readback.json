@@ -1,0 +1,35 @@
+{
+  "changeId": "apply-revision-and-native-archive",
+  "planningSlot": "MVP-D01-D",
+  "run": "030",
+  "role": "author",
+  "result": "proof-supported",
+  "proof": {
+    "passed": 8,
+    "total": 8,
+    "commands": 52,
+    "report": "proof-002/report.json",
+    "initialFailureRetained": "proof-001/report.json"
+  },
+  "checkExitCode": 0,
+  "buildExitCode": 0,
+  "relatedRegression": {
+    "passed": 32,
+    "total": 32,
+    "exitCode": 0
+  },
+  "archivedChangeCount": 3,
+  "next": {
+    "action": "review-explore",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "reason": "030 Author Explore 完成；核心 proof 8/8（52 次子进程）、check / build 与定向回归 32/32 通过，等待独立 Reviewer 核对关键实验和待 Propose 建议。",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/run.md",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "productImplementationChanged": false,
+  "currentChangeArchived": false,
+  "currentChangeExploreMarkdownCreated": false,
+  "formalDeliveryFullTestExecuted": false
+}

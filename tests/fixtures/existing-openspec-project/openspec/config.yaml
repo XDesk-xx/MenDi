@@ -1,0 +1,10 @@
+schema: spec-driven
+context: |
+  EXISTING_CONTEXT_SENTINEL：这是带现有 context、rules 和操作指引的受控项目。
+rules:
+  proposal:
+    - EXISTING_PROPOSAL_RULE_SENTINEL：保留本项目的方案约束。
+operations:
+  apply:
+    guidance:
+      - EXISTING_APPLY_GUIDANCE_SENTINEL：先验证本次修改。

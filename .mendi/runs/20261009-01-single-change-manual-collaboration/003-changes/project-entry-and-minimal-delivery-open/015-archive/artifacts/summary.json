@@ -1,0 +1,52 @@
+{
+  "change": "project-entry-and-minimal-delivery-open",
+  "run": "015",
+  "role": "author",
+  "result": "archived",
+  "archiveRef": "openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open",
+  "archiveOrdinal": 1,
+  "completedChangeCount": 1,
+  "nextArchiveOrdinal": 2,
+  "activeChanges": 0,
+  "specs": [
+    {
+      "capability": "delivery-workspace",
+      "requirements": 8,
+      "scenarios": 21,
+      "purpose": "preserved",
+      "requirementBodies": "equal"
+    },
+    {
+      "capability": "project-entry",
+      "requirements": 5,
+      "scenarios": 14,
+      "purpose": "preserved",
+      "requirementBodies": "equal"
+    }
+  ],
+  "checks": {
+    "format": "passed",
+    "lint": "passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "numberedArchiveRegression": {
+      "tests": 9,
+      "passed": 9
+    },
+    "mainSpecsStrict": "passed",
+    "archivedTasksStrict": "passed",
+    "statusNext": "passed; read-only; no active Change status"
+  },
+  "preservation": {
+    "runs": "001–014",
+    "files": 88,
+    "method": "byte comparison; no hash manifest",
+    "openspecYaml": "unchanged"
+  },
+  "boundary": "archive; awaiting Owner authorization for next Change",
+  "limits": [
+    "No Git checkpoint/push, formal Delivery Full Test/Close or next Change.",
+    "RA-A-002 remains nonblocking; no new Reviewer verdict fabricated.",
+    "ArchiveOrdinal compatibility was directly requested and verified by Author in this Archive Run."
+  ]
+}

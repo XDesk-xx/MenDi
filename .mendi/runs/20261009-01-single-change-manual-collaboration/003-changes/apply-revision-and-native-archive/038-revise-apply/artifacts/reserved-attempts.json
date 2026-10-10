@@ -1,0 +1,118 @@
+[
+  {
+    "sceneFile": "archive-scenes-8820.jsonl",
+    "run": {
+      "ref": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+      "record": {
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "deliveryId": "d01",
+        "changeId": "proof-entry",
+        "runNumber": 7,
+        "actionId": "proof-entry-007-archive",
+        "actionType": "archive",
+        "role": "author",
+        "actorId": "archive-author",
+        "status": "draft",
+        "stageSkill": "archive",
+        "toolGuidance": [],
+        "archive": {
+          "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+          "countBasis": 0,
+          "ordinal": 1,
+          "phase": "prepared",
+          "attempt": 0
+        }
+      },
+      "header": {
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "deliveryId": "d01",
+        "changeId": "proof-entry",
+        "actionType": "archive",
+        "role": "author",
+        "actorId": "archive-author",
+        "status": "draft",
+        "stageSkill": "archive",
+        "toolGuidance": [],
+        "archive": {
+          "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+          "countBasis": 0,
+          "ordinal": 1,
+          "phase": "prepared",
+          "attempt": 0
+        },
+        "runNumber": 7,
+        "actionId": "proof-entry-007-archive"
+      },
+      "body": ""
+    },
+    "attemptRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/artifacts/attempt-001",
+    "files": {
+      "inputs.json": "{\n  \"formatVersion\": 1,\n  \"changeId\": \"proof-entry\",\n  \"runRef\": \".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md\",\n  \"review\": {\n    \"ref\": \".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md\",\n    \"content\": \"---\\nformatVersion: 1\\nrecordingMode: product\\ndeliveryId: d01\\nchangeId: proof-entry\\nactionType: review-apply\\nrole: reviewer\\nactorId: reviewer-one\\nstatus: submitted\\nstageSkill: review-apply\\ntoolGuidance: []\\nauthorRunRef: .mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\\nrunNumber: 6\\nactionId: proof-entry-006-review-apply\\noutcome: complete\\nresult: 完成受控工作\\nverdict: approved\\n---\\n真实受控工作正文\\n\"\n  },\n  \"author\": {\n    \"ref\": \".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\",\n    \"content\": \"---\\nformatVersion: 1\\nrecordingMode: product\\ndeliveryId: d01\\nchangeId: proof-entry\\nactionType: apply\\nrole: author\\nactorId: author-one\\nstatus: submitted\\nstageSkill: apply\\ntoolGuidance: []\\nrunNumber: 5\\nactionId: proof-entry-005-apply\\noutcome: complete\\nresult: 完成受控工作\\n---\\n真实受控工作正文\\n\"\n  },\n  \"source\": {\n    \".openspec.yaml\": \"schema: spec-driven\\ncreated: 2026-10-10\\n\",\n    \"proposal.md\": \"# Proposal\\n\\n受控产品行为。\\n\",\n    \"design.md\": \"# Design\\n\\n受控实现与验证。\\n\",\n    \"tasks.md\": \"# Tasks\\n\\n- [x] 1.1 验证受控行为\\n\",\n    \"specs/example/spec.md\": \"# Spec Delta\\n\\n## ADDED Requirements\\n\\n### Requirement: Controlled operation\\n系统 SHALL 保存当前明确操作的结果。\\n\\n#### Scenario: Explicit operation\\n- **WHEN** 用户明确执行操作\\n- **THEN** 保存当前操作的结果\\n\"\n  },\n  \"main\": {\n    \"openspec/specs/example/spec.md\": null\n  }\n}\n",
+      "invocation.json": "{\n  \"runRef\": \".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md\",\n  \"attempt\": 1,\n  \"writerPid\": 2244,\n  \"markedAt\": \"2026-10-10T00:54:18.040Z\"\n}\n"
+    },
+    "launchExists": false
+  },
+  {
+    "sceneFile": "archive-scenes-8820.jsonl",
+    "run": {
+      "ref": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+      "record": {
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "deliveryId": "d01",
+        "changeId": "proof-entry",
+        "runNumber": 7,
+        "actionId": "proof-entry-007-archive",
+        "actionType": "archive",
+        "role": "author",
+        "actorId": "archive-author",
+        "status": "draft",
+        "stageSkill": "archive",
+        "toolGuidance": [],
+        "archive": {
+          "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+          "countBasis": 0,
+          "ordinal": 1,
+          "phase": "none",
+          "attempt": 1,
+          "attemptRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/artifacts/attempt-001"
+        }
+      },
+      "header": {
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "deliveryId": "d01",
+        "changeId": "proof-entry",
+        "actionType": "archive",
+        "role": "author",
+        "actorId": "archive-author",
+        "status": "draft",
+        "stageSkill": "archive",
+        "toolGuidance": [],
+        "archive": {
+          "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+          "countBasis": 0,
+          "ordinal": 1,
+          "phase": "none",
+          "attempt": 1,
+          "attemptRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/artifacts/attempt-001"
+        },
+        "runNumber": 7,
+        "actionId": "proof-entry-007-archive"
+      },
+      "body": ""
+    },
+    "attemptRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/artifacts/attempt-002",
+    "files": {
+      "inputs.json": "{\n  \"formatVersion\": 1,\n  \"changeId\": \"proof-entry\",\n  \"runRef\": \".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md\",\n  \"review\": {\n    \"ref\": \".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md\",\n    \"content\": \"---\\nformatVersion: 1\\nrecordingMode: product\\ndeliveryId: d01\\nchangeId: proof-entry\\nactionType: review-apply\\nrole: reviewer\\nactorId: reviewer-one\\nstatus: submitted\\nstageSkill: review-apply\\ntoolGuidance: []\\nauthorRunRef: .mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\\nrunNumber: 6\\nactionId: proof-entry-006-review-apply\\noutcome: complete\\nresult: 完成受控工作\\nverdict: approved\\n---\\n真实受控工作正文\\n\"\n  },\n  \"author\": {\n    \"ref\": \".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\",\n    \"content\": \"---\\nformatVersion: 1\\nrecordingMode: product\\ndeliveryId: d01\\nchangeId: proof-entry\\nactionType: apply\\nrole: author\\nactorId: author-one\\nstatus: submitted\\nstageSkill: apply\\ntoolGuidance: []\\nrunNumber: 5\\nactionId: proof-entry-005-apply\\noutcome: complete\\nresult: 完成受控工作\\n---\\n真实受控工作正文\\n\"\n  },\n  \"source\": {\n    \".openspec.yaml\": \"schema: spec-driven\\ncreated: 2026-10-10\\n\",\n    \"proposal.md\": \"# Proposal\\n\\n受控产品行为。\\n\",\n    \"design.md\": \"# Design\\n\\n受控实现与验证。\\n\",\n    \"tasks.md\": \"# Tasks\\n\\n- [x] 1.1 验证受控行为\\n\",\n    \"specs/example/spec.md\": \"# Spec Delta\\n\\n## ADDED Requirements\\n\\n### Requirement: Controlled operation\\n系统 SHALL 保存当前明确操作的结果。\\n\\n#### Scenario: Explicit operation\\n- **WHEN** 用户明确执行操作\\n- **THEN** 保存当前操作的结果\\n\"\n  },\n  \"main\": {\n    \"openspec/specs/example/spec.md\": null\n  }\n}\n",
+      "invocation.json": "{\n  \"runRef\": \".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md\",\n  \"attempt\": 2,\n  \"writerPid\": 43612,\n  \"markedAt\": \"2026-10-10T00:54:38.981Z\"\n}\n"
+    },
+    "launchExists": false
+  }
+]

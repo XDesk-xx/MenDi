@@ -1,0 +1,12 @@
+{
+  "change": {
+    "id": "apply-revision-and-native-archive",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive",
+    "metadataPath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\.openspec.yaml",
+    "schema": "spec-driven"
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

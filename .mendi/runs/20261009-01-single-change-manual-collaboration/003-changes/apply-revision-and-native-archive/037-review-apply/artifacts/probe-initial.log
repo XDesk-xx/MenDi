@@ -1,0 +1,72 @@
+{
+  "scenario": "retired-last-requirement",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Dpi55d\\minimal-project",
+  "nativeStatus": 0,
+  "nativeResponse": {
+    "archive": {
+      "change": "proof-entry",
+      "archivedAs": "2026-10-10-proof-entry",
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Dpi55d\\minimal-project\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+      "specsUpdated": true,
+      "totals": {
+        "added": 0,
+        "modified": 0,
+        "removed": 1,
+        "renamed": 0
+      },
+      "warnings": [
+        "example - capability retired; deleted the main spec (all requirements removed, declared by retire_capabilities) at openspec/specs/example/spec.md. Its section(s) went with it: Purpose. If it was committed, restore it with: git checkout HEAD -- \":(top)openspec/specs/example/spec.md\""
+      ]
+    },
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Dpi55d\\minimal-project",
+      "source": "nearest"
+    }
+  },
+  "execute": {
+    "status": 1,
+    "signal": null,
+    "output": [
+      null,
+      "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+      ""
+    ],
+    "pid": 45616,
+    "stdout": "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+    "stderr": ""
+  },
+  "finish": {
+    "status": 1,
+    "signal": null,
+    "output": [
+      null,
+      "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+      ""
+    ],
+    "pid": 6044,
+    "stdout": "{\"ok\":false,\"error\":\"MendiError: MenDi 写入未完整成功。\"}\n",
+    "stderr": ""
+  },
+  "runPhase": "invoking"
+}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /EEXIST/. Input:
+
+'{"ok":false,"error":"MendiError: MenDi 写入未完整成功。"}\n'
+
+    at file:///D:/Projects/MenDi/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/recovery-probes.ts:35:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '{"ok":false,"error":"MendiError: MenDi 写入未完整成功。"}\n',
+  expected: /EEXIST/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

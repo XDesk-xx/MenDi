@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "explore-proof-and-proposal-review",
+    "archivedAs": "2026-10-10-explore-proof-and-proposal-review",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-explore-proof-and-proposal-review",
+    "specsUpdated": true,
+    "totals": {
+      "added": 7,
+      "modified": 4,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "changeId": "action-runs-and-role-handoff",
+  "authorRun": "018-propose",
+  "artifacts": [
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/action-runs/spec.md",
+    "specs/delivery-workspace/spec.md"
+  ],
+  "planningComplete": true,
+  "strictValidation": "passed",
+  "requirements": 12,
+  "scenarios": 33,
+  "tasks": {
+    "total": 14,
+    "completed": 0
+  },
+  "next": {
+    "action": "review-propose",
+    "role": "reviewer",
+    "executable": false
+  },
+  "archivedChangeCount": 1
+}

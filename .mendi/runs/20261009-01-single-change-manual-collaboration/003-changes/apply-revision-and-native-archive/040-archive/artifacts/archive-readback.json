@@ -1,0 +1,36 @@
+{
+  "sourceRef": "openspec/changes/apply-revision-and-native-archive",
+  "nativeName": "2026-10-10-apply-revision-and-native-archive",
+  "archiveRef": "openspec/changes/archive/2026-10-10-004-apply-revision-and-native-archive",
+  "archiveOrdinal": 4,
+  "sourceAbsent": true,
+  "nativeIntermediateAbsent": true,
+  "sourceMaterialsUnchanged": true,
+  "protectedHistoryUnchanged": [
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/run.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/039-review-apply/run.md"
+  ],
+  "specs": [
+    {
+      "mainRef": "openspec/specs/action-runs/spec.md",
+      "deltaRequirementsVerified": 9,
+      "requirements": 19,
+      "scenarios": 65,
+      "titlePurposeAndUntouchedRequirementsPreserved": true
+    },
+    {
+      "mainRef": "openspec/specs/delivery-workspace/spec.md",
+      "deltaRequirementsVerified": 4,
+      "requirements": 13,
+      "scenarios": 44,
+      "titlePurposeAndUntouchedRequirementsPreserved": true
+    },
+    {
+      "mainRef": "openspec/specs/project-entry/spec.md",
+      "deltaRequirementsVerified": 2,
+      "requirements": 8,
+      "scenarios": 25,
+      "titlePurposeAndUntouchedRequirementsPreserved": true
+    }
+  ]
+}

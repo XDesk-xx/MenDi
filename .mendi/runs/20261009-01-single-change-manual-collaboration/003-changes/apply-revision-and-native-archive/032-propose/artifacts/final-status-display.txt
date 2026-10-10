@@ -1,0 +1,12 @@
+Change: apply-revision-and-native-archive
+Schema: spec-driven
+Change root: D:\Projects\MenDi\openspec\changes\apply-revision-and-native-archive
+Progress: 4/4 artifacts complete
+
+[x] proposal
+[x] specs
+[x] design
+[x] tasks
+
+All planning artifacts complete!
+Next: openspec instructions apply --change "apply-revision-and-native-archive" --json

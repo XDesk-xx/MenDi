@@ -1,0 +1,4 @@
+store: mendi-d01-a-proof-unregistered-store
+schema: spec-driven
+context: |
+  DECLARED_STORE_SENTINEL：用于证明本地模式不能静默改用外部 store。

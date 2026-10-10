@@ -1,0 +1,51 @@
+{
+  "node": "v22.23.2",
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "sandbox": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-emer1l",
+  "total": 8,
+  "passed": 3,
+  "cases": [
+    {
+      "id": "D01",
+      "purpose": "真实 Apply 操作输入包含 guidance、上下文路径和任务进度；当前产品入口明确拒绝",
+      "observation": {
+        "ready": "ready",
+        "missingTasks": "blocked",
+        "completedTasks": "all_done",
+        "currentProductError": "unsupported-action-instructions"
+      }
+    },
+    {
+      "id": "D02",
+      "purpose": "真实跨进程 Apply continuing 与两次 revise 均保留历史，修订后必须重新审核当前 Author",
+      "observation": {
+        "continuingSameAction": true,
+        "changesRequestedRetained": true,
+        "oldApprovedRetained": true,
+        "staleReviewDenied": "action-state-conflict",
+        "latestAuthor": ".mendi/runs/d01/001-changes/proof-entry/010-revise-apply/run.md",
+        "latestReview": ".mendi/runs/d01/001-changes/proof-entry/011-review-apply/run.md"
+      }
+    },
+    {
+      "id": "D03",
+      "purpose": "当前 Apply Owner 处置与跨阶段回退均拒绝，普通 revise 不能绕过阶段与审核",
+      "observation": {
+        "ownerResolutionError": "unsupported-resolution",
+        "earlierPhaseError": "action-state-conflict",
+        "manifestUnchanged": true
+      }
+    }
+  ],
+  "failure": {
+    "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'incomplete-mendi-state'\n- 'change-not-found'\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'incomplete-mendi-state'\n- 'change-not-found'\n\n    at file:///D:/Projects/MenDi/scripts/proofs/mvp-d01-d-explore.ts:349:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+  },
+  "limitations": [
+    "Only disposable targets were archived; the current MenDi Change was not archived.",
+    "Fixture author/reviewer labels and verdicts do not independently approve this Change.",
+    "The partial result is real native success followed by a controlled local write failure, not arbitrary power-loss or every native rollback path.",
+    "Owner backward transition and product Archive Action are not implemented by this experiment.",
+    "Existing C proof is not extended and old evidence is not rewritten."
+  ]
+}

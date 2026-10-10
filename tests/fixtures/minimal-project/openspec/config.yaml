@@ -1,0 +1,6 @@
+schema: spec-driven
+context: |
+  MINIMAL_CONTEXT_SENTINEL：受控非 UI 项目，只用于真实 OpenSpec 接入实验。
+rules:
+  proposal:
+    - MINIMAL_PROPOSAL_RULE_SENTINEL：保持实验范围与未验证限制明确。

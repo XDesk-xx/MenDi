@@ -1,0 +1,174 @@
+$ pnpm build && node --test tests/*.test.ts
+$ tsc
+TAP version 13
+# Subtest: 帮助、显式目标与参数组合
+ok 1 - 帮助、显式目标与参数组合
+  ---
+  duration_ms: 3.068
+  type: 'test'
+  ...
+# Subtest: 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+ok 2 - 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+  ---
+  duration_ms: 6115.052
+  type: 'test'
+  ...
+# Subtest: 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+ok 3 - 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+  ---
+  duration_ms: 10518.9532
+  type: 'test'
+  ...
+# Subtest: 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+ok 4 - 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+  ---
+  duration_ms: 16950.8461
+  type: 'test'
+  ...
+# Subtest: 关联与范围不成立的 Open 在写前拒绝
+ok 5 - 关联与范围不成立的 Open 在写前拒绝
+  ---
+  duration_ms: 2078.9521
+  type: 'test'
+  ...
+# Subtest: 两个真实子进程的 Open / bind 竞争拒绝，不删已有锁
+ok 6 - 两个真实子进程的 Open / bind 竞争拒绝，不删已有锁
+  ---
+  duration_ms: 13607.5764
+  type: 'test'
+  ...
+# Subtest: 路径式 ID 与非对象输入在领域边界拒绝
+ok 7 - 路径式 ID 与非对象输入在领域边界拒绝
+  ---
+  duration_ms: 3.6222
+  type: 'test'
+  ...
+# Subtest: 真实固定 CLI 的 version/list/status/instructions 读取既有 context/rules
+ok 8 - 真实固定 CLI 的 version/list/status/instructions 读取既有 context/rules
+  ---
+  duration_ms: 9376.8271
+  type: 'test'
+  ...
+# Subtest: 坏 JSON / 缺字段 / root 来源与路径不符 / 版本不符明确失败
+ok 9 - 坏 JSON / 缺字段 / root 来源与路径不符 / 版本不符明确失败
+  ---
+  duration_ms: 9.7248
+  type: 'test'
+  ...
+# Subtest: 启动 / 超时 / 信号 / 非零退出保留实际进程错误
+ok 10 - 启动 / 超时 / 信号 / 非零退出保留实际进程错误
+  ---
+  duration_ms: 6.915
+  type: 'test'
+  ...
+# Subtest: status 的关联 / schema / 必要字段验证
+ok 11 - status 的关联 / schema / 必要字段验证
+  ---
+  duration_ms: 9.6616
+  type: 'test'
+  ...
+# Subtest: 本地新 / 已有配置按显式目标读取并保留原字节
+ok 12 - 本地新 / 已有配置按显式目标读取并保留原字节
+  ---
+  duration_ms: 77.6776
+  type: 'test'
+  ...
+# Subtest: config.yml 仅在主配置不存在时使用，损坏主配置不回退
+ok 13 - config.yml 仅在主配置不存在时使用，损坏主配置不回退
+  ---
+  duration_ms: 30.4744
+  type: 'test'
+  ...
+# Subtest: 有效主配置存在时不解析未选用的 config.yml junction
+ok 14 - 有效主配置存在时不解析未选用的 config.yml junction
+  ---
+  duration_ms: 13.2437
+  type: 'test'
+  ...
+# Subtest: store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+ok 15 - store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+  ---
+  duration_ms: 61.171
+  type: 'test'
+  ...
+# Subtest: 受管路径拒绝越界和指向外部的 junction
+ok 16 - 受管路径拒绝越界和指向外部的 junction
+  ---
+  duration_ms: 87.1998
+  type: 'test'
+  ...
+# Subtest: 真实上游 planning complete 不自动批准或推进本地 Explore
+ok 17 - 真实上游 planning complete 不自动批准或推进本地 Explore
+  ---
+  duration_ms: 6199.137
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+ok 18 - 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+  ---
+  duration_ms: 5128.8809
+  type: 'test'
+  ...
+# Subtest: 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+ok 19 - 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+  ---
+  duration_ms: 11659.0549
+  type: 'test'
+  ...
+# Subtest: 范围的唯一性、依赖闭合与无环检查
+ok 20 - 范围的唯一性、依赖闭合与无环检查
+  ---
+  duration_ms: 3.1367
+  type: 'test'
+  ...
+# Subtest: 记录格式、身份、关联与版本必须一致
+ok 21 - 记录格式、身份、关联与版本必须一致
+  ---
+  duration_ms: 6.1787
+  type: 'test'
+  ...
+# Subtest: 完整提交可读回，重复 Open 保留原文件
+ok 22 - 完整提交可读回，重复 Open 保留原文件
+  ---
+  duration_ms: 72.639
+  type: 'test'
+  ...
+# Subtest: manifest 后 / entry 前 / 读回 / 锁释放故障均不伪报完整成功
+ok 23 - manifest 后 / entry 前 / 读回 / 锁释放故障均不伪报完整成功
+  ---
+  duration_ms: 209.5904
+  type: 'test'
+  ...
+# Subtest: 更新替换失败保持原文件并保留临时现场
+ok 24 - 更新替换失败保持原文件并保留临时现场
+  ---
+  duration_ms: 93.0289
+  type: 'test'
+  ...
+# Subtest: 实际 rename 调用失败时正式 manifest 字节不变
+ok 25 - 实际 rename 调用失败时正式 manifest 字节不变
+  ---
+  duration_ms: 51.3273
+  type: 'test'
+  ...
+# Subtest: 并发写冲突不会删除他人的锁，锁归属改变也不删除
+ok 26 - 并发写冲突不会删除他人的锁，锁归属改变也不删除
+  ---
+  duration_ms: 166.2537
+  type: 'test'
+  ...
+# Subtest: 已有关联的 bind 在创建锁前拒绝
+ok 27 - 已有关联的 bind 在创建锁前拒绝
+  ---
+  duration_ms: 115.2598
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 36046.9737

@@ -1,0 +1,351 @@
+{
+  "kind": "review-explore-typescript-focused-check",
+  "date": "2026-10-09",
+  "role": "independent-reviewer",
+  "inputRun": "005-revise-explore",
+  "result": "passed",
+  "node": "v22.23.2",
+  "typescript": "5.9.3",
+  "sourceSha256": "09fae3ef66803ab168a4055b34c7cb2958e952e30756000f6b109321c75f9c07",
+  "oldSourceSha256": "a287d9b86e6785e3b8d5e28099256dda18140534b560feaa06e5acf54d36b7f1",
+  "authorReportSha256": "48b757a6e3cd27db20ee06e6d913f880a0a6491f4b8f71c6b07f092bba49d165",
+  "authorCommandSummary": [
+    {
+      "index": 1,
+      "command": [
+        "--version"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 2,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 3,
+      "command": [
+        "new",
+        "change",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 4,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 5,
+      "command": [
+        "status",
+        "--change",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 6,
+      "command": [
+        "instructions",
+        "proposal",
+        "--change"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 7,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 8,
+      "command": [
+        "new",
+        "change",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 9,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 10,
+      "command": [
+        "status",
+        "--change",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 11,
+      "command": [
+        "instructions",
+        "proposal",
+        "--change"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 12,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\minimal-project",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 13,
+      "command": [
+        "probe-query",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\minimal-project",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 14,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\minimal-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "existing-mendi-state"
+    },
+    {
+      "index": 15,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\existing-openspec-project",
+        "proof-entry"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 16,
+      "command": [
+        "probe-query",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\existing-openspec-project",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 17,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\existing-openspec-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "existing-mendi-state"
+    },
+    {
+      "index": 18,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 19,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\existing-openspec-project\\nested-target",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "local-config-missing"
+    },
+    {
+      "index": 20,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 21,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\empty-target",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "local-config-missing"
+    },
+    {
+      "index": 22,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 1,
+      "error": null
+    },
+    {
+      "index": 23,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\declared-store-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "unsupported-store-declaration"
+    },
+    {
+      "index": 24,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 1,
+      "error": null
+    },
+    {
+      "index": 25,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\invalid-openspec-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "invalid-local-config"
+    },
+    {
+      "index": 26,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 27,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\declared-store-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "unsupported-store-declaration"
+    },
+    {
+      "index": 28,
+      "command": [
+        "list",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "index": 29,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\invalid-openspec-project",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "invalid-local-config"
+    },
+    {
+      "index": 30,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\minimal-project",
+        "missing-proof-change"
+      ],
+      "exitCode": 1,
+      "error": "change-not-found"
+    },
+    {
+      "index": 31,
+      "command": [
+        "probe-open",
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-m227Jm\\other-schema-target",
+        "proof-entry"
+      ],
+      "exitCode": 1,
+      "error": "unsupported-schema"
+    }
+  ],
+  "checks": {
+    "oldSourceBinds004": true,
+    "newSourceBinds005": true,
+    "authorChecksMatch004": true,
+    "authorCommandCount": 31,
+    "expectedRejectCount": 12,
+    "typecheckInclude": [
+      "D:/Projects/MenDi/scripts/proofs/mvp-d01-a-explore.ts"
+    ],
+    "strict": true,
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "inMemoryNegativeTypeWitness": [
+      {
+        "code": 2322,
+        "file": "D:/Projects/MenDi/scripts/proofs/mvp-d01-a-explore.ts",
+        "message": "Type 'number' is not assignable to type 'string'."
+      }
+    ],
+    "nativeTypeScriptSmoke": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "scripts/proofs/mvp-d01-a-explore.ts",
+        "probe-open",
+        "tests/fixtures/invalid-openspec-project",
+        "proof-entry",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js"
+      ],
+      "exitCode": 1,
+      "stdout": "{\n  \"error\": \"invalid-local-config\",\n  \"message\": \"Flow sequence in block collection must be sufficiently indented and end with a ] at line 2, column 1:\\n\\nstore: [unterminated\\n\\n^\\n\"\n}\n",
+      "stderr": ""
+    },
+    "fixtureUnchanged": true
+  },
+  "limitations": [
+    "未重新运行 P01-P08 全部 Explore；复用 003/004，校验 005 新结果绑定并执行迁移定向检查。",
+    "类型错误仅通过 compiler host 在内存中注入，没有修改受审脚本。",
+    "不把 proof 的 JSON 类型断言视为产品运行时校验。"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "result": "archived",
+  "role": "author",
+  "changeId": "action-runs-and-role-handoff",
+  "runRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md",
+  "archiveRef": "openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff",
+  "archiveOrdinal": 2,
+  "archivedChangeCount": 2,
+  "nativeArchiveCalls": 1,
+  "specsValidated": 3,
+  "currentActiveChangeId": null,
+  "upstream": null,
+  "next": {
+    "action": "delivery-next",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D01-B 已归档，累计完成 2 个 Change；等待 Owner 明确下一 Change 的目标与范围。",
+    "archiveRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/022-archive/run.md",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "humanArchivedDisplay": true,
+  "queryInputsUnchanged": true,
+  "deliveryState": "open",
+  "gitExecuted": false,
+  "formalDeliveryFullTestExecuted": false,
+  "nextChangeActivated": false
+}

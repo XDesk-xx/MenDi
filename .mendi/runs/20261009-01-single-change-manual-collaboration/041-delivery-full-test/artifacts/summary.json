@@ -1,0 +1,96 @@
+{
+  "result": "passed",
+  "testMode": "owner-authorized-manual-full-test",
+  "testedCommit": "7c473bef3a76c44ced406f1f23690bdfb0be52ce",
+  "commands": [
+    {
+      "command": "pnpm check",
+      "exitCode": 0,
+      "formattedAndLintedFiles": 60,
+      "typechecked": [
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "log": "check.log"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "total": 117,
+      "passed": 117,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "durationMs": 192395.5663,
+      "fileCount": 27,
+      "log": "test.log"
+    },
+    {
+      "command": "fixed OpenSpec validate --specs --strict --json",
+      "exitCode": 0,
+      "items": 3,
+      "passed": 3,
+      "failed": 0,
+      "log": "specs-validation.json"
+    }
+  ],
+  "freshProjects": [
+    {
+      "fixture": "minimal-project",
+      "initialTargetTmp": "absent",
+      "finalTargetTmp": "absent"
+    },
+    {
+      "fixture": "existing-openspec-project",
+      "initialTargetTmp": "absent",
+      "finalTargetTmp": "absent"
+    }
+  ],
+  "delivery": {
+    "state": "open",
+    "activeChangeId": null,
+    "archivedChangeCount": 4,
+    "completedTasks": [
+      {
+        "slot": "MVP-D01-A",
+        "count": 20
+      },
+      {
+        "slot": "MVP-D01-B",
+        "count": 14
+      },
+      {
+        "slot": "MVP-D01-C",
+        "count": 16
+      },
+      {
+        "slot": "MVP-D01-D",
+        "count": 24
+      }
+    ],
+    "directReviews": "approved",
+    "upstream": null
+  },
+  "evidence": {
+    "commandLogFiles": 14,
+    "archiveSceneLogFiles": 7
+  },
+  "baselineLimitation": "之前默认 Git 状态受 Windows 长路径限制漏报两份重复历史副本；没有实现变更，本轮不执行 Git 修复或提交。",
+  "untrackedEvidenceCopies": [
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/run.md",
+    ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/run.md"
+  ],
+  "limits": [
+    "产品 Full Test / Close / Reopen 功能仍属 D02 范围；本次是 Owner 授权的人工验收",
+    "自动测试中的批准是明确夹具，不是真人身份认证或 Reviewer 代签",
+    "不重跑旧 Explore 实验；此前真实语义审批和实际归档记录保留",
+    "未授权 Git、实际 Close、Reopen、下一 Change 或 .tmp 全局清理"
+  ],
+  "next": {
+    "action": "delivery-close",
+    "status": "awaiting-owner-instruction",
+    "role": "author"
+  }
+}

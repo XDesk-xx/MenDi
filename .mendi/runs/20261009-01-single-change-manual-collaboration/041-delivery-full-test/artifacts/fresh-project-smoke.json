@@ -1,0 +1,552 @@
+{
+  "result": "passed",
+  "scenes": [
+    {
+      "fixture": "minimal-project",
+      "target": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+      "initialTargetTmp": "absent",
+      "finalTargetTmp": "absent",
+      "commands": [
+        {
+          "args": [
+            "delivery",
+            "open",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "--id",
+            "d01",
+            "--title",
+            "Full Test fresh target",
+            "--scope",
+            "scope.json"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "delivery-open",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": null,
+              "changeBindings": []
+            }
+          }
+        },
+        {
+          "args": [
+            "change",
+            "bind",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "--change",
+            "proof-entry",
+            "--slot",
+            "A"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "change-bind",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "args": [
+            "status",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "query",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            },
+            "upstream": {
+              "schemaName": "spec-driven",
+              "mode": "repo-local",
+              "isPlanningComplete": false,
+              "artifacts": [
+                {
+                  "id": "proposal",
+                  "status": "ready"
+                },
+                {
+                  "id": "specs",
+                  "status": "blocked"
+                },
+                {
+                  "id": "design",
+                  "status": "blocked"
+                },
+                {
+                  "id": "tasks",
+                  "status": "blocked"
+                }
+              ]
+            },
+            "next": {
+              "action": "explore",
+              "source": "local-state",
+              "executable": false,
+              "role": "author",
+              "reason": "关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。"
+            }
+          }
+        },
+        {
+          "args": [
+            "next",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "query",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\minimal-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            },
+            "upstream": {
+              "schemaName": "spec-driven",
+              "mode": "repo-local",
+              "isPlanningComplete": false,
+              "artifacts": [
+                {
+                  "id": "proposal",
+                  "status": "ready"
+                },
+                {
+                  "id": "specs",
+                  "status": "blocked"
+                },
+                {
+                  "id": "design",
+                  "status": "blocked"
+                },
+                {
+                  "id": "tasks",
+                  "status": "blocked"
+                }
+              ]
+            },
+            "next": {
+              "action": "explore",
+              "source": "local-state",
+              "executable": false,
+              "role": "author",
+              "reason": "关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "fixture": "existing-openspec-project",
+      "target": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+      "initialTargetTmp": "absent",
+      "finalTargetTmp": "absent",
+      "commands": [
+        {
+          "args": [
+            "delivery",
+            "open",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "--id",
+            "d01",
+            "--title",
+            "Full Test fresh target",
+            "--scope",
+            "scope.json"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "delivery-open",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": null,
+              "changeBindings": []
+            }
+          }
+        },
+        {
+          "args": [
+            "change",
+            "bind",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "--change",
+            "proof-entry",
+            "--slot",
+            "A"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "change-bind",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "args": [
+            "status",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "query",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            },
+            "upstream": {
+              "schemaName": "spec-driven",
+              "mode": "repo-local",
+              "isPlanningComplete": false,
+              "artifacts": [
+                {
+                  "id": "proposal",
+                  "status": "ready"
+                },
+                {
+                  "id": "specs",
+                  "status": "blocked"
+                },
+                {
+                  "id": "design",
+                  "status": "blocked"
+                },
+                {
+                  "id": "tasks",
+                  "status": "blocked"
+                }
+              ]
+            },
+            "next": {
+              "action": "explore",
+              "source": "local-state",
+              "executable": false,
+              "role": "author",
+              "reason": "关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。"
+            }
+          }
+        },
+        {
+          "args": [
+            "next",
+            "--project",
+            "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project"
+          ],
+          "result": {
+            "ok": true,
+            "operation": "query",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+            "openspec": {
+              "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+              "version": "1.14.1",
+              "root": {
+                "path": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-0rOyQV\\existing-openspec-project",
+                "source": "nearest"
+              }
+            },
+            "local": {
+              "source": "product",
+              "deliveryId": "d01",
+              "title": "Full Test fresh target",
+              "state": "open",
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "activeChangeId": "proof-entry",
+              "changeBindings": [
+                {
+                  "changeId": "proof-entry",
+                  "changeRef": "openspec/changes/proof-entry",
+                  "planningSlot": "A",
+                  "state": "explore"
+                }
+              ]
+            },
+            "upstream": {
+              "schemaName": "spec-driven",
+              "mode": "repo-local",
+              "isPlanningComplete": false,
+              "artifacts": [
+                {
+                  "id": "proposal",
+                  "status": "ready"
+                },
+                {
+                  "id": "specs",
+                  "status": "blocked"
+                },
+                {
+                  "id": "design",
+                  "status": "blocked"
+                },
+                {
+                  "id": "tasks",
+                  "status": "blocked"
+                }
+              ]
+            },
+            "next": {
+              "action": "explore",
+              "source": "local-state",
+              "executable": false,
+              "role": "author",
+              "reason": "关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "limitation": "目标项目初始 .tmp 不存在；宿主 .tmp 只用于创建新的隔离根，不读取旧沙箱内容，也未清理宿主目录。"
+}

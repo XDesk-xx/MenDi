@@ -1,0 +1,7 @@
+项目：D:\Projects\MenDi\.tmp\mendi-apply-Ly0xdt\archive-handoff
+OpenSpec：1.14.1 (D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js)
+Delivery：d01 人工记录夹具 (open)
+目标：验证人工交接只读兼容
+槽位：A
+Change：尚未关联
+下一步：delivery-next，来源：manual-bootstrap

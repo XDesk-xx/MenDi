@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "project-entry-and-minimal-delivery-open",
+    "archivedAs": "2026-10-09-project-entry-and-minimal-delivery-open",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-09-project-entry-and-minimal-delivery-open",
+    "specsUpdated": true,
+    "totals": {
+      "added": 13,
+      "modified": 0,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

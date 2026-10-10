@@ -1,0 +1,279 @@
+[
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-one",
+      "outcome": "continuing",
+      "expectedNumber": 16
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"number\":16,\"runRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/016-explore/run.md\",\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-one\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"continuing\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\"},\"skillLoaded\":true,\"incompleteReservations\":[]}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-one",
+      "outcome": "complete",
+      "expectedNumber": 17,
+      "extensions": {
+        "historicalRef": "missing-old.md",
+        "unknownRef": {
+          "nestedRef": "../outside"
+        }
+      }
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"number\":17,\"runRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md\",\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-one\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"complete\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\",\"extensions\":{\"historicalRef\":\"missing-old.md\",\"unknownRef\":{\"nestedRef\":\"../outside\"}}},\"skillLoaded\":true,\"incompleteReservations\":[]}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": ".mendi/runs/proof-delivery/003-changes/proof-change/016-explore/run.md"
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-one\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"continuing\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\"}}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": ".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md"
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-one\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"complete\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\",\"extensions\":{\"historicalRef\":\"missing-old.md\",\"unknownRef\":{\"nestedRef\":\"../outside\"}}}}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "reviewer",
+      "actor": "fixture-author",
+      "actionId": "explore-one",
+      "outcome": "continuing"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"stage-role-mismatch\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-one",
+      "outcome": "continuing",
+      "skillRef": "skills/proof-review-explore/SKILL.md"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"stage-skill-mismatch\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "new-explore",
+      "outcome": "continuing",
+      "expectedNumber": 17
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"run-number-conflict\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-one",
+      "outcome": "continuing"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"action-already-complete\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "review-explore",
+      "role": "reviewer",
+      "actor": "fixture-reviewer",
+      "actionId": "review-one",
+      "outcome": "complete",
+      "authorRunRef": ".mendi/runs/proof-delivery/003-changes/proof-change/999-explore/run.md",
+      "verdict": "approved"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"required-run-missing\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "review-explore",
+      "role": "reviewer",
+      "actor": "fixture-reviewer",
+      "actionId": "review-one",
+      "outcome": "complete",
+      "authorRunRef": ".mendi/runs/proof-delivery/003-changes/proof-change/016-explore/run.md",
+      "verdict": "approved"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"author-not-complete\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "review-explore",
+      "role": "reviewer",
+      "actor": "fixture-reviewer",
+      "actionId": "review-one",
+      "outcome": "complete",
+      "verdict": "approved"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"author-run-required\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "review-explore",
+      "role": "reviewer",
+      "actor": "fixture-author",
+      "actionId": "review-one",
+      "outcome": "complete",
+      "authorRunRef": ".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md",
+      "verdict": "approved"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"self-review\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "review-explore",
+      "role": "reviewer",
+      "actor": "fixture-reviewer",
+      "actionId": "review-one",
+      "outcome": "complete",
+      "authorRunRef": ".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md",
+      "verdict": "approved",
+      "expectedNumber": 18
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"number\":18,\"runRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/018-review-explore/run.md\",\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"review-one\",\"actionType\":\"review-explore\",\"role\":\"reviewer\",\"actor\":\"fixture-reviewer\",\"status\":\"submitted\",\"outcome\":\"complete\",\"skillRef\":\"skills/proof-review-explore/SKILL.md\",\"authorRunRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md\",\"verdict\":\"approved\"},\"skillLoaded\":true,\"incompleteReservations\":[]}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": ".mendi/runs/proof-delivery/003-changes/proof-change/018-review-explore/run.md"
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"review-one\",\"actionType\":\"review-explore\",\"role\":\"reviewer\",\"actor\":\"fixture-reviewer\",\"status\":\"submitted\",\"outcome\":\"complete\",\"skillRef\":\"skills/proof-review-explore/SKILL.md\",\"authorRunRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md\",\"verdict\":\"approved\"}}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": ".mendi/runs/proof-delivery/003-changes/proof-change/017-explore/run.md"
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-one\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"complete\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\",\"extensions\":{\"historicalRef\":\"missing-old.md\",\"unknownRef\":{\"nestedRef\":\"../outside\"}}}}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": "../outside/run.md"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"unsafe-reference\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "read",
+      "runRef": ".mendi/runs/proof-delivery/003-changes/proof-change/foreign.md"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"run-identity-or-state\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-two",
+      "outcome": "continuing"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"required-skill-missing\"}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-two",
+      "outcome": "continuing",
+      "expectedNumber": 20
+    },
+    "status": 0,
+    "signal": null,
+    "stdout": "{\"ok\":true,\"number\":20,\"runRef\":\".mendi/runs/proof-delivery/003-changes/proof-change/020-explore/run.md\",\"record\":{\"deliveryId\":\"proof-delivery\",\"changeId\":\"proof-change\",\"actionId\":\"explore-two\",\"actionType\":\"explore\",\"role\":\"author\",\"actor\":\"fixture-author\",\"status\":\"submitted\",\"outcome\":\"continuing\",\"skillRef\":\".agents/skills/openspec-explore/SKILL.md\"},\"skillLoaded\":true,\"incompleteReservations\":[{\"number\":19,\"ref\":\".mendi/runs/proof-delivery/003-changes/proof-change/019-explore/run.md\"}]}\n",
+    "stderr": ""
+  },
+  {
+    "input": {
+      "operation": "append",
+      "type": "explore",
+      "role": "author",
+      "actor": "fixture-author",
+      "actionId": "explore-three",
+      "outcome": "continuing"
+    },
+    "status": 1,
+    "signal": null,
+    "stdout": "{\"ok\":false,\"code\":\"EEXIST\"}\n",
+    "stderr": ""
+  }
+]

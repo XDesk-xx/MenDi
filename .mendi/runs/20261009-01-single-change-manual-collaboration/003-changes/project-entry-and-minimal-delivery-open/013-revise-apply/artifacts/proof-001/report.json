@@ -1,0 +1,120 @@
+{
+  "kind": "mendi-mvp-d01-a-explore-proof",
+  "recordedAt": "2026-10-09T14:36:27.572Z",
+  "node": "v22.23.2",
+  "platform": "win32",
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "fixturesRef": "tests/fixtures/",
+  "scriptRef": "scripts/proofs/mvp-d01-a-explore.ts",
+  "sandbox": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E",
+  "result": "passed",
+  "checks": [
+    {
+      "id": "P01",
+      "title": "固定 OpenSpec 版本、新项目和已有 context / rules 的真实接入",
+      "result": "passed"
+    },
+    {
+      "id": "P02",
+      "title": "最小 Delivery 范围和 Change 关联可跨进程读回，已有状态不会覆盖",
+      "result": "passed"
+    },
+    {
+      "id": "P03",
+      "title": "从目标子目录调用会选祖先根，显式目标守卫在写前拒绝",
+      "result": "passed"
+    },
+    {
+      "id": "P04",
+      "title": "裸 openspec 目录不构成目标根，拒绝采用仓库祖先根",
+      "result": "passed"
+    },
+    {
+      "id": "P05",
+      "title": "声明未注册 store 或损坏配置时报告实际错误，目标不被写入",
+      "result": "passed"
+    },
+    {
+      "id": "P06",
+      "title": "现有文档和配置字节保留；试验输出可以由受控输入重新生成",
+      "result": "passed"
+    },
+    {
+      "id": "P07",
+      "title": "真实本地规格结构会优先于 store / 损坏配置；接入实验仍在写前拒绝",
+      "result": "passed"
+    },
+    {
+      "id": "P08",
+      "title": "不存在的 Change 和其他 schema 在写前明确拒绝",
+      "result": "passed"
+    }
+  ],
+  "observations": {
+    "openspecVersion": "1.14.1",
+    "minimalRoot": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\minimal-project",
+      "source": "nearest"
+    },
+    "existingRoot": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\existing-openspec-project",
+      "source": "nearest"
+    },
+    "nestedRoot": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\existing-openspec-project",
+      "source": "nearest"
+    },
+    "emptyTargetRoot": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    },
+    "declared-store-project": {
+      "changes": [],
+      "root": null,
+      "status": [
+        {
+          "severity": "error",
+          "code": "no_registered_stores",
+          "message": "Declared in D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\declared-store-project\\openspec\\config.yaml: Unknown store 'mendi-d01-a-proof-unregistered-store'. No stores are registered.",
+          "target": "store.id",
+          "fix": "Run openspec store setup mendi-d01-a-proof-unregistered-store or openspec store register <path> first."
+        }
+      ]
+    },
+    "invalid-openspec-project": {
+      "changes": [],
+      "root": null,
+      "status": [
+        {
+          "severity": "error",
+          "code": "invalid_store_pointer",
+          "message": "Invalid store declaration in D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\invalid-openspec-project\\openspec\\config.yaml: the config file could not be read as YAML.",
+          "target": "store.pointer",
+          "fix": "Fix the YAML syntax in D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\invalid-openspec-project\\openspec\\config.yaml."
+        }
+      ]
+    },
+    "sandboxInitiallyFresh": true,
+    "declared-store-project-with-planning-shape": {
+      "changes": [],
+      "root": {
+        "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\declared-store-project",
+        "source": "nearest"
+      }
+    },
+    "invalid-openspec-project-with-planning-shape": {
+      "changes": [],
+      "root": {
+        "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-a-explore-AJB79E\\invalid-openspec-project",
+        "source": "nearest"
+      }
+    }
+  },
+  "limitations": [
+    "This is an experimental storage/root guard, not the MenDi product CLI.",
+    "The two-file write does not establish crash recovery or concurrent writer safety.",
+    "Next is a stored Explore stage projection; Review and later lifecycle policy are not implemented.",
+    "Windows and the selected OpenSpec 1.14.1 only; registered stores, other schemas and platforms are not accepted here.",
+    "A fresh experiment directory is used; the entire repository .tmp was not cleared."
+  ]
+}

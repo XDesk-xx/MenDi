@@ -1,0 +1,526 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 79,
+  "reviewable_count": 41,
+  "excluded_count": 38,
+  "total_insertions": 7059,
+  "total_deletions": 80,
+  "reviewable_files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "insertions": 18,
+      "deletions": 20
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 9,
+      "deletions": 10
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "insertions": 17,
+      "deletions": 13
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "insertions": 28,
+      "deletions": 17
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "insertions": 33,
+      "deletions": 2
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 44,
+      "deletions": 5
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "insertions": 40,
+      "deletions": 2
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/change-list.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/change-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-001/commands.json",
+      "status": "added",
+      "insertions": 265,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-002/commands.json",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "insertions": 48,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/workspace-next.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/workspace-status.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/artifacts/proof/commands.json",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "insertions": 48,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/allocation.json",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/commands.json",
+      "status": "added",
+      "insertions": 50,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/planning-status.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/workspace-next.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/artifacts/workspace-status.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/allocation.json",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/apply-instructions.json",
+      "status": "added",
+      "insertions": 137,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/final-commands.json",
+      "status": "added",
+      "insertions": 78,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/planning-status.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 54,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/workspace-next.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/workspace-status.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-b-explore.ts",
+      "status": "added",
+      "insertions": 375,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "added",
+      "insertions": 147,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "added",
+      "insertions": 39,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "added",
+      "insertions": 289,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "added",
+      "insertions": 243,
+      "deletions": 0
+    },
+    {
+      "path": "tests/action-support.ts",
+      "status": "added",
+      "insertions": 87,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 49,
+      "deletions": 11,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/query.test.ts",
+      "status": "modified",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/check.txt",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/preparation-attempt.txt",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/artifacts/related-regression.txt",
+      "status": "added",
+      "insertions": 64,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/016-explore/run.md",
+      "status": "added",
+      "insertions": 100,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/artifacts/check.txt",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/017-review-explore/run.md",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/018-propose/run.md",
+      "status": "added",
+      "insertions": 54,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/019-review-propose/run.md",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/check-initial.log",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-16380.jsonl",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-25936.jsonl",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-26376.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-31952.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-37884.jsonl",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/commands/commands-38800.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 396,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/action-runs-and-role-handoff/020-apply/run.md",
+      "status": "added",
+      "insertions": 61,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/design.md",
+      "status": "added",
+      "insertions": 130,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/proposal.md",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 127,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/action-runs-and-role-handoff/tasks.md",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/explore/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/propose/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-apply/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-explore/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-propose/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/tools/openspec/SKILL.md",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/action-cli.test.ts",
+      "status": "added",
+      "insertions": 276,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/action-write.test.ts",
+      "status": "added",
+      "insertions": 467,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/actions.test.ts",
+      "status": "added",
+      "insertions": 218,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/action-handoff/reviewer-skill.md",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/action-writer.ts",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/methods-and-numbers.test.ts",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

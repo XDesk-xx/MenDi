@@ -1,0 +1,142 @@
+{
+  "node": "v22.23.2",
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "sandbox": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ",
+  "total": 8,
+  "passed": 8,
+  "cases": [
+    {
+      "id": "D01",
+      "purpose": "真实 Apply 操作输入包含 guidance、上下文路径和任务进度；当前产品入口明确拒绝",
+      "observation": {
+        "ready": "ready",
+        "missingTasks": "blocked",
+        "completedTasks": "all_done",
+        "currentProductError": "unsupported-action-instructions"
+      }
+    },
+    {
+      "id": "D02",
+      "purpose": "真实跨进程 Apply continuing 与两次 revise 均保留历史，修订后必须重新审核当前 Author",
+      "observation": {
+        "continuingSameAction": true,
+        "changesRequestedRetained": true,
+        "oldApprovedRetained": true,
+        "staleReviewDenied": "action-state-conflict",
+        "latestAuthor": ".mendi/runs/d01/001-changes/proof-entry/010-revise-apply/run.md",
+        "latestReview": ".mendi/runs/d01/001-changes/proof-entry/011-review-apply/run.md"
+      }
+    },
+    {
+      "id": "D03",
+      "purpose": "当前 Apply Owner 处置与跨阶段回退均拒绝，普通 revise 不能绕过阶段与审核",
+      "observation": {
+        "ownerResolutionError": "unsupported-resolution",
+        "earlierPhaseError": "action-state-conflict",
+        "manifestUnchanged": true
+      }
+    },
+    {
+      "id": "D04",
+      "purpose": "原生归档只同步一次；随后真实本地写入失败保留已归档效果及旧指针，不能自动重跑",
+      "observation": {
+        "native": {
+          "change": "proof-entry",
+          "archivedAs": "2026-10-10-proof-entry",
+          "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\apply-flow\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+          "specsUpdated": true,
+          "totals": {
+            "added": 1,
+            "modified": 0,
+            "removed": 0,
+            "renamed": 0
+          }
+        },
+        "localWriteError": "EISDIR",
+        "staleQueryError": "incomplete-mendi-state",
+        "archiveInvocations": 1,
+        "manifestUnchanged": true
+      }
+    },
+    {
+      "id": "D05",
+      "purpose": "原生归档可安全加累计编号并保留元数据，现有产品记录仍拒绝归档态",
+      "observation": {
+        "numberedPath": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\apply-flow\\openspec\\changes\\archive\\2026-10-10-001-proof-entry",
+        "metadataUnchanged": true,
+        "productArchiveQueryError": "invalid-record"
+      }
+    },
+    {
+      "id": "D06",
+      "purpose": "真实原生归档目标冲突在同步前拒绝，保留活动 delta 与既有目标",
+      "observation": {
+        "error": {
+          "archive": null,
+          "root": {
+            "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\archive-collision",
+            "source": "nearest"
+          },
+          "status": [
+            {
+              "severity": "error",
+              "code": "archive_target_exists",
+              "message": "Archive '2026-10-10-proof-entry' already exists."
+            }
+          ]
+        },
+        "specWritten": false,
+        "originalTargetUnchanged": true
+      }
+    },
+    {
+      "id": "D07",
+      "purpose": "真实 delta 校验失败不会同步或移走 Change；不使用 no-validate 绕过",
+      "observation": {
+        "error": {
+          "archive": null,
+          "root": {
+            "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\archive-invalid-delta",
+            "source": "nearest"
+          },
+          "status": [
+            {
+              "severity": "error",
+              "code": "archive_validation_failed",
+              "message": "Validation failed for change 'proof-entry'.",
+              "fix": "Run openspec validate proof-entry for details, fix the errors, or rerun with --no-validate."
+            }
+          ]
+        },
+        "activeDeltaUnchanged": true,
+        "specWritten": false
+      }
+    },
+    {
+      "id": "D08",
+      "purpose": "原生 --yes 可归档未勾任务，工具成功不能替代 MENDI 完成任务及独立批准前置",
+      "observation": {
+        "nativeArchiveWithUncheckedTask": true,
+        "result": {
+          "change": "proof-entry",
+          "archivedAs": "2026-10-10-proof-entry",
+          "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\archive-unfinished\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+          "specsUpdated": true,
+          "totals": {
+            "added": 1,
+            "modified": 0,
+            "removed": 0,
+            "renamed": 0
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Only disposable targets were archived; the current MenDi Change was not archived.",
+    "Fixture author/reviewer labels and verdicts do not independently approve this Change.",
+    "The partial result is real native success followed by a controlled local write failure, not arbitrary power-loss or every native rollback path.",
+    "Owner backward transition and product Archive Action are not implemented by this experiment.",
+    "Existing C proof is not extended and old evidence is not rewritten."
+  ]
+}

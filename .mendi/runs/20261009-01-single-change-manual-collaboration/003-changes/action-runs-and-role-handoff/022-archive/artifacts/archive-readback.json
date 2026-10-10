@@ -1,0 +1,48 @@
+{
+  "native": {
+    "change": "action-runs-and-role-handoff",
+    "archivedAs": "2026-10-10-action-runs-and-role-handoff",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-action-runs-and-role-handoff",
+    "specsUpdated": true,
+    "totals": {
+      "added": 10,
+      "modified": 2,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "archiveRef": "openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff",
+  "archiveOrdinal": 2,
+  "sourceMissing": true,
+  "nativeNameMissingAfterRename": true,
+  "metadataPreservedDuringRename": true,
+  "metadataCreatedOn": "2026-10-09",
+  "mergedSpecs": [
+    {
+      "capability": "action-runs",
+      "mainSpecRef": "openspec/specs/action-runs/spec.md",
+      "requirements": 9,
+      "scenarios": 21,
+      "deltaBlocksMatched": 9,
+      "untouchedRequirementsMatched": 0,
+      "untouchedBasis": null,
+      "purposePreserved": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "mainSpecRef": "openspec/specs/delivery-workspace/spec.md",
+      "requirements": 9,
+      "scenarios": 27,
+      "deltaBlocksMatched": 3,
+      "untouchedRequirementsMatched": 6,
+      "untouchedBasis": "previous A archived delta (source of the established main spec)",
+      "purposePreserved": true
+    }
+  ],
+  "rename": {
+    "source": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-action-runs-and-role-handoff",
+    "target": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-002-action-runs-and-role-handoff",
+    "checkedArchiveParent": "D:\\Projects\\MenDi\\openspec\\changes\\archive"
+  },
+  "nativeArchiveCallCount": 1
+}

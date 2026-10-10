@@ -1,0 +1,52 @@
+{
+  "change": "project-entry-and-minimal-delivery-open",
+  "run": "013",
+  "role": "author",
+  "result": "revision-verified",
+  "tasks": {
+    "total": 20,
+    "complete": 20,
+    "remaining": 0
+  },
+  "checks": {
+    "format": "20 maintained TypeScript files passed",
+    "lint": "passed",
+    "typecheck": "passed",
+    "build": "passed via pnpm test",
+    "tests": {
+      "passed": 34,
+      "failed": 0,
+      "skipped": 0
+    },
+    "proof": {
+      "passed": 8,
+      "newScriptSha256": false
+    },
+    "strictValidation": "passed",
+    "frozenLockfile": "passed",
+    "readOnlyQuery": "workspace bytes unchanged"
+  },
+  "preservation": {
+    "historicalFiles": 71,
+    "controlledFixtureFiles": 13,
+    "method": "direct byte comparison; no hash manifest"
+  },
+  "handoff": {
+    "action": "review-apply",
+    "status": "awaiting-independent-review",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/013-revise-apply/run.md",
+    "previousReviewRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/012-review-apply/run.md"
+  },
+  "limits": [
+    "Archived fixture is manual record compatibility, not current Change Archive execution or archive effect certification.",
+    "No Git commands, formal Delivery Full Test, next Change or new Reviewer verdict."
+  ],
+  "sourceRefs": [
+    "src/adapters/workspace.ts",
+    "src/core/records.ts",
+    "tests/query.test.ts",
+    "scripts/proofs/mvp-d01-a-explore.ts",
+    "biome.json",
+    "openspec/changes/project-entry-and-minimal-delivery-open"
+  ]
+}

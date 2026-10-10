@@ -1,0 +1,313 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 46,
+  "reviewable_count": 23,
+  "excluded_count": 23,
+  "total_insertions": 4729,
+  "total_deletions": 14,
+  "reviewable_files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "insertions": 34,
+      "deletions": 8
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 2
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/commands.json",
+      "status": "added",
+      "insertions": 362,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-001/report.json",
+      "status": "added",
+      "insertions": 96,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/commands.json",
+      "status": "added",
+      "insertions": 448,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/attempt-002/report.json",
+      "status": "added",
+      "insertions": 121,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-list.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/artifacts/change-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/coverage.json",
+      "status": "added",
+      "insertions": 128,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "insertions": 448,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "insertions": 121,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/commands.json",
+      "status": "added",
+      "insertions": 448,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/replay-001/report.json",
+      "status": "added",
+      "insertions": 121,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/artifacts/planning-status.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/command-parity.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/coverage.json",
+      "status": "added",
+      "insertions": 134,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/focused-check.json",
+      "status": "added",
+      "insertions": 351,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 269,
+      "deletions": 0
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/ocr-rules.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/.openspec.yaml",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "status": "added",
+      "insertions": 346,
+      "deletions": 0
+    },
+    {
+      "path": "tsconfig.scripts.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": "AGENTS.md",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 3,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/003-explore/run.md",
+      "status": "added",
+      "insertions": 103,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/004-review-explore/run.md",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/artifacts/pre-migration-source.txt",
+      "status": "added",
+      "insertions": 321,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/005-revise-explore/run.md",
+      "status": "added",
+      "insertions": 46,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/artifacts/validation.txt",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/006-propose/run.md",
+      "status": "added",
+      "insertions": 54,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/artifacts/typecheck.txt",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/project-entry-and-minimal-delivery-open/007-review-explore/run.md",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/design.md",
+      "status": "added",
+      "insertions": 113,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/proposal.md",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "insertions": 99,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/specs/project-entry/spec.md",
+      "status": "added",
+      "insertions": 71,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/project-entry-and-minimal-delivery-open/tasks.md",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/declared-store-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/AGENTS.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/README.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/existing-openspec-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/invalid-openspec-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/minimal-project/AGENTS.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/minimal-project/README.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/minimal-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

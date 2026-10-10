@@ -1,0 +1,44 @@
+{
+  "kind": "explore-prototype",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-b-explore-UgbNXU",
+  "node": "v22.23.2",
+  "passed": 7,
+  "total": 7,
+  "results": [
+    {
+      "id": "P01-role-skill-and-global-number",
+      "passed": true
+    },
+    {
+      "id": "P02-same-action-two-runs-and-process-readback",
+      "passed": true
+    },
+    {
+      "id": "P03-wrong-role-skill-duplicate-and-completed-action",
+      "passed": true
+    },
+    {
+      "id": "P04-required-author-input-and-independent-review",
+      "passed": true
+    },
+    {
+      "id": "P05-historical-and-unknown-refs-do-not-become-inputs",
+      "passed": true
+    },
+    {
+      "id": "P06-path-boundary-and-run-identity",
+      "passed": true
+    },
+    {
+      "id": "P07-missing-selected-skill-and-interrupted-reservation",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "No product Action CLI implemented",
+    "Fixture Reviewer verdict is not project approval",
+    "Actor labels are not authentication",
+    "No crash-atomic multi-file commit proven",
+    "Only Explore and Review Explore sampled"
+  ]
+}

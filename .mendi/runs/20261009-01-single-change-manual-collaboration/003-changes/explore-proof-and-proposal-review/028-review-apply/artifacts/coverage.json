@@ -1,0 +1,302 @@
+{
+  "mode": "delegate",
+  "basis": "workspace preview before Reviewer records",
+  "total": 45,
+  "reviewed": 14,
+  "skipped": 31,
+  "accountedCoverage": "100%",
+  "entries": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/next-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-001/commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-002/commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-003/commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/proof-003/report.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/status-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions-current.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions-final.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-instructions.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/023-explore/artifacts/upstream-status.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/proof/commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/024-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-design-final.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-proposal-final.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-specs.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/instructions-tasks.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/next-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/status-before-tasks.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/status-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/strict-validate.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/025-propose/artifacts/upstream-status-planned.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "已完成阶段的历史机器输出，沿用 024 / 026 结论；本次不重审旧 Explore / Propose。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/apply-instructions-final.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/handoff-readback.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/integration-example/observations.json",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/rebuild-proof/commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/rebuild-proof/report.json",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/strict-validate-final.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/strict-validate.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/027-apply/artifacts/task-progress.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Author 机器输出；已核对 027 摘要，以本次独立 check、build / 84 项回归、strict validate 和当前交接读取替代逐份复核。"
+    },
+    {
+      "path": "openspec/changes/explore-proof-and-proposal-review/.openspec.yaml",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "核对本次实际变更、受审合同和相关独立回归。"
+    }
+  ],
+  "supplementalReviewed": [
+    "AGENTS.md",
+    "README.md",
+    "mendi-foundation-and-delivery-roadmap.md",
+    "skills/actions/explore/SKILL.md",
+    "skills/actions/propose/SKILL.md",
+    "skills/actions/review-explore/SKILL.md",
+    "skills/actions/review-propose/SKILL.md",
+    "skills/tools/openspec/SKILL.md",
+    "tests/action-cli.test.ts",
+    "tests/diagnosis.test.ts",
+    "tests/owner-resolution.test.ts",
+    "tests/planning-cli.test.ts",
+    "tests/planning-inputs.test.ts",
+    "tests/fixtures/action-resolver.ts",
+    "openspec/changes/explore-proof-and-proposal-review/proposal.md",
+    "openspec/changes/explore-proof-and-proposal-review/design.md",
+    "openspec/changes/explore-proof-and-proposal-review/tasks.md",
+    "openspec/changes/explore-proof-and-proposal-review/specs/action-runs/spec.md",
+    "openspec/changes/explore-proof-and-proposal-review/specs/delivery-workspace/spec.md",
+    "openspec/changes/explore-proof-and-proposal-review/specs/project-entry/spec.md"
+  ]
+}

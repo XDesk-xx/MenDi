@@ -1,0 +1,37 @@
+{
+  "change": "apply-revision-and-native-archive",
+  "run": "032",
+  "role": "author",
+  "result": "planning-ready-for-review",
+  "planningComplete": true,
+  "strictValidation": {
+    "items": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "taskProgress": {
+    "total": 21,
+    "complete": 0,
+    "remaining": 21
+  },
+  "archiveCount": 3,
+  "stopBoundary": "review-propose",
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "authorRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/run.md",
+    "reason": "032 Author 已完成当前方案及严格结构校验；21 项任务未实施，等待独立 Review Propose。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "queryOk": true,
+  "assessment": {
+    "requirements": 15,
+    "modified": 5,
+    "added": 10,
+    "scenarios": 56,
+    "pendingTasks": 21,
+    "completeTasks": 0
+  }
+}
