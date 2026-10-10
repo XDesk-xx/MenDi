@@ -3,11 +3,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 import { actionDefinition, type ActionType } from '../core/actions.ts';
+import { deliveryDefinition, deliveryTypes, type DeliveryType } from '../core/delivery-runs.ts';
 import { errorInfo, MendiError, object } from '../core/errors.ts';
 
 export const bundledRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-export function loadMethods(type: ActionType, tools: string[], root = bundledRoot) {
-  const definition = actionDefinition(type);
+export function loadMethods(type: ActionType | DeliveryType, tools: string[], root = bundledRoot) {
+  const definition = deliveryTypes.includes(type as DeliveryType)
+    ? deliveryDefinition(type)
+    : actionDefinition(type);
   if (tools.some((tool) => tool !== 'openspec') || new Set(tools).size !== tools.length)
     throw new MendiError('skill-unavailable', '不支持或重复的工具指导。');
   function read(ref: string, expected: Record<string, string>) {

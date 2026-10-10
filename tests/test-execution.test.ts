@@ -65,7 +65,19 @@ test('跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 /
   const control = new AbortController();
   const pending = execute(root, 'full', { signal: control.signal });
   try {
-    await waitFor(() => fs.existsSync(path.join(root, 'descendant.json')));
+    await waitFor(() => {
+      try {
+        for (const name of ['started.json', 'descendant.json']) {
+          const data = JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
+          if (!Number.isSafeInteger(data.pid) || data.pid < 1) return false;
+        }
+        return true;
+      } catch (error) {
+        if (error instanceof SyntaxError || (error as NodeJS.ErrnoException).code === 'ENOENT')
+          return false;
+        throw error;
+      }
+    });
     const started = JSON.parse(fs.readFileSync(path.join(root, 'started.json'), 'utf8'));
     const descendant = JSON.parse(fs.readFileSync(path.join(root, 'descendant.json'), 'utf8'));
     const owner = fs.readFileSync(path.join(root, '.mendi/write.lock'));

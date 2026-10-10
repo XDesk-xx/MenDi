@@ -1,0 +1,22 @@
+[
+  {
+    "id": 5,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 12,
+    "progress": {
+      "total": 30,
+      "complete": 28,
+      "remaining": 2
+    }
+  },
+  {
+    "id": 29,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 48,
+    "progress": {
+      "total": 30,
+      "complete": 29,
+      "remaining": 1
+    }
+  }
+]

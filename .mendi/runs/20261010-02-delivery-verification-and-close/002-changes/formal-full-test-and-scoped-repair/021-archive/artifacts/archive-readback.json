@@ -1,0 +1,33 @@
+{
+  "nativeInvocations": 1,
+  "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+  "sourceAbsent": true,
+  "nativeNameAbsent": true,
+  "materialFilesByteEqual": 7,
+  "specRequirements": [
+    {
+      "capability": "action-runs",
+      "matchedDeltaRequirements": 6,
+      "unchangedRequirements": 16,
+      "titleAndPurposeConfirmed": true,
+      "noDeltaHeadings": true
+    },
+    {
+      "capability": "delivery-verification",
+      "matchedDeltaRequirements": 8,
+      "unchangedRequirements": 0,
+      "titleAndPurposeConfirmed": true,
+      "noDeltaHeadings": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "matchedDeltaRequirements": 3,
+      "unchangedRequirements": 14,
+      "titleAndPurposeConfirmed": true,
+      "noDeltaHeadings": true
+    }
+  ],
+  "localCountCommitPending": false,
+  "archivedChangeCount": 6,
+  "ownLockReleased": true
+}

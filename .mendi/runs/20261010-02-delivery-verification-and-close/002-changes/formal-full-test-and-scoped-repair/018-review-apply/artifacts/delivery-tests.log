@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+ok 1 - 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+  ---
+  duration_ms: 3.6481
+  type: 'test'
+  ...
+# Subtest: 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+ok 2 - 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+  ---
+  duration_ms: 34016.6781
+  type: 'test'
+  ...
+# Subtest: 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+ok 3 - 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+  ---
+  duration_ms: 2276.1898
+  type: 'test'
+  ...
+# Subtest: 尚有实际活动 / 未归档 Change 时不分配正式 Run
+ok 4 - 尚有实际活动 / 未归档 Change 时不分配正式 Run
+  ---
+  duration_ms: 29235.6359
+  type: 'test'
+  ...
+# Subtest: 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+ok 5 - 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+  ---
+  duration_ms: 8482.97
+  type: 'test'
+  ...
+# Subtest: 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+ok 6 - 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+  ---
+  duration_ms: 2.775
+  type: 'test'
+  ...
+# Subtest: 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+ok 7 - 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+  ---
+  duration_ms: 1.1103
+  type: 'test'
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 8 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 45957.3538
+  type: 'test'
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+ok 9 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 6585.0301
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 10 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 8537.1958
+  type: 'test'
+  ...
+# Subtest: tests\\delivery-full-test.test.ts
+not ok 3 - tests\\delivery-full-test.test.ts
+  ---
+  duration_ms: 351616.7305
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-full-test.test.ts:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+ok 12 - 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+  ---
+  duration_ms: 41476.8591
+  type: 'test'
+  ...
+# Subtest: 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+ok 13 - 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+  ---
+  duration_ms: 5324.2041
+  type: 'test'
+  ...
+# Subtest: 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+ok 14 - 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+  ---
+  duration_ms: 8030.8246
+  type: 'test'
+  ...
+# Subtest: diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+ok 15 - diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+  ---
+  duration_ms: 6609.9386
+  type: 'test'
+  ...
+# Subtest: 明确合法后续关联退出当前选择，保留正式历史；活动项与指针并存拒绝
+ok 16 - 明确合法后续关联退出当前选择，保留正式历史；活动项与指针并存拒绝
+  ---
+  duration_ms: 9899.7176
+  type: 'test'
+  ...
+# Subtest: 可关联目标不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+ok 17 - 可关联目标不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+  ---
+  duration_ms: 58227.2554
+  type: 'test'
+  ...
+# Subtest: 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+ok 18 - 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+  ---
+  duration_ms: 38258.1308
+  type: 'test'
+  ...
+# Subtest: changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+ok 19 - changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+  ---
+  duration_ms: 9074.1407
+  type: 'test'
+  ...
+# Subtest: 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+ok 20 - 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+  ---
+  duration_ms: 13685.0234
+  type: 'test'
+  ...
+# Subtest: 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+ok 21 - 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+  ---
+  duration_ms: 43338.4866
+  type: 'test'
+  ...
+# Subtest: 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+ok 22 - 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+  ---
+  duration_ms: 13246.5549
+  type: 'test'
+  ...
+# Subtest: 同级连续编号、空占号不复用、重复号拒绝
+ok 23 - 同级连续编号、空占号不复用、重复号拒绝
+  ---
+  duration_ms: 39950.8591
+  type: 'test'
+  ...
+# Subtest: 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+ok 24 - 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+  ---
+  duration_ms: 17458.6384
+  type: 'test'
+  ...
+# Subtest: 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+ok 25 - 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+  ---
+  duration_ms: 27421.4392
+  type: 'test'
+  ...
+# Subtest: 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+ok 26 - 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+  ---
+  duration_ms: 14597.2302
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 25
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 422191.8659

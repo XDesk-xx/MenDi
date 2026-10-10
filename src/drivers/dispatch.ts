@@ -1,3 +1,5 @@
+import { runFullTest, fullTestStatus } from '../application/delivery-full-test.ts';
+import { startDeliveryRepair, startDeliveryReview } from '../application/delivery-repair.ts';
 import { actionInstructions } from '../application/action-instructions.ts';
 import { resolveAction } from '../application/action-resolution.ts';
 import { archiveAction } from '../application/archive.ts';
@@ -23,63 +25,79 @@ export async function dispatch(parsed: Arguments) {
     return testStatus({ ...target, execution: parsed.values.execution });
   const input = { project: parsed.values.project, openspecBin: parsed.values['openspec-bin'] };
   const actor = { ...input, role: parsed.values.role, actor: parsed.values.actor };
-  return parsed.command === 'action-archive'
-    ? archiveAction({ ...actor, runRef: parsed.values.run, mode: parsed.values.mode })
-    : parsed.command === 'workspace-diagnose'
-      ? diagnoseWorkspace({ project: input.project, runRef: parsed.values.run })
-      : parsed.command === 'action-resolve'
-        ? resolveAction({
-            ...actor,
-            runRef: parsed.values.run,
-            resolution: parsed.values.resolution,
-            toRole: parsed.values['to-role'],
-            toActor: parsed.values['to-actor'],
-            reason: parsed.values.reason,
-            phase: parsed.values.phase,
-            revisesRunRef: parsed.values.revises,
-          })
-        : parsed.command === 'delivery-open'
-          ? openDelivery({
-              ...input,
-              id: parsed.values.id,
-              title: parsed.values.title,
-              scopePath: parsed.values.scope,
-              changeId: parsed.values.change,
-              slot: parsed.values.slot,
-            })
-          : parsed.command === 'change-bind'
-            ? bindChange({ ...input, changeId: parsed.values.change, slot: parsed.values.slot })
-            : parsed.command === 'action-start'
-              ? startAction({
-                  ...actor,
-                  changeId: parsed.values.change,
-                  type: parsed.values.type,
-                  authorRunRef: parsed.values['author-run'],
-                  revisesRunRef: parsed.values.revises,
-                  tool: parsed.values.tool,
-                })
-              : parsed.command === 'action-continue'
-                ? continueAction({ ...actor, actionId: parsed.values.action })
-                : parsed.command === 'action-instructions'
-                  ? actionInstructions({
-                      ...input,
-                      actionId: parsed.values.action,
-                      artifact: parsed.values.artifact,
-                      operation: parsed.values.operation,
-                    })
-                  : parsed.command === 'run-save'
-                    ? saveRun({
-                        ...actor,
-                        runRef: parsed.values.run,
-                        bodyFile: parsed.values.body,
-                      })
-                    : parsed.command === 'run-submit'
-                      ? submitRun({
-                          ...actor,
-                          runRef: parsed.values.run,
-                          outcome: parsed.values.outcome,
-                          result: parsed.values.result,
-                          verdict: parsed.values.verdict,
-                        })
-                      : query(input);
+  switch (parsed.command) {
+    case 'delivery-full-test-run':
+      return runFullTest({
+        ...actor,
+        inputFile: parsed.values.input,
+        pnpmBin: parsed.values['pnpm-bin'],
+      });
+    case 'delivery-full-test-status':
+      return fullTestStatus({ ...target, runRef: parsed.values.run });
+    case 'delivery-repair-start':
+      return startDeliveryRepair({
+        ...actor,
+        from: parsed.values.from,
+        reason: parsed.values.reason,
+        revisesRunRef: parsed.values.revises,
+      });
+    case 'delivery-repair-review':
+      return startDeliveryReview({ ...actor, authorRunRef: parsed.values['author-run'] });
+    case 'action-archive':
+      return archiveAction({ ...actor, runRef: parsed.values.run, mode: parsed.values.mode });
+    case 'workspace-diagnose':
+      return diagnoseWorkspace({ ...target, runRef: parsed.values.run });
+    case 'action-resolve':
+      return resolveAction({
+        ...actor,
+        runRef: parsed.values.run,
+        resolution: parsed.values.resolution,
+        toRole: parsed.values['to-role'],
+        toActor: parsed.values['to-actor'],
+        reason: parsed.values.reason,
+        phase: parsed.values.phase,
+        revisesRunRef: parsed.values.revises,
+      });
+    case 'delivery-open':
+      return openDelivery({
+        ...input,
+        id: parsed.values.id,
+        title: parsed.values.title,
+        scopePath: parsed.values.scope,
+        changeId: parsed.values.change,
+        slot: parsed.values.slot,
+      });
+    case 'change-bind':
+      return bindChange({ ...input, changeId: parsed.values.change, slot: parsed.values.slot });
+    case 'action-start':
+      return startAction({
+        ...actor,
+        changeId: parsed.values.change,
+        type: parsed.values.type,
+        authorRunRef: parsed.values['author-run'],
+        revisesRunRef: parsed.values.revises,
+        tool: parsed.values.tool,
+      });
+    case 'action-continue':
+      return continueAction({ ...actor, actionId: parsed.values.action });
+    case 'action-instructions':
+      return actionInstructions({
+        ...input,
+        actionId: parsed.values.action,
+        artifact: parsed.values.artifact,
+        operation: parsed.values.operation,
+      });
+    case 'run-save':
+      return saveRun({ ...actor, runRef: parsed.values.run, bodyFile: parsed.values.body });
+    case 'run-submit':
+      return submitRun({
+        ...actor,
+        runRef: parsed.values.run,
+        outcome: parsed.values.outcome,
+        result: parsed.values.result,
+        verdict: parsed.values.verdict,
+      });
+    default:
+      return query(input);
+  }
 }

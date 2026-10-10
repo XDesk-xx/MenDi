@@ -1,0 +1,62 @@
+[
+  {
+    "id": 5,
+    "line": 12,
+    "description": "2.1 从 tests.ts 整理具备实际职责的持锁内部执行服务，普通 runTest 保留原合同；运行现有 test-entries、test-dependencies、test-execution、test-log-integrity 回归，验证普通 full 仍为 command / formalDeliveryTest=false、预检不自动安装。",
+    "progress": {
+      "total": 30,
+      "complete": 29,
+      "remaining": 1
+    }
+  },
+  {
+    "id": 7,
+    "line": 14,
+    "description": "2.3 实现正式 passed / failed / not-run / interrupted / unknown 的真实映射；测试覆盖依赖 / 工具拒绝、选定启动失败、实际非零与确认中断，验证 not-run 子执行可空及原始输出保存，不从日志文字推导结果。",
+    "progress": {
+      "total": 30,
+      "complete": 28,
+      "remaining": 2
+    }
+  },
+  {
+    "id": 14,
+    "line": 24,
+    "description": "3.5 接通 approved 修复后的新正式完整执行，沿用仍适用的批准事实快照并核对原完整 collection；验证缩减集合 / 旧批准拒绝、经审核的范围内配置修复、新失败只消费本次当前对象而非更旧父链。",
+    "progress": {
+      "total": 30,
+      "complete": 27,
+      "remaining": 3
+    }
+  },
+  {
+    "id": 17,
+    "line": 30,
+    "description": "4.2 实现当前及显式指定正式 Run 的只读查询与最小 next；验证旧 failed 稳定可读、新 passed 为当前、修复 Author complete / Review continuing / 三类 verdict 交接，不把查询 ok 当 passed。",
+    "progress": {
+      "total": 30,
+      "complete": 26,
+      "remaining": 4
+    }
+  },
+  {
+    "id": 29,
+    "line": 48,
+    "description": "6.3 按正常工程依赖准备处理现有 workspace / node_modules 不同步警告，再执行 pnpm check、pnpm build 和适当完整 pnpm test 回归；验证三配置真实类型检查及共享记录 / 查询 / 归档 / 执行行为，工程测试不冒充根正式 Delivery Full Test，不自动安装可选工具。",
+    "progress": {
+      "total": 30,
+      "complete": 25,
+      "remaining": 5
+    }
+  },
+  {
+    "id": 30,
+    "line": 49,
+    "description": "6.4 执行固定 OpenSpec strict validate 与实际 apply instructions，核对规格 / 任务及完成状态；保存本次 Author 摘要、相关结果与 src / tests / scripts 各前三物理行数、可靠增长依据和职责结论，不设硬门槛或独立台账。",
+    "progress": {
+      "total": 30,
+      "complete": 24,
+      "remaining": 6
+    }
+  }
+]

@@ -1,6 +1,6 @@
 import type { Arguments } from './arguments.ts';
 import type { dispatch } from './dispatch.ts';
-import type { startAction } from '../application/actions.ts';
+import type { loadMethods } from '../adapters/methods.ts';
 
 // 面向人的呈现不访问项目，也不执行推荐的下一步。
 export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Arguments) {
@@ -31,19 +31,37 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
   }
   if ('run' in result && result.run)
     console.log(`Action：${result.run.actionId}\nRun：${result.run.ref} (${result.run.status})`);
-  const recorded =
-    parsed.command === 'action-start' ||
-    parsed.command === 'action-continue' ||
-    parsed.command === 'action-resolve'
-      ? (result as ReturnType<typeof startAction>)
-      : undefined;
-  if (recorded)
-    for (const method of [recorded.methods.stage, ...recorded.methods.guidance])
-      console.log(`\n方法：${method.ref}\n${method.content}`);
-  if (recorded?.incompleteReservations.length)
+  if ('verification' in result && result.verification) {
+    const facts = result.verification;
     console.log(
-      `不完整编号占位：${recorded.incompleteReservations.map((item) => item.ref).join(', ')}`,
+      `正式 Full Test：${facts.outcome}；scope:delivery\n完整集合：${facts.collection.join(' / ')}\n材料声明：${JSON.stringify(facts.basis)}\n范围 / 命令匹配：${facts.scopeMatch} / ${facts.commandMatch}\nmaterialApplicability:${facts.materialApplicability}`,
     );
+    if (facts.child)
+      console.log(
+        `实际命令：${JSON.stringify(facts.child.command)}\ncwd：${facts.child.cwd}\n日志：${facts.child.stdoutRef} / ${facts.child.stderrRef}`,
+      );
+    console.log(
+      '通过仅证明本次声明下的完整执行；当前材料适用性与 Close 仍需阶段判断和 Owner 指令。',
+    );
+  }
+  if ('error' in result && result.operation.startsWith('delivery-'))
+    console.log(JSON.stringify(result.error));
+  if (
+    result.operation.startsWith('delivery-') &&
+    'outcome' in result &&
+    !('verification' in result)
+  )
+    console.log(`正式结果：${result.outcome}；当前现场未作为通过发布。`);
+  if ('methods' in result) {
+    const methods = result.methods as ReturnType<typeof loadMethods>;
+    for (const method of [methods.stage, ...methods.guidance])
+      console.log(`\n方法：${method.ref}\n${method.content}`);
+  }
+  if ('incompleteReservations' in result) {
+    const reservations = result.incompleteReservations as { ref: string }[];
+    if (reservations.length)
+      console.log(`不完整编号占位：${reservations.map((item) => item.ref).join(', ')}`);
+  }
   if ('next' in result) {
     console.log(`下一步：${String(result.next.action)}，来源：${result.next.source}`);
     if ('reason' in result.next) console.log(String(result.next.reason));

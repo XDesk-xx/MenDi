@@ -1,0 +1,1 @@
+{"name":"execution-fixture","private":true,"type":"module","packageManager":"pnpm@11.22.0","scripts":{"test:focused":"node --test integration.test.ts","test:fast":"node --test unit.test.ts","test:full":"node --test --test-concurrency=1 integration.test.ts unit.test.ts"}}

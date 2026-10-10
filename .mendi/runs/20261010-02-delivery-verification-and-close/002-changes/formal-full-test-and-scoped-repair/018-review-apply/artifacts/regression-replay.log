@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: RP-D-001：真实原生验证失败后、none 保存前中断；保留原错误，观察后 Owner rollback 另建 revise
+ok 1 - RP-D-001：真实原生验证失败后、none 保存前中断；保留原错误，观察后 Owner rollback 另建 revise
+  ---
+  duration_ms: 17205.117
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 2 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 11944.826
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17815.1449

@@ -1,5 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+  hasDeliveryProgress,
+  continueDeliveryAction,
+  saveDeliveryRun,
+  submitDeliveryRun,
+} from './delivery-repair.ts';
 import { state } from './project.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
 import { currentRun } from '../adapters/runs.ts';
@@ -104,6 +110,7 @@ export function startAction(input: StartInput, options: ActionOptions = {}) {
   };
 }
 export function continueAction(input: ContinueInput, options: ActionOptions = {}) {
+  if (hasDeliveryProgress(input.project)) return continueDeliveryAction(input, options);
   const { root, upstream, workspace } = context(input, options);
   function check(workspace: Workspace) {
     checkWorkspace(workspace);
@@ -156,6 +163,7 @@ export function continueAction(input: ContinueInput, options: ActionOptions = {}
   };
 }
 export function saveRun(input: SaveInput, options: ActionOptions = {}) {
+  if (hasDeliveryProgress(input.project)) return saveDeliveryRun(input, options);
   text(input.actor, '操作者标识');
   if (input.role !== 'author' && input.role !== 'reviewer')
     throw new MendiError('action-role-mismatch', '必须声明 author 或 reviewer。');
@@ -199,6 +207,7 @@ export function saveRun(input: SaveInput, options: ActionOptions = {}) {
 }
 
 export function submitRun(input: SubmitInput, options: ActionOptions = {}) {
+  if (hasDeliveryProgress(input.project)) return submitDeliveryRun(input, options);
   const { root, upstream, workspace } = context(input, options);
   text(input.result, '提交结果');
   function check(workspace: Workspace) {

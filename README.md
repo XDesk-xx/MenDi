@@ -2,7 +2,7 @@
 
 MenDi 是以 OpenSpec 为规格底座，通过 Delivery、Author / Reviewer、Action 编排与 Runs 交接组织开发的项目交付工具。
 
-当前已实现项目入口、首次 Delivery Open、顺序已有 Change 关联、Action / Run、Apply 处置 / 显式回退、原生 Archive 与有限 finish，以及目标已有脚本的 focused / fast / full 前台执行和持久结果查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
+当前已实现项目入口、首次 Delivery Open、顺序已有 Change 关联、Action / Run、Apply 处置 / 显式回退、原生 Archive 与有限 finish，以及目标已有脚本的 focused / fast / full 前台执行、正式 Delivery Full Test 与范围内修复 / 定向审核和持久结果查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
 
 ## 工程命令
 
@@ -176,9 +176,52 @@ MenDi 持锁核对实际工具版本，再以 Node 参数数组 `[pnpm入口, 'r
 
 spawn 前保存 prepared / not-run，再持久保存 running / unknown 意图。日志按实际写入字节数续写，零进展或写入异常为 unknown；完整日志、正常 exit 0、终态保存读回及自身锁释放都成功才报告 passed；正常非零为 failed。前台 Ctrl+C 或调用者取消只停止本次实际持有的 Windows 子进程树，实际停止与 close 确认才为 interrupted。启动明确失败为 not-run；停止、日志、终态、读回或锁释放无法确认为 unknown，报告已观察现场并保留锁，不自动重试或清理。
 
+启动即取消也保持上述边界：停止命令返回成功仍须收到本次 child / 继承日志管道的关闭确认，等待有明确上限。未确认时有界返回 unknown，可能仍有存活后代；按实际现场核对，不能由入口 pid 消失推断整树停止。
+
 `test status` 成功表示指定已知终态和必要日志完整且读取稳定，outcome 可以是 failed / interrupted / not-run；不依赖原 pnpm / script 仍存在或原 Change 的 Run 正文。持锁、读中变化、必要输入损坏及未完成意图返回 unknown / 非零，同时可显示 observed 内容；即使 observed 为 passed，也不表示完整成功。stable 仅表示文件观察稳定；已保存的 finished / unknown 即使锁被人工处置，仍保留原记录、ok:false 并非零退出。旧 pid 仅供说明，不据其失踪补写终态，不 kill 或解除锁。故障时先读明确 execution 和 `workspace diagnose`，后续处置仍遵守授权边界。
 
 三类结果都标记 `scope:command`、`formalDeliveryTest:false`。将 run 的 kind 改为 full 只是普通 full 脚本执行，成功也不创建正式 Delivery Full Test、不改 Run / next / binding / verdict / 计数，不执行 Close 或激活下一项。普通 status / next 不读取旧测试结果或日志。
+
+## 正式 Full Test 与范围内修复
+
+正式验收另需 Owner 明确授权，要求 open product、无活动 / archiving Change、本轮全部计划槽位归档并具有必要直接 Apply / Review 批准。MenDi 自身 manual-bootstrap 记录由会话维护，产品写命令拒绝迁移人工历史。普通 test full、工程 pnpm test 和任务全勾均不能替代正式验收。
+
+在目标项目内保存 full-test.json，填写实际完整集合、受测实现 / 测试 / 依赖 / 配置和差异。有 Git 基准时可加真实完整 basis.commit；无基准省略，materials 须清楚。声明不生成命令，CLI 只运行目标已有 full script，不自动认证任意源码覆盖。
+
+```json
+{
+  "collection": ["单元场景", "跨 Change 接线场景"],
+  "basis": {
+    "materials": "实际 producer / consumer、单元与接线测试、pnpm 配置；说明影响范围",
+    "changes": "相对真实提交的必要未提交差异；无差异可为空"
+  }
+}
+```
+
+先在目标执行其正常依赖准备命令，再运行：
+
+```powershell
+node dist/drivers/cli.js delivery full-test run --project D:\work\target --input full-test.json --role author --actor author-session-1 --pnpm-bin C:\tools\pnpm\bin\pnpm.cjs --json
+node dist/drivers/cli.js delivery full-test status --project D:\work\target --run .mendi/runs/d01/015-delivery-full-test/run.md --json
+node dist/drivers/cli.js delivery repair start --project D:\work\target --from .mendi/runs/d01/015-delivery-full-test/run.md --reason "本轮接线失败的范围内修复" --role author --actor author-session-1 --json
+node dist/drivers/cli.js run save --project D:\work\target --run .mendi/runs/d01/016-delivery-repair/run.md --role author --actor author-session-1 --body repair.md --json
+node dist/drivers/cli.js run submit --project D:\work\target --run .mendi/runs/d01/016-delivery-repair/run.md --role author --actor author-session-1 --outcome complete --result "实际差异与定向验证见正文" --json
+node dist/drivers/cli.js delivery repair review --project D:\work\target --author-run .mendi/runs/d01/016-delivery-repair/run.md --role reviewer --actor reviewer-session-1 --json
+```
+
+替换示例目标、稳定 pnpm 入口及实际返回 Run 引用。Author 在同一 draft 完成真实修复 / 调查、必要 focused / fast，正文写明原因、实际材料 / 差异、验证及限制；不能只填摘要声称已修复。实际独立 Reviewer 使用 save / submit，complete 时填 approved / changes-requested / rejected。approved 后显式再运行同一完整声明，产生新正式 Run；changes-requested 或当前 Author 主动实质修订使用 repair start --revises <当前完整 Author>，新 Author 必须再审。未完成用 continuing / action continue，保持同一 Action 和固定 Author。rejected、范围 / 方案扩大停 Owner。
+
+四个入口、两项真实原生归档后的接线失败、focused、审核记录及新整次执行由 delivery-* 场景测试覆盖，审核 verdict 只是明确标注的记录夹具，真实阶段批准须独立 Reviewer。
+
+修复后首次正式执行和后续重跑均核对当前直接 Review 的完整头部与非空正文；缺正文时在占新号前拒绝。普通 query / draft save 不因此倒查审核正文。
+
+Delivery Run 与 Changes 批次同级共享编号，头部明示 scope:delivery / changeId:null。manifest.deliveryRunRef 选择当前验收 / 修复 / Review，fullTestRunRef 保留最近正式入口；新意图固定后不回退旧 PASS。子结果仍为 command / formalDeliveryTest:false。passed / failed 来自实际退出及两层完整保存读回；工具 / 依赖拒绝记 not-run，子 ID 可空且原始输出放该 Run artifacts。confirmed 中断为 interrupted；unknown / 未完成 / 保存或释放失败保留占号与锁，停 Owner，不自动 finish、重跑或清锁。普通 submit / continue 不能自填正式通过。
+
+status / next 优先解释当前 Delivery 头部及必要直接结果 / 日志，upstream:null；旧 Archive / 审核正文、失败父链、原声明和未知 Ref 不成为查询依赖。首次正式开始核对本轮直接批准，后续仍适用的快照可沿用；修复审核另读固定新 Author 和当前失败，不递归补历史。Reviewer 固定 Author 缺失时查询和 draft save 可用，但相应正式审核操作拒绝。未解决的失败 / 修复 / 审核 / unknown 阻止 bind；合法后续关联清空当前 Delivery 选择，保留正式历史入口。
+
+正式 status 的 ok 只表示稳定可读，failed 也可 exit 0。outcome、scopeMatch / commandMatch 的 match / changed / unavailable 与 materialApplicability:requires-semantic-check 分开展示，不输出自动 applicable:true。配置已变可报告不匹配，配置不能读取仍保留历史事实；说明整理不自动使结果失效。阶段工作核对真实候选与影响，发现源码 / 测试 / 依赖并发变化时说明材料未确认，按影响补验，不能用旧 passed 宣称当前材料适用。未来 Close 直接消费最近正式结果、本轮范围、必要审核与实际候选影响；本轮尚未实现 Close / Reopen。
+
+本次读取出现竞争锁或日志变化时，即使持久头部仍为 passed，当前 query 与指定 status 的 next 都按本次 unknown 观察停 Owner；原始记录保持，不提示已通过或允许收口。
 
 ## 目录
 
@@ -188,7 +231,7 @@ spawn 前保存 prepared / not-run，再持久保存 running / unknown 意图。
 - `src/application/`：产品操作与 Skill 编排。
 - `src/adapters/`：必要的文件与外部工具接线。
 - `src/drivers/`：CLI 入口。
-- `skills/actions/`：六个 Explore / Propose / Apply 方法及 Archive，revise 复用对应 Author 方法；`skills/tools/openspec/`：显式选用的工具指导。
+- `skills/actions/`：Explore / Propose / Apply 的 Author / Reviewer 方法、Archive，以及正式 Full Test、Delivery 修复 / 定向审核方法；revise 复用对应 Author 方法。`skills/tools/openspec/`：显式选用的工具指导。
 - `scripts/`：构建与验收准备程序。
 - `tests/fixtures/minimal-project/`、`tests/fixtures/ui-project/`：后续真实验收项目。
 - `openspec/`：新初始化的项目配置、规格与 Change 材料。
@@ -207,6 +250,6 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-当前协作记录：MVP-D02“Delivery 验收与收口”保持 open；MVP-D02-A `sequential-changes-and-test-entrypoints` 已独立批准并在 012 完成实际归档与主规格同步，归档目录为 `openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints`，累计完成 Change 为 5，当前无活动 Change。本次 change checkpoint 保存当前归档材料，后续等待 Owner 明确下一 Change 与范围。B 正式 Full Test / 小修复与 C Close / Reopen 尚未激活，D01 保持 closed，旧 Run 与 verdict 保留。当前交接见 [D02 manifest](.mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json)。
+当前协作记录：MVP-D02“Delivery 验收与收口”保持 open；A 已归档并完成 change checkpoint，B `formal-full-test-and-scoped-repair` 经 020 独立批准后由 021 实际归档，归档序号 006，项目累计完成 Change 为 6。本次 change checkpoint 保存 B 的实现、审核与归档材料，后续等待 Owner 明确指令；取消与验证的适用限制保留在 020 / 021。C Close / Reopen 尚未激活，D01 保持 closed。当前交接见 [D02 manifest](.mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json)。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。新 Delivery 从 `001` 开始，Changes 批次在实际进入 Change 工作时建立；D01 的 `003-changes` 保留原归属，Reopen 沿原 Delivery 连续编号并建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

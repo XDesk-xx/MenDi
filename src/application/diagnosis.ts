@@ -1,10 +1,16 @@
+import {
+  currentProgress,
+  readDeliveryRun,
+  type DeliveryDocument,
+} from '../adapters/delivery-runs.ts';
+import { deliveryLocation } from '../core/delivery-runs.ts';
 import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { inspectProject } from '../adapters/project.ts';
 import { managedPath, present } from '../adapters/paths.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
-import { readRun, currentRun, type RunDocument } from '../adapters/runs.ts';
+import { readRun, type RunDocument } from '../adapters/runs.ts';
 import { parseProject } from '../core/records.ts';
 import { runLocation } from '../core/actions.ts';
 import { MendiError, errorInfo, object, text } from '../core/errors.ts';
@@ -101,19 +107,31 @@ export function diagnoseWorkspace(
   const workspace = index ? attempt(() => readWorkspace(root, true)) : null;
   if (index && !workspace && !errors.length)
     report(new MendiError('incomplete-mendi-state', '缺少 workspace。'));
-  let current: RunDocument | null = null;
-  let reservation: RunDocument | null = null;
+  let current: RunDocument | DeliveryDocument | null = null;
+  let reservation: RunDocument | DeliveryDocument | null = null;
   if (workspace?.mode === 'product') {
     current = attempt(() => {
-      const ref = currentBinding(workspace)?.latestRunRef;
+      const ref =
+        (workspace.manifest.deliveryRunRef as string | undefined) ??
+        currentBinding(workspace)?.latestRunRef;
       if (ref) {
         track(ref);
         temporaryPaths(ref);
       }
-      return currentRun(root, workspace);
+      return currentProgress(root, workspace);
     });
     if (input.runRef !== undefined)
       reservation = attempt(() => {
+        if (
+          /^\.mendi\/runs\/[^/]+\/\d{3,}-(?:delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.test(
+            input.runRef!,
+          )
+        ) {
+          deliveryLocation(input.runRef!, workspace.id);
+          track(input.runRef!);
+          temporaryPaths(input.runRef!);
+          return readDeliveryRun(root, input.runRef!, workspace.id);
+        }
         if (!workspace.activeChangeId)
           throw new MendiError('invalid-run', '显式占号需要当前 Change。');
         runLocation(input.runRef!, workspace.id, workspace.activeChangeId);
@@ -135,7 +153,8 @@ export function diagnoseWorkspace(
     });
   if (changed)
     report(new MendiError('changed-during-read', '现场在读取期间发生变化；不能视为稳定快照。'));
-  const runOutput = (run: RunDocument | null) => (run ? { ref: run.ref, ...run.record } : null);
+  const runOutput = (run: RunDocument | DeliveryDocument | null) =>
+    run ? { ref: run.ref, ...run.record } : null;
   const classification = errors.length
     ? 'unknown'
     : !lockPresent
@@ -165,7 +184,7 @@ export function diagnoseWorkspace(
         : 'readback-unchanged',
     current: runOutput(current),
     reservation: reservation
-      ? { ...runOutput(reservation), isCurrent: reservation.ref === current?.ref }
+      ? { ...runOutput(reservation)!, isCurrent: reservation.ref === current?.ref }
       : null,
     temporaryPaths: [...temporaries],
     errors,

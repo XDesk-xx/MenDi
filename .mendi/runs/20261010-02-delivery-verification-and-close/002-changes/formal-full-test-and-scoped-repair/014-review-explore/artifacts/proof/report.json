@@ -1,0 +1,57 @@
+{
+  "role": "author",
+  "purpose": "Explore-only bounded experiment",
+  "target": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Rnl6UR\\minimal-project",
+  "scenes": [
+    {
+      "id": "P01",
+      "archivedChanges": 2,
+      "ordinaryFull": "001-full",
+      "outcome": "passed",
+      "formalDeliveryTest": false,
+      "lifecycleUnchanged": true
+    },
+    {
+      "id": "P02",
+      "execution": "002-full",
+      "outcome": "failed",
+      "exitCode": 1,
+      "groups": [
+        "integration",
+        "unit"
+      ],
+      "freshProcessRead": "failed"
+    },
+    {
+      "id": "P03",
+      "focused": "003-focused",
+      "groups": [
+        "integration"
+      ],
+      "oldReviewBasisStale": true,
+      "afterArchiveRepair": "invalid-action",
+      "independentReview": "fixture declaration only",
+      "documentationOnlyPreservesBasis": true,
+      "changedFullScriptInvalidatesBasis": true,
+      "missingMaterialRejected": true,
+      "pathEscapeRejected": true
+    },
+    {
+      "id": "P04",
+      "execution": "004-full",
+      "outcome": "passed",
+      "groups": [
+        "integration",
+        "unit"
+      ],
+      "oldFailureBytesPreserved": true,
+      "lifecycleUnchanged": true,
+      "formalDeliveryTest": false
+    }
+  ],
+  "limitations": [
+    "阶段与审核前置均为受控声明，未认证真人身份。",
+    "所有执行均为现有普通 command，未实现或执行根项目正式 Full Test。",
+    "适用性仅比较本实验已知输入；生产协议、并发及跨进程当前正式结果选择留给 Propose / Apply。"
+  ]
+}

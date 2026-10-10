@@ -105,3 +105,15 @@ export function observeExecution(root: string, id: string, observe?: () => void)
     changed,
   };
 }
+// 持锁写者的直接读回仍校验实际结果与必要日志，不把自己的锁当成外部竞争。
+export function readExecution(root: string, id: string, deliveryId: string) {
+  const { ref } = executionLocation(id, deliveryId);
+  const record = parseExecution(
+    JSON.parse(fs.readFileSync(managedPath(root, `${ref}/result.json`), 'utf8')),
+    root,
+    deliveryId,
+    id,
+  );
+  for (const log of [record.stdoutRef, record.stderrRef]) fs.readFileSync(managedPath(root, log));
+  return record;
+}

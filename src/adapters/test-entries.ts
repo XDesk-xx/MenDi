@@ -59,6 +59,8 @@ export function testEnvironment(policy: 'error' | 'warn', source = process.env):
         'corepack_enable_network',
         'corepack_enable_auto_pin',
         'pnpm_config_verify_deps_before_run',
+        // node:test 的内部上下文不能传给目标的独立测试运行。
+        'node_test_context',
       ].includes(key.toLowerCase())
     )
       env[key] = value;

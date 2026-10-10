@@ -4,6 +4,10 @@ export interface Arguments {
   command:
     | 'help'
     | 'delivery-open'
+    | 'delivery-full-test-run'
+    | 'delivery-full-test-status'
+    | 'delivery-repair-start'
+    | 'delivery-repair-review'
     | 'change-bind'
     | 'status'
     | 'next'
@@ -27,7 +31,14 @@ export function parseArguments(args: string[]): Arguments {
     return { command: 'help', json: false, values: {} };
   let command: Arguments['command'];
   let consumed: number;
-  if (args[0] === 'delivery' && args[1] === 'open') {
+  if (
+    args[0] === 'delivery' &&
+    ((args[1] === 'full-test' && ['run', 'status'].includes(args[2])) ||
+      (args[1] === 'repair' && ['start', 'review'].includes(args[2])))
+  ) {
+    command = `delivery-${args[1]}-${args[2]}` as Arguments['command'];
+    consumed = 3;
+  } else if (args[0] === 'delivery' && args[1] === 'open') {
     command = 'delivery-open';
     consumed = 2;
   } else if (args[0] === 'change' && args[1] === 'bind') {
@@ -54,8 +65,22 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(command === 'delivery-full-test-run'
+      ? ['input', 'role', 'actor', 'pnpm-bin']
+      : command === 'delivery-full-test-status'
+        ? ['run']
+        : command === 'delivery-repair-start'
+          ? ['from', 'reason', 'role', 'actor', 'revises']
+          : command === 'delivery-repair-review'
+            ? ['author-run', 'role', 'actor']
+            : []),
     ...(command === 'action-archive' ? ['run', 'role', 'actor', 'mode'] : []),
-    ...(command === 'workspace-diagnose' || command.startsWith('test-') ? [] : ['openspec-bin']),
+    ...(command === 'workspace-diagnose' ||
+    command.startsWith('test-') ||
+    command.startsWith('delivery-full-test-') ||
+    command.startsWith('delivery-repair-')
+      ? []
+      : ['openspec-bin']),
     ...(command === 'test-run'
       ? ['kind', 'actor', 'pnpm-bin']
       : command === 'test-status'
@@ -99,6 +124,15 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'delivery-full-test-run'
+      ? ['input', 'role', 'actor', 'pnpm-bin']
+      : command === 'delivery-full-test-status'
+        ? ['run']
+        : command === 'delivery-repair-start'
+          ? ['from', 'reason', 'role', 'actor']
+          : command === 'delivery-repair-review'
+            ? ['author-run', 'role', 'actor']
+            : []),
     ...(command === 'test-run'
       ? ['kind', 'actor', 'pnpm-bin']
       : command === 'test-status'
@@ -146,6 +180,10 @@ mendi next --project <项目根>
 mendi test list --project <项目根>
 mendi test run --project <项目根> --kind <focused|fast|full> --actor <标识> --pnpm-bin <既有绝对 JS 入口>
 mendi test status --project <项目根> --execution <NNN-kind>
+mendi delivery full-test run --project <项目根> --input <项目内 JSON> --role author --actor <标识> --pnpm-bin <既有绝对 JS 入口>
+mendi delivery full-test status --project <项目根> --run <同 Delivery 正式 Run>
+mendi delivery repair start --project <项目根> --from <当前 failed 正式 Run> --reason <范围内原因> --role author --actor <标识> [--revises <当前完整 Author>]
+mendi delivery repair review --project <项目根> --author-run <当前完整修复 Author> --role reviewer --actor <独立标识>
 mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
 mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
 mendi action instructions --project <项目根> --action <当前 Action ID> (--artifact <proposal|specs|design|tasks> | --operation <apply|archive>)
@@ -165,5 +203,6 @@ Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选�
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
 submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
 actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询；Close / Reopen 未实现。
+正式结果保存 collection / basis 与真实执行；materialApplicability=requires-semantic-check，passed 不自动 Close。修复审核 approved 后显式新整次 full；unknown 停 Owner，不自动重试或清锁。
 Archive start 只准备；execute 显式调用原生，finish local-only 观察 / 收口，不自动重试或解除锁。none 观察仍 pending。
 操作仍须遵守 Owner 授权；命令成功不产生审核批准。`;

@@ -1,0 +1,15 @@
+{
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "show",
+    "test-execution",
+    "--type",
+    "spec",
+    "--json",
+    "--no-scenarios"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "stdout": "{\n  \"id\": \"test-execution\",\n  \"title\": \"test-execution\",\n  \"overview\": \"让调用者显式选择目标项目已有的 focused、fast 或 full 测试入口，以真实执行和持久记录区分通过、失败、未运行、中断和未知结果。该能力提供后续验收需要的命令事实与必要日志，不自动推进阶段、生成审核批准或替代正式 Delivery Full Test。\",\n  \"requirementCount\": 7,\n  \"requirements\": [\n    {\n      \"name\": \"Existing project test entries\",\n      \"text\": \"系统 SHALL 从明确目标根的 `package.json` 读取已有 scripts，默认 focused / fast / full 分别映射 `test:focused` / `test:fast` / `test:full`；可选 `mendi.tests` 仅以对应集合到 script 名的映射覆盖默认。直接名称 MUST 以字母数字开头、仅含字母数字 / 冒号 / 下划线 / 连字符，不接受参数、正则或命令文本。系统 MUST 不猜测命令或创建脚本；未知扩展不成为引用依赖。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Explicit local test execution\",\n      \"text\": \"系统 SHALL 通过 `test run --project <根> --kind <focused|fast|full> --actor <标识> --pnpm-bin <绝对 JS 入口>` 显式执行目标既有 script。首版 MUST 核对 Windows、Node 22、现有 pnpm 11.22.0 及兼容 packageManager 声明，以目标根为 cwd，关闭工具自动下载并强制禁止运行前自动安装，不受目标或调用者安装策略覆盖。系统 MUST 在选定脚本启动前独立检查依赖；失败为 not-run，不启动脚本。实际预检 / 执行命令与策略 MUST 展示。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Minimal durable test execution identity\",\n      \"text\": \"每次实际执行 SHALL 在 `.mendi/delivery-groups/<delivery-id>/tests/<序号>-<集合>/` 独占建立结果及 stdout / stderr 日志，执行序号独立于 Run 和 archiveOrdinal，保留旧占号与结果。结果 MUST 保存格式、项目 / Delivery / 执行身份、可空 Change 快照、actor、集合、实际命令 / cwd、执行状态、结果、退出 / 信号和日志定位；actor 不认证真人身份。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Honest test outcomes\",\n      \"text\": \"结果 SHALL 区分 `not-run`、`passed`、`failed`、`interrupted`、`unknown`。只有选定命令实际正常退出 0、必要日志和终态完整保存并读回时 MUST 报告 passed；选定命令正常非零为 failed，确认本次支持的前台进程树停止的中断为 interrupted。工具或依赖预检拒绝、选定命令未启动为 not-run；执行 / 停止 / 保存无法确认为 unknown，不以日志文字、信号空值或预检出口推导测试结果。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Intent before launch and read-only incomplete results\",\n      \"text\": \"系统 MUST 在启动测试子进程前持久保存运行意图；只读 `test status --project <根> --execution <ID>` SHALL 解释指定执行记录、核对身份和实际必要日志，不调用上游或测试、不写文件。未完成执行和锁 / 读中变化 SHALL 如实显示 unknown / 不稳定，不能由旧 pid 不存在推断退出、未运行或通过。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Bounded foreground interruption\",\n      \"text\": \"首版 SHALL 仅支持当前前台执行进程及其 Windows 进程树的中断处理：收到调用者取消时，只能停止本进程实际启动且仍持有的子进程树，并按实际停止结果和退出事件判断。系统 MUST 不提供从历史 pid 杀进程、通用取消平台或自动清理；无法确认停止 SHALL 保留 unknown。\",\n      \"scenarios\": []\n    },\n    {\n      \"name\": \"Test execution preserves collaboration boundaries\",\n      \"text\": \"测试工具 SHALL 只记录选定命令事实，不修改当前阶段、next、binding、提交结果、Reviewer verdict 或 Delivery 状态。full 的结果 MUST 明示普通 command 执行，不生成正式 Delivery Full Test 记录 / 授权 / 通过；正式验收和收口由独立操作消费明确输入，不因测试集合名称自动执行。\",\n      \"scenarios\": []\n    }\n  ],\n  \"metadata\": {\n    \"version\": \"1.0.0\",\n    \"format\": \"openspec\"\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

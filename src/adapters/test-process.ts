@@ -13,7 +13,7 @@ export function stopCurrentChild(child: ChildProcess) {
   const result = spawnSync(
     path.join(process.env.SystemRoot ?? 'C:/Windows', 'System32/taskkill.exe'),
     ['/PID', String(child.pid), '/T', '/F'],
-    { encoding: 'utf8', windowsHide: true, shell: false },
+    { encoding: 'utf8', windowsHide: true, shell: false, timeout: 5000 },
   );
   return {
     confirmed: result.status === 0 && !result.error,
@@ -68,12 +68,20 @@ export async function executeForeground(
         return;
       }
       let settled = false;
+      let closeDeadline: ReturnType<typeof setTimeout> | undefined;
       const finish = () => {
         if (settled) return;
         settled = true;
+        clearTimeout(closeDeadline);
         process.off('SIGINT', cancel);
         options.signal?.removeEventListener('abort', cancel);
         resolve();
+      };
+      const abandon = () => {
+        child.stdout?.destroy();
+        child.stderr?.destroy();
+        child.unref();
+        finish();
       };
       const cancel = () => {
         if (settled || stop) return;
@@ -89,10 +97,17 @@ export async function executeForeground(
         }
         if (!stop.confirmed) {
           // 不确定停止时只保存已经收到的日志；不等待未知进程或认证旧 pid。
-          child.stdout?.destroy();
-          child.stderr?.destroy();
-          child.unref();
-          finish();
+          abandon();
+        } else {
+          // 停止命令成功不能代替当前 child 与继承管道的关闭确认。
+          closeDeadline = setTimeout(() => {
+            stop = {
+              ...stop!,
+              confirmed: false,
+              stderr: `${stop!.stderr}\n停止命令返回后 5000ms 未收到 close；前台树停止未确认，保留现场。`,
+            };
+            abandon();
+          }, 5000);
         }
       };
       child.once('spawn', () => {

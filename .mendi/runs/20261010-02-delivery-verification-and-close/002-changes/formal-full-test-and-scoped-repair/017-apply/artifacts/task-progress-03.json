@@ -1,0 +1,90 @@
+[
+  {
+    "task": 21,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 34,
+    "progress": {
+      "total": 30,
+      "complete": 21,
+      "remaining": 9
+    },
+    "state": "ready"
+  },
+  {
+    "task": 22,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 35,
+    "progress": {
+      "total": 30,
+      "complete": 22,
+      "remaining": 8
+    },
+    "state": "ready"
+  },
+  {
+    "task": 23,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 39,
+    "progress": {
+      "total": 30,
+      "complete": 23,
+      "remaining": 7
+    },
+    "state": "ready"
+  },
+  {
+    "task": 24,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 40,
+    "progress": {
+      "total": 30,
+      "complete": 24,
+      "remaining": 6
+    },
+    "state": "ready"
+  },
+  {
+    "task": 25,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 41,
+    "progress": {
+      "total": 30,
+      "complete": 25,
+      "remaining": 5
+    },
+    "state": "ready"
+  },
+  {
+    "task": 26,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 42,
+    "progress": {
+      "total": 30,
+      "complete": 26,
+      "remaining": 4
+    },
+    "state": "ready"
+  },
+  {
+    "task": 27,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 46,
+    "progress": {
+      "total": 30,
+      "complete": 27,
+      "remaining": 3
+    },
+    "state": "ready"
+  },
+  {
+    "task": 28,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\formal-full-test-and-scoped-repair\\tasks.md",
+    "line": 47,
+    "progress": {
+      "total": 30,
+      "complete": 28,
+      "remaining": 2
+    },
+    "state": "ready"
+  }
+]

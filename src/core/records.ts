@@ -1,6 +1,7 @@
 import { identifier, MendiError, object, text } from './errors.ts';
 import { archivedCount } from './archive.ts';
 import { readAssociations, type Binding } from './associations.ts';
+import { deliveryLocation } from './delivery-runs.ts';
 export type { Binding } from './associations.ts';
 
 export interface PlannedChange {
@@ -120,6 +121,25 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
   const state = text(manifest.state, 'Delivery 状态');
   const scope = readScope(manifest);
   const { bindings, activeChangeId } = readAssociations(index, manifest, scope, state);
+  if (index.mode === 'product') {
+    for (const key of ['deliveryRunRef', 'fullTestRunRef']) {
+      if (manifest[key] !== undefined) {
+        const location = deliveryLocation(text(manifest[key], key), index.id);
+        if (key === 'fullTestRunRef' && location.type !== 'delivery-full-test')
+          throw new MendiError('invalid-record', 'fullTestRunRef 必须指向正式测试。');
+      }
+    }
+    if (manifest.deliveryRunRef !== undefined && (activeChangeId || state !== 'open'))
+      throw new MendiError('invalid-record', '当前 Delivery 操作与活动 Change / 状态冲突。');
+    if (manifest.deliveryRunRef !== undefined && manifest.fullTestRunRef === undefined)
+      throw new MendiError('invalid-record', 'Delivery 操作缺少最近正式测试入口。');
+    if (
+      manifest.deliveryRunRef !== undefined &&
+      deliveryLocation(String(manifest.deliveryRunRef), index.id).type === 'delivery-full-test' &&
+      manifest.deliveryRunRef !== manifest.fullTestRunRef
+    )
+      throw new MendiError('invalid-record', '当前正式 Run 与最新正式指针矛盾。');
+  }
   return { ...index, manifest, title, state, scope, activeChangeId, bindings };
 }
 

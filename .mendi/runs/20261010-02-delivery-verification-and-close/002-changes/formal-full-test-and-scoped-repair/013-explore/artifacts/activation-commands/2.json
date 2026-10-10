@@ -1,0 +1,12 @@
+{
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "list",
+    "--specs",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "stdout": "{\n  \"specs\": [\n    {\n      \"id\": \"action-runs\",\n      \"requirementCount\": 19\n    },\n    {\n      \"id\": \"delivery-workspace\",\n      \"requirementCount\": 15\n    },\n    {\n      \"id\": \"project-entry\",\n      \"requirementCount\": 8\n    },\n    {\n      \"id\": \"test-execution\",\n      \"requirementCount\": 7\n    }\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

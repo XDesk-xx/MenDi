@@ -1,0 +1,584 @@
+[
+  {
+    "directory": "src",
+    "path": "src/drivers/output.ts",
+    "lines": 91,
+    "before": 91
+  },
+  {
+    "directory": "src",
+    "path": "src/drivers/dispatch.ts",
+    "lines": 103,
+    "before": 103
+  },
+  {
+    "directory": "src",
+    "path": "src/drivers/cli.ts",
+    "lines": 36,
+    "before": 36
+  },
+  {
+    "directory": "src",
+    "path": "src/drivers/arguments.ts",
+    "lines": 208,
+    "before": 208
+  },
+  {
+    "directory": "src",
+    "path": "src/core/test-execution.ts",
+    "lines": 139,
+    "before": 139
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/workspace.ts",
+    "lines": 269,
+    "before": 269
+  },
+  {
+    "directory": "src",
+    "path": "src/core/records.ts",
+    "lines": 156,
+    "before": 156
+  },
+  {
+    "directory": "src",
+    "path": "src/core/errors.ts",
+    "lines": 58,
+    "before": 58
+  },
+  {
+    "directory": "src",
+    "path": "src/core/delivery-verification.ts",
+    "lines": 131,
+    "before": 131
+  },
+  {
+    "directory": "src",
+    "path": "src/core/delivery-runs.ts",
+    "lines": 269,
+    "before": 264
+  },
+  {
+    "directory": "src",
+    "path": "src/core/associations.ts",
+    "lines": 206,
+    "before": 206
+  },
+  {
+    "directory": "src",
+    "path": "src/core/archive.ts",
+    "lines": 102,
+    "before": 102
+  },
+  {
+    "directory": "src",
+    "path": "src/core/actions.ts",
+    "lines": 322,
+    "before": 322
+  },
+  {
+    "directory": "src",
+    "path": "src/application/tests.ts",
+    "lines": 141,
+    "before": 141
+  },
+  {
+    "directory": "src",
+    "path": "src/application/test-execution.ts",
+    "lines": 144,
+    "before": 144
+  },
+  {
+    "directory": "src",
+    "path": "src/application/project.ts",
+    "lines": 255,
+    "before": 255
+  },
+  {
+    "directory": "src",
+    "path": "src/application/diagnosis.ts",
+    "lines": 193,
+    "before": 193
+  },
+  {
+    "directory": "src",
+    "path": "src/application/delivery-repair.ts",
+    "lines": 321,
+    "before": 321
+  },
+  {
+    "directory": "src",
+    "path": "src/application/delivery-full-test.ts",
+    "lines": 390,
+    "before": 386
+  },
+  {
+    "directory": "src",
+    "path": "src/application/archive.ts",
+    "lines": 333,
+    "before": 333
+  },
+  {
+    "directory": "src",
+    "path": "src/application/archive-prepare.ts",
+    "lines": 144,
+    "before": 144
+  },
+  {
+    "directory": "src",
+    "path": "src/application/actions.ts",
+    "lines": 252,
+    "before": 252
+  },
+  {
+    "directory": "src",
+    "path": "src/application/action-resolution.ts",
+    "lines": 220,
+    "before": 220
+  },
+  {
+    "directory": "src",
+    "path": "src/application/action-instructions.ts",
+    "lines": 51,
+    "before": 51
+  },
+  {
+    "directory": "src",
+    "path": "src/application/action-context.ts",
+    "lines": 90,
+    "before": 90
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/openspec-operations.ts",
+    "lines": 129,
+    "before": 129
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/methods.ts",
+    "lines": 42,
+    "before": 42
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/delivery-verification.ts",
+    "lines": 178,
+    "before": 178
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/archive-effects.ts",
+    "lines": 283,
+    "before": 283
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/delivery-runs.ts",
+    "lines": 117,
+    "before": 117
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/archive-commit.ts",
+    "lines": 106,
+    "before": 106
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/archive-attempt.ts",
+    "lines": 38,
+    "before": 38
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/action-store.ts",
+    "lines": 155,
+    "before": 155
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/runs.ts",
+    "lines": 90,
+    "before": 90
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/paths.ts",
+    "lines": 56,
+    "before": 56
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/openspec.ts",
+    "lines": 346,
+    "before": 346
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/project.ts",
+    "lines": 56,
+    "before": 56
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/test-store.ts",
+    "lines": 119,
+    "before": 119
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/test-entries.ts",
+    "lines": 117,
+    "before": 117
+  },
+  {
+    "directory": "src",
+    "path": "src/adapters/test-process.ts",
+    "lines": 174,
+    "before": 159
+  },
+  {
+    "directory": "tests",
+    "path": "tests/workspace.test.ts",
+    "lines": 191,
+    "before": 191
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-support.ts",
+    "lines": 115,
+    "before": 115
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-log-integrity.test.ts",
+    "lines": 65,
+    "before": 65
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-execution.test.ts",
+    "lines": 312,
+    "before": 312
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-entries.test.ts",
+    "lines": 141,
+    "before": 141
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-dependencies.test.ts",
+    "lines": 124,
+    "before": 124
+  },
+  {
+    "directory": "tests",
+    "path": "tests/test-cancellation.test.ts",
+    "lines": 43,
+    "before": null
+  },
+  {
+    "directory": "tests",
+    "path": "tests/sequential-support.ts",
+    "lines": 107,
+    "before": 107
+  },
+  {
+    "directory": "tests",
+    "path": "tests/sequential-changes.test.ts",
+    "lines": 171,
+    "before": 171
+  },
+  {
+    "directory": "tests",
+    "path": "tests/records.test.ts",
+    "lines": 127,
+    "before": 127
+  },
+  {
+    "directory": "tests",
+    "path": "tests/query.test.ts",
+    "lines": 335,
+    "before": 335
+  },
+  {
+    "directory": "tests",
+    "path": "tests/project.test.ts",
+    "lines": 74,
+    "before": 74
+  },
+  {
+    "directory": "tests",
+    "path": "tests/planning-inputs.test.ts",
+    "lines": 235,
+    "before": 235
+  },
+  {
+    "directory": "tests",
+    "path": "tests/planning-cli.test.ts",
+    "lines": 444,
+    "before": 444
+  },
+  {
+    "directory": "tests",
+    "path": "tests/owner-resolution.test.ts",
+    "lines": 283,
+    "before": 283
+  },
+  {
+    "directory": "tests",
+    "path": "tests/operation-inputs.test.ts",
+    "lines": 83,
+    "before": 83
+  },
+  {
+    "directory": "tests",
+    "path": "tests/operation-cli.test.ts",
+    "lines": 35,
+    "before": 35
+  },
+  {
+    "directory": "tests",
+    "path": "tests/openspec.test.ts",
+    "lines": 192,
+    "before": 192
+  },
+  {
+    "directory": "tests",
+    "path": "tests/methods-and-numbers.test.ts",
+    "lines": 52,
+    "before": 52
+  },
+  {
+    "directory": "tests",
+    "path": "tests/helpers.ts",
+    "lines": 84,
+    "before": 84
+  },
+  {
+    "directory": "tests",
+    "path": "tests/errors.test.ts",
+    "lines": 14,
+    "before": 14
+  },
+  {
+    "directory": "tests",
+    "path": "tests/diagnosis.test.ts",
+    "lines": 178,
+    "before": 178
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-write.test.ts",
+    "lines": 117,
+    "before": 117
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-support.ts",
+    "lines": 122,
+    "before": 122
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-stage-support.ts",
+    "lines": 74,
+    "before": 74
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-repair.test.ts",
+    "lines": 394,
+    "before": 394
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-query.test.ts",
+    "lines": 231,
+    "before": 231
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-full-test.test.ts",
+    "lines": 156,
+    "before": 144
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-cli.test.ts",
+    "lines": 67,
+    "before": 67
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-boundaries.test.ts",
+    "lines": 112,
+    "before": null
+  },
+  {
+    "directory": "tests",
+    "path": "tests/delivery-admission.test.ts",
+    "lines": 119,
+    "before": 119
+  },
+  {
+    "directory": "tests",
+    "path": "tests/concurrency.test.ts",
+    "lines": 96,
+    "before": 96
+  },
+  {
+    "directory": "tests",
+    "path": "tests/cli.test.ts",
+    "lines": 294,
+    "before": 294
+  },
+  {
+    "directory": "tests",
+    "path": "tests/cancellation-support.ts",
+    "lines": 140,
+    "before": null
+  },
+  {
+    "directory": "tests",
+    "path": "tests/associations.test.ts",
+    "lines": 112,
+    "before": 112
+  },
+  {
+    "directory": "tests",
+    "path": "tests/arguments.test.ts",
+    "lines": 38,
+    "before": 38
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-support.ts",
+    "lines": 102,
+    "before": 102
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-retirement.test.ts",
+    "lines": 112,
+    "before": 112
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-query.test.ts",
+    "lines": 107,
+    "before": 107
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-finish.test.ts",
+    "lines": 219,
+    "before": 219
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-execute.test.ts",
+    "lines": 187,
+    "before": 187
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-effects.test.ts",
+    "lines": 165,
+    "before": 165
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-concurrency.test.ts",
+    "lines": 88,
+    "before": 88
+  },
+  {
+    "directory": "tests",
+    "path": "tests/archive-attempts.test.ts",
+    "lines": 86,
+    "before": 86
+  },
+  {
+    "directory": "tests",
+    "path": "tests/apply-resolution.test.ts",
+    "lines": 213,
+    "before": 213
+  },
+  {
+    "directory": "tests",
+    "path": "tests/actions.test.ts",
+    "lines": 221,
+    "before": 221
+  },
+  {
+    "directory": "tests",
+    "path": "tests/action-write.test.ts",
+    "lines": 467,
+    "before": 467
+  },
+  {
+    "directory": "tests",
+    "path": "tests/action-support.ts",
+    "lines": 87,
+    "before": 87
+  },
+  {
+    "directory": "tests",
+    "path": "tests/action-cli.test.ts",
+    "lines": 282,
+    "before": 282
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d02-b-explore.ts",
+    "lines": 264,
+    "before": 264
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d02-a-explore.ts",
+    "lines": 202,
+    "before": 202
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d01-d-explore.ts",
+    "lines": 487,
+    "before": 487
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d01-c-explore.ts",
+    "lines": 678,
+    "before": 678
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d01-b-explore.ts",
+    "lines": 375,
+    "before": 375
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/mvp-d01-a-explore.ts",
+    "lines": 463,
+    "before": 463
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/d02-a/test-entry.ts",
+    "lines": 79,
+    "before": 79
+  },
+  {
+    "directory": "scripts",
+    "path": "scripts/proofs/d02-a/selection.ts",
+    "lines": 64,
+    "before": 64
+  }
+]

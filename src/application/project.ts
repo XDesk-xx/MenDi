@@ -14,6 +14,12 @@ import { bindingFor, readScope, type Workspace } from '../core/records.ts';
 import { errorInfo, identifier, MendiError, object, text } from '../core/errors.ts';
 import { actionNext } from '../core/actions.ts';
 import { currentRun } from '../adapters/runs.ts';
+import { currentDeliveryRun } from '../adapters/delivery-runs.ts';
+import {
+  inspectFullTest,
+  assertBindingAfterVerification,
+} from '../adapters/delivery-verification.ts';
+import { deliveryNext } from '../core/delivery-runs.ts';
 
 export interface Selection {
   project: string;
@@ -75,6 +81,21 @@ export function query(input: Selection, options: OperationOptions = {}) {
         reason: '需明确 Delivery 范围与 Owner 授权。',
       },
     };
+  const delivery = currentDeliveryRun(root, workspace);
+  if (delivery) {
+    const verification = delivery.record.fullTest
+      ? inspectFullTest(root, workspace, delivery)
+      : undefined;
+    return {
+      ...base,
+      ok: !verification || (verification.stable && verification.outcome !== 'unknown'),
+      local: state(workspace),
+      upstream: null,
+      run: { ref: delivery.ref, ...delivery.record },
+      ...(verification ? { verification } : {}),
+      next: deliveryNext(delivery.record, delivery.ref, verification?.outcome),
+    };
+  }
   const run = currentRun(root, workspace);
   const facts =
     workspace.activeChangeId && !run?.record.archive
@@ -202,6 +223,7 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
         '仅允许无活动项、前项归档完成的 open Delivery 关联。',
         { deliveryId: current.id, activeChangeId: current.activeChangeId },
       );
+    assertBindingAfterVerification(root, current);
     assertAssociationAvailable(current.scope, current.bindings, input.slot, input.changeId);
     const binding = bindingFor(current.scope, input.slot, input.changeId);
     const batches = current.manifest.changeBatches as Record<string, unknown>[];
@@ -212,6 +234,7 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
       ...current.manifest,
       changeBindings: [...(current.manifest.changeBindings as unknown[]), binding],
       activeChangeId: binding.changeId,
+      deliveryRunRef: undefined,
       changeBatches: batches.map((batch) => ({
         ...batch,
         changeIds: [...(batch.changeIds as string[]), binding.changeId],

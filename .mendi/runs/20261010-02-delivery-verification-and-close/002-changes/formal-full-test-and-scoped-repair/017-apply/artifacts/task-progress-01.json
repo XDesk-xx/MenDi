@@ -1,0 +1,14 @@
+{
+  "completed": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "progress": {
+    "total": 30,
+    "complete": 4,
+    "remaining": 26
+  },
+  "reason": "delivery-admission / delivery-write / method and record scenarios passed; immutable numbering and necessary inputs verified"
+}

@@ -7,6 +7,7 @@ import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts
 import { managedPath, present } from './paths.ts';
 import { readRun } from './runs.ts';
 import { archivedCount } from '../core/archive.ts';
+import { currentDeliveryRun } from './delivery-runs.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -58,10 +59,20 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
   const index = parseProject(readJson(managedPath(root, '.mendi/project.json')));
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
   const selected = currentBinding(workspace);
+  const delivery = currentDeliveryRun(root, workspace);
+  if (workspace.mode === 'product') {
+    for (const key of ['deliveryRunRef', 'fullTestRunRef'])
+      if (workspace.manifest[key] !== undefined) managedPath(root, String(workspace.manifest[key]));
+    if (
+      delivery?.record.repair &&
+      delivery.record.repair.failedFullTestRunRef !== workspace.manifest.fullTestRunRef
+    )
+      throw new MendiError('invalid-record', '修复当前来源与最近正式指针矛盾。');
+  }
   for (const binding of workspace.bindings) {
     managedPath(root, binding.changeRef);
     if (binding.latestRunRef) managedPath(root, binding.latestRunRef);
-    if (binding !== selected) continue;
+    if (binding !== selected || delivery) continue;
     if (workspace.mode === 'product' && ['archiving', 'archived'].includes(binding.state)) {
       const run = readRun(root, binding.latestRunRef!, workspace.id, binding.changeId);
       const archive = run.record.archive;

@@ -1,18 +1,12 @@
-import fs from 'node:fs';
 import { inspectProject } from '../adapters/project.ts';
-import { managedPath } from '../adapters/paths.ts';
 import { readWorkspace, acquireProjectLock, releaseProjectLock } from '../adapters/workspace.ts';
 import { currentBinding } from '../core/associations.ts';
 import { MendiError, errorInfo, text } from '../core/errors.ts';
 import { testKind, type TestExecution, type TestOutcome } from '../core/test-execution.ts';
-import {
-  readTestEntries,
-  selectedTest,
-  validatePnpm,
-  capturePnpm,
-} from '../adapters/test-entries.ts';
-import { reserveExecution, saveExecution, observeExecution } from '../adapters/test-store.ts';
-import { executeForeground, type ExecutionProcessOptions } from '../adapters/test-process.ts';
+import { readTestEntries, selectedTest, validatePnpm } from '../adapters/test-entries.ts';
+import { observeExecution } from '../adapters/test-store.ts';
+import { executionState, executeTestUnderLease } from './test-execution.ts';
+import { type ExecutionProcessOptions } from '../adapters/test-process.ts';
 
 const local = {
   openspec: null,
@@ -65,102 +59,15 @@ export async function runTest(
     const script = selectedTest(root, kind);
     if (pnpm !== validatePnpm(root, input.pnpmBin, script.packageManager))
       throw new MendiError('test-tool-changed', '锁内工具入口变化，未运行。');
-    const dependencyCheck = capturePnpm(root, pnpm, ['run'], 'error');
-    if (dependencyCheck.exitCode !== 0 || dependencyCheck.signal || dependencyCheck.error)
-      throw new MendiError(
-        'test-dependencies-unavailable',
-        '依赖预检拒绝，选定脚本未运行。',
-        dependencyCheck,
-      );
-    if (options.signal?.aborted)
-      throw new MendiError('test-cancelled-before-launch', '调用者已取消，未运行。');
-    const reservation = reserveExecution(root, workspace.id, kind);
-    preserve = true;
-    executionId = reservation.id;
-    record = {
-      formatVersion: 1,
-      executionId,
-      kind,
-      projectRoot: root,
-      cwd: root,
-      deliveryId: workspace.id,
-      changeId: workspace.activeChangeId,
-      actorId,
-      scope: 'command',
-      formalDeliveryTest: false,
-      command: {
-        executable: process.execPath,
-        args: [pnpm, 'run', script.scriptName],
-        dependencyPolicy: 'warn',
-      },
-      dependencyCheck: {
-        executable: dependencyCheck.executable,
-        args: dependencyCheck.args,
-        dependencyPolicy: 'error',
-        exitCode: 0,
-      },
-      scriptName: script.scriptName,
-      scriptText: script.scriptText,
-      startedAt: new Date().toISOString(),
-      finishedAt: null,
-      executionState: 'prepared',
-      outcome: 'not-run',
-      exitCode: null,
-      signal: null,
-      pid: null,
-      stdoutRef: `${reservation.ref}/stdout.log`,
-      stderrRef: `${reservation.ref}/stderr.log`,
-    };
-    for (const ref of [record.stdoutRef, record.stderrRef])
-      fs.writeFileSync(managedPath(root, ref), '', { flag: 'wx' });
-    saveExecution(root, record, 'prepared', options.observe, true);
-    options.observe?.('prepared', managedPath(root, `${reservation.ref}/result.json`));
-    record = { ...record, executionState: 'running', outcome: 'unknown' };
-    outcome = 'unknown';
-    saveExecution(root, record, 'before-intent-commit', options.observe);
-    const result = await executeForeground(
-      root,
-      record,
-      (pid) => {
-        record = { ...record!, pid };
-        saveExecution(root, record, 'before-pid-commit', options.observe);
-      },
-      options,
-    );
-    outcome =
-      result.launchError && result.pid === null && !result.failure
-        ? 'not-run'
-        : result.failure || !result.closed || (result.stop && !result.stop.confirmed)
-          ? 'unknown'
-          : result.stop?.confirmed
-            ? 'interrupted'
-            : result.signal || result.exitCode === null
-              ? 'unknown'
-              : result.exitCode === 0
-                ? 'passed'
-                : 'failed';
-    record = {
-      ...record,
-      pid: result.pid,
-      executionState: 'finished',
-      finishedAt: new Date().toISOString(),
-      outcome,
-      exitCode: outcome === 'not-run' ? null : result.exitCode,
-      signal: outcome === 'not-run' ? null : result.signal,
-      ...(result.stop ? { stop: result.stop } : {}),
-      ...(result.failure || result.launchError || outcome === 'unknown'
-        ? {
-            reason: JSON.stringify(
-              result.failure
-                ? errorInfo(result.failure)
-                : result.launchError
-                  ? { ...errorInfo(result.launchError), launchCloseCode: result.exitCode }
-                  : '执行 / 停止未确认。',
-            ),
-          }
-        : {}),
-    };
-    saveExecution(root, record, 'before-terminal-commit', options.observe);
+    const execution = executionState();
+    try {
+      await executeTestUnderLease(root, workspace, lease, kind, actorId, pnpm, execution, options);
+    } finally {
+      preserve = execution.preserve;
+      executionId = execution.executionId;
+      record = execution.record;
+      outcome = execution.outcome;
+    }
     if (outcome === 'unknown')
       throw new MendiError('test-execution-unknown', '执行无法确认，保留现场与锁。');
     options.observe?.('before-test-lock-release', lease.lock);
@@ -174,7 +81,7 @@ export async function runTest(
       projectRoot: root,
       executionId,
       outcome,
-      record,
+      record: record!,
     };
   } catch (error) {
     let failure: { message: string; code?: string; details?: unknown; releaseError?: unknown } = {
