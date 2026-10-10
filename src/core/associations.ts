@@ -1,5 +1,6 @@
 import { identifier, MendiError, object, text } from './errors.ts';
 import { archivedCount } from './archive.ts';
+import { validateBatches } from './batches.ts';
 import { runLocation } from './actions.ts';
 import type { Scope, Workspace, parseProject } from './records.ts';
 
@@ -20,11 +21,18 @@ function array(value: unknown, label: string): unknown[] {
 
 // 结构和追加顺序决定当前对象；不读取或倒查历史文件。
 export function currentBinding(
-  workspace: Pick<Workspace, 'bindings' | 'activeChangeId'>,
+  workspace: Pick<Workspace, 'bindings' | 'activeChangeId'> & Partial<Pick<Workspace, 'scope'>>,
 ): Binding | undefined {
   return workspace.activeChangeId
     ? workspace.bindings.find((b) => b.changeId === workspace.activeChangeId)
-    : [...workspace.bindings].reverse().find((b) => b.state === 'archived');
+    : [...workspace.bindings]
+        .reverse()
+        .find(
+          (b) =>
+            b.state === 'archived' &&
+            (!workspace.scope ||
+              workspace.scope.plannedChanges.some((p) => p.slot === b.planningSlot)),
+        );
 }
 export function readAssociations(
   index: ReturnType<typeof parseProject>,
@@ -68,7 +76,10 @@ export function readAssociations(
         state: bindingState,
       });
     const planningSlot = text(item.planningSlot, 'planningSlot');
-    if (!scope.plannedChanges.some((slot) => slot.slot === planningSlot))
+    if (
+      !scope.plannedChanges.some((slot) => slot.slot === planningSlot) &&
+      (index.mode !== 'product' || !archived)
+    )
       throw new MendiError('invalid-record', '关联槽位不在范围内。');
     return {
       changeId,
@@ -97,8 +108,8 @@ export function readAssociations(
   const batches = array(manifest.changeBatches, 'changeBatches');
   if (index.mode === 'product') {
     if (
-      state !== 'open' ||
-      batches.length > 1 ||
+      !['open', 'closed'].includes(state) ||
+      (state === 'closed' && activeChangeId !== null) ||
       bindings.some((b, i) => i < bindings.length - 1 && b.state !== 'archived') ||
       (bindings.at(-1)?.state === 'archived'
         ? activeChangeId !== null
@@ -136,30 +147,7 @@ export function readAssociations(
           throw new MendiError('invalid-record', 'Run 与 binding 批次不一致。');
       }
     }
-    if (batches.length) {
-      const batch = object(batches[0], '当前批次');
-      const firstRun = text(batch.firstRun, 'firstRun');
-      if (
-        !/^\d{3,}$/.test(firstRun) ||
-        Number(firstRun) < 1 ||
-        !Number.isSafeInteger(Number(firstRun)) ||
-        String(Number(firstRun)).padStart(3, '0') !== firstRun ||
-        batch.id !== firstRun + '-changes' ||
-        batch.runsRef !== '.mendi/runs/' + index.id + '/' + batch.id
-      )
-        throw new MendiError('invalid-record', '批次身份不一致。');
-      const members = array(batch.changeIds, '批次成员').map((v) => identifier(v, '批次 Change'));
-      if (
-        members.length !== bindings.length ||
-        members.some((id, i) => bindings[i]?.changeId !== id) ||
-        bindings.some((b) => b.batchId !== batch.id)
-      )
-        throw new MendiError('invalid-record', '批次成员或 binding 不一致。');
-      for (const b of bindings)
-        if (b.latestRunRef && !b.latestRunRef.startsWith(batch.runsRef + '/' + b.changeId + '/'))
-          throw new MendiError('invalid-record', 'Run 定位不在所属批次。');
-    } else if (bindings.some((b) => b.batchId !== undefined || b.latestRunRef !== undefined))
-      throw new MendiError('invalid-record', '产品批次关联缺失。');
+    validateBatches(index.id, manifest, bindings, scope);
   } else {
     const next = object(manifest.next, '人工 next');
     text(next.action, 'next.action');

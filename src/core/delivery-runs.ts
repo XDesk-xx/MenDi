@@ -6,10 +6,13 @@ import {
   type FullTest,
   type Repair,
 } from './delivery-verification.ts';
-import { runLocation } from './actions.ts';
-import { executionLocation } from './test-execution.ts';
+import { parseFullTest } from './full-test-record.ts';
+import { parseLifecycle, type Lifecycle } from './delivery-lifecycle.ts';
 
 export const deliveryTypes = [
+  'delivery-open',
+  'delivery-close',
+  'delivery-reopen',
   'delivery-full-test',
   'delivery-repair',
   'revise-delivery-repair',
@@ -21,7 +24,11 @@ export function deliveryDefinition(value: unknown) {
     throw new MendiError('invalid-action', '不支持 Delivery Action。');
   const type = value as DeliveryType;
   const review = type === 'review-delivery-repair';
-  const phase = type === 'delivery-full-test' ? type : 'delivery-repair';
+  const phase =
+    type === 'delivery-full-test' ||
+    ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(type)
+      ? type
+      : 'delivery-repair';
   return {
     type,
     phase,
@@ -31,7 +38,7 @@ export function deliveryDefinition(value: unknown) {
 }
 export function deliveryLocation(ref: string, id: string) {
   const match =
-    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
+    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
       ref,
     );
   if (
@@ -64,6 +71,7 @@ export interface DeliveryRunRecord {
   authorRunRef?: string;
   revisesRunRef?: string;
   fullTest?: FullTest;
+  lifecycle?: Lifecycle;
   repair?: Repair;
   ownerDecision?: never;
 }
@@ -92,7 +100,11 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
   )
     throw new MendiError('invalid-run', 'Delivery Run 头部、方法或 Action 身份不一致。');
   text(data.actorId, 'actor');
-  if (location.type === 'delivery-full-test' && Number(first![1]) !== location.number)
+  if (
+    (location.type === 'delivery-full-test' ||
+      ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) &&
+    Number(first![1]) !== location.number
+  )
     throw new MendiError('invalid-run', '正式 Full Test 不沿旧 Action 继续。');
   if (data.ownerDecision !== undefined || data.archive !== undefined)
     throw new MendiError('invalid-run', 'Delivery Run 不支持 Owner resolve / Archive。');
@@ -121,67 +133,18 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
     } else if (data[key] !== undefined)
       throw new MendiError('invalid-run', '多余的直接 Author 字段。');
   }
+  if (['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) {
+    if (data.fullTest !== undefined || data.repair !== undefined)
+      throw new MendiError('invalid-run', '生命周期不能携带执行或修复字段。');
+    record.lifecycle = parseLifecycle(data, id, location.number);
+    return record;
+  }
+  if (data.lifecycle !== undefined)
+    throw new MendiError('invalid-run', '非生命周期 Run 不能携带生命周期输入。');
   if (location.type === 'delivery-full-test') {
     if (data.repair !== undefined)
       throw new MendiError('invalid-run', 'Full Test 不能携带 repair。');
-    const full = object(data.fullTest, '正式测试');
-    declaration(full);
-    const scope = parseVerificationScope(full.scope);
-    if (!Array.isArray(full.approvals) || full.approvals.length !== scope.completed.length)
-      throw new MendiError('invalid-run', '缺少已核对批准快照。');
-    for (const [i, v] of full.approvals.entries()) {
-      const fact = object(v, '批准事实');
-      if (
-        fact.changeId !== scope.completed[i].changeId ||
-        text(fact.authorActor, 'Author') === text(fact.reviewerActor, 'Reviewer')
-      )
-        throw new MendiError('invalid-run', '批准快照身份矛盾。');
-      for (const key of ['archiveRunRef', 'reviewRunRef', 'authorRunRef']) {
-        const target = runLocation(text(fact[key], key), id, String(fact.changeId));
-        if (
-          target.number >= location.number ||
-          (key === 'archiveRunRef'
-            ? target.type !== 'archive'
-            : key === 'reviewRunRef'
-              ? target.type !== 'review-apply'
-              : !['apply', 'revise-apply'].includes(target.type))
-        )
-          throw new MendiError('invalid-run', '批准快照路径身份无效。');
-      }
-    }
-    if (full.repairApproval !== undefined) {
-      const approval = object(full.repairApproval, '修复批准');
-      if (
-        deliveryLocation(text(approval.reviewRunRef, 'Review'), id).number >= location.number ||
-        deliveryLocation(text(approval.authorRunRef, 'Author'), id).number >= location.number ||
-        deliveryLocation(text(approval.reviewRunRef, 'Review'), id).type !==
-          'review-delivery-repair' ||
-        !['delivery-repair', 'revise-delivery-repair'].includes(
-          deliveryLocation(text(approval.authorRunRef, 'Author'), id).type,
-        ) ||
-        text(approval.authorActor, 'Author') === text(approval.reviewerActor, 'Reviewer')
-      )
-        throw new MendiError('invalid-run', '修复批准身份错误。');
-    }
-    const entry = object(full.entry, '实际入口');
-    for (const k of ['scriptName', 'scriptText', 'pnpmBin']) text(entry[k], k);
-    if (full.executionId !== null) executionLocation(String(full.executionId), id);
-    if (full.phase === 'finished' && full.executionId === null) text(full.reason, '未启动原因');
-    if (
-      !['prepared', 'running', 'finished'].includes(String(full.phase)) ||
-      !['not-run', 'passed', 'failed', 'interrupted', 'unknown'].includes(String(full.outcome)) ||
-      !(full.executionId === null || /^\d{3,}-full$/.test(String(full.executionId))) ||
-      (full.phase === 'prepared' && (full.executionId !== null || full.outcome !== 'not-run')) ||
-      (full.phase === 'running' && (full.executionId === null || full.outcome !== 'unknown')) ||
-      (full.phase === 'finished'
-        ? data.status !== 'submitted' ||
-          data.outcome !== 'complete' ||
-          data.result !== full.outcome ||
-          (full.executionId === null && full.outcome !== 'not-run')
-        : data.status !== 'draft')
-    )
-      throw new MendiError('invalid-run', '正式执行终态或意图不一致。');
-    record.fullTest = { ...(full as unknown as FullTest), ...declaration(full), scope };
+    record.fullTest = parseFullTest(data, id, location.number);
   } else {
     if (data.fullTest !== undefined) throw new MendiError('invalid-run', '修复不能携带 fullTest。');
     const repair = object(data.repair, '局部修复');
@@ -208,6 +171,23 @@ export function deliveryNext(
   observedOutcome?: FullTest['outcome'],
 ) {
   const base = { source: 'local-state', executable: false, currentRunRef: ref };
+  if (run.lifecycle)
+    return {
+      ...base,
+      role:
+        run.status === 'draft' ? 'owner' : run.actionType === 'delivery-close' ? 'owner' : 'author',
+      action:
+        run.status === 'draft'
+          ? 'owner-decision'
+          : run.actionType === 'delivery-close'
+            ? 'delivery-next'
+            : 'change-bind',
+      status: run.status === 'draft' ? 'stopped' : 'awaiting-owner-instruction',
+      reason:
+        run.status === 'draft'
+          ? '生命周期提交未确认，核对现场后显式继续。'
+          : '仅保存本次生命周期事实；后续工作需要实际 Owner 授权。',
+    };
   if (run.fullTest) {
     const outcome =
       run.status === 'submitted' ? (observedOutcome ?? run.fullTest.outcome) : 'unknown';

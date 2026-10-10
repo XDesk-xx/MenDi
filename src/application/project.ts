@@ -20,10 +20,13 @@ import {
   assertBindingAfterVerification,
 } from '../adapters/delivery-verification.ts';
 import { deliveryNext } from '../core/delivery-runs.ts';
+import { currentBatchId } from '../core/batches.ts';
+import { recordedOpen } from './delivery-lifecycle.ts';
 
 export interface Selection {
   project: string;
   openspecBin?: string;
+  deliveryId?: string;
 }
 export interface OperationOptions {
   runner?: ProcessRunner;
@@ -35,6 +38,9 @@ export interface OpenInput extends Selection {
   scopePath: string;
   changeId?: string;
   slot?: string;
+  role?: string;
+  actor?: string;
+  resumeRef?: string;
 }
 export interface BindInput extends Selection {
   changeId: string;
@@ -62,13 +68,33 @@ export function state(workspace: Workspace) {
 
 export function query(input: Selection, options: OperationOptions = {}) {
   const { root, upstream } = selected(input, options);
-  const workspace = readWorkspace(root);
   const base = {
     ok: true as const,
     operation: 'query' as const,
     projectRoot: root,
     openspec: upstream.info(),
   };
+  let workspace: Workspace | null;
+  try {
+    workspace = readWorkspace(root, false, input.deliveryId);
+  } catch (error) {
+    if (!(error instanceof MendiError) || error.code !== 'delivery-commit-pending') throw error;
+    return {
+      ...base,
+      ok: false,
+      local: null,
+      upstream: null,
+      outcome: 'unknown',
+      pending: error.details,
+      next: {
+        action: 'owner-decision',
+        role: 'owner',
+        status: 'stopped',
+        executable: false,
+        reason: error.message,
+      },
+    };
+  }
   if (!workspace)
     return {
       ...base,
@@ -134,8 +160,12 @@ export function query(input: Selection, options: OperationOptions = {}) {
 }
 
 export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
+  if (input.resumeRef) return recordedOpen(input, options);
   const id = identifier(input.id, 'Delivery ID');
   const title = text(input.title, 'Delivery 标题');
+  if ((input.role !== undefined) !== (input.actor !== undefined))
+    throw new MendiError('invalid-arguments', '--role / --actor 必须成对。');
+  if (input.role !== undefined) return recordedOpen(input, options);
   if ((input.changeId !== undefined) !== (input.slot !== undefined))
     throw new MendiError(
       'invalid-arguments',
@@ -146,13 +176,25 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
     );
   const { root, upstream } = selected(input, options);
   const directory = managedPath(root, '.mendi');
-  if (present(directory))
+  if (present(directory)) {
+    let existing: Workspace | null = null;
+    try {
+      existing = readWorkspace(root);
+    } catch {
+      /* 旧首次 Open 对任何已有现场都保持拒绝，不取得或抢占锁。 */
+    }
+    if (existing?.mode === 'product' && existing.state === 'closed')
+      throw new MendiError(
+        'invalid-arguments',
+        'closed 后新 Open 必须显式提供 --role author / --actor。',
+      );
     throw new MendiError(
       'existing-mendi-state',
       '目标已存在 MenDi 状态；首次 Open 不覆盖。',
       { directory },
       '核对已有项目或残留；不会自动重新 Open。',
     );
+  }
   const scopePath = path.resolve(root, input.scopePath);
   let value: unknown;
   try {
@@ -227,7 +269,8 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
     assertAssociationAvailable(current.scope, current.bindings, input.slot, input.changeId);
     const binding = bindingFor(current.scope, input.slot, input.changeId);
     const batches = current.manifest.changeBatches as Record<string, unknown>[];
-    if (batches.length) binding.batchId = String(batches[0].id);
+    const batchId = currentBatchId(current.manifest);
+    if (batchId !== null) binding.batchId = batchId;
     managedPath(root, binding.changeRef);
     upstream.status(binding.changeId);
     return {
@@ -235,10 +278,14 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
       changeBindings: [...(current.manifest.changeBindings as unknown[]), binding],
       activeChangeId: binding.changeId,
       deliveryRunRef: undefined,
-      changeBatches: batches.map((batch) => ({
-        ...batch,
-        changeIds: [...(batch.changeIds as string[]), binding.changeId],
-      })),
+      changeBatches: batches.map((batch) =>
+        batch.id !== batchId
+          ? batch
+          : {
+              ...batch,
+              changeIds: [...(batch.changeIds as string[]), binding.changeId],
+            },
+      ),
     };
   };
   const before = readWorkspace(root);

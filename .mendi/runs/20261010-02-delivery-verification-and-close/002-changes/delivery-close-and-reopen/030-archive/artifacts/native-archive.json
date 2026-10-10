@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "delivery-close-and-reopen",
+    "archivedAs": "2026-10-10-delivery-close-and-reopen",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-delivery-close-and-reopen",
+    "specsUpdated": true,
+    "totals": {
+      "added": 7,
+      "modified": 15,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

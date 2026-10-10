@@ -1,0 +1,53 @@
+TAP version 13
+# Subtest: 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+not ok 1 - 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+  ---
+  duration_ms: 4737.3646
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\lifecycle-open-admission.test.ts:29:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/lifecycle-open-admission.test.ts:32:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+not ok 2 - 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+  ---
+  duration_ms: 5165.1936
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\lifecycle-open-admission.test.ts:50:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/lifecycle-open-admission.test.ts:57:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10211.3031

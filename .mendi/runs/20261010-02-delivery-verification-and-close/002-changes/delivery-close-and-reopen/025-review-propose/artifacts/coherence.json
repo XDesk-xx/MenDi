@@ -1,0 +1,97 @@
+{
+  "modifiedRequirements": [
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery-wide run allocation",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Draft save and immutable submission",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery operation runs beside change batches",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Current delivery progress and minimal handoff",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery methods and direct review input",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Explicit formal delivery test admission",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Direct result readback and bounded applicability",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Existing state is preserved",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Read-only status and next",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Operation-specific input checks",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Product archive transition and terminal handoff",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Sequential explicit change association",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Ordered product associations and shared batch identity",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Delivery verification and association conflicts",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    },
+    {
+      "capability": "test-execution",
+      "requirement": "Intent before launch and read-only incomplete results",
+      "sourceFound": true,
+      "missingScenarioNames": []
+    }
+  ],
+  "taskCount": 21,
+  "completed": 0,
+  "limits": "Names checked only; semantic assessment is in Reviewer Run. No history inventory or hash gate."
+}

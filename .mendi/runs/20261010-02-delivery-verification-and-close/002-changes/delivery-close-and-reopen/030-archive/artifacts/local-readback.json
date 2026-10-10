@@ -1,0 +1,36 @@
+{
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "state": "open",
+  "recordingMode": "manual-bootstrap",
+  "activeChangeId": null,
+  "archivedChangeCount": 7,
+  "bindings": [
+    {
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "changeRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+      "planningSlot": "MVP-D02-A",
+      "state": "archived",
+      "archiveOrdinal": 5
+    },
+    {
+      "changeId": "formal-full-test-and-scoped-repair",
+      "changeRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+      "planningSlot": "MVP-D02-B",
+      "state": "archived",
+      "archiveOrdinal": 6
+    },
+    {
+      "changeId": "delivery-close-and-reopen",
+      "changeRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "planningSlot": "MVP-D02-C",
+      "state": "archived",
+      "archiveOrdinal": 7
+    }
+  ],
+  "next": {
+    "action": "change-checkpoint",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "030 已实际归档 C，项目累计完成 7 个 Change；D02 保持 open，checkpoint 与正式 Full Test / Close 等待 Owner 独立授权。"
+  }
+}

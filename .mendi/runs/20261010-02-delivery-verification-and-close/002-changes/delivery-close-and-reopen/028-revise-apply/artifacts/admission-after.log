@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+ok 1 - 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+  ---
+  duration_ms: 6104.4543
+  type: 'test'
+  ...
+# Subtest: 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+ok 2 - 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+  ---
+  duration_ms: 6238.5975
+  type: 'test'
+  ...
+# Subtest: 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+not ok 3 - 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+  ---
+  duration_ms: 5612.3112
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\lifecycle-open-admission.test.ts:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The validation function is expected to return "true". Received false
+    
+    Caught error:
+    
+    MendiError: 目标存在写入锁，操作可能正在进行或已中断。
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/lifecycle-open-admission.test.ts:88:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 18256.4289

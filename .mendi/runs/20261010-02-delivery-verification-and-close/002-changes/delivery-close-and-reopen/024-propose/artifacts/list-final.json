@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "name": "delivery-close-and-reopen",
+      "completedTasks": 0,
+      "totalTasks": 21,
+      "lastModified": "2026-10-10T08:49:05.882Z",
+      "status": "in-progress"
+    }
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

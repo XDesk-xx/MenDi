@@ -22,10 +22,12 @@ export type TestPhase =
 export type TestObserver = (phase: TestPhase, file: string) => void;
 
 // test status 只消费身份和指定执行，不读取生命周期 Run 正文。
-export function executionWorkspace(root: string) {
+export function executionWorkspace(root: string, deliveryId?: string) {
   const projectRef = '.mendi/project.json';
   const projectBytes = fs.readFileSync(managedPath(root, projectRef));
-  const index = parseProject(JSON.parse(projectBytes.toString()));
+  const index = parseProject(JSON.parse(projectBytes.toString()), deliveryId);
+  if (index.project.pendingDeliveryRunRef !== undefined)
+    throw new MendiError('delivery-commit-pending', '生命周期提交未确认。');
   const manifestBytes = fs.readFileSync(managedPath(root, index.manifestRef));
   const workspace = parseWorkspace(index, JSON.parse(manifestBytes.toString()));
   if (workspace.mode !== 'product')
@@ -81,8 +83,13 @@ export function saveExecution(
   if (fs.readFileSync(managedPath(root, ref), 'utf8') !== content)
     throw new MendiError('test-readback-failed', '执行内容读回不一致。');
 }
-export function observeExecution(root: string, id: string, observe?: () => void) {
-  const before = executionWorkspace(root);
+export function observeExecution(
+  root: string,
+  id: string,
+  observe?: () => void,
+  deliveryId?: string,
+) {
+  const before = executionWorkspace(root, deliveryId);
   const { ref } = executionLocation(id, before.workspace.id);
   const resultRef = `${ref}/result.json`;
   const raw = fs.readFileSync(managedPath(root, resultRef));
@@ -92,7 +99,7 @@ export function observeExecution(root: string, id: string, observe?: () => void)
   const lock = managedPath(root, '.mendi/write.lock');
   const lockedBefore = present(lock);
   observe?.();
-  const after = executionWorkspace(root);
+  const after = executionWorkspace(root, deliveryId);
   const changed =
     !after.projectBytes.equals(before.projectBytes) ||
     !after.manifestBytes.equals(before.manifestBytes) ||

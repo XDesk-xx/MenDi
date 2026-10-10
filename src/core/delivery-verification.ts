@@ -2,6 +2,7 @@ import { MendiError, object, text, identifier } from './errors.ts';
 import type { TestOutcome } from './test-execution.ts';
 import { readScope, type Workspace } from './records.ts';
 import { archivedCount } from './archive.ts';
+import { currentScopeBindings } from './batches.ts';
 export interface Declaration {
   collection: string[];
   basis: { materials: string; changes: string; commit?: string };
@@ -36,13 +37,12 @@ export interface DeliveryScope {
   plannedChanges: { slot: string; title: string; dependsOn: string[] }[];
   completed: { slot: string; changeId: string; archiveOrdinal: number }[];
 }
-export function verificationScope(workspace: Workspace): DeliveryScope {
+export function completionScope(workspace: Workspace): DeliveryScope {
   if (
     workspace.mode !== 'product' ||
-    workspace.state !== 'open' ||
     workspace.activeChangeId ||
-    workspace.bindings.length !== workspace.scope.plannedChanges.length ||
-    workspace.bindings.some((b) => b.state !== 'archived')
+    currentScopeBindings(workspace).length !== workspace.scope.plannedChanges.length ||
+    currentScopeBindings(workspace).some((b) => b.state !== 'archived')
   )
     throw new MendiError(
       'delivery-scope-incomplete',
@@ -54,8 +54,6 @@ export function verificationScope(workspace: Workspace): DeliveryScope {
       throw new MendiError('delivery-scope-incomplete', '计划槽位未归档。');
     return { slot: p.slot, changeId: binding.changeId, archiveOrdinal: binding.archiveOrdinal };
   });
-  if (Math.max(...completed.map((v) => v.archiveOrdinal)) !== archivedCount(workspace.project))
-    throw new MendiError('delivery-scope-incomplete', '本轮归档计数与最终完成项不一致。');
   return {
     goal: workspace.scope.goal,
     plannedChanges: workspace.scope.plannedChanges.map(({ slot, title, dependsOn }) => ({
@@ -65,6 +63,19 @@ export function verificationScope(workspace: Workspace): DeliveryScope {
     })),
     completed,
   };
+}
+export function verificationScope(workspace: Workspace): DeliveryScope {
+  const scope = completionScope(workspace);
+  if (
+    workspace.state !== 'open' ||
+    workspace.project.pendingDeliveryRunRef !== undefined ||
+    Math.max(...scope.completed.map((v) => v.archiveOrdinal)) !== archivedCount(workspace.project)
+  )
+    throw new MendiError(
+      'delivery-scope-incomplete',
+      '当前正式执行要求 open、无未完成操作与一致完成计数。',
+    );
+  return scope;
 }
 export function parseVerificationScope(value: unknown): DeliveryScope {
   const data = object(value, '验收范围');

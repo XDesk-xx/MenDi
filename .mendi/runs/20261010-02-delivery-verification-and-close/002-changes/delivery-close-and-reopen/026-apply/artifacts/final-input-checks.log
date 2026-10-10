@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+ok 1 - 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+  ---
+  duration_ms: 7.2891
+  type: 'test'
+  ...
+# Subtest: 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+ok 2 - 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+  ---
+  duration_ms: 1.2072
+  type: 'test'
+  ...
+# Subtest: CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+ok 3 - CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+  ---
+  duration_ms: 0.6473
+  type: 'test'
+  ...
+# Subtest: Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+ok 4 - Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+  ---
+  duration_ms: 1.3862
+  type: 'test'
+  ...
+# Subtest: 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+ok 5 - 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+  ---
+  duration_ms: 11265.1243
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11652.8143

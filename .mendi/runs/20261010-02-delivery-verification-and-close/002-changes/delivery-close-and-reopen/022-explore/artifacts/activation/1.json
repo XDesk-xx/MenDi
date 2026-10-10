@@ -1,0 +1,13 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "new",
+    "change",
+    "delivery-close-and-reopen",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "stdout": "{\n  \"change\": {\n    \"id\": \"delivery-close-and-reopen\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\delivery-close-and-reopen\",\n    \"metadataPath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\delivery-close-and-reopen\\\\.openspec.yaml\",\n    \"schema\": \"spec-driven\"\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}"
+}

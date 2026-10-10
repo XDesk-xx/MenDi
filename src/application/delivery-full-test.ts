@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { inspectProject } from '../adapters/project.ts';
-import { managedPath } from '../adapters/paths.ts';
+import { managedPath, present } from '../adapters/paths.ts';
 import {
   acquireProjectLock,
   releaseProjectLock,
@@ -24,12 +24,13 @@ import {
   reviewRepairInputs,
 } from '../adapters/delivery-verification.ts';
 import { declaration, verificationScope, type FullTest } from '../core/delivery-verification.ts';
-import { deliveryNext } from '../core/delivery-runs.ts';
+import { deliveryNext, deliveryLocation } from '../core/delivery-runs.ts';
 import { MendiError, errorInfo, text } from '../core/errors.ts';
 import type { Workspace } from '../core/records.ts';
 import type { ExecutionProcessOptions } from '../adapters/test-process.ts';
 import { executionState, executeTestUnderLease } from './test-execution.ts';
 import { state } from './project.ts';
+import { executionWorkspace } from '../adapters/test-store.ts';
 
 export interface FullTestInput {
   project: string;
@@ -67,7 +68,7 @@ function admission(root: string, input: FullTestInput, ownLock: boolean) {
   let approvals: FullTest['approvals'];
   let repairApproval: FullTest['repairApproval'];
   const refs: string[] = [];
-  if (current) {
+  if (current && !current.record.lifecycle) {
     if (current.record.status !== 'submitted' || current.record.outcome !== 'complete')
       throw new MendiError('delivery-state-conflict', '当前 Delivery 进展尚未完成。');
     let previous = current;
@@ -372,7 +373,17 @@ export async function runFullTest(input: FullTestInput, options: FullTestOptions
 }
 export function fullTestStatus(input: { project: string; runRef: string }) {
   const { root } = inspectProject(input.project);
-  const workspace = readWorkspace(root);
+  const lock = managedPath(root, '.mendi/write.lock');
+  if (present(lock))
+    throw new MendiError(
+      'write-in-progress-or-interrupted',
+      '目标存在写入锁，操作可能正在进行或已中断。',
+      { lock },
+      '核对原写者和现场；不会自动清锁。',
+    );
+  const id = input.runRef.split('/')[2];
+  deliveryLocation(input.runRef, id);
+  const workspace = executionWorkspace(root, id).workspace;
   if (!workspace || workspace.mode !== 'product')
     throw new MendiError('invalid-run', '需要当前 product Delivery。');
   const run = readDeliveryRun(root, input.runRef, workspace.id);

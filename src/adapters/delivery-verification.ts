@@ -1,11 +1,15 @@
 import fs from 'node:fs';
-import { managedPath } from './paths.ts';
+import { managedPath, present } from './paths.ts';
 import { readRun } from './runs.ts';
 import { readDeliveryRun, currentDeliveryRun, type DeliveryDocument } from './delivery-runs.ts';
-import { readExecution, observeExecution } from './test-store.ts';
+import { readExecution, observeExecution, executionWorkspace } from './test-store.ts';
 import { selectedTest } from './test-entries.ts';
 import { MendiError } from '../core/errors.ts';
-import { verificationScope, type ApprovalFact } from '../core/delivery-verification.ts';
+import {
+  verificationScope,
+  completionScope,
+  type ApprovalFact,
+} from '../core/delivery-verification.ts';
 import type { Workspace } from '../core/records.ts';
 
 export function same(left: unknown, right: unknown) {
@@ -64,6 +68,9 @@ export function inspectFullTest(
 ) {
   const full = run.record.fullTest;
   if (!full) throw new MendiError('invalid-run', '指定 Run 不是正式 Full Test。');
+  const basis = ownLock ? null : executionWorkspace(root, workspace.id);
+  const lock = managedPath(root, '.mendi/write.lock');
+  const lockedBefore = !ownLock && present(lock);
   const fresh = readDeliveryRun(root, run.ref, workspace.id);
   if (!same(fresh.header, run.header) || fresh.body !== run.body)
     throw new MendiError('changed-during-read', '正式 Run 在解释期间变化。');
@@ -73,7 +80,7 @@ export function inspectFullTest(
       ? null
       : ownLock
         ? { record: readExecution(root, full.executionId, workspace.id), stable: true }
-        : observeExecution(root, full.executionId);
+        : observeExecution(root, full.executionId, undefined, workspace.id);
   const child = observation?.record;
   if (
     child &&
@@ -91,10 +98,29 @@ export function inspectFullTest(
     run.record.status === 'submitted' &&
     full.phase === 'finished' &&
     (observation === null || observation.stable) &&
-    fs.readFileSync(managedPath(root, run.ref)).equals(bytes);
+    fs.readFileSync(managedPath(root, run.ref)).equals(bytes) &&
+    !lockedBefore &&
+    (ownLock ||
+      (!present(lock) &&
+        basis !== null &&
+        fs.readFileSync(managedPath(root, '.mendi/project.json')).equals(basis.projectBytes) &&
+        fs.readFileSync(managedPath(root, workspace.manifestRef)).equals(basis.manifestBytes) &&
+        same(basis.workspace.project, workspace.project) &&
+        same(basis.workspace.manifest, workspace.manifest)));
   let scopeMatch: 'match' | 'changed' | 'unavailable' = 'unavailable';
   try {
-    scopeMatch = same(verificationScope(workspace), full.scope) ? 'match' : 'changed';
+    const planned = workspace.scope.plannedChanges.map(({ slot, title, dependsOn }) => ({
+      slot,
+      title,
+      dependsOn,
+    }));
+    scopeMatch = workspace.activeChangeId
+      ? 'unavailable'
+      : workspace.scope.goal !== full.scope.goal || !same(planned, full.scope.plannedChanges)
+        ? 'changed'
+        : same(completionScope(workspace), full.scope)
+          ? 'match'
+          : 'changed';
   } catch {
     /* 当前范围不能完整解释。 */
   }
@@ -170,6 +196,13 @@ export function reviewRepairInputs(
 export function assertBindingAfterVerification(root: string, workspace: Workspace) {
   const current = currentDeliveryRun(root, workspace);
   if (!current) return;
+  if (
+    current.record.lifecycle &&
+    ['delivery-open', 'delivery-reopen'].includes(current.record.actionType) &&
+    current.record.status === 'submitted' &&
+    current.record.outcome === 'complete'
+  )
+    return;
   if (
     !current.record.fullTest ||
     inspectFullTest(root, workspace, current, true).outcome !== 'passed'

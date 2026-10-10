@@ -19,15 +19,23 @@
 
 ### Requirement: Existing state is preserved
 
-首次 Open MUST 拒绝任何已有 `.mendi/` 状态，包括完整项目、同名 Delivery 与未完成写入残留；重复调用 SHALL 不覆盖、不自动重新 Open，也不追加另一个 Delivery。首版更多 Delivery 与 Close / Reopen 操作属于后续能力。
+首次 Open MUST 拒绝不完整既有 .mendi 状态。已有 open、人工记录、重复 ID 或未完成写入 SHALL 不覆盖；只有当前 product Delivery 完整 closed 时，显式新 ID Open 才能追加独立 manifest / 索引并选择新 Delivery，保留旧 Delivery 与项目累计归档数。新 Delivery 从 001 编号，不通过 Open 重开旧 Delivery。
 
 #### Scenario: Duplicate open
-- **WHEN** 用户再次对已经 Open 的目标执行同一或不同 ID 的 Open
+- **WHEN** 用户对仍为 open 的目标执行同一或不同 ID 的 Open，或在 closed 后复用已登记 ID
 - **THEN** 系统报告现有状态及相关位置，原项目入口、manifest 和历史材料字节不变
 
 #### Scenario: Partial directory already exists
 - **WHEN** 目标 `.mendi/` 已存在但缺少入口或有效 manifest
 - **THEN** 系统报告不完整状态，保留残留，不把目标当作空项目自动重试或清理
+
+#### Scenario: Open a new delivery after close
+- **WHEN** 当前 product Delivery 完整 closed，Owner 明确授权新 ID、标题与独立范围，Author 提供记录身份
+- **THEN** 追加新 manifest / 索引并选择新 Delivery，保存 001-delivery-open；旧 manifest / Close / Run 不改，归档数不重置，不预建 Changes 批次
+
+#### Scenario: An unindexed target is already occupied
+- **WHEN** 新 ID 的受管 group / Run 位置存在其他内容或未完成写入
+- **THEN** 普通新 Open 拒绝覆盖并报告现场；只有对应当前待提交操作的显式 resume 可按原输入补剩余提交
 
 ### Requirement: First change association
 
@@ -63,7 +71,7 @@
 
 ### Requirement: Read-only status and next
 
-`status` 与 `next` SHALL 使用同一只读状态解释，展示目标、Delivery 范围、本地关联、当前产品 Run 和相关 OpenSpec 事实。系统 MUST 区分本地协作进展与上游产物 readiness；查询 SHALL 不创建文件、推进阶段、分配 Run 或执行推荐操作。有合法当前 Delivery 操作时 MUST 解释其当前 Run，必要时读取其直接测试结果，不以最后 Archive 替代；否则唯一当前 binding 为活动项或无活动时追加顺序最后的归档项，归档处理中 / 完成态按它的当前 Archive Run 解释，不调用已移走 Change 的活动 status。新关联无 Run 保留初始 Explore 提示，不回退旧项；人工 next 仍明确来源。
+status / next SHALL 只读解释当前选择，或显式指定的已登记 Delivery，不改变 activeDeliveryId。系统 MUST 区分本地进展、历史执行与上游 readiness；生命周期 / 正式操作优先使用其当前指针，无此指针时仅选择本轮活动 binding 或本轮最后归档项。closed 读取当前 Close，不访问旧 Change status；待提交写入显示未完成，不回退旧 PASS、历史最大号或旧范围。
 
 #### Scenario: Prepared project without a delivery
 - **WHEN** 查询有效 OpenSpec 目标且 `.mendi/` 不存在
@@ -109,6 +117,18 @@
 - **WHEN** 当前正式 Run 已读到 passed 头部，但直接子结果 / 日志观察出现竞争或变化
 - **THEN** status / next 的本次 outcome 与 next 一致为未确认并停 Owner，持久 passed 保留作原事实，不读取额外历史来绕开本次不稳定
 
+#### Scenario: Query a closed delivery and an explicitly selected historical delivery
+- **WHEN** 当前 Delivery closed，或新 Open 后用 --delivery 指定已登记旧 Delivery
+- **THEN** 读取对应 manifest 和当前 Close 摘要，upstream:null，保留实际 closed / open 与人工来源；不改变项目选择、不重验旧正式结果或调用旧活动 Change
+
+#### Scenario: Reopened scope has no associated change
+- **WHEN** Reopen 已完成但本轮尚无 binding
+- **THEN** 解释 Reopen 的新范围及显式关联提示，不把历史最后 archived 项或旧正式 passed 当作本轮进展
+
+#### Scenario: A lifecycle operation is pending
+- **WHEN** 项目入口保存当前待提交生命周期 Run，终态 Run 或目标 manifest / 索引尚未完整收口
+- **THEN** 查询报告 pending / unknown 与当前直接入口，阻止其他写入，不以已写 complete 头部、旧 closed 或旧 PASS 宣称本次完整成功
+
 ### Requirement: Manual bootstrap read compatibility
 
 系统 SHALL 只读识别当前 `recordingMode=manual-bootstrap` 的项目入口和 manifest，保留其阶段、Run 与审核引用并标明来源。未版本化且不符合该格式的记录 MUST 报错；产品写命令 SHALL 拒绝修改人工记录，不将人工历史强制改写为产品格式。
@@ -127,7 +147,7 @@
 
 ### Requirement: Operation-specific input checks
 
-系统 SHALL 按当前操作要求实际必要输入。普通 status / next MUST 读取入口、manifest、当前活动 Change 的路径 / 上游 status 和当前 product Run；合法 Archive 过渡 / 完成态只读取唯一当前绑定及其必要 Archive Run，不要求旧活动路径。Action 开始 / 继续 / Owner 处置和正式 submit SHALL 保留上游与相应方法 / 固定 Author 校验；draft save 依赖本地配置、普通活动路径或合法 Archive 过渡态、当前 draft、身份、正文和安全写入；Archive execute 与 finish 分别检查实际前置和当前归档直接输入。只读诊断 SHALL 不启动上游、不扩大为历史读取；人工历史与未知 Ref 不自动成为依赖。
+系统 SHALL 按操作读取实际必要输入：普通 query 读取入口、所选 manifest、当前产品 Run，活动 Change 才读取其路径 / 上游 status；closed 与历史结果不要求旧活动目录。正式写入、阶段 / Review / Archive 保留各自当前直接输入检查；指定结果读取只检查其所属 Delivery、父 / 子结果和必要日志，不借执行准入拒绝历史读取。人工说明与未知 Ref 不成为依赖，身份、受管路径与安全写入 MUST 保留。
 
 #### Scenario: Historical links and unknown extensions are unavailable
 - **WHEN** 人工记录的历史 Run、旧方案、说明链接或未知 Ref 扩展缺失、非路径或指向不可用位置，但必要输入有效
@@ -147,7 +167,7 @@
 
 #### Scenario: The upstream process is unavailable for local work
 - **WHEN** 上游不可用，但只读诊断或保存 draft 的本地必要输入有效
-- **THEN** 本地操作不调用上游且明确未验证上游；status / next、正式 submit 和需要上游的 Action 操作仍按实际工具错误拒绝
+- **THEN** 本地操作不调用上游且明确未验证上游；实际依赖上游的 status / next、正式 Change submit 和 Action 操作仍按工具错误拒绝，不扩大为本地指定结果的上游前置
 
 #### Scenario: Older archived runs are no longer runtime inputs
 - **WHEN** 第二项为当前对象、必要记录有效，第一项 archived binding 身份 / 编号 / 受管定位仍一致，但它的旧 Run、归档内容或说明不可用
@@ -156,6 +176,10 @@
 #### Scenario: The selected archive run is missing
 - **WHEN** 当前对象处于 archiving 或无活动时最近 archived，但它的必要 Archive Run 缺失
 - **THEN** 拒绝当前查询或归档操作，不用前项 Archive Run、历史批准或目录存在替代
+
+#### Scenario: Historical result reading does not reuse execution admission
+- **WHEN** 显式读取已登记旧 Delivery 的正式 / 普通结果，其直接输入有效，但它为 closed、本轮已变化或项目累计计数已继续增长
+- **THEN** 结果仍按自身身份读回，当前适用性单独说明；不要求 open、无新活动项、旧计数等于项目最新最大值或旧审核正文
 
 ### Requirement: Manual archived change handoff
 
@@ -223,7 +247,7 @@
 
 ### Requirement: Product archive transition and terminal handoff
 
-系统 SHALL 只在唯一当前合法 Archive Run 与该 product binding 一致时解释归档过渡态；普通 Action 写入 MUST 被阻止。只有累计计数、submitted / complete Archive Run 和 numbered archived binding 完整一致时 SHALL 报告完成，清空 activeChangeId 并显示已归档 / 无活动 Change。过渡态 MUST 不因源目录消失而猜成功，manual-bootstrap 兼容和只读边界保持。
+系统 SHALL 以当前合法 Archive Run 解释 product 归档过渡态，普通写入不能绕过。完整终态须与当前 binding 的编号 / 身份一致；只读历史完成事实允许 ordinal 小于项目累计数，不要求旧项等于当前最大值。正在提交 Archive 仍 MUST 按本次 countBasis / ordinal 校验，不能由目录消失猜成功。人工只读和历史说明边界保持。
 
 #### Scenario: Archive is pending while its source has moved
 - **WHEN** 当前合法 Archive draft 或已写终态 Run 与 archiving binding 对应，源目录已移走，本地收口尚未完整
@@ -279,7 +303,17 @@
 
 ### Requirement: Sequential explicit change association
 
-open product Delivery SHALL 在无活动项且已有前项完整归档时允许显式追加下一已有 Change；首次关联同样保留。关联 MUST 校验真实目标 / schema、槽位和 Change 唯一性、槽位的范围内依赖均已归档，以及唯一当前归档交接完整。操作 SHALL 追加而不替换旧项；第二项加入已有 Changes 批次，无批次的首次关联等首个 Run 时建立，不自动推进阶段。
+open product Delivery SHALL 在本轮无活动项且当前交接完整时显式追加已有 Change，校验真实目标 / schema、当前范围、全 Delivery Change / 槽位唯一性及本轮依赖完成。同一工作批次追加成员；Reopen 后当前批次尚不存在时仅关联，不加入旧批次或预建新批次，新批次在首次实际 Run 建立。不替换历史项，不自动推进阶段。
+
+首次 Open 的可选关联 MUST 对旧入口及显式记录化入口复用相同槽位 / 依赖准入；普通错误输入在创建首次状态目录前拒绝，锁内保留必要直接输入复核。
+
+#### Scenario: Initial association depends on unfinished work
+- **WHEN** 首次 Open 请求关联 B 且 B dependsOn A，但无已归档 A，无论是否提供 Author / actor
+- **THEN** 写前拒绝 `change-dependency-not-archived`，不创建 `.mendi` 或占号；合法无依赖槽位仍可首次关联
+
+#### Scenario: Correct a rejected initial slot
+- **WHEN** 首次 Open 的槽位不存在，调用者改正为范围内合法无依赖槽位
+- **THEN** 错误请求不留下 `.mendi`，正确请求可直接成功；记录化入口保存 001 与 openRunRef，旧入口不补 Run；已存在的真实中断现场仍拒绝普通 Open 覆盖
 
 #### Scenario: Append an existing dependent change
 - **WHEN** A 已完整归档，B dependsOn A，Owner 范围内显式指定上游已有 B 对应 Change 和未占用槽位
@@ -293,9 +327,13 @@ open product Delivery SHALL 在无活动项且已有前项完整归档时允许�
 - **WHEN** 某项归档或上游 planning ready，而没有明确 bind 下一已有 Change 的请求
 - **THEN** 保留当前交接，不自动追加、分配 Run、创建审核或激活下一项
 
+#### Scenario: Bind the first new change after reopen
+- **WHEN** Reopen 已完成，新范围的有效未占用槽位显式关联新 Change，currentBatchId 为 null
+- **THEN** 新 binding 暂无 batchId / Run，旧批次与成员保持；首次实际开始才建立新批次并写 currentBatchId，不把旧 Close 或 PASS 当激活授权
+
 ### Requirement: Ordered product associations and shared batch identity
 
-product bindings MUST 按显式追加顺序保存：除最后项外均为 archived；存在非归档最后项时 activeChangeId 必须指向它，否则为 null。旧 archiveOrdinal MUST 唯一递增且不大于项目总数；最近终态和过渡计数按当前 Archive 核对。当前 open 周期最多一个 Changes 批次，成员及 binding.batchId / Run 位置 MUST 一致；不得从历史正文或最大 Run 推断当前对象。
+product bindings MUST 按追加顺序保留，只有最后项可非归档；活动项、唯一递增且不大于总数的 archiveOrdinal、各 binding / Run / batch 身份须一致。本轮范围可以不含旧 archived binding；非当前范围项只能为历史 archived。多个批次 SHALL 按真实首次 Run 保存互斥成员，currentBatchId 只选择本轮工作批次，Reopen 后可为 null；不读取历史正文猜当前对象。
 
 #### Scenario: An appended change has no run yet
 - **WHEN** 前项已有批次，第二项刚 bind，继承相同 batchId / 成员身份但尚无 latestRunRef
@@ -307,7 +345,15 @@ product bindings MUST 按显式追加顺序保存：除最后项外均为 archiv
 
 #### Scenario: Version one and manual records remain bounded
 - **WHEN** 读取原有单 Change version 1 product 或合法 manual-bootstrap 记录
-- **THEN** 单 Change 保持可读；人工记录保留既有只读解释，不套用新产品顺序规则或迁移历史；本轮不支持 product 多 Delivery 或 Close / Reopen
+- **THEN** 旧单批次 product 按既有范围解释，缺 currentBatchId 时只兼容原单批次；人工记录仍只读，不套用产品新规则或迁移历史；多个批次必须有明确当前选择，不能猜最后一项
+
+#### Scenario: Reopen preserves old bindings outside the new scope
+- **WHEN** 旧范围已 closed，Reopen 指定互不复用槽位的新范围，随后新批次保存真实新 Run
+- **THEN** 历史 archived binding 与原 batchId / latestRunRef 保留，新范围只解释本轮 binding；每个批次成员与对应绑定一致，不把所有 binding 强塞进新批次
+
+#### Scenario: Current batch membership is contradictory
+- **WHEN** 当前批次含范围外成员、同一 Change 分属多个批次、Run 与原批次身份不一致，或非归档 binding 不在本轮范围
+- **THEN** 拒绝矛盾记录，不迁移旧成员、不排序修复或扫描历史推断范围
 
 ### Requirement: Operation specific delivery verification inputs
 
@@ -327,7 +373,7 @@ product bindings MUST 按显式追加顺序保存：除最后项外均为 archiv
 
 ### Requirement: Delivery verification and association conflicts
 
-显式关联 Change SHALL 拒绝未完成 / 未确认的当前正式验收、局部修复及定向审核，或未解决的失败交接。已有正式结果不能作为激活授权。发生合法新的工作范围时 MUST 退出当前 Delivery 交接选择并将旧验收视为需要按影响判断，历史记录保持；本 Change 不实现 Reopen 或新范围编辑命令。
+显式关联 SHALL 拒绝未完成 / unknown 的正式验收、修复 / Review 或生命周期写入，以及未解决失败。只有完成的 Open / Reopen 或合法既有交接允许本轮新关联；关联退出 deliveryRunRef 当前选择，保留 fullTestRunRef 作历史，不继承其适用性。Reopen 与新 Open MUST 使用各自显式授权及独立操作，不能由 bind 代做。
 
 #### Scenario: Attempt to bind during a local repair
 - **WHEN** 当前正式失败、repair draft / continuing、Review 待完成 / changes-requested / rejected 或 unknown 尚未处理，调用者请求新关联

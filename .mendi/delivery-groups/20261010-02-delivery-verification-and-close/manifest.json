@@ -41,7 +41,8 @@
       "runsRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes",
       "changeIds": [
         "sequential-changes-and-test-entrypoints",
-        "formal-full-test-and-scoped-repair"
+        "formal-full-test-and-scoped-repair",
+        "delivery-close-and-reopen"
       ]
     }
   ],
@@ -63,6 +64,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
       "archiveOrdinal": 6
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "changeRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
+      "archiveOrdinal": 7
     }
   ],
   "activeChangeId": null,
@@ -77,12 +87,12 @@
     "通用状态机、调度器、引用注册中心及全库 hash gate"
   ],
   "openRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
+  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
   "stopBoundary": "awaiting-owner-instruction",
   "next": {
     "action": "delivery-next",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D02-B 已独立批准并实际归档；本次 change checkpoint 保存该边界，等待 Owner 明确下一工作与范围。"
+    "reason": "MVP-D02-C 已独立批准并实际归档，A / B / C 全部归档；本次 change checkpoint 保存该边界，等待 Owner 明确 D02 正式 Full Test / Close 或后续工作授权。"
   }
 }

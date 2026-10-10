@@ -1,0 +1,98 @@
+{
+  "modifiedBlocks": [
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery-wide run allocation",
+      "retainedOriginalScenarios": 4,
+      "totalScenarios": 5
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Draft save and immutable submission",
+      "retainedOriginalScenarios": 8,
+      "totalScenarios": 9
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery operation runs beside change batches",
+      "retainedOriginalScenarios": 3,
+      "totalScenarios": 4
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Current delivery progress and minimal handoff",
+      "retainedOriginalScenarios": 4,
+      "totalScenarios": 6
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery methods and direct review input",
+      "retainedOriginalScenarios": 2,
+      "totalScenarios": 3
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Existing state is preserved",
+      "retainedOriginalScenarios": 2,
+      "totalScenarios": 4
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Read-only status and next",
+      "retainedOriginalScenarios": 11,
+      "totalScenarios": 14
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Operation-specific input checks",
+      "retainedOriginalScenarios": 7,
+      "totalScenarios": 8
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Product archive transition and terminal handoff",
+      "retainedOriginalScenarios": 5,
+      "totalScenarios": 5
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Sequential explicit change association",
+      "retainedOriginalScenarios": 3,
+      "totalScenarios": 4
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Ordered product associations and shared batch identity",
+      "retainedOriginalScenarios": 3,
+      "totalScenarios": 5
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Delivery verification and association conflicts",
+      "retainedOriginalScenarios": 2,
+      "totalScenarios": 2
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Explicit formal delivery test admission",
+      "retainedOriginalScenarios": 4,
+      "totalScenarios": 4
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Direct result readback and bounded applicability",
+      "retainedOriginalScenarios": 4,
+      "totalScenarios": 6
+    },
+    {
+      "capability": "test-execution",
+      "requirement": "Intent before launch and read-only incomplete results",
+      "retainedOriginalScenarios": 4,
+      "totalScenarios": 7
+    }
+  ],
+  "taskCount": 21,
+  "completedTasks": 0,
+  "capabilities": 5,
+  "planningOnly": true
+}

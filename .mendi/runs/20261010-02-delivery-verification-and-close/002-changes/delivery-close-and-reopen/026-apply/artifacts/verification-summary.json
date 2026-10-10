@@ -1,0 +1,72 @@
+{
+  "ordinaryCheck": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "log": "check-final.log"
+  },
+  "build": {
+    "command": "pnpm test 内的 pnpm build；修复后 tsc",
+    "exitCode": 0
+  },
+  "regression": {
+    "command": "pnpm test",
+    "exitCode": 1,
+    "total": 189,
+    "passed": 186,
+    "failed": 3,
+    "log": "regression.log",
+    "failures": [
+      "Open / bind 竞争错误码",
+      "活动项存在时旧范围 unavailable",
+      "正式 status 已有锁应拒绝"
+    ]
+  },
+  "focusedFixes": {
+    "command": "node --test --test-concurrency=2 --test-name-pattern 两个真实子进程|明确合法后续|日志、子终态 tests/concurrency.test.ts tests/delivery-query.test.ts tests/delivery-write.test.ts",
+    "exitCode": 0,
+    "total": 3,
+    "passed": 3,
+    "log": "regression-fixes.log"
+  },
+  "finalInputs": {
+    "command": "node --test --test-concurrency=2 --test-name-pattern Close 快照|多索引|生命周期独立|CLI lifecycle|首次记录化 Open： tests/lifecycle-records.test.ts tests/lifecycle-writes.test.ts",
+    "exitCode": 0,
+    "total": 5,
+    "passed": 5,
+    "log": "final-input-checks.log"
+  },
+  "evidence": "lifecycle-scenes.jsonl",
+  "limitations": [
+    "全仓首轮失败未改写为通过；其余仍适用结果沿用，修正后定向重验。",
+    "根无 test:full；普通 pnpm test 内含 build，隔离目标真实映射 test:full。",
+    "阶段审核为受控记录夹具，不认证本仓库独立审核。",
+    "本项目 manual-bootstrap 未执行正式 Full Test / Close / Reopen / 新 Open；累计归档数 6。"
+  ],
+  "nativeValidation": {
+    "command": "固定 OpenSpec 1.14.1 validate delivery-close-and-reopen --strict --json",
+    "exitCode": 0,
+    "valid": true,
+    "log": "validate-final.json"
+  },
+  "tasks": {
+    "total": 21,
+    "complete": 21,
+    "remaining": 0,
+    "state": "all_done",
+    "log": "apply-after.json"
+  },
+  "handoff": {
+    "role": "author",
+    "next": {
+      "action": "review-apply",
+      "status": "awaiting-review",
+      "role": "reviewer",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/run.md",
+      "reason": "026 Author Apply 完成 21 项实施与必要回归；交独立 Reviewer 审核本轮变化，未提供 Reviewer verdict。",
+      "source": "manual-bootstrap",
+      "executable": false
+    },
+    "log": "next-final.json",
+    "archivedChangeCount": 6
+  }
+}

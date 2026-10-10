@@ -1,0 +1,15 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "archive",
+    "delivery-close-and-reopen",
+    "--json",
+    "--yes"
+  ],
+  "processId": 42880,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "exited": true
+}

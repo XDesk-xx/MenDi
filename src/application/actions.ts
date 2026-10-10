@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { pendingLifecycle, saveLifecycleNote } from '../adapters/lifecycle-store.ts';
 import path from 'node:path';
 import {
   hasDeliveryProgress,
@@ -163,6 +164,18 @@ export function continueAction(input: ContinueInput, options: ActionOptions = {}
   };
 }
 export function saveRun(input: SaveInput, options: ActionOptions = {}) {
+  const { root: noteRoot } = inspectProject(input.project);
+  if (pendingLifecycle(noteRoot)) {
+    if (input.role !== 'author')
+      throw new MendiError('action-role-mismatch', '生命周期说明需要 Author。');
+    return saveLifecycleNote(
+      noteRoot,
+      input.runRef,
+      text(input.actor, 'actor'),
+      fs.readFileSync(path.resolve(noteRoot, input.bodyFile), 'utf8'),
+      options.observeWrite,
+    );
+  }
   if (hasDeliveryProgress(input.project)) return saveDeliveryRun(input, options);
   text(input.actor, '操作者标识');
   if (input.role !== 'author' && input.role !== 'reviewer')

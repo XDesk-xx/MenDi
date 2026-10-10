@@ -3,6 +3,7 @@ import { startDeliveryRepair, startDeliveryReview } from '../application/deliver
 import { actionInstructions } from '../application/action-instructions.ts';
 import { resolveAction } from '../application/action-resolution.ts';
 import { archiveAction } from '../application/archive.ts';
+import { deliveryLifecycle } from '../application/delivery-lifecycle.ts';
 
 import { bindChange, openDelivery, query } from '../application/project.ts';
 import { startAction, continueAction, saveRun, submitRun } from '../application/actions.ts';
@@ -22,10 +23,23 @@ export async function dispatch(parsed: Arguments) {
       pnpmBin: parsed.values['pnpm-bin'],
     });
   if (parsed.command === 'test-status')
-    return testStatus({ ...target, execution: parsed.values.execution });
+    return testStatus({
+      ...target,
+      execution: parsed.values.execution,
+      deliveryId: parsed.values.delivery,
+    });
   const input = { project: parsed.values.project, openspecBin: parsed.values['openspec-bin'] };
   const actor = { ...input, role: parsed.values.role, actor: parsed.values.actor };
   switch (parsed.command) {
+    case 'delivery-close':
+    case 'delivery-reopen':
+      return deliveryLifecycle(parsed.command, {
+        ...actor,
+        inputFile: parsed.values.input,
+        scopePath: parsed.values.scope,
+        reason: parsed.values.reason,
+        resumeRef: parsed.values.resume,
+      });
     case 'delivery-full-test-run':
       return runFullTest({
         ...actor,
@@ -60,7 +74,8 @@ export async function dispatch(parsed: Arguments) {
       });
     case 'delivery-open':
       return openDelivery({
-        ...input,
+        ...actor,
+        resumeRef: parsed.values.resume,
         id: parsed.values.id,
         title: parsed.values.title,
         scopePath: parsed.values.scope,
@@ -98,6 +113,6 @@ export async function dispatch(parsed: Arguments) {
         verdict: parsed.values.verdict,
       });
     default:
-      return query(input);
+      return query({ ...input, deliveryId: parsed.values.delivery });
   }
 }

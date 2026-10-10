@@ -112,12 +112,17 @@ export async function runTest(
   }
 }
 export function testStatus(
-  input: { project: string; execution: string },
+  input: { project: string; execution: string; deliveryId?: string },
   options: { observeRead?: () => void } = {},
 ) {
   const { root } = inspectProject(input.project);
   try {
-    const observation = observeExecution(root, input.execution, options.observeRead);
+    const observation = observeExecution(
+      root,
+      input.execution,
+      options.observeRead,
+      input.deliveryId,
+    );
     return {
       ...local,
       ok: observation.stable && observation.record.outcome !== 'unknown',

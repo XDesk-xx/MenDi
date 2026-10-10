@@ -1,0 +1,89 @@
+{
+  "capabilities": [
+    {
+      "capability": "action-runs",
+      "mainRef": "openspec/specs/action-runs/spec.md",
+      "mainExists": true,
+      "added": [],
+      "modified": [
+        "Delivery-wide run allocation",
+        "Draft save and immutable submission",
+        "Delivery operation runs beside change batches",
+        "Current delivery progress and minimal handoff",
+        "Delivery methods and direct review input"
+      ],
+      "removed": [],
+      "renamed": [],
+      "syncBlocked": false
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "mainRef": "openspec/specs/delivery-lifecycle/spec.md",
+      "mainExists": false,
+      "added": [
+        "Explicit applicable delivery close",
+        "Material applicability and direct approval facts",
+        "Explicit reopen with a fresh work scope",
+        "Durable lifecycle progress and closed queries",
+        "Bounded explicit lifecycle resume",
+        "Lifecycle authority and manual history preservation"
+      ],
+      "modified": [],
+      "removed": [],
+      "renamed": [],
+      "syncBlocked": false
+    },
+    {
+      "capability": "delivery-verification",
+      "mainRef": "openspec/specs/delivery-verification/spec.md",
+      "mainExists": true,
+      "added": [
+        "First fresh acceptance after lifecycle work"
+      ],
+      "modified": [
+        "Explicit formal delivery test admission",
+        "Direct result readback and bounded applicability"
+      ],
+      "removed": [],
+      "renamed": [],
+      "syncBlocked": false
+    },
+    {
+      "capability": "delivery-workspace",
+      "mainRef": "openspec/specs/delivery-workspace/spec.md",
+      "mainExists": true,
+      "added": [],
+      "modified": [
+        "Existing state is preserved",
+        "Read-only status and next",
+        "Operation-specific input checks",
+        "Product archive transition and terminal handoff",
+        "Sequential explicit change association",
+        "Ordered product associations and shared batch identity",
+        "Delivery verification and association conflicts"
+      ],
+      "removed": [],
+      "renamed": [],
+      "syncBlocked": false
+    },
+    {
+      "capability": "test-execution",
+      "mainRef": "openspec/specs/test-execution/spec.md",
+      "mainExists": true,
+      "added": [],
+      "modified": [
+        "Intent before launch and read-only incomplete results"
+      ],
+      "removed": [],
+      "renamed": [],
+      "syncBlocked": false
+    }
+  ],
+  "summary": {
+    "added": 7,
+    "modified": 15,
+    "removed": 0,
+    "renamed": 0
+  },
+  "method": "One native OpenSpec archive sync; no separate merge or skip-specs"
+}

@@ -11,11 +11,11 @@ context: |
   当前 MVP-D02 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json；MVP-D01 保持 closed，历史索引保留。
   归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。
   探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。
-  CLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。
+  CLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行、Close / Reopen、新 Delivery Open 与指定历史结果读取。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。
   必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。
   MVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。
-  MVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6，当前无活动 Change。本次 change checkpoint 保存 B 边界，后续等待 Owner 明确指令；取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。
-  D02 保持 open，C Close / Reopen 尚未激活，D03 仅为后续规划。第二个 Delivery 使用人工记录，不通过产品写命令迁移人工历史；Explore 结果不代替 Propose、Apply 或独立批准。
+  MVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。
+  MVP-D02-C delivery-close-and-reopen 经 029 独立批准 028 后，由 030 实际归档到 openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen，五项 delta 已原生同步并 strict validate；项目累计归档数为 7，D02 的 A / B / C 均已归档，当前无活动 Change，本次 change checkpoint 保存 C 的边界，等待 Owner 独立授权 D02 后续动作。首次关联 RA-C-001 / RA-C-002 已关闭，旧 Run / verdict 与验证适用性、材料语义判断和取消 unknown 限制保留。本项目 D02 仍 open / manual-bootstrap，尚未执行根正式 Full Test / Close，不自动 Reopen / 新 Open、Git 或下一 Change，不迁移人工历史。
   Run 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。
   正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。
   Storybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。

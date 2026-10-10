@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+ok 1 - 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+  ---
+  duration_ms: 1.1883
+  type: 'test'
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 2 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 46437.5375
+  type: 'test'
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+ok 3 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 6448.3579
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 4 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 7750.3391
+  type: 'test'
+  ...
+# Subtest: 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+ok 5 - 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+  ---
+  duration_ms: 21963.0859
+  type: 'test'
+  ...
+# Subtest: 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+ok 6 - 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+  ---
+  duration_ms: 6184.1647
+  type: 'test'
+  ...
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 7 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 45051.379
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 8 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 8153.1119
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 9 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 7949.4464
+  type: 'test'
+  ...
+# Subtest: closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+ok 10 - closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+  ---
+  duration_ms: 87069.7386
+  type: 'test'
+  ...
+# Subtest: 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+ok 11 - 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+  ---
+  duration_ms: 1630.3455
+  type: 'test'
+  ...
+# Subtest: 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+ok 12 - 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+  ---
+  duration_ms: 17103.0574
+  type: 'test'
+  ...
+# Subtest: 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+ok 13 - 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+  ---
+  duration_ms: 8.1004
+  type: 'test'
+  ...
+# Subtest: 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+ok 14 - 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+  ---
+  duration_ms: 4.5906
+  type: 'test'
+  ...
+# Subtest: CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+ok 15 - CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+  ---
+  duration_ms: 1.0477
+  type: 'test'
+  ...
+# Subtest: Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+ok 16 - Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+  ---
+  duration_ms: 1.76
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 17 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 80187.8529
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 18 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 8862.0641
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 19 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 43098.6508
+  type: 'test'
+  ...
+# Subtest: close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 20 - close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 151294.1551
+  type: 'test'
+  ...
+# Subtest: reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 21 - reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 93705.9507
+  type: 'test'
+  ...
+# Subtest: open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 22 - open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 92137.8915
+  type: 'test'
+  ...
+# Subtest: resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+ok 23 - resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+  ---
+  duration_ms: 9291.9133
+  type: 'test'
+  ...
+# Subtest: 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+ok 24 - 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+  ---
+  duration_ms: 13928.8937
+  type: 'test'
+  ...
+# Subtest: 本地新 / 已有配置按显式目标读取并保留原字节
+ok 25 - 本地新 / 已有配置按显式目标读取并保留原字节
+  ---
+  duration_ms: 39.0434
+  type: 'test'
+  ...
+# Subtest: config.yml 仅在主配置不存在时使用，损坏主配置不回退
+ok 26 - config.yml 仅在主配置不存在时使用，损坏主配置不回退
+  ---
+  duration_ms: 19.3398
+  type: 'test'
+  ...
+# Subtest: 有效主配置存在时不解析未选用的 config.yml junction
+ok 27 - 有效主配置存在时不解析未选用的 config.yml junction
+  ---
+  duration_ms: 10.9535
+  type: 'test'
+  ...
+# Subtest: store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+ok 28 - store / 坏 YAML / schema / 子目录 / 裸目录在写前拒绝
+  ---
+  duration_ms: 24.1934
+  type: 'test'
+  ...
+# Subtest: 受管路径拒绝越界和指向外部的 junction
+ok 29 - 受管路径拒绝越界和指向外部的 junction
+  ---
+  duration_ms: 7.8687
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 528861.1461

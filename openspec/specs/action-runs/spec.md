@@ -31,7 +31,7 @@
 
 ### Requirement: Delivery-wide run allocation
 
-系统 SHALL 在整个 Delivery 内按实际已占号 Run 目录分配递增编号，至少三位，跨 Change 连续；Changes 批次目录 MUST 不消耗额外序号；同一 open 周期的后续 Change 复用已有批次及成员，不替换批次数组。分配 MUST 使用独占写入并拒绝重复号、不安全路径与冲突。空占号目录 SHALL 保留并报告，后续不复用；编号分配 SHALL 不认证或读取全部历史提交正文。
+系统 SHALL 在整个 Delivery 的实际占号 Run 目录中递增分配，至少三位，跨 Change / Close / Reopen 连续；新 Delivery 独立从 001 开始。Changes 批次不额外占号，同一工作批次复用成员；Reopen 后首次实际 Change Run 才追加新批次并设置当前选择，不能替换旧批次数组。分配 MUST 独占、拒绝重复号 / 不安全路径 / 冲突，保留空占号，不读取全部历史正文认证编号。
 
 #### Scenario: Continue across changes in a batch
 - **WHEN** 同 Delivery 历史操作 / Change 已占号到 015，当前批次为 003-changes
@@ -48,6 +48,10 @@
 #### Scenario: Create the first run of the second change
 - **WHEN** 第一项已归档、第二项明确 bind 并加入既有批次，当前关联尚无 Run，显式开始 Explore
 - **THEN** 在该批次的第二 Change 目录保存新 draft，使用全 Delivery 下一占号；批次 firstRun / 旧成员、旧 Run 和归档数保持
+
+#### Scenario: First change run after a reopen
+- **WHEN** 原 Delivery Run 已占号到 017-delivery-reopen，当前批次为空且新范围 Change 已明确 bind
+- **THEN** 首次 Run 为 018，建立 018-changes/<change-id>/018-explore，不产生批次 run.md，不改旧批次或再为批次占号
 
 ### Requirement: Current run as direct state input
 
@@ -75,7 +79,7 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 
 ### Requirement: Draft save and immutable submission
 
-系统 SHALL 仅允许当前 product draft 的同角色 / 同操作者保存正文，使用明确根、本地配置、当前 Run、明确正文及安全写入；Change draft 要求活动 binding，Delivery draft 按其当前 Delivery 记录核对。保存 MUST 不依赖上游、方法或固定 Author 正文。正式提交 SHALL 校验非空正文 / result / outcome 及必要 Author / verdict，Change 提交保留上游校验；正式 Full Test 禁止普通提交生成执行终态。已提交 Run MUST 不允许保存 / 重提；陈旧、冲突或读回失败 SHALL 非零退出并保留现场。
+系统 SHALL 只允许当前 product draft 的同角色 / actor 保存正文，使用明确根、本地配置、当前必要对象及安全写入；保存不读上游、方法或固定 Author 正文。正式阶段提交校验非空结果 / outcome 与必要 Author / verdict，Change submit 保留上游。Full Test 与生命周期完成 MUST 由专用执行 / 提交产生，普通 submit / continue 禁止伪造。旧 submitted Run 不可保存 / 重提，失败保留现场。
 
 #### Scenario: Save a draft and submit progress
 - **WHEN** 当前 draft 的原操作者保存 Markdown 工作记录，再以 continuing 提交
@@ -108,6 +112,10 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 #### Scenario: Generic submit tries to certify a full test
 - **WHEN** 对 delivery-full-test 使用普通 run submit 或 action continue 生成通过 / 重试
 - **THEN** 操作拒绝，正式结果只能由明确执行和完整读回生成；其当前 draft 的同 Author 可保存故障说明，但不能改执行事实
+
+#### Scenario: Generic operations target a lifecycle run
+- **WHEN** 对 Open / Close / Reopen draft 或 terminal 使用普通 run submit / action continue 生成收口或重开
+- **THEN** 拒绝；当前同角色 / actor 的 draft 可本地保存故障笔记，不改生命周期输入、提交相位或宣称状态成功
 
 ### Requirement: Same action continuation and explicit revision
 
@@ -367,7 +375,7 @@ Review Apply 方法 SHALL 报告 src / tests / scripts 中维护代码物理行�
 
 ### Requirement: Delivery operation runs beside change batches
 
-Delivery 操作 SHALL 保存于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/run.md`，与 Changes 批次同级并共享既有连续编号。头部 MUST 明确 delivery scope、可空 Change、类型 / 方法、角色 / actor 与 draft / submitted；独占占号、路径 / 身份、未提交继续及历史不可改规则保持。当前 Delivery 指针与最新正式结果指针 SHALL 各表达其实际用途，不扫描最大号推断完成。
+Delivery 操作 SHALL 在 runs/<delivery-id>/<序号>-<操作名称>/run.md 与 Changes 批次同级，共享连续编号，明确 delivery scope、类型 / 方法、Author / actor 和 draft / submitted。新增记录化 Open 保存 001-delivery-open，Close / Reopen 继续原号；旧首次 Open 未记录 Run 的格式保持可读，不补历史。当前进展与最近正式结果指针 MUST 各按实际用途选择，生命周期提交只更新本次直接对象。
 
 #### Scenario: Full test follows multiple archived changes
 - **WHEN** 同 Delivery 两项已归档、已有 Run 最大占号为 014，Author 显式正式执行
@@ -381,9 +389,13 @@ Delivery 操作 SHALL 保存于 `.mendi/runs/<delivery-id>/<序号>-<操作名�
 - **WHEN** 发现重复 / 非规范序号、错 Delivery / 角色 / 方法、越界路径或另一写者
 - **THEN** 拒绝并保留已有占号 / 锁，不复用空占号或覆盖旧记录
 
+#### Scenario: Close and reopen preserve separate operation runs
+- **WHEN** 正式结果为 015，随后显式 Close、Reopen 和新 Change 开始
+- **THEN** 在无其他占号时保存 016-delivery-close、017-delivery-reopen 和 018-changes 中的新 Run；旧正式 / Close 不改，新 Open 在独立 Delivery 使用 001
+
 ### Requirement: Current delivery progress and minimal handoff
 
-合法 Delivery 操作 SHALL 由其显式当前指针选择 Run，普通查询只读该头部及正式测试实际需要的直接结果，不倒查修订或失败链。未完成修复 / Review 推荐保存提交或同 Action 继续，修复完成推荐独立 Review；approved 推荐新正式 Full Test，changes-requested 推荐新 Author 修订，rejected / unknown 停 Owner；passed 仅提示等待收口指令。
+Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链。修复与 Review 保持既有交接；passed 仅待 Owner。closed 当前选择 Close；Reopen / Open 完成后提示范围内显式 bind，退出旧 PASS 的当前适用选择但保留最近正式入口。待提交生命周期写入与 unknown MUST 停 Owner 核对 / 显式有限继续。next 只包含当前必要入口，不自动执行或累积旧 Close / 审核链。
 
 #### Scenario: Repair completes and reviewer continues
 - **WHEN** Author 修复 complete，随后独立 Review 开始并提交 continuing
@@ -401,9 +413,17 @@ Delivery 操作 SHALL 保存于 `.mendi/runs/<delivery-id>/<序号>-<操作名�
 - **WHEN** 当前正式记录保存 passed，但本次必要结果的观察未确认
 - **THEN** next 使用本次 unknown 观察停 Owner，与 verification 一致，不只按持久头部提示通过；不改写旧 Run
 
+#### Scenario: Reopen or new open is current without a formal result
+- **WHEN** 当前 Run 为完成的 Reopen 或记录化新 Open，尚无本轮正式结果
+- **THEN** 不要求这些 Run 携带 fullTest 或 repair；Reopen 保留 fullTestRunRef 作历史，新 Open 没有它，均不展示本轮验收通过
+
+#### Scenario: Current close is retained without execution revalidation
+- **WHEN** 当前 Delivery 为完整 closed，Close 头部 / 摘要与 manifest 一致
+- **THEN** query 展示持久收口事实与等待 Owner 提示，只引用其正式入口供显式查询；不递归检查旧测试 / 审核正文，也不重新认证受测材料
+
 ### Requirement: Delivery methods and direct review input
 
-Delivery 正式执行、Author 修复和 Reviewer 定向审核 SHALL 使用各自真实阶段方法；缺失 / 不匹配方法阻止相应开始或继续，不阻止不读取方法的查询。修复 Review MUST 固定同 Delivery、完整且完成的新 Author，拒绝明显自签 / 陈旧对象。声明角色与 actor 不能替代实际独立性；工具成功、材料文本和方法读取不代签 verdict。
+正式执行、修复、定向 Review、记录化 Open、Close / Reopen SHALL 使用各自实际方法。缺失 / 不匹配方法阻止消费它的开始 / 继续，不阻止只读查询。修复 Review 仍固定完整同 Delivery Author，拒绝陈旧 / 明显自签；生命周期方法要求实际 Owner 边界与 Close 材料判断，不用工具成功或 actor 代签批准。
 
 #### Scenario: Read the relevant method without upstream change activity
 - **WHEN** Author 开始 delivery-repair，或 Reviewer 开始 review-delivery-repair
@@ -412,3 +432,7 @@ Delivery 正式执行、Author 修复和 Reviewer 定向审核 SHALL 使用各�
 #### Scenario: A method or required author is unavailable
 - **WHEN** 相应开始 / 继续所需方法不可用，或 Review 正式操作所需固定 Author 不可读
 - **THEN** 对应操作拒绝且不产生有效批准 / 新交接；本地故障说明和普通查询按自己的必要输入解释
+
+#### Scenario: Lifecycle guidance keeps operation authority separate
+- **WHEN** Author 读取 Open / Close / Reopen 方法并显式执行该操作
+- **THEN** 方法说明直接输入、材料 / 范围判断、实际结果及停止边界；不自动安装、创建 Reviewer verdict 或推进另一授权操作

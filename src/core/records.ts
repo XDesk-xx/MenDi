@@ -81,7 +81,10 @@ function mode(record: Record<string, unknown>): 'product' | 'manual-bootstrap' {
   );
 }
 
-export function parseProject(value: unknown): {
+export function parseProject(
+  value: unknown,
+  deliveryId?: string,
+): {
   project: Record<string, unknown>;
   mode: Workspace['mode'];
   id: string;
@@ -93,7 +96,8 @@ export function parseProject(value: unknown): {
   text(project.name, '项目名称');
   if (project.deliveryGroupsDir !== '.mendi/delivery-groups')
     throw new MendiError('invalid-record', 'deliveryGroupsDir 不符合约定。');
-  const id = identifier(project.activeDeliveryId, '当前 Delivery ID');
+  const selectedId = identifier(project.activeDeliveryId, '当前 Delivery ID');
+  const id = deliveryId === undefined ? selectedId : identifier(deliveryId, '所选 Delivery ID');
   const deliveries = array(project.deliveries, 'deliveries').map((value) => {
     const item = object(value, 'Delivery 索引');
     const deliveryId = identifier(item.id, 'Delivery ID');
@@ -107,8 +111,19 @@ export function parseProject(value: unknown): {
   });
   if (new Set(deliveries.map((item) => item.id)).size !== deliveries.length)
     throw new MendiError('invalid-record', 'Delivery 索引重复。');
+  if (project.pendingDeliveryRunRef !== undefined) {
+    const ref = text(project.pendingDeliveryRunRef, 'pendingDeliveryRunRef');
+    const owner = ref.split('/')[2];
+    const location = deliveryLocation(ref, owner);
+    if (
+      (owner !== selectedId &&
+        (location.type !== 'delivery-open' || deliveries.some((item) => item.id === owner))) ||
+      !['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)
+    )
+      throw new MendiError('invalid-record', 'pending 生命周期身份未登记。');
+  }
   const active = deliveries.find((item) => item.id === id);
-  if (!active || (recordingMode === 'product' && deliveries.length !== 1))
+  if (!active || !deliveries.some((item) => item.id === selectedId))
     throw new MendiError('invalid-record', '当前 Delivery 索引不存在或不符合首版范围。');
   return { project, mode: recordingMode, id, manifestRef: active.manifestRef };
 }
@@ -122,16 +137,29 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
   const scope = readScope(manifest);
   const { bindings, activeChangeId } = readAssociations(index, manifest, scope, state);
   if (index.mode === 'product') {
-    for (const key of ['deliveryRunRef', 'fullTestRunRef']) {
+    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef']) {
       if (manifest[key] !== undefined) {
         const location = deliveryLocation(text(manifest[key], key), index.id);
         if (key === 'fullTestRunRef' && location.type !== 'delivery-full-test')
           throw new MendiError('invalid-record', 'fullTestRunRef 必须指向正式测试。');
+        if (
+          (key === 'closeRunRef' && location.type !== 'delivery-close') ||
+          (key === 'openRunRef' && location.type !== 'delivery-open')
+        )
+          throw new MendiError('invalid-record', '生命周期指针类型不符。');
       }
     }
-    if (manifest.deliveryRunRef !== undefined && (activeChangeId || state !== 'open'))
+    const currentType =
+      manifest.deliveryRunRef === undefined
+        ? undefined
+        : deliveryLocation(String(manifest.deliveryRunRef), index.id).type;
+    if (manifest.deliveryRunRef !== undefined && activeChangeId)
       throw new MendiError('invalid-record', '当前 Delivery 操作与活动 Change / 状态冲突。');
-    if (manifest.deliveryRunRef !== undefined && manifest.fullTestRunRef === undefined)
+    if (
+      currentType &&
+      !['delivery-open', 'delivery-reopen'].includes(currentType) &&
+      manifest.fullTestRunRef === undefined
+    )
       throw new MendiError('invalid-record', 'Delivery 操作缺少最近正式测试入口。');
     if (
       manifest.deliveryRunRef !== undefined &&
@@ -139,6 +167,13 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
       manifest.deliveryRunRef !== manifest.fullTestRunRef
     )
       throw new MendiError('invalid-record', '当前正式 Run 与最新正式指针矛盾。');
+    if (
+      state === 'closed' &&
+      (currentType !== 'delivery-close' || manifest.closeRunRef !== manifest.deliveryRunRef)
+    )
+      throw new MendiError('invalid-record', 'closed 缺少一致的当前 Close。');
+    if (state === 'open' && currentType === 'delivery-close')
+      throw new MendiError('invalid-record', 'open 不能选择已收口 Close。');
   }
   return { ...index, manifest, title, state, scope, activeChangeId, bindings };
 }

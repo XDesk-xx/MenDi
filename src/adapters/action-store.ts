@@ -106,6 +106,7 @@ export function createRun(
     changeBatches: binding.batchId
       ? workspace.manifest.changeBatches
       : [
+          ...(workspace.manifest.changeBatches as unknown[]),
           {
             id: batchId,
             firstRun: number,
@@ -113,6 +114,7 @@ export function createRun(
             changeIds: [seed.changeId],
           },
         ],
+    currentBatchId: batchId,
   };
   parseWorkspace(parseProject(workspace.project), manifest);
   replaceManagedFile(

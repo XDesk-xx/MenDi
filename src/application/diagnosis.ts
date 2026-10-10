@@ -96,6 +96,7 @@ export function diagnoseWorkspace(
     : null;
   const index = attempt(() => {
     track('.mendi/project.json');
+    temporaryPaths('.mendi/project.json');
     return parseProject(JSON.parse(before.get('.mendi/project.json')!.toString('utf8')));
   });
   if (index)
@@ -109,6 +110,18 @@ export function diagnoseWorkspace(
     report(new MendiError('incomplete-mendi-state', '缺少 workspace。'));
   let current: RunDocument | DeliveryDocument | null = null;
   let reservation: RunDocument | DeliveryDocument | null = null;
+  if (index?.project.pendingDeliveryRunRef !== undefined) {
+    current = attempt(() => {
+      const ref = text(index.project.pendingDeliveryRunRef, 'pending Run');
+      const id = ref.split('/')[2];
+      track(ref);
+      temporaryPaths(ref);
+      track(`.mendi/delivery-groups/${id}/manifest.json`);
+      for (const name of ['input', 'before-project', 'before-manifest'])
+        track(ref.replace(/run\.md$/, `artifacts/${name}.json`));
+      return readDeliveryRun(root, ref, id);
+    });
+  }
   if (workspace?.mode === 'product') {
     current = attempt(() => {
       const ref =
@@ -123,14 +136,25 @@ export function diagnoseWorkspace(
     if (input.runRef !== undefined)
       reservation = attempt(() => {
         if (
-          /^\.mendi\/runs\/[^/]+\/\d{3,}-(?:delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.test(
+          /^\.mendi\/runs\/[^/]+\/\d{3,}-(?:delivery-open|delivery-close|delivery-reopen|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.test(
             input.runRef!,
           )
         ) {
-          deliveryLocation(input.runRef!, workspace.id);
+          const owner = input.runRef!.split('/')[2];
+          const location = deliveryLocation(input.runRef!, owner);
           track(input.runRef!);
           temporaryPaths(input.runRef!);
-          return readDeliveryRun(root, input.runRef!, workspace.id);
+          const run = readDeliveryRun(root, input.runRef!, owner);
+          if (
+            owner !== workspace.id &&
+            !(
+              location.type === 'delivery-open' &&
+              run.record.lifecycle?.sourceDeliveryId === workspace.id &&
+              run.record.lifecycle.priorCloseRef === workspace.manifest.closeRunRef
+            )
+          )
+            throw new MendiError('invalid-run', '占号与当前 Delivery 来源不符。');
+          return run;
         }
         if (!workspace.activeChangeId)
           throw new MendiError('invalid-run', '显式占号需要当前 Change。');
@@ -139,6 +163,31 @@ export function diagnoseWorkspace(
         temporaryPaths(input.runRef!);
         return readRun(root, input.runRef!, workspace.id, workspace.activeChangeId);
       });
+  } else if (
+    input.runRef !== undefined &&
+    /^\.mendi\/runs\/[^/]+\/\d{3,}-delivery-(open|close|reopen)\/run\.md$/.test(input.runRef)
+  ) {
+    reservation = attempt(() => {
+      const ref = input.runRef!;
+      const id = ref.split('/')[2];
+      deliveryLocation(ref, id);
+      track(ref);
+      temporaryPaths(ref);
+      const run = readDeliveryRun(root, ref, id);
+      const pending = index?.project.pendingDeliveryRunRef;
+      if (
+        pending !== ref &&
+        !(
+          index === null &&
+          run.record.lifecycle?.sourceDeliveryId === null &&
+          run.record.actionType === 'delivery-open'
+        )
+      )
+        throw new MendiError('run-not-current', '该占号不是已登记 pending 或无入口的首次 Open。');
+      for (const name of ['input', 'before-project', 'before-manifest'])
+        track(ref.replace(/run\.md$/, `artifacts/${name}.json`));
+      return run;
+    });
   } else if (input.runRef !== undefined)
     report(
       new MendiError('unsupported-diagnostic-run', '人工或无 workspace 不支持 product --run。'),
@@ -183,6 +232,7 @@ export function diagnoseWorkspace(
         ? 'incomplete'
         : 'readback-unchanged',
     current: runOutput(current),
+    pendingDeliveryRunRef: index?.project.pendingDeliveryRunRef ?? null,
     reservation: reservation
       ? { ...runOutput(reservation)!, isCurrent: reservation.ref === current?.ref }
       : null,

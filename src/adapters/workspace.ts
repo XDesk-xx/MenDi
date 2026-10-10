@@ -8,6 +8,7 @@ import { managedPath, present } from './paths.ts';
 import { readRun } from './runs.ts';
 import { archivedCount } from '../core/archive.ts';
 import { currentDeliveryRun } from './delivery-runs.ts';
+import { completionScope } from '../core/delivery-verification.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -27,10 +28,15 @@ export type ActionWritePhase =
   | 'before-none-observation'
   | 'before-archive-numbering'
   | 'after-count-commit'
-  | 'after-archive-run-commit';
+  | 'after-archive-run-commit'
+  | 'intent-written'
+  | 'pending-written'
+  | 'terminal-written'
+  | 'lifecycle-manifest-written'
+  | 'index-written';
 export type WriteObserver = (phase: ActionWritePhase, file: string) => void;
 
-function readJson(file: string): unknown {
+export function readJson(file: string): unknown {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8')) as unknown;
   } catch (error) {
@@ -45,7 +51,11 @@ function readJson(file: string): unknown {
   }
 }
 
-export function readWorkspace(root: string, ownLock = false): Workspace | null {
+export function readWorkspace(
+  root: string,
+  ownLock = false,
+  deliveryId?: string,
+): Workspace | null {
   const directory = managedPath(root, '.mendi');
   if (!present(directory)) return null;
   const lock = managedPath(root, '.mendi/write.lock');
@@ -56,12 +66,35 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
       { lock },
       '核对锁归属与写入现场；不会自动抢占或删除锁。',
     );
-  const index = parseProject(readJson(managedPath(root, '.mendi/project.json')));
+  const index = parseProject(readJson(managedPath(root, '.mendi/project.json')), deliveryId);
+  if (index.project.pendingDeliveryRunRef !== undefined)
+    throw new MendiError(
+      'delivery-commit-pending',
+      '生命周期提交未确认，停止普通操作。',
+      { pendingDeliveryRunRef: index.project.pendingDeliveryRunRef },
+      '核对现场后显式 resume；不自动清锁。',
+    );
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
   const selected = currentBinding(workspace);
   const delivery = currentDeliveryRun(root, workspace);
+  if (delivery?.record.lifecycle) {
+    const lifecycle = delivery.record.lifecycle;
+    if (
+      delivery.record.status !== 'submitted' ||
+      JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
+      (lifecycle.operation === 'delivery-close' &&
+        (lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef ||
+          JSON.stringify(lifecycle.acceptance?.scope) !==
+            JSON.stringify(completionScope(workspace)))) ||
+      (lifecycle.operation === 'delivery-reopen' &&
+        lifecycle.priorCloseRef !== workspace.manifest.closeRunRef) ||
+      (lifecycle.operation === 'delivery-open' &&
+        (workspace.manifest.openRunRef !== delivery.ref || lifecycle.title !== workspace.title))
+    )
+      throw new MendiError('invalid-record', '当前生命周期摘要与 manifest 不一致。');
+  }
   if (workspace.mode === 'product') {
-    for (const key of ['deliveryRunRef', 'fullTestRunRef'])
+    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef'])
       if (workspace.manifest[key] !== undefined) managedPath(root, String(workspace.manifest[key]));
     if (
       delivery?.record.repair &&
@@ -82,7 +115,7 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
           (run.record.status !== 'submitted' ||
             binding.changeRef !== archive.archiveRef ||
             binding.archiveOrdinal !== archive.ordinal ||
-            archivedCount(workspace.project) !== archive.ordinal)) ||
+            archivedCount(workspace.project) < archive.ordinal)) ||
         (binding.state === 'archiving' &&
           (![archive.countBasis, archive.ordinal].includes(archivedCount(workspace.project)) ||
             (['prepared', 'none'].includes(archive.phase) &&
@@ -192,6 +225,9 @@ export function lockedWrite<T>(
         operation,
         lock,
         committedPaths: committed,
+        ...(/^delivery-(open|close|reopen)(-resume)?$/.test(operation) && committed.length
+          ? { outcome: 'unknown' }
+          : {}),
         ...(actionError ? { error: errorInfo(actionError) } : {}),
         ...(releaseError ? { releaseError: errorInfo(releaseError) } : {}),
       },

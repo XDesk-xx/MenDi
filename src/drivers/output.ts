@@ -11,7 +11,8 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     console.log(
       `Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map((slot) => slot.slot).join(', ')}\nChange：${result.local.activeChangeId ?? (result.local.changeBindings.some((binding) => binding.state === 'archived') ? '已归档、当前无活动 Change' : '尚未关联')}`,
     );
-  } else if (!result.operation.startsWith('test-')) console.log('MenDi 尚未 Open。');
+  } else if ('pending' in result) console.log('生命周期提交未确认，停止并核对现场。');
+  else if (!result.operation.startsWith('test-')) console.log('MenDi 尚未 Open。');
   if ('entries' in result)
     for (const entry of result.entries)
       console.log(
@@ -31,6 +32,15 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
   }
   if ('run' in result && result.run)
     console.log(`Action：${result.run.actionId}\nRun：${result.run.ref} (${result.run.status})`);
+  if ('run' in result && result.run && 'lifecycle' in result.run && result.run.lifecycle) {
+    const value = result.run.lifecycle;
+    console.log(`生命周期：${value.operation}；本次持久事实。`);
+    if (value.applicability)
+      console.log(
+        `材料：${value.applicability.materials}\n差异：${value.applicability.changes}\n适用性：${value.applicability.conclusion}；${value.applicability.reason}`,
+      );
+    console.log('持久收口不自动重验；显式结果读取仍检查直接执行和日志。后续操作等待 Owner 授权。');
+  }
   if ('verification' in result && result.verification) {
     const facts = result.verification;
     console.log(

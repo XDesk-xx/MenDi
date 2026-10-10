@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "error": {
+    "code": "invalid-arguments",
+    "message": "缺少 --project。",
+    "details": {},
+    "fix": "执行 mendi --help 查看用法。"
+  }
+}
