@@ -1,0 +1,65 @@
+{
+  "basis": "008 Apply artifacts/maintenance-before.json; excludes controlled fixtures, generated files and history.",
+  "counts": {
+    "src": [
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346,
+        "before": 346,
+        "growth": 0
+      },
+      {
+        "file": "src/application/archive.ts",
+        "lines": 333,
+        "before": 331,
+        "growth": 2
+      },
+      {
+        "file": "src/core/actions.ts",
+        "lines": 320,
+        "before": 320,
+        "growth": 0
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467,
+        "before": 467,
+        "growth": 0
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444,
+        "before": 444,
+        "growth": 0
+      },
+      {
+        "file": "tests/query.test.ts",
+        "lines": 335,
+        "before": 335,
+        "growth": 0
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678,
+        "before": 678,
+        "growth": 0
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487,
+        "before": 487,
+        "growth": 0
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463,
+        "before": 463,
+        "growth": 0
+      }
+    ]
+  }
+}

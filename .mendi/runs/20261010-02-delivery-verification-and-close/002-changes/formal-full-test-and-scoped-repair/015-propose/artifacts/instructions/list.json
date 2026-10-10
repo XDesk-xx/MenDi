@@ -1,0 +1,11 @@
+{
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "list",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "stdout": "{\n  \"changes\": [\n    {\n      \"name\": \"formal-full-test-and-scoped-repair\",\n      \"completedTasks\": 0,\n      \"totalTasks\": 0,\n      \"lastModified\": \"2026-10-10T04:44:25.281Z\",\n      \"status\": \"no-tasks\"\n    }\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

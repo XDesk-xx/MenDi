@@ -88,6 +88,8 @@ export function parseRun(
   changeId: string,
 ): RunRecord {
   const data = object(value, 'Run 头部');
+  if (data.scope !== undefined && data.scope !== 'change')
+    throw new MendiError('invalid-run', 'Change Run scope 错误。');
   const location = runLocation(ref, deliveryId, changeId);
   const definition = actionDefinition(data.actionType);
   const actionId = identifier(data.actionId, 'Action ID');

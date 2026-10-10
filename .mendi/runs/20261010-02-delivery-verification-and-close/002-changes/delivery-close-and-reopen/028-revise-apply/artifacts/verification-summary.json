@@ -1,0 +1,131 @@
+{
+  "changeId": "delivery-close-and-reopen",
+  "authorRun": "028-revise-apply",
+  "findingsAddressed": [
+    "RA-C-001",
+    "RA-C-002"
+  ],
+  "checks": [
+    {
+      "log": "admission-before.log",
+      "exitCode": 1,
+      "total": 2,
+      "passed": 0,
+      "purpose": "Fix-before counterexamples"
+    },
+    {
+      "log": "admission-after.log",
+      "exitCode": 1,
+      "total": 3,
+      "passed": 2,
+      "reason": "Incorrect test expectation for retained lock, subsequently corrected"
+    },
+    {
+      "log": "regression.log",
+      "exitCode": 0,
+      "total": 8,
+      "passed": 8
+    },
+    {
+      "log": "check.log",
+      "exitCode": 0,
+      "maintainedFiles": 112
+    },
+    {
+      "log": "build.log",
+      "exitCode": 0
+    },
+    {
+      "log": "validate.json",
+      "exitCode": 0
+    }
+  ],
+  "progress": {
+    "total": 22,
+    "complete": 22,
+    "remaining": 0
+  },
+  "task22": {
+    "id": "22",
+    "description": "8.1 修复 RA-C-001 / RA-C-002：首次记录化 Open 复用既有槽位与依赖准入，在创建状态目录前完成可预检语义并保留锁内复核；真实固定 OpenSpec 回归覆盖两种入口拒绝未归档依赖、合法关联、错误槽位修正后直接成功，以及直接输入在提交期间变化和原有首次失败 / resume。执行 pnpm check、build 与受影响回归，在新 Author Run 记录行数 / 结果并停独立 Review Apply，保留旧 Run / verdict。",
+    "done": true,
+    "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+    "line": 47
+  },
+  "top3": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  },
+  "reuse": {
+    "reviewRun": "027-review-apply",
+    "lifecycleAndProject": "29/29",
+    "priorFixes": "3/3",
+    "fullRepositoryRerun": false,
+    "originalAggregate": "026: 186/189 exit 1, followed by targeted fixes; unchanged historical evidence"
+  },
+  "root": {
+    "recordingMode": "manual-bootstrap",
+    "state": "open",
+    "archivedChangeCount": 6,
+    "activeChangeId": "delivery-close-and-reopen"
+  },
+  "handoff": {
+    "action": "review-apply",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+    "reason": "028 Author 定向修复 RA-C-001 / RA-C-002 并完成必要回归；交独立 Reviewer 补审本次变化，其余有效结论可沿用。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "historyByteComparison": {
+    "026-apply": true,
+    "027-review-apply": true
+  },
+  "limits": [
+    "No Author verdict",
+    "No root Archive, formal Full Test, Close, Reopen or new Open",
+    "No Git operations or next Change activation",
+    "No temporary-state cleanup"
+  ]
+}

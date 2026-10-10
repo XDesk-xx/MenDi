@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import { completeArchive } from '../adapters/archive-commit.ts';
 import { reserveArchiveAttempt } from '../adapters/archive-attempt.ts';
 import fs from 'node:fs';
@@ -36,7 +37,7 @@ function archiveCurrent(root: string, workspace: Workspace | null, input: Archiv
   if (!run || run.ref !== input.runRef || !run.record.archive)
     throw new MendiError('run-not-current', '需要当前 Archive Run。');
   matchingActor(run, input);
-  const binding = workspace.bindings[0];
+  const binding = currentBinding(workspace)!;
   if (!['archiving', 'archived'].includes(binding.state))
     throw new MendiError('archive-state-conflict', 'Archive binding 不匹配。');
   return run;
@@ -172,7 +173,7 @@ export function archiveAction(input: ArchiveInput, options: ArchiveOptions = {})
       )
         throw new MendiError('archive-input-changed', '锁内 Archive 输入已变化。');
       let archive = run.record.archive!;
-      if (workspace.bindings[0].state === 'archived')
+      if (currentBinding(workspace)!.state === 'archived')
         return { workspace, run, result: 'already-completed' as const };
       if (input.mode === 'finish') {
         if (archive.phase === 'prepared')
@@ -321,7 +322,8 @@ export function archiveAction(input: ArchiveInput, options: ArchiveOptions = {})
       : { executionMode: 'local-only' as const, upstreamAccess: 'not-required' as const }),
     result: result.result,
     archiveStatus:
-      result.run.record.status === 'submitted' && result.workspace.bindings[0].state === 'archived'
+      result.run.record.status === 'submitted' &&
+      currentBinding(result.workspace)!.state === 'archived'
         ? 'completed'
         : 'pending',
     local: state(result.workspace),

@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "formal-full-test-and-scoped-repair",
+    "archivedAs": "2026-10-10-formal-full-test-and-scoped-repair",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-formal-full-test-and-scoped-repair",
+    "specsUpdated": true,
+    "totals": {
+      "added": 13,
+      "modified": 4,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

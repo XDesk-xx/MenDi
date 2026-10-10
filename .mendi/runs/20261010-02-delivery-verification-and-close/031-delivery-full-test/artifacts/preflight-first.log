@@ -1,0 +1,3 @@
+验收准备读回脚本首次错误（正式测试尚未启动）：
+TypeError: Cannot read properties of undefined (reading split)
+readRunSource 收到 undefined；辅助脚本误用公开 manual binding 中不存在的 latestRunRef。改从当前 manifest 的真实 binding 读取直接归档入口，无实现修订。依赖准备命令独立执行 exit 0。

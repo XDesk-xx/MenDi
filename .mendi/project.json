@@ -1,13 +1,17 @@
 {
   "name": "MenDi",
   "recordingMode": "manual-bootstrap",
-  "activeDeliveryId": "20261009-01-single-change-manual-collaboration",
+  "activeDeliveryId": "20261010-02-delivery-verification-and-close",
   "deliveries": [
     {
       "id": "20261009-01-single-change-manual-collaboration",
       "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json"
+    },
+    {
+      "id": "20261010-02-delivery-verification-and-close",
+      "manifestRef": ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json"
     }
   ],
   "deliveryGroupsDir": ".mendi/delivery-groups",
-  "archivedChangeCount": 4
+  "archivedChangeCount": 7
 }

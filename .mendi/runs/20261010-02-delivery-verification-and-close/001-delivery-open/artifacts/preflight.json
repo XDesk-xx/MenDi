@@ -1,0 +1,21 @@
+{
+  "ownerInstruction": "owner 授权 delivery open",
+  "selectedDelivery": "20261010-02-delivery-verification-and-close",
+  "planningSlot": "MVP-D02",
+  "previousDelivery": {
+    "id": "20261009-01-single-change-manual-collaboration",
+    "state": "closed",
+    "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+    "closeRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/042-delivery-close/run.md",
+    "archivedChanges": 4
+  },
+  "implementationBaseline": {
+    "commit": "341844d18c5dbe3edc22ce0a3a8c9b8131651369",
+    "branch": "delivery/20261009-01-single-change-manual-collaboration",
+    "note": "当前已合并 D01 的 delivery 分支，未切换或创建 Git 分支。"
+  },
+  "toolEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "mode": "manual-bootstrap",
+  "runSequence": "新 Delivery 从 001 开始；未提前建立 Changes 批次。",
+  "dependencyNote": "dependsOn 仅表达本 Delivery 内依赖；D02-A 的路线图前置 MVP-D01-D 单独保存 externalDependsOn，不把旧槽位加入新 Delivery 范围。"
+}

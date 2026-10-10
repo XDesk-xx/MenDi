@@ -1,5 +1,8 @@
 import { identifier, MendiError, object, text } from './errors.ts';
 import { archivedCount } from './archive.ts';
+import { readAssociations, type Binding } from './associations.ts';
+import { deliveryLocation } from './delivery-runs.ts';
+export type { Binding } from './associations.ts';
 
 export interface PlannedChange {
   slot: string;
@@ -10,15 +13,6 @@ export interface PlannedChange {
 export interface Scope {
   goal: string;
   plannedChanges: PlannedChange[];
-}
-export interface Binding {
-  planningSlot: string;
-  changeId: string;
-  changeRef: string;
-  state: string;
-  archiveOrdinal?: number;
-  latestRunRef?: string;
-  batchId?: string;
 }
 export interface Workspace {
   mode: 'product' | 'manual-bootstrap';
@@ -87,7 +81,10 @@ function mode(record: Record<string, unknown>): 'product' | 'manual-bootstrap' {
   );
 }
 
-export function parseProject(value: unknown): {
+export function parseProject(
+  value: unknown,
+  deliveryId?: string,
+): {
   project: Record<string, unknown>;
   mode: Workspace['mode'];
   id: string;
@@ -99,7 +96,8 @@ export function parseProject(value: unknown): {
   text(project.name, '项目名称');
   if (project.deliveryGroupsDir !== '.mendi/delivery-groups')
     throw new MendiError('invalid-record', 'deliveryGroupsDir 不符合约定。');
-  const id = identifier(project.activeDeliveryId, '当前 Delivery ID');
+  const selectedId = identifier(project.activeDeliveryId, '当前 Delivery ID');
+  const id = deliveryId === undefined ? selectedId : identifier(deliveryId, '所选 Delivery ID');
   const deliveries = array(project.deliveries, 'deliveries').map((value) => {
     const item = object(value, 'Delivery 索引');
     const deliveryId = identifier(item.id, 'Delivery ID');
@@ -113,8 +111,19 @@ export function parseProject(value: unknown): {
   });
   if (new Set(deliveries.map((item) => item.id)).size !== deliveries.length)
     throw new MendiError('invalid-record', 'Delivery 索引重复。');
+  if (project.pendingDeliveryRunRef !== undefined) {
+    const ref = text(project.pendingDeliveryRunRef, 'pendingDeliveryRunRef');
+    const owner = ref.split('/')[2];
+    const location = deliveryLocation(ref, owner);
+    if (
+      (owner !== selectedId &&
+        (location.type !== 'delivery-open' || deliveries.some((item) => item.id === owner))) ||
+      !['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)
+    )
+      throw new MendiError('invalid-record', 'pending 生命周期身份未登记。');
+  }
   const active = deliveries.find((item) => item.id === id);
-  if (!active || (recordingMode === 'product' && deliveries.length !== 1))
+  if (!active || !deliveries.some((item) => item.id === selectedId))
     throw new MendiError('invalid-record', '当前 Delivery 索引不存在或不符合首版范围。');
   return { project, mode: recordingMode, id, manifestRef: active.manifestRef };
 }
@@ -126,127 +135,45 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
   const title = text(manifest.title, 'Delivery 标题');
   const state = text(manifest.state, 'Delivery 状态');
   const scope = readScope(manifest);
-  const activeChangeId =
-    manifest.activeChangeId === null ? null : identifier(manifest.activeChangeId, '当前 Change ID');
-  const bindings = array(manifest.changeBindings, 'changeBindings').map((value) => {
-    const item = object(value, 'Change binding');
-    const changeId = identifier(item.changeId, 'Change ID');
-    const changeRef = text(item.changeRef, 'changeRef');
-    const bindingState = text(item.state, '关联状态');
-    const archived = bindingState === 'archived';
-    const archiveOrdinal = item.archiveOrdinal;
-    if (
-      archiveOrdinal !== undefined &&
-      (!archived ||
-        typeof archiveOrdinal !== 'number' ||
-        !Number.isSafeInteger(archiveOrdinal) ||
-        archiveOrdinal < 1)
-    ) {
-      throw new MendiError('invalid-record', 'archiveOrdinal 必须是已归档 Change 的正整数编号。');
-    }
-    const archivedName =
-      typeof archiveOrdinal === 'number'
-        ? `${String(archiveOrdinal).padStart(3, '0')}-${changeId}`
-        : changeId;
-    const archiveMatch = /^openspec\/changes\/archive\/(\d{4}-\d{2}-\d{2})-(.+)$/.exec(changeRef);
-    const archiveTime = archiveMatch ? Date.parse(`${archiveMatch[1]}T00:00:00Z`) : NaN;
-    const expected = archived
-      ? archiveMatch?.[2] === archivedName &&
-        Number.isFinite(archiveTime) &&
-        new Date(archiveTime).toISOString().slice(0, 10) === archiveMatch[1]
-      : changeRef === `openspec/changes/${changeId}`;
-    if (!expected || (archived && activeChangeId === changeId))
-      throw new MendiError('invalid-record', 'Change 引用、归档状态与当前身份不一致。', {
-        changeId,
-        changeRef,
-        state: bindingState,
-      });
-    const planningSlot = text(item.planningSlot, 'planningSlot');
-    if (!scope.plannedChanges.some((slot) => slot.slot === planningSlot))
-      throw new MendiError('invalid-record', '关联槽位不在范围内。');
-    return {
-      changeId,
-      changeRef,
-      planningSlot,
-      state: bindingState,
-      ...(typeof archiveOrdinal === 'number' ? { archiveOrdinal } : {}),
-      ...(index.mode === 'product' && item.latestRunRef !== undefined
-        ? {
-            latestRunRef: text(item.latestRunRef, 'latestRunRef'),
-            batchId: text(item.batchId, 'batchId'),
-          }
-        : {}),
-    };
-  });
-  if (
-    new Set(bindings.map((b) => b.changeId)).size !== bindings.length ||
-    new Set(bindings.map((b) => b.planningSlot)).size !== bindings.length
-  )
-    throw new MendiError('invalid-record', 'Change / 槽位关联重复。');
-  if (activeChangeId !== null && !bindings.some((b) => b.changeId === activeChangeId))
-    throw new MendiError('invalid-record', '当前 Change 缺少关联。');
-  const batches = array(manifest.changeBatches, 'changeBatches');
+  const { bindings, activeChangeId } = readAssociations(index, manifest, scope, state);
   if (index.mode === 'product') {
-    if (
-      state !== 'open' ||
-      bindings.length > 1 ||
-      batches.length > 1 ||
-      (bindings.length === 1 && (bindings[0].state === 'archived') !== (activeChangeId === null)) ||
-      bindings.some((b) =>
-        b.latestRunRef
-          ? !['active', 'archiving', 'archived'].includes(b.state)
-          : b.state !== 'explore',
-      ) ||
-      bindings.some((b) => b.state === 'archived' && b.archiveOrdinal === undefined)
-    )
-      throw new MendiError('invalid-record', '产品记录超出首次 Open / 首个 Change 的支持范围。');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(text(manifest.openedOn, 'openedOn')))
-      throw new MendiError('invalid-record', 'openedOn 必须是日期。');
-    const binding = bindings[0];
-    if (binding?.latestRunRef) {
-      const batch = object(batches[0], '当前批次');
-      const firstRun = text(batch.firstRun, 'firstRun');
-      if (
-        !/^\d{3,}$/.test(firstRun) ||
-        Number(firstRun) < 1 ||
-        String(Number(firstRun)).padStart(3, '0') !== firstRun ||
-        batch.id !== `${firstRun}-changes` ||
-        batch.id !== binding.batchId ||
-        batch.runsRef !== `.mendi/runs/${index.id}/${batch.id}` ||
-        !Array.isArray(batch.changeIds) ||
-        batch.changeIds.length !== 1 ||
-        batch.changeIds[0] !== binding.changeId ||
-        !binding.latestRunRef.startsWith(`${batch.runsRef}/${binding.changeId}/`)
-      )
-        throw new MendiError('invalid-record', '当前批次、Run 引用与 binding 不一致。');
-    } else if (
-      batches.length ||
-      (bindings.length &&
-        object((manifest.changeBindings as unknown[])[0], 'binding').batchId !== undefined)
-    )
-      throw new MendiError('invalid-record', '无当前 Run 不应存在产品批次关联。');
-  } else {
-    const next = object(manifest.next, '人工 next');
-    text(next.action, 'next.action');
-    text(next.status, 'next.status');
-    if (next.role !== undefined && !['author', 'reviewer'].includes(String(next.role)))
-      throw new MendiError('invalid-record', '人工 next.role 不合法。');
-    for (const value of batches) {
-      const batch = object(value, 'Changes 批次');
-      const id = text(batch.id, 'batch.id');
-      const firstRun = text(batch.firstRun, 'firstRun');
-      if (
-        !/^\d{3,}-changes$/.test(id) ||
-        id !== `${firstRun}-changes` ||
-        batch.runsRef !== `.mendi/runs/${index.id}/${id}`
-      )
-        throw new MendiError('invalid-record', '人工 Changes 批次引用不一致。');
-      const ids = array(batch.changeIds, 'batch.changeIds').map((v) =>
-        identifier(v, 'batch Change'),
-      );
-      if (ids.some((id) => !bindings.some((b) => b.changeId === id)))
-        throw new MendiError('invalid-record', '批次包含未关联 Change。');
+    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef']) {
+      if (manifest[key] !== undefined) {
+        const location = deliveryLocation(text(manifest[key], key), index.id);
+        if (key === 'fullTestRunRef' && location.type !== 'delivery-full-test')
+          throw new MendiError('invalid-record', 'fullTestRunRef 必须指向正式测试。');
+        if (
+          (key === 'closeRunRef' && location.type !== 'delivery-close') ||
+          (key === 'openRunRef' && location.type !== 'delivery-open')
+        )
+          throw new MendiError('invalid-record', '生命周期指针类型不符。');
+      }
     }
+    const currentType =
+      manifest.deliveryRunRef === undefined
+        ? undefined
+        : deliveryLocation(String(manifest.deliveryRunRef), index.id).type;
+    if (manifest.deliveryRunRef !== undefined && activeChangeId)
+      throw new MendiError('invalid-record', '当前 Delivery 操作与活动 Change / 状态冲突。');
+    if (
+      currentType &&
+      !['delivery-open', 'delivery-reopen'].includes(currentType) &&
+      manifest.fullTestRunRef === undefined
+    )
+      throw new MendiError('invalid-record', 'Delivery 操作缺少最近正式测试入口。');
+    if (
+      manifest.deliveryRunRef !== undefined &&
+      deliveryLocation(String(manifest.deliveryRunRef), index.id).type === 'delivery-full-test' &&
+      manifest.deliveryRunRef !== manifest.fullTestRunRef
+    )
+      throw new MendiError('invalid-record', '当前正式 Run 与最新正式指针矛盾。');
+    if (
+      state === 'closed' &&
+      (currentType !== 'delivery-close' || manifest.closeRunRef !== manifest.deliveryRunRef)
+    )
+      throw new MendiError('invalid-record', 'closed 缺少一致的当前 Close。');
+    if (state === 'open' && currentType === 'delivery-close')
+      throw new MendiError('invalid-record', 'open 不能选择已收口 Close。');
   }
   return { ...index, manifest, title, state, scope, activeChangeId, bindings };
 }

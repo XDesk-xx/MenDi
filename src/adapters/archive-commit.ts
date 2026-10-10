@@ -75,12 +75,12 @@ export function completeArchive(
   const manifest = {
     ...workspace.manifest,
     activeChangeId: null,
-    changeBindings: (workspace.manifest.changeBindings as unknown[]).map((value) => ({
-      ...object(value, 'binding'),
-      state: 'archived',
-      changeRef: numberedRef,
-      archiveOrdinal: archive.ordinal,
-    })),
+    changeBindings: (workspace.manifest.changeBindings as unknown[]).map((value) => {
+      const binding = object(value, 'binding');
+      return binding.changeId === initial.record.changeId
+        ? { ...binding, state: 'archived', changeRef: numberedRef, archiveOrdinal: archive.ordinal }
+        : binding;
+    }),
   };
   parseWorkspace(parseProject(project), manifest);
   replaceManagedFile(

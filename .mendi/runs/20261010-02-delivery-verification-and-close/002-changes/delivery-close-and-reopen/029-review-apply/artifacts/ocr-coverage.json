@@ -1,0 +1,23 @@
+{
+  "mode": "workspace",
+  "total_files": 2,
+  "reviewed_files": 2,
+  "skipped_files": 0,
+  "coverage_rate": 100,
+  "files": [
+    { "path": "src/adapters/lifecycle-store.ts", "status": "added", "review": "reviewed" },
+    { "path": "src/application/delivery-lifecycle.ts", "status": "added", "review": "reviewed" }
+  ],
+  "supplemented": [
+    "tests/lifecycle-open-admission.test.ts",
+    "openspec/changes/delivery-close-and-reopen/design.md",
+    "openspec/changes/delivery-close-and-reopen/specs/delivery-workspace/spec.md",
+    "openspec/changes/delivery-close-and-reopen/tasks.md",
+    "skills/actions/delivery-open/SKILL.md",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "scope": "028 的两项修复及直接受影响路径；027 其余适用结论沿用。preview 前排除历史 artifacts、生成物和无关范围，直接测试及合同手工补审；覆盖率只计算两份选中实现，不把旧历史算作本次覆盖。",
+  "findings": [],
+  "resolved": ["RA-C-001", "RA-C-002"]
+}

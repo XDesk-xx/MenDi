@@ -1,0 +1,34 @@
+{
+  "changeName": "delivery-close-and-reopen",
+  "artifactId": "design",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi",
+    "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "outputPath": "design.md",
+  "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\design.md",
+  "existingOutputPaths": [],
+  "description": "Technical design document with implementation details",
+  "instruction": "Create the design document that explains HOW to implement the change.\n\nWhen to include design.md (create only if any apply):\n- Cross-cutting change (multiple services/modules) or new architectural pattern\n- New external dependency or significant data model changes\n- Security, performance, or migration complexity\n- Ambiguity that benefits from technical decisions before coding\n\nSections:\n- **Context**: Only the current state and constraints needed to explain the approach. Reference the proposal for motivation instead of restating it (e.g., \"See proposal.md - Why\").\n- **Goals / Non-Goals**: What this design achieves and explicitly excludes. Don't restate the proposal's scope - add only design-level boundaries.\n- **Decisions**: Key technical choices with rationale (why X over Y?). Include alternatives considered for each decision.\n- **Risks / Trade-offs**: Known limitations, things that could go wrong. Format: [Risk] → Mitigation\n- **Migration Plan**: Steps to deploy, rollback strategy (if applicable)\n- **Open Questions**: Unknowns that can safely be answered later without\n  changing the specs, the approach, or the task breakdown. Omit if none.\n\nOpen questions are for genuinely deferrable unknowns, not decisions you\nskipped. If a question would change the specs, the chosen approach, or\nthe task breakdown, resolve it now - ask the user instead of guessing.\n\nFocus on architecture and approach, not line-by-line implementation.\nThe proposal covers why and what; design covers how. Reference the\nproposal for motivation and, once written, the specs for requirements -\nif a section would only restate them, point to them instead.\n\nGood design docs explain the \"why\" behind technical decisions.\n",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\n当前 MVP-D02 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json；MVP-D01 保持 closed，历史索引保留。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\nMVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。\nMVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。\nMVP-D02-C delivery-close-and-reopen 当前活动，022 Explore 经 023 独立 Review Explore 批准，七组 proof 独立重放通过，下一步 Author Propose。方案收敛 closed 读取、Close 直接输入、新 Open / 历史结果定位及 Reopen 批次 / 新范围；旧 PASS 不覆盖新工作，unknown 不可用于 Close。Close / Reopen 尚未实现，本项目未执行收口。D02 保持 open，D03 仅为后续规划。第二个 Delivery 使用人工记录，不通过产品写命令迁移人工历史；Explore 批准不代替方案、实施或生命周期验收。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。",
+  "template": "# Design\n\n## Context\n\n<!-- Current state and constraints that shape the approach. See proposal.md for motivation - don't restate it -->\n\n## Goals / Non-Goals\n\n**Goals:**\n<!-- What this design aims to achieve -->\n\n**Non-Goals:**\n<!-- What is explicitly out of scope -->\n\n## Decisions\n\n<!-- Key design decisions with rationale and alternatives considered -->\n\n## Risks / Trade-offs\n\n<!-- Known risks and trade-offs -->\n",
+  "dependencies": [
+    {
+      "id": "proposal",
+      "done": true,
+      "path": "proposal.md",
+      "description": "Initial proposal document outlining the change"
+    }
+  ],
+  "unlocks": [
+    "tasks"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

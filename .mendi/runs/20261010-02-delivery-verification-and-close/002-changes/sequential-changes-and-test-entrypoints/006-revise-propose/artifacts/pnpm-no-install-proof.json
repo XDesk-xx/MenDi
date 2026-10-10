@@ -1,0 +1,179 @@
+{
+  "purpose": "RP-A-001 local native pnpm planning proof, offline file dependencies; not product acceptance.",
+  "entry": "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+  "inputs": {
+    "package.json": "{\"name\":\"review-local-project\",\"private\":true,\"packageManager\":\"pnpm@11.22.0\",\"scripts\":{\"test:focused\":\"node check.ts\"},\"dependencies\":{\"review-local-dep\":\"file:./dependency\"}}",
+    "pnpm-workspace.yaml": "packages: []\nverifyDepsBeforeRun: install\nstoreDir: './store'\n",
+    "check.ts": "import fs from 'node:fs'; fs.writeFileSync('script-started.txt','started'); console.log('CONTROLLED_SCRIPT_RAN');\n",
+    "dependency/package.json": "{\"name\":\"review-local-dep\",\"version\":\"1.0.0\"}"
+  },
+  "preflightPolicy": "error",
+  "executionPolicy": "warn",
+  "fixtureSetup": "Only ready fixture explicit install --offline --ignore-scripts, separately logged; not a product action.",
+  "initialProbeIssue": "First byte comparison rejected expected pnpm node_modules symlink; comparison corrected to compare link target without following it, then reran fresh fixtures.",
+  "initialScratch": "D:/Projects/MenDi/.tmp/revise-propose-pnpm-3ntuil",
+  "cases": [
+    {
+      "case": "missing-dependencies-explicit-install",
+      "version": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "--version"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\missing",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "error"
+        },
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "11.22.0\n",
+        "stderr": ""
+      },
+      "preflight": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "run"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\missing",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "error"
+        },
+        "exitCode": 1,
+        "signal": null,
+        "error": null,
+        "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] Cannot check whether dependencies are outdated\n\nRun \"pnpm install\"\n",
+        "stderr": ""
+      },
+      "scriptExecution": null,
+      "filesUnchanged": true,
+      "scriptStarted": false,
+      "dependencyInstalled": false,
+      "lockfileCreated": false
+    },
+    {
+      "case": "synchronized-dependencies-explicit-install",
+      "fixtureSetup": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "install",
+          "--offline",
+          "--ignore-scripts"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "error"
+        },
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "Progress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +1\n+\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready\\store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 1, reused 1, downloaded 0, added 1, done\n\ndependencies:\n+ review-local-dep 1.0.0\n\nDone in 759ms using pnpm v11.22.0\n",
+        "stderr": ""
+      },
+      "preflight": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "run"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "error"
+        },
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "Commands available via \"pnpm run\":\n  test:focused\n    node check.ts\n",
+        "stderr": ""
+      },
+      "scriptExecution": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "warn"
+        },
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "CONTROLLED_SCRIPT_RAN\n",
+        "stderr": "$ node check.ts\n(node:30096) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Projects/MenDi/.tmp/revise-propose-pnpm-hJhGlc/ready/check.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+      },
+      "filesUnchangedExceptScriptEffect": true,
+      "scriptStarted": true
+    },
+    {
+      "case": "unsynchronized-dependencies-explicit-install",
+      "modifiedInputs": {
+        "package.json": "{\"name\":\"review-local-project\",\"private\":true,\"packageManager\":\"pnpm@11.22.0\",\"scripts\":{\"test:focused\":\"node check.ts\"},\"dependencies\":{\"review-local-dep\":\"file:./dependency\",\"review-new-dep\":\"file:./new-dependency\"}}",
+        "new-dependency/package.json": "{\"name\":\"review-new-dep\",\"version\":\"1.0.0\"}"
+      },
+      "preflight": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "run"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "error"
+        },
+        "exitCode": 1,
+        "signal": null,
+        "error": null,
+        "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The lockfile in D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\ready does not satisfy project of id .\n\nRun \"pnpm install\"\n",
+        "stderr": ""
+      },
+      "scriptExecution": null,
+      "filesUnchanged": true,
+      "scriptStarted": false,
+      "newDependencyInstalled": false
+    },
+    {
+      "case": "runtime-warn-no-install-even-if-dependencies-change-after-preflight",
+      "scriptExecution": {
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\runtime",
+        "environment": {
+          "COREPACK_ENABLE_NETWORK": "0",
+          "npm_config_offline": "true",
+          "pnpm_config_verify_deps_before_run": "warn"
+        },
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "stdout": "[WARN] Your node_modules are out of sync with your lockfile. Cannot check whether dependencies are outdated\nCONTROLLED_SCRIPT_RAN\n",
+        "stderr": "$ node check.ts\n(node:41320) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Projects/MenDi/.tmp/revise-propose-pnpm-hJhGlc/runtime/check.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to D:\\Projects\\MenDi\\.tmp\\revise-propose-pnpm-hJhGlc\\runtime\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+      },
+      "filesUnchangedExceptScriptEffect": true,
+      "scriptStarted": true,
+      "dependencyInstalled": false,
+      "lockfileCreated": false
+    }
+  ],
+  "checks": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "passed": true
+}

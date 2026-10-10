@@ -1,0 +1,158 @@
+{
+  "ownerInstruction": "owner 授权 delivery close",
+  "role": "author",
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "fullTestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+  "scope": [
+    {
+      "planningSlot": "MVP-D02-A",
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "archiveOrdinal": 5,
+      "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints"
+    },
+    {
+      "planningSlot": "MVP-D02-B",
+      "changeId": "formal-full-test-and-scoped-repair",
+      "archiveOrdinal": 6,
+      "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair"
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "archiveOrdinal": 7,
+      "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen"
+    }
+  ],
+  "approvals": [
+    {
+      "planningSlot": "MVP-D02-A",
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "archiveOrdinal": 5,
+      "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/012-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/011-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/010-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 28,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-B",
+      "changeId": "formal-full-test-and-scoped-repair",
+      "archiveOrdinal": 6,
+      "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/020-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/019-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 30,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "archiveOrdinal": 7,
+      "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 22,
+      "readback": "consistent"
+    }
+  ],
+  "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+  "collection": [
+    "maintained-format-lint-typecheck",
+    "all-current-product-tests-and-build",
+    "all-main-specs-strict-validation",
+    "D02-archived-scope-and-query-readback"
+  ],
+  "actualFullEntry": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
+  "execution": {
+    "executionId": "manual-031-pnpm-test",
+    "phase": "finished",
+    "outcome": "passed",
+    "exitCode": 0,
+    "childAndLogPipesClosed": true,
+    "startedAt": "2026-10-10T11:53:35.033Z",
+    "finishedAt": "2026-10-10T12:14:23.229Z",
+    "childRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/artifacts/full-command.json",
+    "stdoutRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/artifacts/test.log",
+    "stderrRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/artifacts/test.stderr.log"
+  },
+  "checks": {
+    "dependencyPreparation": {
+      "exitCode": 0,
+      "logRef": "artifacts/dependency-preparation.log"
+    },
+    "check": {
+      "exitCode": 0,
+      "maintainedFiles": 112,
+      "logRef": "artifacts/check.log"
+    },
+    "fullTest": {
+      "exitCode": 0,
+      "testFiles": 47,
+      "metrics": {
+        "tests": 193,
+        "suites": 0,
+        "pass": 193,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1243074.7161
+      },
+      "childRef": "artifacts/full-command.json",
+      "stdoutRef": "artifacts/test.log",
+      "stderrRef": "artifacts/test.stderr.log"
+    },
+    "specs": {
+      "exitCode": 0,
+      "valid": 6,
+      "resultRef": "artifacts/specs-validation.json"
+    },
+    "deliveryReadback": {
+      "outcome": "consistent",
+      "ref": "artifacts/delivery-readback.json"
+    },
+    "finalReadback": {
+      "outcome": "consistent",
+      "ref": "artifacts/final-readback.json"
+    }
+  },
+  "scenes": [
+    {
+      "scenario": "new-delivery-chain",
+      "outcomes": [
+        "passed",
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "scenario": "reopen-chain",
+      "outcomes": [
+        "passed",
+        "passed"
+      ]
+    }
+  ],
+  "materialDiff": "",
+  "trackedChanges": [
+    ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "applicability": {
+    "conclusion": "applicable",
+    "materials": "src / scripts / skills、全部维护 tests 与受控 fixtures、package.json / pnpm-lock.yaml / pnpm-workspace.yaml、归档及主规格；Node 22.23.2、pnpm 11.22.0、固定 OpenSpec 1.14.1。",
+    "changes": "受测提交后的变化为 031 验收记录、manifest 当前交接、README 与 OpenSpec context 说明；src/tests/scripts/skills、依赖声明、执行配置与主规格无差异。本次另建 032 收口记录。",
+    "reason": "当前 A/B/C 完成范围与 031 的完整批准快照一致；单次完整 pnpm test 193/193、check 与六份主规格 strict validate 通过，两个真实生命周期场景成立，实际命令仍匹配。没有影响 D02 收口的未决问题，说明与交接变化不改变受测行为。"
+  },
+  "activeChangeId": null,
+  "archivedChangeCount": 7,
+  "checkedAt": "2026-10-10T12:20:44.180Z"
+}

@@ -1,0 +1,106 @@
+{
+  "changeName": "delivery-close-and-reopen",
+  "schemaName": "spec-driven",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi",
+    "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "changeRoot": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen",
+  "artifactPaths": {
+    "proposal": {
+      "outputPath": "proposal.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\proposal.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\proposal.md"
+      ]
+    },
+    "specs": {
+      "outputPath": "specs/**/*.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\**\\*.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\action-runs\\spec.md",
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-lifecycle\\spec.md",
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-verification\\spec.md",
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-workspace\\spec.md",
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\test-execution\\spec.md"
+      ]
+    },
+    "design": {
+      "outputPath": "design.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\design.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\design.md"
+      ]
+    },
+    "tasks": {
+      "outputPath": "tasks.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "existingOutputPaths": []
+    }
+  },
+  "isPlanningComplete": false,
+  "isComplete": false,
+  "applyRequires": [
+    "tasks"
+  ],
+  "nextSteps": [
+    "Run openspec instructions tasks --change \"delivery-close-and-reopen\" --json before writing that artifact."
+  ],
+  "actionContext": {
+    "mode": "repo-local",
+    "sourceOfTruth": "repo",
+    "planningArtifacts": [
+      "proposal",
+      "specs",
+      "design",
+      "tasks"
+    ],
+    "linkedContext": [],
+    "allowedEditRoots": [
+      "D:\\Projects\\MenDi"
+    ],
+    "requiresAffectedAreaSelection": false,
+    "constraints": [
+      "Repo-local change artifacts and implementation edits are scoped to this project."
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "outputPath": "proposal.md",
+      "status": "done",
+      "requires": []
+    },
+    {
+      "id": "specs",
+      "outputPath": "specs/**/*.md",
+      "status": "done",
+      "requires": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "design",
+      "outputPath": "design.md",
+      "status": "done",
+      "requires": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "tasks",
+      "outputPath": "tasks.md",
+      "status": "ready",
+      "requires": [
+        "specs",
+        "design"
+      ]
+    }
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

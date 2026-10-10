@@ -1,0 +1,1 @@
+{"executable":"C:\\nvm4w\\nodejs\\node.exe","entry":"C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js","args":["install","--offline","--ignore-scripts"],"cwd":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qiikjT\\minimal-project","exitCode":0,"signal":null,"stdout":"Already up to date\n\nDone in 1s using pnpm v11.22.0\n","stderr":""}

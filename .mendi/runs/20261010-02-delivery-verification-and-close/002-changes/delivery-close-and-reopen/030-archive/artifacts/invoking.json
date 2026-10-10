@@ -1,0 +1,17 @@
+{
+  "operation": "native-archive",
+  "change": "delivery-close-and-reopen",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "archive",
+    "delivery-close-and-reopen",
+    "--json",
+    "--yes"
+  ],
+  "countBasis": 6,
+  "requestedOrdinal": 7,
+  "sourceRef": "openspec/changes/delivery-close-and-reopen",
+  "nativeRef": "openspec/changes/archive/2026-10-10-delivery-close-and-reopen",
+  "numberedRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+  "lock": "D:\\Projects\\MenDi\\.mendi\\write.lock"
+}

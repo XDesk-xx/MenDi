@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+ok 1 - 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+  ---
+  duration_ms: 42711.4228
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43076.0822

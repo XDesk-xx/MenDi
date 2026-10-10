@@ -1,0 +1,223 @@
+{
+  "src": {
+    "top": [
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346,
+        "before": 346,
+        "delta": 0
+      },
+      {
+        "file": "src/application/archive.ts",
+        "lines": 333,
+        "before": 331,
+        "delta": 2
+      },
+      {
+        "file": "src/core/actions.ts",
+        "lines": 320,
+        "before": 320,
+        "delta": 0
+      }
+    ],
+    "changed": [
+      {
+        "file": "src/application/archive.ts",
+        "lines": 333,
+        "before": 331,
+        "delta": 2
+      },
+      {
+        "file": "src/adapters/workspace.ts",
+        "lines": 258,
+        "before": 239,
+        "delta": 19
+      },
+      {
+        "file": "src/application/tests.ts",
+        "lines": 234,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/application/project.ts",
+        "lines": 232,
+        "before": 219,
+        "delta": 13
+      },
+      {
+        "file": "src/core/associations.ts",
+        "lines": 206,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/application/diagnosis.ts",
+        "lines": 174,
+        "before": 175,
+        "delta": -1
+      },
+      {
+        "file": "src/drivers/arguments.ts",
+        "lines": 169,
+        "before": 148,
+        "delta": 21
+      },
+      {
+        "file": "src/adapters/action-store.ts",
+        "lines": 155,
+        "before": 153,
+        "delta": 2
+      },
+      {
+        "file": "src/adapters/test-process.ts",
+        "lines": 149,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/core/test-execution.ts",
+        "lines": 139,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/core/records.ts",
+        "lines": 136,
+        "before": 264,
+        "delta": -128
+      },
+      {
+        "file": "src/adapters/test-entries.ts",
+        "lines": 115,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/adapters/test-store.ts",
+        "lines": 107,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/adapters/runs.ts",
+        "lines": 87,
+        "before": 88,
+        "delta": -1
+      },
+      {
+        "file": "src/drivers/dispatch.ts",
+        "lines": 85,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/drivers/output.ts",
+        "lines": 73,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "src/drivers/cli.ts",
+        "lines": 36,
+        "before": 156,
+        "delta": -120
+      }
+    ]
+  },
+  "tests": {
+    "top": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467,
+        "before": 467,
+        "delta": 0
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444,
+        "before": 444,
+        "delta": 0
+      },
+      {
+        "file": "tests/query.test.ts",
+        "lines": 335,
+        "before": 335,
+        "delta": 0
+      }
+    ],
+    "changed": [
+      {
+        "file": "tests/test-execution.test.ts",
+        "lines": 280,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/sequential-changes.test.ts",
+        "lines": 171,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/test-entries.test.ts",
+        "lines": 141,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/test-dependencies.test.ts",
+        "lines": 124,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/test-support.ts",
+        "lines": 115,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/associations.test.ts",
+        "lines": 112,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/sequential-support.ts",
+        "lines": 107,
+        "before": null,
+        "delta": null
+      },
+      {
+        "file": "tests/archive-concurrency.test.ts",
+        "lines": 88,
+        "before": 79,
+        "delta": 9
+      }
+    ]
+  },
+  "scripts": {
+    "top": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678,
+        "before": 678,
+        "delta": 0
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487,
+        "before": 487,
+        "delta": 0
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463,
+        "before": 463,
+        "delta": 0
+      }
+    ],
+    "changed": []
+  }
+}

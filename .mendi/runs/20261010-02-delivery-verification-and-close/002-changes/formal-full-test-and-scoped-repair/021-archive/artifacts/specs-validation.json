@@ -1,0 +1,92 @@
+[
+  {
+    "items": [
+      {
+        "id": "action-runs",
+        "type": "spec",
+        "valid": true,
+        "issues": [],
+        "durationMs": 11
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "spec": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  {
+    "items": [
+      {
+        "id": "delivery-verification",
+        "type": "spec",
+        "valid": true,
+        "issues": [],
+        "durationMs": 8
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "spec": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  {
+    "items": [
+      {
+        "id": "delivery-workspace",
+        "type": "spec",
+        "valid": true,
+        "issues": [],
+        "durationMs": 8
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "spec": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  }
+]

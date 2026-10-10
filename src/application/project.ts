@@ -1,3 +1,4 @@
+import { currentBinding, assertAssociationAvailable } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { inspectProject } from '../adapters/project.ts';
@@ -13,10 +14,19 @@ import { bindingFor, readScope, type Workspace } from '../core/records.ts';
 import { errorInfo, identifier, MendiError, object, text } from '../core/errors.ts';
 import { actionNext } from '../core/actions.ts';
 import { currentRun } from '../adapters/runs.ts';
+import { currentDeliveryRun } from '../adapters/delivery-runs.ts';
+import {
+  inspectFullTest,
+  assertBindingAfterVerification,
+} from '../adapters/delivery-verification.ts';
+import { deliveryNext } from '../core/delivery-runs.ts';
+import { currentBatchId } from '../core/batches.ts';
+import { recordedOpen } from './delivery-lifecycle.ts';
 
 export interface Selection {
   project: string;
   openspecBin?: string;
+  deliveryId?: string;
 }
 export interface OperationOptions {
   runner?: ProcessRunner;
@@ -28,6 +38,9 @@ export interface OpenInput extends Selection {
   scopePath: string;
   changeId?: string;
   slot?: string;
+  role?: string;
+  actor?: string;
+  resumeRef?: string;
 }
 export interface BindInput extends Selection {
   changeId: string;
@@ -55,13 +68,33 @@ export function state(workspace: Workspace) {
 
 export function query(input: Selection, options: OperationOptions = {}) {
   const { root, upstream } = selected(input, options);
-  const workspace = readWorkspace(root);
   const base = {
     ok: true as const,
     operation: 'query' as const,
     projectRoot: root,
     openspec: upstream.info(),
   };
+  let workspace: Workspace | null;
+  try {
+    workspace = readWorkspace(root, false, input.deliveryId);
+  } catch (error) {
+    if (!(error instanceof MendiError) || error.code !== 'delivery-commit-pending') throw error;
+    return {
+      ...base,
+      ok: false,
+      local: null,
+      upstream: null,
+      outcome: 'unknown',
+      pending: error.details,
+      next: {
+        action: 'owner-decision',
+        role: 'owner',
+        status: 'stopped',
+        executable: false,
+        reason: error.message,
+      },
+    };
+  }
   if (!workspace)
     return {
       ...base,
@@ -74,6 +107,21 @@ export function query(input: Selection, options: OperationOptions = {}) {
         reason: '需明确 Delivery 范围与 Owner 授权。',
       },
     };
+  const delivery = currentDeliveryRun(root, workspace);
+  if (delivery) {
+    const verification = delivery.record.fullTest
+      ? inspectFullTest(root, workspace, delivery)
+      : undefined;
+    return {
+      ...base,
+      ok: !verification || (verification.stable && verification.outcome !== 'unknown'),
+      local: state(workspace),
+      upstream: null,
+      run: { ref: delivery.ref, ...delivery.record },
+      ...(verification ? { verification } : {}),
+      next: deliveryNext(delivery.record, delivery.ref, verification?.outcome),
+    };
+  }
   const run = currentRun(root, workspace);
   const facts =
     workspace.activeChangeId && !run?.record.archive
@@ -87,7 +135,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
           executable: false,
         }
       : run
-        ? actionNext(run.record, run.ref, workspace.bindings[0]?.state === 'archived')
+        ? actionNext(run.record, run.ref, currentBinding(workspace)?.state === 'archived')
         : workspace.activeChangeId
           ? {
               action: 'explore',
@@ -112,8 +160,12 @@ export function query(input: Selection, options: OperationOptions = {}) {
 }
 
 export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
+  if (input.resumeRef) return recordedOpen(input, options);
   const id = identifier(input.id, 'Delivery ID');
   const title = text(input.title, 'Delivery 标题');
+  if ((input.role !== undefined) !== (input.actor !== undefined))
+    throw new MendiError('invalid-arguments', '--role / --actor 必须成对。');
+  if (input.role !== undefined) return recordedOpen(input, options);
   if ((input.changeId !== undefined) !== (input.slot !== undefined))
     throw new MendiError(
       'invalid-arguments',
@@ -124,13 +176,25 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
     );
   const { root, upstream } = selected(input, options);
   const directory = managedPath(root, '.mendi');
-  if (present(directory))
+  if (present(directory)) {
+    let existing: Workspace | null = null;
+    try {
+      existing = readWorkspace(root);
+    } catch {
+      /* 旧首次 Open 对任何已有现场都保持拒绝，不取得或抢占锁。 */
+    }
+    if (existing?.mode === 'product' && existing.state === 'closed')
+      throw new MendiError(
+        'invalid-arguments',
+        'closed 后新 Open 必须显式提供 --role author / --actor。',
+      );
     throw new MendiError(
       'existing-mendi-state',
       '目标已存在 MenDi 状态；首次 Open 不覆盖。',
       { directory },
       '核对已有项目或残留；不会自动重新 Open。',
     );
+  }
   const scopePath = path.resolve(root, input.scopePath);
   let value: unknown;
   try {
@@ -147,6 +211,7 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
       ? bindingFor(scope, text(input.slot, '计划槽位'), input.changeId)
       : null;
   if (binding) {
+    assertAssociationAvailable(scope, [], binding.planningSlot, binding.changeId);
     managedPath(root, binding.changeRef);
     upstream.status(binding.changeId);
   }
@@ -194,16 +259,34 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
         {},
         '保留人工历史，不通过产品 bind 改写。',
       );
-    if (current.state !== 'open' || current.activeChangeId || current.bindings.length)
+    if (current.state !== 'open' || current.activeChangeId)
       throw new MendiError(
         'change-bind-conflict',
-        '首版只允许 open Delivery 的首次 Change 关联。',
+        '仅允许无活动项、前项归档完成的 open Delivery 关联。',
         { deliveryId: current.id, activeChangeId: current.activeChangeId },
       );
+    assertBindingAfterVerification(root, current);
+    assertAssociationAvailable(current.scope, current.bindings, input.slot, input.changeId);
     const binding = bindingFor(current.scope, input.slot, input.changeId);
+    const batches = current.manifest.changeBatches as Record<string, unknown>[];
+    const batchId = currentBatchId(current.manifest);
+    if (batchId !== null) binding.batchId = batchId;
     managedPath(root, binding.changeRef);
     upstream.status(binding.changeId);
-    return { ...current.manifest, changeBindings: [binding], activeChangeId: binding.changeId };
+    return {
+      ...current.manifest,
+      changeBindings: [...(current.manifest.changeBindings as unknown[]), binding],
+      activeChangeId: binding.changeId,
+      deliveryRunRef: undefined,
+      changeBatches: batches.map((batch) =>
+        batch.id !== batchId
+          ? batch
+          : {
+              ...batch,
+              changeIds: [...(batch.changeIds as string[]), binding.changeId],
+            },
+      ),
+    };
   };
   const before = readWorkspace(root);
   if (!before) throw new MendiError('delivery-not-open', '目标尚未 Open。');

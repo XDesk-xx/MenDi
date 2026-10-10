@@ -1,0 +1,1314 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 186,
+  "reviewable_count": 2,
+  "excluded_count": 184,
+  "total_insertions": 17487,
+  "total_deletions": 316,
+  "reviewable_files": [
+    {
+      "path": "src/adapters/lifecycle-store.ts",
+      "status": "added",
+      "insertions": 336,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "status": "added",
+      "insertions": 308,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+      "status": "modified",
+      "insertions": 18,
+      "deletions": 8,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 60,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 82,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 31,
+      "deletions": 8,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "mendi-foundation-and-delivery-roadmap.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 4,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 3,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/adapters/delivery-verification.ts",
+      "status": "modified",
+      "insertions": 39,
+      "deletions": 6,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/adapters/test-store.ts",
+      "status": "modified",
+      "insertions": 12,
+      "deletions": 5,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "insertions": 42,
+      "deletions": 6,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "modified",
+      "insertions": 15,
+      "deletions": 4,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "modified",
+      "insertions": 53,
+      "deletions": 3,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "insertions": 54,
+      "deletions": 7,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "modified",
+      "insertions": 7,
+      "deletions": 2,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/associations.ts",
+      "status": "modified",
+      "insertions": 17,
+      "deletions": 29,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "modified",
+      "insertions": 43,
+      "deletions": 63,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/delivery-verification.ts",
+      "status": "modified",
+      "insertions": 17,
+      "deletions": 6,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "insertions": 41,
+      "deletions": 6,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 48,
+      "deletions": 10,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "modified",
+      "insertions": 18,
+      "deletions": 3,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "modified",
+      "insertions": 11,
+      "deletions": 1,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/activation/1.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/activation/2.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/activation/3.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/activation/4.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/build.log",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/check-complete.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/check-final.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/list-final.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/native-status-final.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-001.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-001/commands-38476.jsonl",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-001/delivery-scenes-38476.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "insertions": 333,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-002.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-002/commands-48956.jsonl",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-002/delivery-scenes-48956.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "insertions": 348,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/proposal-context-final.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/022-explore/run.md",
+      "status": "added",
+      "insertions": 81,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/build.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/change-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/next-before.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/next-usage-error.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/proof.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/proof/commands-6420.jsonl",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/proof/delivery-scenes-6420.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "insertions": 348,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/023-review-explore/run.md",
+      "status": "added",
+      "insertions": 63,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/coherence.json",
+      "status": "added",
+      "insertions": 98,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/list-final.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/native-status-final.json",
+      "status": "added",
+      "insertions": 108,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/next-before.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/readback-note.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/spec-inventory.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-after-design.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-after-proposal.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-after-specs.json",
+      "status": "added",
+      "insertions": 107,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-after-tests.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-after-verification.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/status-planning.json",
+      "status": "added",
+      "insertions": 108,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/validate-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/024-propose/run.md",
+      "status": "added",
+      "insertions": 56,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/apply-instructions.json",
+      "status": "added",
+      "insertions": 189,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/coherence.json",
+      "status": "added",
+      "insertions": 97,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/next-before.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/status.json",
+      "status": "added",
+      "insertions": 108,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/025-review-propose/run.md",
+      "status": "added",
+      "insertions": 64,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/apply-after.json",
+      "status": "added",
+      "insertions": 189,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/apply-before.json",
+      "status": "added",
+      "insertions": 189,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/check-final.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/final-input-checks.log",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/lifecycle-scenes.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/maintained-lines-after.json",
+      "status": "added",
+      "insertions": 240,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/maintained-lines-before.json",
+      "status": "added",
+      "insertions": 442,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/regression-fixes.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 1198,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/task-progress.json",
+      "status": "added",
+      "insertions": 233,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/validate-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 72,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/026-apply/run.md",
+      "status": "added",
+      "insertions": 62,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/apply-instructions.json",
+      "status": "added",
+      "insertions": 189,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe-first.json",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe-first.stderr.log",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe.json",
+      "status": "added",
+      "insertions": 319,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe.stderr.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe.ts",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/build.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/cancel-scenes-46804.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-13812.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-37000.jsonl",
+      "status": "added",
+      "insertions": 203,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-39496.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-43304.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-46804.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-48356.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-48840.jsonl",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/commands-48988.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-13812.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-37000.jsonl",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-39496.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-46804.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-48356.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-48840.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/delivery-scenes-48988.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/findings.json",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/ocr-coverage.json",
+      "status": "added",
+      "insertions": 141,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 914,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/ocr-rules.json",
+      "status": "added",
+      "insertions": 54,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/prior-fixes-tests.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/probe-typecheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/review-tests.log",
+      "status": "added",
+      "insertions": 184,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/test-scenes-46804.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/run.md",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/admission-after.log",
+      "status": "added",
+      "insertions": 46,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/admission-before.log",
+      "status": "added",
+      "insertions": 53,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/apply-after.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/apply-before.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/build.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/maintained-lines-after.json",
+      "status": "added",
+      "insertions": 456,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/maintained-lines-before.json",
+      "status": "added",
+      "insertions": 456,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 197,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 131,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+      "status": "added",
+      "insertions": 63,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/artifacts/build.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/run.md",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/design.md",
+      "status": "added",
+      "insertions": 127,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/proposal.md",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 131,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/specs/delivery-lifecycle/spec.md",
+      "status": "added",
+      "insertions": 95,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/specs/delivery-verification/spec.md",
+      "status": "added",
+      "insertions": 69,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "insertions": 209,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/specs/test-execution/spec.md",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/delivery-close-and-reopen/tasks.md",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "scripts/proofs/mvp-d02-c-explore.ts",
+      "status": "added",
+      "insertions": 335,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/delivery-close/SKILL.md",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/delivery-open/SKILL.md",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/delivery-reopen/SKILL.md",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/batches.ts",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/delivery-lifecycle.ts",
+      "status": "added",
+      "insertions": 127,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/full-test-record.ts",
+      "status": "added",
+      "insertions": 80,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "src/core/lifecycle-transition.ts",
+      "status": "added",
+      "insertions": 128,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-close.test.ts",
+      "status": "added",
+      "insertions": 154,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-open-admission.test.ts",
+      "status": "added",
+      "insertions": 95,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-open.test.ts",
+      "status": "added",
+      "insertions": 164,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-records.test.ts",
+      "status": "added",
+      "insertions": 293,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-reopen.test.ts",
+      "status": "added",
+      "insertions": 179,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-support.ts",
+      "status": "added",
+      "insertions": 176,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-worker.ts",
+      "status": "added",
+      "insertions": 49,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/lifecycle-writes.test.ts",
+      "status": "added",
+      "insertions": 216,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    }
+  ]
+}

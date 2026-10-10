@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+ok 1 - 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+  ---
+  duration_ms: 36911.9139
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 37243.5395

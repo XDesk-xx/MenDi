@@ -1,0 +1,7 @@
+{
+  "observedAt": "2026-10-10T14:53:33.8806926+08:00",
+  "source": "D:/Projects/MenDi/.tmp/mendi-apply-Q3tEMM/minimal-project",
+  "archiveRun": "---\nformatVersion: 1\nrecordingMode: product\ndeliveryId: d01\nchangeId: proof-entry\nactionType: archive\nrole: author\nactorId: archive-author\nstatus: draft\nstageSkill: archive\ntoolGuidance: []\narchive:\n  reviewRunRef: .mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md\n  authorRunRef: .mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\n  countBasis: 0\n  ordinal: 1\n  phase: prepared\n  attempt: 0\nrunNumber: 7\nactionId: proof-entry-007-archive\n---\n",
+  "nativeCallsFileExists": false,
+  "limitation": "Current readback of retained failure scene; original upstream root cause remains unconfirmed."
+}

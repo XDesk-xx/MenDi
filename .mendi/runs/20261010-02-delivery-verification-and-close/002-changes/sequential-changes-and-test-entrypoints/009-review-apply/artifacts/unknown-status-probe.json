@@ -1,0 +1,219 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+  "trigger": "Real execution child receives SIGTERM on spawn; owner disposes only this controlled lock after actual child exit; persisted result is unchanged.",
+  "result": {
+    "openspec": null,
+    "local": null,
+    "executionMode": "local-only",
+    "upstreamAccess": "not-required",
+    "ok": false,
+    "operation": "test-run",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+    "executionId": "001-focused",
+    "outcome": "unknown",
+    "observed": {
+      "formatVersion": 1,
+      "executionId": "001-focused",
+      "kind": "focused",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actorId": "test-author",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "dependencyPolicy": "warn"
+      },
+      "dependencyCheck": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run"
+        ],
+        "dependencyPolicy": "error",
+        "exitCode": 0
+      },
+      "scriptName": "test:focused",
+      "scriptText": "node foreground.ts pass",
+      "startedAt": "2026-10-10T04:04:42.648Z",
+      "finishedAt": "2026-10-10T04:04:42.743Z",
+      "executionState": "finished",
+      "outcome": "unknown",
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "pid": 27196,
+      "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log",
+      "reason": "\"执行 / 停止未确认。\""
+    },
+    "error": {
+      "message": "执行无法确认，保留现场与锁。",
+      "code": "test-execution-unknown",
+      "details": {}
+    },
+    "retainedLock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project\\.mendi\\write.lock"
+  },
+  "locked": {
+    "openspec": null,
+    "local": null,
+    "executionMode": "local-only",
+    "upstreamAccess": "not-required",
+    "ok": false,
+    "operation": "test-status",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+    "executionId": "001-focused",
+    "outcome": "unknown",
+    "record": {
+      "formatVersion": 1,
+      "executionId": "001-focused",
+      "kind": "focused",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actorId": "test-author",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "dependencyPolicy": "warn"
+      },
+      "dependencyCheck": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run"
+        ],
+        "dependencyPolicy": "error",
+        "exitCode": 0
+      },
+      "scriptName": "test:focused",
+      "scriptText": "node foreground.ts pass",
+      "startedAt": "2026-10-10T04:04:42.648Z",
+      "finishedAt": "2026-10-10T04:04:42.743Z",
+      "executionState": "finished",
+      "outcome": "unknown",
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "pid": 27196,
+      "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log",
+      "reason": "\"执行 / 停止未确认。\""
+    },
+    "stable": false,
+    "locked": true,
+    "changed": false
+  },
+  "persisted": {
+    "formatVersion": 1,
+    "executionId": "001-focused",
+    "kind": "focused",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "test-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:focused",
+    "scriptText": "node foreground.ts pass",
+    "startedAt": "2026-10-10T04:04:42.648Z",
+    "finishedAt": "2026-10-10T04:04:42.743Z",
+    "executionState": "finished",
+    "outcome": "unknown",
+    "exitCode": null,
+    "signal": "SIGTERM",
+    "pid": 27196,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log",
+    "reason": "\"执行 / 停止未确认。\""
+  },
+  "readback": {
+    "openspec": null,
+    "local": null,
+    "executionMode": "local-only",
+    "upstreamAccess": "not-required",
+    "ok": true,
+    "operation": "test-status",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+    "executionId": "001-focused",
+    "outcome": "unknown",
+    "record": {
+      "formatVersion": 1,
+      "executionId": "001-focused",
+      "kind": "focused",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ECFv2M\\minimal-project",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actorId": "test-author",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "dependencyPolicy": "warn"
+      },
+      "dependencyCheck": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run"
+        ],
+        "dependencyPolicy": "error",
+        "exitCode": 0
+      },
+      "scriptName": "test:focused",
+      "scriptText": "node foreground.ts pass",
+      "startedAt": "2026-10-10T04:04:42.648Z",
+      "finishedAt": "2026-10-10T04:04:42.743Z",
+      "executionState": "finished",
+      "outcome": "unknown",
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "pid": 27196,
+      "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log",
+      "reason": "\"执行 / 停止未确认。\""
+    },
+    "stable": true,
+    "locked": false,
+    "changed": false
+  },
+  "exitCode": 0,
+  "stderr": ""
+}

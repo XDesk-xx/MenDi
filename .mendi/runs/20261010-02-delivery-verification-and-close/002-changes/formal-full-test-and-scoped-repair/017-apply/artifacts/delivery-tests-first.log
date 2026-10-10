@@ -1,0 +1,218 @@
+TAP version 13
+# Subtest: 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+ok 1 - 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+  ---
+  duration_ms: 2.4767
+  type: 'test'
+  ...
+# Subtest: 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+ok 2 - 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+  ---
+  duration_ms: 33578.0804
+  type: 'test'
+  ...
+# Subtest: 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+ok 3 - 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+  ---
+  duration_ms: 281.3356
+  type: 'test'
+  ...
+# Subtest: 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+not ok 4 - 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+  ---
+  duration_ms: 2551.3787
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-admission.test.ts:48:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"openspec":null,"executionMode":"local-only","upstreamAccess":"not-required","ok":false,"operation":"delivery-full-test-run","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-KsbSTI\\project","local":{"source":"product","deliveryId":"d01","title":"顺序验证","state":"open","goal":"验证目标项目的最小 Delivery Open 与首个 Change 关联","plannedChanges":[{"slot":"A","title":"项目入口","dependsOn":[]},{"slot":"B","title":"后续工作","dependsOn":["A"]}],"activeChangeId":null,"changeBindings":[{"changeId":"proof-entry","changeRef":"openspec/changes/archive/2026-10-10-001-proof-entry","planningSlot":"A","state":"archived","archiveOrdinal":1,"batchId":"001-changes","latestRunRef":".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md"},{"changeId":"second-entry","changeRef":"openspec/changes/archive/2026-10-10-002-second-entry","planningSlot":"B","state":"archived","archiveOrdinal":2,"batchId":"001-changes","latestRunRef":".mendi/runs/d01/001-changes/second-entry/014-archive/run.md"}]},"run":{"ref":".mendi/runs/d01/015-delivery-full-test/run.md","formatVersion":1,"recordingMode":"product","scope":"delivery","deliveryId":"d01","changeId":null,"actionType":"delivery-full-test","role":"author","actorId":"delivery-author","status":"submitted","stageSkill":"delivery-full-test","toolGuidance":[],"fullTest":{"collection":["单元场景","跨 Change 接线场景"],"basis":{"materials":"受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。","changes":""},"scope":{"goal":"验证目标项目的最小 Delivery Open 与首个 Change 关联","plannedChanges":[{"slot":"A","title":"项目入口","dependsOn":[]},{"slot":"B","title":"后续工作","dependsOn":["A"]}],"completed":[{"slot":"A","changeId":"proof-entry","archiveOrdinal":1},{"slot":"B","changeId":"second-entry","archiveOrdinal":2}]},"approvals":[{"changeId":"proof-entry","archiveRunRef":".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md","reviewRunRef":".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md","authorRunRef":".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md","authorActor":"author-one","reviewerActor":"reviewer-one"},{"changeId":"second-entry","archiveRunRef":".mendi/runs/d01/001-changes/second-entry/014-archive/run.md","reviewRunRef":".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md","authorRunRef":".mendi/runs/d01/001-changes/second-entry/012-apply/run.md","authorActor":"author-one","reviewerActor":"reviewer-one"}],"entry":{"scriptName":"test:full","scriptText":"node foreground.ts pass","packageManager":"pnpm@11.22.0","pnpmBin":"C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"},"phase":"finished","executionId":null,"outcome":"not-run","reason":"{\"message\":\"依赖预检拒绝，选定脚本未运行。\",\"code\":\"test-dependencies-unavailable\"}"},"runNumber":15,"actionId":"d01-015-delivery-full-test","outcome":"complete","result":"not-run"},"verification":{"outcome":"not-run","stable":true,"executionId":null,"collection":["单元场景","跨 Change 接线场景"],"basis":{"materials":"受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。","changes":""},"entry":{"scriptName":"test:full","scriptText":"node foreground.ts pass","packageManager":"pnpm@11.22.0","pnpmBin":"C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"},"scopeMatch":"match","commandMatch":"match","materialApplicability":"requires-semantic-check"},"methods":{"stage":{"ref":"skills/actions/delivery-full-test/SKILL.md","file":"D:\\Projects\\MenDi\\skills\\actions\\delivery-full-test\\SKILL.md","content":"---\nname: mendi-delivery-full-test\nphase: delivery-full-test\nrole: author\n---\n\n# 正式 Delivery Full Test\n\n先核对实际 Owner 授权、本轮全部完成槽位及直接 Apply / Review 批准。提供项目内声明 JSON：非空无重复 `collection`、`basis.materials` 和 `basis.changes`；有 Git 基准时填写真实完整 `basis.commit`，无基准省略。说明实际源码、测试、依赖、执行配置及差异，不以任意版本数或文件 hash 清单代替。\n\n使用目标已有 full 入口一次执行全部声明集合。调用者正常准备依赖，工具不自动安装。父 Run 保存 `scope:delivery`、完整范围与已核对批准快照、声明、实际入口和 prepared / running / finished 状态；子结果保持 `scope:command / formalDeliveryTest:false`。父 Run 保存 `executionId` 和实际 outcome，依赖 / 工具拒绝时为 not-run、子 ID 可为空，原始预检输出放当前 artifacts。普通 submit / continue 不能产生正式终态。\n\npassed 只证明本次声明下完整命令正常退出与必要两层结果保存读回。执行前后核对实际材料及影响；CLI 显示 `scopeMatch / commandMatch` 和 `materialApplicability:requires-semantic-check`，不自动认证任意源码。发现并发变化或不能确认时，保留原执行事实，在阶段摘要说明并按影响补验；不能宣称当前材料已通过或据此 Close。\n\nfailed 转范围内 Author 修复及独立定向 Review，approved 后显式重新运行原整个集合，不能拼接 focused。已核对且仍适用的本轮批准快照可以沿用，不追读历史失败父链。known not-run / interrupted 现场完整时允许显式新执行；unknown / 未完成 / 写入失败保留现场停 Owner，不重试、不自动 finish 或清锁。\n\n结果与最新正式入口只供后续 Close 直接核对本轮范围、必要审核和实际候选影响，不构成 Close / Archive / Git / 下一 Change 授权。\n"},"guidance":[]},"next":{"source":"local-state","executable":false,"currentRunRef":".mendi/runs/d01/015-delivery-full-test/run.md","role":"author","action":"delivery-full-test","status":"awaiting-owner-instruction","reason":"按当前真实结果显式处理，不自动重试或清理。"}}
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-admission.test.ts:51:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+not ok 5 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 36775.0917
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-full-test.test.ts:13:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-full-test.test.ts:16:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+not ok 6 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 2950.272
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-full-test.test.ts:40:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'not-run'
+    - 'failed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'failed'
+  actual: 'not-run'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-full-test.test.ts:46:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 7 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 3517.5876
+  type: 'test'
+  ...
+# Subtest: 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+not ok 8 - 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+  ---
+  duration_ms: 2862.0607
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-full-test.test.ts:68:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    null !== '001-full'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '001-full'
+  actual: ~
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-full-test.test.ts:73:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+not ok 9 - 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+  ---
+  duration_ms: 2370.354
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-full-test.test.ts:82:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-full-test.test.ts:91:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 同级连续编号、空占号不复用、重复号拒绝
+ok 10 - 同级连续编号、空占号不复用、重复号拒绝
+  ---
+  duration_ms: 34515.3361
+  type: 'test'
+  ...
+# Subtest: 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+not ok 11 - 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+  ---
+  duration_ms: 2804.378
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-write.test.ts:23:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-write.test.ts:29:12)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+not ok 12 - 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+  ---
+  duration_ms: 3072.8911
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-write.test.ts:41:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok('retainedLock' in result)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-write.test.ts:55:12)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+not ok 13 - 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+  ---
+  duration_ms: 3157.6348
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-write.test.ts:59:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok('retainedLock' in result)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-write.test.ts:75:12)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 5
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 80747.6348

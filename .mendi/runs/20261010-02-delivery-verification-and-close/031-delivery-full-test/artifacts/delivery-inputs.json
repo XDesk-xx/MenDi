@@ -1,0 +1,63 @@
+{
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "goal": "实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。",
+  "plannedChanges": [
+    {
+      "slot": "MVP-D02-A",
+      "title": "多 Change 衔接、三类测试入口与简洁结果",
+      "dependsOn": [],
+      "roadmapSection": "MVP-D02-A：多 Change 衔接、三类测试入口与简洁结果"
+    },
+    {
+      "slot": "MVP-D02-B",
+      "title": "正式 Full Test 与小修复",
+      "dependsOn": [
+        "MVP-D02-A"
+      ],
+      "roadmapSection": "MVP-D02-B：正式 Full Test 与小修复"
+    },
+    {
+      "slot": "MVP-D02-C",
+      "title": "Close 与 Reopen",
+      "dependsOn": [
+        "MVP-D02-B"
+      ],
+      "roadmapSection": "MVP-D02-C：Close 与 Reopen"
+    }
+  ],
+  "approvals": [
+    {
+      "planningSlot": "MVP-D02-A",
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "archiveOrdinal": 5,
+      "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/012-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/011-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/010-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 28
+    },
+    {
+      "planningSlot": "MVP-D02-B",
+      "changeId": "formal-full-test-and-scoped-repair",
+      "archiveOrdinal": 6,
+      "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/020-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/019-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 30
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "archiveOrdinal": 7,
+      "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 22
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "recordingMode": "manual-bootstrap",
+  "state": "open",
+  "activeChangeId": null,
+  "archivedChangeCount": 7,
+  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+  "fullTest": {
+    "runRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+    "result": "passed",
+    "testMode": "owner-authorized-manual-full-test",
+    "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b"
+  },
+  "upstream": null,
+  "next": {
+    "action": "delivery-close",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "031 本轮人工正式 Full Test passed；保持 open，等待 Owner 单独授权 Close。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "queryResults": {
+    "statusRef": "artifacts/status-after.json",
+    "nextRef": "artifacts/next-after.json"
+  },
+  "materialApplicability": {
+    "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+    "testedMaterialDiff": "",
+    "trackedChanges": [
+      ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+      "README.md",
+      "openspec/config.yaml"
+    ],
+    "assessment": "本轮变化为人工交接与说明，受测实现、测试、依赖与配置无变化。"
+  },
+  "rootWriteLockPresent": false,
+  "checkedAt": "2026-10-10T12:16:13.727Z"
+}

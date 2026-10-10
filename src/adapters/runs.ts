@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import { parse, stringify } from 'yaml';
 import { managedPath } from './paths.ts';
@@ -11,20 +12,23 @@ export interface RunDocument {
   header: Record<string, unknown>;
   body: string;
 }
+export function readRunSource(root: string, ref: string) {
+  const source = fs.readFileSync(managedPath(root, ref), 'utf8');
+  const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/.exec(source);
+  if (!match) throw new MendiError('invalid-run', 'Run 缺少结构化头部。', { ref });
+  return { header: parse(match[1]) as Record<string, unknown>, body: match[2] };
+}
 export function readRun(
   root: string,
   ref: string,
   deliveryId: string,
   changeId: string,
 ): RunDocument {
-  const file = managedPath(root, ref);
+  managedPath(root, ref);
   runLocation(ref, deliveryId, changeId);
   try {
-    const source = fs.readFileSync(file, 'utf8');
-    const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/.exec(source);
-    if (!match) throw new MendiError('invalid-run', 'Run 缺少结构化头部。', { ref });
-    const header = parse(match[1]) as Record<string, unknown>;
-    return { ref, record: parseRun(header, ref, deliveryId, changeId), header, body: match[2] };
+    const { header, body } = readRunSource(root, ref);
+    return { ref, record: parseRun(header, ref, deliveryId, changeId), header, body };
   } catch (error) {
     if (error instanceof MendiError) throw error;
     throw new MendiError(
@@ -36,9 +40,7 @@ export function readRun(
 }
 export function currentRun(root: string, workspace: Workspace): RunDocument | null {
   if (workspace.mode !== 'product') return null;
-  const binding = workspace.bindings.find(
-    (b) => b.changeId === workspace.activeChangeId || b.state === 'archived',
-  );
+  const binding = currentBinding(workspace);
   return binding?.latestRunRef
     ? readRun(root, binding.latestRunRef, workspace.id, binding.changeId)
     : null;

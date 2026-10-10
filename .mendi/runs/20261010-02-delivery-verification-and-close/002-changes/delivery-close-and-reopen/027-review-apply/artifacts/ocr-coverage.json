@@ -1,0 +1,141 @@
+{
+  "mode": "workspace",
+  "total_files": 24,
+  "reviewed_files": 24,
+  "skipped_files": 0,
+  "coverage_rate": 100,
+  "files": [
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/delivery-verification.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/test-store.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/associations.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/delivery-verification.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/lifecycle-store.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/batches.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/delivery-lifecycle.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/full-test-record.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/lifecycle-transition.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "tests/lifecycle-support.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "tests/lifecycle-worker.ts",
+      "status": "added",
+      "review": "reviewed"
+    }
+  ],
+  "supplemented": [
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-open.test.ts",
+    "tests/lifecycle-records.test.ts",
+    "tests/lifecycle-reopen.test.ts",
+    "tests/lifecycle-writes.test.ts",
+    "README.md",
+    "skills/actions/delivery-close/SKILL.md",
+    "skills/actions/delivery-open/SKILL.md",
+    "skills/actions/delivery-reopen/SKILL.md"
+  ],
+  "exclusionReason": "Preview 前排除历史 artifacts、已审规划与 proof；当前合同、任务和交接单独核对。OCR 默认排除的测试与产品方法手工补审。旧长路径 deleted 漏报不属于本次变更，core.longpaths=true status 已核对。"
+}

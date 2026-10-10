@@ -1,0 +1,81 @@
+{
+  "observedAt": "2026-10-10T14:52:50.4626473+08:00",
+  "scene": "D:/Projects/MenDi/.tmp/mendi-apply-cDgUVE/project",
+  "lock": {
+    "token": "806b2dbc-45a2-4234-92b2-f2801c454aaf",
+    "pid": 36236,
+    "operation": "delivery-full-test"
+  },
+  "parentRun": "---\nformatVersion: 1\nrecordingMode: product\nscope: delivery\ndeliveryId: d01\nchangeId: null\nactionType: delivery-full-test\nrole: author\nactorId: delivery-author\nstatus: draft\nstageSkill: delivery-full-test\ntoolGuidance: []\nfullTest:\n  collection:\n    - 单元场景\n    - 跨 Change 接线场景\n  basis:\n    materials: 受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。\n    changes: \"\"\n  scope:\n    goal: 验证目标项目的最小 Delivery Open 与首个 Change 关联\n    plannedChanges:\n      - slot: A\n        title: 项目入口\n        dependsOn: []\n      - slot: B\n        title: 后续工作\n        dependsOn:\n          - A\n    completed:\n      - slot: A\n        changeId: proof-entry\n        archiveOrdinal: 1\n      - slot: B\n        changeId: second-entry\n        archiveOrdinal: 2\n  approvals:\n    - changeId: proof-entry\n      archiveRunRef: .mendi/runs/d01/001-changes/proof-entry/007-archive/run.md\n      reviewRunRef: .mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md\n      authorRunRef: .mendi/runs/d01/001-changes/proof-entry/005-apply/run.md\n      authorActor: author-one\n      reviewerActor: reviewer-one\n    - changeId: second-entry\n      archiveRunRef: .mendi/runs/d01/001-changes/second-entry/014-archive/run.md\n      reviewRunRef: .mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md\n      authorRunRef: .mendi/runs/d01/001-changes/second-entry/012-apply/run.md\n      authorActor: author-one\n      reviewerActor: reviewer-one\n  entry:\n    scriptName: test:full\n    scriptText: node foreground.ts wait\n    packageManager: pnpm@11.22.0\n    pnpmBin: C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js\n  phase: running\n  executionId: 001-full\n  outcome: unknown\nrunNumber: 15\nactionId: d01-015-delivery-full-test\n---\n",
+  "child": {
+    "formatVersion": 1,
+    "executionId": "001-full",
+    "kind": "full",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-cDgUVE\\project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-cDgUVE\\project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "delivery-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:full"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:full",
+    "scriptText": "node foreground.ts wait",
+    "startedAt": "2026-10-10T06:48:12.354Z",
+    "finishedAt": null,
+    "executionState": "running",
+    "outcome": "unknown",
+    "exitCode": null,
+    "signal": null,
+    "pid": 44956,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+  },
+  "started": {
+    "pid": 44812,
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-cDgUVE\\project",
+    "mode": "wait"
+  },
+  "descendant": {
+    "pid": 49108
+  },
+  "processes": [
+    {
+      "ProcessId": 36236,
+      "ParentProcessId": 28928,
+      "CreationDate": "2026-10-10T14:46:59.507042+08:00",
+      "CommandLine": "C:\\nvm4w\\nodejs\\node.exe --test-concurrency=2 tests\\delivery-full-test.test.ts"
+    },
+    {
+      "ProcessId": 44812,
+      "ParentProcessId": 26576,
+      "CreationDate": "2026-10-10T14:48:13.877839+08:00",
+      "CommandLine": "node  foreground.ts wait"
+    },
+    {
+      "ProcessId": 49108,
+      "ParentProcessId": 44812,
+      "CreationDate": "2026-10-10T14:48:14.095696+08:00",
+      "CommandLine": "C:\\nvm4w\\nodejs\\node.exe D:\\Projects\\MenDi\\.tmp\\mendi-apply-cDgUVE\\project\\foreground.ts descendant"
+    }
+  ],
+  "stdout": "foreground:wait\n",
+  "stderr": "$ node foreground.ts wait\nactual stderr\n"
+}

@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+ok 1 - 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+  ---
+  duration_ms: 63211.8086
+  type: 'test'
+  ...
+# Subtest: 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+ok 2 - 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+  ---
+  duration_ms: 79483.7411
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 80348.1842

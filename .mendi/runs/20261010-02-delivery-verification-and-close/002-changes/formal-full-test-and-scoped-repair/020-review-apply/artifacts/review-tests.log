@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: RA-B-001：首次修复后执行需要完整当前 Review，查询不倒查正文
+ok 1 - RA-B-001：首次修复后执行需要完整当前 Review，查询不倒查正文
+  ---
+  duration_ms: 37998.8622
+  type: 'test'
+  ...
+# Subtest: RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志不稳定观察
+ok 2 - RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志不稳定观察
+  ---
+  duration_ms: 6426.85
+  type: 'test'
+  ...
+# Subtest: 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+ok 3 - 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+  ---
+  duration_ms: 2.0092
+  type: 'test'
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 4 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 37738
+  type: 'test'
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+ok 5 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 4777.3862
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 6 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 6964.9452
+  type: 'test'
+  ...
+# Subtest: 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+ok 7 - 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+  ---
+  duration_ms: 18378.8598
+  type: 'test'
+  ...
+# Subtest: 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+ok 8 - 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+  ---
+  duration_ms: 5363.115
+  type: 'test'
+  ...
+# Subtest: RA-B-003：停止命令声称成功但实际 close 未到，普通 / 正式执行有界 unknown
+ok 9 - RA-B-003：停止命令声称成功但实际 close 未到，普通 / 正式执行有界 unknown
+  ---
+  duration_ms: 57986.7445
+  type: 'test'
+  ...
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+ok 10 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 13309.2778
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 11 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 9203.0448
+  type: 'test'
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+ok 12 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 37327.8744
+  type: 'test'
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+ok 13 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 11559.3466
+  type: 'test'
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+ok 14 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 7150.6321
+  type: 'test'
+  ...
+# Subtest: 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+ok 15 - 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+  ---
+  duration_ms: 4857.8028
+  type: 'test'
+  ...
+# Subtest: 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+ok 16 - 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+  ---
+  duration_ms: 6874.1111
+  type: 'test'
+  ...
+# Subtest: 真实日志 short 写入：完整落盘或 unknown 保留现场
+ok 17 - 真实日志 short 写入：完整落盘或 unknown 保留现场
+  ---
+  duration_ms: 7142.8009
+  type: 'test'
+  ...
+# Subtest: 真实日志 zero 写入：完整落盘或 unknown 保留现场
+ok 18 - 真实日志 zero 写入：完整落盘或 unknown 保留现场
+  ---
+  duration_ms: 7597.8624
+  type: 'test'
+  ...
+# Subtest: 真实日志 throw 写入：完整落盘或 unknown 保留现场
+ok 19 - 真实日志 throw 写入：完整落盘或 unknown 保留现场
+  ---
+  duration_ms: 7390.2485
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 164228.9312

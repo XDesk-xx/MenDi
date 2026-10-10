@@ -1,0 +1,45 @@
+[
+  {
+    "cap": "action-runs",
+    "modified": [
+      "Delivery-wide run allocation",
+      "Current run as direct state input"
+    ],
+    "added": []
+  },
+  {
+    "cap": "delivery-workspace",
+    "modified": [
+      "First change association",
+      "Read-only status and next",
+      "Operation-specific input checks",
+      "Product archive transition and terminal handoff",
+      "Cumulative archive ordinal and idempotent local commit"
+    ],
+    "added": [
+      "Sequential explicit change association",
+      "Ordered product associations and shared batch identity"
+    ]
+  },
+  {
+    "cap": "project-entry",
+    "modified": [
+      "Explicit project target",
+      "Selected external OpenSpec"
+    ],
+    "added": []
+  },
+  {
+    "cap": "test-execution",
+    "modified": [],
+    "added": [
+      "Existing project test entries",
+      "Explicit local test execution",
+      "Minimal durable test execution identity",
+      "Honest test outcomes",
+      "Intent before launch and read-only incomplete results",
+      "Bounded foreground interruption",
+      "Test execution preserves collaboration boundaries"
+    ]
+  }
+]

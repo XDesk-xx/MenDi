@@ -1,0 +1,17 @@
+{
+  "result": "verified",
+  "capabilities": [
+    "action-runs",
+    "delivery-workspace",
+    "project-entry",
+    "test-execution"
+  ],
+  "modifiedRequirements": 9,
+  "existingScenariosPreserved": true,
+  "tasks": {
+    "total": 28,
+    "completed": 0
+  },
+  "newExploreFile": false,
+  "limitation": "Author 一致性检查，不是独立审核或实施验收。"
+}

@@ -1,0 +1,8 @@
+项目：D:\Projects\MenDi
+OpenSpec：1.14.1 (D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js)
+Delivery：20261010-02-delivery-verification-and-close Delivery 验收与收口 (open)
+目标：实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。
+槽位：MVP-D02-A, MVP-D02-B, MVP-D02-C
+Change：已归档、当前无活动 Change
+下一步：change-checkpoint，来源：manual-bootstrap
+MVP-D02-A 已独立批准并完成累计第 5 个 Change 实际归档，等待单独 checkpoint 授权。

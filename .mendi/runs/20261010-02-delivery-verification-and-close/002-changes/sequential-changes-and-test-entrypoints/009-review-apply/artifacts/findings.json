@@ -1,0 +1,20 @@
+[
+  {
+    "id": "RA-A-001",
+    "path": "src/adapters/test-process.ts",
+    "start_line": 116,
+    "end_line": 116,
+    "category": "bug",
+    "severity": "medium",
+    "content": "[P2] fs.writeSync 的实际写入字节数可能小于 chunk，当前忽略返回值会丢失原始日志却报告 passed。已受控复现 16 字节仅写 5 字节而 ok=true。应完成剩余写入，零进展或失败进入既有 unknown 路径并补回归。"
+  },
+  {
+    "id": "RA-A-002",
+    "path": "src/adapters/test-store.ts",
+    "start_line": 103,
+    "end_line": 103,
+    "category": "bug",
+    "severity": "medium",
+    "content": "[P2] finished / unknown 仅因无锁和字节稳定被标为 stable，testStatus 随之返回 ok=true / exit 0。真实异常子进程退出后显式处置夹具锁可复现，结果文件未变。应保持 unknown 的非零反馈，区分观察稳定和执行已确认，保留已知 failed / interrupted / not-run 查询语义。"
+  }
+]

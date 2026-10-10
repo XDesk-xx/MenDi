@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+ok 1 - 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+  ---
+  duration_ms: 24881.841
+  type: 'test'
+  ...
+# Subtest: 关联与范围不成立的 Open 在写前拒绝
+ok 2 - 关联与范围不成立的 Open 在写前拒绝
+  ---
+  duration_ms: 4289.8039
+  type: 'test'
+  ...
+# Subtest: 两个真实子进程的 Open / bind 竞争拒绝，不删已有锁
+ok 3 - 两个真实子进程的 Open / bind 竞争拒绝，不删已有锁
+  ---
+  duration_ms: 12255.5834
+  type: 'test'
+  ...
+# Subtest: 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+ok 4 - 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+  ---
+  duration_ms: 7148.8065
+  type: 'test'
+  ...
+# Subtest: 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+ok 5 - 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+  ---
+  duration_ms: 7534.5937
+  type: 'test'
+  ...
+# Subtest: 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+ok 6 - 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+  ---
+  duration_ms: 8993.6656
+  type: 'test'
+  ...
+# Subtest: 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+ok 7 - 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+  ---
+  duration_ms: 2141.7966
+  type: 'test'
+  ...
+# Subtest: 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+ok 8 - 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+  ---
+  duration_ms: 15363.836
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48088.3127

@@ -1,0 +1,131 @@
+{
+  "inputRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/artifacts/pnpm-no-install-proof.json",
+  "scope": "Native pnpm behavior only; fixture setup install was explicit, offline and limited to a local file dependency.",
+  "base": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2",
+  "cases": [
+    {
+      "name": "missing dependencies rejected with no file changes",
+      "passed": true
+    },
+    {
+      "name": "synchronized precheck did not execute script; explicit run succeeded with only script effect",
+      "passed": true
+    },
+    {
+      "name": "unsynchronized dependencies rejected without install or lockfile changes",
+      "passed": true
+    },
+    {
+      "name": "warn branch ran script without automatically installing missing dependencies",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\missing",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "--version"
+      ],
+      "policy": "error",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 0,
+      "stdout": "11.22.0\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\missing",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run"
+      ],
+      "policy": "error",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 1,
+      "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] Cannot check whether dependencies are outdated\n\nRun \"pnpm install\"\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "install",
+        "--offline",
+        "--ignore-scripts"
+      ],
+      "policy": "error",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 0,
+      "stdout": "Progress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +1\n+\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready\\store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 1, reused 1, downloaded 0, added 1, done\n\ndependencies:\n+ review-local-dep 1.0.0\n\nDone in 739ms using pnpm v11.22.0\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run"
+      ],
+      "policy": "error",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 0,
+      "stdout": "Commands available via \"pnpm run\":\n  test:focused\n    node check.ts\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "policy": "warn",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 0,
+      "stdout": "CONTROLLED_SCRIPT_RAN\n",
+      "stderr": "$ node check.ts\n(node:5648) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Projects/MenDi/.tmp/review-propose-007-xy0ck2/ready/check.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run"
+      ],
+      "policy": "error",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 1,
+      "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The lockfile in D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\ready does not satisfy project of id .\n\nRun \"pnpm install\"\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\runtime",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "policy": "warn",
+      "offline": true,
+      "corepackNetwork": false,
+      "exitCode": 0,
+      "stdout": "[WARN] Your node_modules are out of sync with your lockfile. Cannot check whether dependencies are outdated\nCONTROLLED_SCRIPT_RAN\n",
+      "stderr": "$ node check.ts\n(node:29476) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Projects/MenDi/.tmp/review-propose-007-xy0ck2/runtime/check.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to D:\\Projects\\MenDi\\.tmp\\review-propose-007-xy0ck2\\runtime\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "limitations": [
+    "No MenDi test execution implementation exists yet.",
+    "Windows environment normalization and full product failure handling remain Apply tests."
+  ]
+}

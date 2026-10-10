@@ -1,0 +1,15 @@
+{
+  "fixtureOnly": true,
+  "authorActor": "fixture-author",
+  "reviewerActor": "fixture-reviewer",
+  "verdict": "approved",
+  "materials": {
+    "files": [
+      "// 故意保留接线缺陷；Explore 只修复隔离副本。\nexport function produceCompletion() {\n  return { deliveryId: 'd01', changeId: 'second-entry', kind: 'change-archived' };\n}\n",
+      "export function consumeCompletion(message: { deliveryId: string; changeId: string; kind: string }) {\n  if (message.kind !== 'change-archived') throw new Error('expected archived completion');\n  return `${message.deliveryId}:${message.changeId}`;\n}\n",
+      "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport fs from 'node:fs';\nimport { produceCompletion } from './producer.ts';\nimport { consumeCompletion } from './consumer.ts';\n\ntest('producer and consumer share the archived completion contract', () => {\n  fs.appendFileSync('executed-groups.jsonl', JSON.stringify({ group: 'integration' }) + '\\n');\n  assert.equal(consumeCompletion(produceCompletion()), 'd01:second-entry');\n});\n",
+      "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport fs from 'node:fs';\nimport { consumeCompletion } from './consumer.ts';\n\ntest('consumer accepts archived completion and rejects a wrong contract', () => {\n  fs.appendFileSync('executed-groups.jsonl', JSON.stringify({ group: 'unit' }) + '\\n');\n  assert.equal(consumeCompletion({ deliveryId: 'd01', changeId: 'first-entry', kind: 'change-archived' }), 'd01:first-entry');\n  assert.throws(() => consumeCompletion({ deliveryId: 'd01', changeId: 'first-entry', kind: 'wrong' }), /expected archived completion/);\n});\n"
+    ],
+    "fullScript": "node --test --test-concurrency=1 integration.test.ts unit.test.ts"
+  }
+}

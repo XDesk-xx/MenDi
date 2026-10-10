@@ -1,0 +1,29 @@
+[
+  {
+    "id": "RA-B-001",
+    "path": "src/application/delivery-full-test.ts",
+    "start_line": 74,
+    "end_line": 80,
+    "category": "bug",
+    "severity": "medium",
+    "content": "首次修复后正式 admission 接受正文为空的 approved Review，后续沿用分支却拒绝；独立反例仍生成 passed。统一当前直接批准完整性检查，保留查询引用边界。"
+  },
+  {
+    "id": "RA-B-002",
+    "path": "src/application/project.ts",
+    "start_line": 96,
+    "end_line": 96,
+    "category": "bug",
+    "severity": "medium",
+    "content": "并发锁使本次 verification=unknown / stable=false，但 next 从持久 passed 生成 delivery-next 并宣称已通过。指定 full-test status 同类；next 应服从本次未确认观察，历史结果无需改写。"
+  },
+  {
+    "id": "RA-B-003",
+    "path": "tests/delivery-full-test.test.ts",
+    "start_line": 120,
+    "end_line": 124,
+    "category": "bug",
+    "severity": "medium",
+    "content": "新增启动即取消场景独立重跑悬挂数分钟；入口 PID 已退出，前台和后代存活，正式父子 running/unknown 和锁未结束。现场已保存，测试文件由 Reviewer 人工停止。定位取消时序及无法结束的等待，补有界、真实的取消验证；不能仅删场景或以入口退出证明整树停止。"
+  }
+]

@@ -1,0 +1,18 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+
+'.mendi/runs/d01/016-delivery-close/run.md'
+    at file:///D:/Projects/MenDi/.mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/027-review-apply/artifacts/boundary-probe.ts:50:8
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '.mendi/runs/d01/016-delivery-close/run.md',
+  expected: '.mendi/runs/d01/016-delivery-close/run.md',
+  operator: 'notStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

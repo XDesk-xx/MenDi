@@ -1,0 +1,42 @@
+{
+  "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+  "archiveOrdinal": 5,
+  "countBasis": 4,
+  "activeSourceExists": false,
+  "nativeIntermediateExists": false,
+  "currentChangeBytesPreserved": true,
+  "specs": [
+    {
+      "cap": "action-runs",
+      "deltaRequirementsMatched": 2,
+      "totalRequirements": 19,
+      "totalScenarios": 69,
+      "titlePurposeBodyVerified": true,
+      "unrelatedRequirementsPreserved": true
+    },
+    {
+      "cap": "delivery-workspace",
+      "deltaRequirementsMatched": 7,
+      "totalRequirements": 15,
+      "totalScenarios": 58,
+      "titlePurposeBodyVerified": true,
+      "unrelatedRequirementsPreserved": true
+    },
+    {
+      "cap": "project-entry",
+      "deltaRequirementsMatched": 2,
+      "totalRequirements": 8,
+      "totalScenarios": 27,
+      "titlePurposeBodyVerified": true,
+      "unrelatedRequirementsPreserved": true
+    },
+    {
+      "cap": "test-execution",
+      "deltaRequirementsMatched": 7,
+      "totalRequirements": 7,
+      "totalScenarios": 27,
+      "titlePurposeBodyVerified": true,
+      "unrelatedRequirementsPreserved": true
+    }
+  ]
+}

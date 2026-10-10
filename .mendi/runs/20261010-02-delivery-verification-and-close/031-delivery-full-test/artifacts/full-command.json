@@ -1,0 +1,27 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "recordingMode": "manual-bootstrap",
+  "executionId": "manual-031-pnpm-test",
+  "collection": "all-current-product-tests-and-build",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "test"
+    ],
+    "cwd": "D:\\Projects\\MenDi"
+  },
+  "phase": "finished",
+  "outcome": "passed",
+  "wrapperPid": 19392,
+  "startedAt": "2026-10-10T11:53:35.033Z",
+  "stdoutRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/artifacts/test.log",
+  "stderrRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/artifacts/test.stderr.log",
+  "pid": 49852,
+  "finishedAt": "2026-10-10T12:14:23.229Z",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "childAndLogPipesClosed": true
+}

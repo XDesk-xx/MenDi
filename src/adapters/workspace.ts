@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -6,6 +7,8 @@ import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts
 import { managedPath, present } from './paths.ts';
 import { readRun } from './runs.ts';
 import { archivedCount } from '../core/archive.ts';
+import { currentDeliveryRun } from './delivery-runs.ts';
+import { completionScope } from '../core/delivery-verification.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -25,10 +28,15 @@ export type ActionWritePhase =
   | 'before-none-observation'
   | 'before-archive-numbering'
   | 'after-count-commit'
-  | 'after-archive-run-commit';
+  | 'after-archive-run-commit'
+  | 'intent-written'
+  | 'pending-written'
+  | 'terminal-written'
+  | 'lifecycle-manifest-written'
+  | 'index-written';
 export type WriteObserver = (phase: ActionWritePhase, file: string) => void;
 
-function readJson(file: string): unknown {
+export function readJson(file: string): unknown {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8')) as unknown;
   } catch (error) {
@@ -43,7 +51,11 @@ function readJson(file: string): unknown {
   }
 }
 
-export function readWorkspace(root: string, ownLock = false): Workspace | null {
+export function readWorkspace(
+  root: string,
+  ownLock = false,
+  deliveryId?: string,
+): Workspace | null {
   const directory = managedPath(root, '.mendi');
   if (!present(directory)) return null;
   const lock = managedPath(root, '.mendi/write.lock');
@@ -54,9 +66,46 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
       { lock },
       '核对锁归属与写入现场；不会自动抢占或删除锁。',
     );
-  const index = parseProject(readJson(managedPath(root, '.mendi/project.json')));
+  const index = parseProject(readJson(managedPath(root, '.mendi/project.json')), deliveryId);
+  if (index.project.pendingDeliveryRunRef !== undefined)
+    throw new MendiError(
+      'delivery-commit-pending',
+      '生命周期提交未确认，停止普通操作。',
+      { pendingDeliveryRunRef: index.project.pendingDeliveryRunRef },
+      '核对现场后显式 resume；不自动清锁。',
+    );
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
+  const selected = currentBinding(workspace);
+  const delivery = currentDeliveryRun(root, workspace);
+  if (delivery?.record.lifecycle) {
+    const lifecycle = delivery.record.lifecycle;
+    if (
+      delivery.record.status !== 'submitted' ||
+      JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
+      (lifecycle.operation === 'delivery-close' &&
+        (lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef ||
+          JSON.stringify(lifecycle.acceptance?.scope) !==
+            JSON.stringify(completionScope(workspace)))) ||
+      (lifecycle.operation === 'delivery-reopen' &&
+        lifecycle.priorCloseRef !== workspace.manifest.closeRunRef) ||
+      (lifecycle.operation === 'delivery-open' &&
+        (workspace.manifest.openRunRef !== delivery.ref || lifecycle.title !== workspace.title))
+    )
+      throw new MendiError('invalid-record', '当前生命周期摘要与 manifest 不一致。');
+  }
+  if (workspace.mode === 'product') {
+    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef'])
+      if (workspace.manifest[key] !== undefined) managedPath(root, String(workspace.manifest[key]));
+    if (
+      delivery?.record.repair &&
+      delivery.record.repair.failedFullTestRunRef !== workspace.manifest.fullTestRunRef
+    )
+      throw new MendiError('invalid-record', '修复当前来源与最近正式指针矛盾。');
+  }
   for (const binding of workspace.bindings) {
+    managedPath(root, binding.changeRef);
+    if (binding.latestRunRef) managedPath(root, binding.latestRunRef);
+    if (binding !== selected || delivery) continue;
     if (workspace.mode === 'product' && ['archiving', 'archived'].includes(binding.state)) {
       const run = readRun(root, binding.latestRunRef!, workspace.id, binding.changeId);
       const archive = run.record.archive;
@@ -66,7 +115,7 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
           (run.record.status !== 'submitted' ||
             binding.changeRef !== archive.archiveRef ||
             binding.archiveOrdinal !== archive.ordinal ||
-            archivedCount(workspace.project) !== archive.ordinal)) ||
+            archivedCount(workspace.project) < archive.ordinal)) ||
         (binding.state === 'archiving' &&
           (![archive.countBasis, archive.ordinal].includes(archivedCount(workspace.project)) ||
             (['prepared', 'none'].includes(archive.phase) &&
@@ -109,13 +158,11 @@ function replaceJson(
   return file;
 }
 
-export function lockedWrite<T>(
-  root: string,
-  operation: string,
-  action: (committed: string[]) => T,
-  observe?: WriteObserver,
-  retainOnFailure = false,
-): T {
+export interface ProjectLock {
+  lock: string;
+  owner: string;
+}
+export function acquireProjectLock(root: string, operation: string): ProjectLock {
   const lock = managedPath(root, '.mendi/write.lock');
   const owner = JSON.stringify({ token: randomUUID(), pid: process.pid, operation });
   let descriptor: number;
@@ -129,16 +176,34 @@ export function lockedWrite<T>(
       '核对现有锁与写入现场，不覆盖已有工作。',
     );
   }
+  try {
+    fs.writeFileSync(descriptor, owner);
+  } finally {
+    fs.closeSync(descriptor);
+  }
+  return { lock, owner };
+}
+export function releaseProjectLock(root: string, lease: ProjectLock): void {
+  const lock = managedPath(root, '.mendi/write.lock');
+  if (lock !== lease.lock || fs.readFileSync(lock, 'utf8') !== lease.owner)
+    throw new MendiError('write-conflict', '锁归属已变化，保留现有锁。');
+  fs.unlinkSync(lock);
+}
+
+export function lockedWrite<T>(
+  root: string,
+  operation: string,
+  action: (committed: string[]) => T,
+  observe?: WriteObserver,
+  retainOnFailure = false,
+): T {
+  const lease = acquireProjectLock(root, operation);
+  const { lock } = lease;
   const committed: string[] = [];
   let output: T | undefined;
   let actionError: unknown;
   let releaseError: unknown;
   try {
-    try {
-      fs.writeFileSync(descriptor, owner);
-    } finally {
-      fs.closeSync(descriptor);
-    }
     observe?.('lock-acquired', lock);
     output = action(committed);
   } catch (error) {
@@ -147,9 +212,7 @@ export function lockedWrite<T>(
   if (!(retainOnFailure && actionError && committed.length))
     try {
       observe?.('before-lock-release', lock);
-      managedPath(root, '.mendi/write.lock');
-      if (fs.readFileSync(lock, 'utf8') !== owner) throw new Error('锁归属已变化，保留现有锁');
-      fs.unlinkSync(lock);
+      releaseProjectLock(root, lease);
     } catch (error) {
       releaseError = error;
     }
@@ -162,6 +225,9 @@ export function lockedWrite<T>(
         operation,
         lock,
         committedPaths: committed,
+        ...(/^delivery-(open|close|reopen)(-resume)?$/.test(operation) && committed.length
+          ? { outcome: 'unknown' }
+          : {}),
         ...(actionError ? { error: errorInfo(actionError) } : {}),
         ...(releaseError ? { releaseError: errorInfo(releaseError) } : {}),
       },

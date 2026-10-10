@@ -1,0 +1,381 @@
+{
+  "mode": "workspace",
+  "scanner_total_files": 211,
+  "summary": {
+    "total_files": 26,
+    "reviewed_files": 23,
+    "skipped_files": 3,
+    "coverage_rate": 0.8846153846153846
+  },
+  "checklist": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 3,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 2,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/archive-commit.ts",
+      "status": "modified",
+      "insertions": 6,
+      "deletions": 6,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 3,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "insertions": 34,
+      "deletions": 15,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/application/archive.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 3,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 3,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "insertions": 17,
+      "deletions": 4,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 131,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 24,
+      "deletions": 3,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 125,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "openspec/changes/sequential-changes-and-test-entrypoints/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "scripts/proofs/d02-a/selection.ts",
+      "status": "added",
+      "insertions": 64,
+      "deletions": 0,
+      "decision": "skipped",
+      "reason": "已在 Explore 审核，保留历史限定用途；Apply 未扩展，不作为新增能力验收。"
+    },
+    {
+      "path": "scripts/proofs/d02-a/test-entry.ts",
+      "status": "added",
+      "insertions": 79,
+      "deletions": 0,
+      "decision": "skipped",
+      "reason": "已在 Explore 审核，保留历史限定用途；Apply 未扩展，不作为新增能力验收。"
+    },
+    {
+      "path": "scripts/proofs/mvp-d02-a-explore.ts",
+      "status": "added",
+      "insertions": 202,
+      "deletions": 0,
+      "decision": "skipped",
+      "reason": "已在 Explore 审核，保留历史限定用途；Apply 未扩展，不作为新增能力验收。"
+    },
+    {
+      "path": "src/adapters/test-entries.ts",
+      "status": "added",
+      "insertions": 115,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/test-process.ts",
+      "status": "added",
+      "insertions": 149,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/adapters/test-store.ts",
+      "status": "added",
+      "insertions": 107,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "added",
+      "insertions": 234,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/core/associations.ts",
+      "status": "added",
+      "insertions": 206,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/core/test-execution.ts",
+      "status": "added",
+      "insertions": 139,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "tests/sequential-support.ts",
+      "status": "added",
+      "insertions": 107,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    },
+    {
+      "path": "tests/test-support.ts",
+      "status": "added",
+      "insertions": 115,
+      "deletions": 0,
+      "decision": "reviewed",
+      "reason": "已核对差异或新增全文，并检查相关调用、合同及失败路径。"
+    }
+  ],
+  "supplemental_review": {
+    "total_files": 17,
+    "reviewed_files": 17,
+    "skipped_files": 0,
+    "files": [
+      {
+        "path": "README.md",
+        "status": "modified",
+        "insertions": 40,
+        "deletions": 6,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/archive-concurrency.test.ts",
+        "status": "modified",
+        "insertions": 27,
+        "deletions": 18,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/design.md",
+        "status": "added",
+        "insertions": 146,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/proposal.md",
+        "status": "added",
+        "insertions": 32,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/specs/action-runs/spec.md",
+        "status": "added",
+        "insertions": 48,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/specs/delivery-workspace/spec.md",
+        "status": "added",
+        "insertions": 177,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/specs/project-entry/spec.md",
+        "status": "added",
+        "insertions": 48,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/specs/test-execution/spec.md",
+        "status": "added",
+        "insertions": 135,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "openspec/changes/sequential-changes-and-test-entrypoints/tasks.md",
+        "status": "added",
+        "insertions": 58,
+        "deletions": 0,
+        "exclude_reason": "unsupported_ext",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/associations.test.ts",
+        "status": "added",
+        "insertions": 112,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/fixtures/explicit-install.ts",
+        "status": "added",
+        "insertions": 8,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/fixtures/test-foreground.ts",
+        "status": "added",
+        "insertions": 22,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/fixtures/test-worker.ts",
+        "status": "added",
+        "insertions": 10,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/sequential-changes.test.ts",
+        "status": "added",
+        "insertions": 171,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/test-dependencies.test.ts",
+        "status": "added",
+        "insertions": 124,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/test-entries.test.ts",
+        "status": "added",
+        "insertions": 141,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      },
+      {
+        "path": "tests/test-execution.test.ts",
+        "status": "added",
+        "insertions": 280,
+        "deletions": 0,
+        "exclude_reason": "default_path",
+        "decision": "reviewed",
+        "reason": "OCR 默认规则排除的相关测试 / 夹具 / 文档 / 合同，人工补入审核。"
+      }
+    ]
+  },
+  "note": "文件处理比例，不是测试覆盖率。历史 artifacts 在 preview 前显式排除。"
+}

@@ -1,0 +1,144 @@
+{
+  "total_files": 246,
+  "reviewable_files": 24,
+  "reviewed_files": 24,
+  "skipped_files": 0,
+  "excluded_files": 222,
+  "coverage_rate": "100% of selected entries",
+  "entries": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/test-entries.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/test-store.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "modified",
+      "review": "reviewed"
+    },
+    {
+      "path": "openspec/changes/formal-full-test-and-scoped-repair/.openspec.yaml",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/delivery-runs.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/adapters/delivery-verification.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/delivery-repair.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/application/test-execution.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "src/core/delivery-verification.ts",
+      "status": "added",
+      "review": "reviewed"
+    },
+    {
+      "path": "tests/delivery-support.ts",
+      "status": "added",
+      "review": "reviewed"
+    }
+  ],
+  "supplemental": [
+    "README.md",
+    "tests/test-execution.test.ts",
+    "tests/delivery-admission.test.ts",
+    "tests/delivery-full-test.test.ts",
+    "tests/delivery-repair.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/delivery-write.test.ts",
+    "tests/delivery-cli.test.ts",
+    "skills/actions/delivery-full-test/SKILL.md",
+    "skills/actions/delivery-repair/SKILL.md",
+    "skills/actions/review-delivery-repair/SKILL.md"
+  ],
+  "boundary": "OCR exclusions remain explicit in preview; historical Runs and Explore proof are reused only within their approved limits. Supplemental fixture and approved planning contracts inspected separately. No external LLM."
+}

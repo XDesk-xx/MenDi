@@ -4,9 +4,18 @@ export interface Arguments {
   command:
     | 'help'
     | 'delivery-open'
+    | 'delivery-close'
+    | 'delivery-reopen'
+    | 'delivery-full-test-run'
+    | 'delivery-full-test-status'
+    | 'delivery-repair-start'
+    | 'delivery-repair-review'
     | 'change-bind'
     | 'status'
     | 'next'
+    | 'test-list'
+    | 'test-run'
+    | 'test-status'
     | 'action-start'
     | 'action-continue'
     | 'action-instructions'
@@ -24,11 +33,21 @@ export function parseArguments(args: string[]): Arguments {
     return { command: 'help', json: false, values: {} };
   let command: Arguments['command'];
   let consumed: number;
-  if (args[0] === 'delivery' && args[1] === 'open') {
-    command = 'delivery-open';
+  if (
+    args[0] === 'delivery' &&
+    ((args[1] === 'full-test' && ['run', 'status'].includes(args[2])) ||
+      (args[1] === 'repair' && ['start', 'review'].includes(args[2])))
+  ) {
+    command = `delivery-${args[1]}-${args[2]}` as Arguments['command'];
+    consumed = 3;
+  } else if (args[0] === 'delivery' && ['open', 'close', 'reopen'].includes(args[1])) {
+    command = `delivery-${args[1]}` as Arguments['command'];
     consumed = 2;
   } else if (args[0] === 'change' && args[1] === 'bind') {
     command = 'change-bind';
+    consumed = 2;
+  } else if (args[0] === 'test' && ['list', 'run', 'status'].includes(args[1])) {
+    command = `test-${args[1]}` as Arguments['command'];
     consumed = 2;
   } else if (args[0] === 'workspace' && args[1] === 'diagnose') {
     command = 'workspace-diagnose';
@@ -48,8 +67,36 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(['delivery-open', 'delivery-close', 'delivery-reopen'].includes(command)
+      ? ['role', 'actor', 'resume']
+      : []),
+    ...(command === 'delivery-close'
+      ? ['input']
+      : command === 'delivery-reopen'
+        ? ['scope', 'reason']
+        : []),
+    ...(['status', 'next', 'test-status'].includes(command) ? ['delivery'] : []),
+    ...(command === 'delivery-full-test-run'
+      ? ['input', 'role', 'actor', 'pnpm-bin']
+      : command === 'delivery-full-test-status'
+        ? ['run']
+        : command === 'delivery-repair-start'
+          ? ['from', 'reason', 'role', 'actor', 'revises']
+          : command === 'delivery-repair-review'
+            ? ['author-run', 'role', 'actor']
+            : []),
     ...(command === 'action-archive' ? ['run', 'role', 'actor', 'mode'] : []),
-    ...(command === 'workspace-diagnose' ? [] : ['openspec-bin']),
+    ...(command === 'workspace-diagnose' ||
+    command.startsWith('test-') ||
+    command.startsWith('delivery-full-test-') ||
+    command.startsWith('delivery-repair-')
+      ? []
+      : ['openspec-bin']),
+    ...(command === 'test-run'
+      ? ['kind', 'actor', 'pnpm-bin']
+      : command === 'test-status'
+        ? ['execution']
+        : []),
     ...(command === 'workspace-diagnose' ? ['run'] : []),
     ...(command === 'action-resolve'
       ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason', 'phase', 'revises']
@@ -88,12 +135,35 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(['delivery-close', 'delivery-reopen'].includes(command)
+      ? [
+          'role',
+          'actor',
+          ...(values.resume ? [] : command === 'delivery-close' ? ['input'] : ['scope', 'reason']),
+        ]
+      : []),
+    ...(command === 'delivery-full-test-run'
+      ? ['input', 'role', 'actor', 'pnpm-bin']
+      : command === 'delivery-full-test-status'
+        ? ['run']
+        : command === 'delivery-repair-start'
+          ? ['from', 'reason', 'role', 'actor']
+          : command === 'delivery-repair-review'
+            ? ['author-run', 'role', 'actor']
+            : []),
+    ...(command === 'test-run'
+      ? ['kind', 'actor', 'pnpm-bin']
+      : command === 'test-status'
+        ? ['execution']
+        : []),
     ...(command === 'action-archive' ? ['run', 'role', 'actor', 'mode'] : []),
     ...(command === 'action-resolve'
       ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason']
       : []),
     ...(command === 'delivery-open'
-      ? ['id', 'title', 'scope']
+      ? values.resume
+        ? ['role', 'actor']
+        : ['id', 'title', 'scope']
       : command === 'change-bind'
         ? ['change', 'slot']
         : command === 'action-start'
@@ -109,6 +179,16 @@ export function parseArguments(args: string[]): Arguments {
                   : []),
   ];
   for (const key of required) if (!values[key]) throw usage(`缺少 --${key}。`);
+  if (
+    ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(command) &&
+    values.resume &&
+    Object.keys(values).some(
+      (key) => !['project', 'role', 'actor', 'resume', 'openspec-bin'].includes(key),
+    )
+  )
+    throw usage('--resume 不混用正常操作输入。');
+  if (command === 'delivery-open' && Boolean(values.role) !== Boolean(values.actor))
+    throw usage('--role 与 --actor 必须成对。');
   if (command === 'action-instructions' && Boolean(values.artifact) === Boolean(values.operation))
     throw usage('--artifact 与 --operation 必须二选一。');
   if (command === 'delivery-open' && Boolean(values.change) !== Boolean(values.slot))
@@ -123,10 +203,20 @@ function usage(message: string): MendiError {
 
 export const help = `MenDi：项目入口与最小 Delivery 协作
 
-mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --scope <JSON 路径> [--change <既有 Change> --slot <槽位>]
+mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --scope <JSON 路径> [--role author --actor <标识>] [--change <既有 Change> --slot <槽位>]
+mendi delivery close --project <项目根> --input <项目内 Close JSON> --role author --actor <标识>
+mendi delivery reopen --project <项目根> --scope <项目内新范围 JSON> --reason <原因> --role author --actor <标识>
+mendi delivery <open|close|reopen> --project <项目根> --resume <当前生命周期 Run> --role author --actor <原标识>
 mendi change bind --project <项目根> --change <既有 Change> --slot <槽位>
-mendi status --project <项目根>
-mendi next --project <项目根>
+mendi status --project <项目根> [--delivery <登记 ID>]
+mendi next --project <项目根> [--delivery <登记 ID>]
+mendi test list --project <项目根>
+mendi test run --project <项目根> --kind <focused|fast|full> --actor <标识> --pnpm-bin <既有绝对 JS 入口>
+mendi test status --project <项目根> --execution <NNN-kind> [--delivery <登记 ID>]
+mendi delivery full-test run --project <项目根> --input <项目内 JSON> --role author --actor <标识> --pnpm-bin <既有绝对 JS 入口>
+mendi delivery full-test status --project <项目根> --run <所属登记 Delivery 正式 Run>
+mendi delivery repair start --project <项目根> --from <当前 failed 正式 Run> --reason <范围内原因> --role author --actor <标识> [--revises <当前完整 Author>]
+mendi delivery repair review --project <项目根> --author-run <当前完整修复 Author> --role reviewer --actor <独立标识>
 mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
 mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
 mendi action instructions --project <项目根> --action <当前 Action ID> (--artifact <proposal|specs|design|tasks> | --operation <apply|archive>)
@@ -136,13 +226,21 @@ mendi workspace diagnose --project <项目根> [--run <同 Change 占号 Run>]
 mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
 mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
 
-项目命令支持 --json；除本地 diagnose 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
+项目命令支持 --json；除本地 diagnose / test 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
 --project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
-首次 Open 要求目标无 .mendi；首版只关联第一个既有 Change。
+无状态旧首次 Open 可省略身份且不补 Run；显式身份记录 001。closed 后新 ID Open 必须提供 Author / actor，追加索引且分开 bind。
+Reopen 使用自包含新范围 / reason，不复用旧槽位，首次实际 Change Run 才追加新批次。
+resume 只补本次缺失的本地提交；先由 Owner 核对停止写者并处置锁，不自动解锁。陈旧对象拒绝。
+test 仅读取本地配置；list 不要求 Open，run 要求 open product / Windows / Node 22 / pnpm 11.22.0；不自动下载或安装。
+依赖预检失败为 not-run；full 仍是普通 command，不代替正式 Full Test 或批准。取消只处理本次前台进程树。
 阶段：explore / propose / apply，review-<阶段>，revise-<阶段>；archive 仅 Author，准备与 execute / finish 分开。
 Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 指导。
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
 submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
-actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询；Close / Reopen 未实现。
+actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询，不通过产品 Open / Close / Reopen 迁移历史。
+Close JSON 包含 fullTestRunRef 和 applicability:{conclusion:"applicable",materials,changes,reason}；材料 / 理由非空，差异明确填文本。
+closed 默认查询只展示持久 Close，不重新读取旧正式日志；显式 formal / test status 仍检查必要日志。
+历史 --delivery 选择只读，不改 activeDeliveryId；结果 ok 与当前材料适用性分开，旧 PASS 不覆盖新工作。
+正式结果保存 collection / basis 与真实执行；materialApplicability=requires-semantic-check，passed 不自动 Close。修复审核 approved 后显式新整次 full；unknown 停 Owner，不自动重试或清锁。
 Archive start 只准备；execute 显式调用原生，finish local-only 观察 / 收口，不自动重试或解除锁。none 观察仍 pending。
 操作仍须遵守 Owner 授权；命令成功不产生审核批准。`;

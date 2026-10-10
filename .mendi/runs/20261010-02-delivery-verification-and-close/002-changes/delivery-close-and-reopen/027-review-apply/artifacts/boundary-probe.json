@@ -1,0 +1,319 @@
+{
+  "observations": [
+    {
+      "scenario": "initial-binding",
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-rwt1IX\\minimal-project",
+      "recorded": false,
+      "slot": "B",
+      "result": {
+        "error": {
+          "message": "槽位依赖尚未归档。",
+          "code": "change-dependency-not-archived"
+        }
+      },
+      "stateExists": false,
+      "entries": []
+    },
+    {
+      "scenario": "initial-binding",
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-fG3UFa\\minimal-project",
+      "recorded": false,
+      "slot": "missing-slot",
+      "result": {
+        "error": {
+          "message": "计划槽位不在 Delivery 范围内。",
+          "code": "planning-slot-not-found"
+        }
+      },
+      "stateExists": false,
+      "entries": []
+    },
+    {
+      "scenario": "initial-binding",
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-pwgALD\\minimal-project",
+      "recorded": true,
+      "slot": "B",
+      "result": {
+        "ok": true,
+        "activeChangeId": "proof-entry",
+        "bindings": [
+          {
+            "changeId": "proof-entry",
+            "changeRef": "openspec/changes/proof-entry",
+            "planningSlot": "B",
+            "state": "explore"
+          }
+        ]
+      },
+      "stateExists": true,
+      "entries": [
+        "delivery-groups",
+        "project.json",
+        "runs"
+      ]
+    },
+    {
+      "scenario": "initial-binding",
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-yZZKiY\\minimal-project",
+      "recorded": true,
+      "slot": "missing-slot",
+      "result": {
+        "error": {
+          "message": "计划槽位不在 Delivery 范围内。",
+          "code": "planning-slot-not-found"
+        }
+      },
+      "stateExists": true,
+      "entries": [],
+      "correctedRetry": {
+        "message": "无法读取完整有效的 MenDi 记录。",
+        "code": "incomplete-mendi-state"
+      }
+    },
+    {
+      "scenario": "pending-diagnosis",
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-wy3pfk\\project",
+      "pending": ".mendi/runs/d01/016-delivery-close/run.md",
+      "current": {
+        "ref": ".mendi/runs/d01/016-delivery-close/run.md",
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "scope": "delivery",
+        "deliveryId": "d01",
+        "changeId": null,
+        "runNumber": 16,
+        "actionId": "d01-016-delivery-close",
+        "actionType": "delivery-close",
+        "role": "author",
+        "actorId": "delivery-author",
+        "status": "draft",
+        "stageSkill": "delivery-close",
+        "toolGuidance": [],
+        "lifecycle": {
+          "operation": "delivery-close",
+          "sourceDeliveryId": "d01",
+          "scope": {
+            "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+            "plannedChanges": [
+              {
+                "slot": "A",
+                "title": "项目入口",
+                "dependsOn": []
+              },
+              {
+                "slot": "B",
+                "title": "后续工作",
+                "dependsOn": [
+                  "A"
+                ]
+              }
+            ]
+          },
+          "recordedOn": "2026-10-10",
+          "fullTestRunRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+          "acceptance": {
+            "collection": [
+              "单元场景",
+              "跨 Change 接线场景"
+            ],
+            "basis": {
+              "materials": "受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。",
+              "changes": ""
+            },
+            "scope": {
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "completed": [
+                {
+                  "slot": "A",
+                  "changeId": "proof-entry",
+                  "archiveOrdinal": 1
+                },
+                {
+                  "slot": "B",
+                  "changeId": "second-entry",
+                  "archiveOrdinal": 2
+                }
+              ]
+            },
+            "approvals": [
+              {
+                "changeId": "proof-entry",
+                "archiveRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+                "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+                "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+                "authorActor": "author-one",
+                "reviewerActor": "reviewer-one"
+              },
+              {
+                "changeId": "second-entry",
+                "archiveRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+                "reviewRunRef": ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+                "authorRunRef": ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md",
+                "authorActor": "author-one",
+                "reviewerActor": "reviewer-one"
+              }
+            ],
+            "entry": {
+              "scriptName": "test:full",
+              "scriptText": "node --test checks/unit.test.ts checks/integration.test.ts",
+              "packageManager": "pnpm@11.22.0",
+              "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+            },
+            "phase": "finished",
+            "executionId": "001-full",
+            "outcome": "passed"
+          },
+          "applicability": {
+            "conclusion": "applicable",
+            "materials": "实际 producer / consumer、unit / integration 测试与当前配置。",
+            "changes": "隔离副本已统一 archived 契约；结果之后没有行为变化。",
+            "reason": "真实完整集合覆盖本轮两个 Change 接线与必要输入。"
+          }
+        }
+      },
+      "reservation": {
+        "ref": ".mendi/runs/d01/016-delivery-close/run.md",
+        "formatVersion": 1,
+        "recordingMode": "product",
+        "scope": "delivery",
+        "deliveryId": "d01",
+        "changeId": null,
+        "runNumber": 16,
+        "actionId": "d01-016-delivery-close",
+        "actionType": "delivery-close",
+        "role": "author",
+        "actorId": "delivery-author",
+        "status": "draft",
+        "stageSkill": "delivery-close",
+        "toolGuidance": [],
+        "lifecycle": {
+          "operation": "delivery-close",
+          "sourceDeliveryId": "d01",
+          "scope": {
+            "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+            "plannedChanges": [
+              {
+                "slot": "A",
+                "title": "项目入口",
+                "dependsOn": []
+              },
+              {
+                "slot": "B",
+                "title": "后续工作",
+                "dependsOn": [
+                  "A"
+                ]
+              }
+            ]
+          },
+          "recordedOn": "2026-10-10",
+          "fullTestRunRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+          "acceptance": {
+            "collection": [
+              "单元场景",
+              "跨 Change 接线场景"
+            ],
+            "basis": {
+              "materials": "受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。",
+              "changes": ""
+            },
+            "scope": {
+              "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+              "plannedChanges": [
+                {
+                  "slot": "A",
+                  "title": "项目入口",
+                  "dependsOn": []
+                },
+                {
+                  "slot": "B",
+                  "title": "后续工作",
+                  "dependsOn": [
+                    "A"
+                  ]
+                }
+              ],
+              "completed": [
+                {
+                  "slot": "A",
+                  "changeId": "proof-entry",
+                  "archiveOrdinal": 1
+                },
+                {
+                  "slot": "B",
+                  "changeId": "second-entry",
+                  "archiveOrdinal": 2
+                }
+              ]
+            },
+            "approvals": [
+              {
+                "changeId": "proof-entry",
+                "archiveRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+                "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+                "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+                "authorActor": "author-one",
+                "reviewerActor": "reviewer-one"
+              },
+              {
+                "changeId": "second-entry",
+                "archiveRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+                "reviewRunRef": ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+                "authorRunRef": ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md",
+                "authorActor": "author-one",
+                "reviewerActor": "reviewer-one"
+              }
+            ],
+            "entry": {
+              "scriptName": "test:full",
+              "scriptText": "node --test checks/unit.test.ts checks/integration.test.ts",
+              "packageManager": "pnpm@11.22.0",
+              "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+            },
+            "phase": "finished",
+            "executionId": "001-full",
+            "outcome": "passed"
+          },
+          "applicability": {
+            "conclusion": "applicable",
+            "materials": "实际 producer / consumer、unit / integration 测试与当前配置。",
+            "changes": "隔离副本已统一 archived 契约；结果之后没有行为变化。",
+            "reason": "真实完整集合覆盖本轮两个 Change 接线与必要输入。"
+          }
+        },
+        "isCurrent": true
+      },
+      "ok": false,
+      "errors": [
+        {
+          "code": "delivery-commit-pending",
+          "message": "生命周期提交未确认，停止普通操作。",
+          "details": {
+            "pendingDeliveryRunRef": ".mendi/runs/d01/016-delivery-close/run.md"
+          }
+        }
+      ],
+      "lock": {
+        "token": "4b9dcd29-65d4-4257-adb6-44954f93e17e",
+        "operation": "delivery-close",
+        "pid": 23744,
+        "liveness": "alive"
+      }
+    }
+  ],
+  "limit": "Isolated fixtures only; retained locks are deliberate failure evidence, not repository locks."
+}

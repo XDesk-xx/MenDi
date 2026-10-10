@@ -1,0 +1,77 @@
+{
+  "result": "passed",
+  "target": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-PX2QoM\\minimal-project",
+  "testTarget": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-avT25A\\test-entry-project",
+  "scenes": [
+    {
+      "id": "P01",
+      "nativeArchive": "completed",
+      "archiveOrdinal": 1,
+      "nextBind": "change-bind-conflict",
+      "originalPreserved": true
+    },
+    {
+      "id": "P02",
+      "baselineSelection": "old archived proof-entry",
+      "candidateSelection": "proof-next",
+      "newRun": "008",
+      "actualProductAdmission": "invalid-record",
+      "limitation": "只验证选择片段；多 binding 产品协议仍拒绝。"
+    },
+    {
+      "id": "P03",
+      "historyMissing": "candidate succeeds",
+      "unknownRef": "ignored",
+      "noCurrentRun": "null, no historical fallback",
+      "currentMissing": "run-input-missing",
+      "pathEscape": "unsafe-reference",
+      "wrongIdentity": "invalid-run",
+      "oldBindingPreserved": true
+    },
+    {
+      "id": "P04",
+      "targetScripts": [
+        "test:focused",
+        "test:fast",
+        "test:full"
+      ],
+      "results": [
+        {
+          "kind": "focused",
+          "outcome": "passed",
+          "exitCode": 0,
+          "signal": null,
+          "interrupted": false,
+          "stopConfirmed": true
+        },
+        {
+          "kind": "fast",
+          "outcome": "failed",
+          "exitCode": 7,
+          "signal": null,
+          "interrupted": false,
+          "stopConfirmed": true
+        },
+        {
+          "kind": "full",
+          "outcome": "not-run",
+          "exitCode": null
+        },
+        {
+          "kind": "full",
+          "outcome": "interrupted",
+          "exitCode": 1,
+          "signal": null,
+          "interrupted": true,
+          "stopConfirmed": true
+        }
+      ],
+      "fullPassed": false
+    }
+  ],
+  "limits": [
+    "独立批准由夹具提供，非真人身份认证。",
+    "candidate 是选择片段与受控持久化，未实现多 Change 产品 bind / 第二次 Archive。",
+    "不验证正式 Full Test 或 Close / Reopen；脚本成功退出不等同整次 full 通过。"
+  ]
+}

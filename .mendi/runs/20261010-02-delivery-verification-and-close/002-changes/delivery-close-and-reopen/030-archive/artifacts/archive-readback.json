@@ -1,0 +1,94 @@
+{
+  "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+  "archiveOrdinal": 7,
+  "nativeExitCode": 0,
+  "specsUpdated": true,
+  "totals": {
+    "added": 7,
+    "modified": 15,
+    "removed": 0,
+    "renamed": 0
+  },
+  "sourceAbsent": true,
+  "nativeTemporaryNameAbsent": true,
+  "changeFiles": [
+    {
+      "file": ".openspec.yaml",
+      "bytesEqual": true
+    },
+    {
+      "file": "design.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "proposal.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "specs/action-runs/spec.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "specs/delivery-lifecycle/spec.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "specs/delivery-verification/spec.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "specs/delivery-workspace/spec.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "specs/test-execution/spec.md",
+      "bytesEqual": true
+    },
+    {
+      "file": "tasks.md",
+      "bytesEqual": true
+    }
+  ],
+  "mainSpecs": [
+    {
+      "capability": "action-runs",
+      "deltaRequirementsMatched": 5,
+      "unmentionedRequirementsPreserved": 17,
+      "titlePreservedOrCanonical": true,
+      "purposePreservedOrCopied": true,
+      "noDeltaOperationHeaders": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "deltaRequirementsMatched": 6,
+      "unmentionedRequirementsPreserved": 0,
+      "titlePreservedOrCanonical": true,
+      "purposePreservedOrCopied": true,
+      "noDeltaOperationHeaders": true
+    },
+    {
+      "capability": "delivery-verification",
+      "deltaRequirementsMatched": 3,
+      "unmentionedRequirementsPreserved": 6,
+      "titlePreservedOrCanonical": true,
+      "purposePreservedOrCopied": true,
+      "noDeltaOperationHeaders": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "deltaRequirementsMatched": 7,
+      "unmentionedRequirementsPreserved": 10,
+      "titlePreservedOrCanonical": true,
+      "purposePreservedOrCopied": true,
+      "noDeltaOperationHeaders": true
+    },
+    {
+      "capability": "test-execution",
+      "deltaRequirementsMatched": 1,
+      "unmentionedRequirementsPreserved": 6,
+      "titlePreservedOrCanonical": true,
+      "purposePreservedOrCopied": true,
+      "noDeltaOperationHeaders": true
+    }
+  ]
+}

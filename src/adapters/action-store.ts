@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -69,8 +70,9 @@ export function createRun(
 ) {
   const allocation = scanRunNumbers(root, workspace.id);
   const number = String(allocation.number).padStart(3, '0');
-  const binding = workspace.bindings.find((b) => b.changeId === seed.changeId);
-  if (!binding) throw new MendiError('invalid-action', '当前 Change 缺少 binding。');
+  const binding = currentBinding(workspace);
+  if (!binding || binding.changeId !== seed.changeId)
+    throw new MendiError('invalid-action', '当前 Change 缺少 binding。');
   const batchId = binding.batchId ?? `${number}-changes`;
   const ref = `.mendi/runs/${workspace.id}/${batchId}/${seed.changeId}/${number}-${seed.actionType}/run.md`;
   const header = {
@@ -104,6 +106,7 @@ export function createRun(
     changeBatches: binding.batchId
       ? workspace.manifest.changeBatches
       : [
+          ...(workspace.manifest.changeBatches as unknown[]),
           {
             id: batchId,
             firstRun: number,
@@ -111,6 +114,7 @@ export function createRun(
             changeIds: [seed.changeId],
           },
         ],
+    currentBatchId: batchId,
   };
   parseWorkspace(parseProject(workspace.project), manifest);
   replaceManagedFile(

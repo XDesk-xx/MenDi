@@ -1,0 +1,6 @@
+{
+  "status": 0,
+  "signal": null,
+  "stdout": "{\n  \"archive\": {\n    \"change\": \"proof-entry\",\n    \"archivedAs\": \"2026-10-10-proof-entry\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-PX2QoM\\\\minimal-project\\\\openspec\\\\changes\\\\archive\\\\2026-10-10-proof-entry\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 1,\n      \"modified\": 0,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-PX2QoM\\\\minimal-project\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

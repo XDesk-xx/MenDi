@@ -1,0 +1,333 @@
+{
+  "source": "current maintained inputs and real product operations",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+  "coldTemporary": true,
+  "scenes": [
+    {
+      "id": "P01",
+      "purpose": "从受控输入实际归档两项并产生真实正式结果",
+      "coldTemporary": true,
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+      "fullRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+      "executionId": "001-full",
+      "outcome": "passed",
+      "fixtureReviewsOnly": true
+    },
+    {
+      "id": "P02",
+      "purpose": "已完成结果查询不依赖旧 Archive / Review / Author 或未知说明",
+      "deletedHistory": [
+        ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+        ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+        ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+        ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+        ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+        ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md"
+      ],
+      "queryOutcome": "passed"
+    },
+    {
+      "id": "P03",
+      "purpose": "结果可读不代表当前材料适用",
+      "scopeChange": {
+        "outcome": "passed",
+        "stable": true,
+        "executionId": "001-full",
+        "collection": [
+          "单元场景",
+          "跨 Change 接线场景"
+        ],
+        "basis": {
+          "materials": "受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。",
+          "changes": ""
+        },
+        "entry": {
+          "scriptName": "test:full",
+          "scriptText": "node foreground.ts pass",
+          "packageManager": "pnpm@11.22.0",
+          "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+        },
+        "scopeMatch": "changed",
+        "commandMatch": "match",
+        "materialApplicability": "requires-semantic-check",
+        "child": {
+          "formatVersion": 1,
+          "executionId": "001-full",
+          "kind": "full",
+          "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+          "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+          "deliveryId": "d01",
+          "changeId": null,
+          "actorId": "delivery-author",
+          "scope": "command",
+          "formalDeliveryTest": false,
+          "command": {
+            "executable": "C:\\nvm4w\\nodejs\\node.exe",
+            "args": [
+              "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+              "run",
+              "test:full"
+            ],
+            "dependencyPolicy": "warn"
+          },
+          "dependencyCheck": {
+            "executable": "C:\\nvm4w\\nodejs\\node.exe",
+            "args": [
+              "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+              "run"
+            ],
+            "dependencyPolicy": "error",
+            "exitCode": 0
+          },
+          "scriptName": "test:full",
+          "scriptText": "node foreground.ts pass",
+          "startedAt": "2026-10-10T07:58:29.733Z",
+          "finishedAt": "2026-10-10T07:58:30.988Z",
+          "executionState": "finished",
+          "outcome": "passed",
+          "exitCode": 0,
+          "signal": null,
+          "pid": 16884,
+          "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+          "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+        }
+      },
+      "commandChange": {
+        "outcome": "passed",
+        "stable": true,
+        "executionId": "001-full",
+        "collection": [
+          "单元场景",
+          "跨 Change 接线场景"
+        ],
+        "basis": {
+          "materials": "受控 producer / consumer、真实 node:test、pnpm 配置与无外部依赖；阶段批准仅为记录夹具。",
+          "changes": ""
+        },
+        "entry": {
+          "scriptName": "test:full",
+          "scriptText": "node foreground.ts pass",
+          "packageManager": "pnpm@11.22.0",
+          "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+        },
+        "scopeMatch": "match",
+        "commandMatch": "changed",
+        "materialApplicability": "requires-semantic-check",
+        "child": {
+          "formatVersion": 1,
+          "executionId": "001-full",
+          "kind": "full",
+          "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+          "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+          "deliveryId": "d01",
+          "changeId": null,
+          "actorId": "delivery-author",
+          "scope": "command",
+          "formalDeliveryTest": false,
+          "command": {
+            "executable": "C:\\nvm4w\\nodejs\\node.exe",
+            "args": [
+              "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+              "run",
+              "test:full"
+            ],
+            "dependencyPolicy": "warn"
+          },
+          "dependencyCheck": {
+            "executable": "C:\\nvm4w\\nodejs\\node.exe",
+            "args": [
+              "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+              "run"
+            ],
+            "dependencyPolicy": "error",
+            "exitCode": 0
+          },
+          "scriptName": "test:full",
+          "scriptText": "node foreground.ts pass",
+          "startedAt": "2026-10-10T07:58:29.733Z",
+          "finishedAt": "2026-10-10T07:58:30.988Z",
+          "executionState": "finished",
+          "outcome": "passed",
+          "exitCode": 0,
+          "signal": null,
+          "pid": 16884,
+          "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+          "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+        }
+      },
+      "rerunRejection": {
+        "openspec": null,
+        "executionMode": "local-only",
+        "upstreamAccess": "not-required",
+        "ok": false,
+        "operation": "delivery-full-test-run",
+        "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+        "local": null,
+        "outcome": "not-run",
+        "error": {
+          "message": "范围或原完整集合变化，停 Owner。",
+          "code": "delivery-state-conflict",
+          "details": {}
+        },
+        "committedPaths": []
+      }
+    },
+    {
+      "id": "P04",
+      "purpose": "closed 读取被运行前置挡住，直接记录仍真实存在",
+      "fixtureProjectionOnly": true,
+      "closedResults": [
+        {
+          "args": [
+            "status"
+          ],
+          "observed": {
+            "ok": false,
+            "error": {
+              "code": "invalid-record",
+              "message": "产品关联顺序或当前状态不一致。",
+              "details": {},
+              "fix": "核对输入与相关路径后重试。"
+            }
+          }
+        },
+        {
+          "args": [
+            "next"
+          ],
+          "observed": {
+            "ok": false,
+            "error": {
+              "code": "invalid-record",
+              "message": "产品关联顺序或当前状态不一致。",
+              "details": {},
+              "fix": "核对输入与相关路径后重试。"
+            }
+          }
+        },
+        {
+          "args": [
+            "delivery",
+            "full-test",
+            "status",
+            "--run",
+            ".mendi/runs/d01/015-delivery-full-test/run.md"
+          ],
+          "observed": {
+            "ok": false,
+            "error": {
+              "code": "invalid-record",
+              "message": "产品关联顺序或当前状态不一致。",
+              "details": {},
+              "fix": "核对输入与相关路径后重试。"
+            }
+          }
+        },
+        {
+          "args": [
+            "test",
+            "status",
+            "--execution",
+            "001-full"
+          ],
+          "observed": {
+            "openspec": null,
+            "local": null,
+            "executionMode": "local-only",
+            "upstreamAccess": "not-required",
+            "ok": false,
+            "operation": "test-status",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project",
+            "executionId": "001-full",
+            "outcome": "unknown",
+            "error": {
+              "message": "产品关联顺序或当前状态不一致。",
+              "code": "invalid-record"
+            }
+          }
+        },
+        {
+          "args": [
+            "delivery",
+            "close"
+          ],
+          "observed": {
+            "ok": false,
+            "error": {
+              "code": "invalid-arguments",
+              "message": "未知命令。",
+              "details": {},
+              "fix": "执行 mendi --help 查看用法。"
+            }
+          }
+        },
+        {
+          "args": [
+            "delivery",
+            "reopen"
+          ],
+          "observed": {
+            "ok": false,
+            "error": {
+              "code": "invalid-arguments",
+              "message": "未知命令。",
+              "details": {},
+              "fix": "执行 mendi --help 查看用法。"
+            }
+          }
+        }
+      ],
+      "directParent": "passed",
+      "directChild": "passed"
+    },
+    {
+      "id": "P05",
+      "purpose": "closed 后新 Open 及多 Delivery 索引的实际限制",
+      "newOpen": {
+        "ok": false,
+        "error": {
+          "code": "existing-mendi-state",
+          "message": "目标已存在 MenDi 状态；首次 Open 不覆盖。",
+          "details": {
+            "directory": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-AOWmp9\\project\\.mendi"
+          },
+          "fix": "核对已有项目或残留；不会自动重新 Open。"
+        }
+      },
+      "expandedIndexError": {
+        "code": "invalid-record",
+        "message": "当前 Delivery 索引不存在或不符合首版范围。"
+      },
+      "projectBytesUnchanged": true
+    },
+    {
+      "id": "P06",
+      "purpose": "后续工作退出当前验收，保留可读历史与连续编号",
+      "fixtureRangeExpansionOnly": true,
+      "activeChangeId": "third-entry",
+      "deliveryRunRefCleared": true,
+      "retainedFullTestRunRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+      "historicalOutcome": "passed",
+      "historicalScopeMatch": "unavailable",
+      "currentRunRef": ".mendi/runs/d01/001-changes/third-entry/016-explore/run.md",
+      "previousRunNumber": 15,
+      "currentRunNumber": 16,
+      "archiveCount": 2,
+      "next": {
+        "source": "local-state",
+        "executable": false,
+        "role": "author",
+        "action": "run-save-or-submit",
+        "status": "working",
+        "reason": "当前 draft 可保存并提交；记录命令不自动执行阶段工作。",
+        "currentRunRef": ".mendi/runs/d01/001-changes/third-entry/016-explore/run.md"
+      }
+    }
+  ],
+  "limitations": [
+    "Close / Reopen / 多 Delivery Open 尚未实现，closed 与范围扩展仅为夹具投影。",
+    "阶段 Review 仅为声明夹具；本次不能批准真实 Change，也不认证 Owner 身份。",
+    "unknown 的实际取消与后代证据沿用 B 020，不重跑完整旧 proof。",
+    "不宣称生命周期端到端验收、closed 已可用或新 PASS 已适用。"
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "changeName": "sequential-changes-and-test-entrypoints",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\specs\\delivery-workspace\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\specs\\project-entry\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\specs\\test-execution\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 28,
+    "complete": 0,
+    "remaining": 28
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 将产品关联 / 批次结构验证及唯一当前对象选择整理到承担真实规则的核心模块，保留入口 / 范围解析；用结构用例验证空 / 单项、旧 archived + 新 active、末项 archived、错活动顺序、多活动、重复 / 倒序 ordinal、未知 Ref 与单 Change / manual 兼容。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 让 currentRun、query / next、Action / 处置、诊断和 Archive 采用相同当前对象，消除 `[0]` / active-or-archived 误选；用现有查询 / 阶段 / 诊断回归及“新项尚无 Run 不回退旧项”用例验证。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 在新增测试命令前分清 CLI dispatch、参数配置与人读输出职责，呈现模块承担实际输出逻辑，不建立纯转发层；用现有 arguments / CLI 用例核对帮助无副作用、JSON 单输出、角色和退出码不变，并在代码旁保留必要职责说明。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 在首次 Open 可选关联及后续 bind 校验槽位依赖、身份与未占用；前项完整归档后显式追加下一已有 Change，拒绝活动 / archiving、未完成交接、未归档依赖与陈旧重复关联；通过真实 bind / 独占冲突测试确认拒绝无副作用、范围 / 入口 / 旧 binding 保留。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 后续 bind 加入既有批次并保存 batchId，允许本项无 latestRunRef；首次 Action 复用该批次，不替换 changeBatches / 成员；用跨 Change Run、空占号跳过、重复号拒绝和新进程读回验证全 Delivery 连续编号。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "2.3 workspace 仅读取当前必要 Run / Archive 交接，旧关联保留身份 / 路径 / 编号结构检查；覆盖旧 Run / 归档内容 / 说明失效、未知 Ref、必要当前输入缺失 / 坏头部、错身份与链接越界，验证当前失败不回退历史。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "7",
+      "description": "2.4 更新 README 中 bind、无新 Run / 归档后查询与批次示例；按受控项目执行文档命令并核对 next 不自动激活、批准或分配 Run，manual-bootstrap 仍不能被产品写命令迁移。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 16
+    },
+    {
+      "id": "8",
+      "description": "3.1 将 Archive 当前检查、native 执行返回和 commit / readback 定向到所选 binding，仅更新本项；通过第二项真实 Archive 和旧 binding / Run 字节比较验证累计编号到 2、旧项保持、当前终态正确。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "3.2 对第二项覆盖计数、终态 Run 或 manifest 部分提交与新进程 local-only finish，当前基准 / 新值仍严格检查；通过故障注入验证 pending、旧 ordinal 小于总数仍合法、只增长一次与终态 Run 不改写。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "10",
+      "description": "3.3 覆盖当前第二 Archive repeated finish 幂等与旧 Archive execute / finish 陈旧拒绝；回归 none / prepared 重试、实际日期、retire capability、输入改变、锁冲突与受管路径，验证不重复原生效果、不放宽必要证据。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 22
+    },
+    {
+      "id": "11",
+      "description": "3.4 更新 README 的多次归档 / 当前必要输入 / finish 边界示例；结合本组原生测试核对规范日期编号、旧归档文件不成为当前操作前置，以及当前 Archive Run 缺失仍拒绝。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "12",
+      "description": "4.1 实现 package scripts 读取、三类默认名称与可选 mendi.tests 最小映射、直接 script 名规则；通过默认 / 覆盖 / 缺失 / 空值 / 错类型 / 非法名称 / 越界 / 未知扩展用例验证，只检查实际选定项，不猜测或改写目标配置。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "13",
+      "description": "4.2 实现 Windows / Node 22、既有 pnpm JS 入口与真实版本 / packageManager 预检，禁用 Corepack 自动下载；用真实已安装入口及受控错版本 / 缺入口 / 启动错误验证未运行反馈、无安装、无备用工具切换。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 28
+    },
+    {
+      "id": "14",
+      "description": "4.3 接入 test list 及 test run / status 参数配置，使用本地明确目标与 local-only 输出、不接受 openspec-bin；用 CLI 测试验证不同调用目录、帮助、缺参 / 重复 / 不支持参数、无需 Open 的 list、缺本地配置及不支持 product 状态拒绝。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "15",
+      "description": "4.4 更新 README 的映射、平台 / 工具支持范围与三条命令示例；在受控配置验证列出的实际 script / cwd，记录参数可用性，明确 package 未自动修改、full 命令不是正式验收。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "16",
+      "description": "5.1 从同步 workspace 写入中提取实际 acquire / owner-token release 逻辑，测试执行者显式持锁跨 await；先回归已有 Open / bind / Run / Archive 的冲突、写失败和锁保留，再验证异步等待时第二写者拒绝、锁未提前释放。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 34
+    },
+    {
+      "id": "17",
+      "description": "5.2 实现 Delivery 下 tests/NNN-kind 独占占号和 result / 固定日志存储协议，记录 prepared / not-run，再在 spawn 前持久保存 running / unknown 意图；用占号、重复 ID、错身份、目录 / junction 越界和意图写失败验证不启动测试、不影响 Run / 归档编号。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 35
+    },
+    {
+      "id": "18",
+      "description": "5.3 实现结果替换读回、日志完成与终态不可变；通过日志、终态 rename、读回和锁释放故障验证 unknown / 非零及真实现场保留；正常 failed / interrupted 终态释放自身锁，再次执行保留前次字节。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 36
+    },
+    {
+      "id": "19",
+      "description": "5.4 实现指定 execution 的只读 test status；覆盖完整结果新进程读取、running 意图 / pid 失踪、持锁 / 读中变化、缺日志 / 损坏、原工具和 script 不可用，验证不写文件、不重跑、不 kill、不放宽普通 query 锁边界。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 37
+    },
+    {
+      "id": "20",
+      "description": "5.5 更新 README 的执行目录、字段解释与故障读取示例；对照本组输出说明 observed 与完整成功、未运行 / 未知、旧 pid 仅为说明，确认不新增历史依赖、hash 清单或自动锁处置。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 38
+    },
+    {
+      "id": "21",
+      "description": "6.1 实现以 Node + 明确 pnpm 入口 / 参数数组启动选定脚本，目标 cwd 与实时 stdout / stderr 日志完整保存；用真实受控脚本验证 focused exit 0、fast 非零、普通 full exit 0及成功锁释放，核对 JSON 不混入子进程输出。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 42
+    },
+    {
+      "id": "22",
+      "description": "6.2 在本次前台执行中接入调用者取消，只停止实际持有的 Windows 子进程树，保存实际停止返回及 close；用受控等待程序和后代实际核对停止 / interrupted，覆盖无法确认的 unknown，不依赖日志 sentinel 认证结果、不使用旧 pid 或其他项目进程。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 43
+    },
+    {
+      "id": "23",
+      "description": "6.3 覆盖真实 spawn failure、异常信号 / 退出未知、意图后中断、日志保存失败与新进程恢复读回；通过受控故障测试确认所有这些状态不产生 passed、不自动重试，夹具自身停止后必要现场保留，测试不遗留活跃受控进程。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 44
+    },
+    {
+      "id": "24",
+      "description": "6.4 验证再次显式执行创建新结果，passed / failed / interrupted 不修改 Run / next / binding / verdict / 项目计数；用目标材料字节比较及实际 status / next 读回，并更新 README 的结果 / 取消边界与非正式 full 示例。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 45
+    },
+    {
+      "id": "25",
+      "description": "7.1 在新建受控项目使用原生 OpenSpec scaffold 和真实产品接口完成首项 Archive → 第二项 bind → 无 Run 查询 → 第二项阶段 Run / 新进程查询 → 第二次实际 Archive；验证同批次、Run 连续、计数 2、旧项保持以及末项 archived 查询，不以 fixture-only 选择投影替代验收。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 49
+    },
+    {
+      "id": "26",
+      "description": "7.2 结合上述流程，在无活动项和普通阶段分别执行 / 查询真实测试结果；验证 full 成功仍为 command scope、普通 query 不依赖旧测试日志、没有正式 Full Test / Close / 自动下一 Change，manual-bootstrap 原样兼容。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 50
+    },
+    {
+      "id": "27",
+      "description": "7.3 执行 pnpm check、pnpm test 的当前实现回归及固定 OpenSpec 当前 Change strict validate，覆盖受影响 Action / Apply / Archive / 查询与新执行场景；摘要记录命令、实际结果和限制，失败只修具体问题，不重做无关历史或正式 Delivery Full Test。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 51
+    },
+    {
+      "id": "28",
+      "description": "7.4 在 Apply 摘要列出 src / tests / scripts 各自物理行数前三名、可靠增长基准与职责整理结论，直接引用本次必要证据并保留旧 Run / verdict；核对新 Author 交接仅指向独立 Review Apply，不自签、不激活下一 Change。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+      "line": 52
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\n当前 MVP-D02 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json；MVP-D01 保持 closed，历史索引保留。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、首个已有 Change 的 bind、status / next、action start / continue / instructions / resolve、run save / submit 和 workspace diagnose；save 与 diagnose 仅本地，resolve 支持 Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\n当前 MVP-D02-A 为 sequential-changes-and-test-entrypoints，003 独立 Review Explore approved 后，004 Author Propose 已形成正式方案 / 设计 / 四份 delta / 28 项未完成任务，当前交接停在独立 review-propose；材料与证据入口由最新 Run 定位。项目累计归档数仍为 4，不继承 D01 Full Test 作为 D02 已验收，规划文件齐备不等于实施或审核批准。\nD02 保持 open，B 正式 Full Test / 小修复与 C Close / Reopen 尚未激活，相关产品能力仍待实施，D03 仅为后续规划。第二个 Delivery 使用人工记录，不通过产品写命令迁移人工历史；Explore 结果不代替 Propose、Apply 或独立批准。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

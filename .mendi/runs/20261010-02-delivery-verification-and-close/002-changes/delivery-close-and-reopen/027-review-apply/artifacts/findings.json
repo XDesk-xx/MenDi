@@ -1,0 +1,22 @@
+[
+  {
+    "id": "RA-C-001",
+    "path": "src/application/delivery-lifecycle.ts",
+    "start_line": 281,
+    "end_line": 286,
+    "category": "bug",
+    "severity": "medium",
+    "priority": 2,
+    "content": "记录化首次 Open 创建 initialBinding 时未调用既有依赖准入。B dependsOn A 而 A 未归档时，旧入口拒绝，新 role/actor 入口成功绑定 B。应在任何写入前复用槽位与依赖检查，并覆盖两种入口的行为一致性。"
+  },
+  {
+    "id": "RA-C-002",
+    "path": "src/adapters/lifecycle-store.ts",
+    "start_line": 157,
+    "end_line": 158,
+    "category": "bug",
+    "severity": "medium",
+    "priority": 2,
+    "content": "首次记录化 Open 在 parseDeliveryRun/lifecycleTargets 校验初始槽位前创建 .mendi。错误槽位留下空目录，改正后下一次请求报 incomplete-mendi-state，且无 pending 可 resume。应在首次创建状态目录前完成可预检的输入校验；不靠自动清理掩盖。"
+  }
+]

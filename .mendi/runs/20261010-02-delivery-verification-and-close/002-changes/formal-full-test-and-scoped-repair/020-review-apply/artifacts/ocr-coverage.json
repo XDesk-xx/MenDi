@@ -1,0 +1,46 @@
+{
+  "selected_files": 4,
+  "reviewed_files": 4,
+  "skipped_files": 0,
+  "coverage_rate": "100% of the 4 selected revision files",
+  "entries": [
+    {
+      "path": "src/adapters/test-process.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "basis": "019 artifacts/before direct comparison; unaffected 018 conclusions reused"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "review": "reviewed",
+      "basis": "019 artifacts/before direct comparison; unaffected 018 conclusions reused"
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "added",
+      "review": "reviewed",
+      "basis": "019 artifacts/before direct comparison; unaffected 018 conclusions reused"
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "added",
+      "review": "reviewed",
+      "basis": "019 artifacts/before direct comparison; unaffected 018 conclusions reused"
+    }
+  ],
+  "supplemental_reviewed": [
+    "tests/delivery-full-test.test.ts",
+    "tests/delivery-boundaries.test.ts",
+    "tests/test-cancellation.test.ts",
+    "tests/cancellation-support.ts",
+    "README.md",
+    "skills/actions/delivery-full-test/SKILL.md",
+    "openspec/changes/formal-full-test-and-scoped-repair/design.md",
+    "openspec/changes/formal-full-test-and-scoped-repair/specs/action-runs/spec.md",
+    "openspec/changes/formal-full-test-and-scoped-repair/specs/delivery-verification/spec.md",
+    "openspec/changes/formal-full-test-and-scoped-repair/specs/delivery-workspace/spec.md",
+    "openspec/changes/formal-full-test-and-scoped-repair/tasks.md"
+  ],
+  "boundary": "Excluded unrelated historical evidence and generated files before preview; not a repository-wide coverage claim. OCR deterministic selection/rules only."
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "Author local handoff verification, not independent approval.",
+  "assertions": {
+    "readbackStatus": true,
+    "readbackNext": true,
+    "reviewerBoundary": true,
+    "currentAuthor": true,
+    "manifestBoundary": true,
+    "authorComplete": true,
+    "oldRunsByteUnchanged": true,
+    "projectByteUnchanged": true,
+    "d01ByteUnchanged": true,
+    "d01Closed": true,
+    "countFour": true,
+    "nextNumberSeven": true,
+    "noIncompleteReservations": true
+  },
+  "nextRunNumber": 7,
+  "currentAuthorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/run.md"
+}

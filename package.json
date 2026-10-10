@@ -22,7 +22,7 @@
     "check": "pnpm format:check && pnpm lint && pnpm typecheck",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json",
     "typecheck:scripts": "tsc -p tsconfig.scripts.json",
-    "test": "pnpm build && node --test tests/*.test.ts",
+    "test": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
     "build": "tsc",
     "start": "node dist/drivers/cli.js"
   },

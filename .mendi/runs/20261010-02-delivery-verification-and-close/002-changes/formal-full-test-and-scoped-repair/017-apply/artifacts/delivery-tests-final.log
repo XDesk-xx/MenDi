@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+ok 1 - 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+  ---
+  duration_ms: 2.4038
+  type: 'test'
+  ...
+# Subtest: 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+ok 2 - 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+  ---
+  duration_ms: 31952.2136
+  type: 'test'
+  ...
+# Subtest: 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+ok 3 - 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+  ---
+  duration_ms: 1842.4457
+  type: 'test'
+  ...
+# Subtest: 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+ok 4 - 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+  ---
+  duration_ms: 6424.8651
+  type: 'test'
+  ...
+# Subtest: 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+ok 5 - 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+  ---
+  duration_ms: 2.2692
+  type: 'test'
+  ...
+# Subtest: 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+ok 6 - 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+  ---
+  duration_ms: 1.5793
+  type: 'test'
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 7 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 42885.7439
+  type: 'test'
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+ok 8 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 5886.5105
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 9 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 5941.5698
+  type: 'test'
+  ...
+# Subtest: 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+ok 10 - 选定启动失败保存有子 ID 的 not-run；本次真实树确认中断为 interrupted
+  ---
+  duration_ms: 9175.6381
+  type: 'test'
+  ...
+# Subtest: 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+ok 11 - 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+  ---
+  duration_ms: 6844.6908
+  type: 'test'
+  ...
+# Subtest: 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+ok 12 - 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+  ---
+  duration_ms: 54173.4692
+  type: 'test'
+  ...
+# Subtest: 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+ok 13 - 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+  ---
+  duration_ms: 6811.085
+  type: 'test'
+  ...
+# Subtest: 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+ok 14 - 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+  ---
+  duration_ms: 9020.9692
+  type: 'test'
+  ...
+# Subtest: diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+ok 15 - diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+  ---
+  duration_ms: 9461.7468
+  type: 'test'
+  ...
+# Subtest: 明确合法后续关联退出当前选择，保留正式历史；活动项与指针并存拒绝
+ok 16 - 明确合法后续关联退出当前选择，保留正式历史；活动项与指针并存拒绝
+  ---
+  duration_ms: 9322.9347
+  type: 'test'
+  ...
+# Subtest: 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+ok 17 - 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+  ---
+  duration_ms: 56210.9465
+  type: 'test'
+  ...
+# Subtest: changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+ok 18 - changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+  ---
+  duration_ms: 9836.9253
+  type: 'test'
+  ...
+# Subtest: 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+ok 19 - 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+  ---
+  duration_ms: 18456.8259
+  type: 'test'
+  ...
+# Subtest: 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+ok 20 - 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+  ---
+  duration_ms: 61415.9374
+  type: 'test'
+  ...
+# Subtest: 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+ok 21 - 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+  ---
+  duration_ms: 18998.1548
+  type: 'test'
+  ...
+# Subtest: 同级连续编号、空占号不复用、重复号拒绝
+ok 22 - 同级连续编号、空占号不复用、重复号拒绝
+  ---
+  duration_ms: 48926.3906
+  type: 'test'
+  ...
+# Subtest: 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+ok 23 - 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+  ---
+  duration_ms: 15592.2121
+  type: 'test'
+  ...
+# Subtest: 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+ok 24 - 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+  ---
+  duration_ms: 34307.578
+  type: 'test'
+  ...
+# Subtest: 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+ok 25 - 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+  ---
+  duration_ms: 15338.08
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 244294.0859

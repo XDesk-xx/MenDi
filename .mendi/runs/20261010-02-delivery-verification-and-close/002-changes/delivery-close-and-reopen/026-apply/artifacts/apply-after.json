@@ -1,0 +1,189 @@
+{
+  "changeName": "delivery-close-and-reopen",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-lifecycle\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-verification\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\delivery-workspace\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\specs\\test-execution\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 21,
+    "complete": 21,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 按 design §1 / §4 整理 records / associations 的结构读取与当前选择职责，支持唯一多 Delivery 索引、open / closed、本轮范围与历史 archived binding、显式 currentBatchId；用 records / associations 场景验证旧单批次和人工只读兼容、错身份 / 多当前项 / 重复编号与成员冲突拒绝。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 5
+    },
+    {
+      "id": "2",
+      "description": "1.2 修改本轮 binding 选择与首次新批次建立：Reopen 后 bind 不加入旧批次，首次实际 Run 才追加 NNN-changes，保留原数组 / 成员 / 路径；用 sequential / allocation 场景验证原号连续、空占号不复用及旧绑定字节保持。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 6
+    },
+    {
+      "id": "3",
+      "description": "1.3 将 completion snapshot 的结构解释与 verificationScope 的当前执行准入分开；用场景验证旧 archived ordinal 小于全局计数可读，而当前 Archive countBasis / ordinal、本轮正式执行完整性和累计增长规则仍有效。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "4",
+      "description": "2.1 扩展 Delivery Run 的 Open / Close / Reopen 类型、方法 / Author / actor、直接输入 / 收口摘要与 submitted 不可变校验，不为其强制 fullTest / repair；用头部 / 参数测试验证错类型 / 角色 / 路径拒绝及旧 B 记录仍可读。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 11
+    },
+    {
+      "id": "5",
+      "description": "2.2 在独立 lifecycle 应用 / adapter 中复用项目 lease、占号、临时替换与读回，落实 draft intent → pendingDeliveryRunRef → terminal → manifest → index / 清 pending 的提交边界；新增写入测试在各实际提交点注入失败，验证实际路径 / 占号 / 锁保留且 query 不回退旧成功。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 12
+    },
+    {
+      "id": "6",
+      "description": "2.3 实现专用 --resume 当前操作及 already-completed，核对同 actor / 类型、原输入 / before-after 基准、项目选择与安全位置，只补缺失本地提交；按操作分组验证不新占号、不改 terminal、不二次计数，陈旧 / 输入变化 / 占用 / 仍有锁均拒绝，更新方法中的有限继续说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "7",
+      "description": "3.1 实现 Close 声明、Author / actor、本轮完成、两个指针一致、stable known passed 父 / 子及日志、范围 / 命令匹配和完整批准快照检查；新增 Close admission 场景覆盖必要审核 / 日志缺失、普通 PASS、陈旧对象、活动项 / 修复、failed / not-run / interrupted / unknown，以及写前拒绝无占号。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 17
+    },
+    {
+      "id": "8",
+      "description": "3.2 保存材料 / 差异 / applicable 理由与实际收口摘要，提供 delivery-close 方法及 CLI / 人读 / JSON 输出；场景验证空判断拒绝、说明整理可沿用、当前修订取代旧入口后不可 Close、工具 / actor 不被描述为源码或 Owner 认证。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "9",
+      "description": "3.3 验证 Close 只消费当前正式事实快照与直接执行，不读取旧 Archive / Review / Author 正文、失败链或未知 Ref；用失效历史说明 / 未知 Ref 和必要路径越界 / junction 场景证明依赖收窄与安全拒绝同时成立。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "10",
+      "description": "4.1 改造只读 workspace 选择与 query，支持可选 --delivery、当前 Close / Reopen / Open 与 pending 解释，保持 fixed-tool 查询协议、closed upstream:null 和最小 next；新进程测试默认 / 指定选择、当前 Run 缺失、锁 / pending、旧目录不存在，确认查询不改 activeDeliveryId / 文件。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "11",
+      "description": "4.2 将正式 status 按 Run 路径所属登记 Delivery 读取，普通 test status 增加 --delivery；调整 test-store 的观察使直接读取不借 open / 当前无活动执行准入，保留父子身份、必要日志和前后稳定性；覆盖两个 Delivery 同名 execution、closed / Reopen 后旧结果、旧 ordinal 小于总数、错索引 / 越界与缺日志。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 24
+    },
+    {
+      "id": "12",
+      "description": "4.3 在 README / 帮助和方法中明确默认 closed 查询只展示持久收口、显式结果仍检查必要日志，ok 与适用性分开；用输出场景核对未自动重验 / PASS 继承、unknown / 日志变化仍非零并停 Owner。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "13",
+      "description": "5.1 实现当前完整 closed 的显式 Reopen、新范围 / 原因和历史保留，设置 currentBatchId=null、当前 Reopen 与旧 fullTestRunRef / closeRunRef；按场景验证不预建批次、不复活旧 Change、不变归档数、空 / 复用槽位 / 依赖不合法 / 非当前 closed 拒绝，提供 delivery-reopen 方法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "14",
+      "description": "5.2 将 bind 与正式执行准入对接 Open / Reopen，首次新验收只核对本轮直接归档 / 审核并接受新完整集合，不进入旧 retry 或继承 repairApproval；场景验证新范围 / 集合真实可执行、旧 PASS 不能 Close，后续新范围失败修复仍要求当前独立定向审核及新整次执行。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "15",
+      "description": "6.1 实现 closed 后显式新 ID Open 的追加 / 选择、独立 manifest / 001-delivery-open 与无旧正式指针；正常分支核对固定 OpenSpec / 配置、Author / actor 与受管输入 / 目标，保留旧 manifest / 索引项 / Run 与全局计数。新增场景验证另一进程选择、重复 / 占用 ID、仍 open、人工格式及旧材料字节保持。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 34
+    },
+    {
+      "id": "16",
+      "description": "6.2 保留无状态旧首次 Open 成对省略 role / actor 的入口；显式记录化首次 Open 保存 001，原可选首次绑定退出 Open 当前指针；closed 后新 Open 要求记录身份且分开 Change bind。补参数 / first-open 回归与 delivery-open 方法 / README 示例，确认不补旧 Run、不默认发明 actor、不通过产品迁移本项目人工历史。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 35
+    },
+    {
+      "id": "17",
+      "description": "6.3 覆盖新 Open 的未登记 group、pending / 索引选择提交、最终读回 / 释放失败及显式继续，核对旧 Delivery 不覆盖且计数不重置；首次记录化 Open 缺入口的现场也应如实诊断，不能把残留当空项目重新 Open。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 36
+    },
+    {
+      "id": "18",
+      "description": "7.1 新增按准备职责组织的 lifecycle-support 与独立整链场景，从维护输入实际 Open → 多 Change / 原生 Archive → 声明相符的完整测试 → Close → Reopen → 新工作 / Archive → 新完整测试 → Close；读取各次真实日志 / outcome，并验证全 Delivery 编号、新批次、历史未变与累计归档数。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 40
+    },
+    {
+      "id": "19",
+      "description": "7.2 另完成 closed 后新 Delivery Open、实际归档增长与同名普通执行，跨进程读取当前新对象及指定旧正式 / 普通结果；审核 verdict 仅作为明确的记录夹具，不把准备函数或旧 Explore foreground:pass 当真实覆盖 / 独立阶段批准。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 41
+    },
+    {
+      "id": "20",
+      "description": "7.3 执行普通 pnpm check、build 与本次影响的记录、分配、Archive、query、CLI、普通测试、Full Test / 修复回归，再执行既有适用的聚合测试（本仓库为 pnpm test，含 build；隔离目标按真实 test:full 映射执行）；记录实际通过 / 失败 / 未确认与必要单份日志，不触发根正式 Full Test、不重跑无关取消 proof 或追加 hash gate。失败修正具体问题后重跑受影响检查。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 42
+    },
+    {
+      "id": "21",
+      "description": "7.4 在当前 Apply 摘要记录 src / tests / scripts 各自维护代码行数前三名和有可靠基准的增长 / 职责结论，同步实际 README / context / 方法，交独立 Review Apply；检查本轮扩展混杂职责已整理且无纯转发层，旧 Run / verdict、旧 C / D proof 原用途保持。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\delivery-close-and-reopen\\tasks.md",
+      "line": 43
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\n当前 MVP-D02 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json；MVP-D01 保持 closed，历史索引保留。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行、Close / Reopen、新 Delivery Open 与指定历史结果读取。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\nMVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。\nMVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。\nMVP-D02-C delivery-close-and-reopen 当前活动，025 独立 Review Propose 已批准，Author 026 Apply 已完成 21 项实施任务与必要回归，当前停独立 Review Apply；Author 完成不代表独立审核批准。产品 Close 读取当前正式事实和材料判断，closed 默认查询不重验历史；指定结果读取与执行准入分开。Reopen 保存自包含新范围并在首次实际 Change Run 追加批次，新 Open 追加索引与独立 Run；pending 只允许有限同操作 resume。产品生命周期在隔离目标验收，本项目 D02 保持 open / manual-bootstrap，累计归档数 6，不执行根正式 Full Test / Close / Reopen / 新 Open，不迁移人工历史。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}
