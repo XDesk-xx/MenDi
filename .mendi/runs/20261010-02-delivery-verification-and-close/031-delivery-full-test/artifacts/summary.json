@@ -1,0 +1,108 @@
+{
+  "scope": "delivery",
+  "formalDeliveryTest": true,
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "runRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+  "executionId": "manual-031-pnpm-test",
+  "phase": "finished",
+  "outcome": "passed",
+  "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+  "collection": [
+    "maintained-format-lint-typecheck",
+    "all-current-product-tests-and-build",
+    "all-main-specs-strict-validation",
+    "D02-archived-scope-and-query-readback"
+  ],
+  "approvals": [
+    {
+      "planningSlot": "MVP-D02-A",
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "archiveOrdinal": 5,
+      "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/012-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/011-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/010-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 28,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-B",
+      "changeId": "formal-full-test-and-scoped-repair",
+      "archiveOrdinal": 6,
+      "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/020-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/019-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 30,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "archiveOrdinal": 7,
+      "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 22,
+      "readback": "consistent"
+    }
+  ],
+  "actualFullEntry": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
+  "startedAt": "2026-10-10T11:53:35.033Z",
+  "finishedAt": "2026-10-10T12:14:23.229Z",
+  "childAndLogPipesClosed": true,
+  "checks": {
+    "dependencyPreparation": {
+      "exitCode": 0,
+      "logRef": "artifacts/dependency-preparation.log"
+    },
+    "check": {
+      "exitCode": 0,
+      "maintainedFiles": 112,
+      "logRef": "artifacts/check.log"
+    },
+    "fullTest": {
+      "exitCode": 0,
+      "testFiles": 47,
+      "metrics": {
+        "tests": 193,
+        "suites": 0,
+        "pass": 193,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1243074.7161
+      },
+      "childRef": "artifacts/full-command.json",
+      "stdoutRef": "artifacts/test.log",
+      "stderrRef": "artifacts/test.stderr.log"
+    },
+    "specs": {
+      "exitCode": 0,
+      "valid": 6,
+      "resultRef": "artifacts/specs-validation.json"
+    },
+    "deliveryReadback": {
+      "outcome": "consistent",
+      "ref": "artifacts/delivery-readback.json"
+    },
+    "finalReadback": {
+      "outcome": "consistent",
+      "ref": "artifacts/final-readback.json"
+    }
+  },
+  "materialApplicability": "语义核对：源码、测试、执行配置与主规格相对受测提交未变；本轮仅验收记录及当前人工交接。",
+  "lifecycleEvidenceRef": "artifacts/lifecycle-scenes.jsonl",
+  "limits": [
+    "根人工 Full Test 不通过产品写入命令迁移历史。",
+    "阶段批准夹具不认证真人授权或本仓库批准。",
+    "不重跑限定用途旧 Explore proof，不自动清锁 / 清理临时目录。"
+  ],
+  "nextBoundary": "delivery-close / awaiting-owner-instruction"
+}

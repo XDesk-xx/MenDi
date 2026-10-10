@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "id": "action-runs",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 14
+    },
+    {
+      "id": "delivery-lifecycle",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 5
+    },
+    {
+      "id": "delivery-verification",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 3
+    },
+    {
+      "id": "delivery-workspace",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 3
+    },
+    {
+      "id": "project-entry",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 1
+    },
+    {
+      "id": "test-execution",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 1
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "byType": {
+      "spec": {
+        "items": 6,
+        "passed": 6,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

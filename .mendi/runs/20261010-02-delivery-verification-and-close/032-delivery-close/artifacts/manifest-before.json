@@ -2,7 +2,7 @@
   "id": "20261010-02-delivery-verification-and-close",
   "planningSlot": "MVP-D02",
   "title": "Delivery 验收与收口",
-  "state": "closed",
+  "state": "open",
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-10",
   "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
@@ -87,20 +87,18 @@
     "通用状态机、调度器、引用注册中心及全库 hash gate"
   ],
   "openRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md",
-  "stopBoundary": "closed",
+  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+  "stopBoundary": "delivery-close",
   "next": {
-    "action": "delivery-next",
+    "action": "delivery-close",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D02 已在 032 人工 Close；等待 Owner 明确后续范围与独立授权。"
+    "reason": "031 本轮人工正式 Full Test passed；保持 open，等待 Owner 单独授权 Close。"
   },
   "fullTest": {
     "runRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
     "result": "passed",
     "testMode": "owner-authorized-manual-full-test",
     "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b"
-  },
-  "closedOn": "2026-10-10",
-  "closeRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md"
+  }
 }

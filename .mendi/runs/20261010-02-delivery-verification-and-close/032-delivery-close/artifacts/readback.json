@@ -1,0 +1,47 @@
+{
+  "result": "closed",
+  "closeMode": "owner-authorized-manual-close",
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "closedOn": "2026-10-10",
+  "closeRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md",
+  "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md",
+  "fullTest": {
+    "runRef": ".mendi/runs/20261010-02-delivery-verification-and-close/031-delivery-full-test/run.md",
+    "result": "passed",
+    "testMode": "owner-authorized-manual-full-test",
+    "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b"
+  },
+  "archivedChangeCount": 7,
+  "activeChangeId": null,
+  "upstream": null,
+  "next": {
+    "action": "delivery-next",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D02 已在 032 人工 Close；等待 Owner 明确后续范围与独立授权。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "rootWriteLockPresent": false,
+  "queries": {
+    "status": "artifacts/status.json",
+    "next": "artifacts/next.json",
+    "humanStatus": "artifacts/status.txt",
+    "humanNext": "artifacts/next.txt",
+    "openspecList": "artifacts/openspec-list.json",
+    "exitCodes": 0
+  },
+  "preserved": {
+    "fullTest": true,
+    "changeBindings": true,
+    "projectIndex": true
+  },
+  "testedCommit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+  "materialDiff": "",
+  "trackedChanges": [
+    ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "checkedAt": "2026-10-10T12:21:37.676Z"
+}

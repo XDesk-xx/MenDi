@@ -1,0 +1,36 @@
+{
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "ownerInstruction": "owner 授权 D02 full test",
+  "recordingMode": "manual-bootstrap",
+  "collection": [
+    "maintained-format-lint-typecheck",
+    "all-current-product-tests-and-build",
+    "all-main-specs-strict-validation",
+    "D02-archived-scope-and-query-readback"
+  ],
+  "basis": {
+    "commit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+    "materials": "src / scripts / skills、全部维护 tests 与受控 fixtures、package.json / pnpm-lock.yaml / pnpm-workspace.yaml、归档及主规格；Node 22.23.2、pnpm 11.22.0、固定 OpenSpec 1.14.1。",
+    "changes": "初始工作区干净；正常同步既有依赖安装状态，执行中新建本 031 及当前人工交接，不改源码、测试、依赖声明或执行配置。"
+  },
+  "dependencyPreparation": [
+    "pnpm install --frozen-lockfile --offline --ignore-scripts"
+  ],
+  "commands": [
+    "pnpm check",
+    "pnpm test",
+    "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate --specs --strict --json",
+    "node dist/drivers/cli.js status / next --project D:/Projects/MenDi --json"
+  ],
+  "fullEntry": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
+  "coverage": {
+    "A": "顺序多 Change、真实 focused / fast / full、必要输入与跨进程查询。",
+    "B": "正式父 / 子结果、失败局部修复 / 独立审核 / 新完整执行、取消 unknown 与写入现场。",
+    "C": "真实 Open → 多 Change / 原生 Archive → Full Test → Close → Reopen → 新工作 / 新完整测试 → Close；closed 后新 Open、历史结果、全局编号、输入准入与有限恢复。"
+  },
+  "limits": [
+    "根人工 Full Test 不通过产品写入命令迁移历史。",
+    "阶段批准夹具不认证真人授权或本仓库批准。",
+    "不重跑限定用途旧 Explore proof，不自动清锁 / 清理临时目录。"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "deliveryId": "20261010-02-delivery-verification-and-close",
+  "state": "open",
+  "recordingMode": "manual-bootstrap",
+  "activeChangeId": null,
+  "archivedChangeCount": 7,
+  "approvals": [
+    {
+      "planningSlot": "MVP-D02-A",
+      "changeId": "sequential-changes-and-test-entrypoints",
+      "archiveOrdinal": 5,
+      "archiveRef": "openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/012-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/011-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/010-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 28,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-B",
+      "changeId": "formal-full-test-and-scoped-repair",
+      "archiveOrdinal": 6,
+      "archiveRef": "openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/021-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/020-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/formal-full-test-and-scoped-repair/019-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 30,
+      "readback": "consistent"
+    },
+    {
+      "planningSlot": "MVP-D02-C",
+      "changeId": "delivery-close-and-reopen",
+      "archiveOrdinal": 7,
+      "archiveRef": "openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen",
+      "archiveRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/030-archive/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/029-review-apply/run.md",
+      "authorRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/delivery-close-and-reopen/028-revise-apply/run.md",
+      "verdict": "approved",
+      "completedTasks": 22,
+      "readback": "consistent"
+    }
+  ],
+  "commit": "4355a6dd641a3adb4dff89b7fbff06796b788e3b",
+  "materialDiff": "",
+  "materialApplicability": "语义核对：源码、测试、执行配置与主规格相对受测提交未变；本轮仅验收记录及当前人工交接。",
+  "sceneSummary": [
+    {
+      "scenario": "new-delivery-chain",
+      "executions": 3,
+      "outcomes": [
+        "passed",
+        "passed",
+        "passed"
+      ],
+      "authority": "阶段批准为明确的记录夹具；执行、原生归档与读回是真实本地操作，不认证本仓库审核。"
+    },
+    {
+      "scenario": "reopen-chain",
+      "executions": 2,
+      "outcomes": [
+        "passed",
+        "passed"
+      ],
+      "authority": "阶段批准为明确的记录夹具；执行、原生归档与读回是真实本地操作，不认证本仓库审核。"
+    }
+  ],
+  "checkedAt": "2026-10-10T12:15:08.722Z"
+}
