@@ -1,0 +1,80 @@
+{
+  "mode": "workspace",
+  "summary": {
+    "total_files": 5,
+    "reviewed_files": 5,
+    "skipped_files": 0,
+    "coverage_rate": 1
+  },
+  "checklist": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "decision": "reviewed",
+      "reason": "当前补审交接背景与既有能力边界一致。"
+    },
+    {
+      "path": "src/adapters/test-process.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "对照 010 before 副本核对短写循环，检查失败、取消、close 与返回结果路径。"
+    },
+    {
+      "path": "src/adapters/test-store.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "必要依赖：stable 仅为文件观察，原持久 unknown 不被重写。"
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "对照修订确认 ok 条件区分 unknown，核对既有 run failure / 保存 / 锁分支。"
+    },
+    {
+      "path": "tests/test-support.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "必要依赖：真实隔离目标、pnpm、原始输出留存与异目录 CLI exit 断言。"
+    }
+  ],
+  "supplement": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    },
+    {
+      "path": "openspec/changes/sequential-changes-and-test-entrypoints/design.md",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    },
+    {
+      "path": "openspec/changes/sequential-changes-and-test-entrypoints/specs/test-execution/spec.md",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    },
+    {
+      "path": "openspec/changes/sequential-changes-and-test-entrypoints/tasks.md",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    },
+    {
+      "path": "tests/test-log-integrity.test.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    },
+    {
+      "path": "tests/test-execution.test.ts",
+      "status": "added",
+      "decision": "reviewed",
+      "reason": "默认排除的本轮修改文档或回归，已补审实际内容和修订范围。"
+    }
+  ],
+  "note": "仅对本轮必要文件计覆盖，其余沿用 009 有效结论；原始 preview 扫描总数不作为审核覆盖基数。"
+}

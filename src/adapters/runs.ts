@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import { parse, stringify } from 'yaml';
 import { managedPath } from './paths.ts';
@@ -36,9 +37,7 @@ export function readRun(
 }
 export function currentRun(root: string, workspace: Workspace): RunDocument | null {
   if (workspace.mode !== 'product') return null;
-  const binding = workspace.bindings.find(
-    (b) => b.changeId === workspace.activeChangeId || b.state === 'archived',
-  );
+  const binding = currentBinding(workspace);
   return binding?.latestRunRef
     ? readRun(root, binding.latestRunRef, workspace.id, binding.changeId)
     : null;

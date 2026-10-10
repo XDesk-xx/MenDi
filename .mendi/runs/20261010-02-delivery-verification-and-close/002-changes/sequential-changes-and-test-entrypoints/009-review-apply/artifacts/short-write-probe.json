@@ -1,0 +1,65 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-4rsZ5f\\minimal-project",
+  "method": "Intercept only the controlled foreground stdout chunk: fs.writeSync writes and returns 5 bytes, a legal short-write result. No product code was modified.",
+  "writes": [
+    {
+      "requested": 16,
+      "written": 5,
+      "omitted": "round:pass\n"
+    }
+  ],
+  "result": {
+    "openspec": null,
+    "local": null,
+    "executionMode": "local-only",
+    "upstreamAccess": "not-required",
+    "ok": true,
+    "operation": "test-run",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-4rsZ5f\\minimal-project",
+    "executionId": "001-focused",
+    "outcome": "passed",
+    "record": {
+      "formatVersion": 1,
+      "executionId": "001-focused",
+      "kind": "focused",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-4rsZ5f\\minimal-project",
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-4rsZ5f\\minimal-project",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actorId": "test-author",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run",
+          "test:focused"
+        ],
+        "dependencyPolicy": "warn"
+      },
+      "dependencyCheck": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run"
+        ],
+        "dependencyPolicy": "error",
+        "exitCode": 0
+      },
+      "scriptName": "test:focused",
+      "scriptText": "node foreground.ts pass",
+      "startedAt": "2026-10-10T04:05:08.079Z",
+      "finishedAt": "2026-10-10T04:05:09.512Z",
+      "executionState": "finished",
+      "outcome": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "pid": 23992,
+      "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+    }
+  },
+  "stdout": "foreg",
+  "stderr": "$ node foreground.ts pass\nactual stderr\n"
+}

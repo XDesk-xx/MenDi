@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "sequential-changes-and-test-entrypoints",
+    "archivedAs": "2026-10-10-sequential-changes-and-test-entrypoints",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-sequential-changes-and-test-entrypoints",
+    "specsUpdated": true,
+    "totals": {
+      "added": 9,
+      "modified": 9,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

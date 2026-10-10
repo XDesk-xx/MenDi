@@ -1,0 +1,17 @@
+{
+  "cause": "No target pnpm workspace marker; pnpm resolves ancestor MenDi workspace. Target isolated workspace and its own installed state are necessary fixture setup.",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M3w8Gl\\minimal-project",
+  "result": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 1,
+    "signal": null,
+    "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n",
+    "stderr": "",
+    "error": null
+  }
+}

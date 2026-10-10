@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { inspectProject } from '../adapters/project.ts';
@@ -104,9 +105,7 @@ export function diagnoseWorkspace(
   let reservation: RunDocument | null = null;
   if (workspace?.mode === 'product') {
     current = attempt(() => {
-      const ref = workspace.bindings.find(
-        (b) => b.changeId === workspace.activeChangeId,
-      )?.latestRunRef;
+      const ref = currentBinding(workspace)?.latestRunRef;
       if (ref) {
         track(ref);
         temporaryPaths(ref);

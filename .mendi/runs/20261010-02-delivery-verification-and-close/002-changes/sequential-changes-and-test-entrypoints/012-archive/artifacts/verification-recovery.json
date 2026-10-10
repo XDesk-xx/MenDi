@@ -1,0 +1,9 @@
+{
+  "failure": "new spec structure mismatch",
+  "phase": "native success, before numbered rename and counter commit",
+  "cause": "Purpose 标题后的分隔空行被原生工具规范化；原比较错误地把此格式差异当正文变化。",
+  "deltaPurpose": "## Purpose\n\n让调用者显式选择目标项目已有的 focused、fast 或 full 测试入口，以真实执行和持久记录区分通过、失败、未运行、中断和未知结果。该能力提供后续验收需要的命令事实与必要日志，不自动推进阶段、生成审核批准或替代正式 Delivery Full Test。",
+  "mainPurpose": "## Purpose\n让调用者显式选择目标项目已有的 focused、fast 或 full 测试入口，以真实执行和持久记录区分通过、失败、未运行、中断和未知结果。该能力提供后续验收需要的命令事实与必要日志，不自动推进阶段、生成审核批准或替代正式 Delivery Full Test。",
+  "purposeBodyEqual": true,
+  "nativeCalledAgain": false
+}

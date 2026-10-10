@@ -2,7 +2,7 @@
 
 MenDi 是以 OpenSpec 为规格底座，通过 Delivery、Author / Reviewer、Action 编排与 Runs 交接组织开发的项目交付工具。
 
-当前已实现项目入口、首次 Delivery Open、首个已有 Change 关联、Action / Run、Apply 处置 / 显式回退，以及原生 Archive 的准备、执行、有限 finish 和只读查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
+当前已实现项目入口、首次 Delivery Open、顺序已有 Change 关联、Action / Run、Apply 处置 / 显式回退、原生 Archive 与有限 finish，以及目标已有脚本的 focused / fast / full 前台执行和持久结果查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
 
 ## 工程命令
 
@@ -17,7 +17,7 @@ pnpm test
 pnpm start
 ```
 
-`start` 无参数时显示帮助，不写项目。`pnpm typecheck` 同时检查 `src/**/*.ts`、`scripts/**/*.ts` 与 `tests/**/*.ts`，脚本也可单独执行 `pnpm typecheck:scripts`。`build` 仅把 src 编译到 dist；源码以 `.ts` 导入，TypeScript 构建时将相对扩展名重写为 `.js`，测试由 Node 原生运行 `.ts`。`test` 构建后执行本 Change 的定向与集成测试，不代表 Delivery 正式 Full Test。
+`start` 无参数时显示帮助，不写项目。`pnpm typecheck` 同时检查 `src/**/*.ts`、`scripts/**/*.ts` 与 `tests/**/*.ts`，脚本也可单独执行 `pnpm typecheck:scripts`。`build` 仅把 src 编译到 dist；源码以 `.ts` 导入，TypeScript 构建时将相对扩展名重写为 `.js`，测试由 Node 原生运行 `.ts`。`test` 构建后执行工程回归，限制两个测试文件同时执行，避免大量真实工具子进程争用影响夹具闸门；单项竞争测试仍启动真实并发写者，不代表 Delivery 正式 Full Test。
 
 `check` 聚合 `format:check`、`lint` 和现有 `typecheck`；`pnpm format` 修正维护中 TypeScript 格式。固定开发依赖 Biome 2.5.15 的检查仅覆盖 `src/**/*.ts`、`scripts/**/*.ts` 和 `tests/**/*.ts`，排除整个受控 `tests/fixtures/`、历史 Run 及生成物；不设置行数门槛、hash gate 或额外补证流程。
 
@@ -33,13 +33,15 @@ node dist/drivers/cli.js change bind --project D:\work\target --change example-c
 node dist/drivers/cli.js next --project D:\work\target --json
 ```
 
-范围示例见 [delivery-scope.json](tests/fixtures/delivery-scope.json)：包含目标、唯一计划槽位及槽位依赖，保存到 manifest 后查询不再依赖原输入文件。关联要求 `example-change` 已经存在于目标 OpenSpec；CLI 不创建 Change。Open 也可成对传入 `--change example-change --slot A`，同时保存首个关联。
+范围示例见 [delivery-scope.json](tests/fixtures/delivery-scope.json)：包含目标、互不重复的计划槽位及槽位依赖，保存到 manifest 后查询不再依赖原输入文件。关联要求 `example-change` 已经存在于目标 OpenSpec；CLI 不创建 Change。Open 也可成对传入 `--change example-change --slot A`，同时保存首个关联。
 
-首次 Open 要求 `.mendi/` 不存在；重复 Open、追加 Delivery 和切换已有关联会拒绝。并发写使用独占锁；缺入口 / manifest、坏记录、残留锁或部分写入失败会报告路径，保留现场，不自动抢占、清理或恢复。人工 `manual-bootstrap` 记录只支持查询，产品 bind 不改写历史。
+首次 Open 要求 `.mendi/` 不存在；重复 Open、追加 Delivery 和替换已有关联会拒绝。前项完整归档后，Owner 可明确激活范围内下一已有 Change，以 `change bind --change second-change --slot B` 追加。要求 open product Delivery、当前无活动项 / 未完成归档、槽位及 Change 未占用，而且槽位依赖均有 archived binding。首次 Open 的可选关联也检查依赖。旧绑定保持，新项尚无 Run 时 next=explore，查询不回退旧项；bind / next 不分配 Run、批准或自动激活下一项。
+
+并发写使用独占锁；缺入口 / manifest、坏记录、残留锁或部分写入失败会报告路径，保留现场，不自动抢占、清理或恢复。人工 `manual-bootstrap` 记录只支持查询，产品写命令不改写或迁移历史。
 
 `status` 与 `next` 使用同一只读状态解释，JSON 给出 `local`、`upstream`、`next`，存在当前产品 Run 时增加 `run`（含 Action 身份与状态）。上游 proposal ready / planning complete 只是产物事实；人工 next 标明来源。阶段提示 `executable:false` 表示语义工作不由 CLI 自动执行，显式记录命令仍可使用。成功退出 0，用法错误 2，目标 / 工具 / 记录 / 写入失败 1；`--json` 的 stdout 只输出一份结果。
 
-查询要求本地配置、工具、项目入口、当前 manifest，以及当前活动 binding 的活动路径和 status；有 product latestRunRef 时再解析其当前 Run 头部。历史 Run、固定 Author 的正文、方法文件、旧方案、说明链接和未知 `Ref` 扩展不作为查询存在性前提，也不读取这些目标。manifestRef、binding changeRef 与产品 Run 路径仍校验身份和受管路径安全。
+查询要求本地配置、工具、项目入口、当前 manifest，以及当前活动 binding 的活动路径和 status；有 product latestRunRef 时再解析其当前 Run 头部。唯一当前对象为活动项，全部归档后为最后一项；旧 binding 仍校验身份、顺序、归档编号和受管路径结构，但不读旧 Run / 归档内容。历史正文、方法文件、旧方案、说明链接和未知 `Ref` 扩展不作为查询存在性前提，也不读取这些目标。当前必要输入缺失或损坏仍拒绝，不回退历史。
 
 人工归档交接使用 `state: archived`、`archiveOrdinal: N`、`changeRef: openspec/changes/archive/YYYY-MM-DD-NNN-<changeId>`（NNN 至少三位；旧无编号格式仍兼容），并清空该 Change 的 `activeChangeId`；查询显示本地交接且 `upstream:null`，不调用旧 Change 的活动 status、不补建目录。归档路径只是记录定位，不读取 / 要求其内容存在，也不认证人工归档已执行；矛盾身份和状态仍拒绝。产品归档查询另外核对当前必要 Archive Run、编号与计数；两种格式均不迁移历史记录。
 
@@ -120,6 +122,8 @@ finish 为 `executionMode:local-only / openspec:null / upstreamAccess:not-requir
 
 确认实际原生效果后，目录使用真实日期和累计 `archivedChangeCount + 1`：`YYYY-MM-DD-NNN-change-id`，至少三位、不随 Delivery / Run 重置，旧缺省计数按零解释而不由查询补写。依次提交安全编号、计数、终态 Archive Run、manifest，再完整读回；存在部分提交时 finish 只补缺失交接，不另配编号或修改已提交 Run。完整收口返回 `archived / completed`；重复 finish 返回 `already-completed`，不增长计数、不新建 Run、不调用原生。
 
+例如项目初始计数为 0，两项顺序归档产生 `YYYY-MM-DD-001-example-change`、`YYYY-MM-DD-002-second-change`，计数到 2。第二项操作只更新本项 binding；第一项 ordinal=1、小于项目总数仍合法。第二项计数 / 终态 Run / manifest 部分提交时，只以当前 Archive 的 countBasis / ordinal 定向 finish；已完成交接仅读当前记录。激活第二项后，再执行第一项 Archive execute / finish 会作为陈旧对象拒绝。当前第二 Archive Run 缺失仍拒绝，第一项旧正文和归档文件失效不要求补建。
+
 archiving 的 status / next 只解释当前 typed Archive Run，upstream:null，不调用消失源的 status，也不重新判断或重试。prepared / none 指向 archive-execute；invoking / confirmed 及计数 / Run 已写而 manifest 未提交时仍 pending，指向 archive-finish。archived 要求当前终态 / 编号 / 计数一致，显示无活动 Change，next=delivery-next / awaiting-owner-instruction；不读取归档目录、历史批准正文或说明 / 未知 Ref。普通活动源缺失仍失败；普通阶段写入在归档过渡期拒绝。正式 Archive 不产生 Reviewer verdict，后续 Change / checkpoint / Full Test / Close / Reopen 保持独立授权。
 
 ## 只读故障现场诊断
@@ -142,9 +146,39 @@ node dist/drivers/cli.js workspace diagnose --project D:\work\target --run $expl
       001-explore/run.md
       002-explore/run.md       # 同 Action 的继续
       003-review-explore/run.md
+    second-change/            # 前项归档后显式 bind，复用 001-changes
+      008-explore/run.md       # 示例：此前最大实际号为 007
 ```
 
 start / continue 先独占写新 Run，再替换 manifest 指针并读回；save / submit 在原目录写临时文件、rename 替换当前 draft，指针不变。发生修改后失败，保留锁、临时文件及已写路径，后续操作只诊断，不抢锁、不重试、不回滚；成功读回后才释放自身锁。这是可诊断的多文件写入，不是跨文件事务。
+
+后续 bind 在新 binding 保存既有 batchId 并追加批次成员；不新建批次、覆盖前项成员或为 bind 占号。新项无 latestRunRef 是合法起点，第一次 Action 才使用全 Delivery 下一实际号。
+
+## 目标项目测试
+
+目标需有效 repo-local OpenSpec 配置，已有 package scripts。`test list` 无需 Open；run 要求 open product Delivery、无 archiving / 锁冲突，可在普通阶段或无活动 Change 时执行。status 只读明确 execution，三条命令均 local-only，不接受 `--openspec-bin`。
+
+```powershell
+node dist/drivers/cli.js test list --project D:\work\target --json
+node dist/drivers/cli.js test run --project D:\work\target --kind focused --actor author-session-1 --pnpm-bin C:\tools\pnpm\bin\pnpm.cjs --json
+node dist/drivers/cli.js test status --project D:\work\target --execution 001-focused --json
+```
+
+`--pnpm-bin` 填写实际已安装的绝对 JS 入口；上例路径须替换为本机实际安装。首版支持 Windows、Node 22、pnpm 11.22.0；若目标声明 packageManager，必须匹配该版本。允许已缓存的 Corepack shim，强制 `COREPACK_ENABLE_NETWORK=0`、`COREPACK_ENABLE_AUTO_PIN=0`，入口 / 版本 / 缓存不符就拒绝，不切换工具、下载或自动给目标追加 packageManager。不同调用目录仍使用明确目标的规范根作为 cwd。
+
+默认 focused / fast / full 对应 `test:focused` / `test:fast` / `test:full`。可在现有 package.json 用 `"mendi":{"tests":{"full":"test"}}` 指向已有 script；名称以字母数字开头，只含字母数字、冒号、下划线、连字符，不接受参数或命令文本。list 返回实际文本和可用性；run 只校验选中项，不因另一项不可用而拒绝，不猜测 / 新建脚本或改配置。
+
+MenDi 持锁核对实际工具版本，再以 Node 参数数组 `[pnpm入口, 'run']` 预检依赖，强制 `pnpm_config_verify_deps_before_run=error`。预检失败为 not-run、executionId=null，返回实际退出和输出，不启动脚本、不占号、不安装 / 修复依赖，正常释放自身锁。依赖由项目维护者明确准备，例如在该目标执行其正常 `pnpm install --frozen-lockfile`；这属于准备工作。
+
+预检通过后，选定命令使用 `[pnpm入口, 'run', script名]`，强制 `warn`；即使目标 / 调用者设置 install 或依赖在两次调用间变动，也不触发 pnpm 运行前自动安装。宿主环境与目标配置不被修改。script 自身明确包含 install / 其他写入时，按其实际行为执行；记录不把这些写入称为 MenDi 自动安装。脚本非零是 failed，即便日志含依赖错误文字，也不反推 not-run。
+
+执行跨 await 持有同一项目锁，原始 stdout / stderr 保存到 `.mendi/delivery-groups/<delivery-id>/tests/001-focused/`，另有 `result.json`。编号独立于 Run / Archive，空占号保留，重复号及目录 / 日志链接越界拒绝。结果包含实际命令 / cwd、两段依赖策略、成功预检摘要、script 文本、身份与可空 Change 快照、时间、pid / exit / signal 和日志定位；终态不可重写，再次显式执行建立新目录。
+
+spawn 前保存 prepared / not-run，再持久保存 running / unknown 意图。日志按实际写入字节数续写，零进展或写入异常为 unknown；完整日志、正常 exit 0、终态保存读回及自身锁释放都成功才报告 passed；正常非零为 failed。前台 Ctrl+C 或调用者取消只停止本次实际持有的 Windows 子进程树，实际停止与 close 确认才为 interrupted。启动明确失败为 not-run；停止、日志、终态、读回或锁释放无法确认为 unknown，报告已观察现场并保留锁，不自动重试或清理。
+
+`test status` 成功表示指定已知终态和必要日志完整且读取稳定，outcome 可以是 failed / interrupted / not-run；不依赖原 pnpm / script 仍存在或原 Change 的 Run 正文。持锁、读中变化、必要输入损坏及未完成意图返回 unknown / 非零，同时可显示 observed 内容；即使 observed 为 passed，也不表示完整成功。stable 仅表示文件观察稳定；已保存的 finished / unknown 即使锁被人工处置，仍保留原记录、ok:false 并非零退出。旧 pid 仅供说明，不据其失踪补写终态，不 kill 或解除锁。故障时先读明确 execution 和 `workspace diagnose`，后续处置仍遵守授权边界。
+
+三类结果都标记 `scope:command`、`formalDeliveryTest:false`。将 run 的 kind 改为 full 只是普通 full 脚本执行，成功也不创建正式 Delivery Full Test、不改 Run / next / binding / verdict / 计数，不执行 Close 或激活下一项。普通 status / next 不读取旧测试结果或日志。
 
 ## 目录
 
@@ -173,6 +207,6 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-当前协作记录：MVP-D02“Delivery 验收与收口”已在 Owner 授权的 [001 Delivery Open](.mendi/runs/20261010-02-delivery-verification-and-close/001-delivery-open/run.md) 人工打开，包含 A 多 Change / 测试入口、B 正式 Full Test / 小修复、C Close / Reopen 三个规划槽位；尚无活动 Change，当前交接等待 Owner 明确授权激活 MVP-D02-A。D01 保持 closed，累计完成 Change 为 4。当前交接见 [D02 manifest](.mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json)；既有人工记录不等同这些产品能力已实现。
+当前协作记录：MVP-D02“Delivery 验收与收口”保持 open；MVP-D02-A `sequential-changes-and-test-entrypoints` 已独立批准并在 012 完成实际归档与主规格同步，归档目录为 `openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints`，累计完成 Change 为 5，当前无活动 Change。本次 change checkpoint 保存当前归档材料，后续等待 Owner 明确下一 Change 与范围。B 正式 Full Test / 小修复与 C Close / Reopen 尚未激活，D01 保持 closed，旧 Run 与 verdict 保留。当前交接见 [D02 manifest](.mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json)。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。新 Delivery 从 `001` 开始，Changes 批次在实际进入 Change 工作时建立；D01 的 `003-changes` 保留原归属，Reopen 沿原 Delivery 连续编号并建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

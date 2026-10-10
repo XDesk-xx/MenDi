@@ -1,0 +1,39 @@
+{
+  "scope": "Local Author planning consistency, not independent approval or product acceptance.",
+  "modified": [
+    {
+      "file": "proposal.md",
+      "before": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/artifacts/before/proposal.md",
+      "changed": true
+    },
+    {
+      "file": "design.md",
+      "before": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/artifacts/before/design.md",
+      "changed": true
+    },
+    {
+      "file": "tasks.md",
+      "before": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/artifacts/before/tasks.md",
+      "changed": true
+    },
+    {
+      "file": "specs/test-execution/spec.md",
+      "before": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/006-revise-propose/artifacts/before/test-execution-spec.md",
+      "changed": true
+    }
+  ],
+  "unchangedDeltas": [
+    "action-runs",
+    "delivery-workspace",
+    "project-entry"
+  ],
+  "assertions": {
+    "tasksCount": true,
+    "noCompletedTasks": true,
+    "noExploreArtifact": true,
+    "oldAuthorCompleted": true,
+    "oldReviewChangesRequested": true,
+    "allFourPlanningFilesRevised": true,
+    "nativeProofPassed": true
+  }
+}

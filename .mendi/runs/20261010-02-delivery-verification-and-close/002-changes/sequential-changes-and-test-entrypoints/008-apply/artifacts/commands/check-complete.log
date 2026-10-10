@@ -1,0 +1,7 @@
+[WARN] Your node_modules are out of sync with your lockfile. The workspace structure has changed since last install
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+Checked 78 files in 84ms. No fixes applied.
+$ biome lint src scripts tests
+Checked 78 files in 190ms. No fixes applied.
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json

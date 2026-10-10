@@ -1,3 +1,4 @@
+import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -56,7 +57,11 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
     );
   const index = parseProject(readJson(managedPath(root, '.mendi/project.json')));
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
+  const selected = currentBinding(workspace);
   for (const binding of workspace.bindings) {
+    managedPath(root, binding.changeRef);
+    if (binding.latestRunRef) managedPath(root, binding.latestRunRef);
+    if (binding !== selected) continue;
     if (workspace.mode === 'product' && ['archiving', 'archived'].includes(binding.state)) {
       const run = readRun(root, binding.latestRunRef!, workspace.id, binding.changeId);
       const archive = run.record.archive;
@@ -109,13 +114,11 @@ function replaceJson(
   return file;
 }
 
-export function lockedWrite<T>(
-  root: string,
-  operation: string,
-  action: (committed: string[]) => T,
-  observe?: WriteObserver,
-  retainOnFailure = false,
-): T {
+export interface ProjectLock {
+  lock: string;
+  owner: string;
+}
+export function acquireProjectLock(root: string, operation: string): ProjectLock {
   const lock = managedPath(root, '.mendi/write.lock');
   const owner = JSON.stringify({ token: randomUUID(), pid: process.pid, operation });
   let descriptor: number;
@@ -129,16 +132,34 @@ export function lockedWrite<T>(
       '核对现有锁与写入现场，不覆盖已有工作。',
     );
   }
+  try {
+    fs.writeFileSync(descriptor, owner);
+  } finally {
+    fs.closeSync(descriptor);
+  }
+  return { lock, owner };
+}
+export function releaseProjectLock(root: string, lease: ProjectLock): void {
+  const lock = managedPath(root, '.mendi/write.lock');
+  if (lock !== lease.lock || fs.readFileSync(lock, 'utf8') !== lease.owner)
+    throw new MendiError('write-conflict', '锁归属已变化，保留现有锁。');
+  fs.unlinkSync(lock);
+}
+
+export function lockedWrite<T>(
+  root: string,
+  operation: string,
+  action: (committed: string[]) => T,
+  observe?: WriteObserver,
+  retainOnFailure = false,
+): T {
+  const lease = acquireProjectLock(root, operation);
+  const { lock } = lease;
   const committed: string[] = [];
   let output: T | undefined;
   let actionError: unknown;
   let releaseError: unknown;
   try {
-    try {
-      fs.writeFileSync(descriptor, owner);
-    } finally {
-      fs.closeSync(descriptor);
-    }
     observe?.('lock-acquired', lock);
     output = action(committed);
   } catch (error) {
@@ -147,9 +168,7 @@ export function lockedWrite<T>(
   if (!(retainOnFailure && actionError && committed.length))
     try {
       observe?.('before-lock-release', lock);
-      managedPath(root, '.mendi/write.lock');
-      if (fs.readFileSync(lock, 'utf8') !== owner) throw new Error('锁归属已变化，保留现有锁');
-      fs.unlinkSync(lock);
+      releaseProjectLock(root, lease);
     } catch (error) {
       releaseError = error;
     }

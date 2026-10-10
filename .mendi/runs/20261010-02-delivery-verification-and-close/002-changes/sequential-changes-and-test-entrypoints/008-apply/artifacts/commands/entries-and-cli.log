@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+ok 1 - 真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交
+  ---
+  duration_ms: 54030.8041
+  type: 'test'
+  ...
+# Subtest: CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+ok 2 - CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标
+  ---
+  duration_ms: 10352.9583
+  type: 'test'
+  ...
+# Subtest: 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+ok 3 - 两个真实子进程 Action 写入竞争只允许一个编号，不删除竞争锁
+  ---
+  duration_ms: 6074.6945
+  type: 'test'
+  ...
+# Subtest: 帮助、显式目标与参数组合
+ok 4 - 帮助、显式目标与参数组合
+  ---
+  duration_ms: 2.0908
+  type: 'test'
+  ...
+# Subtest: 追加顺序选择活动末项，无 Run 仍选择新项；全部归档选择最后项
+ok 5 - 追加顺序选择活动末项，无 Run 仍选择新项；全部归档选择最后项
+  ---
+  duration_ms: 3.3343
+  type: 'test'
+  ...
+# Subtest: 拒绝错顺序、多活动、编号倒序 / 重复 / 超计数、错批次成员与 Run 身份
+ok 6 - 拒绝错顺序、多活动、编号倒序 / 重复 / 超计数、错批次成员与 Run 身份
+  ---
+  duration_ms: 1.6057
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML store 返回完整人读错误且不写目标
+ok 7 - 自引用 YAML store 返回完整人读错误且不写目标
+  ---
+  duration_ms: 540.1339
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML store 返回完整 JSON错误且不写目标
+ok 8 - 自引用 YAML store 返回完整 JSON错误且不写目标
+  ---
+  duration_ms: 746.9361
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML schema 返回完整人读错误且不写目标
+ok 9 - 自引用 YAML schema 返回完整人读错误且不写目标
+  ---
+  duration_ms: 702.6831
+  type: 'test'
+  ...
+# Subtest: 自引用 YAML schema 返回完整 JSON错误且不写目标
+ok 10 - 自引用 YAML schema 返回完整 JSON错误且不写目标
+  ---
+  duration_ms: 593.1509
+  type: 'test'
+  ...
+# Subtest: 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+ok 11 - 帮助及错误参数无需初始化，项目和 scope 的相对基准明确
+  ---
+  duration_ms: 3848.0036
+  type: 'test'
+  ...
+# Subtest: 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+ok 12 - 真实新 / 已有配置项目跨进程 Open 与查询，重复 Open 不覆盖
+  ---
+  duration_ms: 9481.7963
+  type: 'test'
+  ...
+# Subtest: 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+ok 13 - 真实 Open 时关联 / Open 后 bind，重复关联拒绝，readiness 不推进本地阶段
+  ---
+  duration_ms: 16440.4791
+  type: 'test'
+  ...
+# Subtest: 关联与范围不成立的 Open 在写前拒绝
+ok 14 - 关联与范围不成立的 Open 在写前拒绝
+  ---
+  duration_ms: 2332.8467
+  type: 'test'
+  ...
+# Subtest: 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+ok 15 - 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+  ---
+  duration_ms: 28.3434
+  type: 'test'
+  ...
+# Subtest: 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+ok 16 - 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+  ---
+  duration_ms: 223.8431
+  type: 'test'
+  ...
+# Subtest: 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+ok 17 - 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+  ---
+  duration_ms: 219.6549
+  type: 'test'
+  ...
+# Subtest: CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+ok 18 - CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+  ---
+  duration_ms: 705.0943
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 70668.6445

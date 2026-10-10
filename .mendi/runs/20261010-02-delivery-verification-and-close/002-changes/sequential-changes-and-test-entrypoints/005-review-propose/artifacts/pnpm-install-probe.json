@@ -1,0 +1,59 @@
+{
+  "purpose": "Only controlled local file dependency; offline execution, no root project writes or external downloads.",
+  "results": [
+    {
+      "case": "proposed",
+      "root": "D:\\Projects\\MenDi\\.tmp\\review-propose-pnpm-MMdFkS\\proposed",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "environment": {
+        "COREPACK_ENABLE_NETWORK": "0",
+        "npm_config_offline": "true"
+      },
+      "status": 0,
+      "signal": null,
+      "stdout": "Progress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +1\n+\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\Projects\\MenDi\\.tmp\\review-propose-pnpm-MMdFkS\\proposed\\store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 1, reused 1, downloaded 0, added 1, done\n\ndependencies:\n+ review-local-dep 1.0.0\n\nDone in 735ms using pnpm v11.22.0\nCONTROLLED_SCRIPT_RAN\n",
+      "stderr": "$ node check.ts\n",
+      "dependencyInstalled": true,
+      "lockfileCreated": true,
+      "scriptRan": true
+    },
+    {
+      "case": "guarded",
+      "root": "D:\\Projects\\MenDi\\.tmp\\review-propose-pnpm-MMdFkS\\guarded",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "environment": {
+        "COREPACK_ENABLE_NETWORK": "0",
+        "npm_config_offline": "true",
+        "pnpm_config_verify_deps_before_run": "error"
+      },
+      "status": 1,
+      "signal": null,
+      "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] Cannot check whether dependencies are outdated\n\nRun \"pnpm install\"\n",
+      "stderr": "",
+      "dependencyInstalled": false,
+      "lockfileCreated": false,
+      "scriptRan": false
+    }
+  ],
+  "reproductionInputs": {
+    "package.json": "{\"name\":\"review-local-project\",\"private\":true,\"packageManager\":\"pnpm@11.22.0\",\"scripts\":{\"test:focused\":\"node check.ts\"},\"dependencies\":{\"review-local-dep\":\"file:./dependency\"}}",
+    "pnpm-workspace.yaml": "packages: []\nverifyDepsBeforeRun: install\nstoreDir: './store'\n",
+    "check.ts": "console.log('CONTROLLED_SCRIPT_RAN');\n",
+    "dependency/package.json": "{\"name\":\"review-local-dep\",\"version\":\"1.0.0\"}"
+  },
+  "installedSource": {
+    "path": "C:/Users/xuser/AppData/Local/node/corepack/v1/pnpm/11.22.0/dist/pnpm.mjs",
+    "defaultLine": 168549,
+    "runDepsStatusCheckLine": 273321,
+    "runHandlerLine": 274176,
+    "environmentOverrideLine": 169206
+  }
+}

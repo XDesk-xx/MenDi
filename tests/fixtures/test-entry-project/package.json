@@ -1,0 +1,11 @@
+{
+  "name": "controlled-test-entry",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "scripts": {
+    "test:focused": "node check.ts pass",
+    "test:fast": "node check.ts fail",
+    "test:full": "node check.ts wait"
+  }
+}

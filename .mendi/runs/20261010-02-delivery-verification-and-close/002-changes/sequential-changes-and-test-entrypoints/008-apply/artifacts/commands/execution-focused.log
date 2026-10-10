@@ -1,0 +1,116 @@
+TAP version 13
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+not ok 1 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 3479.4566
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-execution.test.ts:14:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"openspec":null,"local":null,"executionMode":"local-only","upstreamAccess":"not-required","ok":false,"operation":"test-run","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-M3w8Gl\\minimal-project","executionId":null,"outcome":"not-run","observed":null,"error":{"message":"依赖预检拒绝，选定脚本未运行。","code":"test-dependencies-unavailable","details":{"executable":"C:\\nvm4w\\nodejs\\node.exe","args":["C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js","run"],"dependencyPolicy":"error","exitCode":1,"signal":null,"stdout":"[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n","stderr":"","error":null}}}
+    + actual - expected
+    
+    + 'not-run'
+    - 'passed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'passed'
+  actual: 'not-run'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-execution.test.ts:20:54)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+not ok 2 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 13567.8696
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-execution.test.ts:39:1'
+  failureType: 'testCodeFailure'
+  error: 'fixture wait timed out'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    waitFor (file:///D:/Projects/MenDi/tests/test-support.ts:38:51)
+    async TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-execution.test.ts:43:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+not ok 3 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 2215.0767
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-execution.test.ts:56:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {
+      "openspec": null,
+      "local": null,
+      "executionMode": "local-only",
+      "upstreamAccess": "not-required",
+      "ok": false,
+      "operation": "test-status",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Gfcq8r\\minimal-project",
+      "executionId": "001-focused",
+      "outcome": "unknown",
+      "error": {
+        "message": "ENOENT: no such file or directory, open 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-Gfcq8r\\minimal-project\\.mendi\\delivery-groups\\d01\\tests\\001-focused\\result.json'",
+        "code": "ENOENT"
+      }
+    }
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    statusCli (file:///D:/Projects/MenDi/tests/test-support.ts:34:10)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-execution.test.ts:58:151)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+not ok 4 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 12069.0672
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-execution.test.ts:66:1'
+  failureType: 'testCodeFailure'
+  error: 'fixture wait timed out'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    waitFor (file:///D:/Projects/MenDi/tests/test-support.ts:38:51)
+    async TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-execution.test.ts:70:7)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+not ok 5 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 2188.9683
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-execution.test.ts:74:1'
+  failureType: 'testCodeFailure'
+  error: '{"openspec":null,"local":null,"executionMode":"local-only","upstreamAccess":"not-required","ok":false,"operation":"test-run","projectRoot":"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-S64Z8F\\\\minimal-project","executionId":null,"outcome":"not-run","observed":null,"error":{"message":"依赖预检拒绝，选定脚本未运行。","code":"test-dependencies-unavailable","details":{"executable":"C:\\\\nvm4w\\\\nodejs\\\\node.exe","args":["C:\\\\Users\\\\xuser\\\\AppData\\\\Local\\\\nvm\\\\v22.23.2\\\\node_modules\\\\corepack\\\\dist\\\\pnpm.js","run"],"dependencyPolicy":"error","exitCode":1,"signal":null,"stdout":"[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\\n\\nRun \\"pnpm install\\"\\n","stderr":"","error":null}}}'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-execution.test.ts:75:90)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 0
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 33813.4574

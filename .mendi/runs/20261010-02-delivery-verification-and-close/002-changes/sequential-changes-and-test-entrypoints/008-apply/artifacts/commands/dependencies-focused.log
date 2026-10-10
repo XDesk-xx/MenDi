@@ -1,0 +1,97 @@
+TAP version 13
+# Subtest: RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+ok 1 - RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+  ---
+  duration_ms: 2432.4889
+  type: 'test'
+  ...
+# Subtest: 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+ok 2 - 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+  ---
+  duration_ms: 9521.2696
+  type: 'test'
+  ...
+# Subtest: 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+not ok 3 - 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+  ---
+  duration_ms: 3104.8376
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-dependencies.test.ts:32:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"openspec":null,"local":null,"executionMode":"local-only","upstreamAccess":"not-required","ok":false,"operation":"test-run","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-TVygV8\\minimal-project","executionId":null,"outcome":"not-run","observed":null,"error":{"message":"依赖预检拒绝，选定脚本未运行。","code":"test-dependencies-unavailable","details":{"executable":"C:\\nvm4w\\nodejs\\node.exe","args":["C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js","run"],"dependencyPolicy":"error","exitCode":1,"signal":null,"stdout":"[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n","stderr":"","error":null}}}
+    + actual - expected
+    
+    + 'not-run'
+    - 'failed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'failed'
+  actual: 'not-run'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-dependencies.test.ts:34:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+not ok 4 - 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+  ---
+  duration_ms: 3195.9553
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-dependencies.test.ts:36:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"openspec":null,"local":null,"executionMode":"local-only","upstreamAccess":"not-required","ok":false,"operation":"test-run","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-8eLHeq\\minimal-project","executionId":null,"outcome":"not-run","observed":null,"error":{"message":"依赖预检拒绝，选定脚本未运行。","code":"test-dependencies-unavailable","details":{"executable":"C:\\nvm4w\\nodejs\\node.exe","args":["C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js","run"],"dependencyPolicy":"error","exitCode":1,"signal":null,"stdout":"[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n","stderr":"","error":null}}}
+    + actual - expected
+    
+    + 'not-run'
+    - 'passed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'passed'
+  actual: 'not-run'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-dependencies.test.ts:40:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+not ok 5 - 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+  ---
+  duration_ms: 3359.8502
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-dependencies.test.ts:42:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + null
+    - '003-focused'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '003-focused'
+  actual: ~
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-dependencies.test.ts:44:43)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 2
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21911.0265

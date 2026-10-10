@@ -44,24 +44,33 @@ test('两个真实执行进程 / finish 进程竞争同一锁，原生和累计�
       disposeStoppedFixtureLock(target.root);
     }
     const first = startWorker(target.root, draft.run.ref, mode, `hold-${mode}`);
-    const ready = path.join(target.root, 'worker-ready');
-    const until = Date.now() + 12_000;
-    while (!fs.existsSync(ready) && Date.now() < until)
-      await new Promise((resolve) => setTimeout(resolve, 30));
-    assert.equal(fs.existsSync(ready), true);
-    const second = await startWorker(target.root, draft.run.ref, mode, '').done;
-    assert.equal(second.status, 1, second.output);
-    assert.equal(fs.existsSync(path.join(target.root, '.mendi/write.lock')), true);
-    fs.writeFileSync(path.join(target.root, 'worker-release'), 'explicit test release');
-    const success = await first.done;
-    assert.equal(success.status, 0, success.output);
-    assert.equal(fs.readFileSync(path.join(target.root, 'native-calls.txt'), 'utf8'), 'archive\n');
-    assert.equal(
-      JSON.parse(fs.readFileSync(path.join(target.root, '.mendi/project.json'), 'utf8'))
-        .archivedChangeCount,
-      1,
-    );
-    assert.equal(archiveCli(target.root, draft.run.ref).result, 'already-completed');
+    try {
+      const ready = path.join(target.root, 'worker-ready');
+      const until = Date.now() + 12_000;
+      while (!fs.existsSync(ready) && Date.now() < until)
+        await new Promise((resolve) => setTimeout(resolve, 30));
+      assert.equal(fs.existsSync(ready), true);
+      const second = await startWorker(target.root, draft.run.ref, mode, '').done;
+      assert.equal(second.status, 1, second.output);
+      assert.equal(fs.existsSync(path.join(target.root, '.mendi/write.lock')), true);
+      fs.writeFileSync(path.join(target.root, 'worker-release'), 'explicit test release');
+      const success = await first.done;
+      assert.equal(success.status, 0, success.output);
+      assert.equal(
+        fs.readFileSync(path.join(target.root, 'native-calls.txt'), 'utf8'),
+        'archive\n',
+      );
+      assert.equal(
+        JSON.parse(fs.readFileSync(path.join(target.root, '.mendi/project.json'), 'utf8'))
+          .archivedChangeCount,
+        1,
+      );
+      assert.equal(archiveCli(target.root, draft.run.ref).result, 'already-completed');
+    } finally {
+      // 只释放本夹具持有的闸门并等待其退出；失败也不留下等待写者。
+      fs.writeFileSync(path.join(target.root, 'worker-release'), 'fixture cleanup release');
+      await first.done;
+    }
   }
 });
 test('finish 本身也可再次在真实 Run 提交点中断，后续收口不改已提交 Run', () => {

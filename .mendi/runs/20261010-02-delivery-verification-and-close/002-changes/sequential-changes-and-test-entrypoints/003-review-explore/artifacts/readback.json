@@ -1,0 +1,439 @@
+{
+  "status": {
+    "ok": true,
+    "operation": "query",
+    "projectRoot": "D:\\Projects\\MenDi",
+    "openspec": {
+      "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+      "version": "1.14.1",
+      "root": {
+        "path": "D:\\Projects\\MenDi",
+        "source": "nearest"
+      }
+    },
+    "local": {
+      "source": "manual-bootstrap",
+      "deliveryId": "20261010-02-delivery-verification-and-close",
+      "title": "Delivery 验收与收口",
+      "state": "open",
+      "goal": "实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D02-A",
+          "title": "多 Change 衔接、三类测试入口与简洁结果",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D02-A：多 Change 衔接、三类测试入口与简洁结果"
+        },
+        {
+          "slot": "MVP-D02-B",
+          "title": "正式 Full Test 与小修复",
+          "dependsOn": [
+            "MVP-D02-A"
+          ],
+          "roadmapSection": "MVP-D02-B：正式 Full Test 与小修复"
+        },
+        {
+          "slot": "MVP-D02-C",
+          "title": "Close 与 Reopen",
+          "dependsOn": [
+            "MVP-D02-B"
+          ],
+          "roadmapSection": "MVP-D02-C：Close 与 Reopen"
+        }
+      ],
+      "activeChangeId": "sequential-changes-and-test-entrypoints",
+      "changeBindings": [
+        {
+          "changeId": "sequential-changes-and-test-entrypoints",
+          "changeRef": "openspec/changes/sequential-changes-and-test-entrypoints",
+          "planningSlot": "MVP-D02-A",
+          "state": "explored"
+        }
+      ],
+      "recorded": {
+        "id": "20261010-02-delivery-verification-and-close",
+        "planningSlot": "MVP-D02",
+        "title": "Delivery 验收与收口",
+        "state": "open",
+        "recordingMode": "manual-bootstrap",
+        "openedOn": "2026-10-10",
+        "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+        "goal": "实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。",
+        "plannedChanges": [
+          {
+            "slot": "MVP-D02-A",
+            "title": "多 Change 衔接、三类测试入口与简洁结果",
+            "dependsOn": [],
+            "externalDependsOn": [
+              "MVP-D01-D"
+            ],
+            "roadmapSection": "MVP-D02-A：多 Change 衔接、三类测试入口与简洁结果"
+          },
+          {
+            "slot": "MVP-D02-B",
+            "title": "正式 Full Test 与小修复",
+            "dependsOn": [
+              "MVP-D02-A"
+            ],
+            "roadmapSection": "MVP-D02-B：正式 Full Test 与小修复"
+          },
+          {
+            "slot": "MVP-D02-C",
+            "title": "Close 与 Reopen",
+            "dependsOn": [
+              "MVP-D02-B"
+            ],
+            "roadmapSection": "MVP-D02-C：Close 与 Reopen"
+          }
+        ],
+        "changeBatches": [
+          {
+            "id": "002-changes",
+            "firstRun": "002",
+            "runsRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes",
+            "changeIds": [
+              "sequential-changes-and-test-entrypoints"
+            ]
+          }
+        ],
+        "changeBindings": [
+          {
+            "planningSlot": "MVP-D02-A",
+            "changeId": "sequential-changes-and-test-entrypoints",
+            "changeRef": "openspec/changes/sequential-changes-and-test-entrypoints",
+            "batchId": "002-changes",
+            "state": "explored",
+            "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md"
+          }
+        ],
+        "activeChangeId": "sequential-changes-and-test-entrypoints",
+        "exitCriteria": [
+          "路线图 MVP-D02-A / B / C 的范围与验收完成，相关实现经独立审核并实际归档。",
+          "在小型项目验证顺序多 Change、真实测试结果与 Full Test 失败后的局部修复 / 定向审核 / 新完整结果。",
+          "真实验证 Close / Reopen 后再验收收口，以及 closed 后显式 Open 新 Delivery；保留历史与项目累计归档编号。"
+        ],
+        "outOfScope": [
+          "MVP-D03 的 Storybook / MCP / 首版发布接入",
+          "迁移或重放 D01 人工历史",
+          "通用状态机、调度器、引用注册中心及全库 hash gate"
+        ],
+        "openRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/001-delivery-open/run.md",
+        "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md",
+        "stopBoundary": "propose",
+        "next": {
+          "action": "propose",
+          "status": "awaiting-author",
+          "role": "author",
+          "reason": "003 独立 Review Explore approved；Author 按审核结论收敛顺序多 Change 与测试入口方案。",
+          "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md"
+        }
+      }
+    },
+    "upstream": {
+      "schemaName": "spec-driven",
+      "mode": "repo-local",
+      "isPlanningComplete": false,
+      "artifacts": [
+        {
+          "id": "proposal",
+          "status": "ready"
+        },
+        {
+          "id": "specs",
+          "status": "blocked"
+        },
+        {
+          "id": "design",
+          "status": "blocked"
+        },
+        {
+          "id": "tasks",
+          "status": "blocked"
+        }
+      ]
+    },
+    "next": {
+      "action": "propose",
+      "status": "awaiting-author",
+      "role": "author",
+      "reason": "003 独立 Review Explore approved；Author 按审核结论收敛顺序多 Change 与测试入口方案。",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md",
+      "source": "manual-bootstrap",
+      "executable": false
+    }
+  },
+  "next": {
+    "ok": true,
+    "operation": "query",
+    "projectRoot": "D:\\Projects\\MenDi",
+    "openspec": {
+      "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+      "version": "1.14.1",
+      "root": {
+        "path": "D:\\Projects\\MenDi",
+        "source": "nearest"
+      }
+    },
+    "local": {
+      "source": "manual-bootstrap",
+      "deliveryId": "20261010-02-delivery-verification-and-close",
+      "title": "Delivery 验收与收口",
+      "state": "open",
+      "goal": "实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D02-A",
+          "title": "多 Change 衔接、三类测试入口与简洁结果",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D02-A：多 Change 衔接、三类测试入口与简洁结果"
+        },
+        {
+          "slot": "MVP-D02-B",
+          "title": "正式 Full Test 与小修复",
+          "dependsOn": [
+            "MVP-D02-A"
+          ],
+          "roadmapSection": "MVP-D02-B：正式 Full Test 与小修复"
+        },
+        {
+          "slot": "MVP-D02-C",
+          "title": "Close 与 Reopen",
+          "dependsOn": [
+            "MVP-D02-B"
+          ],
+          "roadmapSection": "MVP-D02-C：Close 与 Reopen"
+        }
+      ],
+      "activeChangeId": "sequential-changes-and-test-entrypoints",
+      "changeBindings": [
+        {
+          "changeId": "sequential-changes-and-test-entrypoints",
+          "changeRef": "openspec/changes/sequential-changes-and-test-entrypoints",
+          "planningSlot": "MVP-D02-A",
+          "state": "explored"
+        }
+      ],
+      "recorded": {
+        "id": "20261010-02-delivery-verification-and-close",
+        "planningSlot": "MVP-D02",
+        "title": "Delivery 验收与收口",
+        "state": "open",
+        "recordingMode": "manual-bootstrap",
+        "openedOn": "2026-10-10",
+        "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+        "goal": "实现同一 Delivery 的顺序多 Change、focused / fast / full 测试入口、正式 Full Test 与范围内修复，以及 Close / Reopen 和 closed 后显式 Open 新 Delivery；按当前必要输入完成可继续的交付收口。",
+        "plannedChanges": [
+          {
+            "slot": "MVP-D02-A",
+            "title": "多 Change 衔接、三类测试入口与简洁结果",
+            "dependsOn": [],
+            "externalDependsOn": [
+              "MVP-D01-D"
+            ],
+            "roadmapSection": "MVP-D02-A：多 Change 衔接、三类测试入口与简洁结果"
+          },
+          {
+            "slot": "MVP-D02-B",
+            "title": "正式 Full Test 与小修复",
+            "dependsOn": [
+              "MVP-D02-A"
+            ],
+            "roadmapSection": "MVP-D02-B：正式 Full Test 与小修复"
+          },
+          {
+            "slot": "MVP-D02-C",
+            "title": "Close 与 Reopen",
+            "dependsOn": [
+              "MVP-D02-B"
+            ],
+            "roadmapSection": "MVP-D02-C：Close 与 Reopen"
+          }
+        ],
+        "changeBatches": [
+          {
+            "id": "002-changes",
+            "firstRun": "002",
+            "runsRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes",
+            "changeIds": [
+              "sequential-changes-and-test-entrypoints"
+            ]
+          }
+        ],
+        "changeBindings": [
+          {
+            "planningSlot": "MVP-D02-A",
+            "changeId": "sequential-changes-and-test-entrypoints",
+            "changeRef": "openspec/changes/sequential-changes-and-test-entrypoints",
+            "batchId": "002-changes",
+            "state": "explored",
+            "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md"
+          }
+        ],
+        "activeChangeId": "sequential-changes-and-test-entrypoints",
+        "exitCriteria": [
+          "路线图 MVP-D02-A / B / C 的范围与验收完成，相关实现经独立审核并实际归档。",
+          "在小型项目验证顺序多 Change、真实测试结果与 Full Test 失败后的局部修复 / 定向审核 / 新完整结果。",
+          "真实验证 Close / Reopen 后再验收收口，以及 closed 后显式 Open 新 Delivery；保留历史与项目累计归档编号。"
+        ],
+        "outOfScope": [
+          "MVP-D03 的 Storybook / MCP / 首版发布接入",
+          "迁移或重放 D01 人工历史",
+          "通用状态机、调度器、引用注册中心及全库 hash gate"
+        ],
+        "openRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/001-delivery-open/run.md",
+        "latestRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md",
+        "stopBoundary": "propose",
+        "next": {
+          "action": "propose",
+          "status": "awaiting-author",
+          "role": "author",
+          "reason": "003 独立 Review Explore approved；Author 按审核结论收敛顺序多 Change 与测试入口方案。",
+          "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md"
+        }
+      }
+    },
+    "upstream": {
+      "schemaName": "spec-driven",
+      "mode": "repo-local",
+      "isPlanningComplete": false,
+      "artifacts": [
+        {
+          "id": "proposal",
+          "status": "ready"
+        },
+        {
+          "id": "specs",
+          "status": "blocked"
+        },
+        {
+          "id": "design",
+          "status": "blocked"
+        },
+        {
+          "id": "tasks",
+          "status": "blocked"
+        }
+      ]
+    },
+    "next": {
+      "action": "propose",
+      "status": "awaiting-author",
+      "role": "author",
+      "reason": "003 独立 Review Explore approved；Author 按审核结论收敛顺序多 Change 与测试入口方案。",
+      "reviewRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/002-changes/sequential-changes-and-test-entrypoints/003-review-explore/run.md",
+      "source": "manual-bootstrap",
+      "executable": false
+    }
+  },
+  "openspecStatus": {
+    "changeName": "sequential-changes-and-test-entrypoints",
+    "schemaName": "spec-driven",
+    "planningHome": {
+      "kind": "repo",
+      "root": "D:\\Projects\\MenDi",
+      "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+      "defaultSchema": "spec-driven"
+    },
+    "changeRoot": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints",
+    "artifactPaths": {
+      "proposal": {
+        "outputPath": "proposal.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\proposal.md",
+        "existingOutputPaths": []
+      },
+      "specs": {
+        "outputPath": "specs/**/*.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\specs\\**\\*.md",
+        "existingOutputPaths": []
+      },
+      "design": {
+        "outputPath": "design.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\design.md",
+        "existingOutputPaths": []
+      },
+      "tasks": {
+        "outputPath": "tasks.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\sequential-changes-and-test-entrypoints\\tasks.md",
+        "existingOutputPaths": []
+      }
+    },
+    "isPlanningComplete": false,
+    "isComplete": false,
+    "applyRequires": [
+      "tasks"
+    ],
+    "nextSteps": [
+      "Run openspec instructions proposal --change \"sequential-changes-and-test-entrypoints\" --json before writing that artifact."
+    ],
+    "actionContext": {
+      "mode": "repo-local",
+      "sourceOfTruth": "repo",
+      "planningArtifacts": [
+        "proposal",
+        "specs",
+        "design",
+        "tasks"
+      ],
+      "linkedContext": [],
+      "allowedEditRoots": [
+        "D:\\Projects\\MenDi"
+      ],
+      "requiresAffectedAreaSelection": false,
+      "constraints": [
+        "Repo-local change artifacts and implementation edits are scoped to this project."
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "proposal",
+        "outputPath": "proposal.md",
+        "status": "ready",
+        "requires": []
+      },
+      {
+        "id": "specs",
+        "outputPath": "specs/**/*.md",
+        "status": "blocked",
+        "requires": [
+          "proposal"
+        ],
+        "missingDeps": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "design",
+        "outputPath": "design.md",
+        "status": "blocked",
+        "requires": [
+          "proposal"
+        ],
+        "missingDeps": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "tasks",
+        "outputPath": "tasks.md",
+        "status": "blocked",
+        "requires": [
+          "specs",
+          "design"
+        ],
+        "missingDeps": [
+          "specs",
+          "design"
+        ]
+      }
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "preservedState": {
+    "d01": "closed",
+    "archivedChangeCount": 4,
+    "d02": "open"
+  }
+}

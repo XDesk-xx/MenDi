@@ -1,3 +1,4 @@
+import { currentBinding, assertAssociationAvailable } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { inspectProject } from '../adapters/project.ts';
@@ -87,7 +88,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
           executable: false,
         }
       : run
-        ? actionNext(run.record, run.ref, workspace.bindings[0]?.state === 'archived')
+        ? actionNext(run.record, run.ref, currentBinding(workspace)?.state === 'archived')
         : workspace.activeChangeId
           ? {
               action: 'explore',
@@ -147,6 +148,7 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
       ? bindingFor(scope, text(input.slot, '计划槽位'), input.changeId)
       : null;
   if (binding) {
+    assertAssociationAvailable(scope, [], binding.planningSlot, binding.changeId);
     managedPath(root, binding.changeRef);
     upstream.status(binding.changeId);
   }
@@ -194,16 +196,27 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
         {},
         '保留人工历史，不通过产品 bind 改写。',
       );
-    if (current.state !== 'open' || current.activeChangeId || current.bindings.length)
+    if (current.state !== 'open' || current.activeChangeId)
       throw new MendiError(
         'change-bind-conflict',
-        '首版只允许 open Delivery 的首次 Change 关联。',
+        '仅允许无活动项、前项归档完成的 open Delivery 关联。',
         { deliveryId: current.id, activeChangeId: current.activeChangeId },
       );
+    assertAssociationAvailable(current.scope, current.bindings, input.slot, input.changeId);
     const binding = bindingFor(current.scope, input.slot, input.changeId);
+    const batches = current.manifest.changeBatches as Record<string, unknown>[];
+    if (batches.length) binding.batchId = String(batches[0].id);
     managedPath(root, binding.changeRef);
     upstream.status(binding.changeId);
-    return { ...current.manifest, changeBindings: [binding], activeChangeId: binding.changeId };
+    return {
+      ...current.manifest,
+      changeBindings: [...(current.manifest.changeBindings as unknown[]), binding],
+      activeChangeId: binding.changeId,
+      changeBatches: batches.map((batch) => ({
+        ...batch,
+        changeIds: [...(batch.changeIds as string[]), binding.changeId],
+      })),
+    };
   };
   const before = readWorkspace(root);
   if (!before) throw new MendiError('delivery-not-open', '目标尚未 Open。');

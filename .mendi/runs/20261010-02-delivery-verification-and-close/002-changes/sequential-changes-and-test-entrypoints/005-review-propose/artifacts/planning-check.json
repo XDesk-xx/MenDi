@@ -1,0 +1,72 @@
+{
+  "modifiedRequirements": [
+    {
+      "capability": "delivery-workspace",
+      "requirement": "First change association",
+      "priorScenarios": 3,
+      "currentScenarios": 3,
+      "missing": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Read-only status and next",
+      "priorScenarios": 6,
+      "currentScenarios": 8,
+      "missing": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Operation-specific input checks",
+      "priorScenarios": 5,
+      "currentScenarios": 7,
+      "missing": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Product archive transition and terminal handoff",
+      "priorScenarios": 4,
+      "currentScenarios": 5,
+      "missing": []
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Cumulative archive ordinal and idempotent local commit",
+      "priorScenarios": 4,
+      "currentScenarios": 7,
+      "missing": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Delivery-wide run allocation",
+      "priorScenarios": 3,
+      "currentScenarios": 4,
+      "missing": []
+    },
+    {
+      "capability": "action-runs",
+      "requirement": "Current run as direct state input",
+      "priorScenarios": 2,
+      "currentScenarios": 5,
+      "missing": []
+    },
+    {
+      "capability": "project-entry",
+      "requirement": "Explicit project target",
+      "priorScenarios": 3,
+      "currentScenarios": 4,
+      "missing": []
+    },
+    {
+      "capability": "project-entry",
+      "requirement": "Selected external OpenSpec",
+      "priorScenarios": 4,
+      "currentScenarios": 5,
+      "missing": []
+    }
+  ],
+  "taskCounts": {
+    "total": 28,
+    "complete": 0
+  },
+  "limitation": "Header and scenario retention check only; semantic verdict is in the review Run."
+}

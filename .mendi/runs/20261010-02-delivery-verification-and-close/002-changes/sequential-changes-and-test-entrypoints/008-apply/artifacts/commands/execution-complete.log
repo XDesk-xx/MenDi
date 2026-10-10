@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+ok 1 - RP-A-001：版本正确但缺依赖，目标 install 被覆盖，不启动、不占号、不安装
+  ---
+  duration_ms: 3159.1385
+  type: 'test'
+  ...
+# Subtest: 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+ok 2 - 真实同步后预检可执行；增加依赖后不同步，原锁文件与依赖字节保留
+  ---
+  duration_ms: 9155.5097
+  type: 'test'
+  ...
+# Subtest: 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+ok 3 - 预检后外部改变依赖，执行 warn 不自动安装；实际脚本结果仍是真实命令事实
+  ---
+  duration_ms: 6429.0358
+  type: 'test'
+  ...
+# Subtest: 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+ok 4 - 已有脚本自身显式 install 按实际行为执行，不冒充自动安装；不改协作状态
+  ---
+  duration_ms: 7057.2079
+  type: 'test'
+  ...
+# Subtest: 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+ok 5 - 空执行占号跳过、重复编号与外部 junction 拒绝；普通查询不读测试历史
+  ---
+  duration_ms: 17713.6266
+  type: 'test'
+  ...
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+ok 6 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 15456.4976
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 7 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 9679.2631
+  type: 'test'
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+ok 8 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 36442.8441
+  type: 'test'
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+ok 9 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 12122.0599
+  type: 'test'
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+ok 10 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 9051.4642
+  type: 'test'
+  ...
+# Subtest: 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+ok 11 - 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+  ---
+  duration_ms: 4224.0975
+  type: 'test'
+  ...
+# Subtest: 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+ok 12 - 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+  ---
+  duration_ms: 6485.4227
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 93835.8507

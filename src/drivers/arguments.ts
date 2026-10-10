@@ -7,6 +7,9 @@ export interface Arguments {
     | 'change-bind'
     | 'status'
     | 'next'
+    | 'test-list'
+    | 'test-run'
+    | 'test-status'
     | 'action-start'
     | 'action-continue'
     | 'action-instructions'
@@ -30,6 +33,9 @@ export function parseArguments(args: string[]): Arguments {
   } else if (args[0] === 'change' && args[1] === 'bind') {
     command = 'change-bind';
     consumed = 2;
+  } else if (args[0] === 'test' && ['list', 'run', 'status'].includes(args[1])) {
+    command = `test-${args[1]}` as Arguments['command'];
+    consumed = 2;
   } else if (args[0] === 'workspace' && args[1] === 'diagnose') {
     command = 'workspace-diagnose';
     consumed = 2;
@@ -49,7 +55,12 @@ export function parseArguments(args: string[]): Arguments {
   const allowed = new Set([
     'project',
     ...(command === 'action-archive' ? ['run', 'role', 'actor', 'mode'] : []),
-    ...(command === 'workspace-diagnose' ? [] : ['openspec-bin']),
+    ...(command === 'workspace-diagnose' || command.startsWith('test-') ? [] : ['openspec-bin']),
+    ...(command === 'test-run'
+      ? ['kind', 'actor', 'pnpm-bin']
+      : command === 'test-status'
+        ? ['execution']
+        : []),
     ...(command === 'workspace-diagnose' ? ['run'] : []),
     ...(command === 'action-resolve'
       ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason', 'phase', 'revises']
@@ -88,6 +99,11 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'test-run'
+      ? ['kind', 'actor', 'pnpm-bin']
+      : command === 'test-status'
+        ? ['execution']
+        : []),
     ...(command === 'action-archive' ? ['run', 'role', 'actor', 'mode'] : []),
     ...(command === 'action-resolve'
       ? ['run', 'role', 'actor', 'resolution', 'to-role', 'to-actor', 'reason']
@@ -127,6 +143,9 @@ mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --
 mendi change bind --project <项目根> --change <既有 Change> --slot <槽位>
 mendi status --project <项目根>
 mendi next --project <项目根>
+mendi test list --project <项目根>
+mendi test run --project <项目根> --kind <focused|fast|full> --actor <标识> --pnpm-bin <既有绝对 JS 入口>
+mendi test status --project <项目根> --execution <NNN-kind>
 mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool openspec]
 mendi action continue --project <项目根> --action <当前 Action ID> --role <角色> --actor <标识>
 mendi action instructions --project <项目根> --action <当前 Action ID> (--artifact <proposal|specs|design|tasks> | --operation <apply|archive>)
@@ -136,9 +155,11 @@ mendi workspace diagnose --project <项目根> [--run <同 Change 占号 Run>]
 mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
 mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
 
-项目命令支持 --json；除本地 diagnose 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
+项目命令支持 --json；除本地 diagnose / test 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
 --project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
-首次 Open 要求目标无 .mendi；首版只关联第一个既有 Change。
+首次 Open 要求目标无 .mendi；前项完整归档后可显式 bind 下一已有 Change，复用 Changes 批次。
+test 仅读取本地配置；list 不要求 Open，run 要求 open product / Windows / Node 22 / pnpm 11.22.0；不自动下载或安装。
+依赖预检失败为 not-run；full 仍是普通 command，不代替正式 Full Test 或批准。取消只处理本次前台进程树。
 阶段：explore / propose / apply，review-<阶段>，revise-<阶段>；archive 仅 Author，准备与 execute / finish 分开。
 Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 指导。
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。

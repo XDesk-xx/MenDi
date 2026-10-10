@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+ok 1 - 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+  ---
+  duration_ms: 3.9252
+  type: 'test'
+  ...
+# Subtest: Run 进展、Author 完成和三种 Review verdict 产生最小 next
+ok 2 - Run 进展、Author 完成和三种 Review verdict 产生最小 next
+  ---
+  duration_ms: 1.0296
+  type: 'test'
+  ...
+# Subtest: 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+ok 3 - 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+  ---
+  duration_ms: 117.8519
+  type: 'test'
+  ...
+# Subtest: 当前 product 指针和批次身份矛盾不能回退猜历史
+ok 4 - 当前 product 指针和批次身份矛盾不能回退猜历史
+  ---
+  duration_ms: 74.505
+  type: 'test'
+  ...
+# Subtest: 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+ok 5 - 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+  ---
+  duration_ms: 0.9953
+  type: 'test'
+  ...
+# Subtest: 两个真实执行进程 / finish 进程竞争同一锁，原生和累计计数只执行一次
+ok 6 - 两个真实执行进程 / finish 进程竞争同一锁，原生和累计计数只执行一次
+  ---
+  duration_ms: 30752.7883
+  type: 'test'
+  ...
+# Subtest: finish 本身也可再次在真实 Run 提交点中断，后续收口不改已提交 Run
+ok 7 - finish 本身也可再次在真实 Run 提交点中断，后续收口不改已提交 Run
+  ---
+  duration_ms: 12469.0305
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44402.3399
