@@ -1,0 +1,66 @@
+{
+  "finding": "RP-D-001",
+  "authorAssessmentOnly": true,
+  "revisedPlanningArtifacts": [
+    "design.md",
+    "specs/action-runs/spec.md",
+    "tasks.md"
+  ],
+  "otherPlanningArtifactsRetained": [
+    "proposal.md",
+    "specs/delivery-workspace/spec.md",
+    "specs/project-entry/spec.md"
+  ],
+  "oldActionRequirementsAndScenarioTitlesPreserved": true,
+  "addedScenarios": [
+    "Invoking was saved before the native process started",
+    "Native no-effect exit was not classified before interruption",
+    "Observation cannot downgrade an effect or bypass uncertain writers"
+  ],
+  "changedTaskIds": [
+    "4.4",
+    "5.1",
+    "5.3",
+    "5.4",
+    "5.5"
+  ],
+  "taskProgress": {
+    "total": 21,
+    "complete": 0,
+    "remaining": 21
+  },
+  "capabilities": [
+    {
+      "capability": "action-runs",
+      "requirements": 9,
+      "scenarios": 34
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirements": 4,
+      "scenarios": 19
+    },
+    {
+      "capability": "project-entry",
+      "requirements": 2,
+      "scenarios": 6
+    }
+  ],
+  "requirements": 15,
+  "scenarios": 59,
+  "directRuns": [
+    {
+      "run": "032-propose",
+      "bytesUnchanged": true
+    },
+    {
+      "run": "033-review-propose",
+      "bytesUnchanged": true
+    }
+  ],
+  "chosenEntry": "action archive --mode finish",
+  "classification": "interrupted invoking -> observed-none / pending",
+  "subsequentActions": "separate explicit execute or Owner rollback",
+  "implementation": "not-started",
+  "review": "awaiting-independent-review"
+}

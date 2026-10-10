@@ -1,16 +1,11 @@
+import { actionInstructions } from '../src/application/action-instructions.ts';
+import { resolveAction } from '../src/application/action-resolution.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { actionTarget, startAuthor, options, author, reviewer, finish } from './action-support.ts';
-import {
-  resolveAction,
-  startAction,
-  saveRun,
-  submitRun,
-  continueAction,
-  actionInstructions,
-} from '../src/application/actions.ts';
+import { startAction, saveRun, submitRun, continueAction } from '../src/application/actions.ts';
 import { query } from '../src/application/project.ts';
 import { parseRun } from '../src/core/actions.ts';
 import { readRun } from '../src/adapters/runs.ts';
@@ -164,7 +159,7 @@ test('rejected 只能 Owner 同阶段新修订，旧 verdict 不改；普通 sta
   );
   assert.deepEqual(fs.readFileSync(path.join(root, r.run.ref)), old);
 });
-test('Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前无新增占号', () => {
+test('Owner 参数和完整 / 非 rejected / 未完成 Apply 的 revise 处置拒绝，写前无新增占号', () => {
   const root = actionTarget();
   const a = startAuthor(root);
   const before = snapshot(root);
@@ -204,7 +199,9 @@ test('Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前�
       options,
     ),
   );
-  assert.throws(() => resolveAction(owner(root, apply.run.ref), options));
+  assert.throws(() =>
+    resolveAction({ ...owner(root, apply.run.ref), resolution: 'revise' }, options),
+  );
   assert.deepEqual(snapshot(root), actual);
 });
 

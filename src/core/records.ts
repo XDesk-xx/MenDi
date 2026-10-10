@@ -1,4 +1,5 @@
 import { identifier, MendiError, object, text } from './errors.ts';
+import { archivedCount } from './archive.ts';
 
 export interface PlannedChange {
   slot: string;
@@ -94,6 +95,7 @@ export function parseProject(value: unknown): {
 } {
   const project = object(value, '项目入口');
   const recordingMode = mode(project);
+  if (recordingMode === 'product') archivedCount(project);
   text(project.name, '项目名称');
   if (project.deliveryGroupsDir !== '.mendi/delivery-groups')
     throw new MendiError('invalid-record', 'deliveryGroupsDir 不符合约定。');
@@ -131,7 +133,7 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
     const changeId = identifier(item.changeId, 'Change ID');
     const changeRef = text(item.changeRef, 'changeRef');
     const bindingState = text(item.state, '关联状态');
-    const archived = index.mode === 'manual-bootstrap' && bindingState === 'archived';
+    const archived = bindingState === 'archived';
     const archiveOrdinal = item.archiveOrdinal;
     if (
       archiveOrdinal !== undefined &&
@@ -189,8 +191,13 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
       state !== 'open' ||
       bindings.length > 1 ||
       batches.length > 1 ||
-      (bindings.length === 1 && activeChangeId === null) ||
-      bindings.some((b) => (b.latestRunRef ? b.state !== 'active' : b.state !== 'explore'))
+      (bindings.length === 1 && (bindings[0].state === 'archived') !== (activeChangeId === null)) ||
+      bindings.some((b) =>
+        b.latestRunRef
+          ? !['active', 'archiving', 'archived'].includes(b.state)
+          : b.state !== 'explore',
+      ) ||
+      bindings.some((b) => b.state === 'archived' && b.archiveOrdinal === undefined)
     )
       throw new MendiError('invalid-record', '产品记录超出首次 Open / 首个 Change 的支持范围。');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(text(manifest.openedOn, 'openedOn')))

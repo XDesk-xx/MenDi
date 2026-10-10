@@ -1,0 +1,10 @@
+{
+  "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate apply-revision-and-native-archive --strict --json",
+  "exitCode": 0,
+  "valid": true,
+  "issues": [],
+  "root": {
+    "path": "D:/Projects/MenDi",
+    "source": "nearest"
+  }
+}

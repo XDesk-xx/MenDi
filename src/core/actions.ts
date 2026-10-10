@@ -1,9 +1,11 @@
 import { identifier, MendiError, object, text } from './errors.ts';
+import { parseArchive, type ArchiveRecord } from './archive.ts';
 
 export const actionTypes = [
   'explore',
   'propose',
   'apply',
+  'archive',
   'review-explore',
   'review-propose',
   'review-apply',
@@ -13,17 +15,17 @@ export const actionTypes = [
 ] as const;
 export type ActionType = (typeof actionTypes)[number];
 export type Role = 'author' | 'reviewer';
-export type Phase = 'explore' | 'propose' | 'apply';
+export type Phase = 'explore' | 'propose' | 'apply' | 'archive';
 export type Verdict = 'approved' | 'changes-requested' | 'rejected';
 export interface OwnerDecision {
-  resolution: 'handoff' | 'revise';
+  resolution: 'handoff' | 'revise' | 'rollback';
   role: 'owner';
   actorId: string;
   reason: string;
   sourceRunRef: string;
   targetRole: Role;
   targetActorId: string;
-  phase: 'explore' | 'propose';
+  phase: Phase;
 }
 export interface RunRecord {
   formatVersion: 1;
@@ -44,6 +46,7 @@ export interface RunRecord {
   revisesRunRef?: string;
   verdict?: Verdict;
   ownerDecision?: OwnerDecision;
+  archive?: ArchiveRecord;
 }
 export function actionDefinition(value: unknown) {
   if (!(actionTypes as readonly unknown[]).includes(value))
@@ -126,6 +129,17 @@ export function parseRun(
     stageSkill: definition.skill,
     toolGuidance: data.toolGuidance as string[],
   };
+  if (definition.type === 'archive') {
+    record.archive = parseArchive(data.archive, ref, deliveryId, changeId);
+    if (
+      record.status === 'submitted' &&
+      (data.outcome !== 'complete' ||
+        data.result !== 'archived' ||
+        record.archive.phase !== 'confirmed')
+    )
+      throw new MendiError('invalid-run', 'Archive 终态必须是已确认的 archived。');
+  } else if (data.archive !== undefined)
+    throw new MendiError('invalid-run', '非 Archive 不携带 Archive 执行状态。');
   if (definition.review) {
     record.authorRunRef = text(data.authorRunRef, '审核 Author Run');
     runLocation(record.authorRunRef, deliveryId, changeId);
@@ -154,14 +168,18 @@ export function parseRun(
     const sourceRunRef = text(decision.sourceRunRef, 'Owner 直接来源');
     const source = runLocation(sourceRunRef, deliveryId, changeId);
     if (
-      !['handoff', 'revise'].includes(String(decision.resolution)) ||
+      !['handoff', 'revise', 'rollback'].includes(String(decision.resolution)) ||
       decision.role !== 'owner' ||
       decision.targetRole !== record.role ||
       decision.targetActorId !== record.actorId ||
       decision.phase !== definition.phase ||
-      definition.phase === 'apply' ||
       source.number >= location.number ||
-      source.phase !== definition.phase ||
+      (decision.resolution !== 'rollback' && source.phase !== definition.phase) ||
+      (decision.resolution === 'rollback' &&
+        (!definition.revision ||
+          definition.role !== 'author' ||
+          ['explore', 'propose', 'apply', 'archive'].indexOf(source.phase) <=
+            ['explore', 'propose', 'apply', 'archive'].indexOf(definition.phase))) ||
       (decision.resolution === 'handoff' && source.type !== definition.type) ||
       (decision.resolution === 'revise' && (!source.review || !definition.revision))
     )
@@ -174,14 +192,34 @@ export function parseRun(
       sourceRunRef,
       targetRole: record.role,
       targetActorId: record.actorId,
-      phase: definition.phase as 'explore' | 'propose',
+      phase: definition.phase,
     };
   }
   return record;
 }
-export function actionNext(record: RunRecord, ref: string) {
+export function actionNext(
+  record: RunRecord,
+  ref: string,
+  archiveCompleted = record.status === 'submitted',
+) {
   const definition = actionDefinition(record.actionType);
   const base = { source: 'local-state', executable: false, role: record.role };
+  if (record.archive)
+    return {
+      ...base,
+      action: archiveCompleted
+        ? 'delivery-next'
+        : ['prepared', 'none'].includes(record.archive.phase)
+          ? 'archive-execute'
+          : 'archive-finish',
+      status: archiveCompleted ? 'awaiting-owner-instruction' : 'pending',
+      reason: archiveCompleted
+        ? 'Change 已归档，无活动交接；后续范围须 Owner 明确。'
+        : ['prepared', 'none'].includes(record.archive.phase)
+          ? '需要显式 execute；none 观察不是完成或批准。'
+          : '显式 local-only finish 观察实际效果；未知或活跃现场必须停止。',
+      currentRunRef: ref,
+    };
   if (record.status === 'draft')
     return {
       ...base,
@@ -235,7 +273,7 @@ export function actionNext(record: RunRecord, ref: string) {
           ? 'apply'
           : 'archive',
     status: 'awaiting-instruction',
-    reason: 'Reviewer approved；下一步需显式触发，Archive 能力属于后续 Change。',
+    reason: 'Reviewer approved；下一步需显式触发。',
   };
 }
 export function assertActionStart(

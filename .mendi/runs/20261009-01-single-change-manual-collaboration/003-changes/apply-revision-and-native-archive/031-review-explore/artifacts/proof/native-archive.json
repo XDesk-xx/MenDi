@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "proof-entry",
+    "archivedAs": "2026-10-10-proof-entry",
+    "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\apply-flow\\openspec\\changes\\archive\\2026-10-10-proof-entry",
+    "specsUpdated": true,
+    "totals": {
+      "added": 1,
+      "modified": 0,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\apply-flow",
+    "source": "nearest"
+  }
+}

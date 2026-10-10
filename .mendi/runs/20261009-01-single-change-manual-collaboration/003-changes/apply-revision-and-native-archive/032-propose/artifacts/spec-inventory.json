@@ -1,0 +1,20 @@
+{
+  "specs": [
+    {
+      "id": "action-runs",
+      "requirementCount": 13
+    },
+    {
+      "id": "delivery-workspace",
+      "requirementCount": 11
+    },
+    {
+      "id": "project-entry",
+      "requirementCount": 6
+    }
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

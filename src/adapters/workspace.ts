@@ -4,6 +4,8 @@ import { randomUUID } from 'node:crypto';
 import { MendiError, errorInfo } from '../core/errors.ts';
 import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts';
 import { managedPath, present } from './paths.ts';
+import { readRun } from './runs.ts';
+import { archivedCount } from '../core/archive.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -13,7 +15,17 @@ export type WritePhase =
   | 'before-readback'
   | 'before-lock-release';
 // Action writers use the same observer for focused interruption tests.
-export type ActionWritePhase = WritePhase | 'run-written' | 'before-run-commit';
+export type ActionWritePhase =
+  | WritePhase
+  | 'run-written'
+  | 'before-run-commit'
+  | 'after-invoking'
+  | 'before-native-call'
+  | 'native-returned'
+  | 'before-none-observation'
+  | 'before-archive-numbering'
+  | 'after-count-commit'
+  | 'after-archive-run-commit';
 export type WriteObserver = (phase: ActionWritePhase, file: string) => void;
 
 function readJson(file: string): unknown {
@@ -45,6 +57,26 @@ export function readWorkspace(root: string, ownLock = false): Workspace | null {
   const index = parseProject(readJson(managedPath(root, '.mendi/project.json')));
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
   for (const binding of workspace.bindings) {
+    if (workspace.mode === 'product' && ['archiving', 'archived'].includes(binding.state)) {
+      const run = readRun(root, binding.latestRunRef!, workspace.id, binding.changeId);
+      const archive = run.record.archive;
+      if (
+        !archive ||
+        (binding.state === 'archived' &&
+          (run.record.status !== 'submitted' ||
+            binding.changeRef !== archive.archiveRef ||
+            binding.archiveOrdinal !== archive.ordinal ||
+            archivedCount(workspace.project) !== archive.ordinal)) ||
+        (binding.state === 'archiving' &&
+          (![archive.countBasis, archive.ordinal].includes(archivedCount(workspace.project)) ||
+            (['prepared', 'none'].includes(archive.phase) &&
+              archivedCount(workspace.project) !== archive.countBasis) ||
+            (run.record.status === 'submitted' &&
+              archivedCount(workspace.project) !== archive.ordinal)))
+      )
+        throw new MendiError('invalid-record', '归档交接、当前 Archive Run 与计数不一致。');
+      continue;
+    }
     const file = managedPath(root, binding.changeRef);
     // Only the current active Change is an input read by the upstream query.
     if (binding.changeId === workspace.activeChangeId && !present(file)) {

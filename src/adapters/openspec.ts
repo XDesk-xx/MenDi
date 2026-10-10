@@ -3,6 +3,11 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { MendiError, errorInfo, identifier, object, text } from '../core/errors.ts';
 import { managedPath } from './paths.ts';
+import {
+  operationInstructions,
+  type ApplyInstructions,
+  type OperationInstructions,
+} from './openspec-operations.ts';
 
 export const planningArtifacts = ['proposal', 'specs', 'design', 'tasks'] as const;
 export type PlanningArtifact = (typeof planningArtifacts)[number];
@@ -28,6 +33,7 @@ export interface ProcessResult {
   stdout: string;
   stderr: string;
   error?: Error;
+  pid?: number;
 }
 export type ProcessRunner = (entry: string, args: string[], cwd: string) => ProcessResult;
 export const runProcess: ProcessRunner = (entry, args, cwd) =>
@@ -57,6 +63,19 @@ export class OpenSpec {
   root: UpstreamRoot;
   changes: string[];
   lastCommand?: { args: string[]; cwd: string; stdout: string; stderr: string };
+
+  nativeArchive(change: string): ProcessResult {
+    identifier(change, 'Change ID');
+    const args = ['archive', change, '--json', '--yes'];
+    const result = this.runner(this.entry, args, this.projectRoot);
+    this.lastCommand = {
+      args,
+      cwd: this.projectRoot,
+      stdout: result.stdout,
+      stderr: result.stderr,
+    };
+    return result;
+  }
 
   constructor(projectRoot: string, entry = selectedEntry, runner: ProcessRunner = runProcess) {
     this.projectRoot = projectRoot;
@@ -309,6 +328,16 @@ export class OpenSpec {
       ...(typeof value.context === 'string' ? { context: value.context } : {}),
       ...(Array.isArray(value.rules) ? { rules: value.rules as string[] } : {}),
     };
+  }
+
+  operationInstructions(changeId: string, operation: 'apply'): ApplyInstructions;
+  operationInstructions(changeId: string, operation: 'archive'): OperationInstructions;
+  operationInstructions(
+    changeId: string,
+    operation: string,
+  ): ApplyInstructions | OperationInstructions;
+  operationInstructions(changeId: string, operation: string) {
+    return operationInstructions(this, changeId, operation);
   }
 
   info(): { entry: string; version: string; root: UpstreamRoot } {

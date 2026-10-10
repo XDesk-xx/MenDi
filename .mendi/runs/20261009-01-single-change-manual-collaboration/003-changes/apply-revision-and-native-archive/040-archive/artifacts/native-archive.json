@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "apply-revision-and-native-archive",
+    "archivedAs": "2026-10-10-apply-revision-and-native-archive",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-apply-revision-and-native-archive",
+    "specsUpdated": true,
+    "totals": {
+      "added": 10,
+      "modified": 5,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

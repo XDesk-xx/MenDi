@@ -1,0 +1,24 @@
+[
+  {
+    "entry": "pnpm.cmd",
+    "args": [
+      "run",
+      "check"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "exitCode": 0,
+    "stdout": "Checked 38 files in 75ms. No fixes applied.\nChecked 38 files in 27ms. No fixes applied.\n",
+    "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+  },
+  {
+    "entry": "pnpm.cmd",
+    "args": [
+      "run",
+      "build"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "$ tsc\n"
+  }
+]

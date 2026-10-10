@@ -1,0 +1,129 @@
+{
+  "ready": {
+    "changeName": "proof-entry",
+    "changeDir": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry",
+    "schemaName": "spec-driven",
+    "contextFiles": {
+      "proposal": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\proposal.md"
+      ],
+      "specs": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\specs\\proof-input\\spec.md"
+      ],
+      "design": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\design.md"
+      ],
+      "tasks": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\tasks.md"
+      ]
+    },
+    "progress": {
+      "total": 1,
+      "complete": 0,
+      "remaining": 1
+    },
+    "tasks": [
+      {
+        "id": "1",
+        "description": "1.1 Retain input",
+        "done": false,
+        "sourcePath": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\tasks.md",
+        "line": 2
+      }
+    ],
+    "taskTrackingConfigured": true,
+    "state": "ready",
+    "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+    "context": "MINIMAL_CONTEXT_SENTINEL：受控非 UI 项目，只用于真实 OpenSpec 接入实验。\n",
+    "operationGuidance": [
+      "D_APPLY_SENTINEL"
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow",
+      "source": "nearest"
+    }
+  },
+  "blocked": {
+    "changeName": "proof-entry",
+    "changeDir": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry",
+    "schemaName": "spec-driven",
+    "contextFiles": {
+      "proposal": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\proposal.md"
+      ],
+      "specs": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\specs\\proof-input\\spec.md"
+      ],
+      "design": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\design.md"
+      ]
+    },
+    "progress": {
+      "total": 0,
+      "complete": 0,
+      "remaining": 0
+    },
+    "tasks": [],
+    "taskTrackingConfigured": true,
+    "state": "blocked",
+    "missingArtifacts": [
+      "tasks"
+    ],
+    "missingPrerequisites": [
+      "tasks"
+    ],
+    "instruction": "Cannot apply this change yet. Missing artifacts: tasks.\nCreate it with `openspec instructions tasks --change proof-entry` (`openspec status --change proof-entry` shows what is left).",
+    "context": "MINIMAL_CONTEXT_SENTINEL：受控非 UI 项目，只用于真实 OpenSpec 接入实验。\n",
+    "operationGuidance": [
+      "D_APPLY_SENTINEL"
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow",
+      "source": "nearest"
+    }
+  },
+  "done": {
+    "changeName": "proof-entry",
+    "changeDir": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry",
+    "schemaName": "spec-driven",
+    "contextFiles": {
+      "proposal": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\proposal.md"
+      ],
+      "specs": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\specs\\proof-input\\spec.md"
+      ],
+      "design": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\design.md"
+      ],
+      "tasks": [
+        "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\tasks.md"
+      ]
+    },
+    "progress": {
+      "total": 1,
+      "complete": 1,
+      "remaining": 0
+    },
+    "tasks": [
+      {
+        "id": "1",
+        "description": "1.1 Retain input",
+        "done": true,
+        "sourcePath": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow\\openspec\\changes\\proof-entry\\tasks.md",
+        "line": 2
+      }
+    ],
+    "taskTrackingConfigured": true,
+    "state": "all_done",
+    "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+    "context": "MINIMAL_CONTEXT_SENTINEL：受控非 UI 项目，只用于真实 OpenSpec 接入实验。\n",
+    "operationGuidance": [
+      "D_APPLY_SENTINEL"
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-k2zxIp\\apply-flow",
+      "source": "nearest"
+    }
+  }
+}

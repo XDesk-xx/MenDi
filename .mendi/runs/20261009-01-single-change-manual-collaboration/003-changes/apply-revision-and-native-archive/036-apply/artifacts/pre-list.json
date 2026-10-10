@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "name": "apply-revision-and-native-archive",
+      "completedTasks": 0,
+      "totalTasks": 21,
+      "lastModified": "2026-10-09T19:23:17.044Z",
+      "status": "in-progress"
+    }
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

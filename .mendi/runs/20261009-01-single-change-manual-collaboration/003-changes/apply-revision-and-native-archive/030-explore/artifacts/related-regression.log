@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+ok 1 - 同 Action 两次 Author / Reviewer 提交、修订补审保留原提交和 verdict
+  ---
+  duration_ms: 635.8299
+  type: 'test'
+  ...
+# Subtest: 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+ok 2 - 错误输入与方法在占号前拒绝，已提交正文不允许 save / 重提
+  ---
+  duration_ms: 154.4029
+  type: 'test'
+  ...
+# Subtest: 提交的必要内容与 verdict 规则，rejected 停止 Owner
+ok 3 - 提交的必要内容与 verdict 规则，rejected 停止 Owner
+  ---
+  duration_ms: 276.9445
+  type: 'test'
+  ...
+# Subtest: 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+ok 4 - 固定 Author 丢失仅阻断 Review continue / submit，query 不读其正文
+  ---
+  duration_ms: 320.7732
+  type: 'test'
+  ...
+# Subtest: Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+ok 5 - Review 当前对象身份、阶段、完成状态逐项校验，方法损坏阻断继续
+  ---
+  duration_ms: 211.2388
+  type: 'test'
+  ...
+# Subtest: start 的 run-written 失败保留锁、路径与完整文件
+ok 6 - start 的 run-written 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 45.2192
+  type: 'test'
+  ...
+# Subtest: start 的 before-manifest-commit 失败保留锁、路径与完整文件
+ok 7 - start 的 before-manifest-commit 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 59.8468
+  type: 'test'
+  ...
+# Subtest: start 的 before-readback 失败保留锁、路径与完整文件
+ok 8 - start 的 before-readback 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 55.3993
+  type: 'test'
+  ...
+# Subtest: start 的 before-lock-release 失败保留锁、路径与完整文件
+ok 9 - start 的 before-lock-release 失败保留锁、路径与完整文件
+  ---
+  duration_ms: 66.5609
+  type: 'test'
+  ...
+# Subtest: save 的 before-run-commit 失败保留现场及指针
+ok 10 - save 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 47.1252
+  type: 'test'
+  ...
+# Subtest: save 的 before-readback 失败保留现场及指针
+ok 11 - save 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 52.1467
+  type: 'test'
+  ...
+# Subtest: save 的 before-lock-release 失败保留现场及指针
+ok 12 - save 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 59.5815
+  type: 'test'
+  ...
+# Subtest: submit 的 before-run-commit 失败保留现场及指针
+ok 13 - submit 的 before-run-commit 失败保留现场及指针
+  ---
+  duration_ms: 104.165
+  type: 'test'
+  ...
+# Subtest: submit 的 before-readback 失败保留现场及指针
+ok 14 - submit 的 before-readback 失败保留现场及指针
+  ---
+  duration_ms: 79.8237
+  type: 'test'
+  ...
+# Subtest: submit 的 before-lock-release 失败保留现场及指针
+ok 15 - submit 的 before-lock-release 失败保留现场及指针
+  ---
+  duration_ms: 65.1167
+  type: 'test'
+  ...
+# Subtest: 读回实际内容漂移与 rename 失败均不伪装成功
+ok 16 - 读回实际内容漂移与 rename 失败均不伪装成功
+  ---
+  duration_ms: 85.0956
+  type: 'test'
+  ...
+# Subtest: 实际分配跳过空占号、报告残留；重复号失败不修改现场
+ok 17 - 实际分配跳过空占号、报告残留；重复号失败不修改现场
+  ---
+  duration_ms: 87.3904
+  type: 'test'
+  ...
+# Subtest: save / submit 保留未知说明头部，无需读取所选方法正文
+ok 18 - save / submit 保留未知说明头部，无需读取所选方法正文
+  ---
+  duration_ms: 90.355
+  type: 'test'
+  ...
+# Subtest: handoff 保持 Action 和笔记，旧 actor 拒绝，新查询不读来源，continue 仅承接最近决策
+ok 19 - handoff 保持 Action 和笔记，旧 actor 拒绝，新查询不读来源，continue 仅承接最近决策
+  ---
+  duration_ms: 316.5469
+  type: 'test'
+  ...
+# Subtest: Reviewer handoff 不改 Author/原 Review，不产生 verdict；固定对象和自签写前拒绝
+ok 20 - Reviewer handoff 不改 Author/原 Review，不产生 verdict；固定对象和自签写前拒绝
+  ---
+  duration_ms: 177.5427
+  type: 'test'
+  ...
+# Subtest: rejected 只能 Owner 同阶段新修订，旧 verdict 不改；普通 start/continue 仍拒绝
+ok 21 - rejected 只能 Owner 同阶段新修订，旧 verdict 不改；普通 start/continue 仍拒绝
+  ---
+  duration_ms: 302.3542
+  type: 'test'
+  ...
+# Subtest: Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前无新增占号
+ok 22 - Owner 参数和完整 / 非 rejected / Apply 状态处置拒绝，写前无新增占号
+  ---
+  duration_ms: 414.0568
+  type: 'test'
+  ...
+# Subtest: Reviewer handoff 锁内固定 Author 内容变化或输入不完整时拒绝，不分配新 Run
+ok 23 - Reviewer handoff 锁内固定 Author 内容变化或输入不完整时拒绝，不分配新 Run
+  ---
+  duration_ms: 128.5426
+  type: 'test'
+  ...
+# Subtest: Owner before-manifest-commit 故障保留旧记录和占号现场
+ok 24 - Owner before-manifest-commit 故障保留旧记录和占号现场
+  ---
+  duration_ms: 59.8064
+  type: 'test'
+  ...
+# Subtest: Owner before-readback 故障保留旧记录和占号现场
+ok 25 - Owner before-readback 故障保留旧记录和占号现场
+  ---
+  duration_ms: 68.2193
+  type: 'test'
+  ...
+# Subtest: resolve 锁内复核当前指针、正文；残留占号跳过，竞争锁不删除
+ok 26 - resolve 锁内复核当前指针、正文；残留占号跳过，竞争锁不删除
+  ---
+  duration_ms: 93.4815
+  type: 'test'
+  ...
+# Subtest: 真实上游 planning complete 不自动批准或推进本地 Explore
+ok 27 - 真实上游 planning complete 不自动批准或推进本地 Explore
+  ---
+  duration_ms: 3602.5867
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+ok 28 - 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+  ---
+  duration_ms: 6246.393
+  type: 'test'
+  ...
+# Subtest: 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+ok 29 - 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+  ---
+  duration_ms: 2751.1118
+  type: 'test'
+  ...
+# Subtest: 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+ok 30 - 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+  ---
+  duration_ms: 3704.2935
+  type: 'test'
+  ...
+# Subtest: 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+ok 31 - 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+  ---
+  duration_ms: 7163.932
+  type: 'test'
+  ...
+# Subtest: 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+ok 32 - 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+  ---
+  duration_ms: 11657.1596
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 35554.8054

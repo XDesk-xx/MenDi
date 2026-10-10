@@ -1,0 +1,20 @@
+[
+  {
+    "id": "RA-D-001",
+    "path": "src/adapters/archive-effects.ts",
+    "start_line": 224,
+    "end_line": 229,
+    "category": "bug",
+    "severity": "high",
+    "content": "合法 retire_capabilities 删除能力最后一条需求时，OpenSpec 真实归档成功并删除主规格，但效果检查无条件 read 主规格而抛 ENOENT。Run 停在 invoking，后续新进程 finish 同样失败，无法提交编号、计数和 binding。应识别明确合法的退役效果并继续拒绝意外缺失；如不支持，必须在原生调用前拒绝。已用固定工具真实复现。"
+  },
+  {
+    "id": "RA-D-002",
+    "path": "src/application/archive.ts",
+    "start_line": 234,
+    "end_line": 241,
+    "category": "bug",
+    "severity": "medium",
+    "content": "attempt 目录先创建，随后才提交 Run 中的 attempt / invoking；before-run-commit 中断会留下 attempt-001 和 prepared/attempt=0。原写者停止、测试锁按约定处置后，每次显式 execute 都选择同一目录并报 EEXIST，finish 又拒绝 prepared。需要在保留旧尝试证据的前提下，让这个明确调用前失败窗口可以安全分配后续尝试，补真实新进程回归。"
+  }
+]

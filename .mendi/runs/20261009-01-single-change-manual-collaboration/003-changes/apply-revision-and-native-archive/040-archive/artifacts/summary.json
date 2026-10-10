@@ -1,0 +1,36 @@
+{
+  "changeId": "apply-revision-and-native-archive",
+  "runRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/040-archive/run.md",
+  "result": "archived",
+  "archiveRef": "openspec/changes/archive/2026-10-10-004-apply-revision-and-native-archive",
+  "archiveOrdinal": 4,
+  "archivedChangeCount": 4,
+  "nativeArchiveCalls": 1,
+  "specsUpdated": true,
+  "deltaRequirementsVerified": 15,
+  "specValidation": {
+    "passed": 3,
+    "failed": 0,
+    "issues": []
+  },
+  "tasks": {
+    "complete": 24,
+    "total": 24
+  },
+  "deliveryState": "open",
+  "activeChangeId": null,
+  "next": {
+    "action": "change-checkpoint",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "040 已完成原生规格同步与累计 004 归档，下一步 Change checkpoint 单独授权。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "scope": {
+    "gitPerformed": false,
+    "formalFullTestPerformed": false,
+    "nextChangeActivated": false,
+    "tmpCleaned": false
+  }
+}

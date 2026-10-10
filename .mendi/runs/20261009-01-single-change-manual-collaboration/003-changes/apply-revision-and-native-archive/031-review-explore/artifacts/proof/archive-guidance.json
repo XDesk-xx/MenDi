@@ -1,0 +1,11 @@
+{
+  "changeName": "proof-entry",
+  "context": "MINIMAL_CONTEXT_SENTINEL：受控非 UI 项目，只用于真实 OpenSpec 接入实验。\n",
+  "operationGuidance": [
+    "D_ARCHIVE_SENTINEL"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi\\.tmp\\mvp-d01-d-explore-YMRhRZ\\apply-flow",
+    "source": "nearest"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "changeName": "apply-revision-and-native-archive",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\specs\\delivery-workspace\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\specs\\project-entry\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 21,
+    "complete": 12,
+    "remaining": 9
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 将 application/actions.ts 中指引与 Owner 处置分到 action-instructions.ts、action-resolution.ts，必要共享检查放入小范围上下文模块，CLI 直接接线；以既有 Action / planning / CLI 回归确认行为保持，不增加纯转发层。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 为 D 的操作 inputs、Owner 处置、Archive 执行 / 故障及查询准备分组测试和显式必要输入夹具；确认旧 C / D proof 与既有领域测试未被追加大流程，共用准备不隐藏批准、锁或故障点。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 在 AGENTS.md 与 Review Apply 方法落实 src / tests / scripts 各前三名、实际增长依据、职责判断及处理时机；核对无硬行数 / hash 门槛，旧限定 proof 的保留理由与下次整理触发条件有明确说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 为固定 OpenSpec adapter 增加独立 Apply operation 解析，校验实际 root / Change / schema、contextFiles、任务、进度 / state 及可选指导；以真实 blocked / ready / all_done 和畸形进度、必要输入缺失、身份 / 路径 / junction、未知 Ref 测试确认，不影响原 artifact 协议。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 增加 Archive instructions 解析并从真实 status 核对 schema，保留实际 context / guidance，不要求缺省 template / outputPath / schemaName；以固定工具响应和错身份 / 指导类型回归确认。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "2.3 接线 `action instructions --operation apply|archive`，与 artifact 互斥并校验当前 actionId / 阶段；更新产品 OpenSpec / Apply 方法与 CLI 使用说明，用真实 CLI 测试确认只读、陈旧请求拒绝且不改 Run / 任务 / 交接。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "7",
+      "description": "3.1 扩展 Owner handoff 到未完成 Apply / Review Apply，扩展 rejected 同阶段 revise；更新 Apply 方法并测试直接 Author 固定、Reviewer 独立、旧 actor 陈旧拒绝和新修订必须重新审核，保留既有 Explore / Propose 行为。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "3.2 实现 `resolve --resolution rollback --phase ... --revises ...` 的严格较早阶段校验、新 revise draft 与直接 Owner 决策；测试 Propose / Apply 含 Review / revise 回退、目标完成 / 类型 / 身份 / 路径要求、历史 source 缺失时查询及逐阶段重新审核，不删产物或沿用旧批准跳段。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "3.3 覆盖处置的写前变化、并发、指针 / 读回失败与旧 Run 字节不变；更新 Owner 处置 / CLI 文档，确认失败不伪报成功、不改旧 verdict、不自动解除锁或扩展授权。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "10",
+      "description": "4.1 增加 Archive Action、typed Run / binding 过渡态和直接 Review / Author / 尝试字段；准备要求当前独立 Review Apply approved 与真实 Apply all_done，普通 save 仅改笔记，submit / continue / 不支持 Archive review 修订拒绝；以产品前置及新进程解析测试确认准备无原生调用、无计数增长。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "11",
+      "description": "4.2 实现显式 `action archive --mode execute` 的锁内复核、调用前标记与本次有限输入 / attempt 留存，adapter 保存公开包装 JSON、退出 / 信号 / stdout / stderr；在沙盒用固定入口实际归档测试原生同步、错误 / 非 JSON / 身份与路径拒绝和两个执行进程竞争，不使用跳过验证或重复同步。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "12",
+      "description": "4.3 实现原生效果的定向读回、真实日期与唯一候选定位，区分 prepared / invoking / none / confirmed；以已完成但响应丢失、无可靠效果、源与目标并存、多个候选、规格 / 元数据变化及跨日期测试确认，不以错误码或旧预定目录认证无效果。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "13",
+      "description": "4.4 允许显式 execute 仅在 prepared 或已保存 none 且再次确认无效果、输入 / 批准 / 任务仍有效时建立新 attempt；实现 prepared / none Archive 的 Owner rollback；以组内合法 prepared / 已保存 none 的产品场景验证两个显式入口，仍是 invoking 时 execute / rollback 拒绝，保留旧错误并验证新审核、输入改变 / 已发生 / 未知 / 锁未解除不得绕过。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 28
+    },
+    {
+      "id": "14",
+      "description": "4.5 新建产品 Archive 方法并补 CLI / 操作说明，明确准备与执行分开、必要直接输入、实际效果判断、失败停止和 Owner 锁处置边界；用组内真实命令核对文档，不让方法自行另做一次规格同步或制造 Reviewer verdict。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "15",
+      "description": "5.1 实现 `--mode finish` 的 local-only 观察 / 收口：在原写者停止、锁按既有授权处置后锁内核对当前 attempt；完整现场证明确无效果时保存 invoking → none，返回 observed-none / pending 与显式 execute 提示。测试 invoking 落盘后原生启动前、原生无效果结束后 none 保存前两处真实中断，夹具明确核对停止写者并处置测试锁，再用新进程观察；确认原生调用次数、计数、正文 / binding / Run 编号不变、原 attempt / 错误保留，并与 4.4 联验两个显式出口。已确认效果仍按安全编号和 countBasis / ordinal 收口，测试工具不可用、真实日期、旧计数缺省、编号冲突 / 越界 / 外链，不调用上游或另配编号。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 33
+    },
+    {
+      "id": "16",
+      "description": "5.2 按设计顺序提交计数、终态 Run、manifest 并完整读回；在真实产品写入点注入编号前、计数后、Run 后和最终 manifest / 读回故障，由夹具显式模拟 Owner 核对并处置已停止写者的测试锁后用新进程 finish，确认计数只增长一次、已提交 Run 字节不改、原生不重调。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 34
+    },
+    {
+      "id": "17",
+      "description": "5.3 测试完整收口 / none 观察后的 repeated finish、故障后的多次 finish、两个竞争写者、缺必要 attempt / 直接批准、输入变化、写者活跃 / unknown 及观察提交 / 读回失败；覆盖原生已有实际效果和 confirmed 不得降为 none，证据不足停止，提交失败非零并保留锁 / 现场。核对 observed-none 始终未完成，already-completed 不新增 Run / 修改正文 / 增长计数，不覆盖目标、补旧目录或自动处置原锁。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 35
+    },
+    {
+      "id": "18",
+      "description": "5.4 实现合法 archiving / archived 的只读 status / next、过渡态写入限制与无活动交接；测试 invoking / none / confirmed 分别提示 finish 观察 / 显式 execute / finish 收口，none 且活动源存在仍 pending，query 不重新判定或重试；保留源已移走、部分计数 / Run 已写、最终归档目录 / 历史说明 / 未知 Ref 不可用、当前必要 Run 缺失、普通活动源缺失和人工只读兼容，不调用旧 Change status、不激活下一 Change。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 36
+    },
+    {
+      "id": "19",
+      "description": "5.5 更新 Archive / 查询方法与 README 的 execute / finish 示例、无效果重新分类 / 独立后续命令、部分提交解释和累计编号约定；以组内查询和调用次数核对 local-only 标记、observed-none / pending / 完成结果与最小提示，明确无效果观察不代替批准或另一次 execute / Owner rollback。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 37
+    },
+    {
+      "id": "20",
+      "description": "6.1 执行 pnpm check、build、现有相关回归和本 Change 的分组测试，并做主规格 / 当前 delta strict validate；记录实际命令、结果及未覆盖边界，可靠且仍适用的旧 proof 可沿用，不称为正式 Delivery Full Test。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 41
+    },
+    {
+      "id": "21",
+      "description": "6.2 在新的 Author Apply Run 汇总任务读回、真实产品归档沙盒结果、失败 / 重复 finish 证据和三目录维护观察，交给独立 Review Apply；确认当前仓库 Change 未被测试归档，旧 Run / verdict 保留，未执行 Git、Delivery 收口或下一 Change 激活。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\apply-revision-and-native-archive\\tasks.md",
+      "line": 42
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\nMVP-D01 已人工 Open，manifest 位于 .mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json。\nMVP-D01-A 已归档到 openspec/changes/archive/2026-10-09-001-project-entry-and-minimal-delivery-open；其本地 Change checkpoint 为 8a702ff。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\nMVP-D01-B：action-runs-and-role-handoff 已独立批准并在 022 原生归档到 openspec/changes/archive/2026-10-10-002-action-runs-and-role-handoff，本地 Change checkpoint 为 c1d0251。累计完成 Change 数为 3。\nMVP-D01-C：explore-proof-and-proposal-review 已由 028 独立 Review Apply 批准，并在 029 原生同步规格与归档到 openspec/changes/archive/2026-10-10-003-explore-proof-and-proposal-review；16 项任务完成，028 的独立 check、build、84/84 回归继续适用，归档后 3/3 主规格 strict validate 通过。本地 Change checkpoint 为 511c556。任务 2.2 已按 RP-C-001 澄清保存失败边界，旧 Run 与独立批准保持原样。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、首个已有 Change 的 bind、status / next、action start / continue / instructions / resolve、run save / submit 和 workspace diagnose；save 与 diagnose 仅本地，resolve 限定 Explore / Propose，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\nMVP-D01-D：apply-revision-and-native-archive 的 034 修订方案已由 035 独立 Review Propose 批准，RP-D-001 已关闭。显式 local-only finish 可在证明确无效果后保存 invoking → none，仍返回未完成，后续 execute / Owner rollback 各自显式触发；未知 / 已有效果不误降级。21 项任务待实施，等待 Author Apply；两处中断与对照须在实施后验证，032 / 033 原记录及 changes-requested 保留。当前记录为 .mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/035-review-propose/run.md。已生效规格为 project-entry、delivery-workspace、action-runs；产品实现与历史 Run 保持原样。\nD01-B 已落实人读查询区分“尚未关联”与“已归档、当前无活动 Change”；人工记录保持只读。\nD02、D03 仅为计划分组；本次授权不包含 Git、正式 Delivery Full Test / Close 或下一 Change。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；本次复用 003-changes，整个 Delivery 实际 Run 连续编号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

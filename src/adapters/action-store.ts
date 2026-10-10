@@ -23,7 +23,7 @@ function writeExclusive(root: string, ref: string, content: string, written: str
     fs.closeSync(fd);
   }
 }
-function replace(
+export function replaceManagedFile(
   root: string,
   ref: string,
   content: string,
@@ -93,7 +93,12 @@ export function createRun(
     changeBindings: (workspace.manifest.changeBindings as unknown[]).map((value) => {
       const b = object(value, 'binding');
       return b.changeId === seed.changeId
-        ? { ...b, state: 'active', latestRunRef: ref, batchId }
+        ? {
+            ...b,
+            state: seed.actionType === 'archive' ? 'archiving' : 'active',
+            latestRunRef: ref,
+            batchId,
+          }
         : b;
     }),
     changeBatches: binding.batchId
@@ -108,7 +113,7 @@ export function createRun(
         ],
   };
   parseWorkspace(parseProject(workspace.project), manifest);
-  replace(
+  replaceManagedFile(
     root,
     workspace.manifestRef,
     JSON.stringify(manifest, null, 2) + '\n',
@@ -139,7 +144,7 @@ export function replaceDraft(
 ) {
   parseRun(header, run.ref, run.record.deliveryId, run.record.changeId);
   const content = renderRun(header, body);
-  replace(root, run.ref, content, written, 'before-run-commit', observe);
+  replaceManagedFile(root, run.ref, content, written, 'before-run-commit', observe);
   observe?.('before-readback', managedPath(root, run.ref));
   const readback = readRun(root, run.ref, run.record.deliveryId, run.record.changeId);
   if (fs.readFileSync(managedPath(root, run.ref), 'utf8') !== content)

@@ -1,14 +1,10 @@
+import { actionInstructions } from '../src/application/action-instructions.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { type ProcessRunner } from '../src/adapters/openspec.ts';
-import {
-  actionInstructions,
-  saveRun,
-  submitRun,
-  continueAction,
-} from '../src/application/actions.ts';
+import { saveRun, submitRun, continueAction } from '../src/application/actions.ts';
 import {
   actionTarget,
   startAuthor,

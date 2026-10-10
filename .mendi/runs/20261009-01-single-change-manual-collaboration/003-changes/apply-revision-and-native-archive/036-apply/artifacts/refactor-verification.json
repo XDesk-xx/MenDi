@@ -1,0 +1,14 @@
+{
+  "commands": [
+    "pnpm build",
+    "node --test tests/actions.test.ts tests/action-write.test.ts tests/planning-inputs.test.ts tests/owner-resolution.test.ts tests/planning-cli.test.ts tests/action-cli.test.ts"
+  ],
+  "buildExitCode": 0,
+  "tests": 41,
+  "pass": 41,
+  "fail": 0,
+  "initialError": "TS18026: shebang moved below imports",
+  "correction": "Restore CLI shebang as first line; build passed.",
+  "evidenceSource": "Observed tool command outputs",
+  "scope": "responsibility extraction; implementation behavior unchanged"
+}

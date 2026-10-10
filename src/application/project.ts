@@ -74,8 +74,11 @@ export function query(input: Selection, options: OperationOptions = {}) {
         reason: '需明确 Delivery 范围与 Owner 授权。',
       },
     };
-  const facts = workspace.activeChangeId ? upstream.status(workspace.activeChangeId) : null;
   const run = currentRun(root, workspace);
+  const facts =
+    workspace.activeChangeId && !run?.record.archive
+      ? upstream.status(workspace.activeChangeId)
+      : null;
   const next =
     workspace.mode === 'manual-bootstrap'
       ? {
@@ -84,7 +87,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
           executable: false,
         }
       : run
-        ? actionNext(run.record, run.ref)
+        ? actionNext(run.record, run.ref, workspace.bindings[0]?.state === 'archived')
         : workspace.activeChangeId
           ? {
               action: 'explore',

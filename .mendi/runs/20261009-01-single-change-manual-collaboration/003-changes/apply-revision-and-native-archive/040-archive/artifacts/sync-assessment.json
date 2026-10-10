@@ -1,0 +1,98 @@
+[
+  {
+    "deltaRef": "openspec/changes/apply-revision-and-native-archive/specs/action-runs/spec.md",
+    "mainRef": "openspec/specs/action-runs/spec.md",
+    "requirements": [
+      {
+        "operation": "MODIFIED",
+        "name": "Explicit action recording",
+        "alreadySynced": false
+      },
+      {
+        "operation": "MODIFIED",
+        "name": "Explicit owner resolution of blocked work",
+        "alreadySynced": false
+      },
+      {
+        "operation": "MODIFIED",
+        "name": "Direct owner decision recorded in the receiving run",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Stage-scoped operation instructions",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Explicit earlier phase rollback",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Approved native archive execution",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Observed archive effects and bounded finish",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Archive draft and terminal submission",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Review apply maintainability observations",
+        "alreadySynced": false
+      }
+    ],
+    "needsSync": true
+  },
+  {
+    "deltaRef": "openspec/changes/apply-revision-and-native-archive/specs/delivery-workspace/spec.md",
+    "mainRef": "openspec/specs/delivery-workspace/spec.md",
+    "requirements": [
+      {
+        "operation": "MODIFIED",
+        "name": "Read-only status and next",
+        "alreadySynced": false
+      },
+      {
+        "operation": "MODIFIED",
+        "name": "Operation-specific input checks",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Product archive transition and terminal handoff",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Cumulative archive ordinal and idempotent local commit",
+        "alreadySynced": false
+      }
+    ],
+    "needsSync": true
+  },
+  {
+    "deltaRef": "openspec/changes/apply-revision-and-native-archive/specs/project-entry/spec.md",
+    "mainRef": "openspec/specs/project-entry/spec.md",
+    "requirements": [
+      {
+        "operation": "ADDED",
+        "name": "Selected operation instructions protocol",
+        "alreadySynced": false
+      },
+      {
+        "operation": "ADDED",
+        "name": "Honest native archive result and local finish mode",
+        "alreadySynced": false
+      }
+    ],
+    "needsSync": true
+  }
+]

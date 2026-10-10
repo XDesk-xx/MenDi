@@ -36,7 +36,9 @@ export function readRun(
 }
 export function currentRun(root: string, workspace: Workspace): RunDocument | null {
   if (workspace.mode !== 'product') return null;
-  const binding = workspace.bindings.find((b) => b.changeId === workspace.activeChangeId);
+  const binding = workspace.bindings.find(
+    (b) => b.changeId === workspace.activeChangeId || b.state === 'archived',
+  );
   return binding?.latestRunRef
     ? readRun(root, binding.latestRunRef, workspace.id, binding.changeId)
     : null;

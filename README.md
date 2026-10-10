@@ -2,7 +2,7 @@
 
 MenDi 是以 OpenSpec 为规格底座，通过 Delivery、Author / Reviewer、Action 编排与 Runs 交接组织开发的项目交付工具。
 
-当前已实现项目入口、首次 Delivery Open、首个已有 Change 关联、Action / Run 记录命令及只读查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
+当前已实现项目入口、首次 Delivery Open、首个已有 Change 关联、Action / Run、Apply 处置 / 显式回退，以及原生 Archive 的准备、执行、有限 finish 和只读查询。阶段语义工作由 Agent 完成，独立 Reviewer 给出结论。唯一产品总规划见 [基础与交付路线图](mendi-foundation-and-delivery-roadmap.md)，协作方式见 [AGENTS.md](AGENTS.md)。
 
 ## 工程命令
 
@@ -41,7 +41,7 @@ node dist/drivers/cli.js next --project D:\work\target --json
 
 查询要求本地配置、工具、项目入口、当前 manifest，以及当前活动 binding 的活动路径和 status；有 product latestRunRef 时再解析其当前 Run 头部。历史 Run、固定 Author 的正文、方法文件、旧方案、说明链接和未知 `Ref` 扩展不作为查询存在性前提，也不读取这些目标。manifestRef、binding changeRef 与产品 Run 路径仍校验身份和受管路径安全。
 
-人工归档交接使用 `state: archived`、`archiveOrdinal: N`、`changeRef: openspec/changes/archive/YYYY-MM-DD-NNN-<changeId>`（NNN 至少三位；旧无编号格式仍兼容），并清空该 Change 的 `activeChangeId`；查询显示本地交接且 `upstream:null`，不调用旧 Change 的活动 status、不补建目录。归档路径只是记录定位，不读取 / 要求其内容存在，也不认证归档已执行；矛盾身份和状态仍拒绝。CLI 没有 Archive 写命令。
+人工归档交接使用 `state: archived`、`archiveOrdinal: N`、`changeRef: openspec/changes/archive/YYYY-MM-DD-NNN-<changeId>`（NNN 至少三位；旧无编号格式仍兼容），并清空该 Change 的 `activeChangeId`；查询显示本地交接且 `upstream:null`，不调用旧 Change 的活动 status、不补建目录。归档路径只是记录定位，不读取 / 要求其内容存在，也不认证人工归档已执行；矛盾身份和状态仍拒绝。产品归档查询另外核对当前必要 Archive Run、编号与计数；两种格式均不迁移历史记录。
 
 ## Action / Run 记录
 
@@ -77,8 +77,10 @@ save 只读取本地必要输入，不启动上游。`--openspec-bin` 仍接受�
 | save | 有效本地配置、入口 / manifest、活动路径、当前 draft / ref / role / actor、明确正文、独占写入和读回 |
 | start / continue / resolve | 实际上游 / status、当前工作和所选方法；Review / revise 另读固定完整 Author |
 | submit | 上游 / status、当前 draft、正文 / result / outcome；Review 另读固定 Author 与合法 verdict |
-| instructions | 上游、当前 Action / phase、显式 artifact 指引；不读取历史 Owner 来源正文 |
+| instructions | 上游、当前 Action / phase、artifact 或 operation 二选一；不读取历史 Owner 来源正文 |
 | diagnose | 本地配置 / 入口 / manifest、锁、当前 product Run、可选显式同 Change 占号 |
+| archive execute | 当前 prepared / 已保存 none、直接独立批准 / Author、真实 all_done、本次 Change / 主规格输入、无效果现场、锁内复核 |
+| archive finish | 本地当前 Archive / binding / count、必要 attempt 和直接输入、停止写者及实际效果；已完成交接仅读回当前记录，无上游调用 |
 
 ## 阶段指引与 Owner 处置
 
@@ -86,16 +88,39 @@ save 只读取本地必要输入，不启动上游。`--openspec-bin` 仍接受�
 node dist/drivers/cli.js action instructions --project D:\work\target --action $draft.run.actionId --artifact proposal --json
 ```
 
-Explore（含 revise / review）只请求 proposal 背景，Propose 支持 proposal / specs / design / tasks；Apply 尚不支持此入口。返回真实 instruction、template、输出位置、直接 dependencies 及可选 context / rules；specs/**/*.md 是模式，不是单个文件。先读 done 依赖实际内容，按 false 的必要依赖补输入，说明当前约束如何影响范围与产物。指引不要求所有 artifact ready，也不生成文件、Run 或 verdict。Explore 摘要进 Run，原始输出进 artifacts / 受控位置，不新建 explore.md；旧受审文件保持原样。
+Explore（含 revise / review）只请求 proposal 背景，Propose 支持 proposal / specs / design / tasks；Apply / Archive 使用 --operation apply|archive；分别返回实际任务协议和 Archive context / guidance。返回真实 instruction、template、输出位置、直接 dependencies 及可选 context / rules；specs/**/*.md 是模式，不是单个文件。先读 done 依赖实际内容，按 false 的必要依赖补输入，说明当前约束如何影响范围与产物。指引不要求所有 artifact ready，也不生成文件、Run 或 verdict。Explore 摘要进 Run，原始输出进 artifacts / 受控位置，不新建 explore.md；旧受审文件保持原样。
 
 以下仅在 Owner 原始消息明确授权相应处置后执行，actor / role 参数只是声明，没有真人身份认证。
 
 ```powershell
 node dist/drivers/cli.js action resolve --project D:\work\target --run $draft.run.ref --role owner --actor owner-session --resolution handoff --to-role author --to-actor author-session-2 --reason "未完成工作交给接收者" --json
 node dist/drivers/cli.js action resolve --project D:\work\target --run $rejectedReviewRef --role owner --actor owner-session --resolution revise --to-role author --to-actor author-session-2 --reason "要求同阶段修订" --json
+node dist/drivers/cli.js action resolve --project D:\work\target --run $currentRunRef --role owner --actor owner-session --resolution rollback --phase propose --revises $completedProposeAuthorRef --to-role author --to-actor author-session-2 --reason "显式回到较早方案" --json
 ```
 
-handoff 仅允许未完成 Explore / Propose Author 或 Reviewer，必须同角色、不同 actor。新 draft 保持 Action / 方法 / 工具与固定对象，复制待继续笔记，不继承 verdict / result / outcome；Reviewer 重新独立检查，不要求 Author 重做。相同 actor 普通继续无需交接。revise 仅处理当前 rejected 的同阶段 Author，新 Action / 空 draft 直接关联被拒绝 Author；旧 verdict 保留，完成后仍须独立 Review。Apply、跨阶段回退、完整工作 handoff 或非 rejected resolve revise 拒绝。ownerDecision 内嵌接收 Run，仅保存最新直接决策，普通查询不读历史来源正文。
+handoff 仅允许未完成 Explore / Propose / Apply Author 或 Reviewer，必须同角色、不同 actor。新 draft 保持 Action / 方法 / 工具与固定对象，复制待继续笔记，不继承 verdict / result / outcome；Reviewer 重新独立检查，不要求 Author 重做。相同 actor 普通继续无需交接。revise 仅处理当前 rejected 的同阶段 Author，新 Action / 空 draft 直接关联被拒绝 Author；旧 verdict 保留，完成后仍须独立 Review。完整工作 handoff 或非 rejected resolve revise 拒绝。显式 rollback 须 --phase <较早阶段> --revises <完整直接 Author Run>，接收角色只能 author；建立新 revise / Review 路径，不删旧产物，也不沿用旧批准跳段。ownerDecision 内嵌接收 Run，仅保存最新直接决策，普通查询不读历史来源正文。
+
+## 原生 Archive 与有限 finish
+
+仅在 Owner 明确授权后操作目标项目。start 准备要求当前独立 Review Apply approved、其完整直接 Author 和真实 Apply all_done；不调用原生归档、不增长计数。
+
+```powershell
+$archive = node dist/drivers/cli.js action start --project D:\work\target --change example-change --type archive --role author --actor author-session-1 --json | ConvertFrom-Json
+node dist/drivers/cli.js action instructions --project D:\work\target --action $archive.run.actionId --operation archive --json
+node dist/drivers/cli.js action archive --project D:\work\target --run $archive.run.ref --role author --actor author-session-1 --mode execute --json
+# 异常后核对现场、停止写者，并按既有 Owner 授权处置残留锁；finish 不是 unlock。
+node dist/drivers/cli.js action archive --project D:\work\target --run $archive.run.ref --role author --actor author-session-1 --mode finish --json
+```
+
+execute 在同一锁内保存有限输入和 invoking，再调用固定 `archive <change> --json --yes`；OpenSpec 负责规格同步。产品保存原始包装响应 / 退出 / 信号 / stdout / stderr，定向核对源消失、唯一实际候选、元数据 / delta 与主规格效果。不是另做一次规格合并，也不以非零退出推断无效果。旧失败 attempt 保留。
+
+本次声明 `retire_capabilities: true` 且 REMOVED 输入完整删除调用前全部需求、没有其他需求操作时，以主规格不存在核对预期退役，仍检查归档元数据与直接输入。其他主规格缺失继续拒绝。调用标记提交前已有的 attempt 目录也保留；在既有锁及必要前置成立后，另一次显式 execute 从当前 Run 的规范占号继续编号，不从目录存在猜测已调用原生。
+
+finish 为 `executionMode:local-only / openspec:null / upstreamAccess:not-required`，工具不可用时仍可工作。原写者及可能的原生进程未确认停止、必要输入缺失 / 改变、候选不唯一 / 越界或现场矛盾时停止。invoking 后原生尚未启动或已经无效果结束时，完整现场可支持保存 none，返回 `observed-none / archiveStatus:pending`：当前 draft、正文、binding、activeChangeId、计数与 Run 编号均保持未完成，只新增观察。再次 finish 不建立 attempt、不重试；另一次显式 execute 或 Owner rollback 才是后续操作。rollback 只接受 prepared / 已保存 none，再次核对无效果，创建较早阶段新的 Author 修订并重新审核。invoking 不允许直接 execute / rollback。
+
+确认实际原生效果后，目录使用真实日期和累计 `archivedChangeCount + 1`：`YYYY-MM-DD-NNN-change-id`，至少三位、不随 Delivery / Run 重置，旧缺省计数按零解释而不由查询补写。依次提交安全编号、计数、终态 Archive Run、manifest，再完整读回；存在部分提交时 finish 只补缺失交接，不另配编号或修改已提交 Run。完整收口返回 `archived / completed`；重复 finish 返回 `already-completed`，不增长计数、不新建 Run、不调用原生。
+
+archiving 的 status / next 只解释当前 typed Archive Run，upstream:null，不调用消失源的 status，也不重新判断或重试。prepared / none 指向 archive-execute；invoking / confirmed 及计数 / Run 已写而 manifest 未提交时仍 pending，指向 archive-finish。archived 要求当前终态 / 编号 / 计数一致，显示无活动 Change，next=delivery-next / awaiting-owner-instruction；不读取归档目录、历史批准正文或说明 / 未知 Ref。普通活动源缺失仍失败；普通阶段写入在归档过渡期拒绝。正式 Archive 不产生 Reviewer verdict，后续 Change / checkpoint / Full Test / Close / Reopen 保持独立授权。
 
 ## 只读故障现场诊断
 
@@ -129,7 +154,7 @@ start / continue 先独占写新 Run，再替换 manifest 指针并读回；save
 - `src/application/`：产品操作与 Skill 编排。
 - `src/adapters/`：必要的文件与外部工具接线。
 - `src/drivers/`：CLI 入口。
-- `skills/actions/`：六个产品阶段方法，revise 复用对应 Author 方法；`skills/tools/openspec/`：显式选用的工具指导。
+- `skills/actions/`：六个 Explore / Propose / Apply 方法及 Archive，revise 复用对应 Author 方法；`skills/tools/openspec/`：显式选用的工具指导。
 - `scripts/`：构建与验收准备程序。
 - `tests/fixtures/minimal-project/`、`tests/fixtures/ui-project/`：后续真实验收项目。
 - `openspec/`：新初始化的项目配置、规格与 Change 材料。
@@ -148,6 +173,6 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-当前协作记录：MVP-D01 保持 open；A、B、C 已归档，累计完成 Change 为 3，B 的本地 Change checkpoint 为 `c1d0251`。MVP-D01-C [explore-proof-and-proposal-review](openspec/changes/archive/2026-10-10-003-explore-proof-and-proposal-review/proposal.md) 已由 028 独立 Review Apply 批准，并在 [029 Archive](.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/029-archive/run.md) 完成原生规格同步与编号 003 归档；3/3 主规格 strict validate 通过。028 的独立 check、build 和 84/84 回归继续适用。等待 Owner 明确后续操作。今后 Explore 分析 / proof 摘要统一进 Run，不新建 Change 级 explore.md；已受审旧文件原样保留。旧 Run、编号与 verdict 保留；当前交接见 [Delivery manifest](.mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json)。
+当前协作记录：MVP-D01 保持 open；A、B、C、D 已归档，累计完成 Change 为 4。[040 Author Archive](.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/040-archive/run.md) 已原生同步三份规格，D 归档到 openspec/changes/archive/2026-10-10-004-apply-revision-and-native-archive，当前无活动 Change。本轮本地 Change checkpoint 后等待 Owner 后续指令，Delivery 保持 open；当前交接见 [Delivery manifest](.mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json)，详细来历保留在 Run。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。本次复用 `003-changes`，整个 Delivery 连续编号；批次不占号，Reopen 后再建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

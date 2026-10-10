@@ -152,7 +152,10 @@ test('Run 进展、Author 完成和三种 Review verdict 产生最小 next', () 
     );
   }
   assert.equal(actionDefinition('revise-apply').skill, 'apply');
-  assert.throws(() => actionDefinition('archive'));
+  assert.equal(actionDefinition('archive').skill, 'archive');
+  assert.equal(actionDefinition('archive').role, 'author');
+  assert.throws(() => actionDefinition('review-archive'));
+  assert.throws(() => actionDefinition('revise-archive'));
 });
 test('查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置', () => {
   const { root, runner } = target();

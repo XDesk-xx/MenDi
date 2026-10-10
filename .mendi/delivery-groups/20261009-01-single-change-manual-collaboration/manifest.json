@@ -51,7 +51,8 @@
       "changeIds": [
         "project-entry-and-minimal-delivery-open",
         "action-runs-and-role-handoff",
-        "explore-proof-and-proposal-review"
+        "explore-proof-and-proposal-review",
+        "apply-revision-and-native-archive"
       ]
     }
   ],
@@ -82,6 +83,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/029-archive/run.md",
       "archiveOrdinal": 3
+    },
+    {
+      "planningSlot": "MVP-D01-D",
+      "changeId": "apply-revision-and-native-archive",
+      "changeRef": "openspec/changes/archive/2026-10-10-004-apply-revision-and-native-archive",
+      "batchId": "003-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/040-archive/run.md",
+      "archiveOrdinal": 4
     }
   ],
   "activeChangeId": null,
@@ -96,12 +106,12 @@
     "旧 Flowkit 能力与历史迁移"
   ],
   "openRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/explore-proof-and-proposal-review/029-archive/run.md",
-  "stopBoundary": "archive",
+  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/040-archive/run.md",
+  "stopBoundary": "delivery-next",
   "next": {
     "action": "delivery-next",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "029 已完成原生规格同步与累计编号 003 的归档；Delivery 保持 open，等待 Owner 明确后续操作。"
+    "reason": "MVP-D01-D 归档后执行本地 Change checkpoint；Delivery 保持 open，后续操作由 Owner 单独指定。"
   }
 }

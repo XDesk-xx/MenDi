@@ -1,0 +1,27 @@
+[
+  {
+    "label": "final-check",
+    "entry": "C:\\WINDOWS\\system32\\cmd.exe",
+    "args": [
+      "/d",
+      "/c",
+      "pnpm check"
+    ],
+    "status": 0,
+    "signal": null,
+    "stdout": "Checked 57 files in 27ms. No fixes applied.\nChecked 57 files in 27ms. No fixes applied.\n",
+    "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+  },
+  {
+    "label": "targeted-regression",
+    "entry": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "tests/actions.test.ts"
+    ],
+    "status": 0,
+    "signal": null,
+    "stdout": "TAP version 13\n# Subtest: 产品 Run 校验真实身份与状态，未知说明不产生路径依赖\nok 1 - 产品 Run 校验真实身份与状态，未知说明不产生路径依赖\n  ---\n  duration_ms: 2.3591\n  type: 'test'\n  ...\n# Subtest: Run 进展、Author 完成和三种 Review verdict 产生最小 next\nok 2 - Run 进展、Author 完成和三种 Review verdict 产生最小 next\n  ---\n  duration_ms: 0.7081\n  type: 'test'\n  ...\n# Subtest: 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置\nok 3 - 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置\n  ---\n  duration_ms: 48.5296\n  type: 'test'\n  ...\n# Subtest: 当前 product 指针和批次身份矛盾不能回退猜历史\nok 4 - 当前 product 指针和批次身份矛盾不能回退猜历史\n  ---\n  duration_ms: 23.8302\n  type: 'test'\n  ...\n# Subtest: 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界\nok 5 - 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界\n  ---\n  duration_ms: 0.741\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 316.8707\n",
+    "stderr": ""
+  }
+]

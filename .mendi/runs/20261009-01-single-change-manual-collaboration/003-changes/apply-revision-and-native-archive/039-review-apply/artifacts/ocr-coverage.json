@@ -1,0 +1,1523 @@
+{
+  "mode": "delegate",
+  "summary": {
+    "preview_total_files": 251,
+    "total_files": 157,
+    "reviewed_files": 7,
+    "skipped_files": 150,
+    "coverage_rate": 4.46,
+    "accounted_rate": 100,
+    "supplemental_reviewed_files": 12,
+    "supplemental_skipped_files": 82
+  },
+  "files": [
+    {
+      "path": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/core/actions.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/drivers/cli.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/activation-commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/apply-instructions-before.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/apply-instructions-current.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/archive-instructions-before.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/archive-instructions-current.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/change-create.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/change-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/check-command.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/engineering-commands-initial.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/final-change-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/final-commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/final-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/maintenance-assessment.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/operation-input-commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/pre-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-001-scene.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-001/apply-operation-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-001/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-001/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/apply-operation-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/archive-guidance.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/native-archive.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proposal-instructions-current.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/regression-command.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/spec-inventory.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/current-apply-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/current-archive-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/apply-operation-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/archive-guidance.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/native-archive.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/report.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/artifact-assessment.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/final-apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/final-planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/final-validation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/pre-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/pre-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/proposal-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/spec-inventory.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/status-after-proposal.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/status-after-specs-and-design.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/status-after-tasks.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/validation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/033-review-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/033-review-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/033-review-propose/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/033-review-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/final-apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/final-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/final-validation.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/planning-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/pre-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/pre-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/revision-assessment.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/workspace-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/workspace-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/035-review-propose/artifacts/apply-inputs.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/035-review-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/035-review-propose/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-000.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-001.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-002.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-003.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-004.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-005.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-006.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-007.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-008.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-009.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-010.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-011.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-012.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-013.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-014.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-015.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-016.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-017.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-018.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-019.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-020.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/apply-inputs-021.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/archive-instructions-cli.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/commands.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/handoff-pre-task.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/pre-list.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/pre-status.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/refactor-verification.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/verification-followup.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/verification.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/final-next.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/findings.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/ocr-coverage.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/ocr-rules.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/recovery-probes.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-after-7.1.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-after-7.2.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-before-7.1.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-before-7.2.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-before-7.3.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/apply-inputs-final.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/src/adapters/archive-effects.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/src/application/archive.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/handoff-initial-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/handoff-readback.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/reserved-attempts.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/strict-validate.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/verification.json",
+      "status": "added",
+      "review": "skipped",
+      "reason": "历史及 Author 原始过程材料，不逐项重复审核；使用直接修订摘要、差异与本次独立验证。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/.openspec.yaml",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-d-explore.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/adapters/archive-attempt.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": "src/adapters/archive-commit.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/adapters/archive-effects.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": "src/adapters/openspec-operations.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/action-context.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/action-instructions.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/action-resolution.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/archive-prepare.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "src/application/archive.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "本次修订代码 / 当前交接 / 直接修改前对照已核对。"
+    },
+    {
+      "path": "src/core/archive.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "tests/archive-support.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    },
+    {
+      "path": "tests/delivery-stage-support.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "037 已覆盖的未受本次两项局部修订影响领域；沿用既有结论，相关行为另重跑。"
+    }
+  ],
+  "supplemental_files": [
+    {
+      "path": "AGENTS.md",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "skills/actions/review-apply/SKILL.md",
+      "status": "modified",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "skills/tools/openspec/SKILL.md",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/actions.test.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/fixtures/action-resolver.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/owner-resolution.test.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/planning-inputs.test.ts",
+      "status": "modified",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/build-initial.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/check-initial.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/check.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/proof-002/archived-spec.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/artifacts/related-regression.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/030-explore/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/check.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/artifacts/proof/archived-spec.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/031-review-explore/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/artifacts/final-status-display.txt",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/032-propose/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/033-review-propose/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/direct-runs-before/032-propose.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/direct-runs-before/033-review-propose.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/planning-before/design.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/planning-before/specs/action-runs/spec.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/artifacts/planning-before/tasks.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/034-revise-propose/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/035-review-propose/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/archive-scenes-16848.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/archive-scenes-28180.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/archive-scenes-32088.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/archive-scenes-32508.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/archive-scenes-38068.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-16848.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-19464.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-28180.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-32088.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-32508.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-38068.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-39252.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-40300.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-40308.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-42468.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-44220.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/artifacts/product-test-evidence/commands-9280.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/check.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/probe-initial.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/probe-typecheck.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/recovery-probes.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/artifacts/test.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/run.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/openspec/changes/apply-revision-and-native-archive/design.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/openspec/changes/apply-revision-and-native-archive/specs/action-runs/spec.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/openspec/changes/apply-revision-and-native-archive/tasks.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/build.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/check.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-23080.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-27352.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-32692.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-33068.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-36340.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-47184.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/archive-scenes-8820.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-23080.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-27352.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-32692.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-33068.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-36340.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-47184.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-47212.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/product-test-evidence/commands-8820.jsonl",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/red-verification.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/related-tests.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/revision-tests.log",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/run.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/design.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/proposal.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/specs/action-runs/spec.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/specs/project-entry/spec.md",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "openspec/changes/apply-revision-and-native-archive/tasks.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "skills/actions/archive/SKILL.md",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "tests/apply-resolution.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-attempts.test.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "tests/archive-concurrency.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-effects.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-execute.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-finish.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-query.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/archive-retirement.test.ts",
+      "status": "added",
+      "review": "reviewed",
+      "reason": "OCR 默认排除项；已补查修订测试、当前规划 / 方法或直接交接。"
+    },
+    {
+      "path": "tests/fixtures/archive-worker.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/operation-cli.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    },
+    {
+      "path": "tests/operation-inputs.test.ts",
+      "status": "added",
+      "review": "skipped",
+      "reason": "不属于本次局部修订静态补审范围；历史结论沿用，受影响行为通过定向测试复核。"
+    }
+  ]
+}
