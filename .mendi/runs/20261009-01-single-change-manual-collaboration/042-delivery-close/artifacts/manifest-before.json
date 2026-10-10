@@ -2,7 +2,7 @@
   "id": "20261009-01-single-change-manual-collaboration",
   "planningSlot": "MVP-D01",
   "title": "单 Change 手动协作",
-  "state": "closed",
+  "state": "open",
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-09",
   "openCheckpoint": {
@@ -106,20 +106,18 @@
     "旧 Flowkit 能力与历史迁移"
   ],
   "openRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/042-delivery-close/run.md",
-  "stopBoundary": "closed",
+  "latestRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/041-delivery-full-test/run.md",
+  "stopBoundary": "delivery-close",
   "next": {
-    "action": "delivery-next",
+    "action": "delivery-close",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D01 已在 042 人工 Close；等待 Owner 明确后续范围与独立授权。"
+    "reason": "041 人工 Full Test passed；Delivery 保持 open，等待 Owner 单独授权 Close。"
   },
   "fullTest": {
     "runRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/041-delivery-full-test/run.md",
     "result": "passed",
     "testMode": "owner-authorized-manual-full-test",
     "testedCommit": "7c473bef3a76c44ced406f1f23690bdfb0be52ce"
-  },
-  "closedOn": "2026-10-10",
-  "closeRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/042-delivery-close/run.md"
+  }
 }

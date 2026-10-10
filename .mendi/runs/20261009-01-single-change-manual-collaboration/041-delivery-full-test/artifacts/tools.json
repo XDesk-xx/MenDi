@@ -1,0 +1,14 @@
+{
+  "node": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "version": "v22.23.2"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "typescript": "5.9.3",
+  "biome": "2.5.15",
+  "openspec": {
+    "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "version": "1.14.1",
+    "exitCode": 0
+  }
+}
