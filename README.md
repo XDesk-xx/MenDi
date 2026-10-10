@@ -273,6 +273,6 @@ node D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js 
 
 Storybook 在 UI 目标项目中接入，首版验收项目位置预留在 `tests/fixtures/ui-project/`。当前未安装 Storybook、Impeccable 或 DBX，未配置或启用 MCP 服务。
 
-当前协作记录：MVP-D02“Delivery 验收与收口”已由 Owner 授权，在 032 人工 Close，保持 manual-bootstrap；A / B / C 均已独立批准并归档，累计完成 Change 为 7，无活动 Change。收口沿用适用的 031 正式 Full Test passed：完整 pnpm test 193/193、pnpm check 与六份主规格 strict validate 均通过，受测提交为 4355a6d。收口与限制见 [032 Run](.mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md)，当前交接见 [D02 manifest](.mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json)；后续范围及 Git / Open / Reopen 等保持单独授权。
+当前协作记录：MVP-D03“Storybook 与实际使用”已由 Owner 授权人工 Open，保持 manual-bootstrap；规划槽位为 A Storybook 轻量接入、B 独立安装与简短项目指导、C 最小真实交付验收。本地 Delivery checkpoint 保存 Open 范围与分组，尚无活动 Change，等待 Owner 授权激活。D01 / D02 保持 closed，累计完成 Change 为 7；新 Delivery 不继承 D02 已通过验收。范围与边界见 [D03 001 Run](.mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md)，当前入口见 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)；push、Change 激活及正式 Full Test / Close 保持单独授权。
 
 Run 按路线图 §4.1 组织：Delivery 操作位于 `.mendi/runs/<delivery-id>/<序号>-<操作名称>/`；Change Run 位于同级 Changes 批次的 `<change-id>/<序号>-<操作名称>/`。新 Delivery 从 `001` 开始，Changes 批次在实际进入 Change 工作时建立；D01 的 `003-changes` 保留原归属，Reopen 沿原 Delivery 连续编号并建立新批次。归档 ID 按项目累计完成数独立增长，不随 Run 或 Delivery 重置。

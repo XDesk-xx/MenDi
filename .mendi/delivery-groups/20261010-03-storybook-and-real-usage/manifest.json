@@ -1,0 +1,61 @@
+{
+  "id": "20261010-03-storybook-and-real-usage",
+  "planningSlot": "MVP-D03",
+  "title": "Storybook 与实际使用",
+  "state": "open",
+  "recordingMode": "manual-bootstrap",
+  "openedOn": "2026-10-10",
+  "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+  "goal": "按目标项目现有 Storybook 配置、脚本与真实组件接入 UI 预览和交互验证；形成稳定独立安装与简短项目指导，在真实 UI / 非 UI 最小目标验证首版核心交付及 Reopen。",
+  "plannedChanges": [
+    {
+      "slot": "MVP-D03-A",
+      "title": "Storybook 轻量接入",
+      "dependsOn": [],
+      "externalDependsOn": [
+        "MVP-D02-C"
+      ],
+      "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+    },
+    {
+      "slot": "MVP-D03-B",
+      "title": "独立安装与简短项目指导",
+      "dependsOn": [
+        "MVP-D03-A"
+      ],
+      "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+    },
+    {
+      "slot": "MVP-D03-C",
+      "title": "最小真实交付验收",
+      "dependsOn": [
+        "MVP-D03-B"
+      ],
+      "roadmapSection": "MVP-D03-C：最小真实交付验收"
+    }
+  ],
+  "changeBatches": [],
+  "changeBindings": [],
+  "activeChangeId": null,
+  "exitCriteria": [
+    "A / B / C 按路线图完成、经独立审核并实际归档，首版范围可以独立安装和手动使用。",
+    "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+    "固定安装在真实 UI / 非 UI 最小目标完成核心交付与 Reopen，初始空 .tmp 下可准备与验收，必要结果独立保存。",
+    "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+  ],
+  "outOfScope": [
+    "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+    "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+    "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+    "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+  ],
+  "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+  "stopBoundary": "change-activation",
+  "next": {
+    "action": "change-activate",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D03 Open 本地 checkpoint 后，等待 Owner 明确授权 MVP-D03-A 的目标与范围；尚未激活 Change。"
+  }
+}

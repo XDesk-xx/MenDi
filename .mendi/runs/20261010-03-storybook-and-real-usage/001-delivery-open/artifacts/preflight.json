@@ -1,0 +1,30 @@
+{
+  "ownerInstruction": "owner 授权 delivery open，开启 MVP-D03",
+  "role": "author",
+  "selectedDelivery": "20261010-03-storybook-and-real-usage",
+  "planningSlot": "MVP-D03",
+  "previousDelivery": {
+    "id": "20261010-02-delivery-verification-and-close",
+    "state": "closed",
+    "manifestRef": ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+    "closeRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md"
+  },
+  "externalPrerequisite": {
+    "planningSlot": "MVP-D02-C",
+    "state": "archived",
+    "archiveOrdinal": 7
+  },
+  "implementationBaseline": {
+    "commit": "3ac54cddc4c65fac12f126fde1662e38f4490b54",
+    "branch": "main",
+    "worktree": "clean"
+  },
+  "toolEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "toolVersion": "1.14.1",
+  "mode": "manual-bootstrap",
+  "archivedChangeCount": 7,
+  "runSequence": "新 Delivery 从 001 开始；未提前建立 Changes 批次或激活 Change。",
+  "dependencyNote": "dependsOn 仅为 D03 内依赖，D03-A 的已完成跨 Delivery 前置单列 externalDependsOn。",
+  "scopeSource": "路线图 §6.2、§7 MVP-D03-A / B / C 及 D03-B 文档收敛安排。",
+  "checkedAt": "2026-10-10T12:27:01.618Z"
+}

@@ -1,0 +1,8 @@
+项目：D:\Projects\MenDi
+OpenSpec：1.14.1 (D:\tools\openspec\1.14.1\node_modules\@fission-ai\openspec\bin\openspec.js)
+Delivery：20261010-03-storybook-and-real-usage Storybook 与实际使用 (open)
+目标：按目标项目现有 Storybook 配置、脚本与真实组件接入 UI 预览和交互验证；形成稳定独立安装与简短项目指导，在真实 UI / 非 UI 最小目标验证首版核心交付及 Reopen。
+槽位：MVP-D03-A, MVP-D03-B, MVP-D03-C
+Change：尚未关联
+下一步：delivery-checkpoint，来源：manual-bootstrap
+MVP-D03 已人工 Open，三个槽位和交付范围已记录；等待 Owner 授权 checkpoint 或明确下一 Change 激活。
