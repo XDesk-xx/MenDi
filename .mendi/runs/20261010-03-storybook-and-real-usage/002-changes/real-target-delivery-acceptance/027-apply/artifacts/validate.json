@@ -1,0 +1,15 @@
+{
+  "name": "validate",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "real-target-delivery-acceptance",
+    "--strict"
+  ],
+  "cwd": "D:/Projects/MenDi",
+  "exitCode": 0,
+  "durationMs": 1707.6579000000002,
+  "stdout": "Change 'real-target-delivery-acceptance' is valid\n",
+  "stderr": "ℹ [INFO] file: skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\n"
+}

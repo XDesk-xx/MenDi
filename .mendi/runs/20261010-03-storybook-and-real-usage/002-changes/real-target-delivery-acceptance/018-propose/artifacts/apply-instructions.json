@@ -1,0 +1,77 @@
+{
+  "changeName": "real-target-delivery-acceptance",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\proposal.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 6,
+    "complete": 0,
+    "remaining": 6
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 从尚不存在的 `tests/fixtures/d03-c-vue-project/` 用官方 create-vue 建立无计数器的 Vue / TS 空壳、目标基础检查与独立 pnpm workspace，显式准备 Naive UI / Storybook 及必要浏览器、锁文件和 OpenSpec 1.14.1 目标方法；用实际安装 / 目标 check / OpenSpec list 和跨 cwd 的稳定 MenDi 读取核对目标根、版本、真实方法与空工程来源，把入口及准备限制写目标 README / 当前 Run。不能复制探针或旧实现。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "2.1 在具体目标授权成立后开启唯一 `d03-c-vue-counter` / VUE-COUNTER，创建并绑定一次 `implement-naive-counter`，真实执行目标 Explore → 独立 Review Explore → Propose → 独立 Review Propose；实际读取 MenDi 返回的目标方法、context / rules 与逐项 instructions，形成计数器规格、设计、任务和对应 Run；用原生 validate / list 及真实独立 verdict 核对仅一个 Change、规则进入产物、没有重复创建或提前实施。未取得授权 / 独立 Reviewer 时停合法边界，不能脚本生成批准。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 11
+    },
+    {
+      "id": "3",
+      "description": "3.1 获目标方案批准后实施 App 挂载的唯一 CounterPanel、加一 / 重置 / 禁用及初值三个状态，真实 stories、Vitest 交互、browser-check 和五项完整入口随同落地；目标检查覆盖维护源码 / TS 脚本 / 配置和 .vue，必要时只调整根检查归属。用 typecheck、应用 / Storybook build 及所需开发 focused 核对实现和入口，保存结果、来源与 README；本阶段不提前完成第 4 块留待的新 Author 完整验收。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "4",
+      "description": "4.1 初始 Author 把完整 verify:stories / verify:browser 保留未执行、目标任务未完成，并合法提交 Apply continuing；获明确 Owner handoff / 会话启动授权后，新 Author 不继承旧对话，从稳定入口、目标及当前 Run / methods / instructions 恢复，首次完成留待业务集合和真实官方 CLI 预览 / 浏览器状态交互、保存原始结果与服务收尾，交接目标 Apply。由实际独立 Reviewer 完成 Review Apply；通过真实新会话事实、任务变化、完整输出和固定 Author 的真实 verdict 验证，不以 Node 进程或换 actor 代替。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "5",
+      "description": "5.1 目标 Apply 独立批准且具体授权成立后，执行一次原生 Archive 并核对实际效果 / 查询；按明确受控 reset 故障或已出现的自然业务失败运行正式五项 Full Test，保存真实 failed，经范围内修复 / focused 和独立 delivery-repair 定向批准后，新整次执行原五项集合，取得修复后新测试 / 浏览器结果与正确收尾，再执行首轮 Close 并核对 closed 查询。用目标生成的正式父 / 子结果、归档事实和实际独立审核记录核对完成，不能用普通失败、拼接 PASS 或复活归档 Change 替代；等待审核 / 授权时保持本项待做。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "6",
+      "description": "6.1 汇总上述实际工作、B 的适用无 UI 工程证据、A / D02-C 的有效旧结论及本次必要补验，确认目标 / 安装 / 开发根没有误写；对实际改变部分执行根 check 与相关回归，记录命令、整组预算、收尾与限制，以及 AGENTS 要求的 src / tests / scripts 行数前三和可靠增长。当前根 Author Run 完整交接独立 Review Apply；原始输出只保留一份，取消范围如实注明，保留项未取得真实结果不勾选。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+      "line": 27
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D03 open / manual-bootstrap，A / B 已归档，累计成功归档 9。\nOwner 已重新激活 C real-target-delivery-acceptance；017 独立 Review Explore 已批准 016 的有限环境探索，当前交接 Author Propose，未执行方案阶段；批准不代表计数器、浏览器交互或正式交付验收完成。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。\nC 按最简路线图从空目录建立唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、目标 OpenSpec 和 Storybook；无 UI 仅工程验证。\n后续 Propose 收敛唯一目标、真实阶段 / 新会话交接、验证预算及授权；本轮审核未实现计数器或启动子智能体。升级、多版本 / 多布局和 MCP 认证不在 C 范围，外接升级留后续。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

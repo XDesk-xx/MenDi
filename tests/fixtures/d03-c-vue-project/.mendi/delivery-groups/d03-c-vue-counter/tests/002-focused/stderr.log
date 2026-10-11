@@ -1,0 +1,32 @@
+$ vitest run --project storybook
+21:47:09 [vite] Internal server error: Failed to parse source for import analysis because the content contains invalid JS syntax. Install @vitejs/plugin-vue to handle .vue files.
+  Plugin: vite:import-analysis
+  File: D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.vue:18:9
+  16 |    if (!props.disabled) count.value = 0
+  17 |  }
+  18 |  </script>
+     |           ^
+  19 |  
+  20 |  <template>
+      at TransformPluginContext._formatLog (file:///D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/.pnpm/vite@8.3.0_@types+node@22.20.5_esbuild@0.28.2_jiti@2.6.1/node_modules/vite/dist/node/chunks/node.js:8393:39)
+      at TransformPluginContext.error (file:///D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/.pnpm/vite@8.3.0_@types+node@22.20.5_esbuild@0.28.2_jiti@2.6.1/node_modules/vite/dist/node/chunks/node.js:8390:14)
+      at TransformPluginContext.transform (file:///D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/.pnpm/vite@8.3.0_@types+node@22.20.5_esbuild@0.28.2_jiti@2.6.1/node_modules/vite/dist/node/chunks/node.js:26022:10)
+      at EnvironmentPluginContainer.transform (file:///D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/.pnpm/vite@8.3.0_@types+node@22.20.5_esbuild@0.28.2_jiti@2.6.1/node_modules/vite/dist/node/chunks/node.js:8172:14)
+      at loadAndTransform (file:///D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/.pnpm/vite@8.3.0_@types+node@22.20.5_esbuild@0.28.2_jiti@2.6.1/node_modules/vite/dist/node/chunks/node.js:19634:26)
+21:47:09 [vite] (client) Pre-transform error: Failed to parse source for import analysis because the content contains invalid JS syntax. Install @vitejs/plugin-vue to handle .vue files.
+  Plugin: vite:import-analysis
+  File: D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.vue:18:9
+  16 |    if (!props.disabled) count.value = 0
+  17 |  }
+  18 |  </script>
+     |           ^
+  19 |  
+  20 |  <template>
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |storybook (chromium)| src/components/CounterPanel.stories.ts [ src/components/CounterPanel.stories.ts ]
+Error: Failed to import test file D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.stories.ts
+Caused by: TypeError: Failed to fetch dynamically imported module: http://localhost:63315/@fs/D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.stories.ts?import&browserv=1791726429318
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

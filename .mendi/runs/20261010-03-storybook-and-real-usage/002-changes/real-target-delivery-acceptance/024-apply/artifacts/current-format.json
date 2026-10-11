@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/node_modules/prettier/bin/prettier.cjs",
+    "--check",
+    "D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/README.md"
+  ],
+  "exitCode": 0,
+  "durationMs": 351.4306,
+  "stdout": "Checking formatting...\nAll matched files use Prettier code style!\n",
+  "stderr": ""
+}

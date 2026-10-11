@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "name": "install-consistent-ci",
+      "exitCode": 0,
+      "elapsedMs": 1074
+    },
+    {
+      "name": "typecheck-positive-corrected",
+      "exitCode": 0,
+      "elapsedMs": 6271
+    },
+    {
+      "name": "typecheck-negative",
+      "exitCode": 2,
+      "elapsedMs": 5255
+    },
+    {
+      "name": "typecheck-restored",
+      "exitCode": 0,
+      "elapsedMs": 5165
+    },
+    {
+      "name": "storybook-build",
+      "exitCode": 0,
+      "elapsedMs": 6938
+    }
+  ],
+  "restored": true,
+  "indexExists": true,
+  "iframeExists": true,
+  "businessNotImplemented": true,
+  "limits": [
+    "静态工程复验；未验证浏览器、交互、真实 Agent 或正式交付",
+    "有限 spawnSync 只作本次正常退出命令，不认证进程树停止"
+  ]
+}

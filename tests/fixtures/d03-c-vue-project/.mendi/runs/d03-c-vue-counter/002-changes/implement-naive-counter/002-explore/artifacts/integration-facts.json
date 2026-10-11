@@ -1,0 +1,16 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "budgetMs": 30000,
+  "appIsOfficialShell": true,
+  "counterExists": false,
+  "storybookConfigExists": true,
+  "vueVersion": "3.5.43",
+  "nButtonAvailable": true,
+  "storybookTestAvailable": true,
+  "browserProviderAvailable": true,
+  "chromiumExecutable": "C:\\Users\\xuser\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe",
+  "chromiumExecutableExists": true,
+  "elapsedMs": 3426,
+  "remainingMs": 26573,
+  "scope": "imports and existing executable only; no browser launch, component rendering, or business acceptance"
+}

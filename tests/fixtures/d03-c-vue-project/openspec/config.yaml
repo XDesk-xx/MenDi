@@ -1,0 +1,26 @@
+schema: spec-driven
+context: |
+  Language: Chinese
+  本目标是唯一从官方空壳创建的 Vue + Naive UI 计数器工程。
+  使用 Composition API / script setup / TypeScript；App 与 Storybook 共用唯一 CounterPanel。
+  稳定工具和当前授权见 README，角色与写入边界遵循目标 AGENTS。
+  业务须在本目标形成 proposal / specs / design / tasks 并经真实独立 Reviewer 批准后实施。
+  目标阶段和测试记录只留本目标，禁止写根 MenDi Run、根实现、其他目标或安装位置。
+  根方案批准不代替目标 Owner 授权、独立审核或子 Agent 启动授权，不伪造授权和 verdict。
+  完成最小实现与实际使用，目标 Review Apply approved 后可停在待 Archive。
+  额外新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close、五项 runner 与额外预算负例均取消。
+rules:
+  proposal:
+    - 只规划一个计数器，不重复创建已绑定 Change，不追加无关任务。
+  design:
+    - 明确默认 0、初值 5、加一、重置到 0 和禁用的真实行为。
+    - 工具、服务和记录属于目标，普通 focused 测试与官方 CLI / 浏览器只验证必要实际使用。
+    - 保留实际执行时限和本次服务收尾，不新增通用执行器、fast / full runner 或额外 gate。
+  tasks:
+    - 每项写明实际完成依据；Author 完成必要实现和有限验收，不刻意留待额外新 Author。
+    - 合法阶段与独立审核实际发生，取消项明确标注，不勾为执行通过。
+operations:
+  apply:
+    guidance:
+      - 按当前批准任务实施必要组件、stories 和实际验收，不恢复已取消范围。
+      - 命令到期、取消或非零时停止后项，确认本次持有进程 / 浏览器和监听收尾，未确认则保留现场和限制。

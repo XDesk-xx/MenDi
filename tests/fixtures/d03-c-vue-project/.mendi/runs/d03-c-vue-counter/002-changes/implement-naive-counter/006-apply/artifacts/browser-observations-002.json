@@ -1,0 +1,48 @@
+{
+  "budgetMs": 170000,
+  "stepBudgetMs": 30000,
+  "technology": "target installed Playwright / real headless Chromium",
+  "cua": "no enabled browsers; iab unavailable",
+  "pages": [
+    {
+      "name": "Default",
+      "url": "http://localhost:6115/?path=/story/counter-counterpanel--default",
+      "actualFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--default&viewMode=story",
+      "iframe": {
+        "id": "storybook-preview-iframe",
+        "src": "/iframe.html?id=counter-counterpanel--default&viewMode=story",
+        "title": "storybook-preview-iframe"
+      },
+      "visibleValueBeforeManual": "0"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "previews": [
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Default",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--default"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Existing Value",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--existing-value"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Disabled",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--disabled"
+    }
+  ],
+  "browserVersion": "148.0.7778.96",
+  "outcome": "failed",
+  "error": "Error: initial DOM observation mismatch {\"name\":\"Default\",\"url\":\"http://localhost:6115/?path=/story/counter-counterpanel--default\",\"actualFrameUrl\":\"http://localhost:6115/iframe.html?id=counter-counterpanel--default&viewMode=story\",\"iframe\":{\"id\":\"storybook-preview-iframe\",\"src\":\"/iframe.html?id=counter-counterpanel--default&viewMode=story\",\"title\":\"storybook-preview-iframe\"},\"visibleValueBeforeManual\":\"0\"}\n    at [stdin]:32:80",
+  "browserCleanup": {
+    "closed": true,
+    "elapsedMs": 148.19710000000032,
+    "budgetMs": 5000
+  },
+  "elapsedMs": 3961.7763999999997,
+  "remainingMs": 166038.2212
+}

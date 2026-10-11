@@ -1,0 +1,11 @@
+{
+  "purpose": "独立复验静态受控输入；不是从零业务实施或正式目标",
+  "source": "D:/Projects/MenDi/.mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/016-explore/artifacts/proof-03/inputs",
+  "target": "D:\\Projects\\MenDi\\.tmp\\d03-c-017-review-ba5a93a8",
+  "pnpm": "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+  "scope": [
+    "frozen offline install",
+    "vue-tsc positive-negative-restored",
+    "storybook static build"
+  ]
+}

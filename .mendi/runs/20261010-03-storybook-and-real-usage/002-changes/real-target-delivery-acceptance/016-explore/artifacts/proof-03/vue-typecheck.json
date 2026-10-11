@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "typecheck"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-6svsHP\\vue-environment-probe",
+  "status": 0,
+  "durationMs": 5733,
+  "stdout": "",
+  "stderr": "$ vue-tsc --noEmit\n",
+  "signal": null
+}

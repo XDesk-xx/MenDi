@@ -1,0 +1,17 @@
+{
+  "command": "node .mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/024-apply/artifacts/preparation-budget.ts cancel",
+  "tty": true,
+  "sessionId": 55135,
+  "ready": {
+    "hostPid": 30840,
+    "childPid": 37768,
+    "port": 62270
+  },
+  "cancelInput": "write_stdin chars U+0003 to the same foreground terminal",
+  "observedSIGINT": 1,
+  "scriptExitCodeRequested": 130,
+  "terminalShellExitCode": 1,
+  "result": "nonzero; cancelled; child, pipes and owned listener confirmed closed",
+  "rawExecutionResult": "budget-cancel.json",
+  "note": "PowerShell terminal returned 1; do not report a tool exit 130"
+}

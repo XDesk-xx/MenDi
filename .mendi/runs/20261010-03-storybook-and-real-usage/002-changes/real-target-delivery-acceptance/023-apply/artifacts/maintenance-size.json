@@ -1,0 +1,86 @@
+{
+  "ranks": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401,
+        "baselineLines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346,
+        "baselineLines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336,
+        "baselineLines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467,
+        "baselineLines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444,
+        "baselineLines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394,
+        "baselineLines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678,
+        "baselineLines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487,
+        "baselineLines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463,
+        "baselineLines": 463
+      }
+    ]
+  },
+  "newTargetMaintainedCode": [
+    {
+      "file": "tests/fixtures/d03-c-vue-project/vite.config.ts",
+      "lines": 3
+    },
+    {
+      "file": "tests/fixtures/d03-c-vue-project/src/main.ts",
+      "lines": 4
+    },
+    {
+      "file": "tests/fixtures/d03-c-vue-project/src/App.vue",
+      "lines": 11
+    },
+    {
+      "file": "tests/fixtures/d03-c-vue-project/eslint.config.ts",
+      "lines": 31
+    },
+    {
+      "file": "tests/fixtures/d03-c-vue-project/env.d.ts",
+      "lines": 1
+    },
+    {
+      "file": "tests/fixtures/d03-c-vue-project/.storybook/main.ts",
+      "lines": 9
+    }
+  ],
+  "notes": [
+    "基准为只读 HEAD 中直接维护文件的行数；没有复制旧证据或建立台账",
+    "当前新增 Vue 目标代码仅空壳与配置；根前三文件没有本轮改动",
+    "本次宿主调用源保存在当前 Run artifacts 并单独真实 tsc 检查，不作为长期实现平台"
+  ]
+}

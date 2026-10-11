@@ -1,0 +1,15 @@
+{
+  "name": "typecheck-restored",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "typecheck"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-017-review-ba5a93a8",
+  "exitCode": 0,
+  "elapsedMs": 5165,
+  "signal": null,
+  "stdout": "",
+  "stderr": "$ vue-tsc --noEmit\n"
+}

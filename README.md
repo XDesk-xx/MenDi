@@ -83,10 +83,8 @@ pnpm test:ui
 
 准备按 fixture 锁文件显式离线安装，要求已有 store；UI 入口检查目标自己的严格类型和实际浏览器。根工程构建用正常环境，目标执行保留严格依赖预检与禁止自动安装。持续预览与有限测试分别记录，修改后取得新结果；未知端口不授予服务停止权。
 
-当前 HTML-Vite / Storybook 10.6.1 实验有明确边界，不要求所有目标统一版本。Vue、无 UI 完整交付和新会话恢复留 D03-C；MCP 未认证。旧 PASS 不覆盖新修改，有限测试不代替正式 Full Test。
+当前 HTML-Vite / Storybook 10.6.1 实验有明确边界，不要求所有目标统一版本。D03-C 在唯一从空目录建立的 Vue + Naive UI 工程中验证最小真实使用，无 UI 复用工程结果；取消额外新会话恢复和目标正式收口演示，MCP 未认证。旧 PASS 不覆盖新修改，有限测试不代替正式 Full Test。
 
 ## 开发交接
 
-当前状态读取 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json) 和最近 Run。D03 保持 open / manual-bootstrap，A / B 已归档，最近交接为 015 Author Archive，累计归档为 9；Change checkpoint 保存当前边界，等待 Owner 下一指令，C 未激活。优先稳定并应用 MenDi，外接升级仅后续预留。
-
-
+当前状态读取 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json) 和最近 Run。D03保持open/manual-bootstrap，A/B/C已实际归档，累计10。[030 Author Archive](.mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md) 在029独立批准028、保留范围10/10后，仅归档根C，目录为 [010 real-target-delivery-acceptance](openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance)。唯一Vue目标仍停自身007批准后待Archive，本轮未执行其取消收口。真实失败、误下载和未认证能力由当前Run承接。本次Change checkpoint保存该归档边界，等待Owner正式Delivery Full Test授权；Close、push / PR / merge与清理另行授权，历史Run/verdict保持原样。

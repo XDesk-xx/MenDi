@@ -1,0 +1,83 @@
+{
+  "purpose": "无业务空工程接入 proof，不是计数器实施或产品验收",
+  "target": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-6svsHP\\vue-environment-probe",
+  "stableMendi": "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi",
+  "openspec": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "node": "v22.23.2",
+  "platform": "win32",
+  "commands": [
+    {
+      "name": "create-vue",
+      "status": 0,
+      "durationMs": 930
+    },
+    {
+      "name": "openspec-init",
+      "status": 0,
+      "durationMs": 754
+    },
+    {
+      "name": "openspec-list",
+      "status": 0,
+      "durationMs": 374
+    },
+    {
+      "name": "install",
+      "status": 0,
+      "durationMs": 10573
+    },
+    {
+      "name": "vue-typecheck",
+      "status": 0,
+      "durationMs": 5733
+    },
+    {
+      "name": "vue-typecheck-negative",
+      "status": 2,
+      "durationMs": 5476
+    },
+    {
+      "name": "vue-typecheck-restored",
+      "status": 0,
+      "durationMs": 5622
+    },
+    {
+      "name": "storybook-build",
+      "status": 1,
+      "durationMs": 3721
+    },
+    {
+      "name": "storybook-build-corrected",
+      "status": 0,
+      "durationMs": 5605
+    },
+    {
+      "name": "storybook-version",
+      "status": 0,
+      "durationMs": 6212
+    },
+    {
+      "name": "storybook-tools-help",
+      "status": 0,
+      "durationMs": 2133
+    },
+    {
+      "name": "stable-mendi-help",
+      "status": 0,
+      "durationMs": 246
+    }
+  ],
+  "outcome": "supported-with-limits",
+  "corrections": [
+    "声明独立 pnpm workspace",
+    "允许目标 esbuild 构建脚本",
+    "移除探针不使用的脚手架 devtools 配置引用"
+  ],
+  "limits": [
+    "未执行浏览器渲染或有限交互测试",
+    "未实现计数器",
+    "未启动目标 Delivery / Change 或执行正式 Full Test / Archive / Close",
+    "未验证新会话、MCP 或独立审核",
+    "显式联网安装使用已有 store，不认证冷安装"
+  ]
+}

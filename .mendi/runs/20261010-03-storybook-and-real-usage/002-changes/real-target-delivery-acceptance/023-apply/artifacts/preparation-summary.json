@@ -1,0 +1,20 @@
+{
+  "target": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "node": "v22.23.2",
+  "platform": "win32",
+  "budgetMs": 600000,
+  "remainingAtResumeMs": 124005.15832929686,
+  "checkDurationMs": 12572.4015,
+  "environmentPrepared": true,
+  "businessImplemented": false,
+  "limits": [
+    "官方空壳，无计数器或 stories；仅最小 Storybook 配置",
+    "目标 Delivery / Change / 实际阶段未执行",
+    "完整 stories / browser 与正式 Full Test 未执行",
+    "MCP / 新 Author / 角色审核未认证",
+    "根依赖未重装；普通 check 使用 warn，保持实际依赖和工程检查",
+    "真实取消 / 超时负例待后续，1.2 保持未完成",
+    "续程按旧首命令日志保守扣减剩余预算，不声称跨进程恢复了原单调时钟",
+    "使用已有 store / 浏览器缓存，不认证冷安装"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "updated": [
+    "openspec/changes/real-target-delivery-acceptance/proposal.md",
+    "openspec/changes/real-target-delivery-acceptance/design.md",
+    "openspec/changes/real-target-delivery-acceptance/tasks.md",
+    "openspec/changes/real-target-delivery-acceptance/.openspec.yaml",
+    "mendi-foundation-and-delivery-roadmap.md",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "new": [
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/025-revise-propose/run.md",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/025-revise-propose/artifacts/**"
+  ],
+  "directBeforeFiles": [
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "change.yaml",
+    "roadmap-d03-c.md"
+  ],
+  "targetWrites": [],
+  "historyWrites": [],
+  "implementationWrites": [],
+  "gitWrites": [],
+  "agentsStarted": [],
+  "basis": "Actual write calls in this revision; not whole working-tree differences"
+}

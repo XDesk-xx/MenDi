@@ -1,0 +1,55 @@
+{
+  "mode": "cancel",
+  "budgetMs": 20000,
+  "elapsedMs": 12980.5298,
+  "reason": "cancelled",
+  "sigintCount": 1,
+  "followingStarted": false,
+  "steps": [
+    {
+      "childMode": "child-short",
+      "pid": 51632,
+      "remainingMs": 19999.6996,
+      "allowanceMs": 15000,
+      "durationMs": 801.9103,
+      "code": 0,
+      "signal": null,
+      "stdout": "SHORT_DONE\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "listenerEnded": null,
+      "stopDurationMs": 0.03959999999995034,
+      "accepted": true
+    },
+    {
+      "childMode": "child-listener",
+      "pid": 37768,
+      "remainingMs": 19197.7686,
+      "allowanceMs": 15000,
+      "durationMs": 12178.2815,
+      "code": 1,
+      "signal": null,
+      "stdout": "LISTENING 62270\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "port": 62270,
+      "listenerEnded": true,
+      "kill": {
+        "command": [
+          "taskkill.exe",
+          "/PID",
+          37768,
+          "/T",
+          "/F"
+        ],
+        "error": null,
+        "stdout": "�ɹ�: ����ֹ PID 37768 (���� PID 30840 �ӽ���)�Ľ��̡�\r\n",
+        "stderr": ""
+      },
+      "stopDurationMs": 413.03390000000036,
+      "accepted": false
+    }
+  ]
+}

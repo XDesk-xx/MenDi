@@ -1,0 +1,16 @@
+{
+  "name": "install-consistent-ci",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install",
+    "--offline",
+    "--frozen-lockfile"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-017-review-ba5a93a8",
+  "exitCode": 0,
+  "elapsedMs": 1074,
+  "signal": null,
+  "stdout": "✓ Lockfile passes supply-chain policies (verified 26m ago)\nLockfile is up to date, resolution step is skipped\nAlready up to date\n\nDone in 923ms using pnpm v11.22.0\n",
+  "stderr": ""
+}

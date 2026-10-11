@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+    "status",
+    "--project",
+    "D:/Projects/MenDi/tests/fixtures/d03-c-vue-project",
+    "--json"
+  ],
+  "exitCode": 0,
+  "durationMs": 853.4718,
+  "stdout": "{\n  \"ok\": true,\n  \"operation\": \"query\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\\\\tests\\\\fixtures\\\\d03-c-vue-project\",\n  \"openspec\": {\n    \"entry\": \"D:\\\\tools\\\\openspec\\\\1.14.1\\\\node_modules\\\\@fission-ai\\\\openspec\\\\bin\\\\openspec.js\",\n    \"version\": \"1.14.1\",\n    \"root\": {\n      \"path\": \"D:\\\\Projects\\\\MenDi\\\\tests\\\\fixtures\\\\d03-c-vue-project\",\n      \"source\": \"nearest\"\n    }\n  },\n  \"local\": null,\n  \"upstream\": null,\n  \"next\": {\n    \"action\": \"delivery-open\",\n    \"source\": \"local-state\",\n    \"executable\": true,\n    \"reason\": \"需明确 Delivery 范围与 Owner 授权。\"\n  }\n}\n",
+  "stderr": ""
+}

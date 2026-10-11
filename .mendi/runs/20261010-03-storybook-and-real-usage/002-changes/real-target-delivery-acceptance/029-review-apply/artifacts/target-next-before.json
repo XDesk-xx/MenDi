@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "product",
+    "deliveryId": "d03-c-vue-counter",
+    "title": "D03-C Vue 计数器最小实际使用",
+    "state": "open",
+    "goal": "在唯一真实 Vue 目标完成合法 OpenSpec 阶段、计数器与 Storybook 最小实际使用，经独立 Review Apply 批准后停待 Archive。",
+    "plannedChanges": [
+      {
+        "slot": "VUE-COUNTER",
+        "title": "唯一 Naive UI 计数器与三个 Storybook 状态",
+        "dependsOn": []
+      }
+    ],
+    "activeChangeId": "implement-naive-counter",
+    "changeBindings": [
+      {
+        "changeId": "implement-naive-counter",
+        "changeRef": "openspec/changes/implement-naive-counter",
+        "planningSlot": "VUE-COUNTER",
+        "state": "active",
+        "batchId": "002-changes",
+        "latestRunRef": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/007-review-apply/run.md"
+      }
+    ]
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": true,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "done"
+      },
+      {
+        "id": "specs",
+        "status": "done"
+      },
+      {
+        "id": "design",
+        "status": "done"
+      },
+      {
+        "id": "tasks",
+        "status": "done"
+      }
+    ]
+  },
+  "run": {
+    "ref": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/007-review-apply/run.md",
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "deliveryId": "d03-c-vue-counter",
+    "changeId": "implement-naive-counter",
+    "runNumber": 7,
+    "actionId": "implement-naive-counter-007-review-apply",
+    "actionType": "review-apply",
+    "role": "reviewer",
+    "actorId": "vue-target-reviewer",
+    "status": "submitted",
+    "stageSkill": "review-apply",
+    "toolGuidance": [
+      "storybook"
+    ],
+    "authorRunRef": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/006-apply/run.md",
+    "outcome": "complete",
+    "result": "固定006独立ReviewApply批准，五项行为与三stories及focused/工程/官方预览浏览器收尾结果一致；独立vue-tsc退出0、6115连接拒绝，限制保留；仅停待Archive。",
+    "verdict": "approved"
+  },
+  "next": {
+    "source": "local-state",
+    "executable": false,
+    "role": "author",
+    "action": "archive",
+    "status": "awaiting-instruction",
+    "reason": "Reviewer approved；下一步需显式触发。"
+  }
+}

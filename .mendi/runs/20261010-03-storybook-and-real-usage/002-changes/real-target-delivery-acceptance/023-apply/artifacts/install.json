@@ -1,0 +1,18 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 50732,
+  "remainingMs": 598453.0780999999,
+  "allowanceMs": 300000,
+  "durationMs": 18684.8608,
+  "stdout": "Progress: resolved 1, reused 0, downloaded 0, added 0\nProgress: resolved 19, reused 16, downloaded 0, added 0\nProgress: resolved 119, reused 76, downloaded 0, added 0\nProgress: resolved 237, reused 160, downloaded 21, added 0\nProgress: resolved 355, reused 211, downloaded 33, added 0\nProgress: resolved 411, reused 260, downloaded 37, added 0\nProgress: resolved 460, reused 285, downloaded 44, added 0\nProgress: resolved 493, reused 328, downloaded 44, added 0\nPackages: +379\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 493, reused 329, downloaded 58, added 8\nProgress: resolved 493, reused 329, downloaded 58, added 103\nProgress: resolved 493, reused 329, downloaded 58, added 219\nProgress: resolved 493, reused 329, downloaded 58, added 358\nProgress: resolved 493, reused 329, downloaded 58, added 368\nProgress: resolved 493, reused 329, downloaded 58, added 369\nProgress: resolved 493, reused 329, downloaded 58, added 377\nProgress: resolved 493, reused 329, downloaded 58, added 378\nProgress: resolved 493, reused 329, downloaded 58, added 379, done\n\ndependencies:\n+ naive-ui 2.45.3\n+ vue 3.5.43\n\ndevDependencies:\n+ @storybook/addon-vitest 10.6.1\n+ @storybook/vue3-vite 10.6.1\n+ @tsconfig/node24 24.0.5\n+ @types/node 22.20.5 (26.6.5 is available)\n+ @vitejs/plugin-vue 6.0.7 (6.0.10 is available)\n+ @vitest/browser-playwright 4.1.11 (5.0.3 is available)\n+ @vue/eslint-config-typescript 14.9.0\n+ @vue/tsconfig 0.9.1\n+ eslint 10.12.0\n+ eslint-config-prettier 10.1.8\n+ eslint-plugin-oxlint 1.82.0 (1.87.0 is available)\n+ eslint-plugin-vue 10.11.1\n+ jiti 2.6.1 (2.7.0 is available)\n+ npm-run-all2 9.0.3\n+ oxlint 1.82.0 (1.87.0 is available)\n+ playwright 1.60.0 (1.64.0 is available)\n+ prettier 3.9.6 (3.9.10 is available)\n+ storybook 10.6.1\n+ typescript 5.9.3 (7.0.2 is available)\n+ vite 8.3.0 (8.3.4 is available)\n+ vitest 4.1.11 (5.0.3 is available)\n+ vue-eslint-parser 10.4.1\n+ vue-tsc 3.3.13\n\nDone in 18.4s using pnpm v11.22.0\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

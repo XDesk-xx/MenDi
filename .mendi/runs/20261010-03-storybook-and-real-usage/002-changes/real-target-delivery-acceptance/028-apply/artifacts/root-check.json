@@ -1,0 +1,16 @@
+{
+  "command": "node <stable pnpm entry> check",
+  "cwd": "D:\\Projects\\MenDi",
+  "env": {
+    "CI": "1",
+    "pnpm_config_verify_deps_before_run": "warn"
+  },
+  "budgetMs": 300000,
+  "elapsedMs": 9000,
+  "remainingMs": 291000,
+  "expired": false,
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "[WARN] Your node_modules are out of sync with your lockfile. The value of the enableGlobalVirtualStore setting has changed\nChecked 137 files in 53ms. No fixes applied.\nChecked 137 files in 58ms. No fixes applied.\n",
+  "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+}

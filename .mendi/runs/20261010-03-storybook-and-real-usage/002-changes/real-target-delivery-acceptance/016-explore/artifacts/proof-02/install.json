@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-VfyUsf\\vue-environment-probe",
+  "status": 1,
+  "durationMs": 10407,
+  "stdout": "Progress: resolved 1, reused 0, downloaded 0, added 0\nProgress: resolved 208, reused 117, downloaded 0, added 0\nPackages: +212\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 307, reused 219, downloaded 0, added 47\nProgress: resolved 307, reused 219, downloaded 1, added 169\nProgress: resolved 307, reused 219, downloaded 1, added 199\nProgress: resolved 307, reused 219, downloaded 1, added 200\nProgress: resolved 307, reused 219, downloaded 1, added 205\nProgress: resolved 307, reused 219, downloaded 1, added 210\nProgress: resolved 307, reused 219, downloaded 1, added 211\nProgress: resolved 307, reused 219, downloaded 1, added 212, done\n\ndependencies:\n+ naive-ui 2.45.3\n+ vue 3.5.43\n\ndevDependencies:\n+ @storybook/vue3-vite 10.6.1\n+ @types/node 22.20.5 (26.6.5 is available)\n+ @vitejs/plugin-vue 6.0.7\n+ storybook 10.6.1\n+ typescript 5.9.3 (7.0.2 is available)\n+ vite 8.3.0 (8.3.4 is available)\n+ vue-tsc 3.3.13\n\nAdded 2 entries to minimumReleaseAgeExclude in pnpm-workspace.yaml (set minimumReleaseAgeStrict to true to gate these updates with a prompt):\n  @vue/language-core@3.3.13\n  vue-tsc@3.3.13\n[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@0.28.2\n\nRun \"pnpm approve-builds\" to pick which dependencies should be allowed to run scripts.\n",
+  "stderr": "",
+  "signal": null
+}

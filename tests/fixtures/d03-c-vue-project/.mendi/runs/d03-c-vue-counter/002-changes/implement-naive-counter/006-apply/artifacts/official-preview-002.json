@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/storybook/dist/bin/dispatcher.js",
+    "tools",
+    "stories",
+    "preview",
+    "--attach",
+    "--port",
+    "6115",
+    "--input",
+    "{\"stories\":[{\"absoluteStoryPath\":\"D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.stories.ts\",\"exportName\":\"Default\"},{\"absoluteStoryPath\":\"D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.stories.ts\",\"exportName\":\"ExistingValue\"},{\"absoluteStoryPath\":\"D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/src/components/CounterPanel.stories.ts\",\"exportName\":\"Disabled\"}]}",
+    "--json"
+  ],
+  "exitCode": 0,
+  "elapsedMs": 1382.862,
+  "stdout": "{\n  \"stories\": [\n    {\n      \"title\": \"Counter/CounterPanel\",\n      \"name\": \"Default\",\n      \"previewUrl\": \"http://localhost:6115/?path=/story/counter-counterpanel--default\"\n    },\n    {\n      \"title\": \"Counter/CounterPanel\",\n      \"name\": \"Existing Value\",\n      \"previewUrl\": \"http://localhost:6115/?path=/story/counter-counterpanel--existing-value\"\n    },\n    {\n      \"title\": \"Counter/CounterPanel\",\n      \"name\": \"Disabled\",\n      \"previewUrl\": \"http://localhost:6115/?path=/story/counter-counterpanel--disabled\"\n    }\n  ]\n}\n",
+  "stderr": ""
+}

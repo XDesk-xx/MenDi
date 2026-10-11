@@ -1,0 +1,17 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "budgetMs": 30000,
+  "appIsOfficialShell": true,
+  "counterExists": false,
+  "storyFiles": [],
+  "preparedStorybookConfig": "import type { StorybookConfig } from '@storybook/vue3-vite'\n\nconst config: StorybookConfig = {\n  framework: '@storybook/vue3-vite',\n  stories: ['../src/**/*.stories.ts'],\n  addons: [],\n}\n\nexport default config\n",
+  "vueVersion": "3.5.43",
+  "nButtonAvailable": true,
+  "storybookTestAvailable": true,
+  "browserProviderAvailable": true,
+  "chromiumExecutable": "C:\\Users\\xuser\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe",
+  "chromiumExecutableExists": true,
+  "elapsedMs": 2392,
+  "remainingMs": 27608,
+  "scope": "imports and existing executable only; no browser launch, component rendering, or business acceptance"
+}

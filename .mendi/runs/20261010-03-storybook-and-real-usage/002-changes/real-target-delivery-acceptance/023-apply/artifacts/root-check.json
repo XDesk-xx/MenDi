@@ -1,0 +1,19 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "check"
+  ],
+  "cwd": "D:/Projects/MenDi",
+  "pid": 39228,
+  "remainingMs": 380022.26832929684,
+  "allowanceMs": 300000,
+  "durationMs": 692.0667000000012,
+  "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The value of the enableGlobalVirtualStore setting has changed\n\nRun \"pnpm install\"\n",
+  "stderr": "",
+  "exitCode": 1,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

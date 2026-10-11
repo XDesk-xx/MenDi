@@ -1,0 +1,24 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "dlx",
+    "create-vue@3.24.0",
+    "--ts",
+    "--bare",
+    "--eslint",
+    "--prettier",
+    "d03-c-vue-project"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures",
+  "pid": 42840,
+  "remainingMs": 599344.3393,
+  "allowanceMs": 300000,
+  "durationMs": 883.4492000000001,
+  "stdout": "┌  Vue.js - The Progressive JavaScript Framework\n\nScaffolding project in D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project...\n│\n└  Done. Now run:\n\n   cd d03-c-vue-project\n   pnpm install\n   pnpm format\n   pnpm dev\n\n| Optional: Initialize Git in your project directory with:\n\n   git init && git add -A && git commit -m \"initial commit\"\n\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

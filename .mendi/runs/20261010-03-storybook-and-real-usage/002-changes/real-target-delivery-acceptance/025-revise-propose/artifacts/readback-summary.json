@@ -1,0 +1,32 @@
+{
+  "progress": {
+    "total": 10,
+    "complete": 3,
+    "remaining": 7
+  },
+  "state": "ready",
+  "planningComplete": true,
+  "specs": "skipped",
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/025-revise-propose/run.md",
+    "reason": "025 Author Revise Propose 将 C 收敛为一次最小真实使用，四组 3/10；旧记录 / verdict 保留，当前实质修订等待独立补审，批准后才回 Apply。未实现代码、启动会话或执行目标阶段。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "target": {
+    "projectRoot": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "local": null,
+    "next": {
+      "action": "delivery-open",
+      "source": "local-state",
+      "executable": true,
+      "reason": "需明确 Delivery 范围与 Owner 授权。"
+    }
+  },
+  "rootConfigSchema": "spec-driven",
+  "changeSkipSpecs": true,
+  "limitations": "Read-only structure and current handoff; not independent approval or actual target implementation"
+}

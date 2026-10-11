@@ -1,0 +1,18 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "--version"
+  ],
+  "cwd": "D:/Projects/MenDi",
+  "pid": 808,
+  "remainingMs": 599999.85,
+  "allowanceMs": 300000,
+  "durationMs": 654.1842,
+  "stdout": "11.22.0\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

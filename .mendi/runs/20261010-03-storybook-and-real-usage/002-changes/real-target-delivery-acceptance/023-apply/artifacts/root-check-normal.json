@@ -1,0 +1,19 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "check"
+  ],
+  "cwd": "D:/Projects/MenDi",
+  "pid": 21476,
+  "remainingMs": 250256.61592929688,
+  "allowanceMs": 250256.61592929688,
+  "durationMs": 710.0375999999997,
+  "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n",
+  "stderr": "",
+  "exitCode": 1,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

@@ -1,0 +1,23 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "exec",
+    "prettier",
+    "--write",
+    "package.json",
+    "eslint.config.ts",
+    "pnpm-lock.yaml"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 5704,
+  "remainingMs": 262323.5893292969,
+  "allowanceMs": 262323.5893292969,
+  "durationMs": 1653.903,
+  "stdout": "package.json 21ms (unchanged)\neslint.config.ts 48ms (unchanged)\npnpm-lock.yaml 419ms\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

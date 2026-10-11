@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "exec",
+    "storybook",
+    "--version"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-6svsHP\\vue-environment-probe",
+  "status": 0,
+  "durationMs": 6212,
+  "stdout": "10.6.1\n",
+  "stderr": "",
+  "signal": null
+}

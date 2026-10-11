@@ -1,0 +1,27 @@
+{
+  "targetUpdated": [
+    "tests/fixtures/d03-c-vue-project/AGENTS.md",
+    "tests/fixtures/d03-c-vue-project/README.md",
+    "tests/fixtures/d03-c-vue-project/openspec/config.yaml"
+  ],
+  "targetNew": [
+    "tests/fixtures/d03-c-vue-project/artifacts/preparation/current-description-checks.json"
+  ],
+  "rootUpdated": [
+    "openspec/changes/real-target-delivery-acceptance/tasks.md",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "rootNew": [
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/027-apply/run.md",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/027-apply/artifacts/**"
+  ],
+  "historyWrites": [],
+  "implementationWrites": [],
+  "targetActionsExecuted": [],
+  "agentsStarted": [],
+  "gitWrites": [],
+  "targetRawOutputCopiedToRoot": false,
+  "basis": "Actual calls in 027; existing worktree changes excluded"
+}

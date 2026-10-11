@@ -1,0 +1,5 @@
+schema: spec-driven
+skip_specs: true
+created: 2026-10-11
+goal: 在从空目录创建的唯一 Vue + Naive UI 目标中，确认稳定 MenDi 能组织合法 OpenSpec 工作与独立交接，实际使用
+  Storybook 完成最小组件验收；无 UI 复用适用工程结果。

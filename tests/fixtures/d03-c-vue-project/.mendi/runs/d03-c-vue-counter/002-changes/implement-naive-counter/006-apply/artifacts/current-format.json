@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/prettier/bin/prettier.cjs",
+    "--write",
+    "src/App.vue",
+    "src/components/CounterPanel.vue",
+    "src/components/CounterPanel.stories.ts",
+    ".storybook/preview.ts",
+    "vitest.config.ts",
+    "package.json"
+  ],
+  "budgetMs": 30000,
+  "elapsedMs": 398.0089,
+  "remainingMs": 29601.9911,
+  "exitCode": 0,
+  "error": null,
+  "stdout": "src/App.vue 49ms (unchanged)\nsrc/components/CounterPanel.vue 73ms (unchanged)\nsrc/components/CounterPanel.stories.ts 19ms (unchanged)\n.storybook/preview.ts 2ms (unchanged)\nvitest.config.ts 4ms\npackage.json 4ms\n",
+  "stderr": ""
+}
