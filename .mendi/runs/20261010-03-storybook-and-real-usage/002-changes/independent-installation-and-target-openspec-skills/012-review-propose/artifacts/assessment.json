@@ -1,0 +1,69 @@
+{
+  "fixedAuthor": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/run.md",
+  "preservedModifiedScenarios": [
+    "Author and reviewer use different methods",
+    "Required method is missing",
+    "Explicitly select Storybook guidance",
+    "Existing runs and unselected guidance remain usable",
+    "Reject invalid guidance before writing"
+  ],
+  "tasks": {
+    "total": 15,
+    "completed": 0
+  },
+  "instructions": [
+    {
+      "id": "proposal",
+      "rules": [],
+      "dependencies": [],
+      "hasContext": true
+    },
+    {
+      "id": "specs",
+      "rules": [],
+      "dependencies": [
+        {
+          "id": "proposal",
+          "done": true,
+          "path": "proposal.md",
+          "description": "Initial proposal document outlining the change"
+        }
+      ],
+      "hasContext": true
+    },
+    {
+      "id": "design",
+      "rules": [],
+      "dependencies": [
+        {
+          "id": "proposal",
+          "done": true,
+          "path": "proposal.md",
+          "description": "Initial proposal document outlining the change"
+        }
+      ],
+      "hasContext": true
+    },
+    {
+      "id": "tasks",
+      "rules": [],
+      "dependencies": [
+        {
+          "id": "specs",
+          "done": true,
+          "path": "specs/**/*.md",
+          "description": "Detailed specifications for the change"
+        },
+        {
+          "id": "design",
+          "done": true,
+          "path": "design.md",
+          "description": "Technical design document with implementation details"
+        }
+      ],
+      "hasContext": true
+    }
+  ],
+  "implementation": "not-certified-by-proposal-review",
+  "reviewScope": "Current proposal/design/delta/tasks and relevant existing entry points; reused 010 valid proof, no old history replay."
+}

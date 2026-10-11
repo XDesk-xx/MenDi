@@ -6,7 +6,9 @@
       "scripts/**/*.ts",
       "tests/*.ts",
       "tests/ui/**/*.ts",
-      "tests/fixtures/storybook-project/**/*.ts"
+      "tests/installation/**/*.ts",
+      "tests/fixtures/storybook-project/**/*.ts",
+      "tests/fixtures/d03-b-project/**/*.ts"
     ]
   },
   "formatter": {

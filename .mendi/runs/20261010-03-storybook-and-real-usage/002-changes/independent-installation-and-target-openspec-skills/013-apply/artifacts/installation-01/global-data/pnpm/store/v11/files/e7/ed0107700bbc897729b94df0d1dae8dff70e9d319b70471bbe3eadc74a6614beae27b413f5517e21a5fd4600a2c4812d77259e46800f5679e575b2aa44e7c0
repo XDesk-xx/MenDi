@@ -1,0 +1,379 @@
+import type { ActorInput, ActionOptions } from './action-context.ts';
+export declare function hasDeliveryProgress(project: string): boolean;
+export declare function startDeliveryRepair(input: ActorInput & {
+    from: string;
+    reason: string;
+    revisesRunRef?: string;
+}, options?: ActionOptions): {
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+};
+export declare function startDeliveryReview(input: ActorInput & {
+    authorRunRef: string;
+}, options?: ActionOptions): {
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+};
+export declare function saveDeliveryRun(input: ActorInput & {
+    runRef: string;
+    bodyFile: string;
+}, options?: ActionOptions): {
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+};
+export declare function submitDeliveryRun(input: ActorInput & {
+    runRef: string;
+    outcome: string;
+    result: string;
+    verdict?: string;
+}, options?: ActionOptions): {
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+};
+export declare function continueDeliveryAction(input: ActorInput & {
+    actionId: string;
+}, options?: ActionOptions): {
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+};

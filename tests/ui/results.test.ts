@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { uiTarget, product, launchPreview, ready, stopPreview, browser } from './support.ts';
+import { pnpmEntry } from '../../scripts/test-ui.ts';
 
 test('无 dev server 的有限测试、真实缺陷失败与修复后新测试 / 浏览器结果', async () => {
   const { target, output } = uiTarget('finite-results');
@@ -26,16 +27,7 @@ test('无 dev server 的有限测试、真实缺陷失败与修复后新测试 /
     product(
       target,
       output,
-      [
-        'test',
-        'run',
-        '--kind',
-        'focused',
-        '--actor',
-        'ui-test-author',
-        '--pnpm-bin',
-        'C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js',
-      ],
+      ['test', 'run', '--kind', 'focused', '--actor', 'ui-test-author', '--pnpm-bin', pnpmEntry],
       exit,
     );
   await assert.rejects(() => fetch('http://127.0.0.1:6113/index.json'));

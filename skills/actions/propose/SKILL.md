@@ -6,6 +6,8 @@ role: author
 
 # propose 阶段方法
 
+首次 Propose 从 `methods.upstream` 取得当前目标 openspec-propose 的实际正文，当前 Change 已绑定：跳过 new change，只复用上下文检查与按 instructions / 依赖编写产物的片段，包括同 Action continue。revise-propose 使用 openspec-update-change 的已有产物修订规则与适用 glob 新增条件；不能用它代替首次缺失产物创建，不适用的缺项明确报告。正文来源与生成基线必须可读，方法返回不表示产物已创建或已批准。
+
 按当前 Action 请求 proposal / specs / design / tasks instructions，读取已完成的直接依赖和实际产物内容。dependencies.done=false 时先处理该必要前置，不声称已满足，也不要求所有 artifact ready 才能读指引。outputPath 的 specs glob 是输出模式；template 是结构指导，context 与当前 artifact rules 必须进入实际决策。
 
 说明约束怎样影响范围、输入与任务，例如目标要求“不自动安装”时，将缺工具定义为失败并写入场景与验证任务。proposal、design、delta 和 tasks 保持一致；有效 Explore 结论从 Run 承接，不新增或改写 explore.md，不以文件齐备推导批准。

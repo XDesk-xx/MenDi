@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
+import { prepareTargetMethods } from './target-method-support.ts';
 
 export const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const openspecEntry =
@@ -50,6 +51,7 @@ export function cli(args: string[], cwd: string, env: NodeJS.ProcessEnv) {
 export function prepareChange(root: string, env: NodeJS.ProcessEnv, id = 'proof-entry'): void {
   const result = command(openspecEntry, ['new', 'change', id, '--json'], root, env);
   assert.equal(result.status, 0, result.stderr);
+  prepareTargetMethods(root);
 }
 export function scopeFile(root: string): string {
   const destination = path.join(root, 'scope.json');

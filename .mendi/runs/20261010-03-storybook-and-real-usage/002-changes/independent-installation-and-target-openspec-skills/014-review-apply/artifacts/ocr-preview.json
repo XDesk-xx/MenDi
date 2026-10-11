@@ -1,0 +1,3049 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 435,
+  "reviewable_count": 10,
+  "excluded_count": 425,
+  "total_insertions": 21375,
+  "total_deletions": 538,
+  "reviewable_files": [
+    {
+      "path": "biome.json",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 1
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "modified",
+      "insertions": 66,
+      "deletions": 4
+    },
+    {
+      "path": "src/application/action-resolution.ts",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 2
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "insertions": 11,
+      "deletions": 3
+    },
+    {
+      "path": "src/application/archive-prepare.ts",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 2
+    },
+    {
+      "path": "tests/action-support.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "tests/helpers.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/prepare-installation-tests.ts",
+      "status": "added",
+      "insertions": 177,
+      "deletions": 0
+    },
+    {
+      "path": "tests/target-method-support.ts",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+      "status": "modified",
+      "insertions": 90,
+      "deletions": 80,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/036-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 60,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/038-revise-apply/artifacts/before/.mendi/runs/20261009-01-single-change-manual-collaboration/003-changes/apply-revision-and-native-archive/037-review-apply/run.md",
+      "status": "deleted",
+      "insertions": 0,
+      "deletions": 82,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 43,
+      "deletions": 257,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "mendi-foundation-and-delivery-roadmap.md",
+      "status": "modified",
+      "insertions": 91,
+      "deletions": 18,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 16,
+      "deletions": 19,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/archive/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/explore/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/propose/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-explore/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-propose/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/tools/openspec/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/ui/results.test.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 10,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/activation-before.json",
+      "status": "added",
+      "insertions": 103,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/activation-command.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/check-command.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/native-status-readback.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/next-readback.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-001/prepare-1-build.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-002/prepare-1-build.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-003/prepare-1-build.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-004/prepare-1-build.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-004/prepare-2-pack.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-004/prepare-3-install.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-004/prepare-4-init-0.json",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-1-build.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-2-pack.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-3-install.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-4-init-0.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-5-new-0.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-6-open-0.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-005/prepare-7-bind-0.json",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/actual-generated-methods.json",
+      "status": "added",
+      "insertions": 46,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/apply-storybook-combination.json",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/author-design-instructions.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/author-specs-instructions.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/author-tasks-instructions.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/candidate-negative-cases.json",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/confirmed-product-gap.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/official-propose.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/planning-inputs/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/planning-inputs/design.md",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/planning-inputs/proposal.md",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/planning-inputs/specs/local-notes/spec.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/planning-inputs/tasks.md",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-1-build.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-10-open-1.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-11-bind-1.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-12-proposal-instructions.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-2-pack.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-3-install.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-4-init-0.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-5-new-0.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-6-open-0.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-7-bind-0.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-8-init-1.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/prepare-9-new-1.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/session.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/summary.json",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-1-query-without-unrelated-method.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-10-apply-instructions.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-2-start-installed.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-3-save.json",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-4-continuing.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-5-continue-missing-bundled.json",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-6-query-missing-bundled.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-7-current-product-missing-target-method.json",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-8-planning-validation.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proof-006/verify-9-single-bound-change.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/root-dependency-refresh.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/artifacts/status-readback.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/009-explore/run.md",
+      "status": "added",
+      "insertions": 67,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 182,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/actual-generated-methods.json",
+      "status": "added",
+      "insertions": 46,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/apply-storybook-combination.json",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/official-propose.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-1-build.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-10-open-1.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-11-bind-1.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-12-proposal-instructions.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-2-pack.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-3-install.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-4-init-0.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-5-new-0.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-6-open-0.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-7-bind-0.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-8-init-1.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/prepare-9-new-1.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review-missing-bundled.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review-query-unused.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review-summary.json",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review2-cross-cwd-start.json",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review2-missing-bundled.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review2-query-missing-bundled.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/review2-target-gap.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/artifacts/independent-010/session.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/010-review-explore/run.md",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/apply.json",
+      "status": "added",
+      "insertions": 143,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/assessment.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 366,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/status-after-proposal.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/status-after-specs-design.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/status.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/011-propose/run.md",
+      "status": "added",
+      "insertions": 55,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/artifacts/assessment.json",
+      "status": "added",
+      "insertions": 69,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/artifacts/handoff-readback.json",
+      "status": "added",
+      "insertions": 182,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/artifacts/status.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/artifacts/validate.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/run.md",
+      "status": "added",
+      "insertions": 50,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/apply-before.json",
+      "status": "added",
+      "insertions": 143,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/apply-current.json",
+      "status": "added",
+      "insertions": 143,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/apply-final.json",
+      "status": "added",
+      "insertions": 143,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/archive-fixture-write-recheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/archive-query-recheck.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/change-validation-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/change-validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/changed-line-counts.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/failed-fixture/draft-run.md",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/failed-fixture/manifest.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/failed-fixture/submission.tmp",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/failed-fixture/write.lock",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/focused.log",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/file+..+..+..+..+Projects+M_657feec8af3761513d9ad020d4e3c23b/tarball-integrity",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/00/55457b903deba429f8361f005515e63c09c3d23d7e923bae77e5602466cee5565caeb6c4f63b030a1e4589bc54b238a338769f778acd2d11b4e30671d37724",
+      "status": "added",
+      "insertions": 61,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/00/6e5a8fdce58f6bf6e8f574a972e169b6973969f1ca823050ddd4474234083131c22b9a85ac30d38d933ce5078af50d6e497ad55472804236c13a72f4ee074d",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/03/167377c5062be5eb03b4449ad63e4765ad5ffff9d6ebc3e11c7c4a58f98274f173be4cacd62bfb92dd463263a4006a16e853cfaad82bab8923af86ae52d383",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/03/686f011e3110a0abcafc5b2cef267e058b277accf3032312fc351fb60a912459793ce20709c331e4b1bf0679c33dac7907fc0408b90436aed2894867a1badf",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/03/a9a813e178142106632fe2f8fdceb8859562a8dd1028a73ed33cfd6bf630da20f561d8721662d60ad3d2f7d777541a132251d2ac7be1f48b5837c2f56d2af8",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/03/b5119566ca6bcb5a538897b93d5c093d6c6274efc395fc10ae1675945fc50c26b96a22d5388daf7257810cc13c1771e5a7ebc5ffc37ffaf665a97139943ec6",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/04/29c038d827e9245db8976d9e275feb6e7d3fe257b8b18e104b613be236b0b8cd68e62737f1168d2d24e8e39435ef3a2b74580076dc0f5b305f57ca8aa556a4",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/06/254f4f38353ee6c0273e2ea0ba75bb3671cecf9e197d03ad8edb20126a00c6120394c044770707009b5a542dc15052e2063a35cc1670a97ba7f419dd539ff4",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/0b/149c59832e482e4214b4ac2d74bc1728bae0ee22ba8018102aefb5ba6ebdd838c06dcb5f627872feddd10ccbc6924f692f00199bddc4a07fe5bd433c23b1a4",
+      "status": "added",
+      "insertions": 135,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/0c/3e3effbf2dbe6f147f71264ba11430a4cba9f1cbae4386106d0682661b536b056dd08f2b41f5ddc451bc002df961071eecc32c71eba90c91928ba7da04d73e",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/0c/98eff816bf3dbc79ce3a2bc540c158371f1b3614bf2fae408eb30544100e76c88f0fe76ecf4136ed9b74e152a222b25184ccc98842d243d086f6d2540b1d63",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/11/0a9565b798e84b9962b65e7a4a0400a6e0913533e327093815dd954a49e4d8e4507fe9cd7e5ebcb71c01ff88d517dfb1ddbb98971255dd9f58b54b0031c088",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/13/090bbb711f9ca5c0e166056bfc844ee2a3e97693b4848cf84b2c4e8057b439fe02b63b4abd077ac39c71f05e3afbb49f8b265907e8373dd116d2dc536775a4",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/19/8d34188e5abd7bde8921578575c9955c456fb1077ebb0b4e333c2222e3b90b689a9841075d3752edee4fb39888b44dc2f65c03b8045efb0a3a0e36e65c22ef",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/1a/053f88c9be076f046db3b59c592a575d7aa008c5e989d6d70765aaf6e60dbff6cb219aecbe50cef1c8e95be995fbdd92d3dd22c13f3b2360f016c3bc464ed5",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/1a/8759c5b2e11635b25b230bb5818dc695efe0296c8f8fef85a002b3d0a40b473f6e769d9d12ed8267bab343478209705ce3ba58f28b206b22dc6140d0dbb3ec",
+      "status": "added",
+      "insertions": 95,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/1e/5b8b55a73c015af7800850074b859aa9814f0e51e5cf5027e2799f518b153c592dacc8b1967bff0025508877ac8241d1d7954f8b04d6b05b8a6a38d7cae1f8",
+      "status": "added",
+      "insertions": 115,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/1f/9502673c8d4be2e9a3e95dc236a67723a3d4260f8a2097d77164d6eee2d55e6409c21e04e86ceacff2ed69a63cc2abf08fe647b9b071e6e7d5ddb8bf8d60b5",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/20/636667d0b387f539dd210834873e56b8d24bedbe1fc46ea0ddc167d597d586007c28d1272783ee6dd8163cedb85ce5c14071daa84cfdc9d07dd32dccaadb82",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/21/c653c1df81be41cffc1a72c35b7e836c0e3648d920fcee44a4c49308b3ea6166b1ed09f3b603cd51a4e5c30b679c2e50d550e363ded118e10310db813e394a",
+      "status": "added",
+      "insertions": 147,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/27/42032ff6afdcb9ead07bf0f87a944c30881d5424ae31271394d9aca637f259bdc183988a5c2a3121db543b8c4252cb33b723c01d11b1545e5d4a677ba51903",
+      "status": "added",
+      "insertions": 86,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/28/eaa8b61a91b220817d212f6c998c0cedd45ddef114502f74e41fde330e58c6eb9e003a11b95b651c366040e736e0c52ec29cdd0cc5b294b1a8ab8a71f20fdc",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/29/2389dc4191fe4787f2cafad23e6331ea64b26a8f5a84904bd1c8e94eb9794f4a212e114b57d39a02925205fe5dff7c2f6fdbb5c7d514a7795ab3386dd6995f",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/2a/24cd7e7131b0eb458cfd76e2e360dca7ccb5ddf62e919f72105f50da57f1953eb77e3c91f886036edc8243b68d8b437c5a925694778856b482213598c7ba3a",
+      "status": "added",
+      "insertions": 103,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/31/d8be615f29ac1f710768f50d475cf170e494a8f2f72a55d65e2f03ddc3bd33aaf6f154c56d4901205201b99582cb910f0f5d6341e091405aa1777263dd0d20",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/33/2583320262aeb17376e790e419dec851266d853d8139c736de9d5ad4cff2094d2e9d1d1cddb7dd97822ae6ef0fc96a659bedb50886d84f35b00a02bcca9fc1",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/35/9b937da88fc5f2e60c65f9a5a141b19883d97d99424ddd8e9aca9f4546fa9d63c702bf7f386ebee30d969783c959496cf862a7a23ad655bafff7ef108db101",
+      "status": "added",
+      "insertions": 112,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/36/22ce58f29dece840ff8a6536dcab6be0728cc4ba67be7f73466560ebfbce728ade8604ff3c9221e9ba29662f911fc8135bc1094cdc295aafff4c4e7f93ce6f",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3a/c475fb3c553eef007e7ae44bc78f41e41af9c29ca11e3a6017804d2318cd1a919acb0778413de193cdb34e419b22528946ef0ec8e9f6d19946a359e04b095d",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3a/c7b31e7ddad71e4940039fc905d6056f30f75b9df37c4962d630496278c89431c6ecc4c1ecf8e030681ed7998c255a71aa4ede0e93bb64c5782260b1d61dad",
+      "status": "added",
+      "insertions": 53,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3d/3d9d04ea6889113b97930cc2f92629cb6a9cd187a01858f8bb10e710d0dfcbc07aff86544b1363b5f5f14ffa4da3646f905763fc9b9ca63179d42865281244",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3e/4db62c1fd3c43d0a2f309349646725796bbbb679210a7aee8c429c0343e1a26c5c4b0875c53ff44ba9812c3a1ed8ee79cee62adc967193d31294d98dcc4b1b",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3e/f91918b7bf7b9abfceb1c7820cf798dfcfadda5ce914bb635a9ec178a7cadff343a3aaf1ae5db5d128f817b543505b9d47c7260f908fa6bbf1393e68360980",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/3f/bcd04a3479db5cd60575c1c7ca9be5aa2dc6ae43528348a94c9c7e8ab6dcf74ae4bd860d7be779747bd28dbda739b1ed53c99475a76979d7651da296da2619",
+      "status": "added",
+      "insertions": 96,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/40/65af7c91a35be142f6c98109f9d1ab18ab786044877915014738c2b1003801db47f80b174bce50ca7fee5b0da4632da8ef1190689076721a2872343e01317a",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/41/f6d48dbb1b05eb62a9b25fb43c649b4e971245d9bdbe0f585ed0f071d9216b99f868b0737e5997c2a3559464840e6cb23e3926b4d6b0095236f93aca3cf3e1",
+      "status": "added",
+      "insertions": 180,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/42/3eef7a825c94ad2d55399d12d101a764a61cd485c6843f5b66115bd8ae476338442de0273e72d8807d216fec26f0f4413fff11cbcffb74f1ed3d5cfc390e15",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/45/dda6209e8d3c2ba5b5b37c805fc22d73001de96c56db5fbc4b07f89c697d6bf69573853b83752a65a03915075fdf144464b828a2ede75de5b40fe44bfe919d",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/46/0232dda0f235023dd2375926b19e125f181f2f2d74233b127f085aa80891ba93e9138fe0a0674fa7e65f2a34b8542ccf6ac5c85a7cc2e9ef2ad8f9323870a2",
+      "status": "added",
+      "insertions": 967,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/47/a91ef67612db0caf850d5693f259f017a40a80198cb406b688a209f0943007f0ceb282dd661f7e86c28379067ea40c6408413414c129a59e149a5c776ce90d",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/4a/56e6a9e96d7b83d495ad067733b02d6d09e0f1e3281fc6a3a1ddfbb59a7bbc2be2c75dfdbf7e5c36caaa62ed775089a2213dd4dc1d065b29239a75d2a1a675",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/4c/b6d1c7b357129b97163793c66e8dcea207e638ab3dbbf11e49b5b2a46eaeb5e765f7bfc4f81ddefc41de2bd166ff4d30f4b36813e920db4b766fbda99bac6c",
+      "status": "added",
+      "insertions": 109,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/4f/b66560db2f7383c26555995f26f17151c85e707d87af44c30e06b72e7e836517ccaa14b95a74996c6b5fac898076c1b2c07d48389eb327235edd4c6ff84d60",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/51/90ece984db0864e865bd43aa1ea17532433f53a5fc19e060ae422bad1e85bcfcc0e030ff9870924ab87d0d116ea3713a5fb6c7478994f41dc3e95808a8b094",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/52/1cbaaf3af9b41d4afc527f4dce0f6857dbf84fe89bd38c5c0f84ed4d7de01839dcb296487dc81d85a54667f48add34fafd0828a3fca23301bb32e584ded605",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/54/b8ab0ee0d39062b0de8e59061c6b07d079aa77ff5b96c0eec20da72524e837c5eb4fa14605334f8ec37f2c21a82ede6046025108f1bf6e62a6e61ca19b9fc4",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/55/f77b45428c1003951e2bc790783f86139b4f02028bf07208498e2dbc218e7bc27db5e89de210913b0cd7c0ce9cf8d1691e839471c24c5d205ee5683bd2ec96",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/56/8ab0a3ba52f5ac4c8eb929ae96d3e62fff575ff69ba486bb57216fb9b1b94d48d0198038fed7f4c85c75d4b2823195d17592fc7201678e6963584f271f0619",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/57/97890c8f99135be3371b128d2fafdf82705bad95a8dfe90d5103b0625da303931d1db26cc5ae4e721fb1b94f859d46d02aef5044832219b2585e9fc069439c",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/59/11a51353eed59a71c78774c2c42b7ed805211eec2ca5b20d405f8495ff9180a06f8647e27e5f34039adf94382c70207601d8378acd0e46a7fdd316a07ae416",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/59/42a4594d41fc15536bb366e2574bbd481adb09996f20d9cab1e6e6577df6968ad612901882593219493b31637cc4734f40ee03c27ba3e902f54f89855802c7",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/59/f5e2d2e86f29843c893bd054a6518287bc60a61f7a1e370c7e113697528d79bb8db20e92bcb7e25a9b65a1ada364832edb5351829ea4d58c7cdd8b3e9153fe-exec",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/5b/0d0cc8d84044d93333e0c7929282aee8ae7f277b32d0783cc54660811dcc46bace459350e5e33dd8da629e937b8c4a6f33d43959fa341c6fb816ed87e4a558",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/5b/60b39b8deb39b51815d109d00a023cd520015dff2fa45023ab18d3e6f3342246ab52463a28060b527a0b95a2cf6acba3b167dc8358ad64fcd9e36a66d21942",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/5b/a419af10f03774f4436a4a8e3a52be1b62dc42ec554597da52b756eb669c688e35291d3860fe87e518329b5cd4e49d74c013b22c18018feaf2d296af6319e6",
+      "status": "added",
+      "insertions": 200,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/5f/98d1ec5639ef6ed2230180edaca92095919af817a0fa5998fa2f6a3e9e8ae8e3a8bfdff5bfb811a6c3f1d74955c140ae45a43ef547b7a6d1089c8167bf2d95",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/67/5bcc98656448fc1e25bc5be08644b232fd793d2bc871e16a4e4dc2523c4e2b82d77387c0fea98be62ee100f0257027bc8c67e7ddb6a07ab31d6842a7f26744",
+      "status": "added",
+      "insertions": 61,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/69/9d4e6cfac633d7df1e72036b778a8c0113bcc8f9f458ad0fa1ea505f053d26ee0876a8821e90a857534797a7c0290b0492ff9a5b0a115a1864c076059b15b8",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/6a/0f973f0d960dd2fd622e9b96764386393b959b845320c9cbd88c5cd6aecbc3ac528d2b9f33c6fcccdc6bd254e67566775c46ceede926d23f3518392502ae43",
+      "status": "added",
+      "insertions": 81,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/6e/fac2ac79d4d3e49244291a10802ddcc0d57ecf8c415a88a36605ef8a621ffeee84845c1058cbc6d6ed62ae2af567aba8c4487b007cdf98df61242c902cc618",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/70/ff25e772c9d1d5cb17690ded9ce80f9d367b0a9910aaad4201d50ebcfff6c93f668ed0eee14b81955949ff1d777839a350ba593663d751b6950e021788f933",
+      "status": "added",
+      "insertions": 33,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/76/77e526c6a65b06404037b83da55ce72f627ea6d0a5f424b301f8ced80fdb533ed089af053a2a537d942a7e8c9054a897664b60f9e5b9b44b2587fc09a354ff",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/78/19554603d7bfce317813413d5128bfa580e6c25bdac5969ba90040432d767a6b673282b9f17d6913acf7f75afb025b691ac725f263e1e66058f59710f8d88c",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/7b/a0722ebbf777d0f54ebcbfd1105a11ca2fa39952769b75a8f723a621ba53dd8d69ece0f92346b6e5fd78548e0ee17abf29af105b7c6170466d50f9000b0bec",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/7c/ba17197f45e9deaa05c46d9845b7eb9fdbf780a2fcd442eba18c4f7ace4ae55098b6725771522b64a1abd492bc807f72c2095054650cb00fcc8a1c2bf16f4f",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/7d/57e349487c27dd6e27b17306d7177451d9b9b9b4b0f64194d6ebb91295d7b8492b4fe20bf39c70c3c1ae0ffcc798e57a8299ad6666e7c221786e378a3000c8",
+      "status": "added",
+      "insertions": 222,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/7d/bb6fdecfd06ce4f461e553ef0a5d20f1bcc5f063daeb3d5928c4f28908cda03e0533a7e98179460e243e08ddc8299aa70ccae1ac7364eb9402ab1054b8d2ac",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/80/5160fa231aca9ce4213cf945ecfc4bf4b385ffa61f65b35dc310bb14c408a3eaa9ce89d9c63703a6625b57770f3b202471d5226ed5e4560d6cde4e9bd17106",
+      "status": "added",
+      "insertions": 208,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/81/a69df50fde162dad62110d8e62ab3c427bc8025ad106c04679e2d8f761f752f66756aeb0e70ca1f8300561b4a2a7fd366695b73c3630e3296ef2aa360fedb3",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/81/f3729c0fd91fd26038b1a554869967c30b4af2f9c5973284ed5a476123dd21f1ed63e9abe0f90a44c00823ac04f487a3c6bf56a74cf9ad95cdf3db16987af4",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/83/ef639ce9695f8e5675cf3dc4734bea90cca168620afc44e9333a2bb981334845447c33f11d190da556e8d6b8482e80db051fb4462798f4186588bc18de0966",
+      "status": "added",
+      "insertions": 247,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/84/6c33404760ee0993fd7f1ebe19b95542433fc99fdf6bbd45153854285727e9f20356bcccdfee330a0cb5f991d8179fd78a3f124f18e53ba425cf0785bb55b2",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/84/be5791fa499f3c5e8fa6e4bd406cbdcc09111422f7eaf9477e746b296255c440834b64c2567516d2098fe8f5fe660438de340e187939fe6c411909ed60a73f",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/88/075bff7a691edc2c641342d1dc8d06f588d3bee6b1a4368d6eb9fbbdf026080de33eb06c4511f65a828dd40ccbe079bbc0bd3f6d719daa7690f91733b575da",
+      "status": "added",
+      "insertions": 357,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/89/858f7607de45d07ef57bb49f2b1c4765e2a955e62126b3b224b204abd43b143964bf6e0a33031d6b21dc2d7b5eb1698a0cd7b09c8c3b4bd473d509ab8cb5ce",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8a/d70084fde3045188b877fc0ad9832c558d9ccbdba997f0d1e06a53d7dc0644fe6d329b125ae396ca0c87af21428f8391ee5e93537f3ff99bd7cd14e357828a",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8b/7a6632633073106aa6669af7622fc7337603b46b9ce5a866a2bfb42b70b922349507c2318293592dab6a6c57a07adb3a082c92d68fddca3969d5fa902f1f7d",
+      "status": "added",
+      "insertions": 86,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8c/50b7971a9bb560c64521385905b639ba21ea16a80415bc604e139f831efa20ac894fd0d9fc32e633f217d7e816d04e19e9a7b75b83d545b0637c87eacdc464",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8c/997db1b7d8146169c35b250d6644889276fc22f57e0fd4a78d113a45ab247e3fab37a944cfc2864f158cfeb87b019e324c3f485b2123f595b1e23c245eb154",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8f/a5b0a90ea499f4a5ed8691ec8c7276b3cf6d8d1a592648392f4f9110293469a24197b41184a638a6782d729cebd25b61ca9821951976e61bd8f5774a403831",
+      "status": "added",
+      "insertions": 36,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/8f/f804d17bffd9aef1f5ecc89f21dd89dfc023a26c199b4c2f2af5c463ebcd380dfb5efbc8ee276a09eaa4a3387bbd91b50a59e84f40f5c871d0e3df6e558b55",
+      "status": "added",
+      "insertions": 164,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/96/83e68c4a2a48480ebd9b7b4086d3a1a1f9e745c9364249a6297ae72119c170560105b4ccad8b2653e2a400cd3a8ace4067f7b64df2c4c582145a56514cbf4c",
+      "status": "added",
+      "insertions": 602,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/97/bfbcc05b9252e91c77d7f679231564bbcf3056ac5f15e5b892693b1cfce6bc4600efff13f368e32fc2e41487430650b509bd8df7d89d9b25dd18a1a337351b",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/98/53cd82205176a29381afb88b1859cb7a4bf27e19005cb8bc78f664632a6b2c9fa8c3c30c8e41d46a40cd6b5306f96362a3b7373f772bcf956be67dc516edfa",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/99/19b5a1fd8f80567b38b010d1bc23fda0281fa22fdd3604e6c7d71d8abe252c66010df30a9d26f53011346313fd7e506d33d33eed21ba8262369deed497a7ed",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/99/fb2ba3b99bd3d5097fda603c3f06cd38787acb29095f35f685216b41c918e624d18a5a20330d91d1e07460404a9cea13d98c73452ab500f7928df843e3d8fa",
+      "status": "added",
+      "insertions": 305,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9b/f3d94c31dc6eea82c68ed1168755817fe69a7b7cd292141205c71117d3d82a1e13feefe92e46e8e271349fcccd560bb2c45bc6f1ddfa60d31408bd11391c07",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9c/378ca5bd63026b8080ab9d9bd8fa32e787d064746447c8e8b06cdd75c82f371dd504ec9c39d998cf8ca79bb461a2050719cf9d2beb5de34c910c3781a77bf5",
+      "status": "added",
+      "insertions": 272,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9d/06c110d68537d3d28f40b953e82924bcf41b49ecb1a1bebf0551807d246bc5ef4265854efcfd2ac2c08537e2b0e710ea39ee11502aeebd40dc81967e376b22",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9d/77232ff96b95e710b77cc4c9837c123f7f683c9b547ec680e8631683de7cde24623bba4342820712648e89fbfca68c9abfd57e1b543f845854f493811142bc",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9e/344a435af6e979dabb167a1b14c2ecbe10cfd99d78802b375b02ed3a6252b86c198aa1c404c462d55ef33e1b5b49ce3b1f8fc2c0fd6d6d108c2688cb1bffe9",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9e/4478c7906beedb335e5890b97771924b6a7740288b8797dd12e0ea0bd2696ac5d5049e481b5b087521fa07f71d2930f74d4ea7582b59811422ef73a7ef2319",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/9f/c5922870d38540fe1544133ba9a687a59ce63c7ca761454b43b047bb7d34ed2e5fce60c893e346fd010e73cd4a66c604a3a2693f46f31490df457eb156d332",
+      "status": "added",
+      "insertions": 167,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a1/23254fcaccc1c8276002b11812d462d726d59d31a8820cc3a7f6471b83c013466dc1faecf4cb9bbf1a5260171a24a662d2dece4a3fc7488a257f2e823c2141",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a1/b4d67f9d2f05c1f631fe6f696e1d3153a108763cbff72237bd0372d9e90300bcc41daed9d74a88e6702cf738ce6d75bf726deab5b8c9705f77cec9f432902d",
+      "status": "added",
+      "insertions": 241,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a4/9ce3035fe10ed57899b75810d04f3dbc281d92aed57b0834c39e4edf12e0159037ee94b30ddc2ff0c0acb77f7e1407851b910bd8eb814b764d084871f6dd7e",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a7/5258dc4bb789a762dc968bbf9f1ad39b040d40c61c842b4a4d36730c9ae9d17468dfe10bb2f29a886342570a3e5b0265293b5b9152df677f7f63bb62f73df4",
+      "status": "added",
+      "insertions": 204,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a8/04fd91342a4ed6877af4581109c33056330a1fcc40d3c2b73b5ac3f083e0abae1d25ce6eb9f12b889806c5275baee53053a0b31f52a8ad3031960b0939cdf0",
+      "status": "added",
+      "insertions": 99,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a8/f6daa1bd9861a39483e01f53738f84f00e5561ae38de26e56852252417e185cf8f240c1598036bff3c3a5dea08bdeff05d720067b529c9a231b1f0291d673f",
+      "status": "added",
+      "insertions": 39,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/a9/d7a515285079a8652ceb0eecbf7123e79d20f5cd79879be68cda21b0adcc270300195384170f4526bda436fe6d6210466002bfa1db998436c6969606bfd7b0",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/aa/98c577c7a6ee05a782d17bad3dbd7b50751a4fdb4ed655c87e291bd2baa5d35ad1fbed2cb0717f52b44f6ae555f294f52a6e9ff778c28f980658dcba673ea6",
+      "status": "added",
+      "insertions": 135,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ab/70122ea286a7738cb5751f8c87c148197c6020c5dac0c76866fa9314bb4045394135d05839b42121451a63e8af96f5fe9231936f89881bfa8cf77f1a9a41c5",
+      "status": "added",
+      "insertions": 243,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ab/c71b30e9ccad4b4ffeb48266f646de01f8db3c8c975ec9b7c9cf811477385459437e9ab464f5aa25efee787311ecea1bf0f44bd9e6f614d40c424b899fea16",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ac/8618a8173739e5a9ca662efcc7da04f116e776efbe0b4f3912884e09ebd11020b769de894d6a7d7ec89d3ab9188cca1c2528f12827535a6a89d6d849c97760",
+      "status": "added",
+      "insertions": 233,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ad/b9232f1143e6ba328d6f5c9a02328a8f363416a3a596ac47c4e7bfd91c332117368cffa10af4c6aaae30cce90b77510ed251a8a56b2c98d69a03a0bd9c2268",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b0/37aed525a78cbe72f12b65a8761710ad7b04f8fef0c8fb2005200e2f01ebe5f26552f2ecf01bca7240a857ab6b69bb95fba5b0f6ffc69c029ec517bdfbb24e",
+      "status": "added",
+      "insertions": 297,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b1/0a7962618f3ebdc03861a676d39644b4c5538891c9693d0cb65b3c6882e5cbffa42e07958ad5ba0c2d884259ddd8adc784d8cb569e5567b0b53fac2a5a5297",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b5/6d4bebf24796a32376b16ce06d93858afa3109ac61ba7e19ecb023c3a409f6c3ca71f893286e16ec06d990ea671459a6ed233fa66dabbc44dad36ee27a5f48",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b5/ba33b3c94eb119234322de696d0a0469628feadbf512c345629a005f380ee1bbf8ab45a44cc16d501115b61c6a30cf7a926286e56435bcb6a8aa2f38035f59",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b5/c8bbfc13c8094fe8cc8f41f2f528567ad1596fdd5bbde3d191d8a170f8f6dc016c25e4a75635a2a978a384fcfcda5512a4bb4f04e2a4739b60206089ae562b",
+      "status": "added",
+      "insertions": 111,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/b5/f8c3baa0241ce2b8cea74efc6c8d68d9ae04dd44388b39eb75dc9f168b66fa8b4cb85f74ebfd0f4494a32defbd4ade1e3567cdbc89b70930acb6590a4d73ee",
+      "status": "added",
+      "insertions": 80,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/bb/8accbcb1439dc542dbfe7c1e50ec0dce784ff835e38506e3f675a9ee6ff91d9709704c806e7a6686f3abe6bd51217cac47743a21555419640a730a7082adf7",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/bd/722824b5ed435dce38443818f169ff8400ee4c42ce38aa1bbfeefcbdf92a8917730c79911ef8a68b8b086caa386f6fd2f7b43be8a39b5e44f910f9cb4fc9af",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/be/001ad864d774cd70c9fc7f8e1a08b96ca61bb6f007634d957c611f7fbb066290a6b7c0f90d845d9cef4a330ec1b909a51e28ee264dace908b691e90a316492",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/be/1f62d4bb312673cce565161a29de362616a6cd504e7503bcd13d4ca74055f1dfe52efe977ec2285a446c0d6b23f791691e35101602d4931736b388cbc544f4",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/be/688838ca8686e5c90689bf2ab585cef1137c999b48c70b92f67a5c34dc15697b5d11c982ed6d71be1e1e7f7b4e0733884aa97c3f7a339a8ed03577cf74be09",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/bf/a5c34025cf5aee1335a1ece0bff184fa7e5d1dc80ca5dd786c5ec46c36f0dfda128432dc56b0772aa64e867980379f12979ed05ce640c726f4f7f43386d0cf",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c0/cfeb0d37a99561818281751061c604452bb2cbeeeb19cfa48d473542050f0d45089ec48b73f12d5e8d961ad9a159999408bf515522748e07f4b4dadf774b04",
+      "status": "added",
+      "insertions": 262,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c1/2f4a142a234bafb4287efc9230d11dce16860ce6cd8855bfd44f6cee66d6637eb29f70712c083dc374fbe2c4454e3cd0c6285a44ce56ea73f4429fe43c5002",
+      "status": "added",
+      "insertions": 91,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c3/bd2481647042a2d006bdf461a8aa9207191f887588e90502f2d1819562612fade415623f4bb317c8dde13edb566d1052db6cd4cf282e5a6bf0c8749a9a1c50",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c5/767368d905a59f1bc4b913278704efe4487102880c4b88c059110351efaea0761e34e88764eaef323931b8a87edc2bac59357a35d549b065a65c4a57b1e97b",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c5/d1585e659db3112f43cd02646e0df9f890820aebec9efb893d24d9c3b9df3f861accd70bcd7d2cde31768951a04ba9f6604306962d94d97f8de9471924eca2",
+      "status": "added",
+      "insertions": 61,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c6/38d4bd8996f26fcb0e87d6ce6c74f05c907fd67f6012c87abc41feb35d90edd42c760c645e9a64886947a762980337e838ab15e47ef833cedf4b0d42dd6a9a",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c6/697068913116b19ff3979b3326ea3773e0ab97508d59d3484c695b76a36b1b61d1c007b9a052a920dd3e604abf8b5a2b1c16c36b235c75313fc4cf909b91ee",
+      "status": "added",
+      "insertions": 88,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c7/eced7ed0868bd0602963998531a947e7d9d9a4dc655ac7bed00dc150487a95353601bb21d0a1c20964c3640ec3aadd061206c7a25c025a418fe881dcfbd6d7",
+      "status": "added",
+      "insertions": 78,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/c8/8aa7d204f5d1460c1829a0678b5119f6f9e14fb1b137ebaa107efc7d4d33c560655b44a99ccf27a5d233b039a0f029983a86886caa0b3be6675d1b40dfb444",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ca/57f912bb177e17a54bfe7281299ca122c2d2434886c1dde00e68350acc9ce822cc9f088025065a0afde392b89ba1155c2827729f8f48f2fa2483833f45539d",
+      "status": "added",
+      "insertions": 90,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/cc/05f2ea118e44cb8f818389861c10554ef002944e47352b754565ffbfcfbb08ed1ff49d4e5fe2005d4a0e62c35a8ffdc45482cd3b975c21359e8e64d0ebf017",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/cd/2e7cda0aea37ddb0bc1aa1c7865d5d51c8d843b91d9461f36e3ec40b188a0d251c709c277934c5150466e0659f65b00d1806203f4e742616aa99ba37903a7f",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ce/4ae5e6d34061638342699caaa62d6b2e8f831e36267b47586ec99e3a48a0db4d7bf2f757b774934240c7a71e54ea32011abe27f4a9fb048977319513f95f6d",
+      "status": "added",
+      "insertions": 246,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ce/bda4aa0ce2a1158fe2c234d36722ff7d6cfc9aa0487ed16011f2de701722a378c44c6610bef17aff967a50cec59ce111ac95f0d1a3e00de5a2203b66658947",
+      "status": "added",
+      "insertions": 268,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/d0/33738dcd0b90ad71223804c10e8841f26b7de66a65a9b8024ba8a9db47d6f892550847f04fd4648fdf532a80b260d62cd4aef34f8207a92ca8533fc5dd67a2",
+      "status": "added",
+      "insertions": 179,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/d6/b84894240dd81b3ff42e03c9bf3ffe30eab18cd64bf7452bd05ddd67f72dbafd978ffeb9b23ebbf49ee6df3e2224f6828ef72334f7cacdb025753c3b4a3410",
+      "status": "added",
+      "insertions": 117,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/d7/17330efd9b9f6ea933d65c3573ecdc65c56d23e03d500f5aeee7aa8611c06925d0a54acc9dbd1bd809eb84807ef5de78fbdab910cb6f74086ca3fb7302eb3c",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/d8/5f72fee261814bdae7576d5789b27398b2ae703ee69fa3749b0b528e023e77d651ef42411e2522f41a7187cf6d240ffe422449a6a84d158775c28a6ac04fcd",
+      "status": "added",
+      "insertions": 139,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/d9/64ea8a0735078faf57aad8be37f8b0ce45dfe455d177e9ca19bc2fe7bed38bd57cefd63c21d304e6977180bc935d459536678f1016baaf592d32e861a2cd4d",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/db/a08922f5f08ef8c810422f8a68f86c16f68e0726f80daf13d39e99ca3947afdf266786b1f805292590f750c0db91698921b89f737cf12f180bacb3fb49f318",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/df/3329e006887d0d416aa562fe3cde8b34401667647d62ea047115c0d9ee28bc28497ad97cf5969a2f60aa1f9a2b181f4e847395cb33fcb98b45dd637e80b6f4",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/df/c8e46c85305e51a9941073444f60bca19cb59e3e11f628c93df2d28a90f19089fbfa087bd9cb29be2b72ec8c28d27d1915cd4663544961430feff03c21a4e2",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/e0/8bbd6ac232ff88b2bdf3fb877c5254fe67ad2983edf6b2d7a97d2e22f307607fb40d82ce3022e2c9edd5e65289eb7054f6825ceb0ede9ab9992999060ffcc8",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/e0/d3b86f0a86bf185575735fa4bcf2bc819ed9ab750e7399ac97ff1e80ca42a8c29182baba8e57e03bc6ae4555fd61b854adbc9bd3b15741f668d52e3fd9337d",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/e2/b47a5ad3ed785bc05248970ca6fa8e3d79e3bdfb039a88a2f81390c3b5536181b8b11e1c769934e03748d11650fa14b7e4545b986de319d0ded472b19cbbde",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/e3/544a06ba18c10131362f763dc0acfd2275ad17a93a854f9bbf7e22a5249e77c02e62831013f8bdcf4c82232e48a4de4445265a0c47558294e0be1240a3730a",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/e7/ed0107700bbc897729b94df0d1dae8dff70e9d319b70471bbe3eadc74a6614beae27b413f5517e21a5fd4600a2c4812d77259e46800f5679e575b2aa44e7c0",
+      "status": "added",
+      "insertions": 379,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/eb/feb01b46a182c720dca5f97f1e228d4fcb1619e68640bbc72a5727d5141a1f489600c25c9220f801e8f4e197f3459b419dae088a251c536b8c0e8957e1d103",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/ee/ad899de1ae64f852cf9761fb67e5021e5a3fcf4010669f131ef0d7260af196f656ab30258b1786bcff2151c55ca3d93cd8a1fccb87f940d01b1dfcb87aea73",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f1/9c1f1c9b1bd4981a5c5d8335e8c55a607dbdb9baef474f02c540b0f3c599382e30a22708a4ac0e674a1c79d11ef9fac6e2a50186446946cac98d7e63aa5617",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f2/4608e140dd97401622e49f5becbdf41a6fefe7784c91a9570d3670fec176a20a48044ba52b23ea070af00e0ca6ac49f59718652f617f8169aaf7e29b5f073e",
+      "status": "added",
+      "insertions": 75,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f2/49adb0ede8e5041dbad3eb37e40ca27f0ba37e9758e4dc300cfca05392e70d5686df7eb97966e2041bf20a14ec508241aea544d3c82c42dda5a123f5108f41",
+      "status": "added",
+      "insertions": 92,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f3/8ae294c89764c8301918b38e69b4d11c70696fa60d1ca1637cc6a00c083212be7d4546aebfd9feedb075140f91db7d3c32ed5630f8f65193f0f15a1e009563",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f5/57bb0277df6043fa4dec13eb23a08d3723fb2f89505c658aaf8e98c7c2d38382966181aa1679fb316c988f84b5ef0a9dbae9b9375af38d36779f19334abb8e",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/f9/fc34c4b19456db27de596368b1e82a1de3e0add2484f26bf39cad438a2de377f96bf78d5d1005a9aebf90c39e443a6dcf09940d04880368521ee593e206f28",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/fa/288e53fd953859196fee805be53499c0683acc8aaedb5db1f5c18817f3f0ac669593d2fba7c35d2b8d836101e725527286dcb23e169f3be6ba4bc4c4d50128",
+      "status": "added",
+      "insertions": 147,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/fa/e09cb4fee70db36554f141a3c626ee5a62462767ec7cec4250989de4ee1c10849af535a9bbab9570550d70d62cea890147e18daeca82aebd8097069fbbe828",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/fb/a6f218cfd91a992327f84b4105efebaa1674d03ac984914460b9aed255817d9f1633db622c099c88fac069c6f7945f544620e094b7dc1df83510e10635b234",
+      "status": "added",
+      "insertions": 97,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/files/fe/7cfdebb2b67751f581cae7afa9b1f60c439d9786a1b29b3c876713a8b11737e075e04a8782eb496b9fd422a9801ce6f01c5e21f7ec310878c05ebd35f0b2e0",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/index.db",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/global-data/pnpm/store/v11/projects/8c5f5b37d3fdba49253b2293ec94fd76",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-01/prepare-commands.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-02/prepare-commands.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-02/session.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/agent-use.md",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/apply-storybook.json",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/commands.jsonl",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/design-instructions.json",
+      "status": "added",
+      "insertions": 86,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/fixture-review-save.json",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/fixture-review-start.json",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/fixture-review-submit.json",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/installed-help.txt",
+      "status": "added",
+      "insertions": 43,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/installed-next-beta.json",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/installed-status.json",
+      "status": "added",
+      "insertions": 87,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-artifacts/design.md",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-artifacts/local-notes-spec.md",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-artifacts/proposal.md",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-artifacts/tasks.md",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-context.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-list.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-save.json",
+      "status": "added",
+      "insertions": 59,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-status.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-submit.json",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/planning-validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/proposal-instructions.json",
+      "status": "added",
+      "insertions": 82,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/propose-handoff.json",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/specs-instructions.json",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/summary.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/handoff/tasks-instructions.json",
+      "status": "added",
+      "insertions": 92,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/prepare-commands.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-03/session.json",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-prepare-final.log",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-prepare.log",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-test.log",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/installation-unprepared.log",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/line-counts-after.json",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/line-counts-before.json",
+      "status": "added",
+      "insertions": 44,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/material-check.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 182,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/pnpm-invalid-entries.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/pnpm-wrong-version-final.log",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/pnpm-wrong-version-readonly.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/pnpm-wrong-version-verified.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/pnpm-wrong-version.log",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression.log",
+      "status": "added",
+      "insertions": 1255,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-12692.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-18268.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-23784.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-31608.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-33664.jsonl",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-44228.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-48792.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/archive-scenes-49912.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/cancel-scenes-45752.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/cancel-scenes-9280.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-10920.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-12692.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-15256.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-16280.jsonl",
+      "status": "added",
+      "insertions": 84,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-17192.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-17784.jsonl",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-18268.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-21860.jsonl",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-23784.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-30640.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-31608.jsonl",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-32268.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-33456.jsonl",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-33664.jsonl",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-34160.jsonl",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-3696.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-39108.jsonl",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-40608.jsonl",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-408.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-41648.jsonl",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-44228.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-45240.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-45608.jsonl",
+      "status": "added",
+      "insertions": 203,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-45752.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-46532.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-47248.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-47272.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-48496.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-48792.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-49912.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/commands-9280.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-17784.jsonl",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-30640.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-33456.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-34160.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-3696.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-41648.jsonl",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-45608.jsonl",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-45752.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-46532.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-48496.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/delivery-scenes-9280.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/integration-scenes-34160.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-10920.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-31608.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-34160.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-40608.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-45752.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-47248.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/regression/test-scenes-9280.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 182,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui-prepare.log",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui-results.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/commands-17204.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/browser/browser.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/browser/counter.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/commands-8004.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/preview-start.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/preview-stop.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/preview.stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/preview.stdout.log",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/ui/finite-results/results.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 39,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/run.md",
+      "status": "added",
+      "insertions": 88,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/014-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/independent-installation-and-target-openspec-skills/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/independent-installation-and-target-openspec-skills/design.md",
+      "status": "added",
+      "insertions": 77,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/independent-installation-and-target-openspec-skills/proposal.md",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/independent-installation-and-target-openspec-skills/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 81,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/independent-installation-and-target-openspec-skills/tasks.md",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "scripts/proofs/d03-b/method-reading.ts",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "scripts/proofs/mvp-d03-b-explore.ts",
+      "status": "added",
+      "insertions": 404,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "tests/fixtures/d03-b-project/AGENTS.md",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/d03-b-project/README.md",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/fixtures/d03-b-project/openspec/config.yaml",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/d03-b-project/package-input.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/d03-b-project/src/note.ts",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/installation/handoff.test.ts",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/target-method-handoff.test.ts",
+      "status": "added",
+      "insertions": 174,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/target-methods.test.ts",
+      "status": "added",
+      "insertions": 67,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

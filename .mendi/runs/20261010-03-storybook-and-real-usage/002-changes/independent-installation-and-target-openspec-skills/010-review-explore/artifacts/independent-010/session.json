@@ -1,0 +1,9 @@
+{
+  "installation": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\beta"
+  ],
+  "installedCLI": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010\\node_modules\\.pnpm\\mendi@file+..+..+..+..+..+P_da3d42fb818d23b93a2625e4fe1c9711\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "installedRoot": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010\\node_modules\\.pnpm\\mendi@file+..+..+..+..+..+P_da3d42fb818d23b93a2625e4fe1c9711\\node_modules\\mendi"
+}

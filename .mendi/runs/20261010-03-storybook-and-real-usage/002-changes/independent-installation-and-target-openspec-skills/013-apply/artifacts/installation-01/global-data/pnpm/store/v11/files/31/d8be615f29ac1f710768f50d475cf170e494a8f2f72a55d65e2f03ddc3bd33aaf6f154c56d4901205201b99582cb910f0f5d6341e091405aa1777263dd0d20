@@ -1,0 +1,2 @@
+import { type FullTest } from './delivery-verification.ts';
+export declare function parseFullTest(data: Record<string, unknown>, id: string, number: number): FullTest;

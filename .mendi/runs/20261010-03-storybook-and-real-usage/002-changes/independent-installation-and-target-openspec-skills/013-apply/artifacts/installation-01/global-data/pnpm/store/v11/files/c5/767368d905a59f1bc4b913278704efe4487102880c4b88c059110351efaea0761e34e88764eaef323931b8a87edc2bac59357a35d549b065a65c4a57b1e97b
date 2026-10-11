@@ -1,0 +1,66 @@
+import { type Workspace } from '../core/records.ts';
+import type { Lifecycle } from '../core/delivery-lifecycle.ts';
+import { type WriteObserver } from './workspace.ts';
+import { type DeliveryDocument } from './delivery-runs.ts';
+export interface LifecycleBasis {
+    project: string | null;
+    manifest: string | null;
+    input: {
+        ref: string;
+        content: string;
+    };
+}
+export declare function pendingLifecycle(root: string): {
+    index: {
+        project: Record<string, unknown>;
+        mode: Workspace["mode"];
+        id: string;
+        manifestRef: string;
+    };
+    ref: string;
+} | null;
+type Confirm = (before: Workspace | null, lifecycle: Lifecycle) => void;
+export declare function commitLifecycle(root: string, id: string, lifecycle: Lifecycle, actor: string, basis: LifecycleBasis, confirm: Confirm, observe?: WriteObserver): {
+    workspace: Workspace;
+    run: DeliveryDocument;
+};
+export declare function resumeLifecycle(root: string, ref: string, type: string, actor: string, confirm: Confirm, observe?: WriteObserver): {
+    workspace: Workspace;
+    run: DeliveryDocument;
+    alreadyCompleted: boolean;
+};
+export declare function saveLifecycleNote(root: string, ref: string, actor: string, body: string, observe?: WriteObserver): {
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    local: null;
+    openspec: null;
+    executionMode: string;
+    upstreamAccess: string;
+};
+export {};

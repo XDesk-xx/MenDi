@@ -1,0 +1,86 @@
+{
+  "ok": true,
+  "operation": "action-instructions",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "product",
+    "deliveryId": "installed-0",
+    "title": "受控安装验收",
+    "state": "open",
+    "goal": "稳定安装与真实目标方法接入验收",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "离线笔记",
+        "dependsOn": []
+      }
+    ],
+    "activeChangeId": "local-note-work",
+    "changeBindings": [
+      {
+        "changeId": "local-note-work",
+        "changeRef": "openspec/changes/local-note-work",
+        "planningSlot": "A",
+        "state": "active",
+        "batchId": "002-changes",
+        "latestRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md"
+      }
+    ]
+  },
+  "run": {
+    "ref": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md",
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "deliveryId": "installed-0",
+    "changeId": "local-note-work",
+    "runNumber": 5,
+    "actionId": "local-note-work-005-propose",
+    "actionType": "propose",
+    "role": "author",
+    "actorId": "installation-author",
+    "status": "draft",
+    "stageSkill": "propose",
+    "toolGuidance": [
+      "storybook"
+    ]
+  },
+  "next": {
+    "source": "local-state",
+    "executable": false,
+    "role": "author",
+    "action": "run-save-or-submit",
+    "status": "working",
+    "reason": "当前 draft 可保存并提交；记录命令不自动执行阶段工作。",
+    "currentRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md"
+  },
+  "instructions": {
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+      "source": "nearest"
+    },
+    "changeName": "local-note-work",
+    "artifactId": "design",
+    "schemaName": "spec-driven",
+    "instruction": "Create the design document that explains HOW to implement the change.\n\nWhen to include design.md (create only if any apply):\n- Cross-cutting change (multiple services/modules) or new architectural pattern\n- New external dependency or significant data model changes\n- Security, performance, or migration complexity\n- Ambiguity that benefits from technical decisions before coding\n\nSections:\n- **Context**: Only the current state and constraints needed to explain the approach. Reference the proposal for motivation instead of restating it (e.g., \"See proposal.md - Why\").\n- **Goals / Non-Goals**: What this design achieves and explicitly excludes. Don't restate the proposal's scope - add only design-level boundaries.\n- **Decisions**: Key technical choices with rationale (why X over Y?). Include alternatives considered for each decision.\n- **Risks / Trade-offs**: Known limitations, things that could go wrong. Format: [Risk] → Mitigation\n- **Migration Plan**: Steps to deploy, rollback strategy (if applicable)\n- **Open Questions**: Unknowns that can safely be answered later without\n  changing the specs, the approach, or the task breakdown. Omit if none.\n\nOpen questions are for genuinely deferrable unknowns, not decisions you\nskipped. If a question would change the specs, the chosen approach, or\nthe task breakdown, resolve it now - ask the user instead of guessing.\n\nFocus on architecture and approach, not line-by-line implementation.\nThe proposal covers why and what; design covers how. Reference the\nproposal for motivation and, once written, the specs for requirements -\nif a section would only restate them, point to them instead.\n\nGood design docs explain the \"why\" behind technical decisions.\n",
+    "template": "# Design\n\n## Context\n\n<!-- Current state and constraints that shape the approach. See proposal.md for motivation - don't restate it -->\n\n## Goals / Non-Goals\n\n**Goals:**\n<!-- What this design aims to achieve -->\n\n**Non-Goals:**\n<!-- What is explicitly out of scope -->\n\n## Decisions\n\n<!-- Key design decisions with rationale and alternatives considered -->\n\n## Risks / Trade-offs\n\n<!-- Known risks and trade-offs -->\n",
+    "outputPath": "design.md",
+    "resolvedOutputPath": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\design.md",
+    "dependencies": [
+      {
+        "id": "proposal",
+        "done": true,
+        "path": "proposal.md",
+        "description": "Initial proposal document outlining the change"
+      }
+    ],
+    "context": "中文离线笔记工具，只使用目标项目的本地文件，不需要 UI 或网络服务。"
+  }
+}

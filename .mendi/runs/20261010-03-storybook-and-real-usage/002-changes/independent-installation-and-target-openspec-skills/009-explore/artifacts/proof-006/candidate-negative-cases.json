@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "case": "missing",
+      "error": "Error: ENOENT: no such file or directory, lstat 'D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-mO64Dt\\alpha\\.agents\\skills\\openspec-explore\\SKILL.md'",
+      "recordsUnchanged": true
+    },
+    {
+      "case": "unreadable-directory",
+      "error": "Error: EISDIR: illegal operation on a directory, read",
+      "recordsUnchanged": true
+    },
+    {
+      "case": "wrong-baseline",
+      "error": "AssertionError [ERR_ASSERTION]: 生成基线不符\n\n'1.14.0' !== '1.14.1'\n",
+      "recordsUnchanged": true
+    },
+    {
+      "case": "wrong-identity",
+      "error": "AssertionError [ERR_ASSERTION]: 方法身份不符\n+ actual - expected\n\n+ 'unrelated-method'\n- 'openspec-explore'\n",
+      "recordsUnchanged": true
+    }
+  ],
+  "limitation": "Explore 读取候选的前置实验；不是当前产品已经拒绝这些目标方法故障的证明。不可读负例为 EISDIR，不认证 Windows ACL。"
+}

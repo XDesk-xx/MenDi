@@ -25,6 +25,8 @@
     "test": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
     "test:ui": "node scripts/test-ui.ts",
     "prepare:ui-tests": "node scripts/prepare-ui-tests.ts",
+    "prepare:installation-tests": "node scripts/prepare-installation-tests.ts",
+    "test:installation": "node --test tests/installation/*.test.ts",
     "build": "tsc",
     "start": "node dist/drivers/cli.js"
   },

@@ -2,24 +2,20 @@ schema: spec-driven
 
 context: |
   Language: Chinese
-  与 Owner 沟通及面向人阅读的产物正文使用中文。
-  OpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。
-  项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。
-  产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。
-  具体规格、方案和任务在对应 OpenSpec Change 中细化。
-  角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。
-  当前选择 MVP-D03 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json。MVP-D03-A storybook-lightweight-integration 的 006 Apply 经 007 Review Apply 独立批准，由 008 实际归档到 openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration，规格已同步，当前无活动 Change，本次 change checkpoint 保存归档边界，等待 Owner 授权下一 Change；批次为 002-changes。MVP-D01 / MVP-D02 保持 closed，累计完成 Change 为 8。
-  归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。
-  探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。
-  CLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行、Close / Reopen、新 Delivery Open 与指定历史结果读取。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。
-  必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。
-  MVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。
-  MVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。
-  MVP-D02-C delivery-close-and-reopen 经 029 独立批准 028 后由 030 实际归档到 openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen；D02 A / B / C 均已归档，无活动 Change，累计完成数为 7。Owner 授权的 031 正式 Full Test passed（完整 pnpm test 193/193、pnpm check 与六份主规格 strict validate 通过，受测提交 4355a6d）仍适用；本项目 D02 已在 032 人工 Close，保持 manual-bootstrap，等待 Owner 明确后续范围与独立授权。旧 Run / verdict、材料语义判断和取消 unknown 限制保留，不迁移人工历史，不自动 Reopen / 新 Open、Git 或下一 Change。
-  MVP-D03 规划 A Storybook 轻量接入、B 独立安装与简短项目指导、C 最小真实交付验收；范围直接读取路线图 §6.2 / §7 和 D03-B 文档收敛安排。A 已归档，当前收口与直接审核入口从 008 定位；实现和验证范围仍按受控 HTML-Vite / Storybook 10.6.1 / Vitest 4.1.11 / Chromium 目标限定。当前服务已停止，MCP 未启用 / 未认证，Vue、冷安装和真实完整交付不由 HTML 结果推导。B / C 尚未激活；checkpoint、push、下一 Change、正式 Full Test / Close 保持各自授权；D02 的旧结果不作为 D03 已验收。
-  Run 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。
-  正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。
-  Storybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。
+  面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。
+  MenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。
+  角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。
+  使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。
+  当前 MVP-D03 open / manual-bootstrap，A / B 已归档，累计成功归档 9。
+  最近交接为 B independent-installation-and-target-openspec-skills 的 015 Author Archive；Change checkpoint 保存当前边界，等待 Owner 下一指令，C 未激活。
+  状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。
+  本轮实现目标方法接线、稳定安装、阶段映射与旧记录兼容、pnpm 入口一致性和短文档；优先稳定并实际应用 MenDi。
+  升级机制、多版本 / 多布局、MCP 认证和 C 完整真实交付不在本轮；外接升级只作路线图后续预留。
+  必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。
+  submitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。
+  根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。
+  原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。
+  Git、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。
 
 operations:
   apply:
@@ -30,3 +26,5 @@ operations:
     guidance:
       - 核对当前批准与实际归档效果，保留简短收口说明。
       - 不自动执行 Git、下一 Change 或 Delivery Full Test。
+
+

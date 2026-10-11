@@ -1,0 +1,15 @@
+{
+  "cwd": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "add",
+    "--offline",
+    "--ignore-scripts",
+    "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\independent-installation-and-target-openspec-skills\\010-review-explore\\artifacts\\independent-010\\mendi-0.1.0.tgz"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "Progress: resolved 0, reused 0, downloaded 1, added 0\nPackages: +2\n++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 2, reused 1, downloaded 1, added 2, done\n\ndependencies:\n+ mendi 0.1.0\n\nDone in 1.5s using pnpm v11.22.0\n",
+  "stderr": ""
+}

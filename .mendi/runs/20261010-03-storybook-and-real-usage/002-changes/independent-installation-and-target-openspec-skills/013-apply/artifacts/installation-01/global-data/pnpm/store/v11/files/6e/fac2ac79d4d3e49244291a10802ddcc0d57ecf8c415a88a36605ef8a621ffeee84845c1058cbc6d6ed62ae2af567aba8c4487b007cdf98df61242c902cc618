@@ -1,0 +1,13 @@
+export interface ArchiveRecord {
+    reviewRunRef: string;
+    authorRunRef: string;
+    countBasis: number;
+    ordinal: number;
+    phase: 'prepared' | 'invoking' | 'none' | 'confirmed';
+    attempt: number;
+    attemptRef?: string;
+    archiveRef?: string;
+}
+export declare function archivedCount(project: Record<string, unknown>): number;
+export declare function archiveName(ref: string, changeId: string, ordinal?: number): string;
+export declare function parseArchive(value: unknown, runRef: string, delivery: string, change: string): ArchiveRecord;

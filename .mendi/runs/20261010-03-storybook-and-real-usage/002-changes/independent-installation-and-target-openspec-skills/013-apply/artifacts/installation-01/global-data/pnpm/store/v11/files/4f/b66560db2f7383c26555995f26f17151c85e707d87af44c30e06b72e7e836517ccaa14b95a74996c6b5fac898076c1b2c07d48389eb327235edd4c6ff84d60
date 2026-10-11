@@ -1,0 +1,44 @@
+import { type ActionType } from '../core/actions.ts';
+import { type DeliveryType } from '../core/delivery-runs.ts';
+export declare const bundledRoot: string;
+export declare function loadMethods(type: ActionType | DeliveryType, tools: string[], root?: string): {
+    stage: {
+        ref: string;
+        file: string;
+        content: string;
+    };
+    guidance: {
+        ref: string;
+        file: string;
+        content: string;
+    }[];
+};
+export declare function targetMethodName(type: ActionType): string | undefined;
+export declare function readTargetMethod(projectRoot: string, name: string): {
+    name: string;
+    projectRoot: string;
+    ref: string;
+    file: string;
+    generatedBy: string;
+    content: string;
+};
+export declare function loadChangeMethods(type: ActionType, tools: string[], projectRoot: string, methodsRoot?: string): {
+    upstream: {
+        name: string;
+        projectRoot: string;
+        ref: string;
+        file: string;
+        generatedBy: string;
+        content: string;
+    }[];
+    stage: {
+        ref: string;
+        file: string;
+        content: string;
+    };
+    guidance: {
+        ref: string;
+        file: string;
+        content: string;
+    }[];
+};

@@ -1,0 +1,3 @@
+import type { Arguments } from './arguments.ts';
+import type { dispatch } from './dispatch.ts';
+export declare function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Arguments): void;

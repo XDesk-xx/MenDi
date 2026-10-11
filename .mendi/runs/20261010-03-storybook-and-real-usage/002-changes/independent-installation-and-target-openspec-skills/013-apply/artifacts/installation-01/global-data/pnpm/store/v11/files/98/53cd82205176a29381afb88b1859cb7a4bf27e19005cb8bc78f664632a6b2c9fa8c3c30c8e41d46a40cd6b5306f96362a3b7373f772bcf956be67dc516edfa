@@ -1,0 +1,31 @@
+import { type RunDocument } from './runs.ts';
+import { type ArchiveRecord } from '../core/archive.ts';
+import type { Workspace } from '../core/records.ts';
+export interface ArchiveInputs {
+    formatVersion: 1;
+    changeId: string;
+    runRef: string;
+    review: {
+        ref: string;
+        content: string;
+    };
+    author: {
+        ref: string;
+        content: string;
+    };
+    source: Record<string, string>;
+    main: Record<string, string | null>;
+}
+export declare function captureArchiveInputs(root: string, workspace: Workspace, run: RunDocument, approval: {
+    review: RunDocument;
+    author: RunDocument;
+}): ArchiveInputs;
+export declare function loadArchiveInputs(root: string, workspace: Workspace, run: RunDocument): ArchiveInputs;
+export declare function archiveCandidates(root: string, change: string, archive: ArchiveRecord): string[];
+export declare function observeArchiveEffects(root: string, archive: ArchiveRecord, inputs: ArchiveInputs): {
+    phase: "none";
+    archiveRef?: undefined;
+} | {
+    phase: "confirmed";
+    archiveRef: string;
+};

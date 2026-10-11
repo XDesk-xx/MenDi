@@ -1,0 +1,4 @@
+export declare function inspectProject(target: string): {
+    root: string;
+    configPath: string;
+};

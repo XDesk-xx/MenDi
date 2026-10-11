@@ -1,0 +1,26 @@
+[
+  {
+    "file": "src/adapters/methods.ts",
+    "basis": "unchanged HEAD; source was clean before this Apply",
+    "before": 45,
+    "after": 107
+  },
+  {
+    "file": "src/application/actions.ts",
+    "basis": "unchanged HEAD; source was clean before this Apply",
+    "before": 265,
+    "after": 273
+  },
+  {
+    "file": "src/application/action-resolution.ts",
+    "basis": "unchanged HEAD; source was clean before this Apply",
+    "before": 220,
+    "after": 221
+  },
+  {
+    "file": "src/application/archive-prepare.ts",
+    "basis": "unchanged HEAD; source was clean before this Apply",
+    "before": 144,
+    "after": 145
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d03-b-013-03",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\beta"
+  ],
+  "proposeRun": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md",
+  "proposeAction": "local-note-work-005-propose",
+  "result": "handoff-verified-awaiting-agent-planning"
+}

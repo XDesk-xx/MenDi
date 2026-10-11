@@ -2,7 +2,7 @@ import { selected } from './project.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
 import { currentRun, readRun } from '../adapters/runs.ts';
 import { createRun, writeAction } from '../adapters/action-store.ts';
-import { loadMethods } from '../adapters/methods.ts';
+import { loadChangeMethods } from '../adapters/methods.ts';
 import { archivedCount } from '../core/archive.ts';
 import { assertActionStart } from '../core/actions.ts';
 import { MendiError, text } from '../core/errors.ts';
@@ -99,7 +99,7 @@ export function prepareArchive(input: StartInput, options: ActionOptions = {}) {
   }
   const prior = check(workspace);
   const tools = input.tool ? [input.tool] : [];
-  const methods = loadMethods('archive', tools, options.methodsRoot);
+  let methods = loadChangeMethods('archive', tools, root, options.methodsRoot);
   const result = writeAction(
     root,
     'archive-prepare',
@@ -107,6 +107,7 @@ export function prepareArchive(input: StartInput, options: ActionOptions = {}) {
       const verified = check(current);
       if (JSON.stringify(verified) !== JSON.stringify(prior))
         throw new MendiError('archive-input-changed', '锁内直接输入已变化。');
+      methods = loadChangeMethods('archive', tools, root, options.methodsRoot);
       return createRun(
         root,
         current,

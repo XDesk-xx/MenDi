@@ -1,0 +1,104 @@
+{
+  "changeName": "local-note-work",
+  "schemaName": "spec-driven",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+    "changesDir": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "changeRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work",
+  "artifactPaths": {
+    "proposal": {
+      "outputPath": "proposal.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\proposal.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\proposal.md"
+      ]
+    },
+    "specs": {
+      "outputPath": "specs/**/*.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\specs\\**\\*.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\specs\\local-notes\\spec.md"
+      ]
+    },
+    "design": {
+      "outputPath": "design.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\design.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\design.md"
+      ]
+    },
+    "tasks": {
+      "outputPath": "tasks.md",
+      "resolvedOutputPath": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\tasks.md",
+      "existingOutputPaths": [
+        "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha\\openspec\\changes\\local-note-work\\tasks.md"
+      ]
+    }
+  },
+  "isPlanningComplete": true,
+  "isComplete": true,
+  "applyRequires": [
+    "tasks"
+  ],
+  "nextSteps": [
+    "All planning artifacts are complete. Run openspec instructions apply --change \"local-note-work\" --json to inspect implementation progress."
+  ],
+  "actionContext": {
+    "mode": "repo-local",
+    "sourceOfTruth": "repo",
+    "planningArtifacts": [
+      "proposal",
+      "specs",
+      "design",
+      "tasks"
+    ],
+    "linkedContext": [],
+    "allowedEditRoots": [
+      "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha"
+    ],
+    "requiresAffectedAreaSelection": false,
+    "constraints": [
+      "Repo-local change artifacts and implementation edits are scoped to this project."
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "outputPath": "proposal.md",
+      "status": "done",
+      "requires": []
+    },
+    {
+      "id": "specs",
+      "outputPath": "specs/**/*.md",
+      "status": "done",
+      "requires": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "design",
+      "outputPath": "design.md",
+      "status": "done",
+      "requires": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "tasks",
+      "outputPath": "tasks.md",
+      "status": "done",
+      "requires": [
+        "specs",
+        "design"
+      ]
+    }
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+    "source": "nearest"
+  }
+}

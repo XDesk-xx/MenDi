@@ -1,0 +1,40 @@
+{
+  "name": "mendi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.20.0 <23"
+  },
+  "bin": {
+    "mendi": "dist/drivers/cli.js"
+  },
+  "files": [
+    "dist/",
+    "skills/",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "scripts": {
+    "format": "biome format --write src scripts tests",
+    "format:check": "biome format src scripts tests",
+    "lint": "biome lint src scripts tests",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json",
+    "typecheck:scripts": "tsc -p tsconfig.scripts.json",
+    "test": "pnpm build && node --test --test-concurrency=2 tests/*.test.ts",
+    "test:ui": "node scripts/test-ui.ts",
+    "prepare:ui-tests": "node scripts/prepare-ui-tests.ts",
+    "prepare:installation-tests": "node scripts/prepare-installation-tests.ts",
+    "test:installation": "node --test tests/installation/*.test.ts",
+    "build": "tsc",
+    "start": "node dist/drivers/cli.js"
+  }
+}

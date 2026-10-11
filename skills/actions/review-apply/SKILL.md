@@ -6,6 +6,8 @@ role: reviewer
 
 # review-apply 阶段方法
 
+独立审核使用本自有方法；`methods.upstream` 无强制 Author 方法。按当前变化核对实际实现、来源及 operation instructions，不执行 Apply Author 写入流程代替审核；目标方法交接与语义完成分别以返回内容和实际结果判断。
+
 必要输入是固定 Author 提交、受审合同、实际实现与直接验证结果。核对变更行为、失败路径与既有兼容性，按风险重跑关键测试；工具通过只证明其覆盖范围。修订补审关注变化与受影响部分，保留旧 verdict。
 
 UI 范围按需读取 Storybook 指导，核对目标 / 版本、预览归属与有限测试退出、修改后的新浏览器观察及结果。根工程与独立 UI 目标各自 typecheck 不可漏验；MCP 只认证宿主实际发现 / 调用能力，未启用时核对无 MCP 主路径，Storybook review URL 不代替本次独立审核。

@@ -1,0 +1,12 @@
+{
+  "affectedHistoricalTrackedFiles": "unchanged",
+  "skillsHeaders": "valid",
+  "planningFiles": [
+    "design.md",
+    "local-notes-spec.md",
+    "proposal.md",
+    "tasks.md"
+  ],
+  "rootTasks": 15,
+  "packageLock": "unchanged"
+}

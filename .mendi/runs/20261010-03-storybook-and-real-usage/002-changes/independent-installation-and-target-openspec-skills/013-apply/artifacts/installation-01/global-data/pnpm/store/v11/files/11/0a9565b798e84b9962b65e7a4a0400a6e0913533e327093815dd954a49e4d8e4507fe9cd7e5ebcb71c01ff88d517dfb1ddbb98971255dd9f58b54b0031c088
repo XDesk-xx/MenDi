@@ -1,0 +1,51 @@
+export declare const testKinds: readonly ["focused", "fast", "full"];
+export type TestKind = (typeof testKinds)[number];
+export type TestOutcome = 'not-run' | 'passed' | 'failed' | 'interrupted' | 'unknown';
+export interface TestExecution {
+    formatVersion: 1;
+    executionId: string;
+    kind: TestKind;
+    projectRoot: string;
+    cwd: string;
+    deliveryId: string;
+    changeId: string | null;
+    actorId: string;
+    scope: 'command';
+    formalDeliveryTest: false;
+    command: {
+        executable: string;
+        args: string[];
+        dependencyPolicy: 'warn';
+    };
+    dependencyCheck: {
+        executable: string;
+        args: string[];
+        dependencyPolicy: 'error';
+        exitCode: 0;
+    };
+    scriptName: string;
+    scriptText: string;
+    startedAt: string;
+    finishedAt: string | null;
+    executionState: 'prepared' | 'running' | 'finished';
+    outcome: TestOutcome;
+    exitCode: number | null;
+    signal: string | null;
+    pid: number | null;
+    stdoutRef: string;
+    stderrRef: string;
+    reason?: string;
+    stop?: {
+        confirmed: boolean;
+        exitCode: number | null;
+        stdout: string;
+        stderr: string;
+    };
+}
+export declare function testKind(value: unknown): TestKind;
+export declare function executionLocation(id: string, deliveryId: string): {
+    number: number;
+    kind: "focused" | "fast" | "full";
+    ref: string;
+};
+export declare function parseExecution(value: unknown, root: string, deliveryId: string, id: string): TestExecution;

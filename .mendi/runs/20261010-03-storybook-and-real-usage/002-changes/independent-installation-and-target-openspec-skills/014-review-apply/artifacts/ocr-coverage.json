@@ -1,0 +1,73 @@
+{
+  "mode": "delegate",
+  "llmInvoked": false,
+  "total_files": 10,
+  "reviewed_files": 10,
+  "skipped_files": 0,
+  "coverage_rate": 1,
+  "scope": "OCR selected path/status pairs only; not repository or test coverage",
+  "files": [
+    {
+      "path": "biome.json",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "src/application/action-resolution.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "src/application/archive-prepare.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "tests/action-support.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "tests/helpers.ts",
+      "status": "modified",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "scripts/prepare-installation-tests.ts",
+      "status": "added",
+      "disposition": "reviewed"
+    },
+    {
+      "path": "tests/target-method-support.ts",
+      "status": "added",
+      "disposition": "reviewed"
+    }
+  ],
+  "supplemental": [
+    "tests/target-methods.test.ts",
+    "tests/target-method-handoff.test.ts",
+    "tests/installation/handoff.test.ts",
+    "tests/ui/results.test.ts",
+    "README.md",
+    "openspec/config.yaml",
+    "skills/actions/{explore,propose,apply,archive,review-explore,review-propose,review-apply}/SKILL.md",
+    "skills/tools/openspec/SKILL.md",
+    "current Change contract and 013 direct evidence"
+  ],
+  "findings": []
+}

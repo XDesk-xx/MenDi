@@ -1,0 +1,13 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "list",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"changes\": [\n    {\n      \"name\": \"independent-installation-and-target-openspec-skills\",\n      \"completedTasks\": 15,\n      \"totalTasks\": 15,\n      \"lastModified\": \"2026-10-10T17:01:47.385Z\",\n      \"status\": \"complete\"\n    }\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

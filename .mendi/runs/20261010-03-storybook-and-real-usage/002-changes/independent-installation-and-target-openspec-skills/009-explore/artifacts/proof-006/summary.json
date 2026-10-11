@@ -1,0 +1,24 @@
+{
+  "result": "proof-supported",
+  "platform": "win32",
+  "node": "v22.23.2",
+  "pnpmEntry": "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+  "installation": "D:\\tools\\mendi\\proofs\\d03-b-009\\proof-006",
+  "independentBundledPaths": true,
+  "targetMethodHandoff": true,
+  "metadataDistinguished": true,
+  "candidateNegativeCases": 4,
+  "productContinueFailurePreservedBytes": true,
+  "currentProductGapConfirmed": true,
+  "existingChangeCount": 1,
+  "applyState": "ready",
+  "noReviewerRun": true,
+  "noArchiveExecuted": true,
+  "limitations": [
+    "Explore 候选读取未接入产品",
+    "离线安装使用已有 store，非冷安装认证",
+    "不可读使用 EISDIR，非 ACL 认证",
+    "只有 Windows / pnpm 与当前上游基线",
+    "未认证 WebCodex、Vue、MCP 或完整真实交付"
+  ]
+}

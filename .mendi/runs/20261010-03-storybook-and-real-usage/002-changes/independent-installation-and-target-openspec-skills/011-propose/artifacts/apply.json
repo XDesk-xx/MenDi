@@ -1,0 +1,143 @@
+{
+  "changeName": "independent-installation-and-target-openspec-skills",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\specs\\action-runs\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 15,
+    "complete": 0,
+    "remaining": 15
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 在方法 adapter 实现单一目标来源、安全路径、普通文件、name / 非空正文 / generatedBy 1.14.1 检查；用 `tests/target-methods.test.ts` 覆盖 version 1.0 与生成基线区分、缺失、EISDIR、错身份 / 基线、空正文及 junction 越界，验证不回退其他来源。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 5
+    },
+    {
+      "id": "2",
+      "description": "1.2 实现固定阶段映射与即时 `methods.upstream`，保留 stage / guidance 和原自有方法加载入口；测试所有 Author / revise / Review / Archive 映射及 Apply + Storybook 组合，断言真实来源、目标和内容，Review 无必需 Author 方法。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 6
+    },
+    {
+      "id": "3",
+      "description": "1.3 修订自有 Explore / Propose / Apply 与 OpenSpec 工具指导，写清目标准备、已绑定 Change 的首次产物入口、修订适用条件及内容交接限度；通过方法加载测试和逐项指导核对，不改目标官方方法或新增注册表。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "4",
+      "description": "2.1 为 start / continue 接入组合方法并在占号前及锁内 createRun 前核对当前必要方法；统一 `tests/action-support.ts` 的受控方法准备，测试失败前后当前 Run / manifest 字节和占号不变、恢复后新进程继续读取新正文，沿用既有写入失败现场规则。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 11
+    },
+    {
+      "id": "5",
+      "description": "2.2 在 Owner resolve 的实际接收阶段和 Archive 准备接入同一规则；补 Author handoff / revise / rollback 缺方法拒绝、Reviewer 接收无 Author 方法前置、Archive 缺方法无占号及现有一次原生同步 / 本地 finish 回归，确认未旁路角色与直接批准。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 12
+    },
+    {
+      "id": "6",
+      "description": "2.3 补旧 Run 无 upstream 字段、未用 sync / Storybook 缺失、历史说明失效、未知 Ref、查询 / save / submit / diagnose 兼容回归；相关 `action-*`、`query`、`operation-inputs` 与 Archive tests 通过，仍拒绝当前必要输入缺失和不安全路径。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "7",
+      "description": "2.4 更新自有修订、Review、Archive 方法的具体分工与停止说明；验证 Reviewer 不调用 Author 写入流程，首次 Propose 不 new 第二 Change，Archive 不先 sync 再 native，execute / finish 无新增方法前置；旧 Run、编号与 verdict 保持。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "8",
+      "description": "3.1 新增受控 TypeScript `scripts/prepare-installation-tests.ts` 与 `tests/installation/`，准备脚本显式正常根构建 / pack / 开发仓库外新目录安装并生成双目标方法；增加 `pnpm test:installation` 显式执行入口和 Biome 维护目录，核对实际文件发现、scripts / tests tsc 与准备缺失时明确拒绝，原 proof 不扩写。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "9",
+      "description": "3.2 从新安装 CLI / 自有方法、新进程与不同 cwd 对 alpha / beta 验证目标方法来源、真实正文、写入隔离、实际产品缺方法 start / continue 失败及 Storybook 并用；安装 tests 断言新字段及旧状态保护，必要输出保存当前 Run，安装根与 `.tmp` 可重建。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "10",
+      "description": "3.3 在真实隔离已绑定 Change 实际消费产品交接的 propose 方法及逐项 instructions，按依赖形成四类规划产物并体现目标 context / rules；用固定 CLI strict validate / list 核对仅一个 Change、任务未实施，保存真实使用摘要，不以模拟正文或 readiness 代替 Agent 工作。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "11",
+      "description": "3.4 在 README 提供简短稳定安装和目标准备入口，区分安装根 / 目标根 / CLI，列明实际 Windows / Node 22.23.2 / pnpm 11.22.0 / OpenSpec 1.14.1 及其他组合未认证；从新安装按示例核对，保留 AGENTS 规则与冲突报告，不自动装可选工具。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "12",
+      "description": "4.1 将 UI results 的 pnpm 参数改为既有 `pnpmEntry`，明确正常根构建与目标严格依赖预检的环境分工；用另一真实稳定 pnpm 入口运行受影响有限结果场景并核对命令 / 新结果，缺入口与错版本仍失败，产品依赖预检及禁止自动安装行为不变。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "13",
+      "description": "4.2 收敛 README / OpenSpec context 为工程、方法、当前状态入口与必要背景，历史过程从最新 Run 定位；核对保留操作 guidance、项目已有规则、短指令入口和链接。升级仅路线图预留，B / C、manual-bootstrap、A 的归档历史和批准不变。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "14",
+      "description": "5.1 执行普通 `pnpm check`、受影响的完整快速 `pnpm test`、显式安装 tests 及本次必要 UI 结果回归，固定 OpenSpec strict validate 当前 Change；简记实际命令 / 结果 / 限制，未变化 A / Archive 结论可沿用，不执行正式 Delivery Full Test。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "15",
+      "description": "5.2 在当次 Author Run 汇总实施与 proof，列出 src / tests / scripts 各自维护代码行数最多前三名及可靠增长 / 职责判断，必要整理先于扩展；保存当前直接交接，停在独立 Review Apply，不自签 verdict，不新增行数 / hash / 引用 gate。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\independent-installation-and-target-openspec-skills\\tasks.md",
+      "line": 31
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\n当前选择 MVP-D03 保持 open / manual-bootstrap；MVP-D03-A 已实际归档并 checkpoint，累计完成 Change 为 8。Owner 已授权激活 MVP-D03-B independent-installation-and-target-openspec-skills，009 Explore 已由 010 Review Explore 独立批准，当前交 Author Propose；批次复用 002-changes，目标方法读取候选尚未接入产品，C 未激活。当前状态读取 manifest 与最近交接 Run。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行、Close / Reopen、新 Delivery Open 与指定历史结果读取。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\nMVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。\nMVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。\nMVP-D02-C delivery-close-and-reopen 经 029 独立批准 028 后由 030 实际归档到 openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen；D02 A / B / C 均已归档，无活动 Change，累计完成数为 7。Owner 授权的 031 正式 Full Test passed（完整 pnpm test 193/193、pnpm check 与六份主规格 strict validate 通过，受测提交 4355a6d）仍适用；本项目 D02 已在 032 人工 Close，保持 manual-bootstrap，等待 Owner 明确后续范围与独立授权。旧 Run / verdict、材料语义判断和取消 unknown 限制保留，不迁移人工历史，不自动 Reopen / 新 Open、Git 或下一 Change。\nMVP-D03 按根路线图 §6.1 / §6.2 / §7 推进：A 已归档，B 的 009 完成稳定安装、自有方法随包、目标上游 Skills 来源 / 基线 / 正文交接、已绑定 Change 入口与写入前失败的有限 proof，当前等待独立审核；C 留待真实 Vue / 无 UI 完整交付。MCP 未认证，不从 HTML 结果推导 Vue / 冷安装支持；Git、下一阶段和正式 Full Test / Close 保持各自授权边界。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

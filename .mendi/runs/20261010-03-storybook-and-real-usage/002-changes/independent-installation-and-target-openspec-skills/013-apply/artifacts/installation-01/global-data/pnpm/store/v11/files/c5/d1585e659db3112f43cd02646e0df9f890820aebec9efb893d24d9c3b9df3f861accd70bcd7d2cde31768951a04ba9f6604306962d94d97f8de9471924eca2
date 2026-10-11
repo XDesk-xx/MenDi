@@ -1,0 +1,61 @@
+import type { TestOutcome } from './test-execution.ts';
+import { type Workspace } from './records.ts';
+export interface Declaration {
+    collection: string[];
+    basis: {
+        materials: string;
+        changes: string;
+        commit?: string;
+    };
+}
+export declare function declaration(value: unknown): Declaration;
+export interface DeliveryScope {
+    goal: string;
+    plannedChanges: {
+        slot: string;
+        title: string;
+        dependsOn: string[];
+    }[];
+    completed: {
+        slot: string;
+        changeId: string;
+        archiveOrdinal: number;
+    }[];
+}
+export declare function completionScope(workspace: Workspace): DeliveryScope;
+export declare function verificationScope(workspace: Workspace): DeliveryScope;
+export declare function parseVerificationScope(value: unknown): DeliveryScope;
+export interface ApprovalFact {
+    changeId: string;
+    archiveRunRef: string;
+    reviewRunRef: string;
+    authorRunRef: string;
+    authorActor: string;
+    reviewerActor: string;
+}
+export interface FullTest extends Declaration {
+    scope: DeliveryScope;
+    approvals: ApprovalFact[];
+    repairApproval?: {
+        reviewRunRef: string;
+        authorRunRef: string;
+        authorActor: string;
+        reviewerActor: string;
+    };
+    entry: {
+        scriptName: string;
+        scriptText: string;
+        packageManager?: string;
+        pnpmBin: string;
+    };
+    phase: 'prepared' | 'running' | 'finished';
+    executionId: string | null;
+    outcome: TestOutcome;
+    reason?: string;
+}
+export interface Repair {
+    failedFullTestRunRef: string;
+    scope: DeliveryScope;
+    collection: string[];
+    reason: string;
+}

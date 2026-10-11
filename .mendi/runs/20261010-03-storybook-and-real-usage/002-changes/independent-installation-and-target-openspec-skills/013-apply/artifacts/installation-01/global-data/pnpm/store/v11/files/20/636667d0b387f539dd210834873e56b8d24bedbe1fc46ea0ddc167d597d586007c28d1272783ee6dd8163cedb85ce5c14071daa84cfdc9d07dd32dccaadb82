@@ -1,0 +1,36 @@
+import { type DeliveryDocument } from './delivery-runs.ts';
+import { type ApprovalFact } from '../core/delivery-verification.ts';
+import type { Workspace } from '../core/records.ts';
+export declare function same(left: unknown, right: unknown): boolean;
+export declare function firstApprovals(root: string, workspace: Workspace): {
+    approvals: ApprovalFact[];
+    refs: string[];
+};
+export declare function inspectFullTest(root: string, workspace: Workspace, run: DeliveryDocument, ownLock?: boolean): {
+    child?: import("../core/test-execution.ts").TestExecution | undefined;
+    outcome: import("../core/test-execution.ts").TestOutcome;
+    stable: boolean;
+    executionId: string | null;
+    collection: string[];
+    basis: {
+        materials: string;
+        changes: string;
+        commit?: string;
+    };
+    entry: {
+        scriptName: string;
+        scriptText: string;
+        packageManager?: string;
+        pnpmBin: string;
+    };
+    scopeMatch: "match" | "changed" | "unavailable";
+    commandMatch: "match" | "changed" | "unavailable";
+    materialApplicability: "requires-semantic-check";
+};
+export declare function currentFailure(root: string, workspace: Workspace, ref: string, ownLock?: boolean): DeliveryDocument;
+export declare function repairAuthor(root: string, workspace: Workspace, ref: string, actor?: string): DeliveryDocument;
+export declare function reviewRepairInputs(root: string, workspace: Workspace, review: DeliveryDocument, ownLock?: boolean): {
+    author: DeliveryDocument;
+    failure: DeliveryDocument;
+};
+export declare function assertBindingAfterVerification(root: string, workspace: Workspace): void;

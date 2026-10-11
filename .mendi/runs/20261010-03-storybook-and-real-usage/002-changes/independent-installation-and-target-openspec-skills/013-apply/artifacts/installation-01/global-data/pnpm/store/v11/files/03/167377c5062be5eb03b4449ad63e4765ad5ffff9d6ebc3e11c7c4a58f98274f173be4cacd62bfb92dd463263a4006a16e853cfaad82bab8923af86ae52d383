@@ -1,0 +1,15 @@
+import { type Workspace } from '../core/records.ts';
+export type WritePhase = 'lock-acquired' | 'manifest-written' | 'before-entry-commit' | 'before-manifest-commit' | 'before-readback' | 'before-lock-release';
+export type ActionWritePhase = WritePhase | 'run-written' | 'before-run-commit' | 'after-invoking' | 'before-native-call' | 'native-returned' | 'before-none-observation' | 'before-archive-numbering' | 'after-count-commit' | 'after-archive-run-commit' | 'intent-written' | 'pending-written' | 'terminal-written' | 'lifecycle-manifest-written' | 'index-written';
+export type WriteObserver = (phase: ActionWritePhase, file: string) => void;
+export declare function readJson(file: string): unknown;
+export declare function readWorkspace(root: string, ownLock?: boolean, deliveryId?: string): Workspace | null;
+export interface ProjectLock {
+    lock: string;
+    owner: string;
+}
+export declare function acquireProjectLock(root: string, operation: string): ProjectLock;
+export declare function releaseProjectLock(root: string, lease: ProjectLock): void;
+export declare function lockedWrite<T>(root: string, operation: string, action: (committed: string[]) => T, observe?: WriteObserver, retainOnFailure?: boolean): T;
+export declare function createWorkspace(root: string, project: Record<string, unknown>, manifest: Record<string, unknown>, observe?: WriteObserver): Workspace;
+export declare function updateWorkspace(root: string, update: (current: Workspace) => Record<string, unknown>, observe?: WriteObserver): Workspace;

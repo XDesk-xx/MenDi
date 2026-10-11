@@ -1,0 +1,21 @@
+{
+  "actualArchive": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+  "archiveOrdinal": 9,
+  "sourceAbsent": true,
+  "activeChangeId": null,
+  "upstream": null,
+  "openChanges": 0,
+  "next": {
+    "action": "change-checkpoint",
+    "status": "awaiting-owner",
+    "role": "author",
+    "archiveRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+    "reason": "015 已实际归档 MVP-D03-B，累计编号 009；等待显式 Change checkpoint，C 尚未激活。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "lockReleased": true,
+  "initialHandoffCorrection": "next.role owner was rejected; corrected to supported author, status remains awaiting-owner; preserved initial query output; no second archive",
+  "retainedPriorRun": "014 review-apply approved",
+  "srcTestsScripts": "unchanged during archive"
+}

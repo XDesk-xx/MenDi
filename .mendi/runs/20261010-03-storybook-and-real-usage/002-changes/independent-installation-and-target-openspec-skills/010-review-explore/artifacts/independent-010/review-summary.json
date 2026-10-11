@@ -1,0 +1,55 @@
+{
+  "installation": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\beta"
+  ],
+  "cases": [
+    {
+      "name": "missing",
+      "rejected": true,
+      "manifestUnchanged": true
+    },
+    {
+      "name": "wrong-baseline",
+      "rejected": true,
+      "manifestUnchanged": true
+    },
+    {
+      "name": "wrong-identity",
+      "rejected": true,
+      "manifestUnchanged": true
+    },
+    {
+      "name": "empty-body",
+      "rejected": true,
+      "manifestUnchanged": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "missing-bundled",
+      "exitCode": 1
+    },
+    {
+      "name": "query-missing-bundled",
+      "exitCode": 0
+    },
+    {
+      "name": "cross-cwd-start",
+      "exitCode": 0
+    },
+    {
+      "name": "target-gap",
+      "exitCode": 0
+    }
+  ],
+  "attempt1": "Reviewer assertion incorrectly expected no .mendi/runs after delivery open. Existing 001-delivery-open verified; skill-unavailable was correct. Corrected to compare existing Run contents and manifest; product unchanged.",
+  "productGapConfirmed": true,
+  "result": "independent-key-boundaries-confirmed",
+  "limits": [
+    "Candidate not product integration",
+    "Offline existing store",
+    "No UI/MCP/full lifecycle/cold install certification"
+  ]
+}

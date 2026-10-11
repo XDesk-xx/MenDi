@@ -1,0 +1,8 @@
+import { type RunDocument } from './runs.ts';
+import { type WriteObserver } from './workspace.ts';
+import { type Workspace } from '../core/records.ts';
+export declare function completeArchive(root: string, workspace: Workspace, initial: RunDocument, written: string[], observe?: WriteObserver): {
+    workspace: Workspace;
+    run: RunDocument;
+    result: "archived";
+};

@@ -1,0 +1,6 @@
+已显式准备 D:\Projects\MenDi\.tmp\d03-b-014-review-ui\official-cli
+已显式准备 D:\Projects\MenDi\.tmp\d03-b-014-review-ui\environment
+已显式准备 D:\Projects\MenDi\.tmp\d03-b-014-review-ui\preview
+已显式准备 D:\Projects\MenDi\.tmp\d03-b-014-review-ui\unknown-service
+已显式准备 D:\Projects\MenDi\.tmp\d03-b-014-review-ui\finite-results
+设置 MENDI_UI_TARGETS_DIR 为该目录，再运行 test:ui；未认证冷安装或其他平台。

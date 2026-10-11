@@ -1,0 +1,19 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-HYad1c\\alpha",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "init",
+    "--tools",
+    "codex",
+    "--profile",
+    "core",
+    "--language",
+    "Chinese",
+    "--no-animation"
+  ],
+  "exitCode": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "× Error: --language does not overwrite an existing OpenSpec config. Add the language instruction to its context field instead.\n"
+}

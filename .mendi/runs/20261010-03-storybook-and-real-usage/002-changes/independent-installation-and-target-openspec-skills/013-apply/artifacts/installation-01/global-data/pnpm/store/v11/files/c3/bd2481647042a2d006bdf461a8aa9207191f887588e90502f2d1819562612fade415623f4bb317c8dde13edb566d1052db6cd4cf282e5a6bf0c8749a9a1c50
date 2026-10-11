@@ -1,0 +1,24 @@
+import { type DeliveryRunRecord } from '../core/delivery-runs.ts';
+import { type Workspace } from '../core/records.ts';
+import { type WriteObserver } from './workspace.ts';
+export interface DeliveryDocument {
+    ref: string;
+    header: Record<string, unknown>;
+    record: DeliveryRunRecord;
+    body: string;
+}
+export declare function readDeliveryRun(root: string, ref: string, id: string): DeliveryDocument;
+export declare function currentDeliveryRun(root: string, workspace: Workspace): DeliveryDocument | null;
+export declare function currentProgress(root: string, workspace: Workspace): import("./runs.ts").RunDocument | DeliveryDocument | null;
+export declare function createDeliveryRun(root: string, workspace: Workspace, seed: Omit<DeliveryRunRecord, 'runNumber' | 'actionId'> & {
+    actionId?: string;
+}, written: string[], observe?: WriteObserver): {
+    workspace: Workspace;
+    run: DeliveryDocument;
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+};
+export declare function replaceDeliveryDraft(root: string, run: DeliveryDocument, header: Record<string, unknown>, body: string, written: string[], observe?: WriteObserver): DeliveryDocument;

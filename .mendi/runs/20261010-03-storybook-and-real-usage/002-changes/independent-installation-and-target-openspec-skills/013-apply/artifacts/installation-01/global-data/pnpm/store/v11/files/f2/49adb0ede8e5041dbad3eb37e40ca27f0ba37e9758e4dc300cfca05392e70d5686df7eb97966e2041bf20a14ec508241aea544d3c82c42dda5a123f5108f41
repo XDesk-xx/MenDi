@@ -1,0 +1,92 @@
+import { type ArchiveRecord } from './archive.ts';
+export declare const actionTypes: readonly ["explore", "propose", "apply", "archive", "review-explore", "review-propose", "review-apply", "revise-explore", "revise-propose", "revise-apply"];
+export type ActionType = (typeof actionTypes)[number];
+export type Role = 'author' | 'reviewer';
+export type Phase = 'explore' | 'propose' | 'apply' | 'archive';
+export type Verdict = 'approved' | 'changes-requested' | 'rejected';
+export interface OwnerDecision {
+    resolution: 'handoff' | 'revise' | 'rollback';
+    role: 'owner';
+    actorId: string;
+    reason: string;
+    sourceRunRef: string;
+    targetRole: Role;
+    targetActorId: string;
+    phase: Phase;
+}
+export interface RunRecord {
+    formatVersion: 1;
+    recordingMode: 'product';
+    deliveryId: string;
+    changeId: string;
+    runNumber: number;
+    actionId: string;
+    actionType: ActionType;
+    role: Role;
+    actorId: string;
+    status: 'draft' | 'submitted';
+    stageSkill: string;
+    toolGuidance: string[];
+    outcome?: 'continuing' | 'complete';
+    result?: string;
+    authorRunRef?: string;
+    revisesRunRef?: string;
+    verdict?: Verdict;
+    ownerDecision?: OwnerDecision;
+    archive?: ArchiveRecord;
+}
+export declare function actionDefinition(value: unknown): {
+    type: "review-apply" | "explore" | "propose" | "apply" | "archive" | "review-explore" | "review-propose" | "revise-explore" | "revise-propose" | "revise-apply";
+    phase: Phase;
+    review: boolean;
+    revision: boolean;
+    role: Role;
+    skill: "review-apply" | "review-explore" | "review-propose" | "revise-explore" | "revise-propose" | "revise-apply" | Phase;
+};
+export declare function runLocation(ref: string, deliveryId: string, changeId: string): {
+    type: "review-apply" | "explore" | "propose" | "apply" | "archive" | "review-explore" | "review-propose" | "revise-explore" | "revise-propose" | "revise-apply";
+    phase: Phase;
+    review: boolean;
+    revision: boolean;
+    role: Role;
+    skill: "review-apply" | "review-explore" | "review-propose" | "revise-explore" | "revise-propose" | "revise-apply" | Phase;
+    number: number;
+    batchId: string;
+};
+export declare function parseRun(value: unknown, ref: string, deliveryId: string, changeId: string): RunRecord;
+export declare function actionNext(record: RunRecord, ref: string, archiveCompleted?: boolean): {
+    action: string;
+    status: string;
+    reason: string;
+    currentRunRef: string;
+    source: string;
+    executable: boolean;
+    role: Role;
+} | {
+    role: string;
+    action: string;
+    status: string;
+    reason: string;
+    authorRunRef: string | undefined;
+    source: string;
+    executable: boolean;
+} | {
+    role: string;
+    action: string;
+    status: string;
+    reason: string;
+    revisesRunRef: string | undefined;
+    source: string;
+    executable: boolean;
+} | {
+    role: string;
+    action: string;
+    status: string;
+    reason: string;
+    source: string;
+    executable: boolean;
+};
+export declare function assertActionStart(current: {
+    ref: string;
+    record: RunRecord;
+} | null, type: ActionType, authorRef?: string, revisesRef?: string): void;

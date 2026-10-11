@@ -1,0 +1,5 @@
+import type { Binding } from './associations.ts';
+import type { Scope, Workspace } from './records.ts';
+export declare function currentBatchId(manifest: Record<string, unknown>): string | null;
+export declare function validateBatches(id: string, manifest: Record<string, unknown>, bindings: Binding[], scope: Scope): void;
+export declare function currentScopeBindings(workspace: Pick<Workspace, 'bindings' | 'scope'>): Binding[];

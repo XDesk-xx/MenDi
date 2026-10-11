@@ -1,0 +1,39 @@
+{
+  "stage": "apply",
+  "role": "author",
+  "installation": {
+    "applyStorybook": "both actual methods returned",
+    "agentPlanning": "four artifacts, 0/5 tasks, one change; strict valid",
+    "test": "1/1 passed",
+    "path": "D:/tools/mendi/acceptance/d03-b-013-03"
+  },
+  "check": "passed format, lint, all three tsc",
+  "focused": "11/11 passed",
+  "ui": {
+    "finiteResults": "1/1 passed",
+    "defect": "failed",
+    "baseline": "passed",
+    "pnpmEntry": "C:/Users/xuser/AppData/Local/node/corepack/v1/pnpm/11.22.0/bin/pnpm.cjs",
+    "fresh": "passed",
+    "browser": "2 -> 3, disabled, no page errors",
+    "mcp": "not-certified"
+  },
+  "archiveQueryRecheck": "3/3 passed",
+  "fixtureSubmitRecheck": "15 repetitions passed",
+  "fullRegression": "pnpm test exit 1, 203/204 passed, 1 fixture-submit failure; archive-query group recheck 3/3 passed, 15 fixture cycles passed; initial cause not confirmed",
+  "constraints": [
+    "manual-bootstrap preserved",
+    "no actual root archive",
+    "no Git mutation",
+    "no formal Delivery Full Test",
+    "no next Change",
+    "no cleanup"
+  ],
+  "supported": [
+    "Windows x64",
+    "Node 22.23.2",
+    "pnpm 11.22.0",
+    "OpenSpec 1.14.1",
+    "existing store offline explicit preparation"
+  ]
+}

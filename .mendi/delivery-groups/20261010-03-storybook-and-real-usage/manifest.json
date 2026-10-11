@@ -6,7 +6,7 @@
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-10",
   "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
-  "goal": "按目标项目现有 Storybook 配置、脚本与真实组件接入 UI 预览和交互验证；形成稳定独立安装与简短项目指导，在真实 UI / 非 UI 最小目标验证首版核心交付及 Reopen。",
+  "goal": "按目标项目现有 Storybook 配置、脚本与真实组件接入 UI 预览和交互验证；形成稳定独立安装、目标 OpenSpec 方法接入与简短项目指导，在真实 UI / 非 UI 最小目标验证首版核心交付及 Reopen。",
   "plannedChanges": [
     {
       "slot": "MVP-D03-A",
@@ -40,7 +40,8 @@
       "firstRun": "002",
       "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
       "changeIds": [
-        "storybook-lightweight-integration"
+        "storybook-lightweight-integration",
+        "independent-installation-and-target-openspec-skills"
       ]
     }
   ],
@@ -53,11 +54,20 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
       "archiveOrdinal": 8
+    },
+    {
+      "planningSlot": "MVP-D03-B",
+      "changeId": "independent-installation-and-target-openspec-skills",
+      "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+      "archiveOrdinal": 9
     }
   ],
   "activeChangeId": null,
   "exitCriteria": [
-    "A / B / C 按路线图完成、经独立审核并实际归档，首版范围可以独立安装和手动使用。",
+    "A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。",
     "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
     "固定安装在真实 UI / 非 UI 最小目标完成核心交付与 Reopen，初始空 .tmp 下可准备与验收，必要结果独立保存。",
     "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
@@ -69,12 +79,12 @@
     "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
   ],
   "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
   "stopBoundary": "awaiting-owner-instruction",
   "next": {
     "action": "change-next",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D03-A 已独立批准并实际归档，项目累计完成 8 个 Change；本次 change checkpoint 保存该边界，等待 Owner 明确激活 MVP-D03-B，正式 Full Test / Close 与 Git 后续操作保持独立授权。"
+    "reason": "MVP-D03-B 已独立批准并实际归档，项目累计完成 9 个 Change；本次 change checkpoint 保存该边界，等待 Owner 明确激活 MVP-D03-C，正式 Full Test / Close 与 Git 后续操作保持独立授权。"
   }
 }

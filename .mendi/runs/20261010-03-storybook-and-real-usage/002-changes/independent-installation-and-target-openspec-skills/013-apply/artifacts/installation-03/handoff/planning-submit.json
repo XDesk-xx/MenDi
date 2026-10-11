@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "operation": "run-submit",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "product",
+    "deliveryId": "installed-0",
+    "title": "受控安装验收",
+    "state": "open",
+    "goal": "稳定安装与真实目标方法接入验收",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "离线笔记",
+        "dependsOn": []
+      }
+    ],
+    "activeChangeId": "local-note-work",
+    "changeBindings": [
+      {
+        "changeId": "local-note-work",
+        "changeRef": "openspec/changes/local-note-work",
+        "planningSlot": "A",
+        "state": "active",
+        "batchId": "002-changes",
+        "latestRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md"
+      }
+    ]
+  },
+  "run": {
+    "ref": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md",
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "deliveryId": "installed-0",
+    "changeId": "local-note-work",
+    "runNumber": 5,
+    "actionId": "local-note-work-005-propose",
+    "actionType": "propose",
+    "role": "author",
+    "actorId": "installation-author",
+    "status": "submitted",
+    "stageSkill": "propose",
+    "toolGuidance": [
+      "storybook"
+    ],
+    "outcome": "complete",
+    "result": "四类真实规划产物完成，任务未实施"
+  },
+  "next": {
+    "source": "local-state",
+    "executable": false,
+    "role": "reviewer",
+    "action": "review-propose",
+    "status": "awaiting-review",
+    "reason": "Author 已完成提交，等待独立 Reviewer。",
+    "authorRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md"
+  }
+}

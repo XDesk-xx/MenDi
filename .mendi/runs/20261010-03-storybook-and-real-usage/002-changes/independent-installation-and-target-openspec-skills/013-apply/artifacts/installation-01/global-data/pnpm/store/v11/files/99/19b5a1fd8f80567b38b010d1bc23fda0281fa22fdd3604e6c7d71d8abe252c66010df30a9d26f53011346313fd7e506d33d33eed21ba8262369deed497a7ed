@@ -1,0 +1,18 @@
+import { type RunDocument } from './runs.ts';
+import { type WriteObserver, type ActionWritePhase } from './workspace.ts';
+import { type RunRecord } from '../core/actions.ts';
+import { type Workspace } from '../core/records.ts';
+export declare function replaceManagedFile(root: string, ref: string, content: string, written: string[], phase: ActionWritePhase, observe?: WriteObserver): void;
+export declare function writeAction<T>(root: string, operation: string, update: (workspace: Workspace, written: string[]) => T, observe?: WriteObserver): T;
+export declare function createRun(root: string, workspace: Workspace, seed: Omit<RunRecord, 'runNumber' | 'actionId'> & {
+    actionId?: string;
+}, written: string[], observe?: WriteObserver, initialBody?: string): {
+    run: RunDocument;
+    workspace: Workspace;
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+};
+export declare function replaceDraft(root: string, run: RunDocument, header: Record<string, unknown>, body: string, written: string[], observe?: WriteObserver): RunDocument;
