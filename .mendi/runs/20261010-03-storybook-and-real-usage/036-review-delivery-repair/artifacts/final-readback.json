@@ -1,0 +1,16 @@
+{
+  "readAt": "2026-10-11T17:08:04.797Z",
+  "verdict": "changes-requested",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/036-review-delivery-repair/run.md",
+  "next": {
+    "action": "delivery-repair",
+    "status": "awaiting-author-revision",
+    "role": "author",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/036-review-delivery-repair/run.md",
+    "reason": "036对035为changes-requested：当前测试与修复前副本一致，明确释放修复未在当前交接文件中；Author局部修订后独立补审，034正式failed保留，不直接Full Test。"
+  },
+  "fullTestUnchanged": true,
+  "changeBindingsUnchanged": true,
+  "testFileUnchanged": true,
+  "archivedChangeCount": 10
+}

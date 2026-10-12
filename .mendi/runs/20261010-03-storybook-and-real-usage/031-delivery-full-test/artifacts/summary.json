@@ -1,0 +1,94 @@
+{
+  "scope": "delivery",
+  "formalDeliveryTest": true,
+  "executionId": "manual-031-d03-full-test",
+  "outcome": "failed",
+  "commands": [
+    {
+      "id": "prepare-root-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1005,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-html-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1280,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-vue-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 905,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-ui-targets",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 23477,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-independent-installation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 19765,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "maintained-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 12779,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "root-regression",
+      "outcome": "failed",
+      "exitCode": 1,
+      "elapsedMs": 1502200,
+      "childAndLogPipesClosed": true
+    }
+  ],
+  "counts": {
+    "root-regression": {
+      "tests": "204",
+      "pass": "203",
+      "fail": "1",
+      "exitCode": 1
+    }
+  },
+  "failing": {
+    "id": "root-regression",
+    "outcome": "failed",
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/031-delivery-full-test/artifacts/root-regression.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/031-delivery-full-test/artifacts/root-regression.stderr.log"
+  },
+  "unexecutedSteps": [
+    "ui-product-scenes",
+    "installation-handoff",
+    "vue-check",
+    "vue-build",
+    "vue-storybook-build",
+    "vue-stories",
+    "main-specs-validation",
+    "root-status",
+    "root-next",
+    "vue-status",
+    "vue-next"
+  ],
+  "materialApplicability": {
+    "requiresSemanticCheck": true,
+    "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "currentCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "trackedDifferences": [
+      ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json"
+    ],
+    "unexpectedTrackedDifferences": [],
+    "sourceAndExecutionConfigurationUnchanged": true
+  }
+}

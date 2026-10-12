@@ -1,0 +1,32 @@
+{
+  "ownerInstruction": "授权本地恢复同一 045，处置已停止写入进程留下的本次锁，将 next.role 改为 author，核对查询并完成 D03 Close；不重跑测试、不改历史、不执行 Git。",
+  "startedAt": "2026-10-12T01:09:09.337Z",
+  "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+  "mode": "same-author-local-resume",
+  "originalWriter": {
+    "token": "c0524d0f-949e-4b74-8659-3254f2345d93",
+    "pid": 51384,
+    "operation": "manual-045-delivery-close",
+    "confirmedStopped": true
+  },
+  "originalFailure": "人工 next.role 仅接受author/reviewer；首次写入owner导致本地读回拒绝。",
+  "before": {
+    "state": "closed",
+    "nextRole": "owner",
+    "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+    "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+    "closedAt": "2026-10-12T01:06:40.057Z"
+  },
+  "originalInputAndScopeMatch": true,
+  "formalParentAnd18ChildResultsPassed": true,
+  "formalEvidenceRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+  "scope": "仅处置本次遗留锁、修正当前next.role并补045读回/完成记录；不重占号、不重跑测试、不改历史、不执行Git。",
+  "finishedAt": "2026-10-12T01:09:10.880Z",
+  "result": "completed",
+  "after": {
+    "state": "closed",
+    "nextRole": "author",
+    "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+    "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md"
+  }
+}

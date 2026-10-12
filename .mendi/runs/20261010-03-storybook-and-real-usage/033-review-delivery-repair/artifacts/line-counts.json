@@ -1,0 +1,44 @@
+{
+  "src": [
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "lines": 401
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "lines": 346
+    },
+    {
+      "path": "src/adapters/lifecycle-store.ts",
+      "lines": 336
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/action-write.test.ts",
+      "lines": 467
+    },
+    {
+      "path": "tests/planning-cli.test.ts",
+      "lines": 444
+    },
+    {
+      "path": "tests/delivery-repair.test.ts",
+      "lines": 394
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "lines": 678
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-d-explore.ts",
+      "lines": 487
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "lines": 463
+    }
+  ]
+}

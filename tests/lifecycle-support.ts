@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { completedTarget, formal, authorActor } from './delivery-support.ts';
-import { sandbox, command, isolatedEnv, cli, prepareChange } from './helpers.ts';
-import { pnpmEntry } from './test-support.ts';
+import { sandbox, isolatedEnv, cli, prepareChange } from './helpers.ts';
+import { prepareEmptyDependencies } from './test-support.ts';
 import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { bindChange } from '../src/application/project.ts';
@@ -24,11 +24,7 @@ export function lifecycleTarget() {
   }
   const root = path.join(sandbox(), 'project');
   fs.cpSync(seed, root, { recursive: true });
-  const installed = command(pnpmEntry, ['install', '--offline', '--ignore-scripts'], root, {
-    ...isolatedEnv(root),
-    COREPACK_ENABLE_NETWORK: '0',
-  });
-  assert.equal(installed.status, 0, installed.stdout + installed.stderr);
+  prepareEmptyDependencies(root);
   return root;
 }
 export function writeJson(root: string, ref: string, value: unknown) {

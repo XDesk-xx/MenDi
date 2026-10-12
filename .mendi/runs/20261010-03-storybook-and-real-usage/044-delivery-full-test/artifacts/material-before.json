@@ -1,0 +1,6 @@
+{
+  "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+  "actualWorktreeDifferences": " M src/adapters/test-store.ts\n M tests/delivery-support.ts\n M tests/lifecycle-support.ts\n M tests/sequential-support.ts\n M tests/test-support.ts\n?? tests/test-preparation.test.ts\n?? tests/test-store.test.ts\n",
+  "semanticBasis": "受测材料为ba3b992基准加032/033的Windows有界替换修复、042/043批准的明确释放测试及038已批准的空依赖准备优化五文件（含新test-preparation）。当前工作树不等同已提交Git内容；所有命令本次新执行，安装候选由当前build/pack产生。",
+  "repairReviewRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md"
+}

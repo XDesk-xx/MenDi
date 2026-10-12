@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-11T17:03:05.982Z",
+  "role": "author",
+  "scope": "delivery-repair",
+  "formalDeliveryTest": false,
+  "failedFullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/run.md",
+  "actualWrites": [
+    "tests/test-store.test.ts",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml",
+    "fresh .tmp diagnostic and normal test sandboxes"
+  ],
+  "productSourceEdited": false,
+  "failedInputsUnchanged": true,
+  "rootLockAbsent": true,
+  "tests": {
+    "total": 11,
+    "passed": 11,
+    "skipped": 0
+  },
+  "scriptsStrictTypecheckExitCode": 0,
+  "formatSingleFileExitCode": 0,
+  "verificationRef": "verified/focused-summary.json",
+  "basis": "current maintained test before snapshot; original source32/33 still applicable",
+  "limits": [
+    "034 exact release timestamp unavailable",
+    "unexpected test file restoration recorded, writer not identified; final candidate and final focused inputs stable",
+    "no formal Full Test rerun",
+    "cost groups only inspected, not optimized"
+  ]
+}

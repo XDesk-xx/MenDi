@@ -1,0 +1,212 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "manual-bootstrap",
+    "deliveryId": "20261010-03-storybook-and-real-usage",
+    "title": "Storybook 与实际使用",
+    "state": "closed",
+    "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D03-A",
+        "title": "Storybook 轻量接入",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+      },
+      {
+        "slot": "MVP-D03-B",
+        "title": "独立安装与简短项目指导",
+        "dependsOn": [
+          "MVP-D03-A"
+        ],
+        "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+      },
+      {
+        "slot": "MVP-D03-C",
+        "title": "最小真实交付验收",
+        "dependsOn": [
+          "MVP-D03-B"
+        ],
+        "roadmapSection": "MVP-D03-C：最小真实交付验收"
+      }
+    ],
+    "activeChangeId": null,
+    "changeBindings": [
+      {
+        "changeId": "storybook-lightweight-integration",
+        "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+        "planningSlot": "MVP-D03-A",
+        "state": "archived",
+        "archiveOrdinal": 8
+      },
+      {
+        "changeId": "independent-installation-and-target-openspec-skills",
+        "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+        "planningSlot": "MVP-D03-B",
+        "state": "archived",
+        "archiveOrdinal": 9
+      },
+      {
+        "changeId": "real-target-delivery-acceptance",
+        "changeRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+        "planningSlot": "MVP-D03-C",
+        "state": "archived",
+        "archiveOrdinal": 10
+      }
+    ],
+    "recorded": {
+      "id": "20261010-03-storybook-and-real-usage",
+      "planningSlot": "MVP-D03",
+      "title": "Storybook 与实际使用",
+      "state": "closed",
+      "recordingMode": "manual-bootstrap",
+      "openedOn": "2026-10-10",
+      "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+      "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D03-A",
+          "title": "Storybook 轻量接入",
+          "dependsOn": [],
+          "externalDependsOn": [
+            "MVP-D02-C"
+          ],
+          "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+        },
+        {
+          "slot": "MVP-D03-B",
+          "title": "独立安装与简短项目指导",
+          "dependsOn": [
+            "MVP-D03-A"
+          ],
+          "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+        },
+        {
+          "slot": "MVP-D03-C",
+          "title": "最小真实交付验收",
+          "dependsOn": [
+            "MVP-D03-B"
+          ],
+          "roadmapSection": "MVP-D03-C：最小真实交付验收"
+        }
+      ],
+      "changeBatches": [
+        {
+          "id": "002-changes",
+          "firstRun": "002",
+          "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
+          "changeIds": [
+            "storybook-lightweight-integration",
+            "independent-installation-and-target-openspec-skills",
+            "real-target-delivery-acceptance"
+          ]
+        }
+      ],
+      "changeBindings": [
+        {
+          "planningSlot": "MVP-D03-A",
+          "changeId": "storybook-lightweight-integration",
+          "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+          "archiveOrdinal": 8
+        },
+        {
+          "planningSlot": "MVP-D03-B",
+          "changeId": "independent-installation-and-target-openspec-skills",
+          "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+          "archiveOrdinal": 9
+        },
+        {
+          "planningSlot": "MVP-D03-C",
+          "changeId": "real-target-delivery-acceptance",
+          "changeRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
+          "archiveOrdinal": 10
+        }
+      ],
+      "activeChangeId": null,
+      "exitCriteria": [
+        "A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。",
+        "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+        "唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。",
+        "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+      ],
+      "outOfScope": [
+        "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+        "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+        "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+        "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+      ],
+      "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+      "stopBoundary": "owner-decision",
+      "next": {
+        "action": "owner-decision",
+        "status": "awaiting-owner-instruction",
+        "role": "author",
+        "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+        "reason": "D03基于044正式passed和当前材料适用性完成045 Close；等待Owner下一指令，Git不在本授权内。"
+      },
+      "fullTest": {
+        "recordingMode": "manual-bootstrap",
+        "scope": "delivery",
+        "formalDeliveryTest": true,
+        "phase": "finished",
+        "outcome": "passed",
+        "result": "passed",
+        "executionId": "manual-044-d03-full-test",
+        "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+        "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/plan.json",
+        "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/execution.json",
+        "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+        "testedWorktree": "受测材料为ba3b992基准加032/033的Windows有界替换修复、042/043批准的明确释放测试及038已批准的空依赖准备优化五文件（含新test-preparation）。当前工作树不等同已提交Git内容；所有命令本次新执行，安装候选由当前build/pack产生。",
+        "repairReviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md"
+      },
+      "closedOn": "2026-10-12",
+      "closedAt": "2026-10-12T01:06:40.057Z",
+      "closeRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+      "close": {
+        "recordingMode": "manual-bootstrap",
+        "scope": "delivery",
+        "status": "completed",
+        "result": "closed",
+        "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+        "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+        "closedAt": "2026-10-12T01:06:40.057Z",
+        "applicability": {
+          "conclusion": "applicable",
+          "materials": "src / scripts / skills、全部当前根测试（含test-store.test.ts及test-preparation.test.ts）、4份UI测试、安装接线测试、受控HTML及唯一Vue目标、依赖锁及执行配置、主规格与D03三个归档；Windows / Node 22.23.2 / pnpm11.22.0 / OpenSpec1.14.1。",
+          "changes": "相对044受测材料无实现、测试、方法或执行配置变化。本次仅新增045 Close及更新当前manifest、README和OpenSpec context；不改变正式测试范围或入口。",
+          "reason": "044为当前唯一正式Full Test指针，原八类18项全部在同次执行passed、进程与日志关闭；直接批准快照、当前归档绑定、命令声明及必要日志一致。044期间材料保持一致，关闭前当前维护材料无较044完成时间更新，明确释放修复与500ms同暂存文件有限重试仍在；038空依赖准备优化保持。上述当前范围可沿用044，无需重跑或拼接旧PASS。"
+        }
+      }
+    }
+  },
+  "upstream": null,
+  "next": {
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+    "reason": "D03基于044正式passed和当前材料适用性完成045 Close；等待Owner下一指令，Git不在本授权内。",
+    "source": "manual-bootstrap",
+    "executable": false
+  }
+}

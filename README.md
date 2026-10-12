@@ -55,7 +55,7 @@ Explore / 修订使用目标 explore；首次 Propose 对已绑定 Change 复用
 
 Run 按 `.mendi/runs/<delivery-id>/<操作序号>-<操作名称>/` 或同级 `<序号>-changes/<change-id>/<操作序号>-<操作名称>/` 保存；Delivery Run 连续编号，新 Delivery 从 001 开始，归档 ID 按项目累计成功数独立增长。submitted 历史与 verdict 不改；查询只消费当前必要输入，说明链接和未知 Ref 不成为运行前提。
 
-并发写使用独占锁，错误保留实际现场；诊断不解除锁。人工 manual-bootstrap 只支持查询，产品写命令不迁移开发历史。Owner 标签不认证真实身份，工具成功与 ready / all_done 不表示实际完成或批准。
+并发写使用独占锁，错误保留实际现场；诊断不解除锁。Windows 测试结果替换遇到 EPERM / EBUSY 时仅对同一暂存文件有限重试，等待预算 500ms；持续失败或直接输入改变仍停止，不重跑业务命令、不删除原结果或清锁。人工 manual-bootstrap 只支持查询，产品写命令不迁移开发历史。Owner 标签不认证真实身份，工具成功与 ready / all_done 不表示实际完成或批准。
 
 ## 显式安装验收
 
@@ -87,4 +87,4 @@ pnpm test:ui
 
 ## 开发交接
 
-当前状态读取 [D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json) 和最近 Run。D03保持open/manual-bootstrap，A/B/C已实际归档，累计10。[030 Author Archive](.mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md) 在029独立批准028、保留范围10/10后，仅归档根C，目录为 [010 real-target-delivery-acceptance](openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance)。唯一Vue目标仍停自身007批准后待Archive，本轮未执行其取消收口。真实失败、误下载和未认证能力由当前Run承接。本次Change checkpoint保存该归档边界，等待Owner正式Delivery Full Test授权；Close、push / PR / merge与清理另行授权，历史Run/verdict保持原样。
+当前状态读取[D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)与[045 Delivery Close](.mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md)。Owner授权后基于044新整次正式Full Test的passed结果完成收口，当前修复及038优化仍适用；A/B/C已归档、累计10、无活动根Change，D03为closed/manual-bootstrap。历史Run与verdict保持，取消的目标收口不恢复；等待Owner下一指令，本次未执行Git或清理。

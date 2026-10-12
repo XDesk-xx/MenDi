@@ -1,0 +1,22 @@
+{
+  "requestedSleepMs": 150,
+  "count": 36,
+  "releaseMinMs": 334.8821,
+  "releaseMaxMs": 517.6355,
+  "failed": [
+    {
+      "logRef": "holder-parallel-0.stdout.log",
+      "iteration": 0,
+      "releaseMs": 517.6355,
+      "elapsedMs": 511.1734999999999,
+      "attemptCount": 16,
+      "lastAttempt": {
+        "elapsedMs": 511.16419999999994,
+        "code": "EPERM"
+      },
+      "originalIntactOnFailure": true,
+      "stagedIntactOnFailure": true
+    }
+  ],
+  "limits": "新现场复现旧同步假定错误；034未记录具体释放时间，不能重建原当次精确时序或证明外部过滤进程。四进程并行是定向诊断，非原FullTest。"
+}

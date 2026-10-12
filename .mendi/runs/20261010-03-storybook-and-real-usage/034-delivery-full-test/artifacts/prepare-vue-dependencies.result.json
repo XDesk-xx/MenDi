@@ -1,0 +1,35 @@
+{
+  "id": "prepare-vue-dependencies",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-034-d03-full-test-prepare-vue-dependencies",
+  "stage": "preparation",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install",
+      "--frozen-lockfile",
+      "--offline",
+      "--ignore-scripts"
+    ],
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T16:16:53.294Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-vue-dependencies.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-vue-dependencies.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2698187,
+  "pid": 38968,
+  "finishedAt": "2026-10-11T16:16:54.375Z",
+  "elapsedMs": 1077,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

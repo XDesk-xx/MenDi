@@ -1,0 +1,35 @@
+{
+  "id": "prepare-html-dependencies",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-prepare-html-dependencies",
+  "stage": "preparation",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install",
+      "--frozen-lockfile",
+      "--offline",
+      "--ignore-scripts"
+    ],
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\storybook-project"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:11:12.829Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-html-dependencies.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-html-dependencies.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2699297,
+  "pid": 52168,
+  "finishedAt": "2026-10-11T18:11:13.540Z",
+  "elapsedMs": 709,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

@@ -1,0 +1,17 @@
+[WARN] Your node_modules are out of sync with your lockfile. The workspace structure has changed since last install
+TAP version 13
+# Subtest: 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+ok 1 - 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+  ---
+  duration_ms: 16317.5513
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16496.6154

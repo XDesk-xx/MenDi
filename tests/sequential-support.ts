@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import { testTarget, pnpmEntry } from './test-support.ts';
-import { command, isolatedEnv, prepareChange, scopeFile } from './helpers.ts';
+import { testTarget, prepareEmptyDependencies } from './test-support.ts';
+import { isolatedEnv, prepareChange, scopeFile } from './helpers.ts';
 import { openDelivery, bindChange } from '../src/application/project.ts';
 import { startAction, saveRun, submitRun } from '../src/application/actions.ts';
 import { archiveAction } from '../src/application/archive.ts';
@@ -28,11 +28,7 @@ const stageRunner: ProcessRunner = (entry, args, cwd) => {
 export function sequentialTarget() {
   const root = testTarget(false);
   const env = isolatedEnv(path.dirname(root));
-  const setup = command(pnpmEntry, ['install', '--offline', '--ignore-scripts'], root, {
-    ...env,
-    COREPACK_ENABLE_NETWORK: '0',
-  });
-  assert.equal(setup.status, 0, setup.stderr);
+  prepareEmptyDependencies(root);
   for (const [change, capability] of [
     ['proof-entry', 'example'],
     ['second-entry', 'second-example'],

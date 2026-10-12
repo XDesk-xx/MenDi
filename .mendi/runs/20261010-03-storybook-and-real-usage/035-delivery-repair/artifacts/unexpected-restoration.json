@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-11T16:58:39.890Z",
+  "file": "tests/test-store.test.ts",
+  "lastWriteAt": "2026-10-11T16:55:30.321Z",
+  "equalsPreRepair": true,
+  "nlink": 1,
+  "firstTestLoadedName": "Windows 删除共享拒绝，确认句柄释放后可替换同一 staged 文件",
+  "repeatObservedNames": [
+    "Windows 持续占用有界失败，保留原结果和唯一 staged 文件"
+  ],
+  "scope": "unexpected restoration during verification; writer not identified; do not credit partial repeat as both scenarios"
+}

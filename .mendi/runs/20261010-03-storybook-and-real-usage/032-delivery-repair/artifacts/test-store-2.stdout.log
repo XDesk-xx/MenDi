@@ -1,0 +1,67 @@
+TAP version 13
+# Subtest: Windows 短时删除共享拒绝后替换同一 staged 结果
+not ok 1 - Windows 短时删除共享拒绝后替换同一 staged 结果
+  ---
+  duration_ms: 1452.077
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-store.test.ts:101:1'
+  failureType: 'uncaughtException'
+  error: 'write EPIPE'
+  code: 'EPIPE'
+  stack: |-
+    afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    writeGeneric (node:internal/stream_base_commons:150:3)
+    Socket._writeGeneric (node:net:967:11)
+    Socket._write (node:net:979:8)
+    writeOrBuffer (node:internal/streams/writable:572:12)
+    _write (node:internal/streams/writable:501:10)
+    Writable.end (node:internal/streams/writable:823:17)
+    Socket.end (node:net:738:31)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-store.test.ts:122:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+  ...
+# Subtest: Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+ok 2 - Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+  ---
+  duration_ms: 1560.1551
+  type: 'test'
+  ...
+# Subtest: 其他 rename 错误立即传播，不删除原结果
+ok 3 - 其他 rename 错误立即传播，不删除原结果
+  ---
+  duration_ms: 16.9408
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 original，不覆盖现场
+ok 4 - Windows 重试拒绝已改变的 original，不覆盖现场
+  ---
+  duration_ms: 19.6805
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 staged，不覆盖现场
+ok 5 - Windows 重试拒绝已改变的 staged，不覆盖现场
+  ---
+  duration_ms: 41.2258
+  type: 'test'
+  ...
+# Subtest: Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+ok 6 - Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+  ---
+  duration_ms: 11439.2866
+  type: 'test'
+  ...
+# Subtest: 终态与错误身份在暂存写入前拒绝
+ok 7 - 终态与错误身份在暂存写入前拒绝
+  ---
+  duration_ms: 35.8288
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14897.9895

@@ -1,0 +1,63 @@
+{
+  "readAt": "2026-10-11T18:07:58.155Z",
+  "verdict": "approved",
+  "closedFinding": "D03-DR035-001",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md",
+  "next": {
+    "action": "delivery-full-test",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md",
+    "reason": "043批准042：当前明确释放候选与独立7项验证一致，回写隔离有效、D03-DR035-001关闭；038优化批准沿用。等待Owner授权新整次原完整Full Test，034 failed保留。"
+  },
+  "candidatePresent": true,
+  "candidateBytes": 9022,
+  "candidateMtime": "2026-10-11T18:01:09.531Z",
+  "fullTestUnchanged": true,
+  "changeBindingsUnchanged": true,
+  "archivedChangeCount": 10,
+  "topMaintainedPhysicalLines": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  }
+}

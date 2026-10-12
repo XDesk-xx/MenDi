@@ -1,0 +1,32 @@
+{
+  "id": "maintained-check",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-034-d03-full-test-maintained-check",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "check"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T16:17:35.589Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/maintained-check.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/maintained-check.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2655892,
+  "pid": 9280,
+  "finishedAt": "2026-10-11T16:17:49.347Z",
+  "elapsedMs": 13756,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

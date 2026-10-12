@@ -1,0 +1,429 @@
+{
+  "platform": "win32",
+  "node": "v22.23.2",
+  "os": "10.0.26200",
+  "directory": "D:\\Projects\\MenDi\\.tmp\\035-holder-timing-a8mM3t",
+  "groupElapsedMs": 10512.9035,
+  "observations": [
+    {
+      "iteration": 0,
+      "pid": 39112,
+      "requestedSleepMs": 150,
+      "releaseMs": 493.2342,
+      "elapsedMs": 515.6802,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 1.050899999999956,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 33.90599999999995,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 70.98709999999983,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 100.77459999999996,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 128.91779999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 160.15639999999985,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 200.5396999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 237.5288999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 267.13329999999996,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 297.6580999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 329.90189999999984,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 359.3245999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 389.67319999999995,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 420.6252999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 450.94129999999996,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 481.55759999999987,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=493.2342\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    },
+    {
+      "iteration": 1,
+      "pid": 28052,
+      "requestedSleepMs": 150,
+      "releaseMs": 484.3763,
+      "elapsedMs": 506.45759999999973,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 0.943199999999706,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 35.72649999999976,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 67.73929999999973,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 105.62069999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 164.53939999999966,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 206.76809999999978,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 241.41849999999977,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 270.1116999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 301.2748999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 332.8422999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 364.75769999999966,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 414.3463999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 442.22329999999965,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 473.9440999999997,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=484.3763\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    },
+    {
+      "iteration": 2,
+      "pid": 52804,
+      "requestedSleepMs": 150,
+      "releaseMs": 445.5154,
+      "elapsedMs": 465.5101999999997,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 1.2142999999996391,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 32.80279999999948,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 66.1916999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 97.01809999999932,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 131.10749999999916,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 187.98029999999926,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 216.96079999999984,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 248.73829999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 278.83859999999913,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 309.60719999999947,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 342.6790999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 372.72179999999935,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 402.9897999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 434.96549999999934,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=445.5154\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    },
+    {
+      "iteration": 3,
+      "pid": 36420,
+      "requestedSleepMs": 150,
+      "releaseMs": 389.4832,
+      "elapsedMs": 388.1151,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 0.8002999999998792,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 41.24240000000009,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 72.34289999999964,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 102.98610000000008,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 134.1242999999995,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 166.11049999999977,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 198.17579999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 228.35879999999997,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 258.33659999999963,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 291.4560999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 322.7622999999994,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 353.72609999999986,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=389.4832\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    },
+    {
+      "iteration": 4,
+      "pid": 34452,
+      "requestedSleepMs": 150,
+      "releaseMs": 388.3548,
+      "elapsedMs": 421.97940000000017,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 0.9835000000002765,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 39.070700000000215,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 70.16589999999997,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 102.02189999999973,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 132.71949999999924,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 163.5077000000001,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 194.6828000000005,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 225.21529999999984,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 256.5524999999998,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 287.8693000000003,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 318.84330000000045,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 351.03429999999935,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 382.14420000000064,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=388.3548\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    },
+    {
+      "iteration": 5,
+      "pid": 21748,
+      "requestedSleepMs": 150,
+      "releaseMs": 350.8913,
+      "elapsedMs": 378.27909999999974,
+      "replaced": true,
+      "attempts": [
+        {
+          "elapsedMs": 1.2014999999992142,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 34.40569999999934,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 65.16159999999945,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 96.7562999999991,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 128.3083999999999,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 160.26929999999993,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 190.42429999999877,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 221.39320000000043,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 251.83150000000023,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 283.5491999999995,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 314.4982,
+          "code": "EPERM"
+        },
+        {
+          "elapsedMs": 347.08100000000013,
+          "code": "EPERM"
+        }
+      ],
+      "stdout": "ready\r\nreleased-ms=350.8913\r\n",
+      "stderr": "",
+      "exitCode": 0,
+      "childAndPipesClosed": true,
+      "originalIntactOnFailure": null,
+      "stagedIntactOnFailure": null
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "observedAt": "2026-10-11T17:08:04.788Z",
+  "role": "reviewer",
+  "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/run.md",
+  "file": "tests/test-store.test.ts",
+  "bytes": 8935,
+  "physicalLines": 263,
+  "lastWriteAt": "2026-10-11T17:04:21.750Z",
+  "nlink": 1,
+  "comparisonInput": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/test-store.before.ts",
+  "equalsPreRepair": true,
+  "oldSleepAndCallPresent": true,
+  "finalAuthorLogNamesPresent": true,
+  "authorFinalReadbackAt": "2026-10-11T17:03:42.233Z",
+  "writerIdentified": false,
+  "timingReadback": {
+    "count": 36,
+    "releaseMinMs": 334.8821,
+    "releaseMaxMs": 517.6355,
+    "failures": 1,
+    "allChildAndPipesClosed": true
+  },
+  "topMaintainedPhysicalLines": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  },
+  "behavioralTestsRun": false,
+  "formalFullTestRun": false,
+  "limits": "Current candidate equals pre-repair file; prior final logs cannot approve current input. No writer attribution from mtime."
+}

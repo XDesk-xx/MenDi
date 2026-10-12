@@ -1,0 +1,21 @@
+{
+  "id": "execution-regression",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "--test",
+    "tests/test-execution.test.ts"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "startedAt": "2026-10-11T15:49:27.615Z",
+  "elapsedMs": 90997.4422,
+  "budgetMs": 180000,
+  "timedOut": false,
+  "pid": 31652,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stderr.log"
+}

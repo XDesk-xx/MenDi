@@ -1,0 +1,33 @@
+{
+  "id": "prepare-ui-targets",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-034-d03-full-test-prepare-ui-targets",
+  "stage": "preparation",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "prepare:ui-tests",
+      "D:\\Projects\\MenDi\\.tmp\\d03-full-test-034-ui"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T16:16:54.391Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-ui-targets.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-ui-targets.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2697090,
+  "pid": 30004,
+  "finishedAt": "2026-10-11T16:17:14.662Z",
+  "elapsedMs": 20269,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

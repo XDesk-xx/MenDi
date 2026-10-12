@@ -1,0 +1,6 @@
+[WARN] Your node_modules are out of sync with your lockfile. The value of the enableGlobalVirtualStore setting has changed
+Checked 139 files in 84ms. No fixes applied.
+Checked 139 files in 75ms. No fixes applied.
+Found 1 error.
+[ELIFECYCLE] Command failed with exit code 1.
+[ELIFECYCLE] Command failed with exit code 1.

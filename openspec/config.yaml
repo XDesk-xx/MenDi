@@ -6,11 +6,11 @@ context: |
   MenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。
   角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。
   使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。
-  当前MVP-D03保持open/manual-bootstrap，A/B/C已实际归档，累计成功归档10。
-  根C real-target-delivery-acceptance已由030实际归档为2026-10-11-010，直接批准为029固定028，保留范围10/10。无活动根Change，本次Change checkpoint保存该边界，等待Owner正式Full Test授权；唯一Vue目标仍待Archive，未执行其取消收口。
+  当前MVP-D03已由045收口为closed/manual-bootstrap，A/B/C已实际归档，累计成功归档10。
+  根C real-target-delivery-acceptance已由030实际归档为2026-10-11-010，直接批准为029固定028，保留范围10/10。无活动根Change，044基于043批准的新整次原完整FullTest集合结果为passed，045经Owner授权核对适用性并完成Close，等待Owner下一指令；唯一Vue目标仍待Archive，取消收口不恢复。
   状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。
   C 按最简路线图从空目录建立唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、目标 OpenSpec 和 Storybook；无 UI 仅工程验证。
-  当前必要输入见最近030 Archive与Delivery manifest；直接批准、实际结果与限制由该Run承接。目标阶段记录只留目标目录，根仅汇总必要结果；取消项不恢复，所有历史Run/verdict不改。
+  当前必要输入见045 Close与Delivery manifest；045直接引用044正式passed结果和完整批准快照，当前修复与038优化仍适用，失败及历史Run/verdict保持。目标记录仍只留目标目录，取消项不恢复。
   必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。
   submitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。
   根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。

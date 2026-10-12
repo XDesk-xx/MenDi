@@ -7,6 +7,33 @@ import type { ExecutionProcessOptions } from '../src/adapters/test-process.ts';
 import assert from 'node:assert/strict';
 
 export const pnpmEntry = 'C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js';
+let emptyDependencySeed: string | undefined;
+// 只复用本模块空依赖夹具的真实安装产物，不共享目标或执行状态。
+export function prepareEmptyDependencies(root: string) {
+  if (!emptyDependencySeed) {
+    const seed = sandbox();
+    for (const file of ['package.json', 'pnpm-workspace.yaml', '.npmrc'])
+      fs.copyFileSync(path.join(root, file), path.join(seed, file));
+    const setup = command(pnpmEntry, ['install', '--offline', '--ignore-scripts'], seed, {
+      ...isolatedEnv(seed),
+      COREPACK_ENABLE_NETWORK: '0',
+    });
+    assert.equal(setup.status, 0, setup.stdout + setup.stderr);
+    emptyDependencySeed = seed;
+  }
+  fs.copyFileSync(
+    path.join(emptyDependencySeed, 'pnpm-lock.yaml'),
+    path.join(root, 'pnpm-lock.yaml'),
+  );
+  fs.cpSync(path.join(emptyDependencySeed, 'node_modules'), path.join(root, 'node_modules'), {
+    recursive: true,
+  });
+  const file = path.join(root, 'node_modules/.pnpm-workspace-state-v1.json');
+  const state = JSON.parse(fs.readFileSync(file, 'utf8'));
+  state.projects = { [root]: Object.values(state.projects)[0] };
+  fs.writeFileSync(file, JSON.stringify(state, null, 2) + '\n');
+}
+
 export function testTarget(open = true, ready = true) {
   const root = fixture(sandbox());
   fs.copyFileSync(
@@ -33,13 +60,7 @@ export function testTarget(open = true, ready = true) {
     "packages: []\nverifyDepsBeforeRun: install\nstoreDir: './store'\n",
   );
   fs.writeFileSync(path.join(root, '.npmrc'), 'offline=true\n');
-  if (open && ready) {
-    const setup = command(pnpmEntry, ['install', '--offline', '--ignore-scripts'], root, {
-      ...isolatedEnv(root),
-      COREPACK_ENABLE_NETWORK: '0',
-    });
-    assert.equal(setup.status, 0, setup.stdout + setup.stderr);
-  }
+  if (open && ready) prepareEmptyDependencies(root);
   if (open)
     createWorkspace(
       root,

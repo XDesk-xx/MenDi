@@ -1,0 +1,29 @@
+{
+  "readAt": "2026-10-11T17:51:38.963Z",
+  "source": "tests/test-store.test.ts",
+  "candidatePresent": true,
+  "bytes": 9022,
+  "lines": 267,
+  "mtime": "2026-10-11T17:49:11.638Z",
+  "next": {
+    "action": "review-delivery-repair",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/run.md",
+    "reason": "040恢复实际明确释放测试入口，7项定向测试与check通过，交独立补审039阻断项；038优化批准及034正式failed保持。"
+  },
+  "fullTestUnchanged": true,
+  "bindingsUnchanged": true,
+  "archiveCount": 10,
+  "activeChangeId": null,
+  "historicalWriter": "unknown",
+  "recurrenceObservedDuringThisRepair": false,
+  "actualWrites": [
+    "tests/test-store.test.ts",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml",
+    "fresh focused-test .tmp sandboxes"
+  ]
+}

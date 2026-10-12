@@ -1,0 +1,57 @@
+{
+  "method": "maintained TypeScript/Vue/JavaScript physical lines; exclude generated output, dependencies and Run artifacts",
+  "groups": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  },
+  "growth": {
+    "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "file": "src/adapters/test-store.ts",
+    "before": 126,
+    "after": 150,
+    "newTestFile": {
+      "file": "tests/test-store.test.ts",
+      "lines": 263
+    }
+  }
+}

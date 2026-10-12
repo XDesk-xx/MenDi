@@ -1,0 +1,38 @@
+{
+  "basis": "034 existing TAP, read only; elapsed time includes test preparation",
+  "slowest": [
+    {
+      "name": "close 各提交边界中断与显式 resume：终态 / manifest / index / 释放",
+      "elapsedMs": 140562.3557
+    },
+    {
+      "name": "第二 Archive 计数 / 终态 / manifest 真实中断，新进程只定向收口一次，旧项保持",
+      "elapsedMs": 133482.0898
+    },
+    {
+      "name": "reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放",
+      "elapsedMs": 113548.6984
+    },
+    {
+      "name": "open 各提交边界中断与显式 resume：终态 / manifest / index / 释放",
+      "elapsedMs": 100352.1943
+    },
+    {
+      "name": "真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，不改旧提交",
+      "elapsedMs": 98768.8205
+    },
+    {
+      "name": "无效果现场缺失 / 变化 / 候选 / 活跃或 unknown 写者、观察写入失败均不能伪报 none",
+      "elapsedMs": 89065.2253
+    },
+    {
+      "name": "真实 MenDi / OpenSpec：instructions、proof、修改要求、Author / Reviewer handoff、四产物和 rejected 同阶段修订",
+      "elapsedMs": 82564.4267
+    },
+    {
+      "name": "closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取",
+      "elapsedMs": 82000.4798
+    }
+  ],
+  "count": 211
+}

@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 1 - reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 110575.783
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 110904.6123

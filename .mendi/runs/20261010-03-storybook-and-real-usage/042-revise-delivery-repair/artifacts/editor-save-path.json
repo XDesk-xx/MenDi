@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-11T18:01:42.372Z",
+  "installedPackage": "C:/Program Files/WindowsApps/OpenAI.Codex_26.1007.2314.0_x64__2p2nqsd0c76g0/app/resources/app.asar",
+  "readOnlyInspection": true,
+  "entries": [
+    {
+      "file": "webview/assets/pierre-file-editor-a14990433ddd.js",
+      "offset": 19824,
+      "excerpt": "dispose({discardUnsavedChanges:e=!1}={}){if(!this.isClosing){if(this.isClosing=!0,this.cancelSelectionEdit(),this.clearAutosaveTimeout(),e){this.abortController.abort(),this.clearPendingEditorChange(),this.lastDraft=null,this.options.onDraftChange(null);return}this.saveUntilClean().then(()=>{this.emitDraft(),this.clearAutosaveTimeout(),this.abortController.abort()})}}updateContent(e){let t=this.state.file;t==null||this.abortController.signal.aborted||this.state.isRe"
+    },
+    {
+      "file": "webview/assets/pierre-file-editor-a14990433ddd.js",
+      "offset": 23257,
+      "excerpt": "async saveUntilClean(){await this.waitForPendingEditorChange();let e=await this.save();return e&&this.hasUnsavedChanges?this.saveUntilClean():e}async save(){let e=this.state.file?.contents,t=this.savedContent;if(e==null||t==null||this.reviewDiskSnapshot!=null||this.state.isReadOnly&&e!==t&&!this.may"
+    },
+    {
+      "file": "webview/assets/pierre-file-editor-a14990433ddd.js",
+      "offset": 23795,
+      "excerpt": "expectedMtimeMs:this.baseMtimeMs,filePath:this.options.filePath,hostId:this.options.hostId}).then(async n=>{if(this.abortController.signal.aborted)return!1;if(++this.diskReadRevision,n.outcome===`saved`)return this.saved"
+    },
+    {
+      "file": "webview/assets/pierre-file-editor-a14990433ddd.js",
+      "offset": 45202,
+      "excerpt": "return()=>{r?.(),window.removeEventListener(`pagehide`,n),Qt(null),$t(null),n()}},[i,ge,s,Qt,Ut,Gt,$t,tn,Jt,Yt,dn,c,g,P,H]),(0,Z.useLayoutEffect)(()=>(an(sn),cn"
+    },
+    {
+      "file": "webview/assets/text-file-storage-30250b1f7eea.js",
+      "offset": 1768,
+      "excerpt": "return i(`write-file`,{params:{content:t,expectedMtimeMs:n,hostId:a,path:r}})}var b;function x(){return(x=e((()=>{a(),h(),l(),o(),g(),f(),r(),b=m(n,(e"
+    }
+  ],
+  "conclusion": "本地编辑器存在dispose→saveUntilClean→write-file路径，组件effect清理调用dispose；保存携带expectedMtimeMs。该机制与时间线相容，但片段本身不证明具体历史写入或版本冲突检查被绕过。隔离操作为Owner关闭该文件编辑标签页，不修改宿主代码。"
+}

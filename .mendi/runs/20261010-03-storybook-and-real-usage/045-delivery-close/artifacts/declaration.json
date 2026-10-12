@@ -1,0 +1,9 @@
+{
+  "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+  "applicability": {
+    "conclusion": "applicable",
+    "materials": "src / scripts / skills、全部当前根测试（含test-store.test.ts及test-preparation.test.ts）、4份UI测试、安装接线测试、受控HTML及唯一Vue目标、依赖锁及执行配置、主规格与D03三个归档；Windows / Node 22.23.2 / pnpm11.22.0 / OpenSpec1.14.1。",
+    "changes": "相对044受测材料无实现、测试、方法或执行配置变化。本次仅新增045 Close及更新当前manifest、README和OpenSpec context；不改变正式测试范围或入口。",
+    "reason": "044为当前唯一正式Full Test指针，原八类18项全部在同次执行passed、进程与日志关闭；直接批准快照、当前归档绑定、命令声明及必要日志一致。044期间材料保持一致，关闭前当前维护材料无较044完成时间更新，明确释放修复与500ms同暂存文件有限重试仍在；038空依赖准备优化保持。上述当前范围可沿用044，无需重跑或拼接旧PASS。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "windows-repeat-1",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "--test",
+    "--test-name-pattern=Windows 删除共享|Windows 持续占用",
+    "tests/test-store.test.ts"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "budgetMs": 60000,
+  "startedAt": "2026-10-11T16:55:40.223Z",
+  "elapsedMs": 2228.5339999999997,
+  "formalDeliveryTest": false,
+  "timedOut": false,
+  "pid": 4908,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/windows-repeat-1.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/windows-repeat-1.stderr.log"
+}

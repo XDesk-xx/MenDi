@@ -1,0 +1,109 @@
+[
+  {
+    "id": "build",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "build"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "startedAt": "2026-10-11T15:47:33.046Z",
+    "elapsedMs": 3528.1085,
+    "budgetMs": 60000,
+    "timedOut": false,
+    "pid": 51208,
+    "closed": true,
+    "exitCode": 0,
+    "signal": null,
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stderr.log"
+  },
+  {
+    "id": "reopen-case",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "--test-name-pattern=reopen 各提交边界",
+      "tests/lifecycle-writes.test.ts"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "startedAt": "2026-10-11T15:47:36.575Z",
+    "elapsedMs": 111038.6095,
+    "budgetMs": 240000,
+    "timedOut": false,
+    "pid": 36272,
+    "closed": true,
+    "exitCode": 0,
+    "signal": null,
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/reopen-case.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/reopen-case.stderr.log"
+  },
+  {
+    "id": "execution-regression",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "tests/test-execution.test.ts"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "startedAt": "2026-10-11T15:49:27.615Z",
+    "elapsedMs": 90997.4422,
+    "budgetMs": 180000,
+    "timedOut": false,
+    "pid": 31652,
+    "closed": true,
+    "exitCode": 0,
+    "signal": null,
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stderr.log"
+  },
+  {
+    "id": "formal-adapter-scenes",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "--test-name-pattern=正式运行新子执行|真正非零|选定启动失败",
+      "tests/delivery-full-test.test.ts"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "startedAt": "2026-10-11T15:50:58.612Z",
+    "elapsedMs": 60624.26410000003,
+    "budgetMs": 180000,
+    "timedOut": false,
+    "pid": 47696,
+    "closed": true,
+    "exitCode": 0,
+    "signal": null,
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stderr.log"
+  },
+  {
+    "id": "check-final",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "check"
+    ],
+    "cwd": "D:\\Projects\\MenDi",
+    "startedAt": "2026-10-11T15:51:59.248Z",
+    "elapsedMs": 16152.424100000004,
+    "budgetMs": 60000,
+    "timedOut": false,
+    "pid": 7464,
+    "closed": true,
+    "exitCode": 0,
+    "signal": null,
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/check-final.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/check-final.stderr.log"
+  }
+]

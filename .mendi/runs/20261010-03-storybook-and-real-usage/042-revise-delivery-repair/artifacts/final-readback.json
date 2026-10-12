@@ -1,0 +1,32 @@
+{
+  "readAt": "2026-10-11T18:04:00.021Z",
+  "source": "tests/test-store.test.ts",
+  "candidatePresent": true,
+  "bytes": 9022,
+  "lines": 267,
+  "mtime": "2026-10-11T18:01:09.531Z",
+  "mtimeUnchangedSinceRestoration": true,
+  "ownerClosedEditor": true,
+  "ownerNavigatedAndReturned": true,
+  "navigationDidNotRevert": true,
+  "next": {
+    "action": "review-delivery-repair",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/042-revise-delivery-repair/run.md",
+    "reason": "042关闭源码编辑标签页后恢复明确释放实现，实际切换会话未回写，7项测试及check通过；交独立补审041阻断项，038批准与034failed保持。"
+  },
+  "fullTestUnchanged": true,
+  "bindingsUnchanged": true,
+  "archiveCount": 10,
+  "activeChangeId": null,
+  "historicalWritingPidCaptured": false,
+  "actualWrites": [
+    "tests/test-store.test.ts",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/042-revise-delivery-repair/",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml",
+    "fresh focused-test .tmp sandboxes"
+  ]
+}

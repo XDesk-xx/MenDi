@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-11T15:48:27.449Z",
+  "sourceRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+  "directFiles": [
+    {
+      "ref": ".mendi/delivery-groups/d01/tests/001-full/result.json",
+      "bytes": 1270,
+      "modifiedAt": "2026-10-11T15:27:35.459Z",
+      "symbolicLink": false,
+      "sameBytesAs031": true
+    },
+    {
+      "ref": ".mendi/delivery-groups/d01/tests/001-full/result.json.fa0511dc-ac69-47c2-9ad3-97a0f8743a3c.tmp",
+      "bytes": 1269,
+      "modifiedAt": "2026-10-11T15:27:35.472Z",
+      "symbolicLink": false,
+      "sameBytesAs031": true
+    },
+    {
+      "ref": ".mendi/runs/d01/015-delivery-full-test/run.md",
+      "bytes": 1885,
+      "modifiedAt": "2026-10-11T15:27:34.214Z",
+      "symbolicLink": false,
+      "sameBytesAs031": true
+    },
+    {
+      "ref": ".mendi/write.lock",
+      "bytes": 93,
+      "modifiedAt": "2026-10-11T15:27:32.998Z",
+      "symbolicLink": false,
+      "sameBytesAs031": true
+    }
+  ],
+  "originalPid": 31980,
+  "originalPidAlive": false,
+  "attributes": "result/staged:Archive; parent:Directory; no reparse link",
+  "acl": "Authenticated Users Modify; Administrators/SYSTEM FullControl; no deny entries in inspected result ACL",
+  "mechanismProof": {
+    "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/sharing-proof.stdout.log",
+    "lockedRenameCode": "EPERM",
+    "afterRelease": "passed"
+  },
+  "certainty": {
+    "confirmed": "031 failed in synchronous prepared -> running result replacement; no business child launched. Windows handle lacking delete sharing reproduces same destination replacement EPERM.",
+    "inference": "Transient sharing / filter interference is consistent with intact writable files and isolated targets. The concrete blocking process in 031 is not identified retrospectively.",
+    "notClaimed": [
+      "antivirus caused 031",
+      "SearchIndexer caused 031",
+      "repaired original failure site",
+      "formal Full Test passed"
+    ]
+  },
+  "sources": [
+    {
+      "title": "libuv 1.51.0 Windows rename and handle sharing",
+      "url": "https://raw.githubusercontent.com/libuv/libuv/v1.51.0/src/win/fs.c"
+    },
+    {
+      "title": "libuv 1.51.0 Windows error mapping",
+      "url": "https://raw.githubusercontent.com/libuv/libuv/v1.51.0/src/win/error.c"
+    },
+    {
+      "title": "Microsoft FileShare",
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.io.fileshare?view=net-9.0"
+    }
+  ]
+}

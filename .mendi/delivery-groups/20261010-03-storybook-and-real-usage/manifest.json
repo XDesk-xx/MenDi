@@ -2,7 +2,7 @@
   "id": "20261010-03-storybook-and-real-usage",
   "planningSlot": "MVP-D03",
   "title": "Storybook 与实际使用",
-  "state": "open",
+  "state": "closed",
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-10",
   "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
@@ -89,13 +89,47 @@
     "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
   ],
   "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
-  "stopBoundary": "awaiting-owner-instruction",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+  "stopBoundary": "owner-decision",
   "next": {
-    "action": "delivery-full-test",
+    "action": "owner-decision",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "archiveRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
-    "reason": "MVP-D03-C 已独立批准并实际归档，项目累计完成 10 个 Change；本次 change checkpoint 保存 D03 A/B/C 已归档边界，等待 Owner 正式 Full Test 授权；Close、push / PR / merge 与目录清理仍保持独立授权。"
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+    "reason": "D03基于044正式passed和当前材料适用性完成045 Close；等待Owner下一指令，Git不在本授权内。"
+  },
+  "fullTest": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "passed",
+    "result": "passed",
+    "executionId": "manual-044-d03-full-test",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/plan.json",
+    "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/execution.json",
+    "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "testedWorktree": "受测材料为ba3b992基准加032/033的Windows有界替换修复、042/043批准的明确释放测试及038已批准的空依赖准备优化五文件（含新test-preparation）。当前工作树不等同已提交Git内容；所有命令本次新执行，安装候选由当前build/pack产生。",
+    "repairReviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md"
+  },
+  "closedOn": "2026-10-12",
+  "closedAt": "2026-10-12T01:06:40.057Z",
+  "closeRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+  "close": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "status": "completed",
+    "result": "closed",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md",
+    "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+    "closedAt": "2026-10-12T01:06:40.057Z",
+    "applicability": {
+      "conclusion": "applicable",
+      "materials": "src / scripts / skills、全部当前根测试（含test-store.test.ts及test-preparation.test.ts）、4份UI测试、安装接线测试、受控HTML及唯一Vue目标、依赖锁及执行配置、主规格与D03三个归档；Windows / Node 22.23.2 / pnpm11.22.0 / OpenSpec1.14.1。",
+      "changes": "相对044受测材料无实现、测试、方法或执行配置变化。本次仅新增045 Close及更新当前manifest、README和OpenSpec context；不改变正式测试范围或入口。",
+      "reason": "044为当前唯一正式Full Test指针，原八类18项全部在同次执行passed、进程与日志关闭；直接批准快照、当前归档绑定、命令声明及必要日志一致。044期间材料保持一致，关闭前当前维护材料无较044完成时间更新，明确释放修复与500ms同暂存文件有限重试仍在；038空依赖准备优化保持。上述当前范围可沿用044，无需重跑或拼接旧PASS。"
+    },
+    "finishedAt": "2026-10-12T01:09:10.880Z"
   }
 }

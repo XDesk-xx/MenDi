@@ -1,0 +1,28 @@
+{
+  "groupBudgetMs": 900000,
+  "elapsedBeforeMs": 407231.5944,
+  "elapsedMs": 417266.0183,
+  "formalDeliveryTest": false,
+  "results": [
+    {
+      "id": "check-final",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "startedAt": "2026-10-11T17:31:47.640Z",
+      "budgetMs": 60000,
+      "elapsedMs": 10031.272599999998,
+      "formalDeliveryTest": false,
+      "pid": 21240,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "inputsUnchanged": true,
+      "repairPresent": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/038-test-preparation-optimization/artifacts/check-final.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/038-test-preparation-optimization/artifacts/check-final.stderr.log"
+    }
+  ]
+}

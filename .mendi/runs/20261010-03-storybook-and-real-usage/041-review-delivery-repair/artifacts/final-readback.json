@@ -1,0 +1,60 @@
+{
+  "readAt": "2026-10-11T17:55:05.276Z",
+  "verdict": "changes-requested",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/041-review-delivery-repair/run.md",
+  "next": {
+    "action": "delivery-repair",
+    "status": "awaiting-author-revision",
+    "role": "author",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/041-review-delivery-repair/run.md",
+    "reason": "041对040为changes-requested：审核期间实际测试从明确释放版本再次变为旧版，定向测试启动前核对即停止。先处理当前回写来源或隔离冲突再修订；038优化批准与034正式failed保留，不直接Full Test。"
+  },
+  "fullTestUnchanged": true,
+  "changeBindingsUnchanged": true,
+  "testFileUnchangedDuringRecording": true,
+  "archivedChangeCount": 10,
+  "topMaintainedPhysicalLines": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  }
+}

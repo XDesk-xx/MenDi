@@ -1,0 +1,290 @@
+[
+  {
+    "id": "prepare-root-dependencies",
+    "stage": "preparation",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "install",
+        "--frozen-lockfile",
+        "--offline",
+        "--ignore-scripts"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "prepare-html-dependencies",
+    "stage": "preparation",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\storybook-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "install",
+        "--frozen-lockfile",
+        "--offline",
+        "--ignore-scripts"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "prepare-vue-dependencies",
+    "stage": "preparation",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "install",
+        "--frozen-lockfile",
+        "--offline",
+        "--ignore-scripts"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "prepare-ui-targets",
+    "stage": "preparation",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:ui-tests",
+        "D:\\Projects\\MenDi\\.tmp\\d03-full-test-031-ui"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {
+      "MENDI_UI_EVIDENCE_DIR": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\031-delivery-full-test\\artifacts\\ui"
+    }
+  },
+  {
+    "id": "prepare-independent-installation",
+    "stage": "preparation",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:installation-tests",
+        "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\031-delivery-full-test\\artifacts\\installation",
+        "D:/tools/mendi/acceptance/d03-full-test-031"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "maintained-check",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "root-regression",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test"
+      ]
+    },
+    "budgetMs": 1800000,
+    "environmentOverrides": {
+      "MENDI_TEST_EVIDENCE_DIR": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\031-delivery-full-test\\artifacts\\regression"
+    }
+  },
+  {
+    "id": "ui-product-scenes",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test:ui"
+      ]
+    },
+    "budgetMs": 180000,
+    "environmentOverrides": {
+      "MENDI_UI_TARGETS_DIR": "D:\\Projects\\MenDi\\.tmp\\d03-full-test-031-ui",
+      "MENDI_UI_EVIDENCE_DIR": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\031-delivery-full-test\\artifacts\\ui"
+    }
+  },
+  {
+    "id": "installation-handoff",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test:installation"
+      ]
+    },
+    "budgetMs": 180000,
+    "environmentOverrides": {
+      "MENDI_INSTALLATION_SESSION": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\031-delivery-full-test\\artifacts\\installation\\session.json"
+    }
+  },
+  {
+    "id": "vue-check",
+    "stage": "collection",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "vue-build",
+    "stage": "collection",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "build"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "vue-storybook-build",
+    "stage": "collection",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "build-storybook"
+      ]
+    },
+    "budgetMs": 300000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "vue-stories",
+    "stage": "collection",
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "verify:stories"
+      ]
+    },
+    "budgetMs": 180000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "main-specs-validation",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "validate",
+        "--specs",
+        "--strict",
+        "--json"
+      ]
+    },
+    "budgetMs": 30000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "root-status",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "status",
+        "--project",
+        "D:/Projects/MenDi",
+        "--json"
+      ]
+    },
+    "budgetMs": 30000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "root-next",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "next",
+        "--project",
+        "D:/Projects/MenDi",
+        "--json"
+      ]
+    },
+    "budgetMs": 30000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "vue-status",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "status",
+        "--project",
+        "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+        "--json"
+      ]
+    },
+    "budgetMs": 30000,
+    "environmentOverrides": {}
+  },
+  {
+    "id": "vue-next",
+    "stage": "collection",
+    "cwd": "D:/Projects/MenDi",
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "next",
+        "--project",
+        "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+        "--json"
+      ]
+    },
+    "budgetMs": 30000,
+    "environmentOverrides": {}
+  }
+]

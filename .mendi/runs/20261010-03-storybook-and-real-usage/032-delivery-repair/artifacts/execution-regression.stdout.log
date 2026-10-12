@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+ok 1 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 12913.9728
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 2 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 7115.788
+  type: 'test'
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+ok 3 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 34298.792
+  type: 'test'
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+ok 4 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 13012.4943
+  type: 'test'
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+ok 5 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 8616.1192
+  type: 'test'
+  ...
+# Subtest: 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+ok 6 - 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+  ---
+  duration_ms: 6974.8631
+  type: 'test'
+  ...
+# Subtest: 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+ok 7 - 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+  ---
+  duration_ms: 7665.6777
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 90869.7689

@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-11T18:01:09.529Z",
+  "source": "tests/test-store.test.ts",
+  "beforeBytes": 8935,
+  "beforeMtime": "2026-10-11T17:52:52.782Z",
+  "ordinaryFile": true,
+  "nlink": 1,
+  "reviewEvidenceRef": ".mendi/runs/20261010-03-storybook-and-real-usage/041-review-delivery-repair/run.md",
+  "navigation": {
+    "log": "C:/Users/xuser/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/Codex/Logs/2026/10/11/codex-desktop-eb63a4ac-0d51-41ce-96d9-c6ef67c5cf4b-33996-t0-i1-000014-3.log",
+    "entries": [
+      {
+        "line": 5488,
+        "text": "2026-10-11T17:36:46.054Z info [electron-message-handler] IAB_LIFECYCLE received browser sidebar owner sync browserTabId=null conversationId=client-new-thread:d38594b4-30ea-43c8-a231-0dde947729a0 originWebContentsId=1 ownerRoutePath=/local/01a1209e-be56-7982-b2d5-a53d460d2dc9 windowId=1"
+      },
+      {
+        "line": 6874,
+        "text": "2026-10-11T17:52:52.747Z info [electron-message-handler] IAB_LIFECYCLE received browser sidebar owner sync browserTabId=null conversationId=client-new-thread:958ae3d9-64cf-49f7-a5fa-bb6da05b9a9c originWebContentsId=1 ownerRoutePath=/local/01a1206d-9ef3-7741-aca6-cf2a0f94bc79 windowId=1"
+      }
+    ],
+    "sourceMtimes": [
+      "2026-10-11T17:36:46.595Z",
+      "2026-10-11T17:52:52.782Z"
+    ],
+    "interpretation": "两次写回与会话切换紧邻；17:52:52最近一次间隔35ms。仅为相关性，不是写入PID审计。"
+  },
+  "isolation": {
+    "ownerReply": "已关闭该文件标签页",
+    "scope": "Codex各窗口中 tests/test-store.test.ts 编辑标签页",
+    "restoreAfterReply": true,
+    "terminatedProcesses": [],
+    "permissionsChanged": false,
+    "appFilesChanged": false
+  },
+  "scopeBefore": {
+    "fullTest": {
+      "recordingMode": "manual-bootstrap",
+      "scope": "delivery",
+      "formalDeliveryTest": true,
+      "phase": "finished",
+      "outcome": "failed",
+      "result": "failed",
+      "executionId": "manual-034-d03-full-test",
+      "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/run.md",
+      "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/plan.json",
+      "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/execution.json",
+      "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+      "testedWorktree": "受测工作树为ba3b992基准加032/033已审核的test-store.ts局部修复及新增test-store.test.ts；并非声称仅Git提交内容。其余维护材料未变，当前README/context/manifest为交接记录。重新构建打包安装，不采用旧PASS。",
+      "repairReviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/033-review-delivery-repair/run.md"
+    },
+    "changeBindings": [
+      {
+        "planningSlot": "MVP-D03-A",
+        "changeId": "storybook-lightweight-integration",
+        "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+        "archiveOrdinal": 8
+      },
+      {
+        "planningSlot": "MVP-D03-B",
+        "changeId": "independent-installation-and-target-openspec-skills",
+        "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+        "archiveOrdinal": 9
+      },
+      {
+        "planningSlot": "MVP-D03-C",
+        "changeId": "real-target-delivery-acceptance",
+        "changeRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
+        "archiveOrdinal": 10
+      }
+    ],
+    "archiveCount": 10
+  },
+  "limitation": "前几轮没有隔离这个打开的编辑标签页；本轮改为Owner关闭后恢复。具体历史写入PID及自动保存/显式保存触发尚未直接捕获，不能声称宿主缺陷已修复。"
+}

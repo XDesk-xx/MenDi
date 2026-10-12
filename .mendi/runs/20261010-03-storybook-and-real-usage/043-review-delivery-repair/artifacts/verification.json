@@ -1,0 +1,31 @@
+{
+  "formalDeliveryTest": false,
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "--test",
+    "tests/test-store.test.ts"
+  ],
+  "startedAt": "2026-10-11T18:06:07.015Z",
+  "finishedAt": "2026-10-11T18:06:18.273Z",
+  "budgetMs": 60000,
+  "elapsedMs": 11255.2621,
+  "pid": 42624,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "inputsUnchanged": true,
+  "candidatePresent": true,
+  "mtime": "2026-10-11T18:01:09.531Z",
+  "files": [
+    "tests/test-store.test.ts",
+    "src/adapters/test-store.ts",
+    "tests/test-support.ts",
+    "tests/sequential-support.ts",
+    "tests/lifecycle-support.ts",
+    "tests/delivery-support.ts",
+    "tests/test-preparation.test.ts"
+  ],
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/artifacts/storage-focused.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/artifacts/storage-focused.stderr.log"
+}

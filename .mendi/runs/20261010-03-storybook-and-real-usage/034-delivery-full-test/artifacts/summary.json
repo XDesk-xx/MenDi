@@ -1,0 +1,91 @@
+{
+  "scope": "delivery",
+  "formalDeliveryTest": true,
+  "executionId": "manual-034-d03-full-test",
+  "outcome": "failed",
+  "commands": [
+    {
+      "id": "prepare-root-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 927,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-html-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 820,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-vue-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1077,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-ui-targets",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 20269,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-independent-installation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 20883,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "maintained-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 13756,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "root-regression",
+      "outcome": "failed",
+      "exitCode": 1,
+      "elapsedMs": 1576751,
+      "childAndLogPipesClosed": true
+    }
+  ],
+  "counts": {
+    "root-regression": {
+      "tests": "211",
+      "pass": "210",
+      "fail": "1",
+      "exitCode": 1
+    }
+  },
+  "failing": {
+    "id": "root-regression",
+    "outcome": "failed",
+    "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/root-regression.stdout.log",
+    "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/root-regression.stderr.log"
+  },
+  "unexecutedSteps": [
+    "ui-product-scenes",
+    "installation-handoff",
+    "vue-check",
+    "vue-build",
+    "vue-storybook-build",
+    "vue-stories",
+    "main-specs-validation",
+    "root-status",
+    "root-next",
+    "vue-status",
+    "vue-next"
+  ],
+  "materialApplicability": {
+    "requiresSemanticCheck": true,
+    "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "testedWorktree": "受测工作树为ba3b992基准加032/033已审核的test-store.ts局部修复及新增test-store.test.ts；并非声称仅Git提交内容。其余维护材料未变，当前README/context/manifest为交接记录。重新构建打包安装，不采用旧PASS。",
+    "currentCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "reviewedMaterialUnchangedDuringExecution": true
+  }
+}

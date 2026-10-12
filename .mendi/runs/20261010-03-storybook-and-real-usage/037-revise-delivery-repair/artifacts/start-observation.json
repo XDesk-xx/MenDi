@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-11T17:13:52.844Z",
+  "file": "tests/test-store.test.ts",
+  "bytes": 8935,
+  "mtime": "2026-10-11T17:04:21.750Z",
+  "equals036Observed": true,
+  "nlink": 1,
+  "currentTasks": "本Author active，另一个MenDi Reviewer聊天idle；旧目标子智能体已完成，无本次委派",
+  "writerIdentified": false,
+  "scope": "只读当前进程/任务及维护代码核对；不认证历史写者身份，不停止其他任务或编辑器"
+}

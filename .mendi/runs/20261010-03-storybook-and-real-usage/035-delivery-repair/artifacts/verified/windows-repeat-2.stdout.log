@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: Windows 删除共享拒绝，确认句柄释放后可替换同一 staged 文件
+ok 1 - Windows 删除共享拒绝，确认句柄释放后可替换同一 staged 文件
+  ---
+  duration_ms: 1016.4631
+  type: 'test'
+  ...
+# Subtest: Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+ok 2 - Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+  ---
+  duration_ms: 1449.3838
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2830.9803

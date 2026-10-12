@@ -1,0 +1,6 @@
+{
+  "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+  "actualWorktreeDifferences": " M src/adapters/test-store.ts\n?? tests/test-store.test.ts\n",
+  "semanticBasis": "受测工作树为ba3b992基准加032/033已审核的test-store.ts局部修复及新增test-store.test.ts；并非声称仅Git提交内容。其余维护材料未变，当前README/context/manifest为交接记录。重新构建打包安装，不采用旧PASS。",
+  "repairReviewRef": ".mendi/runs/20261010-03-storybook-and-real-usage/033-review-delivery-repair/run.md"
+}

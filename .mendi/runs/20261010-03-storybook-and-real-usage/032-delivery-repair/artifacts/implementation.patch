@@ -1,0 +1,56 @@
+diff --git a/src/adapters/test-store.ts b/src/adapters/test-store.ts
+index dd2aedd..a6d6667 100644
+--- a/src/adapters/test-store.ts
++++ b/src/adapters/test-store.ts
+@@ -1,7 +1,7 @@
+ import fs from 'node:fs';
+ import { randomUUID } from 'node:crypto';
+ import { managedPath, present } from './paths.ts';
+-import { MendiError } from '../core/errors.ts';
++import { MendiError, errorInfo } from '../core/errors.ts';
+ import { parseProject, parseWorkspace } from '../core/records.ts';
+ import {
+   executionLocation,
+@@ -66,8 +66,9 @@ export function saveExecution(
+   const content = JSON.stringify(record, null, 2) + '\n';
+   if (initial) fs.writeFileSync(file, content, { flag: 'wx' });
+   else {
++    const beforeContent = fs.readFileSync(file, 'utf8');
+     const before = parseExecution(
+-      JSON.parse(fs.readFileSync(file, 'utf8')),
++      JSON.parse(beforeContent),
+       root,
+       record.deliveryId,
+       record.executionId,
+@@ -77,7 +78,30 @@ export function saveExecution(
+     const temporary = `${ref}.${randomUUID()}.tmp`;
+     fs.writeFileSync(managedPath(root, temporary), content, { flag: 'wx' });
+     observe?.(phase, file);
+-    fs.renameSync(managedPath(root, temporary), managedPath(root, ref));
++    // Windows readers without delete sharing can briefly reject replacement.
++    // Retry only this staged rename, never the execution or a finished result.
++    const deadline = performance.now() + 500;
++    const wait = new Int32Array(new SharedArrayBuffer(4));
++    for (;;) {
++      try {
++        fs.renameSync(managedPath(root, temporary), managedPath(root, ref));
++        break;
++      } catch (error) {
++        const remaining = deadline - performance.now();
++        if (
++          process.platform !== 'win32' ||
++          !['EPERM', 'EBUSY'].includes(errorInfo(error).code ?? '') ||
++          remaining <= 0
++        )
++          throw error;
++        Atomics.wait(wait, 0, 0, Math.min(25, remaining));
++        if (
++          fs.readFileSync(managedPath(root, ref), 'utf8') !== beforeContent ||
++          fs.readFileSync(managedPath(root, temporary), 'utf8') !== content
++        )
++          throw new MendiError('test-write-conflict', '替换重试前执行文件已改变。', { ref });
++      }
++    }
+   }
+   observe?.('before-test-readback', file);
+   if (fs.readFileSync(managedPath(root, ref), 'utf8') !== content)
