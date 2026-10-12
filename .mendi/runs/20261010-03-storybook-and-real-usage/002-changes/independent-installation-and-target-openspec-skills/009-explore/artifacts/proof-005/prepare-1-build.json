@@ -1,0 +1,11 @@
+{
+  "cwd": "D:\\Projects\\MenDi",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Projects\\MenDi\\node_modules\\typescript\\bin\\tsc"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": ""
+}

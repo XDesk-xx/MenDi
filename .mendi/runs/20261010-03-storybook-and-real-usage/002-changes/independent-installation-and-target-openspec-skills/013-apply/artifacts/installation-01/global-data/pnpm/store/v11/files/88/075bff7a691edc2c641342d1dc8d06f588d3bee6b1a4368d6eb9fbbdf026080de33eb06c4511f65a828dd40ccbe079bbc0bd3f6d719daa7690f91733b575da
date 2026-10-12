@@ -1,0 +1,357 @@
+import { OpenSpec, type ProcessRunner } from '../adapters/openspec.ts';
+import { type WriteObserver } from '../adapters/workspace.ts';
+import { type Workspace } from '../core/records.ts';
+export interface Selection {
+    project: string;
+    openspecBin?: string;
+    deliveryId?: string;
+}
+export interface OperationOptions {
+    runner?: ProcessRunner;
+    observeWrite?: WriteObserver;
+}
+export interface OpenInput extends Selection {
+    id: string;
+    title: string;
+    scopePath: string;
+    changeId?: string;
+    slot?: string;
+    role?: string;
+    actor?: string;
+    resumeRef?: string;
+}
+export interface BindInput extends Selection {
+    changeId: string;
+    slot: string;
+}
+export declare function selected(input: Selection, options: OperationOptions): {
+    upstream: OpenSpec;
+    root: string;
+    configPath: string;
+};
+export declare function state(workspace: Workspace): {
+    recorded?: Record<string, unknown> | undefined;
+    activeChangeId: string | null;
+    changeBindings: import("../core/associations.ts").Binding[];
+    goal: string;
+    plannedChanges: import("../core/records.ts").PlannedChange[];
+    source: "product" | "manual-bootstrap";
+    deliveryId: string;
+    title: string;
+    state: string;
+};
+export declare function query(input: Selection, options?: OperationOptions): {
+    ok: boolean;
+    local: null;
+    upstream: null;
+    outcome: string;
+    pending: unknown;
+    next: {
+        action: string;
+        role: string;
+        status: string;
+        executable: boolean;
+        reason: string;
+        source?: undefined;
+    };
+    operation: "query";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+} | {
+    local: null;
+    upstream: null;
+    next: {
+        action: string;
+        source: string;
+        executable: boolean;
+        reason: string;
+        role?: undefined;
+        status?: undefined;
+    };
+    ok: true;
+    operation: "query";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+} | {
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    verification?: {
+        child?: import("../core/test-execution.ts").TestExecution | undefined;
+        outcome: import("../core/test-execution.ts").TestOutcome;
+        stable: boolean;
+        executionId: string | null;
+        collection: string[];
+        basis: {
+            materials: string;
+            changes: string;
+            commit?: string;
+        };
+        entry: {
+            scriptName: string;
+            scriptText: string;
+            packageManager?: string;
+            pnpmBin: string;
+        };
+        scopeMatch: "match" | "changed" | "unavailable";
+        commandMatch: "match" | "changed" | "unavailable";
+        materialApplicability: "requires-semantic-check";
+    } | undefined;
+    ok: boolean;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    upstream: null;
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    operation: "query";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+} | {
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+    } | {
+        source: string;
+        executable: boolean;
+        action?: undefined;
+        role?: undefined;
+        reason?: undefined;
+    } | {
+        action: string;
+        source: string;
+        executable: boolean;
+        role: string;
+        reason: string;
+    } | {
+        action: string;
+        source: string;
+        executable: boolean;
+        reason: string;
+        role?: undefined;
+    };
+    run?: {
+        formatVersion: 1;
+        recordingMode: "product";
+        deliveryId: string;
+        changeId: string;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/actions.ts").ActionType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        ownerDecision?: import("../core/actions.ts").OwnerDecision;
+        archive?: import("../core/archive.ts").ArchiveRecord;
+        ref: string;
+    } | undefined;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    upstream: import("../adapters/openspec.ts").ChangeStatus | null;
+    ok: true;
+    operation: "query";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+};
+export declare function openDelivery(input: OpenInput, options?: OperationOptions): {
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    alreadyCompleted?: boolean | undefined;
+    ok: boolean;
+    operation: import("../core/delivery-lifecycle.ts").LifecycleType;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    } | null;
+    executionMode: string;
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+} | {
+    ok: true;
+    operation: "delivery-open";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+};
+export declare function bindChange(input: BindInput, options?: OperationOptions): {
+    ok: true;
+    operation: "change-bind";
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+};

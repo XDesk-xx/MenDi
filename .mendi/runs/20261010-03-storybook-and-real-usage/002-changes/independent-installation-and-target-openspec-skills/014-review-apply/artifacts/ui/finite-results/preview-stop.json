@@ -1,0 +1,10 @@
+{
+  "confirmed": true,
+  "exitCode": 0,
+  "stdout": "�ɹ�: ����ֹ PID 44048 (���� PID 13600 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 33336 (���� PID 13600 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 13600 (���� PID 8080 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 44532 (���� PID 28800 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 8080 (���� PID 28800 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 28800 (���� PID 21660 �ӽ���)�Ľ��̡�\r\n",
+  "stderr": "",
+  "childExitCode": 1,
+  "childSignal": null,
+  "childAndPipesClosed": true,
+  "listenerUnavailable": true
+}

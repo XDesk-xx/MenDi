@@ -1,0 +1,61 @@
+import type { Role, Verdict } from './actions.ts';
+import { type FullTest, type Repair } from './delivery-verification.ts';
+import { type Lifecycle } from './delivery-lifecycle.ts';
+export declare const deliveryTypes: readonly ["delivery-open", "delivery-close", "delivery-reopen", "delivery-full-test", "delivery-repair", "revise-delivery-repair", "review-delivery-repair"];
+export type DeliveryType = (typeof deliveryTypes)[number];
+export declare function deliveryDefinition(value: unknown): {
+    type: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+    phase: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+    role: Role;
+    skill: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+};
+export declare function deliveryLocation(ref: string, id: string): {
+    type: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+    phase: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+    role: Role;
+    skill: "delivery-open" | "delivery-close" | "delivery-reopen" | "delivery-full-test" | "delivery-repair" | "revise-delivery-repair" | "review-delivery-repair";
+    number: number;
+};
+export interface DeliveryRunRecord {
+    formatVersion: 1;
+    recordingMode: 'product';
+    scope: 'delivery';
+    deliveryId: string;
+    changeId: null;
+    runNumber: number;
+    actionId: string;
+    actionType: DeliveryType;
+    role: Role;
+    actorId: string;
+    status: 'draft' | 'submitted';
+    stageSkill: string;
+    toolGuidance: string[];
+    outcome?: 'continuing' | 'complete';
+    result?: string;
+    verdict?: Verdict;
+    authorRunRef?: string;
+    revisesRunRef?: string;
+    fullTest?: FullTest;
+    lifecycle?: Lifecycle;
+    repair?: Repair;
+    ownerDecision?: never;
+}
+export declare function parseDeliveryRun(value: unknown, ref: string, id: string): DeliveryRunRecord;
+export declare function deliveryNext(run: DeliveryRunRecord, ref: string, observedOutcome?: FullTest['outcome']): {
+    role: string;
+    action: string;
+    status: string;
+    reason: string;
+    source: string;
+    executable: boolean;
+    currentRunRef: string;
+} | {
+    role: string;
+    action: string;
+    status: string;
+    authorRunRef: string;
+    reason: string;
+    source: string;
+    executable: boolean;
+    currentRunRef: string;
+};

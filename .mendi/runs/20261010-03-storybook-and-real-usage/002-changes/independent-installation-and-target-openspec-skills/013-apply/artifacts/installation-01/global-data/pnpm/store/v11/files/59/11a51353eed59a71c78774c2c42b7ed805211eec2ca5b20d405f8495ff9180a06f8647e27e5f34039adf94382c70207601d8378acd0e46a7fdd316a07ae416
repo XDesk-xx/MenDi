@@ -1,0 +1,28 @@
+import { type RunRecord } from '../core/actions.ts';
+import type { Workspace } from '../core/records.ts';
+export interface RunDocument {
+    ref: string;
+    record: RunRecord;
+    header: Record<string, unknown>;
+    body: string;
+}
+export declare function readRunSource(root: string, ref: string): {
+    header: Record<string, unknown>;
+    body: string;
+};
+export declare function readRun(root: string, ref: string, deliveryId: string, changeId: string): RunDocument;
+export declare function currentRun(root: string, workspace: Workspace): RunDocument | null;
+export declare function renderRun(header: Record<string, unknown>, body: string): string;
+export declare function scanRunNumbers(root: string, deliveryId: string): {
+    number: number;
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    reservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+};

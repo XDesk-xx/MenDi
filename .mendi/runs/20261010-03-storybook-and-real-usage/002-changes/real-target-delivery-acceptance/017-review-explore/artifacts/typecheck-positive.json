@@ -1,0 +1,15 @@
+{
+  "name": "typecheck-positive",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "typecheck"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-017-review-ba5a93a8",
+  "exitCode": 1,
+  "elapsedMs": 678,
+  "signal": null,
+  "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The value of the enableGlobalVirtualStore setting has changed\n\nRun \"pnpm install\"\n",
+  "stderr": ""
+}

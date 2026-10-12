@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-11T17:55:05.236Z",
+  "file": "tests/test-store.test.ts",
+  "firstToolRead": {
+    "bytes": 9022,
+    "explicitReleasePresent": true,
+    "sleepPresent": false,
+    "mtimeFrom040Restoration": "2026-10-11T17:49:11.638Z",
+    "basis": "initial Get-Content plus Get-Item in this review; raw output in current conversation"
+  },
+  "current": {
+    "bytes": 8935,
+    "lines": 263,
+    "mtime": "2026-10-11T17:52:52.782Z",
+    "matchesCandidate": false,
+    "matchesBefore": true,
+    "sleepPresent": true,
+    "releasePresent": false
+  },
+  "candidateRef": ".mendi/runs/20261010-03-storybook-and-real-usage/037-revise-delivery-repair/artifacts/test-store.candidate.ts",
+  "beforeRef": ".mendi/runs/20261010-03-storybook-and-real-usage/037-revise-delivery-repair/artifacts/test-store.before.ts",
+  "preflight": {
+    "plannedCommand": "node --test tests/test-store.test.ts",
+    "error": "AssertionError: current file does not equal candidate",
+    "testChildStarted": false,
+    "reviewerSourceWrites": false,
+    "ownRecordLockReleased": true
+  },
+  "writerIdentified": false
+}

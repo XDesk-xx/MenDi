@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-ILBIZa\\vue-environment-probe",
+  "status": 0,
+  "durationMs": 939,
+  "stdout": "✓ Lockfile passes supply-chain policies (verified 1d ago)\nDone in 784ms using pnpm v11.22.0\n",
+  "stderr": "",
+  "signal": null
+}

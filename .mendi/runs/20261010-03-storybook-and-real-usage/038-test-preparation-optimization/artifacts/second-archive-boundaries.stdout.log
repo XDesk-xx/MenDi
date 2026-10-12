@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 第二 Archive 计数 / 终态 / manifest 真实中断，新进程只定向收口一次，旧项保持
+ok 1 - 第二 Archive 计数 / 终态 / manifest 真实中断，新进程只定向收口一次，旧项保持
+  ---
+  duration_ms: 82138.8605
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 82459.9502

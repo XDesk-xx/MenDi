@@ -1,0 +1,4 @@
+schema: spec-driven
+context: |
+  D03-A 隔离探索目标，HTML 组件、Storybook 与交互 stories。
+  阶段结果不代表 MenDi 根项目验收，MCP 未启用。

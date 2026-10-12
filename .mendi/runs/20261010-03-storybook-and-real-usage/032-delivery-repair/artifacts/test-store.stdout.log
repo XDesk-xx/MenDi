@@ -1,0 +1,84 @@
+TAP version 13
+# Subtest: Windows 短时删除共享拒绝后替换同一 staged 结果
+not ok 1 - Windows 短时删除共享拒绝后替换同一 staged 结果
+  ---
+  duration_ms: 4044.4631
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\test-store.test.ts:101:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      Comparison {
+    +   code: 'EBUSY'
+    -   code: 'EPERM'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'EPERM'
+  actual:
+  error: "EBUSY: resource busy or locked, rename 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-2DqyzM\\.mendi\\delivery-groups\\d01\\tests\\001-focused\\result.json' -> 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-2DqyzM\\.mendi\\delivery-groups\\d01\\tests\\001-focused\\result.json.probe'"
+  stack: |-
+    Object.renameSync (node:fs:1012:11)
+    assert.throws.code (file:///D:/Projects/MenDi/tests/test-store.test.ts:107:28)
+    getActual (node:assert:609:5)
+    Function.throws (node:assert:757:24)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-store.test.ts:107:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/test-store.test.ts:107:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+ok 2 - Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+  ---
+  duration_ms: 1885.6314
+  type: 'test'
+  ...
+# Subtest: 其他 rename 错误立即传播，不删除原结果
+ok 3 - 其他 rename 错误立即传播，不删除原结果
+  ---
+  duration_ms: 11.9163
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 original，不覆盖现场
+ok 4 - Windows 重试拒绝已改变的 original，不覆盖现场
+  ---
+  duration_ms: 12.5825
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 staged，不覆盖现场
+ok 5 - Windows 重试拒绝已改变的 staged，不覆盖现场
+  ---
+  duration_ms: 15.0057
+  type: 'test'
+  ...
+# Subtest: Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+ok 6 - Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+  ---
+  duration_ms: 15967.6821
+  type: 'test'
+  ...
+# Subtest: 终态与错误身份在暂存写入前拒绝
+ok 7 - 终态与错误身份在暂存写入前拒绝
+  ---
+  duration_ms: 41.1743
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22749.7939

@@ -1,0 +1,73 @@
+{
+  "ok": true,
+  "operation": "action-start",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\.tmp\\mendi-installation-MQsToK\\alpha",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "product",
+    "deliveryId": "installed-0",
+    "title": "受控安装验收",
+    "state": "open",
+    "goal": "稳定安装与真实目标方法接入验收",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "离线笔记",
+        "dependsOn": []
+      }
+    ],
+    "activeChangeId": "local-note-work",
+    "changeBindings": [
+      {
+        "changeId": "local-note-work",
+        "changeRef": "openspec/changes/local-note-work",
+        "planningSlot": "A",
+        "state": "active",
+        "batchId": "002-changes",
+        "latestRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/006-review-propose/run.md"
+      }
+    ]
+  },
+  "run": {
+    "ref": ".mendi/runs/installed-0/002-changes/local-note-work/006-review-propose/run.md",
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "deliveryId": "installed-0",
+    "changeId": "local-note-work",
+    "runNumber": 6,
+    "actionId": "local-note-work-006-review-propose",
+    "actionType": "review-propose",
+    "role": "reviewer",
+    "actorId": "fixture-reviewer",
+    "status": "draft",
+    "stageSkill": "review-propose",
+    "toolGuidance": [],
+    "authorRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md"
+  },
+  "next": {
+    "source": "local-state",
+    "executable": false,
+    "role": "reviewer",
+    "action": "run-save-or-submit",
+    "status": "working",
+    "reason": "当前 draft 可保存并提交；记录命令不自动执行阶段工作。",
+    "currentRunRef": ".mendi/runs/installed-0/002-changes/local-note-work/006-review-propose/run.md"
+  },
+  "methods": {
+    "stage": {
+      "ref": "skills/actions/review-propose/SKILL.md",
+      "file": "D:\\tools\\mendi\\acceptance\\d03-b-013-03\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_144d77b98aff08c4ccdebecafe95de6b\\node_modules\\mendi\\skills\\actions\\review-propose\\SKILL.md",
+      "content": "---\nname: mendi-review-propose\nphase: propose\nrole: reviewer\n---\n\n# review-propose 阶段方法\n\n独立审核使用本自有方法；`methods.upstream` 无强制 Author 方法。核对当前产物、来源及真实 instructions，不执行 propose / update 的 Author 写入流程代替审核，也不把方法返回或 ready 当作批准。\n\n读取固定 Author 实际正文及其四类产物；按需要请求当前 artifact instructions，核对真实 dependencies、context / rules 在范围、输入、场景、设计和任务中是否一致。例如“不自动安装”须有明确失败行为与测试，而不能只复制约束句子。blocked / done 仅是上游产物事实，strict validate、任务勾选和 sentinel 不替代语义审核。\n\nhandoff 保持固定 Author，复制笔记只是未完成进展；接收 Reviewer 独立检查后明确 verdict。rejected 停 Owner，获明确授权的同阶段修订创建新 Author 和新独立 Review，原 verdict 不改。\n\n必要输入是固定 Author 提交及其 proposal、design、delta specs、tasks。独立核对范围一致性、必要输入、行为场景和验证任务是否足以实施，检查关键 proof 的实际适用性；指出阻断项和可保留的限制。\n\n作为 Owner 指定的独立 Reviewer，读取本 Action 固定的 authorRunRef，核对该提交的范围、阶段材料、结果与限制；按风险查看实际对象或重跑关键检查。不得修改实现后自行批准，不把工具成功或文件齐备当作批准。\n\n同一审核继续时保存 continuing，继续沿用相同 actionId 和 Author 对象。完成时给出 approved、changes-requested 或 rejected，记录必要 findings 与限制，再提交 complete，停在 next 所表达的边界，不自动执行后续工作。\n"
+    },
+    "guidance": [],
+    "upstream": []
+  },
+  "incompleteReservations": []
+}

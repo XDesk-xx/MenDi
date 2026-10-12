@@ -1,0 +1,14 @@
+export declare class MendiError extends Error {
+    code: string;
+    details: unknown;
+    fix: string;
+    exitCode: number;
+    constructor(code: string, message: string, details?: unknown, fix?: string, exitCode?: number);
+}
+export declare function errorInfo(error: unknown): {
+    message: string;
+    code?: string;
+};
+export declare function object(value: unknown, label: string): Record<string, unknown>;
+export declare function text(value: unknown, label: string): string;
+export declare function identifier(value: unknown, label: string): string;

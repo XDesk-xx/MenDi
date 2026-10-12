@@ -1,0 +1,13 @@
+{
+  "pending": 23,
+  "changedTaskIds": [
+    "1.2",
+    "3.2",
+    "3.3",
+    "4.2",
+    "5.5"
+  ],
+  "targetExists": false,
+  "productChanges": [],
+  "scope": "方案核对；短时执行验证未运行"
+}

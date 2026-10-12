@@ -1,0 +1,29 @@
+import { type ChildProcess, type SpawnOptions } from 'node:child_process';
+import type { TestObserver } from './test-store.ts';
+import type { TestExecution } from '../core/test-execution.ts';
+export declare function stopCurrentChild(child: ChildProcess): {
+    confirmed: boolean;
+    exitCode: number | null;
+    stdout: string;
+    stderr: string;
+};
+export interface ExecutionProcessOptions {
+    signal?: AbortSignal;
+    spawnExecution?: (command: string, args: string[], options: SpawnOptions) => ChildProcess;
+    stop?: typeof stopCurrentChild;
+    observe?: TestObserver;
+}
+export declare function executeForeground(root: string, record: TestExecution, onPid: (pid: number) => void, options?: ExecutionProcessOptions): Promise<{
+    pid: null;
+    closed: boolean;
+    exitCode: null;
+    signal: null;
+    launchError: unknown;
+    stop: {
+        confirmed: boolean;
+        exitCode: number | null;
+        stdout: string;
+        stderr: string;
+    } | undefined;
+    failure: unknown;
+}>;

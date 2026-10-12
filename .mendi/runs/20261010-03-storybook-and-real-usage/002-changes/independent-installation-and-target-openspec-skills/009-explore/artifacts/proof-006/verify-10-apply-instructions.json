@@ -1,0 +1,16 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-mO64Dt\\alpha",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "instructions",
+    "apply",
+    "--change",
+    "local-note-work",
+    "--json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"changeName\": \"local-note-work\",\n  \"changeDir\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\",\n  \"schemaName\": \"spec-driven\",\n  \"contextFiles\": {\n    \"proposal\": [\n      \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\\\\proposal.md\"\n    ],\n    \"specs\": [\n      \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\\\\specs\\\\local-notes\\\\spec.md\"\n    ],\n    \"design\": [\n      \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\\\\design.md\"\n    ],\n    \"tasks\": [\n      \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\\\\tasks.md\"\n    ]\n  },\n  \"progress\": {\n    \"total\": 1,\n    \"complete\": 0,\n    \"remaining\": 1\n  },\n  \"tasks\": [\n    {\n      \"id\": \"1\",\n      \"description\": \"1.1 实施当前目标 notes/ 的离线摘要与缺输入错误，并验证无网络场景。\",\n      \"done\": false,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\\\\openspec\\\\changes\\\\local-note-work\\\\tasks.md\",\n      \"line\": 5\n    }\n  ],\n  \"taskTrackingConfigured\": true,\n  \"state\": \"ready\",\n  \"instruction\": \"Read context files, work through pending tasks, mark complete as you go.\\nPause if you hit blockers or need clarification.\",\n  \"context\": \"中文离线笔记工具，只使用目标项目的本地文件，不需要 UI 或网络服务。\\n\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

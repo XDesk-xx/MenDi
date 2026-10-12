@@ -1,0 +1,4 @@
+{
+  "ref": "delivery-scope.json",
+  "content": "{\n  \"goal\": \"在唯一真实 Vue 目标完成合法 OpenSpec 阶段、计数器与 Storybook 最小实际使用，经独立 Review Apply 批准后停待 Archive。\",\n  \"plannedChanges\": [\n    { \"slot\": \"VUE-COUNTER\", \"title\": \"唯一 Naive UI 计数器与三个 Storybook 状态\", \"dependsOn\": [] }\n  ]\n}\n"
+}

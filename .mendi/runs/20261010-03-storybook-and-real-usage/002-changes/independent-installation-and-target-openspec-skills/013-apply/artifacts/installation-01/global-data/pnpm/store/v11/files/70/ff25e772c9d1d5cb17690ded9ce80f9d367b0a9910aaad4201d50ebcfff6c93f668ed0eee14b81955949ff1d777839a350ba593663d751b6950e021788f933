@@ -1,0 +1,33 @@
+import { type Binding } from './associations.ts';
+export type { Binding } from './associations.ts';
+export interface PlannedChange {
+    slot: string;
+    title: string;
+    dependsOn: string[];
+    roadmapSection?: string;
+}
+export interface Scope {
+    goal: string;
+    plannedChanges: PlannedChange[];
+}
+export interface Workspace {
+    mode: 'product' | 'manual-bootstrap';
+    id: string;
+    title: string;
+    state: string;
+    scope: Scope;
+    activeChangeId: string | null;
+    bindings: Binding[];
+    project: Record<string, unknown>;
+    manifest: Record<string, unknown>;
+    manifestRef: string;
+}
+export declare function readScope(value: unknown): Scope;
+export declare function parseProject(value: unknown, deliveryId?: string): {
+    project: Record<string, unknown>;
+    mode: Workspace['mode'];
+    id: string;
+    manifestRef: string;
+};
+export declare function parseWorkspace(index: ReturnType<typeof parseProject>, value: unknown): Workspace;
+export declare function bindingFor(scope: Scope, slot: string, changeId: string): Binding;

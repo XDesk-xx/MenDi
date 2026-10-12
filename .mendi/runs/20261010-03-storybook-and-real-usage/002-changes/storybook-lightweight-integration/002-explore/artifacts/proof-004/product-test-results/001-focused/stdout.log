@@ -1,0 +1,9 @@
+[1mNo tests found, exiting with code 1[22m
+Run with `--passWithNoTests` to exit with code 0
+In [1mD:\Projects\MenDi\.tmp\mendi-d03-a-MoMc5C\ui-target[22m
+  14 files checked.
+  testMatch: [33mD:/Projects/MenDi\.tmp/mendi-d03-a-MoMc5C/ui-target/src/**/*.stories.ts[39m - 0 matches
+  testPathIgnorePatterns: [33m\\node_modules\\[39m - 14 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+[ELIFECYCLE] Command failed with exit code 1.

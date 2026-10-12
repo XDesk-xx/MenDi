@@ -5,6 +5,10 @@ tool: openspec
 
 # OpenSpec 工具指导
 
+自有阶段与工具指导来自 MenDi 安装包；阶段必需上游方法来自显式当前目标 `.agents/skills/openspec-*/SKILL.md`，由 Change start / continue、Owner 接收交接及 Archive 准备返回 `methods.upstream` 的 name / projectRoot / ref / file / generatedBy / content。目标根与外部 CLI 执行 cwd 一致，切换目标不得串来源。核对 generatedBy 1.14.1；方法 version 1.0 不是 CLI 版本，生成标记不证明正文未修改。不自动安装、更新或回退来源，不新增历史 Run 字段。
+
+Explore / 修订使用 openspec-explore；首次 Propose 在已绑定 Change 复用 openspec-propose 的产物片段与真实 instructions，跳过 new；Propose 修订使用 openspec-update-change 的适用已有产物规则；Apply / 修订使用 openspec-apply-change。Review 使用自有独立方法，不强制 Author 方法；Archive 准备使用 openspec-archive-change 指引，但 native archive 负责一次同步，不先调用 sync 再重复同步。动态 instructions 继续表达当前依赖 / context / rules，宿主实际遵循方法以产物与调用证明。
+
 Archive 由 `skills/actions/archive/SKILL.md` 规定准备 / execute / finish。产品普通 status / next 仍检查固定工具 version / list；合法 archiving / archived 交接不调用旧活动 Change status，upstream:null。prepared / none 提示另一次显式 execute，invoking / confirmed 或计数 / Run 已写但 manifest 未收口仍 pending，提示 local-only finish；只读查询不重新判定效果、不重试。归档完成读取当前终态 Run / 编号 / 计数，不读取归档内容、历史说明或未知 Ref；显示无活动 Change，停在 delivery-next / awaiting-owner-instruction。
 
 使用项目选定的稳定 OpenSpec 1.14.1 公开 CLI，以明确目标根执行并核对实际 root、来源与 Change。不要自动安装、初始化或改用 PATH 上的另一版本。

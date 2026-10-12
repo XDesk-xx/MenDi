@@ -1,0 +1,108 @@
+{
+  "technology": "target installed Playwright / real headless Chromium",
+  "cua": "apps=[] browsers=[]; iab unavailable",
+  "budgetMs": 170000,
+  "stepBudgetMs": 30000,
+  "autoplayControl": {
+    "option": "embed=true on observed actual iframe URL",
+    "source": "node_modules/storybook/dist/preview/runtime.js:36017 shouldAutoplay = !shouldEmbed; supported installed source read before use"
+  },
+  "pages": [
+    {
+      "name": "Default",
+      "officialUrl": "http://localhost:6115/?path=/story/counter-counterpanel--default",
+      "originalFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--default&viewMode=story",
+      "controlledActualFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--default&viewMode=story&embed=true",
+      "iframe": {
+        "id": "storybook-preview-iframe",
+        "src": "/iframe.html?id=counter-counterpanel--default&viewMode=story",
+        "title": "storybook-preview-iframe"
+      },
+      "initialVisibleValue": "0",
+      "disabled": {
+        "increment": false,
+        "reset": false
+      },
+      "actualValues": [
+        "0",
+        "1",
+        "0"
+      ],
+      "visibleDOM": "当前数值\n\n0\n加一\n重置",
+      "screenshot": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/006-apply/artifacts/preview-003-default.png"
+    },
+    {
+      "name": "Existing Value",
+      "officialUrl": "http://localhost:6115/?path=/story/counter-counterpanel--existing-value",
+      "originalFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--existing-value&viewMode=story",
+      "controlledActualFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--existing-value&viewMode=story&embed=true",
+      "iframe": {
+        "id": "storybook-preview-iframe",
+        "src": "/iframe.html?id=counter-counterpanel--existing-value&viewMode=story",
+        "title": "storybook-preview-iframe"
+      },
+      "initialVisibleValue": "5",
+      "disabled": {
+        "increment": false,
+        "reset": false
+      },
+      "actualValues": [
+        "5",
+        "6",
+        "0"
+      ],
+      "visibleDOM": "当前数值\n\n0\n加一\n重置",
+      "screenshot": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/006-apply/artifacts/preview-003-existing-value.png"
+    },
+    {
+      "name": "Disabled",
+      "officialUrl": "http://localhost:6115/?path=/story/counter-counterpanel--disabled",
+      "originalFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--disabled&viewMode=story",
+      "controlledActualFrameUrl": "http://localhost:6115/iframe.html?id=counter-counterpanel--disabled&viewMode=story&embed=true",
+      "iframe": {
+        "id": "storybook-preview-iframe",
+        "src": "/iframe.html?id=counter-counterpanel--disabled&viewMode=story",
+        "title": "storybook-preview-iframe"
+      },
+      "initialVisibleValue": "5",
+      "disabled": {
+        "increment": true,
+        "reset": true
+      },
+      "actualValues": [
+        "5",
+        "5"
+      ],
+      "visibleDOM": "当前数值\n\n5\n加一\n重置",
+      "screenshot": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/006-apply/artifacts/preview-003-disabled.png"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "previews": [
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Default",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--default"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Existing Value",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--existing-value"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Disabled",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--disabled"
+    }
+  ],
+  "browserVersion": "148.0.7778.96",
+  "outcome": "passed",
+  "browserCleanup": {
+    "closed": true,
+    "elapsedMs": 147.60509999999886,
+    "budgetMs": 5000
+  },
+  "elapsedMs": 8243.6412,
+  "remainingMs": 161756.3554
+}

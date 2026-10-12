@@ -6,6 +6,8 @@ role: reviewer
 
 # review-propose 阶段方法
 
+独立审核使用本自有方法；`methods.upstream` 无强制 Author 方法。核对当前产物、来源及真实 instructions，不执行 propose / update 的 Author 写入流程代替审核，也不把方法返回或 ready 当作批准。
+
 读取固定 Author 实际正文及其四类产物；按需要请求当前 artifact instructions，核对真实 dependencies、context / rules 在范围、输入、场景、设计和任务中是否一致。例如“不自动安装”须有明确失败行为与测试，而不能只复制约束句子。blocked / done 仅是上游产物事实，strict validate、任务勾选和 sentinel 不替代语义审核。
 
 handoff 保持固定 Author，复制笔记只是未完成进展；接收 Reviewer 独立检查后明确 verdict。rejected 停 Owner，获明确授权的同阶段修订创建新 Author 和新独立 Review，原 verdict 不改。

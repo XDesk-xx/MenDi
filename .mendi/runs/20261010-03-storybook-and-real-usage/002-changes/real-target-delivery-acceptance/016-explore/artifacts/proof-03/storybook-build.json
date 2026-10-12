@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "build-storybook"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-6svsHP\\vue-environment-probe",
+  "status": 1,
+  "durationMs": 3721,
+  "stdout": "\n┌  Building storybook v10.6.1\n│\n◇  Cleaning outputDir: storybook-static\n│\n◇  Loading presets\n│\n◇  Building manager..\n│\n●  Building open services..\n│\n●  Building preview..\n│\n■  Failed to build the preview\n│\n■  Error [ERR_MODULE_NOT_FOUND]: Cannot find package\n│  'vite-plugin-vue-devtools' imported from\n│  .\\node_modules\\.vite-temp\\vite.config.ts.timestamp-1791702769535-56fd1ac16d9ae.mjs\n│  at Object.getPackageJSONURL\n│  (node:internal/modules/package_json_reader:314:9)\n│  at packageResolve (node:internal/modules/esm/resolve:768:81)\n│  at moduleResolve (node:internal/modules/esm/resolve:855:18)\n│  at defaultResolve (node:internal/modules/esm/resolve:985:11)\n│  at nextResolve (node:internal/modules/esm/hooks:748:28)\n│  at Hooks.resolve (node:internal/modules/esm/hooks:240:30)\n│  at handleMessage (node:internal/modules/esm/worker:199:24)\n│  at checkForMessages (node:internal/modules/esm/worker:141:28)\n│  at process.<anonymous> (node:internal/modules/esm/worker:160:5)\n│  at process.emit (node:events:519:28)\n│\n└  Storybook exited with an error\n\n[ELIFECYCLE] Command failed with exit code 1.\n",
+  "stderr": "$ storybook build --disable-telemetry\nvite.config.ts (5:24) \u001b[33m[UNRESOLVED_IMPORT] \u001b[0mCould not resolve 'vite-plugin-vue-devtools' in vite.config.ts\n   \u001b[38;5;246m╭\u001b[0m\u001b[38;5;246m─\u001b[0m\u001b[38;5;246m[\u001b[0m vite.config.ts:5:25 \u001b[38;5;246m]\u001b[0m\n   \u001b[38;5;246m│\u001b[0m\n \u001b[38;5;246m5 │\u001b[0m \u001b[38;5;249mi\u001b[0m\u001b[38;5;249mm\u001b[0m\u001b[38;5;249mp\u001b[0m\u001b[38;5;249mo\u001b[0m\u001b[38;5;249mr\u001b[0m\u001b[38;5;249mt\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249mv\u001b[0m\u001b[38;5;249mu\u001b[0m\u001b[38;5;249me\u001b[0m\u001b[38;5;249mD\u001b[0m\u001b[38;5;249me\u001b[0m\u001b[38;5;249mv\u001b[0m\u001b[38;5;249mT\u001b[0m\u001b[38;5;249mo\u001b[0m\u001b[38;5;249mo\u001b[0m\u001b[38;5;249ml\u001b[0m\u001b[38;5;249ms\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249mf\u001b[0m\u001b[38;5;249mr\u001b[0m\u001b[38;5;249mo\u001b[0m\u001b[38;5;249mm\u001b[0m\u001b[38;5;249m \u001b[0m'vite-plugin-vue-devtools'\n \u001b[38;5;240m  │\u001b[0m                         ─────────────┬────────────  \n \u001b[38;5;240m  │\u001b[0m                                      ╰────────────── Module not found, treating it as an external dependency\n\u001b[38;5;246m───╯\u001b[0m\n\nfailed to load config from D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-6svsHP\\vue-environment-probe\\vite.config.ts\n",
+  "signal": null
+}

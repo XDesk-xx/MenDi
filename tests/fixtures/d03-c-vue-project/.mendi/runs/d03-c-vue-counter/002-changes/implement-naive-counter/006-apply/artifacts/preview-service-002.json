@@ -1,0 +1,14 @@
+{
+  "budgetMs": 180000,
+  "elapsedMs": 15129,
+  "remainingMs": 164871,
+  "timedOut": false,
+  "sessionId": 2785,
+  "command": "official dispatcher dev --port 6115 --host 127.0.0.1 --ci --no-open --exact-port --disable-telemetry --no-version-updates",
+  "cwd": "D:/Projects/MenDi/tests/fixtures/d03-c-vue-project",
+  "stopMethod": "Ctrl+C current owned PTY",
+  "stopElapsedMs": 111,
+  "exited": true,
+  "exitCode": 1,
+  "stdout": "\u001b[?9001h\u001b[?1004h\u001b[?25l\u001b[2J\u001b[m\u001b[2;1H\u001b]0;C:\\Program Files\\PowerShell\\7\\pwsh.exe\u0007\u001b[?25h┌  storybook v10.6.1\r\n│\r\n●  Starting...\r\n│\r\n▲  `vue-docgen-api` is deprecated and will be removed in the next major\r\n│  release of Storybook. It is still the default docgen engine, so this\r\n│  also applies when you have not set the `docgen` framework option.\r\n│  Enable server-side docgen with `features: { experimentalDocgenServer:\r\n│  true }` in your `.storybook/main.ts`, which becomes the default in\r\n│  Storybook 11, or set `framework: { name: '@storybook/vue3-vite',\r\n│  options: { docgen: 'vue-component-meta' } }` to keep docgen in the\r\n│  builder.\r\n│ \u001b[38;2;255;71;133m╭────────────────────────────────────────────────────╮\r\n\u001b[m│ \u001b[38;2;255;71;133m│   \u001b[mStorybook ready!\u001b[33X\u001b[38;2;255;71;133m\u001b[33C│\u001b[m\r\n│ \u001b[38;2;255;71;133m│                                                    │\u001b[m\r\n│ \u001b[38;2;255;71;133m│   \u001b[m- Local:                http://localhost:6115/   \u001b[38;2;255;71;133m│\u001b[m\r\n│ \u001b[38;2;255;71;133m│   \u001b[m- On your network:      http://127.0.0.1:6115/   \u001b[38;2;255;71;133m│\u001b[m\r\n│ \u001b[38;2;255;71;133m│                                                    │\u001b[m\r\n│ \u001b[38;2;255;71;133m╰────────────────────────────────────────────────────╯\u001b[m\r\n│\r\n●  237 ms for manager and 563 ms for preview\r\n\u001b[?9001l\u001b[?1004l"
+}

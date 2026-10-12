@@ -1,0 +1,23 @@
+✓ Lockfile passes supply-chain policies (verified 5m ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +519
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: D:\dev-cache\pnpm-store\v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 519, reused 519, downloaded 0, added 77
+Progress: resolved 519, reused 519, downloaded 0, added 268
+Progress: resolved 519, reused 519, downloaded 0, added 481
+Progress: resolved 519, reused 519, downloaded 0, added 519, done
+
+devDependencies:
++ @storybook/html-vite 10.6.1
++ @storybook/test-runner 0.26.0
++ @types/node 22.20.5
++ playwright 1.60.0
++ storybook 10.6.1
++ typescript 5.9.3
++ vite 8.3.0
+
+Done in 4.4s using pnpm v11.22.0

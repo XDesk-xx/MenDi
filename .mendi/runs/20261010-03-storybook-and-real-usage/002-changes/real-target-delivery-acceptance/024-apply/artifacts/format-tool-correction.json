@@ -1,0 +1,4 @@
+{
+  "initial": "ERR_MODULE_NOT_FOUND: root does not declare prettier",
+  "correction": "Use already installed target Prettier explicitly for current draft source and target README only; no installation or root configuration change"
+}

@@ -1,0 +1,38 @@
+{
+  "formatVersion": 1,
+  "recordingMode": "product",
+  "id": "d01",
+  "title": "受控目标",
+  "state": "open",
+  "openedOn": "2026-10-10",
+  "goal": "记录规则",
+  "plannedChanges": [
+    {
+      "slot": "A",
+      "title": "入口",
+      "dependsOn": []
+    }
+  ],
+  "activeChangeId": "proof-entry",
+  "changeBindings": [
+    {
+      "planningSlot": "A",
+      "changeId": "proof-entry",
+      "changeRef": "openspec/changes/proof-entry",
+      "state": "active",
+      "latestRunRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+      "batchId": "001-changes"
+    }
+  ],
+  "changeBatches": [
+    {
+      "id": "001-changes",
+      "firstRun": "001",
+      "runsRef": ".mendi/runs/d01/001-changes",
+      "changeIds": [
+        "proof-entry"
+      ]
+    }
+  ],
+  "currentBatchId": "001-changes"
+}

@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-11T18:02:12.526Z",
+  "ownerReply": "已切换并返回",
+  "editorClosedBeforeRestoration": true,
+  "source": "tests/test-store.test.ts",
+  "candidatePresent": true,
+  "bytes": 9022,
+  "mtime": "2026-10-11T18:01:09.531Z",
+  "restorationMtime": "2026-10-11T18:01:09.531Z",
+  "mtimeUnchanged": true,
+  "navigationLog": "C:/Users/xuser/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/Codex/Logs/2026/10/11/codex-desktop-eb63a4ac-0d51-41ce-96d9-c6ef67c5cf4b-33996-t0-i1-000014-3.log",
+  "navigation": [
+    {
+      "line": 7724,
+      "text": "2026-10-11T18:01:42.128Z info [electron-message-handler] IAB_LIFECYCLE received browser sidebar owner sync browserTabId=null conversationId=client-new-thread:d38594b4-30ea-43c8-a231-0dde947729a0 originWebContentsId=1 ownerRoutePath=/local/01a1209e-be56-7982-b2d5-a53d460d2dc9 windowId=1"
+    },
+    {
+      "line": 7749,
+      "text": "2026-10-11T18:01:48.367Z info [electron-message-handler] IAB_LIFECYCLE received browser sidebar owner sync browserTabId=null conversationId=client-new-thread:958ae3d9-64cf-49f7-a5fa-bb6da05b9a9c originWebContentsId=1 ownerRoutePath=/local/01a1206d-9ef3-7741-aca6-cf2a0f94bc79 windowId=1"
+    }
+  ],
+  "interpretation": "关闭源码编辑标签页后，Owner实际切换两个会话并返回，源文件仍为明确释放实现；本次切换未复现旧版回写。"
+}

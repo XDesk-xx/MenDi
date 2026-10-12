@@ -1,0 +1,73 @@
+{
+  "method": "维护TypeScript/Vue/JS物理行；排除依赖、生成物及Run材料",
+  "groups": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  },
+  "growth": [
+    {
+      "file": "tests/test-support.ts",
+      "before": 115,
+      "after": 136
+    },
+    {
+      "file": "tests/sequential-support.ts",
+      "before": 107,
+      "after": 103
+    },
+    {
+      "file": "tests/lifecycle-support.ts",
+      "before": 176,
+      "after": 172
+    },
+    {
+      "file": "tests/delivery-support.ts",
+      "before": 122,
+      "after": 118
+    }
+  ],
+  "newFile": {
+    "file": "tests/test-preparation.test.ts",
+    "lines": 37
+  }
+}

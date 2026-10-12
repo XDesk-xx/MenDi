@@ -1,0 +1,20 @@
+$ node run-stories.ts
+[33m[test-storybook] Official support for Test Runner has ended. See migration guide at https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#test-runner-support-ended.[0m
+[33m[test-storybook] Detected Vite-based Storybook project: You might benefit from migrating to the Vitest addon. A modern, faster, and more feature-rich testing solution for Storybook:
+https://storybook.js.org/docs/writing-tests/integrations/vitest-addon/migration-guide?ref=test-runner-migration[0m
+[1mTest Suites: [22m0 of 1 total
+[1mTests:       [22m0 total
+[1mSnapshots:   [22m0 total
+[1mTime:[22m        0.027 s
+[2mRan all test suites[22m[2m.[22m
+[31mError: Failed to load native binding[39m
+[31m    at Object.<anonymous> (D:\Projects\MenDi\.tmp\mendi-d03-a-sa15qI\ui-target\node_modules\.pnpm\@swc+core@1.16.13\node_modules\@swc\core\binding.js:345:11)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1781:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1913:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1505:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1309:12)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1527:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (D:\Projects\MenDi\.tmp\mendi-d03-a-sa15qI\ui-target\node_modules\.pnpm\@swc+core@1.16.13\node_modules\@swc\core\index.js:66:17)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1781:14)[39m

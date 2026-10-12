@@ -1,0 +1,109 @@
+import { type ActionOptions } from './action-context.ts';
+import type { StartInput } from './actions.ts';
+import type { OpenSpec } from '../adapters/openspec.ts';
+import type { Workspace } from '../core/records.ts';
+export declare function archiveApproval(root: string, workspace: Workspace, reviewRef?: string, authorRef?: string): {
+    review: import("../adapters/runs.ts").RunDocument;
+    author: import("../adapters/runs.ts").RunDocument;
+};
+export declare function archiveReady(upstream: OpenSpec, change: string): import("../adapters/openspec-operations.ts").ApplyInstructions;
+export declare function prepareArchive(input: StartInput, options?: ActionOptions): {
+    methods: {
+        upstream: {
+            name: string;
+            projectRoot: string;
+            ref: string;
+            file: string;
+            generatedBy: string;
+            content: string;
+        }[];
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        deliveryId: string;
+        changeId: string;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/actions.ts").ActionType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        ownerDecision?: import("../core/actions.ts").OwnerDecision;
+        archive?: import("../core/archive.ts").ArchiveRecord;
+        ref: string;
+    };
+    next: {
+        action: string;
+        status: string;
+        reason: string;
+        currentRunRef: string;
+        source: string;
+        executable: boolean;
+        role: import("../core/actions.ts").Role;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        authorRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        revisesRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+    };
+};

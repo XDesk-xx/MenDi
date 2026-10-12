@@ -1,0 +1,7 @@
+{
+  "elapsedMs": 10037.967,
+  "scope": "ordinary focused; host foreground cancellation deadline",
+  "remainingMs": 169962.033,
+  "budgetMs": 180000,
+  "exitCode": 1
+}

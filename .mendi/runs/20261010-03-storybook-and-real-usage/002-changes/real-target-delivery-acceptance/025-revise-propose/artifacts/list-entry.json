@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "list",
+    "--json"
+  ],
+  "exitCode": 0,
+  "stdout": "{\n  \"changes\": [\n    {\n      \"name\": \"real-target-delivery-acceptance\",\n      \"completedTasks\": 3,\n      \"totalTasks\": 23,\n      \"lastModified\": \"2026-10-11T10:18:38.508Z\",\n      \"status\": \"in-progress\"\n    }\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}

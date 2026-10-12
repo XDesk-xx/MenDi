@@ -1,0 +1,30 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": true,
+  "operation": "test-list",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-a-KYlu6W\\ui-target",
+  "entries": [
+    {
+      "kind": "focused",
+      "scriptName": "verify:stories",
+      "scriptText": "test-storybook --url http://127.0.0.1:6113 --index-json --maxWorkers=1 --no-cache -- --rootDir .",
+      "available": true,
+      "reason": null
+    },
+    {
+      "kind": "fast",
+      "scriptName": "test:fast",
+      "available": false,
+      "reason": "script 缺失、为空或不是文本。"
+    },
+    {
+      "kind": "full",
+      "scriptName": "test:full",
+      "available": false,
+      "reason": "script 缺失、为空或不是文本。"
+    }
+  ]
+}

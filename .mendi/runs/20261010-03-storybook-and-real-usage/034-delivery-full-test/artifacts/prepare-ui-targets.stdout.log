@@ -1,0 +1,7 @@
+[WARN] Your node_modules are out of sync with your lockfile. The workspace structure has changed since last install
+已显式准备 D:\Projects\MenDi\.tmp\d03-full-test-034-ui\official-cli
+已显式准备 D:\Projects\MenDi\.tmp\d03-full-test-034-ui\environment
+已显式准备 D:\Projects\MenDi\.tmp\d03-full-test-034-ui\preview
+已显式准备 D:\Projects\MenDi\.tmp\d03-full-test-034-ui\unknown-service
+已显式准备 D:\Projects\MenDi\.tmp\d03-full-test-034-ui\finite-results
+设置 MENDI_UI_TARGETS_DIR 为该目录，再运行 test:ui；未认证冷安装或其他平台。

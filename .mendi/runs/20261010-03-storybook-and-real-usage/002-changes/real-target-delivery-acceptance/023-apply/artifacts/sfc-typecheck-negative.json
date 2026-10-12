@@ -1,0 +1,19 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "typecheck"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 15400,
+  "remainingMs": 558737.3006,
+  "allowanceMs": 300000,
+  "durationMs": 4777.1846000000005,
+  "stdout": "src/App.vue(2,7): error TS2322: Type 'number' is not assignable to type 'string'.\r\n[ELIFECYCLE] Command failed with exit code 2.\n",
+  "stderr": "$ vue-tsc --noEmit\n",
+  "exitCode": 2,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

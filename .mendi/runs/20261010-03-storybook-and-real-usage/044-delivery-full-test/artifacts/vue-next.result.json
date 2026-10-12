@@ -1,0 +1,35 @@
+{
+  "id": "vue-next",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-vue-next",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+      "next",
+      "--project",
+      "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "--json"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:34:01.089Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-next.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-next.stderr.log",
+  "budgetMs": 30000,
+  "wholeGroupRemainingAtStartMs": 1331037,
+  "pid": 11444,
+  "finishedAt": "2026-10-11T18:34:02.386Z",
+  "elapsedMs": 1296,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

@@ -1,0 +1,48 @@
+{
+  "rootCurrentChange": [
+    "openspec/changes/real-target-delivery-acceptance/tasks.md"
+  ],
+  "necessaryRootHandoff": [
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "rootNewRun": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/",
+  "targetRoot": "tests/fixtures/d03-c-vue-project",
+  "targetNewMaintainedFiles": [
+    "delivery-scope.json",
+    "src/components/CounterPanel.vue",
+    "src/components/CounterPanel.stories.ts",
+    ".storybook/preview.ts",
+    "vitest.config.ts"
+  ],
+  "targetModifiedMaintainedFiles": [
+    "README.md",
+    "src/App.vue",
+    ".storybook/main.ts",
+    "package.json",
+    "openspec/config.yaml"
+  ],
+  "targetNewPlanning": "openspec/changes/implement-naive-counter/{.openspec.yaml,proposal.md,design.md,tasks.md,specs/naive-counter/spec.md}",
+  "targetActualProgress": "current target tasks updated after real results; product delivery/action/test metadata maintained by legal CLI",
+  "targetNewRecords": "Own Open/Explore/Review Explore/Propose/Review Propose/Apply/Review Apply Runs, and ordinary focused tests 001-003; originals only in target",
+  "unchangedByThisRun": [
+    "root src/",
+    "root scripts/",
+    "other fixtures",
+    "mendi-foundation-and-delivery-roadmap.md",
+    "tsconfig.tests.json",
+    "root and target lockfiles",
+    "stable installation files",
+    "all previously submitted Runs and artifacts/verdicts"
+  ],
+  "verificationBasis": "Actual root calls and target role reports/current fixed Runs; read-only git diff names classify earlier workspace differences. No full-history hash scan.",
+  "unintendedSideEffect": "Target 004 top-level Storybook --help invoked dlx with downloaded 2 / Packages +211. Package/cache preparation had external side effects; exact cache paths not enumerated. Incident preserved, remote branch stopped, no cleanup.",
+  "excludedOperations": [
+    "Archive",
+    "formal Full Test",
+    "delivery repair/Close",
+    "Git write actions",
+    "directory cleanup"
+  ]
+}

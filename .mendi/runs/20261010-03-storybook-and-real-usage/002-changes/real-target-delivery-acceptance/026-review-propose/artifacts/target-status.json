@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "source": "nearest"
+    }
+  },
+  "local": null,
+  "upstream": null,
+  "next": {
+    "action": "delivery-open",
+    "source": "local-state",
+    "executable": true,
+    "reason": "需明确 Delivery 范围与 Owner 授权。"
+  }
+}

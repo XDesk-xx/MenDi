@@ -1,0 +1,34 @@
+{
+  "changeName": "real-target-delivery-acceptance",
+  "artifactId": "design",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi",
+    "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "outputPath": "design.md",
+  "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\design.md",
+  "existingOutputPaths": [],
+  "description": "Technical design document with implementation details",
+  "instruction": "Create the design document that explains HOW to implement the change.\n\nWhen to include design.md (create only if any apply):\n- Cross-cutting change (multiple services/modules) or new architectural pattern\n- New external dependency or significant data model changes\n- Security, performance, or migration complexity\n- Ambiguity that benefits from technical decisions before coding\n\nSections:\n- **Context**: Only the current state and constraints needed to explain the approach. Reference the proposal for motivation instead of restating it (e.g., \"See proposal.md - Why\").\n- **Goals / Non-Goals**: What this design achieves and explicitly excludes. Don't restate the proposal's scope - add only design-level boundaries.\n- **Decisions**: Key technical choices with rationale (why X over Y?). Include alternatives considered for each decision.\n- **Risks / Trade-offs**: Known limitations, things that could go wrong. Format: [Risk] → Mitigation\n- **Migration Plan**: Steps to deploy, rollback strategy (if applicable)\n- **Open Questions**: Unknowns that can safely be answered later without\n  changing the specs, the approach, or the task breakdown. Omit if none.\n\nOpen questions are for genuinely deferrable unknowns, not decisions you\nskipped. If a question would change the specs, the chosen approach, or\nthe task breakdown, resolve it now - ask the user instead of guessing.\n\nFocus on architecture and approach, not line-by-line implementation.\nThe proposal covers why and what; design covers how. Reference the\nproposal for motivation and, once written, the specs for requirements -\nif a section would only restate them, point to them instead.\n\nGood design docs explain the \"why\" behind technical decisions.\n",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D03 open / manual-bootstrap，A / B 已归档，累计成功归档 9。\nOwner 已重新激活 C real-target-delivery-acceptance；017 独立 Review Explore 已批准 016 的有限环境探索，当前交接 Author Propose，未执行方案阶段；批准不代表计数器、浏览器交互或正式交付验收完成。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。\nC 按最简路线图从空目录建立唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、目标 OpenSpec 和 Storybook；无 UI 仅工程验证。\n后续 Propose 收敛唯一目标、真实阶段 / 新会话交接、验证预算及授权；本轮审核未实现计数器或启动子智能体。升级、多版本 / 多布局和 MCP 认证不在 C 范围，外接升级留后续。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。",
+  "template": "# Design\n\n## Context\n\n<!-- Current state and constraints that shape the approach. See proposal.md for motivation - don't restate it -->\n\n## Goals / Non-Goals\n\n**Goals:**\n<!-- What this design aims to achieve -->\n\n**Non-Goals:**\n<!-- What is explicitly out of scope -->\n\n## Decisions\n\n<!-- Key design decisions with rationale and alternatives considered -->\n\n## Risks / Trade-offs\n\n<!-- Known risks and trade-offs -->\n",
+  "dependencies": [
+    {
+      "id": "proposal",
+      "done": true,
+      "path": "proposal.md",
+      "description": "Initial proposal document outlining the change"
+    }
+  ],
+  "unlocks": [
+    "tasks"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

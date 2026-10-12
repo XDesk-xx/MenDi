@@ -1,0 +1,6 @@
+{
+  "cwd": "tests/fixtures/d03-c-vue-project",
+  "exitCode": 0,
+  "stdout": "README.md 48ms (unchanged)\n",
+  "stderr": ""
+}

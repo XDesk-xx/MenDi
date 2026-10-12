@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 D:/Projects/MenDi/.tmp/mendi-d03-a-9EMNc1/ui-target
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  21:33:42
+   Duration  2.71s (transform 0ms, setup 797ms, import 48ms, tests 49ms, environment 0ms)
+

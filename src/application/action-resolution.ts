@@ -2,7 +2,7 @@ import { selected } from './project.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
 import { currentRun, type RunDocument } from '../adapters/runs.ts';
 import { createRun, writeAction } from '../adapters/action-store.ts';
-import { loadMethods } from '../adapters/methods.ts';
+import { loadChangeMethods } from '../adapters/methods.ts';
 import { actionDefinition, type OwnerDecision } from '../core/actions.ts';
 import { MendiError, text } from '../core/errors.ts';
 import type { Workspace } from '../core/records.ts';
@@ -159,7 +159,7 @@ export function resolveAction(input: ResolveInput, options: ActionOptions = {}) 
   const prior = check(workspace);
   upstream.status(workspace.activeChangeId!);
   const tools = prior.author?.record.toolGuidance ?? prior.run.record.toolGuidance;
-  const methods = loadMethods(prior.definition.type, tools, options.methodsRoot);
+  let methods = loadChangeMethods(prior.definition.type, tools, root, options.methodsRoot);
   const result = writeAction(
     root,
     'action-resolve',
@@ -185,6 +185,7 @@ export function resolveAction(input: ResolveInput, options: ActionOptions = {}) 
         JSON.stringify(fixed) !== JSON.stringify(prior.fixed)
       )
         throw new MendiError('resolution-state-conflict', '写前处置对象已变化。');
+      methods = loadChangeMethods(definition.type, tools, root, options.methodsRoot);
       const {
         runNumber: _number,
         outcome: _outcome,

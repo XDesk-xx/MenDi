@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+ok 1 - 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+  ---
+  duration_ms: 27.8028
+  type: 'test'
+  ...
+# Subtest: 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+ok 2 - 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+  ---
+  duration_ms: 1455.5144
+  type: 'test'
+  ...
+# Subtest: 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+ok 3 - 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+  ---
+  duration_ms: 276.0238
+  type: 'test'
+  ...
+# Subtest: 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+ok 4 - 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+  ---
+  duration_ms: 1493.3904
+  type: 'test'
+  ...
+# Subtest: CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+ok 5 - CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+  ---
+  duration_ms: 1025.4359
+  type: 'test'
+  ...
+# Subtest: 空依赖副本使用各自目标路径，修改一个沙箱不污染其他目标或种子
+ok 6 - 空依赖副本使用各自目标路径，修改一个沙箱不污染其他目标或种子
+  ---
+  duration_ms: 6454.0983
+  type: 'test'
+  ...
+# Subtest: 复用空依赖准备不掩盖缺失准备或新增未安装依赖
+ok 7 - 复用空依赖准备不掩盖缺失准备或新增未安装依赖
+  ---
+  duration_ms: 3429.7792
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10229.4964

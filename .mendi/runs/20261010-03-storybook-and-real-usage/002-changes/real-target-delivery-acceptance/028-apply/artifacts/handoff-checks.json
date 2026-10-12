@@ -1,0 +1,606 @@
+{
+  "checkedBeforeFinalSeal": true,
+  "checks": [
+    {
+      "name": "strict",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "validate",
+        "real-target-delivery-acceptance",
+        "--strict",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"real-target-delivery-acceptance\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 43\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "data": {
+        "items": [
+          {
+            "id": "real-target-delivery-acceptance",
+            "type": "change",
+            "valid": true,
+            "issues": [
+              {
+                "level": "INFO",
+                "path": "file",
+                "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+              }
+            ],
+            "durationMs": 43
+          }
+        ],
+        "summary": {
+          "totals": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          },
+          "byType": {
+            "change": {
+              "items": 1,
+              "passed": 1,
+              "failed": 0
+            }
+          }
+        },
+        "version": "1.0",
+        "root": {
+          "path": "D:\\Projects\\MenDi",
+          "source": "nearest"
+        }
+      }
+    },
+    {
+      "name": "apply",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "instructions",
+        "apply",
+        "--change",
+        "real-target-delivery-acceptance",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"changeName\": \"real-target-delivery-acceptance\",\n  \"changeDir\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\",\n  \"schemaName\": \"spec-driven\",\n  \"contextFiles\": {\n    \"proposal\": [\n      \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\proposal.md\"\n    ],\n    \"design\": [\n      \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\design.md\"\n    ],\n    \"tasks\": [\n      \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\"\n    ]\n  },\n  \"progress\": {\n    \"total\": 10,\n    \"complete\": 10,\n    \"remaining\": 0\n  },\n  \"tasks\": [\n    {\n      \"id\": \"1\",\n      \"description\": \"1.1 从此前不存在的目录用官方 create-vue 建立唯一 Vue / TS 空壳与独立 pnpm workspace；来源、命令和目标根见 023，未复制探针或实现计数器。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 9\n    },\n    {\n      \"id\": \"2\",\n      \"description\": \"1.2 准备 Naive UI、Storybook、有限测试依赖、Chromium、锁文件及格式 / lint / vue-tsc 配置；沿用 023 实际安装 / 空工程检查及 024 准备预算 / 实际 Ctrl+C / 有限停止短验，保留其未认证能力与预算限制，不重装或补演示。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 10\n    },\n    {\n      \"id\": \"3\",\n      \"description\": \"1.3 初始化目标 OpenSpec 1.14.1 方法和目标规则 / 入口说明；沿用 023 方法正文、list 与跨 cwd 稳定 MenDi 定位结果。下一项在目标操作前同步因本次收缩而过时的当前说明，既有准备事实不改。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 11\n    },\n    {\n      \"id\": \"4\",\n      \"description\": \"2.1 根修订独立批准后，同步目标当前 AGENTS / OpenSpec rules / guidance / README，移除旧新 Author 留待与五项 full 要求；在具体 Owner 授权内 Open 唯一 d03-c-vue-counter / VUE-COUNTER，创建并绑定 implement-naive-counter 一次。用实际授权、目标 list / status 与绑定结果核对唯一身份和目标根，全部目标材料写在目标目录。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 15\n    },\n    {\n      \"id\": \"5\",\n      \"description\": \"2.2 目标 Author 按实际 MenDi 方法 / instructions 执行必要事实 Explore 和计数器 Propose，由真实独立 Reviewer 完成所需 Review Explore / Review Propose。以目标自身方案、规格、任务及最终固定当前方案的 approved 交接核对合法顺序和未提前实现业务；根仅引用当前必要入口，不另逐阶段补 proof 或复制记录。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 16\n    },\n    {\n      \"id\": \"6\",\n      \"description\": \"3.1 目标方案批准后实现唯一 CounterPanel，App 与 stories 共用；Composition API / script setup / TS 与 Naive UI 保持。用实施需要的 focused 核对默认 0、初值 5、加一、重置到 0、禁用行为，不增加无关任务。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 20\n    },\n    {\n      \"id\": \"7\",\n      \"description\": \"3.2 编写默认、已有数值、禁用三个真实 stories，接入 Storybook Vitest / Chromium 与目标 verify:stories / mendi.tests.focused。至少一次经稳定 MenDi 普通 focused 测试取得目标实际结果，使用官方 CLI 预览入口与宿主浏览器核对三个状态、交互、页面错误及本次服务收尾；命令 / 日志 / 必要结果与使用说明留在目标，不作为正式 Full Test，不留待额外新 Author 演示。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 21\n    },\n    {\n      \"id\": \"8\",\n      \"description\": \"3.3 完成目标 check、应用 build 与 build-storybook，确认维护 TS / .vue、stories 和配置的真正检查归属；用实际工程结果和按影响修正后的新结果核对当前候选。沿用已有预算 / 取消结论并执行实际有限收尾，不新增五项 full runner 或额外负例矩阵，不机械重复未变化检查。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 22\n    },\n    {\n      \"id\": \"9\",\n      \"description\": \"4.1 独立目标 Reviewer 审核实际 Apply / 当前候选和必要结果；真实问题才修订补审。以目标 approved Review Apply 及合法 next 核对实施已获独立批准、目标可停在待 Archive；根不执行或伪造目标收口。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 26\n    },\n    {\n      \"id\": \"10\",\n      \"description\": \"4.2 汇总三项最小验收结果、适用旧结论、必要新检查和限制，直接引用目标当前必要材料；按实际影响完成根工程检查并核对写入范围，列出 AGENTS 要求的维护行数前三及职责说明。根 Author 提交 complete，核对 manifest / status / next 后停根独立 Review Apply，不自签、复制证据树或执行后续收口。\",\n      \"done\": true,\n      \"sourcePath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\real-target-delivery-acceptance\\\\tasks.md\",\n      \"line\": 27\n    }\n  ],\n  \"taskTrackingConfigured\": true,\n  \"state\": \"all_done\",\n  \"instruction\": \"All tracked tasks are complete.\\nReview or verify the change as appropriate before archiving.\",\n  \"context\": \"Language: Chinese\\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\\n当前 MVP-D03 open / manual-bootstrap，A / B 已归档，累计成功归档 9。\\n当前 C real-target-delivery-acceptance 按 026 批准的 025 最简方案完成 028 Author Apply，当前 10/10；唯一目标007独立ReviewApply批准并待Archive。根Author complete仅交根独立ReviewApply，尚未获根批准，不执行后续收口。\\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。\\nC 按最简路线图从空目录建立唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、目标 OpenSpec 和 Storybook；无 UI 仅工程验证。\\n当前必要输入见最近 028 Author Run，批准依据与授权来源由该 Run 承接。目标正式阶段记录只留目标目录，根仅汇总必要结果；取消项不恢复，Author 不自签，所有历史 Run / verdict 不改。\\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。\\n\",\n  \"operationGuidance\": [\n    \"先执行当前修改需要的 focused 检查，验证结果简洁留痕。\",\n    \"独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。\"\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "data": {
+        "changeName": "real-target-delivery-acceptance",
+        "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance",
+        "schemaName": "spec-driven",
+        "contextFiles": {
+          "proposal": [
+            "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\proposal.md"
+          ],
+          "design": [
+            "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\design.md"
+          ],
+          "tasks": [
+            "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md"
+          ]
+        },
+        "progress": {
+          "total": 10,
+          "complete": 10,
+          "remaining": 0
+        },
+        "tasks": [
+          {
+            "id": "1",
+            "description": "1.1 从此前不存在的目录用官方 create-vue 建立唯一 Vue / TS 空壳与独立 pnpm workspace；来源、命令和目标根见 023，未复制探针或实现计数器。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 9
+          },
+          {
+            "id": "2",
+            "description": "1.2 准备 Naive UI、Storybook、有限测试依赖、Chromium、锁文件及格式 / lint / vue-tsc 配置；沿用 023 实际安装 / 空工程检查及 024 准备预算 / 实际 Ctrl+C / 有限停止短验，保留其未认证能力与预算限制，不重装或补演示。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 10
+          },
+          {
+            "id": "3",
+            "description": "1.3 初始化目标 OpenSpec 1.14.1 方法和目标规则 / 入口说明；沿用 023 方法正文、list 与跨 cwd 稳定 MenDi 定位结果。下一项在目标操作前同步因本次收缩而过时的当前说明，既有准备事实不改。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 11
+          },
+          {
+            "id": "4",
+            "description": "2.1 根修订独立批准后，同步目标当前 AGENTS / OpenSpec rules / guidance / README，移除旧新 Author 留待与五项 full 要求；在具体 Owner 授权内 Open 唯一 d03-c-vue-counter / VUE-COUNTER，创建并绑定 implement-naive-counter 一次。用实际授权、目标 list / status 与绑定结果核对唯一身份和目标根，全部目标材料写在目标目录。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 15
+          },
+          {
+            "id": "5",
+            "description": "2.2 目标 Author 按实际 MenDi 方法 / instructions 执行必要事实 Explore 和计数器 Propose，由真实独立 Reviewer 完成所需 Review Explore / Review Propose。以目标自身方案、规格、任务及最终固定当前方案的 approved 交接核对合法顺序和未提前实现业务；根仅引用当前必要入口，不另逐阶段补 proof 或复制记录。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 16
+          },
+          {
+            "id": "6",
+            "description": "3.1 目标方案批准后实现唯一 CounterPanel，App 与 stories 共用；Composition API / script setup / TS 与 Naive UI 保持。用实施需要的 focused 核对默认 0、初值 5、加一、重置到 0、禁用行为，不增加无关任务。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 20
+          },
+          {
+            "id": "7",
+            "description": "3.2 编写默认、已有数值、禁用三个真实 stories，接入 Storybook Vitest / Chromium 与目标 verify:stories / mendi.tests.focused。至少一次经稳定 MenDi 普通 focused 测试取得目标实际结果，使用官方 CLI 预览入口与宿主浏览器核对三个状态、交互、页面错误及本次服务收尾；命令 / 日志 / 必要结果与使用说明留在目标，不作为正式 Full Test，不留待额外新 Author 演示。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 21
+          },
+          {
+            "id": "8",
+            "description": "3.3 完成目标 check、应用 build 与 build-storybook，确认维护 TS / .vue、stories 和配置的真正检查归属；用实际工程结果和按影响修正后的新结果核对当前候选。沿用已有预算 / 取消结论并执行实际有限收尾，不新增五项 full runner 或额外负例矩阵，不机械重复未变化检查。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 22
+          },
+          {
+            "id": "9",
+            "description": "4.1 独立目标 Reviewer 审核实际 Apply / 当前候选和必要结果；真实问题才修订补审。以目标 approved Review Apply 及合法 next 核对实施已获独立批准、目标可停在待 Archive；根不执行或伪造目标收口。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 26
+          },
+          {
+            "id": "10",
+            "description": "4.2 汇总三项最小验收结果、适用旧结论、必要新检查和限制，直接引用目标当前必要材料；按实际影响完成根工程检查并核对写入范围，列出 AGENTS 要求的维护行数前三及职责说明。根 Author 提交 complete，核对 manifest / status / next 后停根独立 Review Apply，不自签、复制证据树或执行后续收口。",
+            "done": true,
+            "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\real-target-delivery-acceptance\\tasks.md",
+            "line": 27
+          }
+        ],
+        "taskTrackingConfigured": true,
+        "state": "all_done",
+        "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+        "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D03 open / manual-bootstrap，A / B 已归档，累计成功归档 9。\n当前 C real-target-delivery-acceptance 按 026 批准的 025 最简方案完成 028 Author Apply，当前 10/10；唯一目标007独立ReviewApply批准并待Archive。根Author complete仅交根独立ReviewApply，尚未获根批准，不执行后续收口。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导完成或批准。\nC 按最简路线图从空目录建立唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、目标 OpenSpec 和 Storybook；无 UI 仅工程验证。\n当前必要输入见最近 028 Author Run，批准依据与授权来源由该 Run 承接。目标正式阶段记录只留目标目录，根仅汇总必要结果；取消项不恢复，Author 不自签，所有历史 Run / verdict 不改。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。\n",
+        "operationGuidance": [
+          "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+          "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+        ],
+        "root": {
+          "path": "D:\\Projects\\MenDi",
+          "source": "nearest"
+        }
+      }
+    },
+    {
+      "name": "status",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "status",
+        "--project",
+        "D:\\Projects\\MenDi",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"operation\": \"query\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\",\n  \"openspec\": {\n    \"entry\": \"D:\\\\tools\\\\openspec\\\\1.14.1\\\\node_modules\\\\@fission-ai\\\\openspec\\\\bin\\\\openspec.js\",\n    \"version\": \"1.14.1\",\n    \"root\": {\n      \"path\": \"D:\\\\Projects\\\\MenDi\",\n      \"source\": \"nearest\"\n    }\n  },\n  \"local\": {\n    \"source\": \"manual-bootstrap\",\n    \"deliveryId\": \"20261010-03-storybook-and-real-usage\",\n    \"title\": \"Storybook 与实际使用\",\n    \"state\": \"open\",\n    \"goal\": \"稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。\",\n    \"plannedChanges\": [\n      {\n        \"slot\": \"MVP-D03-A\",\n        \"title\": \"Storybook 轻量接入\",\n        \"dependsOn\": [],\n        \"roadmapSection\": \"MVP-D03-A：Storybook 轻量接入\"\n      },\n      {\n        \"slot\": \"MVP-D03-B\",\n        \"title\": \"独立安装与简短项目指导\",\n        \"dependsOn\": [\n          \"MVP-D03-A\"\n        ],\n        \"roadmapSection\": \"MVP-D03-B：独立安装与简短项目指导\"\n      },\n      {\n        \"slot\": \"MVP-D03-C\",\n        \"title\": \"最小真实交付验收\",\n        \"dependsOn\": [\n          \"MVP-D03-B\"\n        ],\n        \"roadmapSection\": \"MVP-D03-C：最小真实交付验收\"\n      }\n    ],\n    \"activeChangeId\": \"real-target-delivery-acceptance\",\n    \"changeBindings\": [\n      {\n        \"changeId\": \"storybook-lightweight-integration\",\n        \"changeRef\": \"openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration\",\n        \"planningSlot\": \"MVP-D03-A\",\n        \"state\": \"archived\",\n        \"archiveOrdinal\": 8\n      },\n      {\n        \"changeId\": \"independent-installation-and-target-openspec-skills\",\n        \"changeRef\": \"openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills\",\n        \"planningSlot\": \"MVP-D03-B\",\n        \"state\": \"archived\",\n        \"archiveOrdinal\": 9\n      },\n      {\n        \"changeId\": \"real-target-delivery-acceptance\",\n        \"changeRef\": \"openspec/changes/real-target-delivery-acceptance\",\n        \"planningSlot\": \"MVP-D03-C\",\n        \"state\": \"active\"\n      }\n    ],\n    \"recorded\": {\n      \"id\": \"20261010-03-storybook-and-real-usage\",\n      \"planningSlot\": \"MVP-D03\",\n      \"title\": \"Storybook 与实际使用\",\n      \"state\": \"open\",\n      \"recordingMode\": \"manual-bootstrap\",\n      \"openedOn\": \"2026-10-10\",\n      \"roadmapRef\": \"mendi-foundation-and-delivery-roadmap.md\",\n      \"goal\": \"稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。\",\n      \"plannedChanges\": [\n        {\n          \"slot\": \"MVP-D03-A\",\n          \"title\": \"Storybook 轻量接入\",\n          \"dependsOn\": [],\n          \"externalDependsOn\": [\n            \"MVP-D02-C\"\n          ],\n          \"roadmapSection\": \"MVP-D03-A：Storybook 轻量接入\"\n        },\n        {\n          \"slot\": \"MVP-D03-B\",\n          \"title\": \"独立安装与简短项目指导\",\n          \"dependsOn\": [\n            \"MVP-D03-A\"\n          ],\n          \"roadmapSection\": \"MVP-D03-B：独立安装与简短项目指导\"\n        },\n        {\n          \"slot\": \"MVP-D03-C\",\n          \"title\": \"最小真实交付验收\",\n          \"dependsOn\": [\n            \"MVP-D03-B\"\n          ],\n          \"roadmapSection\": \"MVP-D03-C：最小真实交付验收\"\n        }\n      ],\n      \"changeBatches\": [\n        {\n          \"id\": \"002-changes\",\n          \"firstRun\": \"002\",\n          \"runsRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes\",\n          \"changeIds\": [\n            \"storybook-lightweight-integration\",\n            \"independent-installation-and-target-openspec-skills\",\n            \"real-target-delivery-acceptance\"\n          ]\n        }\n      ],\n      \"changeBindings\": [\n        {\n          \"planningSlot\": \"MVP-D03-A\",\n          \"changeId\": \"storybook-lightweight-integration\",\n          \"changeRef\": \"openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"archived\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md\",\n          \"archiveOrdinal\": 8\n        },\n        {\n          \"planningSlot\": \"MVP-D03-B\",\n          \"changeId\": \"independent-installation-and-target-openspec-skills\",\n          \"changeRef\": \"openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"archived\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md\",\n          \"archiveOrdinal\": 9\n        },\n        {\n          \"planningSlot\": \"MVP-D03-C\",\n          \"changeId\": \"real-target-delivery-acceptance\",\n          \"changeRef\": \"openspec/changes/real-target-delivery-acceptance\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"active\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\"\n        }\n      ],\n      \"activeChangeId\": \"real-target-delivery-acceptance\",\n      \"exitCriteria\": [\n        \"A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。\",\n        \"真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。\",\n        \"唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。\",\n        \"最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。\"\n      ],\n      \"outOfScope\": [\n        \"MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。\",\n        \"通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。\",\n        \"迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。\",\n        \"自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。\"\n      ],\n      \"openRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md\",\n      \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n      \"stopBoundary\": \"review-apply\",\n      \"next\": {\n        \"action\": \"review-apply\",\n        \"status\": \"awaiting-review\",\n        \"role\": \"reviewer\",\n        \"authorRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n        \"reason\": \"028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。\"\n      }\n    }\n  },\n  \"upstream\": {\n    \"schemaName\": \"spec-driven\",\n    \"mode\": \"repo-local\",\n    \"isPlanningComplete\": true,\n    \"artifacts\": [\n      {\n        \"id\": \"proposal\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"specs\",\n        \"status\": \"skipped\"\n      },\n      {\n        \"id\": \"design\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"tasks\",\n        \"status\": \"done\"\n      }\n    ]\n  },\n  \"next\": {\n    \"action\": \"review-apply\",\n    \"status\": \"awaiting-review\",\n    \"role\": \"reviewer\",\n    \"authorRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n    \"reason\": \"028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。\",\n    \"source\": \"manual-bootstrap\",\n    \"executable\": false\n  }\n}\n",
+      "stderr": "",
+      "data": {
+        "ok": true,
+        "operation": "query",
+        "projectRoot": "D:\\Projects\\MenDi",
+        "openspec": {
+          "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+          "version": "1.14.1",
+          "root": {
+            "path": "D:\\Projects\\MenDi",
+            "source": "nearest"
+          }
+        },
+        "local": {
+          "source": "manual-bootstrap",
+          "deliveryId": "20261010-03-storybook-and-real-usage",
+          "title": "Storybook 与实际使用",
+          "state": "open",
+          "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+          "plannedChanges": [
+            {
+              "slot": "MVP-D03-A",
+              "title": "Storybook 轻量接入",
+              "dependsOn": [],
+              "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+            },
+            {
+              "slot": "MVP-D03-B",
+              "title": "独立安装与简短项目指导",
+              "dependsOn": [
+                "MVP-D03-A"
+              ],
+              "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+            },
+            {
+              "slot": "MVP-D03-C",
+              "title": "最小真实交付验收",
+              "dependsOn": [
+                "MVP-D03-B"
+              ],
+              "roadmapSection": "MVP-D03-C：最小真实交付验收"
+            }
+          ],
+          "activeChangeId": "real-target-delivery-acceptance",
+          "changeBindings": [
+            {
+              "changeId": "storybook-lightweight-integration",
+              "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+              "planningSlot": "MVP-D03-A",
+              "state": "archived",
+              "archiveOrdinal": 8
+            },
+            {
+              "changeId": "independent-installation-and-target-openspec-skills",
+              "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+              "planningSlot": "MVP-D03-B",
+              "state": "archived",
+              "archiveOrdinal": 9
+            },
+            {
+              "changeId": "real-target-delivery-acceptance",
+              "changeRef": "openspec/changes/real-target-delivery-acceptance",
+              "planningSlot": "MVP-D03-C",
+              "state": "active"
+            }
+          ],
+          "recorded": {
+            "id": "20261010-03-storybook-and-real-usage",
+            "planningSlot": "MVP-D03",
+            "title": "Storybook 与实际使用",
+            "state": "open",
+            "recordingMode": "manual-bootstrap",
+            "openedOn": "2026-10-10",
+            "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+            "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+            "plannedChanges": [
+              {
+                "slot": "MVP-D03-A",
+                "title": "Storybook 轻量接入",
+                "dependsOn": [],
+                "externalDependsOn": [
+                  "MVP-D02-C"
+                ],
+                "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+              },
+              {
+                "slot": "MVP-D03-B",
+                "title": "独立安装与简短项目指导",
+                "dependsOn": [
+                  "MVP-D03-A"
+                ],
+                "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+              },
+              {
+                "slot": "MVP-D03-C",
+                "title": "最小真实交付验收",
+                "dependsOn": [
+                  "MVP-D03-B"
+                ],
+                "roadmapSection": "MVP-D03-C：最小真实交付验收"
+              }
+            ],
+            "changeBatches": [
+              {
+                "id": "002-changes",
+                "firstRun": "002",
+                "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
+                "changeIds": [
+                  "storybook-lightweight-integration",
+                  "independent-installation-and-target-openspec-skills",
+                  "real-target-delivery-acceptance"
+                ]
+              }
+            ],
+            "changeBindings": [
+              {
+                "planningSlot": "MVP-D03-A",
+                "changeId": "storybook-lightweight-integration",
+                "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+                "batchId": "002-changes",
+                "state": "archived",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+                "archiveOrdinal": 8
+              },
+              {
+                "planningSlot": "MVP-D03-B",
+                "changeId": "independent-installation-and-target-openspec-skills",
+                "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+                "batchId": "002-changes",
+                "state": "archived",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+                "archiveOrdinal": 9
+              },
+              {
+                "planningSlot": "MVP-D03-C",
+                "changeId": "real-target-delivery-acceptance",
+                "changeRef": "openspec/changes/real-target-delivery-acceptance",
+                "batchId": "002-changes",
+                "state": "active",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md"
+              }
+            ],
+            "activeChangeId": "real-target-delivery-acceptance",
+            "exitCriteria": [
+              "A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。",
+              "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+              "唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。",
+              "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+            ],
+            "outOfScope": [
+              "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+              "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+              "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+              "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+            ],
+            "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+            "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+            "stopBoundary": "review-apply",
+            "next": {
+              "action": "review-apply",
+              "status": "awaiting-review",
+              "role": "reviewer",
+              "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+              "reason": "028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。"
+            }
+          }
+        },
+        "upstream": {
+          "schemaName": "spec-driven",
+          "mode": "repo-local",
+          "isPlanningComplete": true,
+          "artifacts": [
+            {
+              "id": "proposal",
+              "status": "done"
+            },
+            {
+              "id": "specs",
+              "status": "skipped"
+            },
+            {
+              "id": "design",
+              "status": "done"
+            },
+            {
+              "id": "tasks",
+              "status": "done"
+            }
+          ]
+        },
+        "next": {
+          "action": "review-apply",
+          "status": "awaiting-review",
+          "role": "reviewer",
+          "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+          "reason": "028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。",
+          "source": "manual-bootstrap",
+          "executable": false
+        }
+      }
+    },
+    {
+      "name": "next",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+        "next",
+        "--project",
+        "D:\\Projects\\MenDi",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"operation\": \"query\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\",\n  \"openspec\": {\n    \"entry\": \"D:\\\\tools\\\\openspec\\\\1.14.1\\\\node_modules\\\\@fission-ai\\\\openspec\\\\bin\\\\openspec.js\",\n    \"version\": \"1.14.1\",\n    \"root\": {\n      \"path\": \"D:\\\\Projects\\\\MenDi\",\n      \"source\": \"nearest\"\n    }\n  },\n  \"local\": {\n    \"source\": \"manual-bootstrap\",\n    \"deliveryId\": \"20261010-03-storybook-and-real-usage\",\n    \"title\": \"Storybook 与实际使用\",\n    \"state\": \"open\",\n    \"goal\": \"稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。\",\n    \"plannedChanges\": [\n      {\n        \"slot\": \"MVP-D03-A\",\n        \"title\": \"Storybook 轻量接入\",\n        \"dependsOn\": [],\n        \"roadmapSection\": \"MVP-D03-A：Storybook 轻量接入\"\n      },\n      {\n        \"slot\": \"MVP-D03-B\",\n        \"title\": \"独立安装与简短项目指导\",\n        \"dependsOn\": [\n          \"MVP-D03-A\"\n        ],\n        \"roadmapSection\": \"MVP-D03-B：独立安装与简短项目指导\"\n      },\n      {\n        \"slot\": \"MVP-D03-C\",\n        \"title\": \"最小真实交付验收\",\n        \"dependsOn\": [\n          \"MVP-D03-B\"\n        ],\n        \"roadmapSection\": \"MVP-D03-C：最小真实交付验收\"\n      }\n    ],\n    \"activeChangeId\": \"real-target-delivery-acceptance\",\n    \"changeBindings\": [\n      {\n        \"changeId\": \"storybook-lightweight-integration\",\n        \"changeRef\": \"openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration\",\n        \"planningSlot\": \"MVP-D03-A\",\n        \"state\": \"archived\",\n        \"archiveOrdinal\": 8\n      },\n      {\n        \"changeId\": \"independent-installation-and-target-openspec-skills\",\n        \"changeRef\": \"openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills\",\n        \"planningSlot\": \"MVP-D03-B\",\n        \"state\": \"archived\",\n        \"archiveOrdinal\": 9\n      },\n      {\n        \"changeId\": \"real-target-delivery-acceptance\",\n        \"changeRef\": \"openspec/changes/real-target-delivery-acceptance\",\n        \"planningSlot\": \"MVP-D03-C\",\n        \"state\": \"active\"\n      }\n    ],\n    \"recorded\": {\n      \"id\": \"20261010-03-storybook-and-real-usage\",\n      \"planningSlot\": \"MVP-D03\",\n      \"title\": \"Storybook 与实际使用\",\n      \"state\": \"open\",\n      \"recordingMode\": \"manual-bootstrap\",\n      \"openedOn\": \"2026-10-10\",\n      \"roadmapRef\": \"mendi-foundation-and-delivery-roadmap.md\",\n      \"goal\": \"稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。\",\n      \"plannedChanges\": [\n        {\n          \"slot\": \"MVP-D03-A\",\n          \"title\": \"Storybook 轻量接入\",\n          \"dependsOn\": [],\n          \"externalDependsOn\": [\n            \"MVP-D02-C\"\n          ],\n          \"roadmapSection\": \"MVP-D03-A：Storybook 轻量接入\"\n        },\n        {\n          \"slot\": \"MVP-D03-B\",\n          \"title\": \"独立安装与简短项目指导\",\n          \"dependsOn\": [\n            \"MVP-D03-A\"\n          ],\n          \"roadmapSection\": \"MVP-D03-B：独立安装与简短项目指导\"\n        },\n        {\n          \"slot\": \"MVP-D03-C\",\n          \"title\": \"最小真实交付验收\",\n          \"dependsOn\": [\n            \"MVP-D03-B\"\n          ],\n          \"roadmapSection\": \"MVP-D03-C：最小真实交付验收\"\n        }\n      ],\n      \"changeBatches\": [\n        {\n          \"id\": \"002-changes\",\n          \"firstRun\": \"002\",\n          \"runsRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes\",\n          \"changeIds\": [\n            \"storybook-lightweight-integration\",\n            \"independent-installation-and-target-openspec-skills\",\n            \"real-target-delivery-acceptance\"\n          ]\n        }\n      ],\n      \"changeBindings\": [\n        {\n          \"planningSlot\": \"MVP-D03-A\",\n          \"changeId\": \"storybook-lightweight-integration\",\n          \"changeRef\": \"openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"archived\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md\",\n          \"archiveOrdinal\": 8\n        },\n        {\n          \"planningSlot\": \"MVP-D03-B\",\n          \"changeId\": \"independent-installation-and-target-openspec-skills\",\n          \"changeRef\": \"openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"archived\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md\",\n          \"archiveOrdinal\": 9\n        },\n        {\n          \"planningSlot\": \"MVP-D03-C\",\n          \"changeId\": \"real-target-delivery-acceptance\",\n          \"changeRef\": \"openspec/changes/real-target-delivery-acceptance\",\n          \"batchId\": \"002-changes\",\n          \"state\": \"active\",\n          \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\"\n        }\n      ],\n      \"activeChangeId\": \"real-target-delivery-acceptance\",\n      \"exitCriteria\": [\n        \"A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。\",\n        \"真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。\",\n        \"唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。\",\n        \"最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。\"\n      ],\n      \"outOfScope\": [\n        \"MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。\",\n        \"通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。\",\n        \"迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。\",\n        \"自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。\"\n      ],\n      \"openRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md\",\n      \"latestRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n      \"stopBoundary\": \"review-apply\",\n      \"next\": {\n        \"action\": \"review-apply\",\n        \"status\": \"awaiting-review\",\n        \"role\": \"reviewer\",\n        \"authorRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n        \"reason\": \"028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。\"\n      }\n    }\n  },\n  \"upstream\": {\n    \"schemaName\": \"spec-driven\",\n    \"mode\": \"repo-local\",\n    \"isPlanningComplete\": true,\n    \"artifacts\": [\n      {\n        \"id\": \"proposal\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"specs\",\n        \"status\": \"skipped\"\n      },\n      {\n        \"id\": \"design\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"tasks\",\n        \"status\": \"done\"\n      }\n    ]\n  },\n  \"next\": {\n    \"action\": \"review-apply\",\n    \"status\": \"awaiting-review\",\n    \"role\": \"reviewer\",\n    \"authorRunRef\": \".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md\",\n    \"reason\": \"028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。\",\n    \"source\": \"manual-bootstrap\",\n    \"executable\": false\n  }\n}\n",
+      "stderr": "",
+      "data": {
+        "ok": true,
+        "operation": "query",
+        "projectRoot": "D:\\Projects\\MenDi",
+        "openspec": {
+          "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+          "version": "1.14.1",
+          "root": {
+            "path": "D:\\Projects\\MenDi",
+            "source": "nearest"
+          }
+        },
+        "local": {
+          "source": "manual-bootstrap",
+          "deliveryId": "20261010-03-storybook-and-real-usage",
+          "title": "Storybook 与实际使用",
+          "state": "open",
+          "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+          "plannedChanges": [
+            {
+              "slot": "MVP-D03-A",
+              "title": "Storybook 轻量接入",
+              "dependsOn": [],
+              "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+            },
+            {
+              "slot": "MVP-D03-B",
+              "title": "独立安装与简短项目指导",
+              "dependsOn": [
+                "MVP-D03-A"
+              ],
+              "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+            },
+            {
+              "slot": "MVP-D03-C",
+              "title": "最小真实交付验收",
+              "dependsOn": [
+                "MVP-D03-B"
+              ],
+              "roadmapSection": "MVP-D03-C：最小真实交付验收"
+            }
+          ],
+          "activeChangeId": "real-target-delivery-acceptance",
+          "changeBindings": [
+            {
+              "changeId": "storybook-lightweight-integration",
+              "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+              "planningSlot": "MVP-D03-A",
+              "state": "archived",
+              "archiveOrdinal": 8
+            },
+            {
+              "changeId": "independent-installation-and-target-openspec-skills",
+              "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+              "planningSlot": "MVP-D03-B",
+              "state": "archived",
+              "archiveOrdinal": 9
+            },
+            {
+              "changeId": "real-target-delivery-acceptance",
+              "changeRef": "openspec/changes/real-target-delivery-acceptance",
+              "planningSlot": "MVP-D03-C",
+              "state": "active"
+            }
+          ],
+          "recorded": {
+            "id": "20261010-03-storybook-and-real-usage",
+            "planningSlot": "MVP-D03",
+            "title": "Storybook 与实际使用",
+            "state": "open",
+            "recordingMode": "manual-bootstrap",
+            "openedOn": "2026-10-10",
+            "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+            "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+            "plannedChanges": [
+              {
+                "slot": "MVP-D03-A",
+                "title": "Storybook 轻量接入",
+                "dependsOn": [],
+                "externalDependsOn": [
+                  "MVP-D02-C"
+                ],
+                "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+              },
+              {
+                "slot": "MVP-D03-B",
+                "title": "独立安装与简短项目指导",
+                "dependsOn": [
+                  "MVP-D03-A"
+                ],
+                "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+              },
+              {
+                "slot": "MVP-D03-C",
+                "title": "最小真实交付验收",
+                "dependsOn": [
+                  "MVP-D03-B"
+                ],
+                "roadmapSection": "MVP-D03-C：最小真实交付验收"
+              }
+            ],
+            "changeBatches": [
+              {
+                "id": "002-changes",
+                "firstRun": "002",
+                "runsRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes",
+                "changeIds": [
+                  "storybook-lightweight-integration",
+                  "independent-installation-and-target-openspec-skills",
+                  "real-target-delivery-acceptance"
+                ]
+              }
+            ],
+            "changeBindings": [
+              {
+                "planningSlot": "MVP-D03-A",
+                "changeId": "storybook-lightweight-integration",
+                "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+                "batchId": "002-changes",
+                "state": "archived",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+                "archiveOrdinal": 8
+              },
+              {
+                "planningSlot": "MVP-D03-B",
+                "changeId": "independent-installation-and-target-openspec-skills",
+                "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+                "batchId": "002-changes",
+                "state": "archived",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+                "archiveOrdinal": 9
+              },
+              {
+                "planningSlot": "MVP-D03-C",
+                "changeId": "real-target-delivery-acceptance",
+                "changeRef": "openspec/changes/real-target-delivery-acceptance",
+                "batchId": "002-changes",
+                "state": "active",
+                "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md"
+              }
+            ],
+            "activeChangeId": "real-target-delivery-acceptance",
+            "exitCriteria": [
+              "A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。",
+              "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+              "唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。",
+              "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+            ],
+            "outOfScope": [
+              "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+              "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+              "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+              "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+            ],
+            "openRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+            "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+            "stopBoundary": "review-apply",
+            "next": {
+              "action": "review-apply",
+              "status": "awaiting-review",
+              "role": "reviewer",
+              "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+              "reason": "028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。"
+            }
+          }
+        },
+        "upstream": {
+          "schemaName": "spec-driven",
+          "mode": "repo-local",
+          "isPlanningComplete": true,
+          "artifacts": [
+            {
+              "id": "proposal",
+              "status": "done"
+            },
+            {
+              "id": "specs",
+              "status": "skipped"
+            },
+            {
+              "id": "design",
+              "status": "done"
+            },
+            {
+              "id": "tasks",
+              "status": "done"
+            }
+          ]
+        },
+        "next": {
+          "action": "review-apply",
+          "status": "awaiting-review",
+          "role": "reviewer",
+          "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+          "reason": "028 Author Apply 已完成批准的最简真实使用（10/10）；目标007独立批准后待Archive，根保持Author并交独立ReviewApply，不执行后续收口。",
+          "source": "manual-bootstrap",
+          "executable": false
+        }
+      }
+    }
+  ],
+  "metadataParse": {
+    "run": "028",
+    "role": "author",
+    "schema": "spec-driven"
+  }
+}

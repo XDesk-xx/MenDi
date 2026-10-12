@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import { sequentialTarget, associateSecond, approvedArchive } from './sequential-support.ts';
 import { archiveAction } from '../src/application/archive.ts';
 import { archiveInput } from './archive-support.ts';
-import { pnpmEntry } from './test-support.ts';
-import { repository, sandbox, command, isolatedEnv } from './helpers.ts';
+import { pnpmEntry, prepareEmptyDependencies } from './test-support.ts';
+import { repository, sandbox } from './helpers.ts';
 import { runFullTest, type FullTestOptions } from '../src/application/delivery-full-test.ts';
 import { saveRun, submitRun } from '../src/application/actions.ts';
 
@@ -65,11 +65,7 @@ export function verificationTarget() {
   const base = sandbox();
   const root = path.join(base, 'project');
   fs.cpSync(seed, root, { recursive: true });
-  const prepared = command(pnpmEntry, ['install', '--offline', '--ignore-scripts'], root, {
-    ...isolatedEnv(root),
-    COREPACK_ENABLE_NETWORK: '0',
-  });
-  assert.equal(prepared.status, 0, prepared.stdout + prepared.stderr);
+  prepareEmptyDependencies(root);
   return root;
 }
 export async function formal(root: string, options: FullTestOptions = {}) {

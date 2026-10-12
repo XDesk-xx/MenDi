@@ -1,0 +1,7 @@
+{
+  "name": "mendi-d03-b-target",
+  "private": true,
+  "type": "module",
+  "scripts": { "verify:notes": "node src/note.ts" },
+  "mendi": { "tests": { "focused": "verify:notes" } }
+}

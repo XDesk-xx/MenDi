@@ -1,0 +1,16 @@
+import type { ProjectLock } from '../adapters/workspace.ts';
+import type { Workspace } from '../core/records.ts';
+import type { TestKind, TestExecution, TestOutcome } from '../core/test-execution.ts';
+import { type ExecutionProcessOptions } from '../adapters/test-process.ts';
+export interface ExecutionState {
+    preserve: boolean;
+    executionId: string | null;
+    record: TestExecution | null;
+    outcome: TestOutcome;
+}
+export declare function executionState(): ExecutionState;
+export declare function executeTestUnderLease(root: string, workspace: Workspace, lease: ProjectLock, kind: TestKind, actorId: string, pnpm: string, execution: ExecutionState, options?: ExecutionProcessOptions, onIntent?: (record: TestExecution) => void): Promise<{
+    record: TestExecution;
+    executionId: string;
+    outcome: TestOutcome;
+}>;

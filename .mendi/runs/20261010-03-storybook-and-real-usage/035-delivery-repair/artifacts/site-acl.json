@@ -1,0 +1,38 @@
+[
+  {
+    "Identity": "DESKTOP-THHFEP0\\CodexSandboxUsers",
+    "Rights": "DeleteSubdirectoriesAndFiles, Modify, Synchronize",
+    "Type": "Allow",
+    "IsInherited": true
+  },
+  {
+    "Identity": "S-1-5-21-3224984157-2692869627-1284232475-1821283830",
+    "Rights": "DeleteSubdirectoriesAndFiles, Modify, Synchronize",
+    "Type": "Allow",
+    "IsInherited": true
+  },
+  {
+    "Identity": "BUILTIN\\Administrators",
+    "Rights": "FullControl",
+    "Type": "Allow",
+    "IsInherited": true
+  },
+  {
+    "Identity": "NT AUTHORITY\\SYSTEM",
+    "Rights": "FullControl",
+    "Type": "Allow",
+    "IsInherited": true
+  },
+  {
+    "Identity": "NT AUTHORITY\\Authenticated Users",
+    "Rights": "Modify, Synchronize",
+    "Type": "Allow",
+    "IsInherited": true
+  },
+  {
+    "Identity": "BUILTIN\\Users",
+    "Rights": "ReadAndExecute, Synchronize",
+    "Type": "Allow",
+    "IsInherited": true
+  }
+]

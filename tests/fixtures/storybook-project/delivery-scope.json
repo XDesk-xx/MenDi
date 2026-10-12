@@ -1,0 +1,6 @@
+{
+  "goal": "探索真实 Storybook 预览、交互及服务边界，不认证完整产品实现。",
+  "plannedChanges": [
+    { "slot": "UI", "title": "受控组件接线", "dependsOn": [] }
+  ]
+}

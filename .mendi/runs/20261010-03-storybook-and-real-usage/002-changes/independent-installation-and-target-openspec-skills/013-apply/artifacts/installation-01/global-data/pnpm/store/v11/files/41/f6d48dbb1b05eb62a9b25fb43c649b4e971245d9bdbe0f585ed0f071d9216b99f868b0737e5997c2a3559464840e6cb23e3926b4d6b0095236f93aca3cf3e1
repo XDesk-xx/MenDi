@@ -1,0 +1,180 @@
+import { type WriteObserver } from '../adapters/workspace.ts';
+import { type Lifecycle, type LifecycleType } from '../core/delivery-lifecycle.ts';
+import { type Workspace } from '../core/records.ts';
+import { type OpenInput, type OperationOptions } from './project.ts';
+export interface LifecycleInput {
+    project: string;
+    role: string;
+    actor: string;
+    inputFile?: string;
+    scopePath?: string;
+    reason?: string;
+    resumeRef?: string;
+}
+export interface LifecycleOptions {
+    observeWrite?: WriteObserver;
+    methodsRoot?: string;
+}
+export declare function confirmLifecycle(root: string, workspace: Workspace | null, lifecycle: Lifecycle): void;
+export declare function deliveryLifecycle(type: 'delivery-close' | 'delivery-reopen', input: LifecycleInput, options?: LifecycleOptions): {
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    alreadyCompleted?: boolean | undefined;
+    ok: boolean;
+    operation: LifecycleType;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    } | null;
+    executionMode: string;
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+};
+export declare function recordedOpen(input: OpenInput & {
+    role?: string;
+    actor?: string;
+    resumeRef?: string;
+}, options?: OperationOptions & LifecycleOptions): {
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    alreadyCompleted?: boolean | undefined;
+    ok: boolean;
+    operation: LifecycleType;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    } | null;
+    executionMode: string;
+    upstreamAccess: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: import("../core/delivery-verification.ts").FullTest;
+        lifecycle?: Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+};

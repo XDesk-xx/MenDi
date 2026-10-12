@@ -1,0 +1,7 @@
+packages:
+  - '.'
+allowBuilds:
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@vue/language-core@3.3.13'
+  - 'vue-tsc@3.3.13'

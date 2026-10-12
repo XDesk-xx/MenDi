@@ -1,0 +1,10 @@
+{
+  "target": "D:\\Projects\\MenDi\\.tmp\\d03-a-006-ui-03\\preview",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-a-006-ui-03\\preview",
+  "script": "preview:components",
+  "config": ".storybook/main.ts",
+  "pid": 42436,
+  "address": "http://127.0.0.1:6113",
+  "stdout": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\storybook-lightweight-integration\\006-apply\\artifacts\\ui-attempt-03\\preview\\preview.stdout.log",
+  "stderr": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\storybook-lightweight-integration\\006-apply\\artifacts\\ui-attempt-03\\preview\\preview.stderr.log"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "build",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "build"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "startedAt": "2026-10-11T15:47:33.046Z",
+  "elapsedMs": 3528.1085,
+  "budgetMs": 60000,
+  "timedOut": false,
+  "pid": 51208,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stderr.log"
+}

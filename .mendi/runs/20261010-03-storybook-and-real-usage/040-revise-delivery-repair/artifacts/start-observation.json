@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-11T17:49:11.636Z",
+  "source": "tests/test-store.test.ts",
+  "bytes": 8935,
+  "mtime": "2026-10-11T17:36:46.595Z",
+  "ordinaryFile": true,
+  "nlink": 1,
+  "oldBeforeEqual": true,
+  "candidateRef": ".mendi/runs/20261010-03-storybook-and-real-usage/037-revise-delivery-repair/artifacts/test-store.candidate.ts",
+  "candidateBytes": 9022,
+  "scope": {
+    "fullTest": {
+      "recordingMode": "manual-bootstrap",
+      "scope": "delivery",
+      "formalDeliveryTest": true,
+      "phase": "finished",
+      "outcome": "failed",
+      "result": "failed",
+      "executionId": "manual-034-d03-full-test",
+      "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/run.md",
+      "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/plan.json",
+      "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/execution.json",
+      "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+      "testedWorktree": "受测工作树为ba3b992基准加032/033已审核的test-store.ts局部修复及新增test-store.test.ts；并非声称仅Git提交内容。其余维护材料未变，当前README/context/manifest为交接记录。重新构建打包安装，不采用旧PASS。",
+      "repairReviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/033-review-delivery-repair/run.md"
+    },
+    "changeBindings": [
+      {
+        "planningSlot": "MVP-D03-A",
+        "changeId": "storybook-lightweight-integration",
+        "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+        "archiveOrdinal": 8
+      },
+      {
+        "planningSlot": "MVP-D03-B",
+        "changeId": "independent-installation-and-target-openspec-skills",
+        "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+        "archiveOrdinal": 9
+      },
+      {
+        "planningSlot": "MVP-D03-C",
+        "changeId": "real-target-delivery-acceptance",
+        "changeRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+        "batchId": "002-changes",
+        "state": "archived",
+        "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
+        "archiveOrdinal": 10
+      }
+    ],
+    "archiveCount": 10
+  },
+  "timeline": {
+    "lastAuthorReadback": "2026-10-11T17:35:49.890Z tool requested source byte comparison",
+    "authorCompletedAt": "2026-10-11T17:36:11.458Z",
+    "sourceMtime": "2026-10-11T17:36:46.595Z",
+    "reviewerStartedAt": "2026-10-11T17:36:49.151Z",
+    "reviewerFirstToolAt": "2026-10-11T17:36:56.095Z",
+    "finding": "读取该时间窗两会话工具调用，没有回写源码的调用；不能由mtime识别实际写者。"
+  },
+  "currentWriters": {
+    "otherMendiChat": "idle",
+    "matchingOtherCommandLineProcesses": [],
+    "terminatedProcesses": [],
+    "limitation": "进程命令行与聊天状态不是文件写入审计；未发现当前可确认的竞争写者，没有任意停止外部程序。"
+  }
+}

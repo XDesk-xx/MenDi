@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+ok 1 - 默认映射和覆盖只读取目标已有脚本，list 无 Open、无写入
+  ---
+  duration_ms: 32.2433
+  type: 'test'
+  ...
+# Subtest: 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+ok 2 - 缺失、空值、类型错误、非法映射只阻止相关集合；坏 package / 外部链接拒绝
+  ---
+  duration_ms: 1315.8849
+  type: 'test'
+  ...
+# Subtest: 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+ok 3 - 无下载 / 安装环境键归一且不修改宿主；入口、版本和声明错误均未运行
+  ---
+  duration_ms: 182.622
+  type: 'test'
+  ...
+# Subtest: 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+ok 4 - 调用者启用 Corepack auto pin，缺 packageManager 的目标仍不被工具预检改写
+  ---
+  duration_ms: 1083.1953
+  type: 'test'
+  ...
+# Subtest: CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+ok 5 - CLI test 参数无上游入口，帮助无副作用，异目录本地 list，缺本地配置拒绝
+  ---
+  duration_ms: 673.1191
+  type: 'test'
+  ...
+# Subtest: 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+ok 6 - 真实 focused / fast / full 结果、原始日志、新进程读回与不改协作记录
+  ---
+  duration_ms: 20182.0554
+  type: 'test'
+  ...
+# Subtest: 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+ok 7 - 跨 await 持有同一锁，当前取消实际终止 pnpm / 前台脚本 / 后代，interrupted 正常释放
+  ---
+  duration_ms: 6923.6452
+  type: 'test'
+  ...
+# Subtest: 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+ok 8 - 启动明确失败保存 not-run；意图、日志、终态、读回和释放故障都 unknown 并保留现场
+  ---
+  duration_ms: 26103.1439
+  type: 'test'
+  ...
+# Subtest: 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+ok 9 - 不能确认停止与真实异常信号保留 unknown，不重跑或根据 pid 猜终态
+  ---
+  duration_ms: 8292.0141
+  type: 'test'
+  ...
+# Subtest: 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+ok 10 - 指定 status 无需旧工具、脚本或 Run 正文；输入损坏、缺日志、读中变化及越界拒绝
+  ---
+  duration_ms: 6583.4466
+  type: 'test'
+  ...
+# Subtest: 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+ok 11 - 持久 running 意图后写者真实退出，新进程不补写 / 重试 / 处置锁
+  ---
+  duration_ms: 2988.3523
+  type: 'test'
+  ...
+# Subtest: 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+ok 12 - 真实异目录 CLI run 为一份 JSON / 原始日志；closed 和 manual 拒绝且无写入
+  ---
+  duration_ms: 5864.8215
+  type: 'test'
+  ...
+# Subtest: 空依赖副本使用各自目标路径，修改一个沙箱不污染其他目标或种子
+ok 13 - 空依赖副本使用各自目标路径，修改一个沙箱不污染其他目标或种子
+  ---
+  duration_ms: 6300.218
+  type: 'test'
+  ...
+# Subtest: 复用空依赖准备不掩盖缺失准备或新增未安装依赖
+ok 14 - 复用空依赖准备不掩盖缺失准备或新增未安装依赖
+  ---
+  duration_ms: 2997.954
+  type: 'test'
+  ...
+# Subtest: Windows 删除共享拒绝，确认句柄释放后可替换同一 staged 文件
+ok 15 - Windows 删除共享拒绝，确认句柄释放后可替换同一 staged 文件
+  ---
+  duration_ms: 1573.3986
+  type: 'test'
+  ...
+# Subtest: Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+ok 16 - Windows 持续占用有界失败，保留原结果和唯一 staged 文件
+  ---
+  duration_ms: 2172.8802
+  type: 'test'
+  ...
+# Subtest: 其他 rename 错误立即传播，不删除原结果
+ok 17 - 其他 rename 错误立即传播，不删除原结果
+  ---
+  duration_ms: 38.1885
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 original，不覆盖现场
+ok 18 - Windows 重试拒绝已改变的 original，不覆盖现场
+  ---
+  duration_ms: 74.5485
+  type: 'test'
+  ...
+# Subtest: Windows 重试拒绝已改变的 staged，不覆盖现场
+ok 19 - Windows 重试拒绝已改变的 staged，不覆盖现场
+  ---
+  duration_ms: 75.0642
+  type: 'test'
+  ...
+# Subtest: Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+ok 20 - Windows result 替换瞬时拒绝不重启业务子进程；持续拒绝不启动子进程并保留锁
+  ---
+  duration_ms: 10840.2154
+  type: 'test'
+  ...
+# Subtest: 终态与错误身份在暂存写入前拒绝
+ok 21 - 终态与错误身份在暂存写入前拒绝
+  ---
+  duration_ms: 15.188
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 77297.5672

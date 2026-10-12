@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/024-apply/artifacts/preparation-budget.ts",
+    "normal"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\"mode\":\"normal\",\"reason\":null,\"followingStarted\":true,\"sigintCount\":0,\"closed\":true,\"listenerEnded\":null}\n",
+  "stderr": ""
+}

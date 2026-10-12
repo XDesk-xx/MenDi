@@ -1,0 +1,24 @@
+{
+  "targets": [
+    {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-CMs1lG\\minimal-project",
+      "prepareMs": 939.5729000000001
+    },
+    {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-uv3a9r\\minimal-project",
+      "prepareMs": 982.193
+    },
+    {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-Hc5GBa\\minimal-project",
+      "prepareMs": 926.6936000000001
+    },
+    {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-g2zRfj\\minimal-project",
+      "prepareMs": 1069.5906
+    }
+  ],
+  "prepareTotalMs": 3918.0692999999997,
+  "totalMs": 8193.734400000001,
+  "realPnpmDependencyChecks": 4,
+  "independentState": true
+}

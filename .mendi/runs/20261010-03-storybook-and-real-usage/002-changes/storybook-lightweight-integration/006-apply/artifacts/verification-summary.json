@@ -1,0 +1,31 @@
+{
+  "nodeVersion": "v22.23.2",
+  "pnpmVersion": "11.22.0",
+  "check": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "log": "check.log",
+    "maintainedFiles": 128
+  },
+  "regression": {
+    "command": "node --test --test-concurrency=2 tests/methods-and-numbers.test.ts tests/actions.test.ts tests/action-cli.test.ts tests/action-write.test.ts tests/query.test.ts tests/project.test.ts tests/test-entries.test.ts tests/test-dependencies.test.ts tests/test-execution.test.ts tests/test-cancellation.test.ts tests/planning-inputs.test.ts tests/ui-preparation.test.ts",
+    "exitCode": 0,
+    "passed": 67,
+    "failed": 0,
+    "log": "regression.log"
+  },
+  "ui": {
+    "command": "pnpm prepare:ui-tests D:/Projects/MenDi/.tmp/d03-a-006-ui-final; pnpm test:ui",
+    "exitCode": 0,
+    "passed": 5,
+    "failed": 0,
+    "log": "ui-final/suite.log",
+    "targetRoot": "D:/Projects/MenDi/.tmp/d03-a-006-ui-final",
+    "mcp": "not-enabled-not-certified"
+  },
+  "strictValidate": {
+    "exitCode": 0,
+    "log": "validation.json"
+  },
+  "listener6113": []
+}

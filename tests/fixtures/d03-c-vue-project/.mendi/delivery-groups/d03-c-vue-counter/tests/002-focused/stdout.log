@@ -1,0 +1,20 @@
+│
+▲  `vue-docgen-api` is deprecated and will be removed in the next major
+│  release of Storybook. It is still the default docgen engine, so this
+│  also applies when you have not set the `docgen` framework option.
+│  Enable server-side docgen with `features: { experimentalDocgenServer:
+│  true }` in your `.storybook/main.ts`, which becomes the default in
+│  Storybook 11, or set `framework: { name: '@storybook/vue3-vite',
+│  options: { docgen: 'vue-component-meta' } }` to keep docgen in the
+│  builder.
+
+ RUN  v4.1.11 D:/Projects/MenDi/tests/fixtures/d03-c-vue-project
+
+ ❯ |storybook (chromium)| src/components/CounterPanel.stories.ts (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:47:06
+   Duration  3.41s (transform 0ms, setup 1.50s, import 0ms, tests 0ms, environment 0ms)
+
+[ELIFECYCLE] Command failed with exit code 1.

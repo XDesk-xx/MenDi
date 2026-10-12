@@ -1,0 +1,17 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-stAc7m\\alpha",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "init",
+    "--tools",
+    "codex",
+    "--profile",
+    "core",
+    "--no-animation"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "\nOpenSpec Setup Complete\n\nCreated: Codex\n6 skills in .agents/\nCommands skipped for: codex (uses skills)\nConfig: openspec/config.yaml (exists)\n\nGetting started:\n  Start your first change: $openspec-propose \"your idea\" (Codex CLI or IDE); in the Codex desktop app, select openspec-propose from Skills in the sidebar\n\nNote: 6 more workflows are available (new, continue, ff, bulk-archive, verify, onboard).\nAdd them with `openspec config profile`.\n\nLearn more: https://github.com/Fission-AI/OpenSpec\nFeedback:   https://github.com/Fission-AI/OpenSpec/issues\n\n",
+  "stderr": "- Setting up Codex...\n√ Setup complete for Codex\n"
+}

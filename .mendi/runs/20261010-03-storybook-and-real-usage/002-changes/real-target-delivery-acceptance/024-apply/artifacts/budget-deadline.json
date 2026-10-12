@@ -1,0 +1,55 @@
+{
+  "mode": "deadline",
+  "budgetMs": 1800,
+  "elapsedMs": 2277.9213,
+  "reason": "timeout",
+  "sigintCount": 0,
+  "followingStarted": false,
+  "steps": [
+    {
+      "childMode": "child-short",
+      "pid": 48432,
+      "remainingMs": 1799.7197999999999,
+      "allowanceMs": 1799.7197999999999,
+      "durationMs": 825.335,
+      "code": 0,
+      "signal": null,
+      "stdout": "SHORT_DONE\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "listenerEnded": null,
+      "stopDurationMs": 0.039700000000038926,
+      "accepted": true
+    },
+    {
+      "childMode": "child-listener",
+      "pid": 1760,
+      "remainingMs": 974.3639,
+      "allowanceMs": 974.3639,
+      "durationMs": 1452.2687999999998,
+      "code": 1,
+      "signal": null,
+      "stdout": "LISTENING 55166\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "port": 55166,
+      "listenerEnded": true,
+      "kill": {
+        "command": [
+          "taskkill.exe",
+          "/PID",
+          1760,
+          "/T",
+          "/F"
+        ],
+        "error": null,
+        "stdout": "�ɹ�: ����ֹ PID 1760 (���� PID 3456 �ӽ���)�Ľ��̡�\r\n",
+        "stderr": ""
+      },
+      "stopDurationMs": 464.5434,
+      "accepted": false
+    }
+  ]
+}

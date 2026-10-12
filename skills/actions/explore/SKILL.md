@@ -6,6 +6,8 @@ role: author
 
 # explore 阶段方法
 
+本次 `methods.upstream` 提供当前目标的 openspec-explore 正文、来源及 generatedBy 1.14.1，使用适用部分完成探索；revise-explore 沿用该方法并说明直接修订对象。自有方法来自安装包，目标上游方法来自当前项目；缺项须明确准备，不自动 init / update，也不借开发仓库兜底。方法已返回只证明交接，实际 proof 才说明工作结果。
+
 读取 `action instructions --action <当前 ID> --artifact proposal` 的真实背景，说明目标 context / rules 如何约束范围。这里只支持 proposal 背景，不提前编写全部方案。对能改变方案的疑点选择可重建 proof，记录目的、输入、方法、实际结果与限制；不把字符串 sentinel 或命令 PASS 当核心事实。
 
 问题、候选、分析和 proof 摘要写进 Run，原始输出进该 Run 的 artifacts 或受控文件；今后不新建 Change 级 explore.md。旧已受审探索文件保持原样，正式方案承接有效决策。

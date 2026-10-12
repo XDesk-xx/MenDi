@@ -1,0 +1,24 @@
+import type { Scope, Workspace, parseProject } from './records.ts';
+export interface Binding {
+    planningSlot: string;
+    changeId: string;
+    changeRef: string;
+    state: string;
+    archiveOrdinal?: number;
+    latestRunRef?: string;
+    batchId?: string;
+}
+export declare function currentBinding(workspace: Pick<Workspace, 'bindings' | 'activeChangeId'> & Partial<Pick<Workspace, 'scope'>>): Binding | undefined;
+export declare function readAssociations(index: ReturnType<typeof parseProject>, manifest: Record<string, unknown>, scope: Scope, state: string): {
+    bindings: {
+        latestRunRef?: string | undefined;
+        batchId?: string | undefined;
+        archiveOrdinal?: number | undefined;
+        changeId: string;
+        changeRef: string;
+        planningSlot: string;
+        state: string;
+    }[];
+    activeChangeId: string | null;
+};
+export declare function assertAssociationAvailable(scope: Scope, bindings: Binding[], slot: string, changeId: string): void;

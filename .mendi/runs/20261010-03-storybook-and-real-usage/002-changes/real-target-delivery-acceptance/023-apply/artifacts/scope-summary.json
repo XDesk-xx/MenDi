@@ -1,0 +1,23 @@
+{
+  "currentRun": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/023-apply/run.md",
+  "actionId": "real-target-delivery-acceptance-apply-01",
+  "progress": "2/23",
+  "writes": [
+    "tests/fixtures/d03-c-vue-project/**",
+    "tsconfig.tests.json",
+    "openspec/changes/real-target-delivery-acceptance/tasks.md",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/023-apply/**",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "notWritten": [
+    "已提交历史 Run / artifacts / verdict",
+    "其他 Change",
+    "旧 proof",
+    "产品 src / skills",
+    "根 package / lock",
+    "路线图本轮未修改"
+  ],
+  "next": "Owner 确认后新 Run 同 Action continue；当前不自动推进"
+}

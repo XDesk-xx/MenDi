@@ -1,0 +1,34 @@
+{
+  "id": "prepare-independent-installation",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-034-d03-full-test-prepare-independent-installation",
+  "stage": "preparation",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "prepare:installation-tests",
+      "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\034-delivery-full-test\\artifacts\\installation",
+      "D:/tools/mendi/acceptance/d03-full-test-034"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T16:17:14.680Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-independent-installation.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/prepare-independent-installation.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2676802,
+  "pid": 50804,
+  "finishedAt": "2026-10-11T16:17:35.571Z",
+  "elapsedMs": 20883,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

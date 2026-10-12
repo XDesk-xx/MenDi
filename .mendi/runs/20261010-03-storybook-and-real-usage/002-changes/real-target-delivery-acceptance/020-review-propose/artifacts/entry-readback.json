@@ -1,0 +1,13 @@
+{
+  "stableInstallation": "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi",
+  "designLocation": "openspec/changes/real-target-delivery-acceptance/design.md:80-97",
+  "cliTimeoutOptionPresent": false,
+  "observedCancellationInputs": [
+    "executeForeground options.signal",
+    "process SIGINT"
+  ],
+  "observedInternalTimer": "5000ms close acknowledgement after stop, not execution deadline",
+  "targetExists": false,
+  "pendingTaskCount": 23,
+  "changedProductFiles": []
+}

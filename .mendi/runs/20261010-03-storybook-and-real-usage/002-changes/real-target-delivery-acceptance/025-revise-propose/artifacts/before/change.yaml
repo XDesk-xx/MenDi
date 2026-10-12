@@ -1,0 +1,5 @@
+schema: spec-driven
+skip_specs: true
+created: 2026-10-11
+goal: 从空目录创建唯一 Vue + Naive UI 目标，真实使用稳定 MenDi、OpenSpec 与 Storybook 完成最小交付验收；无 UI
+  仅工程验证，沿用适用旧结论。

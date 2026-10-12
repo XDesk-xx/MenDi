@@ -1,0 +1,111 @@
+import { type OwnerDecision } from '../core/actions.ts';
+import { type ActorInput, type ActionOptions } from './action-context.ts';
+export interface ResolveInput extends ActorInput {
+    runRef: string;
+    resolution: string;
+    toRole: string;
+    toActor: string;
+    reason: string;
+    phase?: string;
+    revisesRunRef?: string;
+}
+export declare function resolveAction(input: ResolveInput, options?: ActionOptions): {
+    methods: {
+        upstream: {
+            name: string;
+            projectRoot: string;
+            ref: string;
+            file: string;
+            generatedBy: string;
+            content: string;
+        }[];
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    incompleteReservations: {
+        number: number;
+        ref: string;
+        incomplete: boolean;
+    }[];
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        deliveryId: string;
+        changeId: string;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/actions.ts").ActionType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        ownerDecision?: OwnerDecision;
+        archive?: import("../core/archive.ts").ArchiveRecord;
+        ref: string;
+    };
+    next: {
+        action: string;
+        status: string;
+        reason: string;
+        currentRunRef: string;
+        source: string;
+        executable: boolean;
+        role: import("../core/actions.ts").Role;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        authorRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        revisesRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+    };
+};

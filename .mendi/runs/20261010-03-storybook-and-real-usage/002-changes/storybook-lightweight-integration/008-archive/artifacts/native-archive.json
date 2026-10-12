@@ -1,0 +1,18 @@
+{
+  "archive": {
+    "change": "storybook-lightweight-integration",
+    "archivedAs": "2026-10-10-storybook-lightweight-integration",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-10-storybook-lightweight-integration",
+    "specsUpdated": true,
+    "totals": {
+      "added": 5,
+      "modified": 1,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

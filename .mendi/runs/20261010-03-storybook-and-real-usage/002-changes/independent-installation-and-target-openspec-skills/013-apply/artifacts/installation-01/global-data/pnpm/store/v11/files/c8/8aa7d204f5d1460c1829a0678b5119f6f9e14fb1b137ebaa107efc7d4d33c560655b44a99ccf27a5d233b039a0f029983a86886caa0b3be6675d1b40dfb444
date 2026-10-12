@@ -1,0 +1,34 @@
+import { type Selection } from './project.ts';
+import { output, type ActionOptions } from './action-context.ts';
+import type { ArtifactInstructions } from '../adapters/openspec.ts';
+import type { OperationInstructions, ApplyInstructions } from '../adapters/openspec-operations.ts';
+type InstructionInput = Selection & {
+    actionId: string;
+    artifact?: string;
+    operation?: string;
+};
+export declare function actionInstructions(input: Selection & {
+    actionId: string;
+    operation: 'apply';
+    artifact?: never;
+}, options?: ActionOptions): ReturnType<typeof output> & {
+    instructions: ApplyInstructions;
+};
+export declare function actionInstructions(input: Selection & {
+    actionId: string;
+    operation: 'archive';
+    artifact?: never;
+}, options?: ActionOptions): ReturnType<typeof output> & {
+    instructions: OperationInstructions;
+};
+export declare function actionInstructions(input: Selection & {
+    actionId: string;
+    artifact: string;
+    operation?: never;
+}, options?: ActionOptions): ReturnType<typeof output> & {
+    instructions: ArtifactInstructions;
+};
+export declare function actionInstructions(input: InstructionInput, options?: ActionOptions): ReturnType<typeof output> & {
+    instructions: OperationInstructions | ArtifactInstructions;
+};
+export {};

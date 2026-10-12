@@ -1,0 +1,28 @@
+import { selected } from "./project.js";
+import { readWorkspace } from "../adapters/workspace.js";
+import { currentRun } from "../adapters/runs.js";
+import { actionDefinition } from "../core/actions.js";
+import { MendiError } from "../core/errors.js";
+import { checkWorkspace, output } from "./action-context.js";
+export function actionInstructions(input, options = {}) {
+    const { root, upstream } = selected(input, options);
+    const workspace = readWorkspace(root);
+    checkWorkspace(workspace);
+    const run = currentRun(root, workspace);
+    if (!run || run.record.actionId !== input.actionId)
+        throw new MendiError('action-state-conflict', '需要当前 Action ID。');
+    const phase = actionDefinition(run.record.actionType).phase;
+    if ((input.artifact === undefined) === (input.operation === undefined))
+        throw new MendiError('invalid-arguments', 'artifact / operation 必须二选一。');
+    if (input.operation !== undefined) {
+        if (input.operation !== phase || !['apply', 'archive'].includes(input.operation))
+            throw new MendiError('unsupported-action-instructions', 'operation 必须匹配当前 Apply / Archive。');
+        const instructions = upstream.operationInstructions(workspace.activeChangeId, input.operation);
+        return { ...output(root, upstream, 'action-instructions', workspace, run), instructions };
+    }
+    if (phase === 'apply' || (phase === 'explore' && input.artifact !== 'proposal'))
+        throw new MendiError('unsupported-action-instructions', '本阶段不支持该 artifact 指引。');
+    const instructions = upstream.instructions(workspace.activeChangeId, input.artifact);
+    return { ...output(root, upstream, 'action-instructions', workspace, run), instructions };
+}
+//# sourceMappingURL=action-instructions.js.map

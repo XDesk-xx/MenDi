@@ -1,0 +1,167 @@
+{
+  "scope": "delivery",
+  "formalDeliveryTest": true,
+  "executionId": "manual-044-d03-full-test",
+  "outcome": "passed",
+  "commands": [
+    {
+      "id": "prepare-root-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 664,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-html-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 709,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-vue-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 672,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-ui-targets",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 17112,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "prepare-independent-installation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 16320,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "maintained-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 9878,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "root-regression",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1211334,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "ui-product-scenes",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 63203,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "installation-handoff",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 17353,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 13506,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-build",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 2169,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-storybook-build",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 5453,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-stories",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 6970,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "main-specs-validation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 476,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "root-status",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 780,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "root-next",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 776,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-status",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1271,
+      "childAndLogPipesClosed": true
+    },
+    {
+      "id": "vue-next",
+      "outcome": "passed",
+      "exitCode": 0,
+      "elapsedMs": 1296,
+      "childAndLogPipesClosed": true
+    }
+  ],
+  "counts": {
+    "root-regression": {
+      "tests": "213",
+      "pass": "213",
+      "fail": "0",
+      "exitCode": 0
+    },
+    "ui-product-scenes": {
+      "tests": "5",
+      "pass": "5",
+      "fail": "0",
+      "exitCode": 0
+    },
+    "installation-handoff": {
+      "tests": "1",
+      "pass": "1",
+      "fail": "0",
+      "exitCode": 0
+    },
+    "vue-stories": {
+      "browserTests": "3",
+      "exitCode": 0
+    }
+  },
+  "failing": null,
+  "unexecutedSteps": [],
+  "materialApplicability": {
+    "requiresSemanticCheck": true,
+    "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "testedWorktree": "受测材料为ba3b992基准加032/033的Windows有界替换修复、042/043批准的明确释放测试及038已批准的空依赖准备优化五文件（含新test-preparation）。当前工作树不等同已提交Git内容；所有命令本次新执行，安装候选由当前build/pack产生。",
+    "currentCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "reviewedMaterialUnchangedDuringExecution": true
+  }
+}

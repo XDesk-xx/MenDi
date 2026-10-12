@@ -1,0 +1,10 @@
+{
+  "restoredAt": "2026-10-11T17:49:11.640Z",
+  "source": "tests/test-store.test.ts",
+  "candidateRef": ".mendi/runs/20261010-03-storybook-and-real-usage/037-revise-delivery-repair/artifacts/test-store.candidate.ts",
+  "method": "single-file exclusive temporary plus atomic rename via existing stable replaceManagedFile",
+  "actualCandidateEqual": true,
+  "bytes": 9022,
+  "mtime": "2026-10-11T17:49:11.638Z",
+  "limitation": "当前原子替换与读回不能保证未来外部工具不会按路径重新写入。"
+}

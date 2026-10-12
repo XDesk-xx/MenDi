@@ -1,0 +1,21 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "exec",
+    "playwright",
+    "install",
+    "chromium"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 52184,
+  "remainingMs": 579766.6303999999,
+  "allowanceMs": 300000,
+  "durationMs": 2063.9212000000007,
+  "stdout": "",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

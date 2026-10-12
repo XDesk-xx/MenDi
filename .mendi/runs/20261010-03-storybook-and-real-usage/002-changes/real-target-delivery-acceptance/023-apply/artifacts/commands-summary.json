@@ -1,0 +1,289 @@
+[
+  {
+    "file": "chromium-prepare.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "playwright",
+      "install",
+      "chromium"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 2063.9212000000007
+  },
+  {
+    "file": "create-vue.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "dlx",
+      "create-vue@3.24.0",
+      "--ts",
+      "--bare",
+      "--eslint",
+      "--prettier",
+      "d03-c-vue-project"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 883.4492000000001
+  },
+  {
+    "file": "empty-app-build.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 2095.263300000006
+  },
+  {
+    "file": "format-eslint-only.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "prettier",
+      "--write",
+      "package.json",
+      "eslint.config.ts",
+      "pnpm-lock.yaml"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 1653.903
+  },
+  {
+    "file": "format-target.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "prettier",
+      "--write",
+      "."
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 2672.276999999998
+  },
+  {
+    "file": "install-eslint-only-lock-updated.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install",
+      "--no-frozen-lockfile"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 1535.2091
+  },
+  {
+    "file": "install-eslint-only.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install"
+    ],
+    "exitCode": 1,
+    "closed": true,
+    "durationMs": 1187.2249
+  },
+  {
+    "file": "install.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 18684.8608
+  },
+  {
+    "file": "openspec-init.json",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "init",
+      "--tools",
+      "codex",
+      "--profile",
+      "core",
+      "--no-animation"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 1124.4461999999985
+  },
+  {
+    "file": "openspec-list.json",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "list",
+      "--json"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 421.7347999999997
+  },
+  {
+    "file": "pnpm-version.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "--version"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 654.1842
+  },
+  {
+    "file": "root-check-normal.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 1,
+    "closed": true,
+    "durationMs": 710.0375999999997
+  },
+  {
+    "file": "root-check-ordinary.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 12568.599900000001
+  },
+  {
+    "file": "root-check.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 1,
+    "closed": true,
+    "durationMs": 692.0667000000012
+  },
+  {
+    "file": "sfc-typecheck-negative.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 2,
+    "closed": true,
+    "durationMs": 4777.1846000000005
+  },
+  {
+    "file": "sfc-typecheck-restored.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 3502.5908000000054
+  },
+  {
+    "file": "stable-mendi-next.json",
+    "args": [
+      "D:\\tools\\mendi\\acceptance\\d03-b-014-review\\node_modules\\mendi\\dist\\drivers\\cli.js",
+      "next",
+      "--project",
+      "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "--json"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 799.2442000000001
+  },
+  {
+    "file": "stable-mendi-status.json",
+    "args": [
+      "D:\\tools\\mendi\\acceptance\\d03-b-014-review\\node_modules\\mendi\\dist\\drivers\\cli.js",
+      "status",
+      "--project",
+      "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "--json"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 955.9612999999999
+  },
+  {
+    "file": "storybook-tools-help-fixed.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "storybook",
+      "tools",
+      "--help"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 3574.9615
+  },
+  {
+    "file": "storybook-tools-help.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "storybook",
+      "tools",
+      "--help"
+    ],
+    "exitCode": 1,
+    "closed": true,
+    "durationMs": 1636.0818
+  },
+  {
+    "file": "storybook-version.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "exec",
+      "storybook",
+      "--version"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 7433.477600000006
+  },
+  {
+    "file": "target-check-configured.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 9927.7137
+  },
+  {
+    "file": "target-check-eslint-only.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 10409.0888
+  },
+  {
+    "file": "target-check.json",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "exitCode": 0,
+    "closed": true,
+    "durationMs": 15159.151399999999
+  }
+]

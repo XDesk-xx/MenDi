@@ -11,7 +11,7 @@ import { state } from './project.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
 import { currentRun } from '../adapters/runs.ts';
 import { createRun, replaceDraft, writeAction } from '../adapters/action-store.ts';
-import { loadMethods } from '../adapters/methods.ts';
+import { loadChangeMethods } from '../adapters/methods.ts';
 import {
   actionDefinition,
   actionNext,
@@ -80,12 +80,13 @@ export function startAction(input: StartInput, options: ActionOptions = {}) {
       );
   }
   check(workspace);
-  const methods = loadMethods(definition.type, tools, options.methodsRoot);
+  let methods = loadChangeMethods(definition.type, tools, root, options.methodsRoot);
   const result = writeAction(
     root,
     'action-start',
     (current, written) => {
       check(current);
+      methods = loadChangeMethods(definition.type, tools, root, options.methodsRoot);
       const seed: Omit<RunRecord, 'actionId' | 'runNumber'> = {
         formatVersion: 1,
         recordingMode: 'product',
@@ -136,9 +137,10 @@ export function continueAction(input: ContinueInput, options: ActionOptions = {}
     return run;
   }
   const prior = check(workspace);
-  const methods = loadMethods(
+  let methods = loadChangeMethods(
     prior.record.actionType,
     prior.record.toolGuidance,
+    root,
     options.methodsRoot,
   );
   const result = writeAction(
@@ -146,6 +148,12 @@ export function continueAction(input: ContinueInput, options: ActionOptions = {}
     'action-continue',
     (current, written) => {
       const run = check(current);
+      methods = loadChangeMethods(
+        run.record.actionType,
+        run.record.toolGuidance,
+        root,
+        options.methodsRoot,
+      );
       const {
         runNumber: _number,
         outcome: _outcome,

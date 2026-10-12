@@ -1,0 +1,20 @@
+{
+  "id": "check",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "check"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "budgetMs": 60000,
+  "startedAt": "2026-10-11T16:55:42.488Z",
+  "elapsedMs": 11955.8455,
+  "formalDeliveryTest": false,
+  "timedOut": false,
+  "pid": 42120,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/check.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/check.stderr.log"
+}

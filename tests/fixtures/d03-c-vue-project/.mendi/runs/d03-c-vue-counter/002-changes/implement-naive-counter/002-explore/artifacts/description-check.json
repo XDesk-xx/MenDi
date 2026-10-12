@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/prettier/bin/prettier.cjs",
+    "--check",
+    "README.md",
+    "delivery-scope.json"
+  ],
+  "budgetMs": 30000,
+  "elapsedMs": 282.5782,
+  "remainingMs": 29717.4218,
+  "exitCode": 0,
+  "error": null,
+  "stdout": "Checking formatting...\nAll matched files use Prettier code style!\n",
+  "stderr": ""
+}

@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 1 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 32459.7247
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 2 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 2036.2925
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 34875.6447

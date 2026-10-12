@@ -1,0 +1,2 @@
+export declare function present(file: string): boolean;
+export declare function managedPath(root: string, ref: string): string;

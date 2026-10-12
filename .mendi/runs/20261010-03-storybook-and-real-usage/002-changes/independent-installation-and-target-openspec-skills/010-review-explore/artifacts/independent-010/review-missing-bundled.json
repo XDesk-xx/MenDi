@@ -1,0 +1,20 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\beta",
+  "args": [
+    "action",
+    "start",
+    "--project",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\alpha",
+    "--change",
+    "local-note-work",
+    "--type",
+    "explore",
+    "--role",
+    "author",
+    "--actor",
+    "review-proof-author"
+  ],
+  "exitCode": 1,
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"skill-unavailable\",\n    \"message\": \"必要阶段方法或工具指导不可用。\",\n    \"details\": {\n      \"file\": \"D:\\\\tools\\\\mendi\\\\proofs\\\\d03-b-009\\\\independent-010\\\\node_modules\\\\.pnpm\\\\mendi@file+..+..+..+..+..+P_da3d42fb818d23b93a2625e4fe1c9711\\\\node_modules\\\\mendi\\\\skills\\\\actions\\\\explore\\\\SKILL.md\",\n      \"message\": \"ENOENT: no such file or directory, open 'D:\\\\tools\\\\mendi\\\\proofs\\\\d03-b-009\\\\independent-010\\\\node_modules\\\\.pnpm\\\\mendi@file+..+..+..+..+..+P_da3d42fb818d23b93a2625e4fe1c9711\\\\node_modules\\\\mendi\\\\skills\\\\actions\\\\explore\\\\SKILL.md'\",\n      \"code\": \"ENOENT\"\n    },\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": ""
+}

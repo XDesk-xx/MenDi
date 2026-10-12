@@ -1,0 +1,5 @@
+{
+  "currentProductAllocatedRun": ".mendi/runs/proof-1/002-changes/local-note-work/002-explore/run.md",
+  "targetMethodAbsent": true,
+  "message": "当前产品未读取目标上游方法；候选检查必须正式接入 start / continue。已有自有方法失败边界可复用。"
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/024-apply/artifacts/preparation-budget.ts",
+    "deadline"
+  ],
+  "exitCode": 124,
+  "signal": null,
+  "stdout": "{\"mode\":\"deadline\",\"reason\":\"timeout\",\"followingStarted\":false,\"sigintCount\":0,\"closed\":true,\"listenerEnded\":true}\n",
+  "stderr": ""
+}

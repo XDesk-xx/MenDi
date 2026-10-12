@@ -1,0 +1,94 @@
+{
+  "formalDeliveryTest": false,
+  "groupBudgetMs": 300000,
+  "elapsedMs": 26106.820799999998,
+  "passed": true,
+  "observations": [
+    {
+      "id": "test-store",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "tests/test-store.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "budgetMs": 60000,
+      "startedAt": "2026-10-11T16:59:55.659Z",
+      "elapsedMs": 12701.1826,
+      "formalDeliveryTest": false,
+      "timedOut": false,
+      "pid": 45564,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/test-store.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/test-store.stderr.log",
+      "testedInputUnchanged": true
+    },
+    {
+      "id": "windows-repeat-2",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "--test-name-pattern=Windows 删除共享|Windows 持续占用",
+        "tests/test-store.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "budgetMs": 60000,
+      "startedAt": "2026-10-11T17:00:08.416Z",
+      "elapsedMs": 2970.1008999999995,
+      "formalDeliveryTest": false,
+      "timedOut": false,
+      "pid": 21272,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/windows-repeat-2.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/windows-repeat-2.stderr.log",
+      "testedInputUnchanged": true
+    },
+    {
+      "id": "windows-repeat-1",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "--test-name-pattern=Windows 删除共享|Windows 持续占用",
+        "tests/test-store.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "budgetMs": 60000,
+      "startedAt": "2026-10-11T17:00:08.364Z",
+      "elapsedMs": 3031.4461999999985,
+      "formalDeliveryTest": false,
+      "timedOut": false,
+      "pid": 23236,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/windows-repeat-1.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/windows-repeat-1.stderr.log",
+      "testedInputUnchanged": true
+    },
+    {
+      "id": "check",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "budgetMs": 60000,
+      "startedAt": "2026-10-11T17:00:11.398Z",
+      "elapsedMs": 10364.5015,
+      "formalDeliveryTest": false,
+      "timedOut": false,
+      "pid": 9496,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/check.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/artifacts/verified/check.stderr.log",
+      "testedInputUnchanged": true
+    }
+  ]
+}

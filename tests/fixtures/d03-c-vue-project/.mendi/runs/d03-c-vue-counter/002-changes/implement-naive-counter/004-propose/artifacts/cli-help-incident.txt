@@ -1,0 +1,40 @@
+本文件保存本次工具结果中的必要原始输出摘录；不是重新执行或新的安装验收。
+cwd: D:\Projects\MenDi\tests\fixtures\d03-c-vue-project
+command: node node_modules/storybook/dist/bin/dispatcher.js --help
+environment: CI=1, pnpm_config_verify_deps_before_run=error
+宿主 spawnSync timeout=30000ms；调用正常退出0，宿主首段等待10.004秒、后段等待5.004秒。
+
+Usage: index <command> [options]
+
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 14, reused 14, downloaded 0, added 0
+Progress: resolved 75, reused 52, downloaded 0, added 0
+Progress: resolved 190, reused 126, downloaded 0, added 0
+Progress: resolved 250, reused 186, downloaded 2, added 0
+Progress: resolved 275, reused 211, downloaded 2, added 0
+Progress: resolved 280, reused 216, downloaded 2, added 0
+[WARN] 3 deprecated subdependencies found: glob@7.2.0, inflight@1.0.6, rimraf@2.6.2
+Packages: +211
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 281, reused 217, downloaded 2, added 46
+Progress: resolved 281, reused 217, downloaded 2, added 114
+Progress: resolved 281, reused 217, downloaded 2, added 210
+Progress: resolved 281, reused 217, downloaded 2, added 211, done
+
+实际结果：顶层帮助意外下载2个包，+211 packages，违反本次不自动下载限制。
+只读 dispatcher 源确认顶层 --help 路由 @storybook/cli，缺本地同版时 useRemotePkg=true；本地dev/build/index/ai/tools/skills路由现有core。
+随后停止该入口、报告根协调者；没有清理缓存、改安装、重复顶层帮助、启动预览或业务实现。
+根协调者要求读取实际产品Storybook指导后继续既有官方本地tools分支。
+
+后续本地命令实际退出0：
+node node_modules/storybook/dist/bin/dispatcher.js tools --help
+node node_modules/storybook/dist/bin/dispatcher.js tools stories preview --help
+environment additionally: COREPACK_ENABLE_NETWORK=0, pnpm_config_offline=true
+宿主合计实际2.580秒；本地输出明确：
+Storybook tools from the Storybook configuration at D:\Projects\MenDi\tests\fixtures\d03-c-vue-project\.storybook.
+stories preview            Get story preview URLs  [requires running Storybook]
+--attach                     Require attaching to a running Storybook; gate failures are errors instead of a local fallback
+--input <object>             Raw JSON object with the tool arguments (escape hatch for complex values)
+Output (--json): stories array; success includes title, name, previewUrl; failure includes input, error.
+
+这次本地帮助只确认实际方法和参数，不认证preview服务、组件、交互、收尾、冷安装或全面网络gate。

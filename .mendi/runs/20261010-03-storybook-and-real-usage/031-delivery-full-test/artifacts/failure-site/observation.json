@@ -1,0 +1,116 @@
+{
+  "observedAt": "2026-10-11T15:30:28.454Z",
+  "case": "root regression #122 / tests/lifecycle-writes.test.ts:39",
+  "sourceRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+  "copies": [
+    {
+      "sourceRef": ".mendi/delivery-groups/d01/tests/001-full/result.json",
+      "savedAs": "result-prepared.json"
+    },
+    {
+      "sourceRef": ".mendi/delivery-groups/d01/tests/001-full/result.json.fa0511dc-ac69-47c2-9ad3-97a0f8743a3c.tmp",
+      "savedAs": "result-staged.json"
+    },
+    {
+      "sourceRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+      "savedAs": "parent-draft.md"
+    },
+    {
+      "sourceRef": ".mendi/write.lock",
+      "savedAs": "lock.json"
+    }
+  ],
+  "errorCode": "EPERM",
+  "operation": "fs.renameSync replacing 001-full/result.json during passedTarget preparation",
+  "before": {
+    "formatVersion": 1,
+    "executionId": "001-full",
+    "kind": "full",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "delivery-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:full"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:full",
+    "scriptText": "node --test checks/unit.test.ts checks/integration.test.ts",
+    "startedAt": "2026-10-11T15:27:35.453Z",
+    "finishedAt": null,
+    "executionState": "prepared",
+    "outcome": "not-run",
+    "exitCode": null,
+    "signal": null,
+    "pid": null,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+  },
+  "staged": {
+    "formatVersion": 1,
+    "executionId": "001-full",
+    "kind": "full",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-WTFzSu\\project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "delivery-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:full"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:full",
+    "scriptText": "node --test checks/unit.test.ts checks/integration.test.ts",
+    "startedAt": "2026-10-11T15:27:35.453Z",
+    "finishedAt": null,
+    "executionState": "running",
+    "outcome": "unknown",
+    "exitCode": null,
+    "signal": null,
+    "pid": null,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+  },
+  "childLogs": {
+    "stdoutBytes": 0,
+    "stderrBytes": 0
+  },
+  "conclusions": [
+    "错误发生在 passedTarget 内部正式测试子记录准备写入，尚未启动其业务测试，也未进入该用例的Reopen中断点。",
+    "原错误和完整TAP在031/root-regression.stdout.log，现场只保存本次四个必要短名文件，不复制历史树或建立hash清单。",
+    "EPERM的具体占用者/外部原因尚未证实，不据此宣称Windows根因已定位或修复；未重试rename、清锁或修改现场。"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "vue-build",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-vue-build",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "build"
+    ],
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:33:43.070Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-build.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-build.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 1349056,
+  "pid": 47500,
+  "finishedAt": "2026-10-11T18:33:45.240Z",
+  "elapsedMs": 2169,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

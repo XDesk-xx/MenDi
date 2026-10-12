@@ -1,0 +1,90 @@
+import { type TestExecution, type TestOutcome } from '../core/test-execution.ts';
+import { type ExecutionProcessOptions } from '../adapters/test-process.ts';
+export declare function listTests(input: {
+    project: string;
+}): {
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    entries: {
+        kind: "focused" | "fast" | "full";
+        scriptName: unknown;
+        scriptText: unknown;
+        available: boolean;
+        reason: string | null;
+    }[];
+    openspec: null;
+    local: null;
+    executionMode: "local-only";
+    upstreamAccess: "not-required";
+};
+export declare function runTest(input: {
+    project: string;
+    kind: string;
+    actor: string;
+    pnpmBin: string;
+}, options?: ExecutionProcessOptions): Promise<{
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    executionId: string | null;
+    outcome: "not-run" | "passed" | "failed" | "interrupted";
+    record: TestExecution;
+    openspec: null;
+    local: null;
+    executionMode: "local-only";
+    upstreamAccess: "not-required";
+} | {
+    retainedLock?: string | undefined;
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    executionId: string | null;
+    outcome: TestOutcome;
+    observed: TestExecution | null;
+    error: {
+        message: string;
+        code?: string;
+        details?: unknown;
+        releaseError?: unknown;
+    };
+    openspec: null;
+    local: null;
+    executionMode: "local-only";
+    upstreamAccess: "not-required";
+}>;
+export declare function testStatus(input: {
+    project: string;
+    execution: string;
+    deliveryId?: string;
+}, options?: {
+    observeRead?: () => void;
+}): {
+    record: TestExecution;
+    stable: boolean;
+    locked: boolean;
+    changed: boolean;
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    executionId: string;
+    outcome: TestOutcome;
+    openspec: null;
+    local: null;
+    executionMode: "local-only";
+    upstreamAccess: "not-required";
+} | {
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    executionId: string;
+    outcome: string;
+    error: {
+        message: string;
+        code?: string;
+    };
+    openspec: null;
+    local: null;
+    executionMode: "local-only";
+    upstreamAccess: "not-required";
+};

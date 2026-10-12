@@ -1,0 +1,15 @@
+{
+  "name": "typecheck-negative",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "typecheck"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-017-review-ba5a93a8",
+  "exitCode": 2,
+  "elapsedMs": 5255,
+  "signal": null,
+  "stdout": "src/DependencyProbe.vue(3,7): error TS2322: Type 'number' is not assignable to type 'string'.\r\n[ELIFECYCLE] Command failed with exit code 2.\n",
+  "stderr": "$ vue-tsc --noEmit\n"
+}

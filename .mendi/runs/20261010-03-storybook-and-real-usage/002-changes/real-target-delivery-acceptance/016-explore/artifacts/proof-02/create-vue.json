@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "dlx",
+    "create-vue@3.24.0",
+    "--ts",
+    "--bare",
+    "vue-environment-probe"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-VfyUsf",
+  "status": 0,
+  "durationMs": 916,
+  "stdout": "┌  Vue.js - The Progressive JavaScript Framework\n\nScaffolding project in D:\\Projects\\MenDi\\.tmp\\d03-c-016-empty-VfyUsf\\vue-environment-probe...\n│\n└  Done. Now run:\n\n   cd vue-environment-probe\n   pnpm install\n   pnpm dev\n\n| Optional: Initialize Git in your project directory with:\n\n   git init && git add -A && git commit -m \"initial commit\"\n\n",
+  "stderr": "",
+  "signal": null
+}

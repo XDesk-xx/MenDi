@@ -1,0 +1,35 @@
+{
+  "id": "main-specs-validation",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-main-specs-validation",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "--specs",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:33:57.720Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/main-specs-validation.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/main-specs-validation.stderr.log",
+  "budgetMs": 30000,
+  "wholeGroupRemainingAtStartMs": 1334406,
+  "pid": 18980,
+  "finishedAt": "2026-10-11T18:33:58.197Z",
+  "elapsedMs": 476,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

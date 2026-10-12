@@ -1,0 +1,12 @@
+[WARN] Your node_modules are out of sync with your lockfile. The workspace structure has changed since last install
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d03-full-test-044",
+  "installedRoot": "D:\\tools\\mendi\\acceptance\\d03-full-test-044\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_1fbdf4730573a31a3b81247cf136e717\\node_modules\\mendi",
+  "installedCLI": "D:\\tools\\mendi\\acceptance\\d03-full-test-044\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_1fbdf4730573a31a3b81247cf136e717\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-Mj0wei\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-Mj0wei\\beta"
+  ],
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "evidence": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\044-delivery-full-test\\artifacts\\installation"
+}

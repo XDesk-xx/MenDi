@@ -1,0 +1,42 @@
+{
+  "mode": "normal",
+  "budgetMs": 5000,
+  "elapsedMs": 1612.8931,
+  "reason": null,
+  "sigintCount": 0,
+  "followingStarted": true,
+  "steps": [
+    {
+      "childMode": "child-short",
+      "pid": 47328,
+      "remainingMs": 4999.722400000001,
+      "allowanceMs": 4999.722400000001,
+      "durationMs": 804.4749999999999,
+      "code": 0,
+      "signal": null,
+      "stdout": "SHORT_DONE\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "listenerEnded": null,
+      "stopDurationMs": 0.060899999999946886,
+      "accepted": true
+    },
+    {
+      "childMode": "child-short",
+      "pid": 51412,
+      "remainingMs": 4195.2158,
+      "allowanceMs": 4195.2158,
+      "durationMs": 808.0824,
+      "code": 0,
+      "signal": null,
+      "stdout": "SHORT_DONE\n",
+      "stderr": "",
+      "closed": true,
+      "pipesClosed": true,
+      "listenerEnded": null,
+      "stopDurationMs": 0.14229999999997744,
+      "accepted": true
+    }
+  ]
+}

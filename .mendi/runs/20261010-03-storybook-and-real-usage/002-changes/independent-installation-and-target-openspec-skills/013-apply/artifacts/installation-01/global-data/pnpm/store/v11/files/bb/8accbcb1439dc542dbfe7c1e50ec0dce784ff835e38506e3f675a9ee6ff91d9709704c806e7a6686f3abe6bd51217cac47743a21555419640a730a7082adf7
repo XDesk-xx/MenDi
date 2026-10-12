@@ -1,0 +1,20 @@
+import { type TestExecution, type TestKind } from '../core/test-execution.ts';
+export type TestPhase = 'prepared' | 'before-intent-commit' | 'before-pid-commit' | 'after-launch' | 'before-log-write' | 'before-terminal-commit' | 'before-test-readback' | 'before-test-lock-release';
+export type TestObserver = (phase: TestPhase, file: string) => void;
+export declare function executionWorkspace(root: string, deliveryId?: string): {
+    workspace: import("../core/records.ts").Workspace;
+    projectBytes: NonSharedBuffer;
+    manifestBytes: NonSharedBuffer;
+};
+export declare function reserveExecution(root: string, deliveryId: string, kind: TestKind): {
+    id: string;
+    ref: string;
+};
+export declare function saveExecution(root: string, record: TestExecution, phase: TestPhase, observe?: TestObserver, initial?: boolean): void;
+export declare function observeExecution(root: string, id: string, observe?: () => void, deliveryId?: string): {
+    record: TestExecution;
+    stable: boolean;
+    locked: boolean;
+    changed: boolean;
+};
+export declare function readExecution(root: string, id: string, deliveryId: string): TestExecution;

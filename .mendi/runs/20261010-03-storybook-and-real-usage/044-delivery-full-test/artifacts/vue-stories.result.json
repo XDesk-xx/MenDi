@@ -1,0 +1,32 @@
+{
+  "id": "vue-stories",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-vue-stories",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "verify:stories"
+    ],
+    "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:33:50.733Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-stories.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-stories.stderr.log",
+  "budgetMs": 180000,
+  "wholeGroupRemainingAtStartMs": 1341393,
+  "pid": 33732,
+  "finishedAt": "2026-10-11T18:33:57.704Z",
+  "elapsedMs": 6970,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

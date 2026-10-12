@@ -1,0 +1,27 @@
+import { type Scope } from './records.ts';
+import type { FullTest } from './delivery-verification.ts';
+export type LifecycleType = 'delivery-open' | 'delivery-close' | 'delivery-reopen';
+export interface Applicability {
+    conclusion: 'applicable';
+    materials: string;
+    changes: string;
+    reason: string;
+}
+export interface Lifecycle {
+    operation: LifecycleType;
+    sourceDeliveryId: string | null;
+    scope: Scope;
+    priorCloseRef?: string;
+    fullTestRunRef?: string;
+    acceptance?: FullTest;
+    applicability?: Applicability;
+    reason?: string;
+    title?: string;
+    recordedOn: string;
+    initialBinding?: {
+        changeId: string;
+        planningSlot: string;
+    };
+}
+export declare function applicability(value: unknown): Applicability;
+export declare function parseLifecycle(data: Record<string, unknown>, id: string, number: number): Lifecycle;

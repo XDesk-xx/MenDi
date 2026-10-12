@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "recordingMode": "product",
+  "id": "d03-c-vue-counter",
+  "title": "D03-C Vue 计数器最小实际使用",
+  "state": "open",
+  "openedOn": "2026-10-11",
+  "goal": "在唯一真实 Vue 目标完成合法 OpenSpec 阶段、计数器与 Storybook 最小实际使用，经独立 Review Apply 批准后停待 Archive。",
+  "plannedChanges": [
+    {
+      "slot": "VUE-COUNTER",
+      "title": "唯一 Naive UI 计数器与三个 Storybook 状态",
+      "dependsOn": []
+    }
+  ],
+  "activeChangeId": "implement-naive-counter",
+  "changeBindings": [
+    {
+      "planningSlot": "VUE-COUNTER",
+      "changeId": "implement-naive-counter",
+      "changeRef": "openspec/changes/implement-naive-counter",
+      "state": "active",
+      "latestRunRef": ".mendi/runs/d03-c-vue-counter/002-changes/implement-naive-counter/007-review-apply/run.md",
+      "batchId": "002-changes"
+    }
+  ],
+  "changeBatches": [
+    {
+      "id": "002-changes",
+      "firstRun": "002",
+      "runsRef": ".mendi/runs/d03-c-vue-counter/002-changes",
+      "changeIds": [
+        "implement-naive-counter"
+      ]
+    }
+  ],
+  "currentBatchId": "002-changes",
+  "openRunRef": ".mendi/runs/d03-c-vue-counter/001-delivery-open/run.md"
+}

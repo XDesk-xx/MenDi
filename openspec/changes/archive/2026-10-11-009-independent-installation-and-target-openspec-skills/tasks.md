@@ -1,0 +1,38 @@
+# Tasks
+
+## 1. 目标方法解析与输出
+
+- [x] 1.1 在方法 adapter 实现单一目标来源、安全路径、普通文件、name / 非空正文 / generatedBy 1.14.1 检查；用 `tests/target-methods.test.ts` 覆盖 version 1.0 与生成基线区分、缺失、EISDIR、错身份 / 基线、空正文及 junction 越界，验证不回退其他来源。
+- [x] 1.2 实现固定阶段映射与即时 `methods.upstream`，保留 stage / guidance 和原自有方法加载入口；测试所有 Author / revise / Review / Archive 映射及 Apply + Storybook 组合，断言真实来源、目标和内容，Review 无必需 Author 方法。
+- [x] 1.3 修订自有 Explore / Propose / Apply 与 OpenSpec 工具指导，写清目标准备、已绑定 Change 的首次产物入口、修订适用条件及内容交接限度；通过方法加载测试和逐项指导核对，不改目标官方方法或新增注册表。
+
+## 2. 写入前接线、继续及角色边界
+
+- [x] 2.1 为 start / continue 接入组合方法并在占号前及锁内 createRun 前核对当前必要方法；统一 `tests/action-support.ts` 的受控方法准备，测试失败前后当前 Run / manifest 字节和占号不变、恢复后新进程继续读取新正文，沿用既有写入失败现场规则。
+- [x] 2.2 在 Owner resolve 的实际接收阶段和 Archive 准备接入同一规则；补 Author handoff / revise / rollback 缺方法拒绝、Reviewer 接收无 Author 方法前置、Archive 缺方法无占号及现有一次原生同步 / 本地 finish 回归，确认未旁路角色与直接批准。
+- [x] 2.3 补旧 Run 无 upstream 字段、未用 sync / Storybook 缺失、历史说明失效、未知 Ref、查询 / save / submit / diagnose 兼容回归；相关 `action-*`、`query`、`operation-inputs` 与 Archive tests 通过，仍拒绝当前必要输入缺失和不安全路径。
+- [x] 2.4 更新自有修订、Review、Archive 方法的具体分工与停止说明；验证 Reviewer 不调用 Author 写入流程，首次 Propose 不 new 第二 Change，Archive 不先 sync 再 native，execute / finish 无新增方法前置；旧 Run、编号与 verdict 保持。
+
+## 3. 稳定安装及真实方法使用
+
+- [x] 3.1 新增受控 TypeScript `scripts/prepare-installation-tests.ts` 与 `tests/installation/`，准备脚本显式正常根构建 / pack / 开发仓库外新目录安装并生成双目标方法；增加 `pnpm test:installation` 显式执行入口和 Biome 维护目录，核对实际文件发现、scripts / tests tsc 与准备缺失时明确拒绝，原 proof 不扩写。
+- [x] 3.2 从新安装 CLI / 自有方法、新进程与不同 cwd 对 alpha / beta 验证目标方法来源、真实正文、写入隔离、实际产品缺方法 start / continue 失败及 Storybook 并用；安装 tests 断言新字段及旧状态保护，必要输出保存当前 Run，安装根与 `.tmp` 可重建。
+- [x] 3.3 在真实隔离已绑定 Change 实际消费产品交接的 propose 方法及逐项 instructions，按依赖形成四类规划产物并体现目标 context / rules；用固定 CLI strict validate / list 核对仅一个 Change、任务未实施，保存真实使用摘要，不以模拟正文或 readiness 代替 Agent 工作。
+- [x] 3.4 在 README 提供简短稳定安装和目标准备入口，区分安装根 / 目标根 / CLI，列明实际 Windows / Node 22.23.2 / pnpm 11.22.0 / OpenSpec 1.14.1 及其他组合未认证；从新安装按示例核对，保留 AGENTS 规则与冲突报告，不自动装可选工具。
+
+## 4. pnpm 入口与维护文档
+
+- [x] 4.1 将 UI results 的 pnpm 参数改为既有 `pnpmEntry`，明确正常根构建与目标严格依赖预检的环境分工；用另一真实稳定 pnpm 入口运行受影响有限结果场景并核对命令 / 新结果，缺入口与错版本仍失败，产品依赖预检及禁止自动安装行为不变。
+- [x] 4.2 收敛 README / OpenSpec context 为工程、方法、当前状态入口与必要背景，历史过程从最新 Run 定位；核对保留操作 guidance、项目已有规则、短指令入口和链接。升级仅路线图预留，B / C、manual-bootstrap、A 的归档历史和批准不变。
+
+## 5. 综合验证与 Author 交接
+
+- [x] 5.1 执行普通 `pnpm check`、受影响的完整快速 `pnpm test`、显式安装 tests 及本次必要 UI 结果回归，固定 OpenSpec strict validate 当前 Change；简记实际命令 / 结果 / 限制，未变化 A / Archive 结论可沿用，不执行正式 Delivery Full Test。
+- [x] 5.2 在当次 Author Run 汇总实施与 proof，列出 src / tests / scripts 各自维护代码行数最多前三名及可靠增长 / 职责判断，必要整理先于扩展；保存当前直接交接，停在独立 Review Apply，不自签 verdict，不新增行数 / hash / 引用 gate。
+
+## Workflow follow-up
+
+- Apply 完成后由独立 Reviewer 审核当前实施，任务勾选与检查通过不代替批准。
+- Apply 完成并独立批准后，实际 Archive 与 Change checkpoint 另按明确指令执行。
+- C 的真实 Vue / 无 UI、新会话、完整交付与 Reopen 留在原规划，正式 Delivery Full Test / Close 保持独立授权；升级专题暂不开展。
+

@@ -162,6 +162,46 @@ test('真实 CLI 跨进程两次 Author / Reviewer 继续、修订与补审，�
   assert.ok(human.stdout.includes('下一步：archive'));
 });
 
+test('Storybook 指导在真实 CLI 保存 / 继续及无 UI 查询中读回，旧提交保持原样', () => {
+  const { root, invoke } = target();
+  assert.equal(fs.existsSync(path.join(root, 'node_modules/storybook')), false);
+  const actor = ['--role', 'author', '--actor', 'ui-author'];
+  const first = invoke([
+    'action',
+    'start',
+    '--change',
+    'proof-entry',
+    '--type',
+    'explore',
+    ...actor,
+    '--tool',
+    'storybook',
+  ]);
+  assert.equal(first.methods.guidance[0].ref, 'skills/tools/storybook/SKILL.md');
+  assert.deepEqual(first.run.toolGuidance, ['storybook']);
+  fs.writeFileSync(path.join(root, 'note.md'), '只有方法读取，没有 UI 实施或 MCP 认证。\n');
+  invoke(['run', 'save', '--run', first.run.ref, ...actor, '--body', 'note.md']);
+  invoke([
+    'run',
+    'submit',
+    '--run',
+    first.run.ref,
+    ...actor,
+    '--outcome',
+    'continuing',
+    '--result',
+    '方法检查',
+  ]);
+  const original = fs.readFileSync(path.join(root, first.run.ref));
+  assert.deepEqual(invoke(['status']).run.toolGuidance, ['storybook']);
+  const continued = invoke(['action', 'continue', '--action', first.run.actionId, ...actor]);
+  assert.deepEqual(continued.run.toolGuidance, ['storybook']);
+  assert.equal(continued.methods.guidance[0].ref, first.methods.guidance[0].ref);
+  assert.deepEqual(invoke(['status']).run.toolGuidance, ['storybook']);
+  assert.equal(invoke(['next']).next.action, 'run-save-or-submit');
+  assert.deepEqual(fs.readFileSync(path.join(root, first.run.ref)), original);
+});
+
 test('CLI 必填 / 白名单 / 互斥、错角色类型、路径越界均不写目标', () => {
   const { root, invoke } = target();
   const before = snapshot(root);

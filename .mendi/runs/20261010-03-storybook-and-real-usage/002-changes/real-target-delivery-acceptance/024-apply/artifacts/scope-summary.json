@@ -1,0 +1,18 @@
+{
+  "new": [
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/024-apply/run.md",
+    ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/024-apply/artifacts/**"
+  ],
+  "updated": [
+    "openspec/changes/real-target-delivery-acceptance/tasks.md",
+    ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "README.md",
+    "openspec/config.yaml",
+    "tests/fixtures/d03-c-vue-project/README.md"
+  ],
+  "historyWritten": [],
+  "targetImplementationWritten": [],
+  "productImplementationWritten": [],
+  "newMaintenanceExecutionPlatform": false,
+  "authority": "Root Apply continuing preparation only; target lifecycle remains pending"
+}

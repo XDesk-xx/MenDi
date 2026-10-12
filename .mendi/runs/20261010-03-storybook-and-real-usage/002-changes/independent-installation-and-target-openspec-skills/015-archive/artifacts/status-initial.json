@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "error": {
+    "code": "invalid-record",
+    "message": "人工 next.role 不合法。",
+    "details": {},
+    "fix": "核对输入与相关路径后重试。"
+  }
+}

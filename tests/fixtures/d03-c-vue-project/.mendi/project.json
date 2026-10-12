@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "recordingMode": "product",
+  "name": "d03-c-vue-project",
+  "deliveryGroupsDir": ".mendi/delivery-groups",
+  "activeDeliveryId": "d03-c-vue-counter",
+  "deliveries": [
+    {
+      "id": "d03-c-vue-counter",
+      "manifestRef": ".mendi/delivery-groups/d03-c-vue-counter/manifest.json"
+    }
+  ]
+}

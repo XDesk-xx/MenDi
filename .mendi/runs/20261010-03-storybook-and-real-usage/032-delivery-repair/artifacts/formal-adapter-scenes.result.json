@@ -1,0 +1,22 @@
+{
+  "id": "formal-adapter-scenes",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "--test",
+    "--test-name-pattern=正式运行新子执行|真正非零|选定启动失败",
+    "tests/delivery-full-test.test.ts"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "startedAt": "2026-10-11T15:50:58.612Z",
+  "elapsedMs": 60624.26410000003,
+  "budgetMs": 180000,
+  "timedOut": false,
+  "pid": 47696,
+  "closed": true,
+  "exitCode": 0,
+  "signal": null,
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stderr.log"
+}

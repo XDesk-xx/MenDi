@@ -1,0 +1,34 @@
+{
+  "operation": "local-only-finish",
+  "run": "030",
+  "role": "author",
+  "authorization": "Owner 授权本地收口（推荐）",
+  "oldWriter": {
+    "pid": 29092,
+    "stopped": true
+  },
+  "originalLock": {
+    "token": "cf3361bb-ac7a-49e4-8974-de8cd95fe08e",
+    "operation": "manual-bootstrap-archive-real-target-delivery-acceptance",
+    "released": true
+  },
+  "repairedField": {
+    "ref": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "field": "next.role",
+    "before": "owner",
+    "after": "author"
+  },
+  "nativeArchiveInvocationsThisRecovery": 0,
+  "archiveRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+  "archiveOrdinal": 10,
+  "archivedChangeCount": 10,
+  "localRepairLockReleased": true,
+  "historyChanged": false,
+  "preservedArtifacts": [
+    "archive-preflight.json",
+    "native-archive-invocation.json",
+    "archive-failure.json"
+  ],
+  "validation": "稳定 MenDi status / next 均 exit 0；不重复行为测试，元数据修复未改变实现。",
+  "sealLock": "封存当前 draft 后仅释放本次新取得的自有锁；最终释放由外部读回确认。"
+}

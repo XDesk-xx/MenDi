@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 无 dev server 的有限测试、真实缺陷失败与修复后新测试 / 浏览器结果
+ok 1 - 无 dev server 的有限测试、真实缺陷失败与修复后新测试 / 浏览器结果
+  ---
+  duration_ms: 48093.734
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48631.7421

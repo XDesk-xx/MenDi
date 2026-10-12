@@ -1,0 +1,58 @@
+
+┌  Building storybook v10.6.1
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+●  Building open services..
+│
+●  Building preview..
+│
+▲  `vue-docgen-api` is deprecated and will be removed in the next major
+│  release of Storybook. It is still the default docgen engine, so this
+│  also applies when you have not set the `docgen` framework option.
+│  Enable server-side docgen with `features: { experimentalDocgenServer:
+│  true }` in your `.storybook/main.ts`, which becomes the default in
+│  Storybook 11, or set `framework: { name: '@storybook/vue3-vite',
+│  options: { docgen: 'vue-component-meta' } }` to keep docgen in the
+│  builder.
+│  Vite vite v8.3.0 building client environment for production...
+transforming...
+✓ 2684 modules transformed.
+rendering chunks...
+computing gzip size...
+│  Vite storybook-static/iframe.html
+│  18.60 kB │ gzip:   5.24 kB
+│  storybook-static/assets/CounterPanel-BlAk1siY.css             0.48 kB
+│  │ gzip:   0.31 kB
+│  storybook-static/assets/iframe-o4R38bdr.js                    0.04 kB
+│  │ gzip:   0.06 kB
+│  storybook-static/assets/rolldown-runtime-Dh6celcD.js          0.62 kB
+│  │ gzip:   0.41 kB
+│  storybook-static/assets/preload-helper-KpucdegZ.js            1.33 kB
+│  │ gzip:   0.75 kB
+│  storybook-static/vite-inject-mocker-entry.js                 27.81 kB
+│  │ gzip:   9.67 kB
+│  storybook-static/assets/CounterPanel.stories-DACOn5Su.js     67.44 kB
+│  │ gzip:  21.79 kB
+│  storybook-static/assets/iframe-Das-z10e.js                1,051.94 kB
+│  │ gzip: 310.79 kB
+
+│  Vite ✓ built in 1.97s
+│
+▲  Vite [plugin builtin:vite-reporter]
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rolldownOptions.output.codeSplitting to improve chunking:
+│  ]8;;https://rolldown.rs/reference/OutputOptions.codeSplittinghttps://rolldown.rs/reference/OutputOptions.codeSplitting]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│
+◇  Output directory:
+│  D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/storybook-static
+│
+└  Storybook build completed successfully
+

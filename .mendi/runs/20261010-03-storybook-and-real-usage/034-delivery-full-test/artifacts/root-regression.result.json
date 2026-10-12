@@ -1,0 +1,32 @@
+{
+  "id": "root-regression",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-034-d03-full-test-root-regression",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "test"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T16:17:49.376Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/root-regression.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/root-regression.stderr.log",
+  "budgetMs": 1800000,
+  "wholeGroupRemainingAtStartMs": 2642106,
+  "pid": 39292,
+  "finishedAt": "2026-10-11T16:44:06.130Z",
+  "elapsedMs": 1576751,
+  "exitCode": 1,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "failed"
+}

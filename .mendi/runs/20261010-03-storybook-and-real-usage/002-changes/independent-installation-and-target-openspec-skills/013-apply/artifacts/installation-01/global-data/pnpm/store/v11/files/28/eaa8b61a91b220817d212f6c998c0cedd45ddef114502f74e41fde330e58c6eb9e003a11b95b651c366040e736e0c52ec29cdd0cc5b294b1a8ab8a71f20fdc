@@ -1,0 +1,30 @@
+import type { OpenSpec, UpstreamRoot } from './openspec.ts';
+export interface OperationInstructions {
+    root: UpstreamRoot;
+    changeName: string;
+    schemaName: 'spec-driven';
+    context?: string;
+    operationGuidance?: string[];
+}
+export interface ApplyInstructions extends OperationInstructions {
+    changeDir: string;
+    contextFiles: Record<string, string[]>;
+    tasks: {
+        id: string;
+        description: string;
+        done: boolean;
+        sourcePath: string;
+        line: number;
+    }[];
+    progress: {
+        total: number;
+        complete: number;
+        remaining: number;
+    };
+    state: 'blocked' | 'ready' | 'all_done';
+    instruction: string;
+    taskTrackingConfigured: boolean;
+    missingArtifacts?: string[];
+    missingPrerequisites?: string[];
+}
+export declare function operationInstructions(tool: OpenSpec, changeId: string, operation: string): OperationInstructions;

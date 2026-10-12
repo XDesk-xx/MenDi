@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: 真实上游 planning complete 不自动批准或推进本地 Explore
+ok 1 - 真实上游 planning complete 不自动批准或推进本地 Explore
+  ---
+  duration_ms: 4377.8581
+  type: 'test'
+  ...
+# Subtest: 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+ok 2 - 人工 bootstrap 查询保留交接引用，产品 bind 拒绝改写
+  ---
+  duration_ms: 9262.1499
+  type: 'test'
+  ...
+# Subtest: 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+ok 3 - 历史链接、旧 Delivery 和未知 Ref 不成为活动查询输入
+  ---
+  duration_ms: 4492.4056
+  type: 'test'
+  ...
+# Subtest: 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+ok 4 - 人工归档交接在旧目录缺失时只读查询，不调用活动 status
+  ---
+  duration_ms: 6026.3587
+  type: 'test'
+  ...
+# Subtest: 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+ok 5 - 必要 binding 的越界 junction 及矛盾归档记录仍拒绝
+  ---
+  duration_ms: 15206.0495
+  type: 'test'
+  ...
+# Subtest: 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+ok 6 - 缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修复
+  ---
+  duration_ms: 18227.8619
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57930.7358

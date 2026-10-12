@@ -1,0 +1,68 @@
+{
+  "formalDeliveryTest": false,
+  "files": [
+    "tests/test-store.test.ts",
+    "tests/test-support.ts",
+    "tests/sequential-support.ts",
+    "tests/lifecycle-support.ts",
+    "tests/delivery-support.ts",
+    "tests/test-preparation.test.ts",
+    "src/adapters/test-store.ts"
+  ],
+  "results": [
+    {
+      "id": "preparation-and-entries",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "tests/test-preparation.test.ts",
+        "tests/test-entries.test.ts"
+      ],
+      "budgetMs": 90000,
+      "elapsedMs": 10374.219,
+      "pid": 4564,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "inputsUnchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/preparation-and-entries.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/preparation-and-entries.stderr.log"
+    },
+    {
+      "id": "check",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "budgetMs": 60000,
+      "elapsedMs": 11231.7904,
+      "pid": 50716,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "inputsUnchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/check.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/check.stderr.log"
+    },
+    {
+      "id": "real-dependencies",
+      "args": [
+        "--test",
+        "--test-name-pattern=RP-A-001|真实同步后|预检后外部|已有脚本自身",
+        "tests/test-dependencies.test.ts"
+      ],
+      "budgetMs": 90000,
+      "elapsedMs": 20534.3665,
+      "pid": 16192,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "inputsUnchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/real-dependencies.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/artifacts/real-dependencies.stderr.log"
+    }
+  ]
+}

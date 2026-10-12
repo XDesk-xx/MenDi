@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+# 已提交记录与原始证据保留字节，不参与文本换行转换
+/.mendi/** -text
+/artifacts/** -text

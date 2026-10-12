@@ -1,0 +1,24 @@
+{
+  "cwd": "D:\\tools\\mendi\\proofs\\d03-b-009\\proof-006",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\tools\\mendi\\proofs\\d03-b-009\\proof-006\\node_modules\\.pnpm\\mendi@file+..+..+..+..+..+P_465049e4e874dcaf2048daa4ba685953\\node_modules\\mendi\\dist\\drivers\\cli.js",
+    "run",
+    "save",
+    "--project",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-mO64Dt\\alpha",
+    "--run",
+    ".mendi/runs/proof-0/002-changes/local-note-work/002-explore/run.md",
+    "--role",
+    "author",
+    "--actor",
+    "proof-author",
+    "--body",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-mO64Dt\\alpha\\notes.md",
+    "--json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"ok\": true,\n  \"operation\": \"run-save\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\",\n  \"executionMode\": \"local-only\",\n  \"openspec\": null,\n  \"upstreamAccess\": \"not-required\",\n  \"local\": {\n    \"source\": \"product\",\n    \"deliveryId\": \"proof-0\",\n    \"title\": \"方法交接探索\",\n    \"state\": \"open\",\n    \"goal\": \"独立安装与方法来源的受控探索\",\n    \"plannedChanges\": [\n      {\n        \"slot\": \"A\",\n        \"title\": \"离线笔记\",\n        \"dependsOn\": []\n      }\n    ],\n    \"activeChangeId\": \"local-note-work\",\n    \"changeBindings\": [\n      {\n        \"changeId\": \"local-note-work\",\n        \"changeRef\": \"openspec/changes/local-note-work\",\n        \"planningSlot\": \"A\",\n        \"state\": \"active\",\n        \"batchId\": \"002-changes\",\n        \"latestRunRef\": \".mendi/runs/proof-0/002-changes/local-note-work/002-explore/run.md\"\n      }\n    ]\n  },\n  \"run\": {\n    \"ref\": \".mendi/runs/proof-0/002-changes/local-note-work/002-explore/run.md\",\n    \"formatVersion\": 1,\n    \"recordingMode\": \"product\",\n    \"deliveryId\": \"proof-0\",\n    \"changeId\": \"local-note-work\",\n    \"runNumber\": 2,\n    \"actionId\": \"local-note-work-002-explore\",\n    \"actionType\": \"explore\",\n    \"role\": \"author\",\n    \"actorId\": \"proof-author\",\n    \"status\": \"draft\",\n    \"stageSkill\": \"explore\",\n    \"toolGuidance\": [\n      \"storybook\"\n    ]\n  },\n  \"next\": {\n    \"source\": \"local-state\",\n    \"executable\": false,\n    \"role\": \"author\",\n    \"action\": \"run-save-or-submit\",\n    \"status\": \"working\",\n    \"reason\": \"当前 draft 可保存并提交；记录命令不自动执行阶段工作。\",\n    \"currentRunRef\": \".mendi/runs/proof-0/002-changes/local-note-work/002-explore/run.md\"\n  }\n}\n",
+  "stderr": ""
+}

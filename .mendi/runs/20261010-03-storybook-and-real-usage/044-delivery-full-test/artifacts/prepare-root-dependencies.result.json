@@ -1,0 +1,35 @@
+{
+  "id": "prepare-root-dependencies",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-prepare-root-dependencies",
+  "stage": "preparation",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "install",
+      "--frozen-lockfile",
+      "--offline",
+      "--ignore-scripts"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:11:12.149Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-root-dependencies.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-root-dependencies.stderr.log",
+  "budgetMs": 300000,
+  "wholeGroupRemainingAtStartMs": 2699977,
+  "pid": 24060,
+  "finishedAt": "2026-10-11T18:11:12.813Z",
+  "elapsedMs": 664,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

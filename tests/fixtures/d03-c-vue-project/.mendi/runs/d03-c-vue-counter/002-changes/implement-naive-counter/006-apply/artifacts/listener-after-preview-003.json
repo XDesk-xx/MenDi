@@ -1,0 +1,6 @@
+{
+  "listenerEnded": true,
+  "error": "ECONNREFUSED",
+  "elapsedMs": 2.003399999999999,
+  "budgetMs": 2000
+}

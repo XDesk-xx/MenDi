@@ -1,0 +1,10 @@
+{
+  "executorTypecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --erasableSyntaxOnly --types node .mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/execute.ts",
+    "exitCode": 0
+  },
+  "role": "author",
+  "historyWrites": [],
+  "plannedNewInstallation": "D:/tools/mendi/acceptance/d03-full-test-034",
+  "plannedNewUI": "D:\\Projects\\MenDi/.tmp/d03-full-test-034-ui"
+}

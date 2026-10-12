@@ -1,0 +1,14 @@
+{
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\alpha",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "new",
+    "change",
+    "local-note-work"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "Created change 'local-note-work' at openspec\\changes\\local-note-work/\nSchema: spec-driven\nNext: openspec status --change local-note-work\n",
+  "stderr": "- Creating change 'local-note-work' with schema 'spec-driven'...\n"
+}

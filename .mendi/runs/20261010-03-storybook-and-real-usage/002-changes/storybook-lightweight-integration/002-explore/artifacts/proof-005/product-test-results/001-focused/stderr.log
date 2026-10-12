@@ -1,0 +1,4 @@
+$ test-storybook --url http://127.0.0.1:6113 --index-json --maxWorkers=1 --no-cache -- --rootDir .
+[33m[test-storybook] Official support for Test Runner has ended. See migration guide at https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#test-runner-support-ended.[0m
+[33m[test-storybook] Detected Vite-based Storybook project: You might benefit from migrating to the Vitest addon. A modern, faster, and more feature-rich testing solution for Storybook:
+https://storybook.js.org/docs/writing-tests/integrations/vitest-addon/migration-guide?ref=test-runner-migration[0m

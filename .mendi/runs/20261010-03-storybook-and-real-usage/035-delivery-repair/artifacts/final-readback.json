@@ -1,0 +1,31 @@
+{
+  "readAt": "2026-10-11T17:03:42.233Z",
+  "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/run.md",
+  "status": "submitted",
+  "outcome": "complete",
+  "next": {
+    "action": "review-delivery-repair",
+    "status": "awaiting-independent-review",
+    "role": "reviewer",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/035-delivery-repair/run.md",
+    "reason": "035修正034 Windows测试释放同步并完成必要补验；等待独立定向审核，034正式failed保留，不自动重跑。"
+  },
+  "fullTest": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "failed",
+    "result": "failed",
+    "executionId": "manual-034-d03-full-test",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/plan.json",
+    "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/artifacts/execution.json",
+    "testedCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+    "testedWorktree": "受测工作树为ba3b992基准加032/033已审核的test-store.ts局部修复及新增test-store.test.ts；并非声称仅Git提交内容。其余维护材料未变，当前README/context/manifest为交接记录。重新构建打包安装，不采用旧PASS。",
+    "repairReviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/033-review-delivery-repair/run.md"
+  },
+  "archiveCount": 10,
+  "activeChangeId": null,
+  "rootLockAbsent": true
+}

@@ -1,0 +1,97 @@
+import { selected, type Selection, type OperationOptions } from './project.ts';
+import { type RunDocument } from '../adapters/runs.ts';
+import type { Workspace } from '../core/records.ts';
+export interface ActorInput extends Selection {
+    role: string;
+    actor: string;
+}
+export interface ActionOptions extends OperationOptions {
+    methodsRoot?: string;
+}
+export declare function context(input: ActorInput, options: ActionOptions): {
+    workspace: Workspace;
+    upstream: import("../adapters/openspec.ts").OpenSpec;
+    root: string;
+    configPath: string;
+};
+export declare function checkWorkspace(workspace: Workspace | null): asserts workspace is Workspace;
+export declare function matchingActor(run: RunDocument, input: ActorInput): void;
+export declare function authorInput(root: string, workspace: Workspace, ref: string, type: string, actor: string, review: boolean): RunDocument;
+export declare function draft(root: string, workspace: Workspace, input: ActorInput & {
+    runRef: string;
+}): RunDocument;
+export declare function output(root: string, upstream: ReturnType<typeof selected>['upstream'], operation: string, workspace: Workspace, run: RunDocument): {
+    ok: true;
+    operation: string;
+    projectRoot: string;
+    openspec: {
+        entry: string;
+        version: string;
+        root: import("../adapters/openspec.ts").UpstreamRoot;
+    };
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        deliveryId: string;
+        changeId: string;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/actions.ts").ActionType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        ownerDecision?: import("../core/actions.ts").OwnerDecision;
+        archive?: import("../core/archive.ts").ArchiveRecord;
+        ref: string;
+    };
+    next: {
+        action: string;
+        status: string;
+        reason: string;
+        currentRunRef: string;
+        source: string;
+        executable: boolean;
+        role: import("../core/actions.ts").Role;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        authorRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        revisesRunRef: string | undefined;
+        source: string;
+        executable: boolean;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+    };
+};

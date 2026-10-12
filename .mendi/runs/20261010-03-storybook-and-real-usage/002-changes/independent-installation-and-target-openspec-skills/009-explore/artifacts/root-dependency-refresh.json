@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install",
+    "--offline",
+    "--frozen-lockfile",
+    "--ignore-scripts"
+  ],
+  "exitCode": 0,
+  "stdout": "Already up to date\nDone in 613ms using pnpm v11.22.0\n",
+  "stderr": "",
+  "lockBytesUnchanged": true
+}

@@ -1,0 +1,247 @@
+import { type WriteObserver } from '../adapters/workspace.ts';
+import { type FullTest } from '../core/delivery-verification.ts';
+import type { ExecutionProcessOptions } from '../adapters/test-process.ts';
+export interface FullTestInput {
+    project: string;
+    inputFile: string;
+    role: string;
+    actor: string;
+    pnpmBin: string;
+}
+export interface FullTestOptions extends ExecutionProcessOptions {
+    observeWrite?: WriteObserver;
+    methodsRoot?: string;
+}
+export declare function runFullTest(input: FullTestInput, options?: FullTestOptions): Promise<{
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    verification: {
+        child?: import("../core/test-execution.ts").TestExecution | undefined;
+        outcome: import("../core/test-execution.ts").TestOutcome;
+        stable: boolean;
+        executionId: string | null;
+        collection: string[];
+        basis: {
+            materials: string;
+            changes: string;
+            commit?: string;
+        };
+        entry: {
+            scriptName: string;
+            scriptText: string;
+            packageManager?: string;
+            pnpmBin: string;
+        };
+        scopeMatch: "match" | "changed" | "unavailable";
+        commandMatch: "match" | "changed" | "unavailable";
+        materialApplicability: "requires-semantic-check";
+    };
+    methods: {
+        stage: {
+            ref: string;
+            file: string;
+            content: string;
+        };
+        guidance: {
+            ref: string;
+            file: string;
+            content: string;
+        }[];
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+} | {
+    retainedLock?: string | undefined;
+    error: {
+        releaseError?: {} | undefined;
+        details?: unknown;
+        message: string;
+        code?: string;
+    };
+    committedPaths: string[];
+    run?: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    } | undefined;
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    } | null;
+    outcome: string;
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+}>;
+export declare function fullTestStatus(input: {
+    project: string;
+    runRef: string;
+}): {
+    ok: boolean;
+    operation: string;
+    projectRoot: string;
+    local: {
+        recorded?: Record<string, unknown> | undefined;
+        activeChangeId: string | null;
+        changeBindings: import("../core/associations.ts").Binding[];
+        goal: string;
+        plannedChanges: import("../core/records.ts").PlannedChange[];
+        source: "product" | "manual-bootstrap";
+        deliveryId: string;
+        title: string;
+        state: string;
+    };
+    run: {
+        formatVersion: 1;
+        recordingMode: "product";
+        scope: "delivery";
+        deliveryId: string;
+        changeId: null;
+        runNumber: number;
+        actionId: string;
+        actionType: import("../core/delivery-runs.ts").DeliveryType;
+        role: import("../core/actions.ts").Role;
+        actorId: string;
+        status: "draft" | "submitted";
+        stageSkill: string;
+        toolGuidance: string[];
+        outcome?: "continuing" | "complete";
+        result?: string;
+        verdict?: import("../core/actions.ts").Verdict;
+        authorRunRef?: string;
+        revisesRunRef?: string;
+        fullTest?: FullTest;
+        lifecycle?: import("../core/delivery-lifecycle.ts").Lifecycle;
+        repair?: import("../core/delivery-verification.ts").Repair;
+        ownerDecision?: never;
+        ref: string;
+    };
+    verification: {
+        child?: import("../core/test-execution.ts").TestExecution | undefined;
+        outcome: import("../core/test-execution.ts").TestOutcome;
+        stable: boolean;
+        executionId: string | null;
+        collection: string[];
+        basis: {
+            materials: string;
+            changes: string;
+            commit?: string;
+        };
+        entry: {
+            scriptName: string;
+            scriptText: string;
+            packageManager?: string;
+            pnpmBin: string;
+        };
+        scopeMatch: "match" | "changed" | "unavailable";
+        commandMatch: "match" | "changed" | "unavailable";
+        materialApplicability: "requires-semantic-check";
+    };
+    next: {
+        role: string;
+        action: string;
+        status: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    } | {
+        role: string;
+        action: string;
+        status: string;
+        authorRunRef: string;
+        reason: string;
+        source: string;
+        executable: boolean;
+        currentRunRef: string;
+    };
+    openspec: null;
+    executionMode: "local-only";
+    upstreamAccess: string;
+};

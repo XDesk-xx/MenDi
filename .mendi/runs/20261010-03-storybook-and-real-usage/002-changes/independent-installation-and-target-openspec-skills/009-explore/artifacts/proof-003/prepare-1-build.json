@@ -1,0 +1,12 @@
+{
+  "cwd": "D:\\Projects\\MenDi",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "build"
+  ],
+  "exitCode": 1,
+  "signal": null,
+  "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The workspace structure has changed since last install\n\nRun \"pnpm install\"\n",
+  "stderr": ""
+}

@@ -95,6 +95,11 @@ function target() {
   return { root, runner };
 }
 test('产品 Run 校验真实身份与状态，未知说明不产生路径依赖', () => {
+  for (const toolGuidance of [[], ['openspec'], ['storybook']])
+    assert.deepEqual(
+      parseRun({ ...header, toolGuidance }, ref, 'd01', 'proof-entry').toolGuidance,
+      toolGuidance,
+    );
   assert.deepEqual(
     parseRun({ ...header, unknownRef: { nestedRef: '../missing' } }, ref, 'd01', 'proof-entry'),
     header,
@@ -107,6 +112,7 @@ test('产品 Run 校验真实身份与状态，未知说明不产生路径依赖
     { status: 'draft', verdict: 'approved' },
     { status: 'submitted' },
     { toolGuidance: ['unsupported'] },
+    { toolGuidance: ['storybook', 'storybook'] },
     { actionId: 'proof-entry-002-explore' },
   ])
     assert.throws(() => parseRun({ ...header, ...change }, ref, 'd01', 'proof-entry'));

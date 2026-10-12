@@ -1,0 +1,35 @@
+{
+  "command": "node holder-timing.ts 6; four independent diagnostic processes concurrently",
+  "startedAt": "2026-10-11T16:53:30.715Z",
+  "elapsedMs": 10835,
+  "results": [
+    {
+      "index": 0,
+      "pid": 37452,
+      "exitCode": 0,
+      "signal": null,
+      "childAndPipesClosed": true
+    },
+    {
+      "index": 1,
+      "pid": 52312,
+      "exitCode": 0,
+      "signal": null,
+      "childAndPipesClosed": true
+    },
+    {
+      "index": 2,
+      "pid": 8004,
+      "exitCode": 0,
+      "signal": null,
+      "childAndPipesClosed": true
+    },
+    {
+      "index": 3,
+      "pid": 52028,
+      "exitCode": 0,
+      "signal": null,
+      "childAndPipesClosed": true
+    }
+  ]
+}

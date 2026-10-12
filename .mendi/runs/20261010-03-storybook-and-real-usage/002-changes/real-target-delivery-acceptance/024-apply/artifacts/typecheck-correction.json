@@ -1,0 +1,6 @@
+{
+  "firstResult": "exit 1 / TS2769: port number | undefined inside callback",
+  "file": "preparation-budget.ts",
+  "correction": "Capture narrowed ownedPort before entering callback",
+  "finalResultRef": "host-typecheck.json"
+}

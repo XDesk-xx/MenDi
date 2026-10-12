@@ -1,0 +1,20 @@
+{
+  "cwd": "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\tools\\mendi\\proofs\\d03-b-009\\independent-010\\node_modules\\.pnpm\\mendi@file+..+..+..+..+..+P_da3d42fb818d23b93a2625e4fe1c9711\\node_modules\\mendi\\dist\\drivers\\cli.js",
+    "change",
+    "bind",
+    "--project",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-9I5PD3\\alpha",
+    "--change",
+    "local-note-work",
+    "--slot",
+    "A",
+    "--json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"ok\": true,\n  \"operation\": \"change-bind\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-9I5PD3\\\\alpha\",\n  \"openspec\": {\n    \"entry\": \"D:\\\\tools\\\\openspec\\\\1.14.1\\\\node_modules\\\\@fission-ai\\\\openspec\\\\bin\\\\openspec.js\",\n    \"version\": \"1.14.1\",\n    \"root\": {\n      \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-9I5PD3\\\\alpha\",\n      \"source\": \"nearest\"\n    }\n  },\n  \"local\": {\n    \"source\": \"product\",\n    \"deliveryId\": \"proof-0\",\n    \"title\": \"方法交接探索\",\n    \"state\": \"open\",\n    \"goal\": \"独立安装与方法来源的受控探索\",\n    \"plannedChanges\": [\n      {\n        \"slot\": \"A\",\n        \"title\": \"离线笔记\",\n        \"dependsOn\": []\n      }\n    ],\n    \"activeChangeId\": \"local-note-work\",\n    \"changeBindings\": [\n      {\n        \"changeId\": \"local-note-work\",\n        \"changeRef\": \"openspec/changes/local-note-work\",\n        \"planningSlot\": \"A\",\n        \"state\": \"explore\"\n      }\n    ]\n  }\n}\n",
+  "stderr": ""
+}

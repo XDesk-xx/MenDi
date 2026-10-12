@@ -1,0 +1,36 @@
+{
+  "technology": "target installed playwright 1.60.0 / real Chromium",
+  "cua": "getState apps=[] browsers=[]; iab unavailable; explicit authorized existing Playwright fallback",
+  "budgetMs": 170000,
+  "internalStepMs": 30000,
+  "pages": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "previews": [
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Default",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--default"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Existing Value",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--existing-value"
+    },
+    {
+      "title": "Counter/CounterPanel",
+      "name": "Disabled",
+      "previewUrl": "http://localhost:6115/?path=/story/counter-counterpanel--disabled"
+    }
+  ],
+  "browserVersion": "148.0.7778.96",
+  "outcome": "failed",
+  "error": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at [stdin]:38:26",
+  "browserCleanup": {
+    "closed": true,
+    "elapsedMs": 133.85540000000037,
+    "budgetMs": 5000
+  },
+  "elapsedMs": 33962.807100000005,
+  "remainingMs": 136037.1899
+}

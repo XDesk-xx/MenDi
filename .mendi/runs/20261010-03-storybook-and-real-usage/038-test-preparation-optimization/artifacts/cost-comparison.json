@@ -1,0 +1,16 @@
+{
+  "before": {
+    "installCalls": 4,
+    "realPnpmRunChecks": 4,
+    "allExitZero": true,
+    "prepareTotalMs": 3918.0692999999997
+  },
+  "after": {
+    "installCalls": 1,
+    "realPnpmRunChecks": 4,
+    "allExitZero": true,
+    "prepareTotalMs": 989.0500999999999
+  },
+  "scope": "四个无外部依赖沙箱；同一Node进程内复用当前实际pnpm产物；不推算完整集合耗时",
+  "independentState": true
+}

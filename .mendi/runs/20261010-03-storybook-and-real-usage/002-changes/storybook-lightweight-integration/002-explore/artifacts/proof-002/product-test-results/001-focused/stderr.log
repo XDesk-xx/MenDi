@@ -1,0 +1,15 @@
+$ test-storybook --url http://127.0.0.1:6113 --maxWorkers=1 --no-cache
+[33m[test-storybook] Official support for Test Runner has ended. See migration guide at https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#test-runner-support-ended.[0m
+[33m[test-storybook] Detected Vite-based Storybook project: You might benefit from migrating to the Vitest addon. A modern, faster, and more feature-rich testing solution for Storybook:
+https://storybook.js.org/docs/writing-tests/integrations/vitest-addon/migration-guide?ref=test-runner-migration[0m
+[31mError: Cannot parse D:\Projects\MenDi\.tmp\mendi-apply-062aEm\minimal-project\package.json as JSON: Expected property name or '}' in JSON at position 1 (line 1 column 2)[39m
+[31m    at Object.worker (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\jest-haste-map@30.5.1\node_modules\jest-haste-map\build\index.js:2652:13)[39m
+[31m    at FileProcessor.processFile (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\jest-haste-map@30.5.1\node_modules\jest-haste-map\build\index.js:1172:43)[39m
+[31m    at FileProcessor.buildHasteMap (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\jest-haste-map@30.5.1\node_modules\jest-haste-map\build\index.js:1216:30)[39m
+[31m    at HasteMap._buildHasteMap (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\jest-haste-map@30.5.1\node_modules\jest-haste-map\build\index.js:3536:32)[39m
+[31m    at D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\jest-haste-map@30.5.1\node_modules\jest-haste-map\build\index.js:3475:33[39m
+[31m    at async D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\@jest+core@30.5.2_supports-color@8.1.1\node_modules\@jest\core\build\index.js:1500:48[39m
+[31m    at async Promise.all (index 0)[39m
+[31m    at async buildContextsAndHasteMaps (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\@jest+core@30.5.2_supports-color@8.1.1\node_modules\@jest\core\build\index.js:1489:20)[39m
+[31m    at async _run10000 (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\@jest+core@30.5.2_supports-color@8.1.1\node_modules\@jest\core\build\index.js:1551:7)[39m
+[31m    at async runCLI (D:\Projects\MenDi\.tmp\mendi-d03-a-AnPwWs\ui-target\node_modules\.pnpm\@jest+core@30.5.2_supports-color@8.1.1\node_modules\@jest\core\build\index.js:1457:3)[39m

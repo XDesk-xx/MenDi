@@ -1,0 +1,5 @@
+import type { RunDocument } from './runs.ts';
+export declare function reserveArchiveAttempt(root: string, run: RunDocument, written: string[]): {
+    attempt: number;
+    attemptRef: string;
+};

@@ -1,0 +1,6 @@
+{
+  "output": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/002-explore/artifacts/proof-001",
+  "finishedAt": "2026-10-10T20:47:41.3279400+08:00",
+  "exitCode": 1,
+  "command": "node scripts/proofs/mvp-d03-a-explore.ts"
+}

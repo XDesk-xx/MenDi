@@ -1,0 +1,17 @@
+{
+  "openspec-explore": {
+    "path": "tests/fixtures/d03-c-vue-project/.agents/skills/openspec-explore/SKILL.md",
+    "generatedBy1141": true,
+    "bodyMatchesSelectedMethod": true
+  },
+  "openspec-propose": {
+    "path": "tests/fixtures/d03-c-vue-project/.agents/skills/openspec-propose/SKILL.md",
+    "generatedBy1141": true,
+    "bodyMatchesSelectedMethod": true
+  },
+  "openspec-apply-change": {
+    "path": "tests/fixtures/d03-c-vue-project/.agents/skills/openspec-apply-change/SKILL.md",
+    "generatedBy1141": true,
+    "bodyMatchesSelectedMethod": true
+  }
+}

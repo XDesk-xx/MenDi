@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-10-11T18:11:11.563Z",
+  "command": "node node_modules/typescript/bin/tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --erasableSyntaxOnly --types node .mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/execute.ts",
+  "exitCode": 0,
+  "scope": "execution-script-typecheck",
+  "formalDeliveryTest": false
+}

@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "003-focused",
+  "kind": "focused",
+  "projectRoot": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "deliveryId": "d03-c-vue-counter",
+  "changeId": "implement-naive-counter",
+  "actorId": "vue-target-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "verify:stories"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "verify:stories",
+  "scriptText": "vitest run --project storybook",
+  "startedAt": "2026-10-11T13:47:58.373Z",
+  "finishedAt": "2026-10-11T13:48:06.416Z",
+  "executionState": "finished",
+  "outcome": "passed",
+  "exitCode": 0,
+  "signal": null,
+  "pid": 49460,
+  "stdoutRef": ".mendi/delivery-groups/d03-c-vue-counter/tests/003-focused/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d03-c-vue-counter/tests/003-focused/stderr.log"
+}

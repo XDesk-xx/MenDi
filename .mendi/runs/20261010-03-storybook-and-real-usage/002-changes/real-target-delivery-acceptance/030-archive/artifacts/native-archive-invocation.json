@@ -1,0 +1,17 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "archive",
+    "real-target-delivery-acceptance",
+    "--json",
+    "--yes"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"archive\": {\n    \"change\": \"real-target-delivery-acceptance\",\n    \"archivedAs\": \"2026-10-11-real-target-delivery-acceptance\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\archive\\\\2026-10-11-real-target-delivery-acceptance\",\n    \"specsUpdated\": false\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": "",
+  "elapsedMs": 1221,
+  "budgetMs": 30000
+}

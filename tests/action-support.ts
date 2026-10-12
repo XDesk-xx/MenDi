@@ -4,6 +4,7 @@ import { fixture, sandbox } from './helpers.ts';
 import { createWorkspace } from '../src/adapters/workspace.ts';
 import type { ProcessRunner } from '../src/adapters/openspec.ts';
 import { saveRun, startAction, submitRun } from '../src/application/actions.ts';
+import { prepareTargetMethods } from './target-method-support.ts';
 
 // Application tests isolate filesystem rules; real OpenSpec / CLI proof is separate.
 export const runner: ProcessRunner = (_entry, args, cwd) => ({
@@ -26,6 +27,7 @@ export const runner: ProcessRunner = (_entry, args, cwd) => ({
 export const options = { runner };
 export function actionTarget() {
   const root = fixture(sandbox());
+  prepareTargetMethods(root);
   fs.mkdirSync(path.join(root, 'openspec/changes/proof-entry'), { recursive: true });
   createWorkspace(
     root,

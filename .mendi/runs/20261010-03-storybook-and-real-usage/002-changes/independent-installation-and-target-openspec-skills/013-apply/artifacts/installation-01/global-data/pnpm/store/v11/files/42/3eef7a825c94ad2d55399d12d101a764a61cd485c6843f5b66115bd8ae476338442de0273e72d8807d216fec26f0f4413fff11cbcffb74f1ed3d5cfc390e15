@@ -1,0 +1,22 @@
+import { type Workspace } from './records.ts';
+import type { DeliveryRunRecord } from './delivery-runs.ts';
+export interface LifecycleBefore {
+    project: string | null;
+    manifest: string | null;
+}
+interface DeliveryIntent {
+    ref: string;
+    header: Record<string, unknown>;
+    record: DeliveryRunRecord;
+}
+export declare function basisWorkspace(basis: LifecycleBefore): Workspace | null;
+export declare function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore): {
+    before: Workspace | null;
+    project: Record<string, unknown>;
+    manifest: Record<string, unknown>;
+    pending: {
+        pendingDeliveryRunRef: string;
+    };
+    ref: string;
+};
+export {};

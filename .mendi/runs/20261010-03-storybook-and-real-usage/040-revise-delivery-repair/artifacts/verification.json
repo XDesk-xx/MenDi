@@ -1,0 +1,90 @@
+{
+  "groupBudgetMs": 180000,
+  "elapsedMs": 25308.916100000002,
+  "formalDeliveryTest": false,
+  "unchangedFiles": [
+    "src/adapters/test-store.ts",
+    "tests/test-support.ts",
+    "tests/sequential-support.ts",
+    "tests/lifecycle-support.ts",
+    "tests/delivery-support.ts",
+    "tests/test-preparation.test.ts"
+  ],
+  "results": [
+    {
+      "id": "verify-typecheck",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--strict",
+        "--target",
+        "ES2022",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--allowImportingTsExtensions",
+        "--erasableSyntaxOnly",
+        "--types",
+        "node",
+        ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/verify.ts"
+      ],
+      "startedAt": "2026-10-11T17:49:42.527Z",
+      "finishedAt": "2026-10-11T17:49:45.235Z",
+      "budgetMs": 60000,
+      "elapsedMs": 2704.8665,
+      "pid": 42548,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "candidatePresent": true,
+      "unchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/verify-typecheck.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/verify-typecheck.stderr.log"
+    },
+    {
+      "id": "storage-focused",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "tests/test-store.test.ts"
+      ],
+      "startedAt": "2026-10-11T17:49:45.237Z",
+      "finishedAt": "2026-10-11T17:49:56.953Z",
+      "budgetMs": 60000,
+      "elapsedMs": 11714.2608,
+      "pid": 51544,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "candidatePresent": true,
+      "unchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/storage-focused.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/storage-focused.stderr.log"
+    },
+    {
+      "id": "check",
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "startedAt": "2026-10-11T17:49:56.954Z",
+      "finishedAt": "2026-10-11T17:50:07.835Z",
+      "budgetMs": 60000,
+      "elapsedMs": 10878.7528,
+      "pid": 24032,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "candidatePresent": true,
+      "unchanged": true,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/check.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/artifacts/check.stderr.log"
+    }
+  ]
+}

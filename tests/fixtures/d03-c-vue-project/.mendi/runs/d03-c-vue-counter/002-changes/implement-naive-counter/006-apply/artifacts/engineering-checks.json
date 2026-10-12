@@ -1,0 +1,47 @@
+[
+  {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "check"
+    ],
+    "budgetMs": 300000,
+    "elapsedMs": 9987.0597,
+    "remainingMs": 290012.9403,
+    "exitCode": 0,
+    "error": null,
+    "stdout": "Checking formatting...\nAll matched files use Prettier code style!\n",
+    "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ prettier --check .\n$ eslint . --no-fix\n$ vue-tsc --noEmit\n"
+  },
+  {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "build"
+    ],
+    "budgetMs": 300000,
+    "elapsedMs": 1575.167300000001,
+    "remainingMs": 298424.8327,
+    "exitCode": 0,
+    "error": null,
+    "stdout": "vite v8.3.0 building client environment for production...\ntransforming...\n✓ 2663 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.43 kB │ gzip:  0.28 kB\ndist/assets/index-BlAk1siY.css    0.48 kB │ gzip:  0.31 kB\ndist/assets/index-C3RlgnnQ.js   128.66 kB │ gzip: 46.06 kB\n\n✓ built in 430ms\n",
+    "stderr": "$ vite build\n"
+  },
+  {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+      "run",
+      "build-storybook"
+    ],
+    "budgetMs": 300000,
+    "elapsedMs": 4837.775900000001,
+    "remainingMs": 295162.2241,
+    "exitCode": 0,
+    "error": null,
+    "stdout": "\n┌  Building storybook v10.6.1\n│\n◇  Cleaning outputDir: storybook-static\n│\n◇  Loading presets\n│\n◇  Building manager..\n│\n●  Building open services..\n│\n●  Building preview..\n│\n▲  `vue-docgen-api` is deprecated and will be removed in the next major\n│  release of Storybook. It is still the default docgen engine, so this\n│  also applies when you have not set the `docgen` framework option.\n│  Enable server-side docgen with `features: { experimentalDocgenServer:\n│  true }` in your `.storybook/main.ts`, which becomes the default in\n│  Storybook 11, or set `framework: { name: '@storybook/vue3-vite',\n│  options: { docgen: 'vue-component-meta' } }` to keep docgen in the\n│  builder.\n│  Vite vite v8.3.0 building client environment for production...\ntransforming...\n✓ 2684 modules transformed.\nrendering chunks...\ncomputing gzip size...\n│  Vite storybook-static/iframe.html\n│  18.60 kB │ gzip:   5.24 kB\n│  storybook-static/assets/CounterPanel-BlAk1siY.css             0.48 kB\n│  │ gzip:   0.31 kB\n│  storybook-static/assets/iframe-o4R38bdr.js                    0.04 kB\n│  │ gzip:   0.06 kB\n│  storybook-static/assets/rolldown-runtime-Dh6celcD.js          0.62 kB\n│  │ gzip:   0.41 kB\n│  storybook-static/assets/preload-helper-KpucdegZ.js            1.33 kB\n│  │ gzip:   0.75 kB\n│  storybook-static/vite-inject-mocker-entry.js                 27.81 kB\n│  │ gzip:   9.67 kB\n│  storybook-static/assets/CounterPanel.stories-DACOn5Su.js     67.44 kB\n│  │ gzip:  21.79 kB\n│  storybook-static/assets/iframe-Das-z10e.js                1,051.94 kB\n│  │ gzip: 310.79 kB\n\n│  Vite ✓ built in 1.61s\n│\n▲  Vite [plugin builtin:vite-reporter]\n│  (!) Some chunks are larger than 500 kB after minification. Consider:\n│  - Using dynamic import() to code-split the application\n│  - Use build.rolldownOptions.output.codeSplitting to improve chunking:\n│  \u001b]8;;https://rolldown.rs/reference/OutputOptions.codeSplitting\u0007https://rolldown.rs/reference/OutputOptions.codeSplitting\u001b]8;;\u0007\n│  - Adjust chunk size limit for this warning via\n│  build.chunkSizeWarningLimit.\n│\n◇  Output directory:\n│  D:/Projects/MenDi/tests/fixtures/d03-c-vue-project/storybook-static\n│\n└  Storybook build completed successfully\n\n",
+    "stderr": "$ storybook build\n"
+  }
+]

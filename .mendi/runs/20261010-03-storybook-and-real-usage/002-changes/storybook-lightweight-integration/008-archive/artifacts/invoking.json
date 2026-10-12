@@ -1,0 +1,17 @@
+{
+  "operation": "native-archive",
+  "change": "storybook-lightweight-integration",
+  "args": [
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "archive",
+    "storybook-lightweight-integration",
+    "--json",
+    "--yes"
+  ],
+  "countBasis": 7,
+  "requestedOrdinal": 8,
+  "sourceRef": "openspec/changes/storybook-lightweight-integration",
+  "nativeRef": "openspec/changes/archive/2026-10-10-storybook-lightweight-integration",
+  "numberedRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+  "lock": "D:\\Projects\\MenDi\\.mendi\\write.lock"
+}

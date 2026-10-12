@@ -1,0 +1,21 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "exec",
+    "prettier",
+    "--write",
+    "."
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 31596,
+  "remainingMs": 576573.4817,
+  "allowanceMs": 300000,
+  "durationMs": 2672.276999999998,
+  "stdout": ".oxlintrc.json 54ms (unchanged)\n.prettierrc.json 3ms (unchanged)\n.vscode/extensions.json 2ms (unchanged)\nAGENTS.md 62ms (unchanged)\nenv.d.ts 68ms (unchanged)\neslint.config.ts 36ms\nindex.html 51ms\npackage.json 4ms (unchanged)\npnpm-lock.yaml 691ms\npnpm-workspace.yaml 8ms (unchanged)\nREADME.md 35ms (unchanged)\nsrc/App.vue 9ms (unchanged)\nsrc/main.ts 4ms (unchanged)\ntsconfig.app.json 5ms (unchanged)\ntsconfig.json 6ms\ntsconfig.node.json 4ms (unchanged)\nvite.config.ts 4ms\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

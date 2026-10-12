@@ -1,0 +1,75 @@
+import { MendiError } from '../core/errors.ts';
+import { type ApplyInstructions, type OperationInstructions } from './openspec-operations.ts';
+export declare const planningArtifacts: readonly ["proposal", "specs", "design", "tasks"];
+export type PlanningArtifact = (typeof planningArtifacts)[number];
+export interface ArtifactInstructions {
+    root: UpstreamRoot;
+    changeName: string;
+    artifactId: PlanningArtifact;
+    schemaName: 'spec-driven';
+    instruction: string;
+    template: string;
+    outputPath: string;
+    resolvedOutputPath: string;
+    dependencies: {
+        id: PlanningArtifact;
+        done: boolean;
+        path: string;
+        description?: string;
+    }[];
+    context?: string;
+    rules?: string[];
+}
+export declare const selectedEntry = "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js";
+export interface ProcessResult {
+    status: number | null;
+    signal: NodeJS.Signals | null;
+    stdout: string;
+    stderr: string;
+    error?: Error;
+    pid?: number;
+}
+export type ProcessRunner = (entry: string, args: string[], cwd: string) => ProcessResult;
+export declare const runProcess: ProcessRunner;
+export interface UpstreamRoot {
+    path: string;
+    source: 'nearest';
+}
+export interface ChangeStatus {
+    schemaName: 'spec-driven';
+    mode: 'repo-local';
+    isPlanningComplete: boolean;
+    artifacts: {
+        id: string;
+        status: string;
+    }[];
+}
+export declare class OpenSpec {
+    entry: string;
+    projectRoot: string;
+    runner: ProcessRunner;
+    root: UpstreamRoot;
+    changes: string[];
+    lastCommand?: {
+        args: string[];
+        cwd: string;
+        stdout: string;
+        stderr: string;
+    };
+    nativeArchive(change: string): ProcessResult;
+    constructor(projectRoot: string, entry?: string, runner?: ProcessRunner);
+    execute(args: string[]): string;
+    json(args: string[]): Record<string, unknown>;
+    protocol(message: string, details?: unknown): MendiError;
+    readRoot(value: unknown): UpstreamRoot;
+    status(changeId: string): ChangeStatus;
+    instructions(changeId: string, artifact?: string): ArtifactInstructions;
+    operationInstructions(changeId: string, operation: 'apply'): ApplyInstructions;
+    operationInstructions(changeId: string, operation: 'archive'): OperationInstructions;
+    operationInstructions(changeId: string, operation: string): ApplyInstructions | OperationInstructions;
+    info(): {
+        entry: string;
+        version: string;
+        root: UpstreamRoot;
+    };
+}

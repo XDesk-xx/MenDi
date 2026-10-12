@@ -1,0 +1,48 @@
+{
+  "countedAt": "2026-10-11T17:50:14.660Z",
+  "method": "维护 .ts 的物理行数；排除 fixtures、ignored 生成物；不作 gate",
+  "groups": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  }
+}

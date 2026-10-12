@@ -1,0 +1,10 @@
+{
+  "target": "D:\\Projects\\MenDi\\.tmp\\d03-b-013-ui-01\\finite-results",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d03-b-013-ui-01\\finite-results",
+  "script": "preview:components",
+  "config": ".storybook/main.ts",
+  "pid": 16436,
+  "address": "http://127.0.0.1:6113",
+  "stdout": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\independent-installation-and-target-openspec-skills\\013-apply\\artifacts\\ui\\finite-results\\preview.stdout.log",
+  "stderr": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\independent-installation-and-target-openspec-skills\\013-apply\\artifacts\\ui\\finite-results\\preview.stderr.log"
+}

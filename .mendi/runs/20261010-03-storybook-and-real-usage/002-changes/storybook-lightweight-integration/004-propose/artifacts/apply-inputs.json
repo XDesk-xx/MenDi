@@ -1,0 +1,130 @@
+{
+  "changeName": "storybook-lightweight-integration",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\specs\\storybook-integration\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 13,
+    "complete": 0,
+    "remaining": 13
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 新增 `skills/tools/storybook/SKILL.md`，按 design 明确目标定位、锁定版本、官方 tools / skills、持续预览与有限测试、归属证据、执行环境及条件 MCP；在 Apply / Review Apply 方法中加入范围适用的 UI 指引。通过真实 `loadMethods` 返回文件 / 内容、人工核对三方归属与四项边界验证，不能让选择指导自动运行工具。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 在 `src/adapters/methods.ts`、`src/core/actions.ts` 和 CLI 帮助中支持现有单个 `--tool storybook`，保留空 / openspec 和 Delivery 空指导协议；补 `tests/methods-and-numbers.test.ts`、`tests/actions.test.ts` 的真实方法选择 / Run 解析用例，验证身份错误、缺文件、未知 / 重复选择拒绝，未选择不读缺失可选文件，不改旧 Run。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 在 `tests/action-cli.test.ts` / Action 写入回归中验证显式选择后 start、submit / continue 及跨进程读回一致，缺必要指导时分配前失败 / 记录不变；同时验证无 UI / MCP 的目标、空及 openspec 旧记录查询照常。更新 README 的按需选择示例并实际核对帮助和路径；不增加 UI 必填字段或查询探测。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 根 `tsconfig.tests.json` 只排除 `tests/fixtures/storybook-project` 独立目标，保留 maintained 测试 / 脚本真正 typecheck；增加显式 `pnpm test:ui` 有限入口，先核对目标依赖 / 浏览器且运行 fixture 自身严格 typecheck，再 build / 执行 `tests/ui/` 场景。用隔离、未准备 UI node_modules 的根检查与缺准备的 UI 入口验证：根 `pnpm check` 不依赖 UI 包，UI 入口明确失败且不下载安装、不产生 PASS。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 添加受控 UI 测试准备 / 场景辅助（TypeScript，纳入真实类型检查），复用 fixture 而不扩写旧 Explore proof；仅按场景需要创建沙箱、启动已知目标并保存一次原始输出，失败亦收尾本次拥有的服务。README 写明目标 `pnpm install --frozen-lockfile`、浏览器显式准备、fixture typecheck 与 `test:ui` 的职责；实际成功运行目标 typecheck，并通过故意类型错误的隔离副本确认该入口确实拒绝编译失败。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "3.1 在 `tests/ui/` 的 CLI 场景读取目标 Storybook 10.6.1 `tools --help` / `skills --help`，执行适用的实际本地工具调用及读取目标 Skill，验证 cwd / 配置正确、无须启动服务的路径和缺工具 / 配置时明确失败；不触发远程 CLI 回退。将实际命令与限制回填产品指导 / README，帮助里列出的业务能力不能直接认证。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "7",
+      "description": "3.2 在预览 / 浏览器场景使用真实 Basic / Disabled，保存目标入口、活跃 child、日志和访问位置；用官方 `stories preview` 返回 URL 后实际打开，核对渲染、状态、交互与错误，并验证同一已知 child 复用不重复启动、收尾仅停止自身且读回服务结束。缺浏览器 / story 和实际调用失败须为未验证 / 失败，不把 URL 当 PASS。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "3.3 加入占用端口 / 空索引及另一目标相同 story ID 的负例：未知服务不能被自动复用或停止；外部服务可在操作者核对来源后使用但不被本次收尾结束，丢失活跃身份不凭历史 PID 停止。用受控进程验证它们在拒绝 / 收尾后仍存活，并在指导中说明人工归属核对的边界，不构建服务注册 / 恢复器。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "4.1 在 `tests/ui/` 有限测试场景通过目标 `verify:stories` / focused 映射实际执行两份交互 story；隔离副本注入错误得到失败，修复并改文字后获取新的测试和浏览器观察。核对执行范围、真实退出、日志、新旧记录查询及旧文件字节未改；验证不需要 dev server 的测试路径，预览停止退出不被当作断言结论。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 24
+    },
+    {
+      "id": "10",
+      "description": "4.2 用无 MCP 的真实 UI 目标验证脚本 / CLI / 浏览器主路径，同时核对 addon / toolsets / manifest / 宿主发现的条件说明，明确 fixture 的 Vitest plugin 不等于 MCP test addon 已启用。若本次项目 / 宿主已明确启用 MCP，则只对发现的所需工具做真实调用并保存具体成功 / 失败；否则明确“未启用 / 未认证”，不安装可选工具、不用模拟响应认证 MCP。独立 Reviewer 核对这一条件与未启用路径，Storybook review 链接不生成 MenDi verdict。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "11",
+      "description": "4.3 更新 README 和产品方法的结果交接示例，列出目标 / 版本 / 范围、实际预览 / 测试 / 服务处置事实与必要直接输出，明确 HTML 已验证、Vue / MCP / 其他平台尚未认证及 B / C 后续职责。按本轮实际记录核对声明，无全量 hash、递归 Ref 前置、证据图或历史补证。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "12",
+      "description": "5.1 执行根 `pnpm check`、受影响方法 / Action / 查询 / 测试入口回归、`pnpm test:ui` 与必要现有回归；固定 OpenSpec strict validate，记录实际命令 / 结果 / 限制。确认非 UI 使用无 Storybook / MCP 前置、根包无 UI 运行依赖，历史 002 / 003 Run 与 verdict 保持原样；工程失败只修正具体问题。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "13",
+      "description": "5.2 在当次 Apply 摘要列出 `src/`、`tests/`、`scripts/` 维护代码物理行数最多的前三名、可靠增长依据 / 职责与处理时机，无可靠基准不补造；记录实际产物、未验证范围及直接证据，交独立 Review Apply，不自签 verdict，不执行 Git、Archive 或正式 Full Test。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\storybook-lightweight-integration\\tasks.md",
+      "line": 31
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n与 Owner 沟通及面向人阅读的产物正文使用中文。\nOpenSpec 结构标题、SHALL/MUST 关键字、机器字段与代码标识符按模板保留。\n项目：MenDi，TypeScript CLI；实际角色由当前会话或 Owner 指定。\n产品总设计与开发规划：mendi-foundation-and-delivery-roadmap.md。\n具体规格、方案和任务在对应 OpenSpec Change 中细化。\n角色、授权、核心 proof、Action / Skills 与 Runs 协作遵循根目录 AGENTS.md。\n当前选择 MVP-D03 已人工 Open，manifest 位于 .mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json。MVP-D03-A storybook-lightweight-integration 的 003 独立 Review Explore 已批准 002，核心 proof 重放通过，当前交 Author Propose 收敛服务归属、目标依赖准备与未启用 MCP 的限制；批次为 002-changes。MVP-D01 / MVP-D02 保持 closed，累计完成 Change 为 7。\n归档 ID 使用 YYYY-MM-DD-NNN-change-id，NNN 按项目累计成功归档跨 Delivery 增长，与 Run 编号分开；项目入口保存 archivedChangeCount，binding 保存 archiveOrdinal。\n探索材料统一保存于 Run / artifacts，不再新建 Change 级 explore.md；已有受审旧文件原样保留，有效决策收敛到正式方案。\nCLI 已实现首次 delivery open、同一 open Delivery 的顺序 Change bind / 共享批次 / 累计归档、已有 focused / fast / full script 的本地前台执行与持久结果查询，以及正式 Full Test / 范围内修复 / 定向审核 / 新完整执行、Close / Reopen、新 Delivery Open 与指定历史结果读取。status / next 优先解释显式当前进展；action start / continue / instructions / resolve、run save / submit 和 workspace diagnose 保留实际 scope 边界。save 与 diagnose 仅本地，resolve 支持 Change Apply 与显式较早阶段回退，action archive 分 execute / local-only finish，诊断不解除锁。记录命令不自动执行阶段语义工作，Author 验证不替代 Reviewer 批准或 Archive。\n必要输入按操作区分；历史说明与未知 Ref 不成为查询运行依赖。人工归档后的查询不补建旧目录或调用旧 Change 活动 status。相关既有规格为 project-entry 和 delivery-workspace。\nMVP-D02-A sequential-changes-and-test-entrypoints 已独立批准、由 012 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-005-sequential-changes-and-test-entrypoints，旧 Run 与 verdict 保留。\nMVP-D02-B formal-full-test-and-scoped-repair 经 020 独立批准后由 021 实际归档并完成 change checkpoint；归档目录为 openspec/changes/archive/2026-10-10-006-formal-full-test-and-scoped-repair，项目累计归档数为 6。取消 unknown 与验证适用限制见 020 / 021。普通 full 命令成功不能代替正式验收，不继承 D01 Full Test。\nMVP-D02-C delivery-close-and-reopen 经 029 独立批准 028 后由 030 实际归档到 openspec/changes/archive/2026-10-10-007-delivery-close-and-reopen；D02 A / B / C 均已归档，无活动 Change，累计完成数为 7。Owner 授权的 031 正式 Full Test passed（完整 pnpm test 193/193、pnpm check 与六份主规格 strict validate 通过，受测提交 4355a6d）仍适用；本项目 D02 已在 032 人工 Close，保持 manual-bootstrap，等待 Owner 明确后续范围与独立授权。旧 Run / verdict、材料语义判断和取消 unknown 限制保留，不迁移人工历史，不自动 Reopen / 新 Open、Git 或下一 Change。\nMVP-D03 规划 A Storybook 轻量接入、B 独立安装与简短项目指导、C 最小真实交付验收；范围直接读取路线图 §6.2 / §7 和 D03-B 文档收敛安排。A 的受控目标 tests/fixtures/storybook-project 使用 HTML-Vite / Storybook 10.6.1 / Vitest addon / Vitest 4.1.11 与实际 Chromium，已验证预览、两份交互 story、错误失败、新结果、已知本次服务复用与停止、无 UI Open / 查询；必要输入和输出保存受控文件与 002 Run artifacts。本次服务已停止，MCP 未启用或认证，未改产品实现。B / C 尚未激活；push、下一 Change、正式 Full Test / Close 保持各自授权；D02 的旧结果不作为 D03 已验收。\nRun 布局遵循路线图 §4.1：Delivery 操作与 NNN-changes 批次同级，批次内按 Change 保存多个 Run。\n正常范围内修复不因修复本身新增 Action / Run；新 Delivery 从 001 开始，Changes 批次仅在实际激活后建立，不预建批次或为其额外占号。\nStorybook 归有 UI 的目标项目，接入按路线图安排，不是当前 CLI 的依赖。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

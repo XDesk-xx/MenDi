@@ -6,6 +6,8 @@ role: author
 
 # Archive 方法
 
+准备时取得当前目标 openspec-archive-change 的正文与来源，用其适用归档指引结合下列 MenDi 边界工作；不照搬“先 sync 再 native”的重复同步路径。必要方法缺项在准备 Run 占号前拒绝。既有 prepared Run 的 execute / local-only finish 不新增方法检查，保持原生一次同步与已有效果收口协议。
+
 仅在 Owner 明确授权后执行。Author 先用 `action start --type archive --role author --actor <标识>` 准备当前 Archive draft：直接独立 Review Apply approved、其完整 Author 提交及真实 Apply all_done 均须有效。准备不调用原生归档、不增长计数。普通 save 只保存笔记；不使用 submit / continue，也不存在 Archive Review 或 revise。
 
 显式 `action archive --run <当前 Archive Run> --role author --actor <同一标识> --mode execute` 才调用固定 OpenSpec 1.14.1 的 `archive <change> --json --yes`。在锁内复核并保存本次有限输入与 invoking 标记。原生工具负责规格同步；产品只定向读回实际效果，不另做一次语义合并。保留真实包装 JSON、退出、信号、stdout / stderr 和失败尝试。

@@ -1,0 +1,831 @@
+{
+  "checkedAt": "2026-10-12T01:06:40.005Z",
+  "deliveryId": "20261010-03-storybook-and-real-usage",
+  "recordingMode": "manual-bootstrap",
+  "ownerInstruction": "owner 授权 D03 delivery close，基于 044 Full Test 的通过结果收口，不执行 Git 操作。",
+  "role": "author",
+  "state": "open",
+  "activeChangeId": null,
+  "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+  "formalPointers": {
+    "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+    "fullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/plan.json",
+    "resultRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/execution.json"
+  },
+  "formalParent": {
+    "executionId": "manual-044-d03-full-test",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "passed",
+    "startedAt": "2026-10-11T18:11:12.126Z",
+    "finishedAt": "2026-10-11T18:34:02.727Z",
+    "elapsedMs": 1370601
+  },
+  "collection": [
+    "maintained-format-lint-typecheck",
+    "all-current-product-tests-and-build",
+    "existing-storybook-ui-product-scenes",
+    "independent-installation-and-method-handoff",
+    "vue-engineering-check-and-build",
+    "vue-storybook-build-and-three-business-stories",
+    "all-main-specs-strict-validation",
+    "D03-archived-scope-and-query-readback"
+  ],
+  "commands": [
+    {
+      "id": "prepare-root-dependencies",
+      "executionId": "manual-044-d03-full-test-prepare-root-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "install",
+          "--frozen-lockfile",
+          "--offline",
+          "--ignore-scripts"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-root-dependencies.stdout.log",
+          "bytes": 53
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-root-dependencies.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "prepare-html-dependencies",
+      "executionId": "manual-044-d03-full-test-prepare-html-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "install",
+          "--frozen-lockfile",
+          "--offline",
+          "--ignore-scripts"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\storybook-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-html-dependencies.stdout.log",
+          "bytes": 53
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-html-dependencies.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "prepare-vue-dependencies",
+      "executionId": "manual-044-d03-full-test-prepare-vue-dependencies",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "install",
+          "--frozen-lockfile",
+          "--offline",
+          "--ignore-scripts"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-vue-dependencies.stdout.log",
+          "bytes": 53
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-vue-dependencies.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "prepare-ui-targets",
+      "executionId": "manual-044-d03-full-test-prepare-ui-targets",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "prepare:ui-tests",
+          "D:\\Projects\\MenDi\\.tmp\\d03-full-test-044-ui"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-ui-targets.stdout.log",
+          "bytes": 580
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-ui-targets.stderr.log",
+          "bytes": 85
+        }
+      }
+    },
+    {
+      "id": "prepare-independent-installation",
+      "executionId": "manual-044-d03-full-test-prepare-independent-installation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "prepare:installation-tests",
+          "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\044-delivery-full-test\\artifacts\\installation",
+          "D:/tools/mendi/acceptance/d03-full-test-044"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-independent-installation.stdout.log",
+          "bytes": 945
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/prepare-independent-installation.stderr.log",
+          "bytes": 214
+        }
+      }
+    },
+    {
+      "id": "maintained-check",
+      "executionId": "manual-044-d03-full-test-maintained-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "check"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/maintained-check.stdout.log",
+          "bytes": 206
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/maintained-check.stderr.log",
+          "bytes": 192
+        }
+      }
+    },
+    {
+      "id": "root-regression",
+      "executionId": "manual-044-d03-full-test-root-regression",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "test"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-regression.stdout.log",
+          "bytes": 51194
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-regression.stderr.log",
+          "bytes": 71
+        }
+      }
+    },
+    {
+      "id": "ui-product-scenes",
+      "executionId": "manual-044-d03-full-test-ui-product-scenes",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "test:ui"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/ui-product-scenes.stdout.log",
+          "bytes": 1446
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/ui-product-scenes.stderr.log",
+          "bytes": 26
+        }
+      }
+    },
+    {
+      "id": "installation-handoff",
+      "executionId": "manual-044-d03-full-test-installation-handoff",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "test:installation"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/installation-handoff.stdout.log",
+          "bytes": 530
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/installation-handoff.stderr.log",
+          "bytes": 43
+        }
+      }
+    },
+    {
+      "id": "vue-check",
+      "executionId": "manual-044-d03-full-test-vue-check",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "check"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-check.stdout.log",
+          "bytes": 66
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-check.stderr.log",
+          "bytes": 111
+        }
+      }
+    },
+    {
+      "id": "vue-build",
+      "executionId": "manual-044-d03-full-test-vue-build",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "build"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-build.stdout.log",
+          "bytes": 350
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-build.stderr.log",
+          "bytes": 13
+        }
+      }
+    },
+    {
+      "id": "vue-storybook-build",
+      "executionId": "manual-044-d03-full-test-vue-storybook-build",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "build-storybook"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-storybook-build.stdout.log",
+          "bytes": 2301
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-storybook-build.stderr.log",
+          "bytes": 18
+        }
+      }
+    },
+    {
+      "id": "vue-stories",
+      "executionId": "manual-044-d03-full-test-vue-stories",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+          "verify:stories"
+        ],
+        "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-stories.stdout.log",
+          "bytes": 760
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-stories.stderr.log",
+          "bytes": 1023
+        }
+      }
+    },
+    {
+      "id": "main-specs-validation",
+      "executionId": "manual-044-d03-full-test-main-specs-validation",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+          "validate",
+          "--specs",
+          "--strict",
+          "--json"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/main-specs-validation.stdout.log",
+          "bytes": 1236
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/main-specs-validation.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "root-status",
+      "executionId": "manual-044-d03-full-test-root-status",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+          "status",
+          "--project",
+          "D:/Projects/MenDi",
+          "--json"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-status.stdout.log",
+          "bytes": 8692
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-status.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "root-next",
+      "executionId": "manual-044-d03-full-test-root-next",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+          "next",
+          "--project",
+          "D:/Projects/MenDi",
+          "--json"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-next.stdout.log",
+          "bytes": 8692
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/root-next.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "vue-status",
+      "executionId": "manual-044-d03-full-test-vue-status",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+          "status",
+          "--project",
+          "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+          "--json"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-status.stdout.log",
+          "bytes": 2836
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-status.stderr.log",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "vue-next",
+      "executionId": "manual-044-d03-full-test-vue-next",
+      "outcome": "passed",
+      "exitCode": 0,
+      "childAndLogPipesClosed": true,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+          "next",
+          "--project",
+          "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+          "--json"
+        ],
+        "cwd": "D:/Projects/MenDi"
+      },
+      "logs": {
+        "stdoutRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-next.stdout.log",
+          "bytes": 2836
+        },
+        "stderrRef": {
+          "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-next.stderr.log",
+          "bytes": 0
+        }
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "planningSlot": "MVP-D03-A",
+      "changeId": "storybook-lightweight-integration",
+      "archiveRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+      "archiveOrdinal": 8,
+      "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/007-review-apply/run.md",
+      "reviewHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "storybook-lightweight-integration",
+        "planningSlot": "MVP-D03-A",
+        "batchId": "002-changes",
+        "actionId": "storybook-lightweight-integration-review-apply-01",
+        "actionType": "review-apply",
+        "role": "reviewer",
+        "run": "007",
+        "status": "completed",
+        "actionStatus": "completed",
+        "result": "approved",
+        "verdict": "approved",
+        "nextAction": "archive",
+        "nextRole": "author",
+        "date": "2026-10-10",
+        "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/run.md"
+      },
+      "reviewBodyRead": true,
+      "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/006-apply/run.md",
+      "authorHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "storybook-lightweight-integration",
+        "planningSlot": "MVP-D03-A",
+        "batchId": "002-changes",
+        "actionId": "storybook-lightweight-integration-apply-01",
+        "actionType": "apply",
+        "role": "author",
+        "run": "006",
+        "status": "completed",
+        "actionStatus": "completed",
+        "result": "implemented-and-verified",
+        "date": "2026-10-10",
+        "previousRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/005-review-propose/run.md",
+        "stageSkillRef": ".agents/skills/openspec-apply-change/SKILL.md",
+        "nextAction": "review-apply",
+        "nextRole": "reviewer"
+      },
+      "authorBodyRead": true,
+      "completedTaskCount": 13
+    },
+    {
+      "planningSlot": "MVP-D03-B",
+      "changeId": "independent-installation-and-target-openspec-skills",
+      "archiveRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+      "archiveOrdinal": 9,
+      "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/014-review-apply/run.md",
+      "reviewHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "independent-installation-and-target-openspec-skills",
+        "planningSlot": "MVP-D03-B",
+        "batchId": "002-changes",
+        "actionId": "independent-installation-and-target-openspec-skills-review-apply-01",
+        "actionType": "review-apply",
+        "role": "reviewer",
+        "run": "014",
+        "status": "completed",
+        "actionStatus": "completed",
+        "result": "approved",
+        "verdict": "approved",
+        "nextAction": "archive",
+        "nextRole": "author",
+        "date": "2026-10-11",
+        "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/run.md"
+      },
+      "reviewBodyRead": true,
+      "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/013-apply/run.md",
+      "authorHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "independent-installation-and-target-openspec-skills",
+        "planningSlot": "MVP-D03-B",
+        "batchId": "002-changes",
+        "actionId": "independent-installation-and-target-openspec-skills-apply-01",
+        "actionType": "apply",
+        "role": "author",
+        "run": "013",
+        "status": "completed",
+        "actionStatus": "completed",
+        "result": "implemented-with-regression-limitation",
+        "nextAction": "review-apply",
+        "nextRole": "reviewer",
+        "date": "2026-10-11",
+        "stageSkillRef": ".agents/skills/openspec-apply-change/SKILL.md",
+        "previousRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/012-review-propose/run.md"
+      },
+      "authorBodyRead": true,
+      "completedTaskCount": 15
+    },
+    {
+      "planningSlot": "MVP-D03-C",
+      "changeId": "real-target-delivery-acceptance",
+      "archiveRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+      "archiveOrdinal": 10,
+      "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/029-review-apply/run.md",
+      "reviewHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "real-target-delivery-acceptance",
+        "planningSlot": "MVP-D03-C",
+        "batchId": "002-changes",
+        "actionId": "real-target-delivery-acceptance-review-apply-01",
+        "actionType": "review-apply",
+        "role": "reviewer",
+        "run": "029",
+        "status": "completed",
+        "actionStatus": "completed",
+        "outcome": "complete",
+        "result": "approved",
+        "verdict": "approved",
+        "nextAction": "archive",
+        "nextRole": "author",
+        "date": "2026-10-11",
+        "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+        "stageSkillRef": "skills/actions/review-apply/SKILL.md"
+      },
+      "reviewBodyRead": true,
+      "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/028-apply/run.md",
+      "authorHeader": {
+        "deliveryId": "20261010-03-storybook-and-real-usage",
+        "changeId": "real-target-delivery-acceptance",
+        "planningSlot": "MVP-D03-C",
+        "batchId": "002-changes",
+        "actionId": "real-target-delivery-acceptance-apply-01",
+        "actionType": "apply",
+        "role": "author",
+        "run": "028",
+        "status": "submitted",
+        "actionStatus": "completed",
+        "outcome": "complete",
+        "result": "minimal-real-target-acceptance-implemented",
+        "nextAction": "review-apply",
+        "nextRole": "reviewer",
+        "date": "2026-10-11",
+        "stageSkillRef": ".agents/skills/openspec-apply-change/SKILL.md",
+        "previousRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/027-apply/run.md"
+      },
+      "authorBodyRead": true,
+      "completedTaskCount": 10
+    }
+  ],
+  "repairApproval": {
+    "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md",
+    "reviewHeader": {
+      "deliveryId": "20261010-03-storybook-and-real-usage",
+      "planningSlot": "MVP-D03",
+      "actionId": "mvp-d03-review-delivery-repair-05",
+      "actionType": "review-delivery-repair",
+      "role": "reviewer",
+      "run": "043",
+      "status": "completed",
+      "actionStatus": "completed",
+      "scope": "delivery",
+      "date": "2026-10-12",
+      "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/042-revise-delivery-repair/run.md",
+      "stageSkillRef": "skills/actions/review-delivery-repair/SKILL.md",
+      "outcome": "complete",
+      "result": "approved",
+      "verdict": "approved",
+      "nextAction": "delivery-full-test",
+      "nextRole": "author"
+    },
+    "reviewBodyRead": true,
+    "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/042-revise-delivery-repair/run.md",
+    "authorHeader": {
+      "deliveryId": "20261010-03-storybook-and-real-usage",
+      "planningSlot": "MVP-D03",
+      "actionId": "mvp-d03-delivery-repair-02",
+      "actionType": "revise-delivery-repair",
+      "role": "author",
+      "run": "042",
+      "status": "submitted",
+      "actionStatus": "completed",
+      "date": "2026-10-12",
+      "scope": "delivery",
+      "finishedAt": "2026-10-11T18:04:00.022Z",
+      "outcome": "complete",
+      "result": "scoped-revision-ready-for-independent-review",
+      "previousAuthorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/040-revise-delivery-repair/run.md",
+      "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/041-review-delivery-repair/run.md",
+      "failedFullTestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/034-delivery-full-test/run.md",
+      "stageSkillRef": "skills/actions/delivery-repair/SKILL.md"
+    },
+    "authorBodyRead": true
+  },
+  "optimizationApproval": {
+    "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/038-test-preparation-optimization/run.md",
+    "reviewRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/run.md",
+    "reviewHeader": {
+      "deliveryId": "20261010-03-storybook-and-real-usage",
+      "planningSlot": "MVP-D03",
+      "actionId": "mvp-d03-review-delivery-repair-03",
+      "actionType": "review-delivery-repair",
+      "role": "reviewer",
+      "run": "039",
+      "status": "completed",
+      "actionStatus": "completed",
+      "scope": "delivery",
+      "date": "2026-10-12",
+      "authorRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/038-test-preparation-optimization/run.md",
+      "repairRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/037-revise-delivery-repair/run.md",
+      "stageSkillRef": "skills/actions/review-delivery-repair/SKILL.md",
+      "outcome": "complete",
+      "result": "changes-requested",
+      "verdict": "changes-requested",
+      "repairVerdict": "changes-requested",
+      "optimizationVerdict": "approved",
+      "nextAction": "delivery-repair",
+      "nextRole": "author"
+    },
+    "reviewBodyRead": true,
+    "applicableVerdict": "optimizationVerdict:approved",
+    "continuedByReviewRef": ".mendi/runs/20261010-03-storybook-and-real-usage/043-review-delivery-repair/run.md"
+  },
+  "scope": {
+    "goal": "稳定安装的 MenDi 在唯一 Vue + Naive UI 空工程中组织合法 OpenSpec 工作与独立审核，实际使用 Storybook 完成最小组件验收；无 UI 工程与生命周期旧结论按适用范围复用。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D03-A",
+        "title": "Storybook 轻量接入",
+        "dependsOn": [],
+        "externalDependsOn": [
+          "MVP-D02-C"
+        ],
+        "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+      },
+      {
+        "slot": "MVP-D03-B",
+        "title": "独立安装与简短项目指导",
+        "dependsOn": [
+          "MVP-D03-A"
+        ],
+        "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+      },
+      {
+        "slot": "MVP-D03-C",
+        "title": "最小真实交付验收",
+        "dependsOn": [
+          "MVP-D03-B"
+        ],
+        "roadmapSection": "MVP-D03-C：最小真实交付验收"
+      }
+    ],
+    "exitCriteria": [
+      "A / B / C 按路线图完成、经独立审核并实际归档；稳定安装、自有方法随包和目标 OpenSpec 方法交接共同可用。",
+      "真实 UI 目标可预览、测试和正确管理本次服务；无 UI / Storybook / MCP 的目标不被额外依赖阻断。",
+      "唯一 Vue 目标完成一次合法方案、最小组件 / Storybook 实际使用及 Apply 独立批准；目标记录只留目标目录，根 C 汇总必要结果。无 UI 复用工程结果，取消新 Author 恢复、目标 Archive / 正式 Full Test 失败修复 / Close 和重复生命周期验收，不将取消项计为通过。",
+      "最终正式 Full Test / Close 由 Owner 分别授权，仅将实际验证的 Windows 环境、工具版本与能力列为已支持。"
+    ],
+    "outOfScope": [
+      "MENDI CLI 自有前端、组件库或 Storybook / MCP 协议 adapter。",
+      "通用服务调度、自动审核 / 发布平台、全库 hash 或引用台账。",
+      "迁移或重放 D01 / D02 人工历史、扩展未实际验证的平台。",
+      "自动安装 Impeccable、DBX 等可选工具或未授权的部署 / 生产写入。"
+    ]
+  },
+  "changeBindings": [
+    {
+      "planningSlot": "MVP-D03-A",
+      "changeId": "storybook-lightweight-integration",
+      "changeRef": "openspec/changes/archive/2026-10-10-008-storybook-lightweight-integration",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/storybook-lightweight-integration/008-archive/run.md",
+      "archiveOrdinal": 8
+    },
+    {
+      "planningSlot": "MVP-D03-B",
+      "changeId": "independent-installation-and-target-openspec-skills",
+      "changeRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+      "archiveOrdinal": 9
+    },
+    {
+      "planningSlot": "MVP-D03-C",
+      "changeId": "real-target-delivery-acceptance",
+      "changeRef": "openspec/changes/archive/2026-10-11-010-real-target-delivery-acceptance",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/real-target-delivery-acceptance/030-archive/run.md",
+      "archiveOrdinal": 10
+    }
+  ],
+  "archivedChangeCount": 10,
+  "materialCheck": {
+    "basis": {
+      "requiresSemanticCheck": true,
+      "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+      "testedWorktree": "受测材料为ba3b992基准加032/033的Windows有界替换修复、042/043批准的明确释放测试及038已批准的空依赖准备优化五文件（含新test-preparation）。当前工作树不等同已提交Git内容；所有命令本次新执行，安装候选由当前build/pack产生。",
+      "currentCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+      "reviewedMaterialUnchangedDuringExecution": true
+    },
+    "filesChecked": 250,
+    "modifiedSinceFullTest": [],
+    "method": "当前必要维护材料的修改时间核对，结合044执行期间材料复核及当前直接源码语义核对；不建立hash清单，不追读旧审核正文。"
+  },
+  "applicability": {
+    "conclusion": "applicable",
+    "materials": "src / scripts / skills、全部当前根测试（含test-store.test.ts及test-preparation.test.ts）、4份UI测试、安装接线测试、受控HTML及唯一Vue目标、依赖锁及执行配置、主规格与D03三个归档；Windows / Node 22.23.2 / pnpm11.22.0 / OpenSpec1.14.1。",
+    "changes": "相对044受测材料无实现、测试、方法或执行配置变化。本次仅新增045 Close及更新当前manifest、README和OpenSpec context；不改变正式测试范围或入口。",
+    "reason": "044为当前唯一正式Full Test指针，原八类18项全部在同次执行passed、进程与日志关闭；直接批准快照、当前归档绑定、命令声明及必要日志一致。044期间材料保持一致，关闭前当前维护材料无较044完成时间更新，明确释放修复与500ms同暂存文件有限重试仍在；038空依赖准备优化保持。上述当前范围可沿用044，无需重跑或拼接旧PASS。"
+  },
+  "limitations": [
+    "旧批准只按未变范围适用，当前测试为新一次完整集合，不拼接旧PASS。",
+    "自动化场景内Reviewer仅夹具，根沿用真实独立批准，Author不自签。",
+    "不恢复取消的目标Archive/Full Test失败修复/Close、新Author恢复、MCP认证或预算负例。",
+    "正式记录在044/artifacts，不依赖.tmp作为唯一输入；本轮结束不自动清理、Close或Git。"
+  ],
+  "gitOperations": false
+}

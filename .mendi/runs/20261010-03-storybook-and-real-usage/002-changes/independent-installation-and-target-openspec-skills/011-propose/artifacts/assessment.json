@@ -1,0 +1,20 @@
+{
+  "preservedModifiedScenarios": [
+    "Author and reviewer use different methods",
+    "Required method is missing",
+    "Explicitly select Storybook guidance",
+    "Existing runs and unselected guidance remain usable",
+    "Reject invalid guidance before writing"
+  ],
+  "implementation": "not-started",
+  "linkCheck": "passed",
+  "next": "independent-review-propose",
+  "tasks": {
+    "total": 15,
+    "completed": 0
+  },
+  "upgrade": "deferred-reservation-only",
+  "changeId": "independent-installation-and-target-openspec-skills",
+  "authorRun": "011",
+  "supplementaryFilesRemoved": true
+}

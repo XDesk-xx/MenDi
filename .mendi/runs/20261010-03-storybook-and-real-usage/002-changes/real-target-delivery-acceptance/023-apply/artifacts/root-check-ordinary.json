@@ -1,0 +1,19 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "run",
+    "check"
+  ],
+  "cwd": "D:/Projects/MenDi",
+  "pid": 24208,
+  "remainingMs": 124003.45762929686,
+  "allowanceMs": 124003.45762929686,
+  "durationMs": 12568.599900000001,
+  "stdout": "[WARN] Your node_modules are out of sync with your lockfile. The workspace structure has changed since last install\nChecked 137 files in 62ms. No fixes applied.\nChecked 137 files in 66ms. No fixes applied.\n",
+  "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

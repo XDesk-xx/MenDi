@@ -1,0 +1,104 @@
+{
+  "observedAt": "2026-10-11T16:51:52.593Z",
+  "rootLockPresent": true,
+  "observations": [
+    {
+      "file": ".tmp/mendi-apply-YshgYU/.mendi/delivery-groups/d01/tests/001-focused/result.json",
+      "bytes": 1063,
+      "isFile": true,
+      "isSymbolicLink": false,
+      "mtime": "2026-10-11T16:42:49.531Z",
+      "record": {
+        "formatVersion": 1,
+        "executionId": "001-focused",
+        "kind": "focused",
+        "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-YshgYU",
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-YshgYU",
+        "deliveryId": "d01",
+        "changeId": null,
+        "actorId": "test-author",
+        "scope": "command",
+        "formalDeliveryTest": false,
+        "command": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "pnpm.js",
+            "run",
+            "test:focused"
+          ],
+          "dependencyPolicy": "warn"
+        },
+        "dependencyCheck": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "pnpm.js",
+            "run"
+          ],
+          "dependencyPolicy": "error",
+          "exitCode": 0
+        },
+        "scriptName": "test:focused",
+        "scriptText": "node check.ts",
+        "startedAt": "2026-10-11T16:42:49.524Z",
+        "finishedAt": null,
+        "executionState": "prepared",
+        "outcome": "not-run",
+        "exitCode": null,
+        "signal": null,
+        "pid": null,
+        "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+        "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+      },
+      "snapshot": "original.json"
+    },
+    {
+      "file": ".tmp/mendi-apply-YshgYU/.mendi/delivery-groups/d01/tests/001-focused/result.json.ce588c4b-5a58-4c48-80fe-59f613910929.tmp",
+      "bytes": 1062,
+      "isFile": true,
+      "isSymbolicLink": false,
+      "mtime": "2026-10-11T16:42:51.119Z",
+      "record": {
+        "formatVersion": 1,
+        "executionId": "001-focused",
+        "kind": "focused",
+        "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-YshgYU",
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-YshgYU",
+        "deliveryId": "d01",
+        "changeId": null,
+        "actorId": "test-author",
+        "scope": "command",
+        "formalDeliveryTest": false,
+        "command": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "pnpm.js",
+            "run",
+            "test:focused"
+          ],
+          "dependencyPolicy": "warn"
+        },
+        "dependencyCheck": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "pnpm.js",
+            "run"
+          ],
+          "dependencyPolicy": "error",
+          "exitCode": 0
+        },
+        "scriptName": "test:focused",
+        "scriptText": "node check.ts",
+        "startedAt": "2026-10-11T16:42:49.524Z",
+        "finishedAt": null,
+        "executionState": "running",
+        "outcome": "unknown",
+        "exitCode": null,
+        "signal": null,
+        "pid": null,
+        "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+        "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+      },
+      "snapshot": "staged.json"
+    }
+  ]
+}

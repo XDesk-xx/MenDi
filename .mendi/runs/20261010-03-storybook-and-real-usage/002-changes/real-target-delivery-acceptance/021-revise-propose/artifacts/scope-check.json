@@ -1,0 +1,14 @@
+{
+  "designChangedSection": "5 only",
+  "changedTasks": [
+    "1.2",
+    "3.2",
+    "3.3",
+    "4.2",
+    "5.5"
+  ],
+  "total": 23,
+  "completed": 0,
+  "targetExists": false,
+  "runtimeVerification": "planned in Apply, not executed"
+}

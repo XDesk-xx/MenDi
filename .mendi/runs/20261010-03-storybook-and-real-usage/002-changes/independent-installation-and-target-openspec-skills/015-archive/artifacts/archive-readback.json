@@ -1,0 +1,33 @@
+{
+  "archiveRef": "openspec/changes/archive/2026-10-11-009-independent-installation-and-target-openspec-skills",
+  "archiveOrdinal": 9,
+  "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+  "sourceAbsent": true,
+  "changeFilesUnchanged": 5,
+  "deltaRequirementsMatched": 4,
+  "untouchedRequirementsPreserved": 21,
+  "titleAndPurposePreserved": true,
+  "strictMainSpecs": {
+    "totals": {
+      "items": 7,
+      "passed": 7,
+      "failed": 0
+    },
+    "byType": {
+      "spec": {
+        "items": 7,
+        "passed": 7,
+        "failed": 0
+      }
+    }
+  },
+  "archivedChangeCount": 9,
+  "activeChangeId": null,
+  "next": {
+    "action": "change-checkpoint",
+    "status": "awaiting-owner",
+    "role": "owner",
+    "archiveRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/002-changes/independent-installation-and-target-openspec-skills/015-archive/run.md",
+    "reason": "015 已实际归档 MVP-D03-B，累计编号 009；等待显式 Change checkpoint，C 尚未激活。"
+  }
+}

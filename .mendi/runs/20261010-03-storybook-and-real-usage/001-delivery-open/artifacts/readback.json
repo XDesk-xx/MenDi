@@ -1,0 +1,81 @@
+{
+  "result": "recorded",
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261010-03-storybook-and-real-usage",
+  "planningSlot": "MVP-D03",
+  "state": "open",
+  "plannedChanges": [
+    {
+      "slot": "MVP-D03-A",
+      "title": "Storybook 轻量接入",
+      "dependsOn": [],
+      "externalDependsOn": [
+        "MVP-D02-C"
+      ],
+      "roadmapSection": "MVP-D03-A：Storybook 轻量接入"
+    },
+    {
+      "slot": "MVP-D03-B",
+      "title": "独立安装与简短项目指导",
+      "dependsOn": [
+        "MVP-D03-A"
+      ],
+      "roadmapSection": "MVP-D03-B：独立安装与简短项目指导"
+    },
+    {
+      "slot": "MVP-D03-C",
+      "title": "最小真实交付验收",
+      "dependsOn": [
+        "MVP-D03-B"
+      ],
+      "roadmapSection": "MVP-D03-C：最小真实交付验收"
+    }
+  ],
+  "activeChangeId": null,
+  "changeBindings": [],
+  "changeBatches": [],
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/001-delivery-open/run.md",
+  "next": {
+    "action": "delivery-checkpoint",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D03 已人工 Open，三个槽位和交付范围已记录；等待 Owner 授权 checkpoint 或明确下一 Change 激活。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "archivedChangeCount": 7,
+  "oldDeliveries": [
+    {
+      "id": "20261009-01-single-change-manual-collaboration",
+      "state": "closed",
+      "closeRunRef": ".mendi/runs/20261009-01-single-change-manual-collaboration/042-delivery-close/run.md"
+    },
+    {
+      "id": "20261010-02-delivery-verification-and-close",
+      "state": "closed",
+      "closeRunRef": ".mendi/runs/20261010-02-delivery-verification-and-close/032-delivery-close/run.md"
+    }
+  ],
+  "oldManagedRecordsUnchanged": true,
+  "queries": {
+    "status": "artifacts/status.json",
+    "next": "artifacts/next.json",
+    "humanStatus": "artifacts/status.txt",
+    "humanNext": "artifacts/next.txt",
+    "openspecList": "artifacts/openspec-list.json",
+    "toolVersion": "1.14.1",
+    "exitCodes": 0
+  },
+  "rootWriteLockPresent": false,
+  "git": {
+    "branch": "main",
+    "commit": "3ac54cddc4c65fac12f126fde1662e38f4490b54",
+    "trackedChanges": [
+      ".mendi/project.json",
+      "README.md",
+      "openspec/config.yaml"
+    ],
+    "operations": "本轮仅只读核对，未创建 branch / commit / push。"
+  },
+  "checkedAt": "2026-10-10T12:28:06.342Z"
+}

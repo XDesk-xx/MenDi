@@ -1,0 +1,188 @@
+{
+  "scope": "focused",
+  "formalDeliveryTest": false,
+  "baselineCommit": "ba3b9926bb4ec329dfdf05077e3ec22d77e2de28",
+  "completedAt": "2026-10-11T15:53:15.670Z",
+  "newTests": {
+    "command": "node --test tests/test-store.test.ts",
+    "attempts": [
+      {
+        "log": "test-store.stdout.log",
+        "exitCode": 1,
+        "pass": 6,
+        "fail": 1,
+        "reason": "新测试错误地移动占用源文件，实测EBUSY；纠正为覆盖现有结果的EPERM场景。"
+      },
+      {
+        "log": "test-store-2.stdout.log",
+        "exitCode": 1,
+        "pass": 6,
+        "fail": 1,
+        "reason": "短时句柄已自行关闭后仍写stdin，测试收尾EPIPE；改为等待其实际close。"
+      },
+      {
+        "log": "test-store-3.stdout.log",
+        "exitCode": 0,
+        "pass": 7,
+        "fail": 0,
+        "skip": 0
+      }
+    ]
+  },
+  "focusedCommands": [
+    {
+      "id": "build",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "build"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-11T15:47:33.046Z",
+      "elapsedMs": 3528.1085,
+      "budgetMs": 60000,
+      "timedOut": false,
+      "pid": 51208,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/build.stderr.log"
+    },
+    {
+      "id": "reopen-case",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "--test-name-pattern=reopen 各提交边界",
+        "tests/lifecycle-writes.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-11T15:47:36.575Z",
+      "elapsedMs": 111038.6095,
+      "budgetMs": 240000,
+      "timedOut": false,
+      "pid": 36272,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/reopen-case.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/reopen-case.stderr.log"
+    },
+    {
+      "id": "execution-regression",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "tests/test-execution.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-11T15:49:27.615Z",
+      "elapsedMs": 90997.4422,
+      "budgetMs": 180000,
+      "timedOut": false,
+      "pid": 31652,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/execution-regression.stderr.log"
+    },
+    {
+      "id": "formal-adapter-scenes",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "--test",
+        "--test-name-pattern=正式运行新子执行|真正非零|选定启动失败",
+        "tests/delivery-full-test.test.ts"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-11T15:50:58.612Z",
+      "elapsedMs": 60624.26410000003,
+      "budgetMs": 180000,
+      "timedOut": false,
+      "pid": 47696,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/formal-adapter-scenes.stderr.log"
+    },
+    {
+      "id": "check-final",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-11T15:51:59.248Z",
+      "elapsedMs": 16152.424100000004,
+      "budgetMs": 60000,
+      "timedOut": false,
+      "pid": 7464,
+      "closed": true,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/check-final.stdout.log",
+      "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/check-final.stderr.log"
+    }
+  ],
+  "totalPassedBehaviorCases": 18,
+  "proofTypecheck": {
+    "exitCode": 0,
+    "commands": [
+      "node node_modules/typescript/bin/tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --types node .mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/sharing-proof.ts",
+      "node node_modules/typescript/bin/tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --types node .mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair/artifacts/focused.ts"
+    ]
+  },
+  "warnings": [
+    "check-final报告node_modules与当前workspace结构不同，verifyDepsBeforeRun=warn；实际格式、lint及三组tsc均执行成功，未为提示扩展重装或重新验收。"
+  ],
+  "notExecuted": [
+    "根D03原完整FullTest集合的新整次执行",
+    "Delivery Close",
+    "Git写操作",
+    "清理目录/原失败现场锁",
+    "独立Reviewer操作"
+  ],
+  "writeScope": [
+    {
+      "ref": "src/adapters/test-store.ts",
+      "reason": "测试执行结果的Windows原子替换局部等待；保持终态与身份检查。"
+    },
+    {
+      "ref": "tests/test-store.test.ts",
+      "reason": "新增同一适配器的共享占用、持续拒绝、完整性、真实启动次数及终态测试。"
+    },
+    {
+      "ref": ".mendi/runs/20261010-03-storybook-and-real-usage/032-delivery-repair",
+      "reason": "当前Author诊断、实现差异、定向验证与交接；未复制历史证据树。"
+    },
+    {
+      "ref": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+      "reason": "仅当前latestRunRef/next/stopBoundary；保留031正式失败、归档绑定和计数。"
+    },
+    {
+      "ref": "README.md",
+      "reason": "必要使用限制与当前交接。"
+    },
+    {
+      "ref": "openspec/config.yaml",
+      "reason": "当前OpenSpec背景入口。"
+    }
+  ],
+  "historicalRunWrites": [],
+  "fixtureWrites": [],
+  "dependencyDeclarationWrites": []
+}

@@ -1,0 +1,11 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d03-b-013-02",
+  "installedRoot": "D:\\tools\\mendi\\acceptance\\d03-b-013-02\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_51b79b09779fd81a339a096cb6c8c76f\\node_modules\\mendi",
+  "installedCLI": "D:\\tools\\mendi\\acceptance\\d03-b-013-02\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_51b79b09779fd81a339a096cb6c8c76f\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-qPQg1R\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-qPQg1R\\beta"
+  ],
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "evidence": "D:\\Projects\\MenDi\\.mendi\\runs\\20261010-03-storybook-and-real-usage\\002-changes\\independent-installation-and-target-openspec-skills\\013-apply\\artifacts\\installation-02"
+}

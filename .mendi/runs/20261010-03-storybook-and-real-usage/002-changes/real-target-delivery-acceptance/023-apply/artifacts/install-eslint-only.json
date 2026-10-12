@@ -1,0 +1,18 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 31284,
+  "remainingMs": 296260.08372929686,
+  "allowanceMs": 296260.08372929686,
+  "durationMs": 1187.2249,
+  "stdout": "✓ Lockfile passes supply-chain policies (verified 4m ago)\n[ERR_PNPM_OUTDATED_LOCKFILE] Cannot install with \"frozen-lockfile\" because pnpm-lock.yaml is not up to date with <ROOT>\\package.json\n\nNote that in CI environments this setting is true by default. If you still need to run install in such cases, use \"pnpm install --no-frozen-lockfile\"\n\n  Failure reason:\n  specifiers in the lockfile don't match specifiers in package.json:\n* 2 dependencies were removed: eslint-plugin-oxlint@~1.82.0, oxlint@~1.82.0\n\n",
+  "stderr": "",
+  "exitCode": 1,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}

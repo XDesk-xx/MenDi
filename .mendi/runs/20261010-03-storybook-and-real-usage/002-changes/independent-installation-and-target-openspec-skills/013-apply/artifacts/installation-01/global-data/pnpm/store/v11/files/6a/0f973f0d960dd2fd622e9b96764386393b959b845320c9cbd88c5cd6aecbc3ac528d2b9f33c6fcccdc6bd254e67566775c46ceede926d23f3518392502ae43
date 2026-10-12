@@ -1,0 +1,81 @@
+import { currentBinding } from "../core/associations.js";
+import fs from 'node:fs';
+import { parse, stringify } from 'yaml';
+import { managedPath } from "./paths.js";
+import { errorInfo, MendiError } from "../core/errors.js";
+import { parseRun, runLocation } from "../core/actions.js";
+export function readRunSource(root, ref) {
+    const source = fs.readFileSync(managedPath(root, ref), 'utf8');
+    const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/.exec(source);
+    if (!match)
+        throw new MendiError('invalid-run', 'Run 缺少结构化头部。', { ref });
+    return { header: parse(match[1]), body: match[2] };
+}
+export function readRun(root, ref, deliveryId, changeId) {
+    managedPath(root, ref);
+    runLocation(ref, deliveryId, changeId);
+    try {
+        const { header, body } = readRunSource(root, ref);
+        return { ref, record: parseRun(header, ref, deliveryId, changeId), header, body };
+    }
+    catch (error) {
+        if (error instanceof MendiError)
+            throw error;
+        throw new MendiError(errorInfo(error).code === 'ENOENT' ? 'run-input-missing' : 'invalid-run', '无法读取必要 Run。', { ref, ...errorInfo(error) });
+    }
+}
+export function currentRun(root, workspace) {
+    if (workspace.mode !== 'product')
+        return null;
+    const binding = currentBinding(workspace);
+    return binding?.latestRunRef
+        ? readRun(root, binding.latestRunRef, workspace.id, binding.changeId)
+        : null;
+}
+export function renderRun(header, body) {
+    return `---\n${stringify(header)}---\n${body}`;
+}
+export function scanRunNumbers(root, deliveryId) {
+    const base = `.mendi/runs/${deliveryId}`;
+    const reservations = [];
+    const directories = (ref) => {
+        const dir = managedPath(root, ref);
+        if (!fs.existsSync(dir))
+            return [];
+        return fs
+            .readdirSync(dir)
+            .filter((name) => fs.statSync(managedPath(root, `${ref}/${name}`)).isDirectory());
+    };
+    function add(ref, name) {
+        const match = /^(\d{3,})-(?!changes$)[a-z0-9-]+$/.exec(name);
+        if (!match)
+            return;
+        const number = Number(match[1]);
+        if (!Number.isSafeInteger(number) ||
+            number < 1 ||
+            String(number).padStart(3, '0') !== match[1] ||
+            reservations.some((r) => r.number === number))
+            throw new MendiError('run-number-conflict', 'Run 已占号目录存在重复或非法编号。', {
+                ref,
+                number,
+            });
+        const file = managedPath(root, `${ref}/run.md`);
+        reservations.push({ number, ref: `${ref}/run.md`, incomplete: !fs.existsSync(file) });
+    }
+    for (const name of directories(base)) {
+        const ref = `${base}/${name}`;
+        if (/^\d{3,}-changes$/.test(name)) {
+            for (const change of directories(ref))
+                for (const run of directories(`${ref}/${change}`))
+                    add(`${ref}/${change}/${run}`, run);
+        }
+        else
+            add(ref, name);
+    }
+    reservations.sort((a, b) => a.number - b.number);
+    const number = (reservations.at(-1)?.number ?? 0) + 1;
+    if (!Number.isSafeInteger(number))
+        throw new MendiError('run-number-conflict', 'Run 编号超出可安全表示范围。');
+    return { number, incompleteReservations: reservations.filter((r) => r.incomplete), reservations };
+}
+//# sourceMappingURL=runs.js.map

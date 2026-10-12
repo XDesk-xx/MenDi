@@ -1,0 +1,15 @@
+{
+  "cwd": "D:\\tools\\mendi\\proofs\\d03-b-009\\proof-006",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\tools\\mendi\\proofs\\d03-b-009\\proof-006\\node_modules\\.pnpm\\mendi@file+..+..+..+..+..+P_465049e4e874dcaf2048daa4ba685953\\node_modules\\mendi\\dist\\drivers\\cli.js",
+    "next",
+    "--project",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-d03-b-009-mO64Dt\\alpha",
+    "--json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"ok\": true,\n  \"operation\": \"query\",\n  \"projectRoot\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\",\n  \"openspec\": {\n    \"entry\": \"D:\\\\tools\\\\openspec\\\\1.14.1\\\\node_modules\\\\@fission-ai\\\\openspec\\\\bin\\\\openspec.js\",\n    \"version\": \"1.14.1\",\n    \"root\": {\n      \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-d03-b-009-mO64Dt\\\\alpha\",\n      \"source\": \"nearest\"\n    }\n  },\n  \"local\": {\n    \"source\": \"product\",\n    \"deliveryId\": \"proof-0\",\n    \"title\": \"方法交接探索\",\n    \"state\": \"open\",\n    \"goal\": \"独立安装与方法来源的受控探索\",\n    \"plannedChanges\": [\n      {\n        \"slot\": \"A\",\n        \"title\": \"离线笔记\",\n        \"dependsOn\": []\n      }\n    ],\n    \"activeChangeId\": \"local-note-work\",\n    \"changeBindings\": [\n      {\n        \"changeId\": \"local-note-work\",\n        \"changeRef\": \"openspec/changes/local-note-work\",\n        \"planningSlot\": \"A\",\n        \"state\": \"explore\"\n      }\n    ]\n  },\n  \"upstream\": {\n    \"schemaName\": \"spec-driven\",\n    \"mode\": \"repo-local\",\n    \"isPlanningComplete\": true,\n    \"artifacts\": [\n      {\n        \"id\": \"proposal\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"specs\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"design\",\n        \"status\": \"done\"\n      },\n      {\n        \"id\": \"tasks\",\n        \"status\": \"done\"\n      }\n    ]\n  },\n  \"next\": {\n    \"action\": \"explore\",\n    \"source\": \"local-state\",\n    \"executable\": false,\n    \"role\": \"author\",\n    \"reason\": \"关联已保存；可显式开始 Explore 记录，阶段语义工作由 Agent 完成。\"\n  }\n}\n",
+  "stderr": ""
+}

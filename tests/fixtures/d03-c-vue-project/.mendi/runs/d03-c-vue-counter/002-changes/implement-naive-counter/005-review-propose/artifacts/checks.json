@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules/storybook/dist/bin/dispatcher.js",
+      "tools",
+      "stories",
+      "preview",
+      "--help"
+    ],
+    "budgetMs": 30000,
+    "elapsedMs": 1140.0671,
+    "exitCode": 0,
+    "error": null,
+    "stdout": "Usage: npx storybook tools stories preview [--key value ...]\n\nExecution: requires a running Storybook dev server; start it first.\n\nUse this tool to get one or more Storybook preview URLs.\nCall it after editing anything that changes how the UI looks — components, stories, styles, CSS, themes, colors, or design tokens — no exceptions. A shared file has no stories of its own: preview the stories of the components that consume it.\nInclude each returned preview URL in your final user-facing response so users can open them directly.\n\nArguments:\n- `--stories` (array, required): Stories to preview.\nPrefer { storyId } when you don't already have story file context, since this avoids filesystem discovery.\nUse { storyId } when IDs were discovered from documentation tools.\nUse { absoluteStoryPath + exportName } only when you're already working in a specific .stories.* file and already have that context.\n  each item:\n    option 1\n      - `exportName` (string, required): The export name of the story from the story file.\nUse this path-based shape only when you're already editing a .stories.* file and know the export names in that file.\nIf you do not already have story file context, prefer the storyId shape instead of searching files.\n      - `explicitStoryName` (string): If the story has an explicit name set via the \"name\" property, that is different from the export name, provide it here.\nOtherwise don't set this.\n      - `absoluteStoryPath` (string, required): Absolute path to the story file. Use together with exportName only when story file context is already available.\n      - `props` (object): Optional custom props to pass to the story for rendering. Use this when you don't want to render the default story,\nbut you want to customize some args or other props.\nYou can look up the component's documentation using the get-storybook-story-instructions tool to see what props are available.\n      - `globals` (object): Optional Storybook globals to set for the story preview. Globals are used for things like theme, locale, viewport, and other cross-cutting concerns.\nCommon globals include 'theme' (e.g., 'dark', 'light'), 'locale' (e.g., 'en', 'fr'), and 'backgrounds' (e.g., { value: '#000' }).\n    option 2\n      - `storyId` (string, required): The full Storybook story ID (for example \"button--primary\").\nPrefer this shape whenever you are not already working in a specific story file.\nUse IDs discovered from docs-list (withStoryIds=true) or docs-show.\n      - `props` (object): Optional custom props to pass to the story for rendering. Use this when you don't want to render the default story,\nbut you want to customize some args or other props.\nYou can look up the component's documentation using the get-storybook-story-instructions tool to see what props are available.\n      - `globals` (object): Optional Storybook globals to set for the story preview. Globals are used for things like theme, locale, viewport, and other cross-cutting concerns.\nCommon globals include 'theme' (e.g., 'dark', 'light'), 'locale' (e.g., 'en', 'fr'), and 'backgrounds' (e.g., { value: '#000' }).\n\nOutput (`--json`):\n- `stories` (array, required)\n  each item:\n    option 1\n      - `title` (string, required)\n      - `name` (string, required)\n      - `previewUrl` (string, required): Direct URL to open the story preview. Include this URL in the final user-facing response so users can open it directly.\n    option 2\n      - `input` (one of, required)\n      - `error` (string, required)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "implement-naive-counter",
+      "--strict",
+      "--json"
+    ],
+    "budgetMs": 30000,
+    "elapsedMs": 403.2830999999999,
+    "exitCode": 0,
+    "error": null,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"implement-naive-counter\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 29\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\tests\\\\fixtures\\\\d03-c-vue-project\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "id": "vue-status",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "executionId": "manual-044-d03-full-test-vue-status",
+  "stage": "collection",
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "D:/tools/mendi/acceptance/d03-b-014-review/node_modules/mendi/dist/drivers/cli.js",
+      "status",
+      "--project",
+      "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+      "--json"
+    ],
+    "cwd": "D:/Projects/MenDi"
+  },
+  "phase": "finished",
+  "startedAt": "2026-10-11T18:33:59.801Z",
+  "stdoutRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-status.stdout.log",
+  "stderrRef": ".mendi/runs/20261010-03-storybook-and-real-usage/044-delivery-full-test/artifacts/vue-status.stderr.log",
+  "budgetMs": 30000,
+  "wholeGroupRemainingAtStartMs": 1332324,
+  "pid": 52720,
+  "finishedAt": "2026-10-11T18:34:01.074Z",
+  "elapsedMs": 1271,
+  "exitCode": 0,
+  "signal": null,
+  "childAndLogPipesClosed": true,
+  "stop": null,
+  "launchError": null,
+  "failure": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

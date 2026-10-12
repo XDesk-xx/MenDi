@@ -1,0 +1,8 @@
+schema: spec-driven
+context: |
+  中文离线笔记工具，只使用目标项目的本地文件，不需要 UI 或网络服务。
+rules:
+  proposal:
+    - 不添加联网依赖；明确本地存储和目标内文件位置。
+  specs:
+    - 规格必须包含无网络时可用的场景。

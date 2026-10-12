@@ -1,0 +1,31 @@
+import { type TestKind } from '../core/test-execution.ts';
+export declare function readTestEntries(root: string): {
+    packageManager: unknown;
+    entries: {
+        kind: "focused" | "fast" | "full";
+        scriptName: unknown;
+        scriptText: unknown;
+        available: boolean;
+        reason: string | null;
+    }[];
+};
+export declare function selectedTest(root: string, kind: TestKind): {
+    scriptName: string;
+    scriptText: string;
+    packageManager: unknown;
+};
+export declare function testEnvironment(policy: 'error' | 'warn', source?: NodeJS.ProcessEnv): NodeJS.ProcessEnv;
+export declare function capturePnpm(root: string, entry: string, args: string[], policy: 'error' | 'warn'): {
+    exitCode: number | null;
+    signal: NodeJS.Signals | null;
+    stdout: string;
+    stderr: string;
+    error: {
+        message: string;
+        code?: string;
+    } | null;
+    executable: string;
+    args: string[];
+    dependencyPolicy: "warn" | "error";
+};
+export declare function validatePnpm(root: string, supplied: string, packageManager: unknown): string;

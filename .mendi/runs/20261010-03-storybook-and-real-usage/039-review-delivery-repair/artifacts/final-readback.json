@@ -1,0 +1,62 @@
+{
+  "readAt": "2026-10-11T17:41:23.842Z",
+  "verdict": "changes-requested",
+  "repairVerdict": "changes-requested",
+  "optimizationVerdict": "approved",
+  "latestRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/run.md",
+  "next": {
+    "action": "delivery-repair",
+    "status": "awaiting-author-revision",
+    "role": "author",
+    "runRef": ".mendi/runs/20261010-03-storybook-and-real-usage/039-review-delivery-repair/run.md",
+    "reason": "039分别审核：037明确释放修复changes-requested，当前文件仍为旧版；038空依赖准备优化approved。只修订未闭合的当前候选问题，保留优化批准及034正式failed，不直接Full Test。"
+  },
+  "fullTestUnchanged": true,
+  "changeBindingsUnchanged": true,
+  "reviewDidNotChangeTest": true,
+  "archivedChangeCount": 10,
+  "topMaintainedPhysicalLines": {
+    "src": [
+      {
+        "file": "src/application/delivery-full-test.ts",
+        "lines": 401
+      },
+      {
+        "file": "src/adapters/openspec.ts",
+        "lines": 346
+      },
+      {
+        "file": "src/adapters/lifecycle-store.ts",
+        "lines": 336
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests/action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests/planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests/delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts/proofs/mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts/proofs/mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  }
+}

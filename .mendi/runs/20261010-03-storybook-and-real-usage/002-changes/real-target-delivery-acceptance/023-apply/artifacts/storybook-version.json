@@ -1,0 +1,20 @@
+{
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "exec",
+    "storybook",
+    "--version"
+  ],
+  "cwd": "D:\\Projects\\MenDi\\tests\\fixtures\\d03-c-vue-project",
+  "pid": 51544,
+  "remainingMs": 548356.2535,
+  "allowanceMs": 300000,
+  "durationMs": 7433.477600000006,
+  "stdout": "10.6.1\n",
+  "stderr": "",
+  "exitCode": 0,
+  "signal": null,
+  "closed": true,
+  "stopConfirmed": true
+}
