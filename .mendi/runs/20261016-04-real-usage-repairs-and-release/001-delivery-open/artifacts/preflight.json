@@ -1,0 +1,27 @@
+{
+  "ownerInstruction": "role：author\nowner 授权 delivery open，开启 MVP-D04，按路线图的三个 Change 安排，保持 Author，停在 delivery checkpoint。",
+  "role": "author",
+  "actor": "codex-author",
+  "selectedDelivery": "20261016-04-real-usage-repairs-and-release",
+  "planningSlot": "MVP-D04",
+  "recordingMode": "manual-bootstrap",
+  "previousDelivery": {
+    "id": "20261010-03-storybook-and-real-usage",
+    "state": "closed",
+    "manifestRef": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+    "closeRunRef": ".mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md"
+  },
+  "implementationBaseline": {
+    "commit": "21226a8655dad2af89573cea3b1369ee26f56abd",
+    "branch": "main",
+    "worktreeStatus": " M mendi-foundation-and-delivery-roadmap.md\n?? mendi-full-test-continuation-improvement.md\n?? mendi-reopen-incremental-scope-improvement.md\n?? mendi-ui-spec-granularity-improvement.md\n"
+  },
+  "toolEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "toolVersion": "1.14.1",
+  "activeChanges": [],
+  "archivedChangeCount": 10,
+  "scopeSource": "mendi-foundation-and-delivery-roadmap.md §7 MVP-D04",
+  "dependencies": "B → A；C 独立；D02 / D03 为已完成基线，不引入新槽位依赖。",
+  "stopBoundary": "delivery-checkpoint",
+  "checkedAt": "2026-10-16T14:26:28.040Z"
+}

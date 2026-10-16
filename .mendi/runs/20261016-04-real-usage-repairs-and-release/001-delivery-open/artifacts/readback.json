@@ -1,0 +1,67 @@
+{
+  "result": "recorded",
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261016-04-real-usage-repairs-and-release",
+  "state": "open",
+  "plannedChanges": [
+    {
+      "slot": "MVP-D04-A",
+      "title": "Reopen 增量范围与兼容",
+      "dependsOn": [],
+      "roadmapSection": "MVP-D04-A：Reopen 增量范围与兼容"
+    },
+    {
+      "slot": "MVP-D04-B",
+      "title": "Full Test 编排、续测与复验",
+      "dependsOn": [
+        "MVP-D04-A"
+      ],
+      "roadmapSection": "MVP-D04-B：Full Test 编排、续测与复验"
+    },
+    {
+      "slot": "MVP-D04-C",
+      "title": "业务契约、UI 方案与主动澄清",
+      "dependsOn": [],
+      "roadmapSection": "MVP-D04-C：业务契约、UI 方案与主动澄清"
+    }
+  ],
+  "activeChangeId": null,
+  "changeBindings": [],
+  "changeBatches": [],
+  "next": {
+    "action": "delivery-checkpoint",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
+    "reason": "MVP-D04 已人工 Open，三个规划槽位及依赖已登记；停在 Delivery checkpoint，等待 Owner 下一指令。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "archivedChangeCount": 10,
+  "previousDeliveries": [
+    {
+      "manifestRef": ".mendi/delivery-groups/20261009-01-single-change-manual-collaboration/manifest.json",
+      "unchanged": true
+    },
+    {
+      "manifestRef": ".mendi/delivery-groups/20261010-02-delivery-verification-and-close/manifest.json",
+      "unchanged": true
+    },
+    {
+      "manifestRef": ".mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json",
+      "unchanged": true
+    }
+  ],
+  "historySelection": {
+    "deliveryId": "20261010-03-storybook-and-real-usage",
+    "state": "closed",
+    "selectionUnchanged": true
+  },
+  "head": "21226a8655dad2af89573cea3b1369ee26f56abd",
+  "branch": "main",
+  "gitDiffCheck": "passed",
+  "gitWrites": false,
+  "lockReleased": true,
+  "rawOutputRef": "commands.log",
+  "checkedAt": "2026-10-16T14:26:36.786Z"
+}

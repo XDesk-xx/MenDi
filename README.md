@@ -87,4 +87,6 @@ pnpm test:ui
 
 ## 开发交接
 
-当前状态读取[D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)与[045 Delivery Close](.mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md)。Owner授权后基于044新整次正式Full Test的passed结果完成收口，当前修复及038优化仍适用；A/B/C已归档、累计10、无活动根Change，D03为closed/manual-bootstrap。历史Run与verdict保持，取消的目标收口不恢复；等待Owner下一指令，本次未执行Git或清理。
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[001 Delivery Open](.mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md)。MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，登记 A「Reopen 增量范围与兼容」、B「Full Test 编排、续测与复验」、C「业务契约、UI 方案与主动澄清」三个规划槽位；B 依赖 A，C 可独立安排。当前无活动 Change，停在 delivery-checkpoint / awaiting-owner-instruction / author，未执行 Git。
+
+D03 的 Full Test / Close、归档与 Git / 稳定安装事实保持；累计成功归档仍为 10。D04 后续方案与验收遵循唯一路线图及各 Change，旧失败和 verdict 保留；迁移、正式 Full Test / Close、Git、打包与稳定安装切换保持各自授权边界。
