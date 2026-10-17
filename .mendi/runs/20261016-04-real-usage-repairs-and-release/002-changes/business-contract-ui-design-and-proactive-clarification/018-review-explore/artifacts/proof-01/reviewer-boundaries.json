@@ -1,0 +1,7 @@
+{
+  "dynamicContext": true,
+  "reviewerWithoutAuthorUpstream": true,
+  "authorMissingMethodRejected": true,
+  "noProposalCreated": true,
+  "limits": "真实CLI及loader观察；没有测试宿主的产品判断或用户界面"
+}

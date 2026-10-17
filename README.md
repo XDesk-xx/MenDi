@@ -107,8 +107,10 @@ pnpm test:ui
 
 当前 HTML-Vite / Storybook 10.6.1 实验有明确边界，不要求所有目标统一版本。D03-C 在唯一从空目录建立的 Vue + Naive UI 工程中验证最小真实使用，无 UI 复用工程结果；取消额外新会话恢复和目标正式收口演示，MCP 未认证。旧 PASS 不覆盖新修改，有限测试不代替正式 Full Test。
 
+当前源码候选的方法明确：普通 UI 调整不新建 Change；业务契约、当前 UI 设计和关键未决决定按实际用户影响区分。Explore / Propose 主动澄清关键产品未知，独立 Review 使用相同尺度；UI 定位修复保留原场景、必要断言、失败及清理。完整工作方法随阶段从 `skills/actions/` 返回，交接成功不等于宿主语义判断已获批准。
+
 ## 开发交接
 
-当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[B 016 Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/016-archive/run.md)。依据015独立Review Apply对固定Author014的批准，B已原生归档为012，三份主规格同步及strict读回通过；014 / 015和原verdict保留。B的实现、归档及本地收尾纳入Change checkpoint；当前无活动Change，停change-bind / author / awaiting-owner。累计归档12，Delivery仍open/manual-bootstrap；C未激活，Git、正式Full Test / Close及后续工作等待另行授权。
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[C 023 Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/023-archive/run.md)。依据022对固定021的独立批准，C已原生归档013，两份主规格同步及strict通过；原Run和verdict保持。A / B / C均已归档，累计13，Delivery仍open/manual-bootstrap，C实现、归档与本地收尾纳入Change checkpoint；当前无活动Change，停delivery-full-test / author / awaiting-owner，验收集合与版本准备待Owner安排。未执行Git、正式Full Test / Close或发布，DreMo / 稳定安装未改，未push。
 
 范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。

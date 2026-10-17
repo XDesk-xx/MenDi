@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: 读取真实产品阶段内容与按需指导；错阶段 / 缺方法拒绝
+ok 1 - 读取真实产品阶段内容与按需指导；错阶段 / 缺方法拒绝
+  ---
+  duration_ms: 54.5507
+  type: 'test'
+  ...
+# Subtest: Storybook 按需读取，缺失或身份无效在分配前失败，空指导保持可用
+ok 2 - Storybook 按需读取，缺失或身份无效在分配前失败，空指导保持可用
+  ---
+  duration_ms: 126.2747
+  type: 'test'
+  ...
+# Subtest: 占号仅扫描约定层级，跨 Change 连续，空目录占号，批次与 artifacts 不占号
+ok 3 - 占号仅扫描约定层级，跨 Change 连续，空目录占号，批次与 artifacts 不占号
+  ---
+  duration_ms: 196.7225
+  type: 'test'
+  ...
+# Subtest: 占号不能沿 junction 到项目外
+ok 4 - 占号不能沿 junction 到项目外
+  ---
+  duration_ms: 11.9746
+  type: 'test'
+  ...
+# Subtest: start / continue 必要方法写前失败；锁内变化释放自身锁、不占号；恢复读取新正文
+ok 5 - start / continue 必要方法写前失败；锁内变化释放自身锁、不占号；恢复读取新正文
+  ---
+  duration_ms: 905.6628
+  type: 'test'
+  ...
+# Subtest: 缺方法不扩成查询、save / submit、diagnose 或无关历史 Ref 前置；Reviewer 不需 Author 方法
+ok 6 - 缺方法不扩成查询、save / submit、diagnose 或无关历史 Ref 前置；Reviewer 不需 Author 方法
+  ---
+  duration_ms: 1167.3256
+  type: 'test'
+  ...
+# Subtest: Owner handoff、rejected revise 与跨阶段 rollback 按接收方法检查，失败保留旧 verdict
+ok 7 - Owner handoff、rejected revise 与跨阶段 rollback 按接收方法检查，失败保留旧 verdict
+  ---
+  duration_ms: 5302.9581
+  type: 'test'
+  ...
+# Subtest: Archive 准备缺目标方法不占号、锁内失败释放；已有准备不迁移字段
+ok 8 - Archive 准备缺目标方法不占号、锁内失败释放；已有准备不迁移字段
+  ---
+  duration_ms: 13335.4393
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21238.6781

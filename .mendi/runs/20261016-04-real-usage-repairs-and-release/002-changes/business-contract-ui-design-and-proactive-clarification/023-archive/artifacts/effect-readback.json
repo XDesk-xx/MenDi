@@ -1,0 +1,32 @@
+{
+  "native": {
+    "change": "business-contract-ui-design-and-proactive-clarification",
+    "archivedAs": "2026-10-17-business-contract-ui-design-and-proactive-clarification",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-17-business-contract-ui-design-and-proactive-clarification",
+    "specsUpdated": true,
+    "totals": {
+      "added": 2,
+      "modified": 1,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "archiveRef": "openspec/changes/archive/2026-10-17-013-business-contract-ui-design-and-proactive-clarification",
+  "specs": [
+    {
+      "capability": "action-runs",
+      "deltaRequirements": 2,
+      "unchangedRequirements": 25,
+      "purposeAndTitlePreserved": true
+    },
+    {
+      "capability": "storybook-integration",
+      "deltaRequirements": 1,
+      "unchangedRequirements": 4,
+      "purposeAndTitlePreserved": true
+    }
+  ],
+  "unchangedChangeInputs": 6,
+  "fixedAuthorAndReviewUnchanged": true,
+  "taskNoteCorrection": "仅删除与已完成勾选矛盾的当前状态说明；任务、合同及Run不改"
+}

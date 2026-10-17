@@ -1,0 +1,795 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "total_files": 112,
+  "reviewable_count": 3,
+  "excluded_count": 109,
+  "total_insertions": 8807,
+  "total_deletions": 11,
+  "reviewable_files": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 2
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/mvp-d04-c-apply.ts",
+      "status": "added",
+      "insertions": 159,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": ".mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json",
+      "status": "modified",
+      "insertions": 19,
+      "deletions": 8,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 1,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/explore/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/propose/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-explore/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/review-propose/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/activation-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/boundary-readback.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/next-working.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-01/actual-methods.json",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-01/commands-57372.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-01/instructions-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-01/observation.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-01/start-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-first.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proof-typecheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/017-explore/run.md",
+      "status": "added",
+      "insertions": 96,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/build.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/diff-check.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/handoff-probe.ts",
+      "status": "added",
+      "insertions": 179,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/openspec-status.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/actual-methods.json",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/commands-61204.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/fresh-instructions-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/instructions-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/observation.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/reviewer-boundaries.json",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof-01/start-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proof.log",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/semantic-review.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/status-after.json",
+      "status": "added",
+      "insertions": 198,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/status-before.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/tsconfig.json",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/artifacts/typecheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/018-review-explore/run.md",
+      "status": "added",
+      "insertions": 67,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/boundary-readback.json",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-after-action-runs.json",
+      "status": "added",
+      "insertions": 103,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-after-design.json",
+      "status": "added",
+      "insertions": 103,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-after-proposal.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-after-specs.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-before.json",
+      "status": "added",
+      "insertions": 106,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 105,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/task-readback.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/019-propose/run.md",
+      "status": "added",
+      "insertions": 56,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/apply-instructions.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/diff-check.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/planning-check.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/status-after.json",
+      "status": "added",
+      "insertions": 198,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/status-before.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/020-review-propose/run.md",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/author-methods.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/apply.md",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/explore.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/propose.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/review-apply.md",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/review-explore.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/before/review-propose.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/boundary-readback.json",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/check-final.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/check.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/code-baseline.json",
+      "status": "added",
+      "insertions": 816,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/code-counts.json",
+      "status": "added",
+      "insertions": 1429,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-01/commands-43476.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-02/commands-32352.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-02/methods.json",
+      "status": "added",
+      "insertions": 86,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-first.log",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-repaired-typecheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-repaired.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/handoff-typecheck.log",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/methods-final.log",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/next-final.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/reviewer-handoff.log",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/status-final.json",
+      "status": "added",
+      "insertions": 196,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-instructions-before.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-1.1.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-1.2.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-1.3.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-2.1.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-2.2.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-3.1.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-3.2.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-4.1.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-4.2.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-4.3.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/task-progress-final.json",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/artifacts/validation.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/run.md",
+      "status": "added",
+      "insertions": 85,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/022-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/design.md",
+      "status": "added",
+      "insertions": 77,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/proposal.md",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/specs/action-runs/spec.md",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/specs/storybook-integration/spec.md",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/tasks.md",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "scripts/mvp-d04-c-explore.ts",
+      "status": "added",
+      "insertions": 162,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    }
+  ]
+}

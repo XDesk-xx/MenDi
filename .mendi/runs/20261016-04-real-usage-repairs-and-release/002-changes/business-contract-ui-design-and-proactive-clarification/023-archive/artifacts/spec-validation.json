@@ -1,0 +1,30 @@
+[
+  {
+    "capability": "action-runs",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "action-runs",
+      "--type",
+      "spec",
+      "--strict"
+    ],
+    "exitCode": 0,
+    "stdout": "Specification 'action-runs' is valid\n",
+    "stderr": ""
+  },
+  {
+    "capability": "storybook-integration",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "storybook-integration",
+      "--type",
+      "spec",
+      "--strict"
+    ],
+    "exitCode": 0,
+    "stdout": "Specification 'storybook-integration' is valid\n",
+    "stderr": ""
+  }
+]
