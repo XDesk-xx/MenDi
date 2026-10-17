@@ -1,0 +1,225 @@
+{
+  "openspec": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": true,
+  "operation": "delivery-full-test-status",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+  "local": {
+    "source": "product",
+    "deliveryId": "d01",
+    "title": "顺序验证",
+    "state": "open",
+    "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "项目入口",
+        "dependsOn": []
+      },
+      {
+        "slot": "B",
+        "title": "后续工作",
+        "dependsOn": [
+          "A"
+        ]
+      }
+    ],
+    "activeChangeId": null,
+    "changeBindings": [
+      {
+        "changeId": "proof-entry",
+        "changeRef": "openspec/changes/archive/2026-10-17-001-proof-entry",
+        "planningSlot": "A",
+        "state": "archived",
+        "archiveOrdinal": 1,
+        "batchId": "001-changes",
+        "latestRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md"
+      },
+      {
+        "changeId": "second-entry",
+        "changeRef": "openspec/changes/archive/2026-10-17-002-second-entry",
+        "planningSlot": "B",
+        "state": "archived",
+        "archiveOrdinal": 2,
+        "batchId": "001-changes",
+        "latestRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md"
+      }
+    ],
+    "currentRoundId": "r001",
+    "rounds": [
+      {
+        "id": "r001",
+        "state": "open",
+        "openedOn": "2026-10-17"
+      }
+    ]
+  },
+  "run": {
+    "ref": ".mendi/runs/d01/018-delivery-full-test/run.md",
+    "formatVersion": 1,
+    "recordingMode": "product",
+    "scope": "delivery",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actionType": "delivery-full-test",
+    "role": "author",
+    "actorId": "delivery-author",
+    "status": "submitted",
+    "stageSkill": "delivery-full-test",
+    "toolGuidance": [],
+    "fullTest": {
+      "roundId": "r001",
+      "baselineFacts": [],
+      "collection": [
+        "unit",
+        "integration",
+        "independent-tail"
+      ],
+      "basis": {
+        "materials": "受控 producer / consumer 及 unit / integration / tail；真实 pnpm / node:test。批准仅为记录夹具。",
+        "changes": ""
+      },
+      "scope": {
+        "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+        "plannedChanges": [
+          {
+            "slot": "A",
+            "title": "项目入口",
+            "dependsOn": []
+          },
+          {
+            "slot": "B",
+            "title": "后续工作",
+            "dependsOn": [
+              "A"
+            ]
+          }
+        ],
+        "completed": [
+          {
+            "slot": "A",
+            "changeId": "proof-entry",
+            "archiveOrdinal": 1
+          },
+          {
+            "slot": "B",
+            "changeId": "second-entry",
+            "archiveOrdinal": 2
+          }
+        ]
+      },
+      "approvals": [
+        {
+          "changeId": "proof-entry",
+          "archiveRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+          "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+          "authorActor": "author-one",
+          "reviewerActor": "reviewer-one"
+        },
+        {
+          "changeId": "second-entry",
+          "archiveRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+          "reviewRunRef": ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+          "authorRunRef": ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md",
+          "authorActor": "author-one",
+          "reviewerActor": "reviewer-one"
+        }
+      ],
+      "entry": {
+        "scriptName": "test:full",
+        "scriptText": "node --test checks/unit.test.ts && node --test checks/integration.test.ts && node --test checks/tail.test.ts",
+        "packageManager": "pnpm@11.22.0",
+        "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+      },
+      "phase": "finished",
+      "executionId": "005-full",
+      "outcome": "passed",
+      "repairApproval": {
+        "reviewRunRef": ".mendi/runs/d01/017-review-delivery-repair/run.md",
+        "authorRunRef": ".mendi/runs/d01/016-delivery-repair/run.md",
+        "authorActor": "delivery-author",
+        "reviewerActor": "independent-fixture-reviewer"
+      }
+    },
+    "runNumber": 18,
+    "actionId": "d01-018-delivery-full-test",
+    "outcome": "complete",
+    "result": "passed"
+  },
+  "verification": {
+    "outcome": "passed",
+    "stable": true,
+    "executionId": "005-full",
+    "collection": [
+      "unit",
+      "integration",
+      "independent-tail"
+    ],
+    "basis": {
+      "materials": "受控 producer / consumer 及 unit / integration / tail；真实 pnpm / node:test。批准仅为记录夹具。",
+      "changes": ""
+    },
+    "entry": {
+      "scriptName": "test:full",
+      "scriptText": "node --test checks/unit.test.ts && node --test checks/integration.test.ts && node --test checks/tail.test.ts",
+      "packageManager": "pnpm@11.22.0",
+      "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+    },
+    "scopeMatch": "match",
+    "roundId": "r001",
+    "commandMatch": "match",
+    "materialApplicability": "requires-semantic-check",
+    "child": {
+      "formatVersion": 1,
+      "executionId": "005-full",
+      "kind": "full",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+      "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actorId": "delivery-author",
+      "scope": "command",
+      "formalDeliveryTest": false,
+      "command": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run",
+          "test:full"
+        ],
+        "dependencyPolicy": "warn"
+      },
+      "dependencyCheck": {
+        "executable": "C:\\nvm4w\\nodejs\\node.exe",
+        "args": [
+          "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+          "run"
+        ],
+        "dependencyPolicy": "error",
+        "exitCode": 0
+      },
+      "scriptName": "test:full",
+      "scriptText": "node --test checks/unit.test.ts && node --test checks/integration.test.ts && node --test checks/tail.test.ts",
+      "startedAt": "2026-10-17T03:17:08.794Z",
+      "finishedAt": "2026-10-17T03:17:13.003Z",
+      "executionState": "finished",
+      "outcome": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "pid": 26472,
+      "stdoutRef": ".mendi/delivery-groups/d01/tests/005-full/stdout.log",
+      "stderrRef": ".mendi/delivery-groups/d01/tests/005-full/stderr.log"
+    }
+  },
+  "next": {
+    "source": "local-state",
+    "executable": false,
+    "currentRunRef": ".mendi/runs/d01/018-delivery-full-test/run.md",
+    "role": "owner",
+    "action": "delivery-next",
+    "status": "awaiting-owner-instruction",
+    "reason": "完整执行已通过；当前材料适用性仍须阶段判断，等待 Owner 收口。"
+  }
+}

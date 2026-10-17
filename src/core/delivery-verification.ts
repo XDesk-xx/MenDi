@@ -144,6 +144,10 @@ export interface FullTest extends Declaration {
   reason?: string;
 }
 export interface Repair {
+  groups?: {
+    plan: import('./group-plan.ts').GroupPlan;
+    impact: import('./group-records.ts').GroupImpact;
+  };
   roundId?: string;
   failedFullTestRunRef: string;
   scope: DeliveryScope;

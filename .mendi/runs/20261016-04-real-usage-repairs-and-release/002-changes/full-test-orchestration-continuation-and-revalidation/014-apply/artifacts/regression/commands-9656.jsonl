@@ -1,0 +1,1 @@
+{"executable":"C:\\nvm4w\\nodejs\\node.exe","entry":"tests/fixtures/archive-worker.ts","args":["D:\\Projects\\MenDi\\.tmp\\mendi-apply-pVdqsA\\minimal-project",".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md","execute","before-run-commit",""],"cwd":"D:\\Projects\\MenDi","exitCode":88,"signal":null,"stdout":"","stderr":""}

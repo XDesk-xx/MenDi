@@ -1,0 +1,14 @@
+{
+  "started": {
+    "label": "preparation-start",
+    "utc": "2026-10-17T05:07:57.517Z",
+    "elapsedMs": 1.1359000000000492
+  },
+  "finished": {
+    "label": "preparation-finished",
+    "utc": "2026-10-17T05:08:50.167Z",
+    "elapsedMs": 52650.6253
+  },
+  "wallMs": 52649.4894,
+  "scope": "fresh isolated fixture, explicit offline empty dependencies and real native archive seed"
+}

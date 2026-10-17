@@ -273,7 +273,9 @@ test('Close 快照的批准编号必须早于其固定正式入口，查询不�
       },
     },
   };
-  assert.equal(parseDeliveryRun(run, ref, 'd01').lifecycle?.acceptance?.outcome, 'passed');
+  const accepted = parseDeliveryRun(run, ref, 'd01').lifecycle?.acceptance;
+  assert.ok(accepted && 'outcome' in accepted);
+  assert.equal(accepted.outcome, 'passed');
   const bad = {
     ...run,
     lifecycle: {

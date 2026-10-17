@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: 真实 pnpm 接收本次请求，完整组通过仍不是候选 verified
+ok 1 - 真实 pnpm 接收本次请求，完整组通过仍不是候选 verified
+  ---
+  duration_ms: 57532.8777
+  type: 'test'
+  ...
+# Subtest: 真实中段失败可续测独立尾项，原失败不变且禁止 initial 绕行
+ok 2 - 真实中段失败可续测独立尾项，原失败不变且禁止 initial 绕行
+  ---
+  duration_ms: 12813.9895
+  type: 'test'
+  ...
+# Subtest: 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+ok 3 - 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+  ---
+  duration_ms: 19839.7944
+  type: 'test'
+  ...
+# Subtest: 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+ok 4 - 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+  ---
+  duration_ms: 6517.9847
+  type: 'test'
+  ...
+# Subtest: 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+ok 5 - 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+  ---
+  duration_ms: 50191.4895
+  type: 'test'
+  ...
+# Subtest: 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+ok 6 - 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+  ---
+  duration_ms: 5345.7755
+  type: 'test'
+  ...
+# Subtest: E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+ok 7 - E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+  ---
+  duration_ms: 21743.0728
+  type: 'test'
+  ...
+# Subtest: 清理未知阻断共享后项，陌生端口实际占用不抢占
+ok 8 - 清理未知阻断共享后项，陌生端口实际占用不抢占
+  ---
+  duration_ms: 12739.9162
+  type: 'test'
+  ...
+# Subtest: 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+ok 9 - 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+  ---
+  duration_ms: 6360.6042
+  type: 'test'
+  ...
+# Subtest: 真实取消停止本次树，不从取消中的 prefix 认领通过
+ok 10 - 真实取消停止本次树，不从取消中的 prefix 认领通过
+  ---
+  duration_ms: 6465.846
+  type: 'test'
+  ...
+# Subtest: 候选终态持久失败保留现场，不发布或回退旧 verified
+ok 11 - 候选终态持久失败保留现场，不发布或回退旧 verified
+  ---
+  duration_ms: 8663.6068
+  type: 'test'
+  ...
+# Subtest: 目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认领局部成功；可显式 initial 重跑
+ok 12 - 目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认领局部成功；可显式 initial 重跑
+  ---
+  duration_ms: 12662.1463
+  type: 'test'
+  ...
+# Subtest: 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+ok 13 - 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+  ---
+  duration_ms: 10127.1319
+  type: 'test'
+  ...
+# Subtest: 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+ok 14 - 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+  ---
+  duration_ms: 6363.8403
+  type: 'test'
+  ...
+# Subtest: 真实 CLI run / verification / Close恢复 / Reopen：新轮不继承候选
+ok 15 - 真实 CLI run / verification / Close恢复 / Reopen：新轮不继承候选
+  ---
+  duration_ms: 87329.2396
+  type: 'test'
+  ...
+# Subtest: 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+ok 16 - 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+  ---
+  duration_ms: 61951.6035
+  type: 'test'
+  ...
+# Subtest: 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+ok 17 - 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+  ---
+  duration_ms: 7189.5564
+  type: 'test'
+  ...
+# Subtest: 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+ok 18 - 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+  ---
+  duration_ms: 6576.0178
+  type: 'test'
+  ...
+# Subtest: 多个组共用来源时读中变化不能覆盖第一份直接快照
+ok 19 - 多个组共用来源时读中变化不能覆盖第一份直接快照
+  ---
+  duration_ms: 66976.1675
+  type: 'test'
+  ...
+# Subtest: 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+ok 20 - 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+  ---
+  duration_ms: 7098.3315
+  type: 'test'
+  ...
+# Subtest: 计划版本、前向依赖、非必需排除与选择均明确
+ok 21 - 计划版本、前向依赖、非必需排除与选择均明确
+  ---
+  duration_ms: 3.517
+  type: 'test'
+  ...
+# Subtest: 覆盖、退出、协议矛盾与资源未知分别解释
+ok 22 - 覆盖、退出、协议矛盾与资源未知分别解释
+  ---
+  duration_ms: 1.4137
+  type: 'test'
+  ...
+# Subtest: 阶段包含关系不跨时钟相减
+ok 23 - 阶段包含关系不跨时钟相减
+  ---
+  duration_ms: 2.0533
+  type: 'test'
+  ...
+# Subtest: 真实公共输入变化要求完整影响复验，不能用局部选择沿用旧前缀
+ok 24 - 真实公共输入变化要求完整影响复验，不能用局部选择沿用旧前缀
+  ---
+  duration_ms: 75708.4411
+  type: 'test'
+  ...
+# Subtest: 真实失败→独立尾项续测→固定原失败修复与审核→局部复验→多来源 verified / Close
+ok 25 - 真实失败→独立尾项续测→固定原失败修复与审核→局部复验→多来源 verified / Close
+  ---
+  duration_ms: 23085.7295
+  type: 'test'
+  ...
+# Subtest: 当前组复验失败后不得任选旧成功；缺来源 incomplete 和混合 Close 写前拒绝
+ok 26 - 当前组复验失败后不得任选旧成功；缺来源 incomplete 和混合 Close 写前拒绝
+  ---
+  duration_ms: 15310.8351
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 332548.1703

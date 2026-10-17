@@ -1,0 +1,9 @@
+{
+  "command": "tsc -p tsconfig.scripts.json",
+  "initialResult": "TS2339 before proof execution",
+  "cause": "Proof result unions require record in result narrowing; error exposes code rather than name.",
+  "repair": "Added actual union guards and checked delivery-state-conflict code.",
+  "recheckExitCode": 0,
+  "logRef": "typecheck.log",
+  "productSourceChanged": false
+}

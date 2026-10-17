@@ -73,6 +73,8 @@ export function createDeliveryRun(
     ...workspace.manifest,
     deliveryRunRef: ref,
     ...(seed.fullTest ? { fullTestRunRef: ref } : {}),
+    ...(seed.attempt ? { testAttemptRunRef: ref } : {}),
+    ...(seed.verification ? { verificationRunRef: ref } : {}),
   });
   parseWorkspace(parseProject(workspace.project), manifest);
   const manifestContent = JSON.stringify(manifest, null, 2) + '\n';

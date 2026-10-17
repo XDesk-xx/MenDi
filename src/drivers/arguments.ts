@@ -11,6 +11,8 @@ export interface Arguments {
     | 'delivery-migrate-resume'
     | 'delivery-full-test-run'
     | 'delivery-full-test-status'
+    | 'delivery-verification-create'
+    | 'delivery-verification-status'
     | 'delivery-repair-start'
     | 'delivery-repair-review'
     | 'change-bind'
@@ -39,6 +41,7 @@ export function parseArguments(args: string[]): Arguments {
   if (
     args[0] === 'delivery' &&
     ((args[1] === 'full-test' && ['run', 'status'].includes(args[2])) ||
+      (args[1] === 'verification' && ['create', 'status'].includes(args[2])) ||
       (args[1] === 'migrate' && ['preview', 'apply', 'resume'].includes(args[2])) ||
       (args[1] === 'repair' && ['start', 'review'].includes(args[2])))
   ) {
@@ -71,6 +74,11 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(command === 'delivery-verification-create'
+      ? ['input', 'role', 'actor']
+      : command === 'delivery-verification-status'
+        ? ['run']
+        : []),
     ...(command === 'delivery-migrate-apply'
       ? ['input', 'role', 'actor']
       : command === 'delivery-migrate-resume'
@@ -91,7 +99,7 @@ export function parseArguments(args: string[]): Arguments {
       : command === 'delivery-full-test-status'
         ? ['run']
         : command === 'delivery-repair-start'
-          ? ['from', 'reason', 'role', 'actor', 'revises']
+          ? ['from', 'reason', 'role', 'actor', 'revises', 'input']
           : command === 'delivery-repair-review'
             ? ['author-run', 'role', 'actor']
             : []),
@@ -99,6 +107,7 @@ export function parseArguments(args: string[]): Arguments {
     ...(command === 'workspace-diagnose' ||
     command.startsWith('test-') ||
     command.startsWith('delivery-full-test-') ||
+    command.startsWith('delivery-verification-') ||
     command.startsWith('delivery-repair-') ||
     command.startsWith('delivery-migrate-')
       ? []
@@ -146,6 +155,11 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'delivery-verification-create'
+      ? ['input', 'role', 'actor']
+      : command === 'delivery-verification-status'
+        ? ['run']
+        : []),
     ...(command === 'delivery-migrate-apply'
       ? ['input', 'role', 'actor']
       : command === 'delivery-migrate-resume'
@@ -234,6 +248,8 @@ mendi test run --project <项目根> --kind <focused|fast|full> --actor <标识>
 mendi test status --project <项目根> --execution <NNN-kind> [--delivery <登记 ID>]
 mendi delivery full-test run --project <项目根> --input <项目内 JSON> --role author --actor <标识> --pnpm-bin <既有绝对 JS 入口>
 mendi delivery full-test status --project <项目根> --run <所属登记 Delivery 正式 Run>
+mendi delivery verification create --project <项目根> --input <组来源 JSON> --role author --actor <标识>
+mendi delivery verification status --project <项目根> --run <候选结论 Run>
 mendi delivery repair start --project <项目根> --from <当前 failed 正式 Run> --reason <范围内原因> --role author --actor <标识> [--revises <当前完整 Author>]
 mendi delivery repair review --project <项目根> --author-run <当前完整修复 Author> --role reviewer --actor <独立标识>
 mendi action start --project <项目根> --change <当前 Change> --type <阶段> --role <author|reviewer> --actor <标识> [--author-run <Run 引用>] [--revises <Run 引用>] [--tool <openspec|storybook>]
@@ -261,7 +277,9 @@ Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选�
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
 submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
 actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询，不通过产品 Open / Close / Reopen 迁移历史。
-Close JSON 包含 fullTestRunRef 和 applicability:{conclusion:"applicable",materials,changes,reason}；材料 / 理由非空，差异明确填文本。
+Close JSON 恰选 fullTestRunRef 或 verificationRunRef，并包含 applicability:{conclusion:"applicable",materials,changes,reason}；材料 / 理由非空，差异明确填文本。
+显式 mode:groups-v1 使用 mendi-group-tests/1、planRef、candidate、purpose:initial|continue|retest、selection；后续 fromRunRef 固定当前进展。
+组修复 start 可用 --input <影响 JSON> 声明 candidate、extent、affectedGroupIds、retained 与 reason；方法见 skills/group-tests.md。
 closed 默认查询只展示持久 Close，不重新读取旧正式日志；显式 formal / test status 仍检查必要日志。
 历史 --delivery 选择只读，不改 activeDeliveryId；结果 ok 与当前材料适用性分开，旧 PASS 不覆盖新工作。
 正式结果保存 collection / basis 与真实执行；materialApplicability=requires-semantic-check，passed 不自动 Close。修复审核 approved 后显式新整次 full；unknown 停 Owner，不自动重试或清锁。

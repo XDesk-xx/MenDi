@@ -1,0 +1,72 @@
+[
+  {
+    "label": "preparation-start",
+    "utc": "2026-10-17T05:07:57.517Z",
+    "elapsedMs": 1.1359000000000492
+  },
+  {
+    "label": "preparation-finished",
+    "utc": "2026-10-17T05:08:50.167Z",
+    "elapsedMs": 52650.6253
+  },
+  {
+    "label": "opaque-full-start",
+    "utc": "2026-10-17T05:08:50.169Z",
+    "elapsedMs": 52652.248499999994
+  },
+  {
+    "label": "opaque-full-finished",
+    "utc": "2026-10-17T05:08:56.544Z",
+    "elapsedMs": 59027.2449
+  },
+  {
+    "label": "target-collects-start",
+    "utc": "2026-10-17T05:08:56.551Z",
+    "elapsedMs": 59034.1574
+  },
+  {
+    "label": "target-collects-finished",
+    "utc": "2026-10-17T05:09:02.558Z",
+    "elapsedMs": 65041.7841
+  },
+  {
+    "label": "tail-continuation-start",
+    "utc": "2026-10-17T05:09:02.563Z",
+    "elapsedMs": 65047.0528
+  },
+  {
+    "label": "tail-continuation-finished",
+    "utc": "2026-10-17T05:09:07.059Z",
+    "elapsedMs": 69542.87359999999
+  },
+  {
+    "label": "repaired-focused-start",
+    "utc": "2026-10-17T05:09:08.398Z",
+    "elapsedMs": 70881.35579999999
+  },
+  {
+    "label": "repaired-focused-finished",
+    "utc": "2026-10-17T05:09:14.895Z",
+    "elapsedMs": 77378.4576
+  },
+  {
+    "label": "fresh-whole-start",
+    "utc": "2026-10-17T05:09:14.958Z",
+    "elapsedMs": 77441.878
+  },
+  {
+    "label": "fresh-whole-finished",
+    "utc": "2026-10-17T05:09:20.174Z",
+    "elapsedMs": 82657.6789
+  },
+  {
+    "label": "changed-candidate-focused-start",
+    "utc": "2026-10-17T05:09:20.229Z",
+    "elapsedMs": 82713.0777
+  },
+  {
+    "label": "changed-candidate-focused-finished",
+    "utc": "2026-10-17T05:09:25.470Z",
+    "elapsedMs": 87953.15729999999
+  }
+]

@@ -47,7 +47,9 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js status --proj
 node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --project D:\work\target --json
 ```
 
-`--help` 列出 delivery open / full-test / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
+`--help` 列出 delivery open / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
+
+默认 Full Test 保持旧 command 语义。显式 `groups-v1` 接入有版本的计划 / 回执、同轮续测、独立修复审核后的影响复验及多来源候选结论，完整方法与 JSON 示例见[组级协议](skills/group-tests.md)。原命令 outcome、协议观察与候选 verified 分别保存；必需 skip / TODO / 取消 / 零业务执行留下缺口。Close 恰选旧 `fullTestRunRef` 或当前 `verificationRunRef`，不递归旧来源历史；新进展不能回退旧 verified。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -107,6 +109,6 @@ pnpm test:ui
 
 ## 开发交接
 
-当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[A 008 Author Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md)。A 已由 007 独立批准并实际归档为 [011](openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility)，三份主规格同步完成；A 的实现、归档及本地收尾纳入 Change checkpoint；当前停 change-bind / author / awaiting-owner。B / C 未激活，项目累计成功归档为 11。
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[B 016 Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/016-archive/run.md)。依据015独立Review Apply对固定Author014的批准，B已原生归档为012，三份主规格同步及strict读回通过；014 / 015和原verdict保留。B的实现、归档及本地收尾纳入Change checkpoint；当前无活动Change，停change-bind / author / awaiting-owner。累计归档12，Delivery仍open/manual-bootstrap；C未激活，Git、正式Full Test / Close及后续工作等待另行授权。
 
 范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。

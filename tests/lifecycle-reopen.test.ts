@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -17,7 +18,7 @@ import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
 import { bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { scanRunNumbers, readRunSource, renderRun } from '../src/adapters/runs.ts';
-import { fullTestStatus, runFullTest } from '../src/application/delivery-full-test.ts';
+import { runFullTest } from '../src/application/delivery-full-test.ts';
 import { fullInput, declarationFile } from './delivery-support.ts';
 import { MendiError } from '../src/core/errors.ts';
 import { approvedArchive } from './sequential-support.ts';
@@ -67,11 +68,11 @@ test('真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次
     if (roundId === undefined) delete (header.fullTest as Record<string, unknown>).roundId;
     else (header.fullTest as Record<string, unknown>).roundId = roundId;
     fs.writeFileSync(path.join(root, passed.run.ref), renderRun(header, oldFull.body));
-    assert.throws(() => fullTestStatus({ project: root, runRef: passed.run!.ref }));
+    assert.throws(() => legacyFullTestStatus({ project: root, runRef: passed.run!.ref }));
   }
   fs.writeFileSync(path.join(root, passed.run.ref), bytes.get(passed.run.ref)!);
   assert.equal(
-    fullTestStatus({ project: root, runRef: passed.run.ref }).verification.scopeMatch,
+    legacyFullTestStatus({ project: root, runRef: passed.run.ref }).verification.scopeMatch,
     'changed',
   );
   assert.throws(
@@ -129,7 +130,7 @@ test('真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次
   for (const [ref, expected] of bytes)
     assert.ok(fs.readFileSync(path.join(root, ref)).equals(expected));
   assert.equal(
-    fullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
+    legacyFullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
     'passed',
   );
   assert.ok('verification' in passed && passed.verification.child);

@@ -26,7 +26,7 @@ export interface FullTestInput {
   actor: string;
   pnpmBin: string;
 }
-export function admission(root: string, input: FullTestInput, ownLock: boolean) {
+export function formalWorkspace(root: string, input: FullTestInput, ownLock: boolean) {
   if (input.role !== 'author')
     throw new MendiError('action-role-mismatch', '正式 Full Test 要求 Author。');
   text(input.actor, 'actor');
@@ -36,6 +36,10 @@ export function admission(root: string, input: FullTestInput, ownLock: boolean) 
     throw new MendiError('manual-state-read-only', '正式执行只支持 open product。');
   requireWritable(workspace);
   const scope = verificationScope(workspace);
+  return { workspace, scope };
+}
+export function admission(root: string, input: FullTestInput, ownLock: boolean) {
+  const { workspace, scope } = formalWorkspace(root, input, ownLock);
   const baselines = deliveredBaselines(root, workspace, workspace.scope);
   const inputPath = managedPath(root, input.inputFile);
   const inputBytes = fs.readFileSync(inputPath);
@@ -50,6 +54,8 @@ export function admission(root: string, input: FullTestInput, ownLock: boolean) 
     pnpmBin: input.pnpmBin,
   };
   const current = currentDeliveryRun(root, workspace);
+  if (current?.record.attempt || current?.record.verification)
+    throw new MendiError('delivery-state-conflict', '组模式进展不能静默降级旧 command。');
   let approvals: FullTest['approvals'];
   let repairApproval: FullTest['repairApproval'];
   const refs: string[] = [];

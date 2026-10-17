@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -19,7 +20,6 @@ import { legacyFixture, preview, migrationInput } from './migration-support.ts';
 import { snapshot, scopeFile } from './helpers.ts';
 import { testTarget } from './test-support.ts';
 import { options } from './action-support.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { testStatus } from '../src/application/tests.ts';
 
 test('记录化旧首次 Open 尚未 Close 可迁移，不制造收口', () => {
@@ -72,7 +72,7 @@ test('真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部
     plan = preview(root);
   assert.ok('run' in second && second.run && 'verification' in second && second.verification.child);
   assert.equal(
-    fullTestStatus({ project: root, runRef: second.run.ref }).verification.outcome,
+    legacyFullTestStatus({ project: root, runRef: second.run.ref }).verification.outcome,
     'passed',
   );
   assert.equal(

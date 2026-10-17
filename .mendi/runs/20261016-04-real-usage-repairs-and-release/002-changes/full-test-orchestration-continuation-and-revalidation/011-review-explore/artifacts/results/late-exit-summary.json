@@ -1,0 +1,99 @@
+{
+  "status": 0,
+  "signal": null,
+  "passed": [
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "passed-before-file-exit",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 0.999,
+          "type": "test"
+        },
+        "line": 2,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\late.ts"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "independent-tail",
+        "nesting": 0,
+        "testNumber": 3,
+        "details": {
+          "duration_ms": 0.8545,
+          "type": "test"
+        },
+        "line": 2,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts"
+      }
+    }
+  ],
+  "failed": [
+    {
+      "type": "test:fail",
+      "data": {
+        "name": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\late.ts",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 291.8861,
+          "type": "test",
+          "error": {
+            "code": "ERR_TEST_FAILURE",
+            "failureType": "testCodeFailure",
+            "cause": "test failed",
+            "exitCode": 7,
+            "signal": null,
+            "name": "Error",
+            "message": "test failed"
+          }
+        },
+        "line": 1,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\late.ts"
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 1,
+          "failed": 0,
+          "passed": 1,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 1,
+          "suites": 0
+        },
+        "duration_ms": 13.9603,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": false,
+        "counts": {
+          "tests": 3,
+          "failed": 1,
+          "passed": 2,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 3,
+          "suites": 0
+        },
+        "duration_ms": 529.7937
+      }
+    }
+  ]
+}

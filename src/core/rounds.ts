@@ -14,11 +14,19 @@ export interface DeliveryRound {
   currentBatchId: string | null;
   deliveryRunRef?: string;
   fullTestRunRef?: string;
+  testAttemptRunRef?: string;
+  verificationRunRef?: string;
   closeRunRef?: string;
   closedOn?: string;
 }
 
-const pointers = ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef'] as const;
+const pointers = [
+  'deliveryRunRef',
+  'fullTestRunRef',
+  'testAttemptRunRef',
+  'verificationRunRef',
+  'closeRunRef',
+] as const;
 const projected = [
   'goal',
   'plannedChanges',
@@ -154,6 +162,8 @@ export function readRounds(manifest: Record<string, unknown>, deliveryId: string
         loc = deliveryLocation(ref, deliveryId);
       if (
         (key === 'fullTestRunRef' && loc.type !== 'delivery-full-test') ||
+        (key === 'testAttemptRunRef' && loc.type !== 'delivery-test-attempt') ||
+        (key === 'verificationRunRef' && loc.type !== 'delivery-verification') ||
         (key === 'closeRunRef' && loc.type !== 'delivery-close')
       )
         invalid('轮次结果指针类型不符。');
@@ -165,7 +175,7 @@ export function readRounds(manifest: Record<string, unknown>, deliveryId: string
       (!round.closedOn ||
         !round.closeRunRef ||
         round.deliveryRunRef !== round.closeRunRef ||
-        !round.fullTestRunRef)
+        (!round.fullTestRunRef && !round.verificationRunRef))
     )
       invalid('closed 轮次缺少一致收口。');
     if (round.state === 'open' && (round.closedOn || round.closeRunRef))

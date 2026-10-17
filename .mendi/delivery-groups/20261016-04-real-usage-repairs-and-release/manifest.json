@@ -35,7 +35,8 @@
       "firstRun": "002",
       "runsRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes",
       "changeIds": [
-        "reopen-incremental-scope-and-compatibility"
+        "reopen-incremental-scope-and-compatibility",
+        "full-test-orchestration-continuation-and-revalidation"
       ]
     }
   ],
@@ -48,6 +49,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md",
       "archiveOrdinal": 11
+    },
+    {
+      "planningSlot": "MVP-D04-B",
+      "changeId": "full-test-orchestration-continuation-and-revalidation",
+      "changeRef": "openspec/changes/archive/2026-10-17-012-full-test-orchestration-continuation-and-revalidation",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/016-archive/run.md",
+      "archiveOrdinal": 12
     }
   ],
   "activeChangeId": null,
@@ -65,12 +75,12 @@
     "自动 npm 上架、可选工具安装、其他项目测试优化、部署或生产数据写入。"
   ],
   "openRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md",
-  "stopBoundary": "change-bind",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/016-archive/run.md",
+  "stopBoundary": "change-checkpoint",
   "next": {
     "action": "change-bind",
     "status": "awaiting-owner",
     "role": "author",
-    "reason": "MVP-D04-A 的实现、011 归档及本地收尾已纳入 Change checkpoint；B / C 未激活，等待 Owner 明确授权下一 Change 与范围。"
+    "reason": "B 已归档012并纳入本地Change checkpoint；等待Owner明确授权下一Change与范围，C未激活。"
   }
 }

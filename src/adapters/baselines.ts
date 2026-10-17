@@ -50,7 +50,7 @@ export function deliveredBaselines(
         close.record.status !== 'submitted' ||
         close.record.outcome !== 'complete' ||
         !accepted ||
-        accepted.outcome !== 'passed'
+        ('kind' in accepted ? accepted.conclusion !== 'verified' : accepted.outcome !== 'passed')
       )
         throw new MendiError('baseline-source-unavailable', '指定来源不是完整 Close。', { ref });
       const completed = accepted.scope.completed.find((c) => c.slot === dependency.planningSlot);

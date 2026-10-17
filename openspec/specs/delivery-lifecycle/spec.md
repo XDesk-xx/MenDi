@@ -7,14 +7,14 @@
 
 ### Requirement: Explicit applicable delivery close
 
-系统 SHALL 仅通过明确 Close 收口当前 open version 2 product Delivery 的当前轮，要求 Author、actor、该轮全部槽位完成、无活动项 / 待处理工作，以及该轮当前稳定 known passed 的正式 Full Test。指定入口 MUST 为该轮当前进展和最近正式结果，范围、轮次、命令及直接批准快照一致。普通 PASS、跨轮 / 陈旧入口、unknown 或未完成现场必须拒绝，不能借历史轮次的 Close 满足当前轮。
+系统 SHALL 只在明确 Owner 授权下收口当前 open v2 product 的当前轮，要求本轮槽位完成、无活动 / 待处理工作及材料适用。输入须恰选旧 fullTestRunRef 稳定 passed，或新 verificationRunRef 稳定 verified；所选对象必须为本轮当前实际进展和对应指针，范围 / 批准 / 必需覆盖及直接快照一致。普通、跨轮、陈旧或未确认结果不能 Close。
 
 #### Scenario: Close a completed delivery
 - **WHEN** 实际 Owner 已授权 Close，Author 提供本轮当前正式结果及成立的材料适用性判断，必要输入完整且稳定
 - **THEN** 保存独立 Close Run 与 closed manifest，保留正式父 / 子结果和历史，跨进程查询同一收口；不自动 Git、Open 或 Reopen
 
 #### Scenario: Required acceptance or approval is unavailable
-- **WHEN** 缺当前正式结果、直接子记录 / 必要日志、必要批准快照，或存在未完成槽位、修复 / Review、failed / interrupted / not-run / unknown
+- **WHEN** 缺当前所选验收对象 / 必要直接快照（旧单次另须子结果 / 必要日志）或批准，存在未完成槽位 / 修复 / Review，或当前入口及必需覆盖仍有失败 / 未确认
 - **THEN** 写前拒绝实际输入问题，不占新号、不回退旧 PASS，不从入口 PID 消失或后续清场推导完成
 
 #### Scenario: A stale or ordinary pass is supplied
@@ -23,7 +23,7 @@
 
 ### Requirement: Material applicability and direct approval facts
 
-Close SHALL 保存针对指定正式结果的明确材料适用性结论、实际候选 / 差异及判断理由。结构校验、actor 和文本 MUST 不宣传为源码或 Owner 身份认证；真实阶段工作负责判断。Close SHALL 消费正式结果中已核对的直接批准事实，不递归读取旧 Archive / Review / Author 正文、失败父链或旧 Close。
+Close SHALL 保存指定验收入口的明确材料适用性、实际候选 / 差异及理由。旧分支消费正式结果直接批准，新分支消费候选结论的本地组覆盖、来源适用性和必要批准快照；不递归展开旧 attempt / 失败链 / 审核正文。结构、actor 和文本不认证源码或真人，真实阶段工作负责覆盖与材料判断。
 
 #### Scenario: Documentation changes leave tested material applicable
 - **WHEN** 阶段工作确认变化仅为说明或交接，受测代码、测试、依赖及执行配置仍适用
@@ -39,7 +39,7 @@ Close SHALL 保存针对指定正式结果的明确材料适用性结论、实�
 
 ### Requirement: Explicit reopen with a fresh work scope
 
-Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅重开当前完整 closed version 2 product Delivery。新范围 MUST 非空，本轮依赖自洽，已交付基线可直接核对，槽位不复用旧 binding；追加稳定新轮并保留每轮目标、计划、Close、正式结果、绑定、批次及归档数。Reopen MUST 不创建 / 复活 Change、不预建批次、不继承旧 PASS，当前投影只指向新轮。
+Reopen SHALL 由 Owner 明确新范围、Author / actor 和原因，只重开完整 closed v2 product。新范围非空、依赖自洽、基线可核对、槽位不复用旧 binding；追加新轮并保留旧 scope、正式单次 / attempt / verification / Close 及归档事实。新轮不得继承旧 PASS / verified / 修复批准，不预建批次、不复活 Change；全部当前指针统一投影。
 
 #### Scenario: Reopen and later start new work
 - **WHEN** Owner 明确新范围，先完成 Reopen，再显式关联新 Change 并开始首次 Run
@@ -59,7 +59,7 @@ Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅
 
 ### Requirement: Durable lifecycle progress and closed queries
 
-系统 SHALL 将 Open / Close / Reopen 及迁移的实际操作 Run 放在 Changes 批次同级，沿 Delivery 编号并校验身份 / 角色。普通生命周期按当前轮解释，closed 默认 query 只读其收口摘要；迁移仅是格式操作收据，不替换活动 Change、draft 或原正式进展。待提交写入阻止普通操作；必要当前记录缺失 MUST 报错，不猜历史最大号。
+Open / Close / Reopen 及迁移 Run SHALL 沿 Delivery 既有编号并核对身份 / 角色。Close 明确旧单次或新候选结论的验收快照类型，closed 默认查询只读本次收口摘要，不展开来源历史；迁移不替换业务进展。必要当前快照 / 记录坏或存在 pending 时明确拒绝，不从历史最大号或旧 verified 猜当前状态。
 
 #### Scenario: Closed progress is read without historical logs
 - **WHEN** 当前 Close Run 与 manifest 完整一致，旧说明、旧 Change 正文或旧测试日志不可用
@@ -160,3 +160,23 @@ Open、Reopen、Close 与迁移写入 SHALL 保持各自实际 Owner 授权；CL
 #### Scenario: A migrated target is supplied again
 - **WHEN** 普通迁移 apply 指向已经完成迁移的新格式，或请求重复同一当前完整迁移的 resume
 - **THEN** 不再次新增轮次 / 收据或改历史；普通 apply 返回已迁移事实，同次 resume 在目标仍匹配时只读返回完整结果，后续状态已变化则拒绝陈旧恢复
+
+### Requirement: Discriminated current candidate close
+
+Close SHALL 明确区分旧单次与新 candidate-verification 验收入口，两个 selector 不得同时提供。新分支只消费当前轮稳定 verified 的当前候选及其自身完整快照，核对完整必需覆盖、候选适用性、基线 / 批准与无未确认缺口；不把来源尝试的原始 failed 改为 passed，也不把选中范围成功当整轮完整。
+
+#### Scenario: Close from a truthful multi-attempt conclusion
+- **WHEN** 授权的同轮续测、独立修复审核和必要复验已形成当前完整 verified 结论，材料适用性成立
+- **THEN** 保存明确候选类型的 Close 快照和收口，列明多来源事实，原失败 / 退出 / 日志仍保持，不另重跑全部长前缀或自动执行 Git
+
+#### Scenario: Verification has a required coverage gap
+- **WHEN** 结论 incomplete、必需组缺有效通过 / 审核、仅有 skip / TODO / 取消、未知资源或来源矛盾
+- **THEN** Close 在写入前拒绝实际缺口，不因包装器退出 0、命令同名或旧轮 PASS 收口
+
+#### Scenario: A newer attempt supersedes the current conclusion
+- **WHEN** verified 后当前候选、材料或实际进展已被新尝试 / 修复替代，输入仍指定旧结论
+- **THEN** 不回退旧 verified 或旧 fullTestRunRef，明确当前入口不适用，保持历史结论可读
+
+#### Scenario: Old and new acceptance selectors are mixed
+- **WHEN** 同时指定 fullTestRunRef 和 verificationRunRef，或旧消费者不能识别新的验收类型
+- **THEN** 明确拒绝混合 / 未知类型，不忽略新字段后套用旧 passed 合同；合法旧单次输入仍按原合同处理

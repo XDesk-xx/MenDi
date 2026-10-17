@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -17,7 +18,6 @@ import { query, bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { scanRunNumbers, renderRun } from '../src/adapters/runs.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { completedTarget } from './delivery-support.ts';
 import { cli, isolatedEnv } from './helpers.ts';
 
@@ -319,7 +319,7 @@ test('两项真实归档 → 正式接线失败 → focused → 定向审核夹�
   assert.equal(status.status, 0, status.stdout);
   assert.equal(JSON.parse(status.stdout).run.ref, passed.run.ref);
   assert.equal(
-    fullTestStatus({ project: root, runRef: failureRef }).verification.outcome,
+    legacyFullTestStatus({ project: root, runRef: failureRef }).verification.outcome,
     'failed',
   );
   const oldStatus = cli(

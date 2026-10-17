@@ -1,0 +1,19 @@
+{
+  "result": "proof-completed",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-L5g9z6\\project",
+  "opaqueStopsBeforeTail": true,
+  "targetCanCollectIndependentTests": true,
+  "mendiResultStillCommandGranularity": true,
+  "ordinaryTailPassNotFormal": true,
+  "failedFormalRetryNeedsReview": true,
+  "approvedReducedCollectionRejected": true,
+  "currentContractRunsWholeAgain": true,
+  "sameCommandDoesNotCertifyCurrentSource": true,
+  "originalFailureAndLogsPreserved": true,
+  "limitations": [
+    "Existing behavior only; no structured protocol, scheduler or aggregation implemented.",
+    "No real independent approval is produced by fixture actor / verdict metadata.",
+    "No resource-aware continuation or optimization speedup has been proved.",
+    "No root formal Full Test, Close, DreMo access, stable install change or Git write."
+  ]
+}

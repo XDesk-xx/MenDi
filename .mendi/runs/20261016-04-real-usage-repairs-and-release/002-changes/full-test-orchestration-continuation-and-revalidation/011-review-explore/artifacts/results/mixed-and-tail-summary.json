@@ -1,0 +1,124 @@
+{
+  "status": 0,
+  "signal": null,
+  "passed": [
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "one-good-assertion",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 2.2069,
+          "type": "test"
+        },
+        "line": 3,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\mixed.ts"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "independent-tail",
+        "nesting": 0,
+        "testNumber": 3,
+        "details": {
+          "duration_ms": 1.0025,
+          "type": "test"
+        },
+        "line": 2,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts"
+      }
+    }
+  ],
+  "failed": [
+    {
+      "type": "test:fail",
+      "data": {
+        "name": "one-bad-assertion",
+        "nesting": 0,
+        "testNumber": 2,
+        "details": {
+          "duration_ms": 1.2063,
+          "type": "test",
+          "error": {
+            "code": "ERR_TEST_FAILURE",
+            "failureType": "testCodeFailure",
+            "cause": {
+              "generatedMessage": true,
+              "code": "ERR_ASSERTION",
+              "actual": 1,
+              "expected": 2,
+              "operator": "strictEqual",
+              "diff": "simple",
+              "name": "AssertionError",
+              "message": "Expected values to be strictly equal:\n\n1 !== 2\n"
+            },
+            "name": "Error",
+            "message": "Expected values to be strictly equal:\n\n1 !== 2\n"
+          }
+        },
+        "line": 4,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\mixed.ts"
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "type": "test:summary",
+      "data": {
+        "success": false,
+        "counts": {
+          "tests": 2,
+          "failed": 1,
+          "passed": 1,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 2,
+          "suites": 0
+        },
+        "duration_ms": 15.9521,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\mixed.ts"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 1,
+          "failed": 0,
+          "passed": 1,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 1,
+          "suites": 0
+        },
+        "duration_ms": 12.755,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": false,
+        "counts": {
+          "tests": 3,
+          "failed": 1,
+          "passed": 2,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 3,
+          "suites": 0
+        },
+        "duration_ms": 386.9201
+      }
+    }
+  ]
+}

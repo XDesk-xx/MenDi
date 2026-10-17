@@ -88,7 +88,9 @@ export function readWorkspace(
       delivery.record.status !== 'submitted' ||
       JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
       (lifecycle.operation === 'delivery-close' &&
-        (lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef ||
+        ((lifecycle.verificationRunRef !== undefined
+          ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
+          : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
           JSON.stringify(lifecycle.acceptance?.scope) !==
             JSON.stringify(completionScope(workspace)))) ||
       (workspace.manifest.formatVersion === 1 &&
@@ -100,10 +102,18 @@ export function readWorkspace(
       throw new MendiError('invalid-record', '当前生命周期摘要与 manifest 不一致。');
   }
   if (workspace.mode === 'product') {
-    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef'])
+    for (const key of [
+      'deliveryRunRef',
+      'fullTestRunRef',
+      'testAttemptRunRef',
+      'verificationRunRef',
+      'closeRunRef',
+      'openRunRef',
+    ])
       if (workspace.manifest[key] !== undefined) managedPath(root, String(workspace.manifest[key]));
     if (
       delivery?.record.repair &&
+      !delivery.record.repair.groups &&
       delivery.record.repair.failedFullTestRunRef !== workspace.manifest.fullTestRunRef
     )
       throw new MendiError('invalid-record', '修复当前来源与最近正式指针矛盾。');

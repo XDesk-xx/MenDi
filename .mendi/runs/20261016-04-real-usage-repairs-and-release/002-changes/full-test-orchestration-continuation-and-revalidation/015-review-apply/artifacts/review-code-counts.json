@@ -1,0 +1,53 @@
+{
+  "src": [
+    {
+      "path": "src/application/project.ts",
+      "lines": 374,
+      "before": 354
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "lines": 372,
+      "before": 272
+    },
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "lines": 371,
+      "before": 334
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/action-write.test.ts",
+      "lines": 467,
+      "before": 467
+    },
+    {
+      "path": "tests/planning-cli.test.ts",
+      "lines": 444,
+      "before": 444
+    },
+    {
+      "path": "tests/delivery-repair.test.ts",
+      "lines": 394,
+      "before": 394
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "lines": 678,
+      "before": 678
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-d-explore.ts",
+      "lines": 487,
+      "before": 487
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "lines": 463,
+      "before": 463
+    }
+  ]
+}

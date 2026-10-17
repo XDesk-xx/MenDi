@@ -1,0 +1,163 @@
+{
+  "protocol": "mendi-group-tests/1",
+  "request": {
+    "protocol": "mendi-group-tests/1",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-hGaEXg\\project",
+    "deliveryId": "d01",
+    "roundId": "r001",
+    "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+    "executionId": "001-full",
+    "candidate": {
+      "id": "c1",
+      "basis": {
+        "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+        "changes": ""
+      }
+    },
+    "plan": {
+      "protocol": "mendi-group-tests/1",
+      "groups": [
+        {
+          "id": "prefix",
+          "title": "prefix",
+          "kind": "tests",
+          "required": true,
+          "dependsOn": [],
+          "resources": [],
+          "selection": [
+            "prefix.test.ts"
+          ],
+          "completion": "业务断言、Node容器及根汇总均完成",
+          "preparation": "隔离本次目标，无共享服务",
+          "exclusions": []
+        },
+        {
+          "id": "middle",
+          "title": "middle",
+          "kind": "tests",
+          "required": true,
+          "dependsOn": [],
+          "resources": [],
+          "selection": [
+            "middle.test.ts"
+          ],
+          "completion": "业务断言、Node容器及根汇总均完成",
+          "preparation": "隔离本次目标，无共享服务",
+          "exclusions": [
+            {
+              "id": "optional-old",
+              "reason": "执行前声明不属必需业务范围"
+            }
+          ]
+        },
+        {
+          "id": "tail",
+          "title": "tail",
+          "kind": "tests",
+          "required": true,
+          "dependsOn": [],
+          "resources": [],
+          "selection": [
+            "tail.test.ts"
+          ],
+          "completion": "业务断言、Node容器及根汇总均完成",
+          "preparation": "隔离本次目标，无共享服务",
+          "exclusions": []
+        }
+      ]
+    },
+    "selection": [
+      "prefix",
+      "middle",
+      "tail"
+    ],
+    "prerequisites": [],
+    "reportRef": ".mendi/delivery-groups/d01/tests/001-full/group-report.json",
+    "eventsRef": ".mendi/delivery-groups/d01/tests/001-full/group-events.jsonl"
+  },
+  "complete": true,
+  "cleanup": "confirmed",
+  "groups": [
+    {
+      "id": "prefix",
+      "selection": [
+        "prefix.test.ts"
+      ],
+      "exclusions": [],
+      "cleanup": "confirmed",
+      "enumerated": true,
+      "finished": true,
+      "state": "passed",
+      "reason": "",
+      "exitCode": 0,
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "pending": 0
+      },
+      "durationMs": 313.1307
+    },
+    {
+      "id": "middle",
+      "selection": [
+        "middle.test.ts"
+      ],
+      "exclusions": [
+        "optional-old"
+      ],
+      "cleanup": "confirmed",
+      "enumerated": true,
+      "finished": true,
+      "state": "passed",
+      "reason": "",
+      "exitCode": 0,
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "pending": 0
+      },
+      "durationMs": 211.8807
+    },
+    {
+      "id": "tail",
+      "selection": [
+        "tail.test.ts"
+      ],
+      "exclusions": [],
+      "cleanup": "confirmed",
+      "enumerated": true,
+      "finished": true,
+      "state": "passed",
+      "reason": "",
+      "exitCode": 0,
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "pending": 0
+      },
+      "durationMs": 204.24620000000004
+    }
+  ],
+  "timing": [
+    {
+      "id": "target",
+      "clock": "target",
+      "utc": "2026-10-17T07:00:50.704Z",
+      "startMs": 0,
+      "durationMs": 734.9131,
+      "phase": "目标执行 / 清理"
+    }
+  ]
+}

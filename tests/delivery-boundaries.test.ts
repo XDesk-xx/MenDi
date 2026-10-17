@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -14,7 +15,6 @@ import { startDeliveryRepair, startDeliveryReview } from '../src/application/del
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
 import { renderRun, scanRunNumbers } from '../src/adapters/runs.ts';
 import { query } from '../src/application/project.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { acquireProjectLock, releaseProjectLock } from '../src/adapters/workspace.ts';
 
 test('RA-B-001：首次修复后执行需要完整当前 Review，查询不倒查正文', async () => {
@@ -72,7 +72,7 @@ test('RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志
   const logBytes = fs.readFileSync(logFile);
   for (const read of [
     () => query({ project: root }),
-    () => fullTestStatus({ project: root, runRef: ref }),
+    () => legacyFullTestStatus({ project: root, runRef: ref }),
   ]) {
     for (const conflict of ['lock', 'log']) {
       const original = fs.readFileSync;
@@ -108,5 +108,5 @@ test('RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志
       }
     }
   }
-  assert.equal(fullTestStatus({ project: root, runRef: ref }).verification.outcome, 'passed');
+  assert.equal(legacyFullTestStatus({ project: root, runRef: ref }).verification.outcome, 'passed');
 });

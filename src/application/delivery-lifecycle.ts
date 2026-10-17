@@ -21,6 +21,7 @@ import { state, selected, type OpenInput, type OperationOptions } from './projec
 import { requireWritable } from '../core/rounds.ts';
 import { deliveredBaselines } from '../adapters/baselines.ts';
 import { checkBaselineSnapshot } from '../core/baselines.ts';
+import { inspectCandidate } from '../adapters/group-store.ts';
 
 export interface LifecycleInput {
   project: string;
@@ -106,10 +107,35 @@ export function confirmLifecycle(root: string, workspace: Workspace | null, life
   if (
     workspace.state !== 'open' ||
     workspace.activeChangeId ||
-    workspace.manifest.deliveryRunRef !== lifecycle.fullTestRunRef ||
-    workspace.manifest.fullTestRunRef !== lifecycle.fullTestRunRef
+    workspace.manifest.deliveryRunRef !==
+      (lifecycle.verificationRunRef ?? lifecycle.fullTestRunRef) ||
+    (lifecycle.verificationRunRef !== undefined
+      ? workspace.manifest.verificationRunRef !== lifecycle.verificationRunRef
+      : workspace.manifest.fullTestRunRef !== lifecycle.fullTestRunRef)
   )
     throw new MendiError('delivery-state-conflict', 'Close 需要当前本轮正式入口与两个指针一致。');
+  if (lifecycle.verificationRunRef !== undefined) {
+    const run = readDeliveryRun(root, lifecycle.verificationRunRef, workspace.id);
+    const facts = inspectCandidate(root, workspace, run, true);
+    verificationScope(workspace);
+    checkBaselineSnapshot(workspace.scope, lifecycle.acceptance?.baselineFacts ?? []);
+    if (
+      !facts.stable ||
+      facts.conclusion !== 'verified' ||
+      !same(run.record.verification, lifecycle.acceptance) ||
+      !same(run.record.verification?.scope, completionScope(workspace)) ||
+      run.record.verification?.approvals.some(
+        (f) =>
+          workspace.bindings.find((b) => b.changeId === f.changeId)?.latestRunRef !==
+          f.archiveRunRef,
+      )
+    )
+      throw new MendiError(
+        'delivery-close-unavailable',
+        '需要本轮当前稳定 verified 与完整本地快照。',
+      );
+    return;
+  }
   const run = readDeliveryRun(root, lifecycle.fullTestRunRef!, workspace.id);
   checkBaselineSnapshot(workspace.scope, lifecycle.acceptance?.baselineFacts ?? []);
   verificationScope(workspace);
@@ -187,20 +213,29 @@ export function deliveryLifecycle(
   const declared = object(JSON.parse(basis.input.content), '生命周期声明');
   let lifecycle: Lifecycle;
   if (type === 'delivery-close') {
-    const ref = text(declared.fullTestRunRef, '正式入口');
+    if ((declared.fullTestRunRef === undefined) === (declared.verificationRunRef === undefined))
+      throw new MendiError(
+        'invalid-declaration',
+        'Close 必须恰选 fullTestRunRef / verificationRunRef。',
+      );
+    const isCandidate = declared.verificationRunRef !== undefined;
+    const ref = text(declared.verificationRunRef ?? declared.fullTestRunRef, '正式入口');
     const run = readDeliveryRun(root, ref, workspace.id);
-    if (!run.record.fullTest) throw new MendiError('invalid-run', 'Close 不能使用普通测试 PASS。');
+    if (isCandidate ? !run.record.verification : !run.record.fullTest)
+      throw new MendiError('invalid-run', 'Close 入口类型不符。');
     lifecycle = {
       roundId: workspace.currentRoundId!,
       operation: type,
       sourceDeliveryId: workspace.id,
       scope: workspace.scope,
       recordedOn: date(),
-      fullTestRunRef: ref,
-      acceptance: run.record.fullTest,
+      ...(isCandidate ? { verificationRunRef: ref } : { fullTestRunRef: ref }),
+      acceptance: isCandidate ? run.record.verification : run.record.fullTest,
       applicability: applicability(declared.applicability),
     };
-    const facts = inspectFullTest(root, workspace, run);
+    const facts = isCandidate
+      ? inspectCandidate(root, workspace, run)
+      : inspectFullTest(root, workspace, run);
     if (!facts.stable) throw new MendiError('delivery-close-unavailable', '正式直接执行未稳定。');
   } else {
     const prior = closed(root, workspace);
@@ -224,9 +259,11 @@ export function deliveryLifecycle(
   // 只固定本次直接执行 / 配置的实际字节；不持久化 hash 清单或复制历史证据。
   const refs =
     type === 'delivery-close'
-      ? [lifecycle.fullTestRunRef!, 'package.json']
+      ? lifecycle.verificationRunRef
+        ? [lifecycle.verificationRunRef]
+        : [lifecycle.fullTestRunRef!, 'package.json']
       : [lifecycle.priorCloseRef!];
-  if (type === 'delivery-close') {
+  if (type === 'delivery-close' && !lifecycle.verificationRunRef) {
     const run = readDeliveryRun(root, lifecycle.fullTestRunRef!, workspace.id);
     const facts = inspectFullTest(root, workspace, run);
     if (facts.child)

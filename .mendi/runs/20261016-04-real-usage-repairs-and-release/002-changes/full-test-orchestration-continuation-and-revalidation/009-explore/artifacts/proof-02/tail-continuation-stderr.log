@@ -1,0 +1,1 @@
+$ node --test checks/tail.test.ts

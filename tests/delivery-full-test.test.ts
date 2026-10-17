@@ -1,10 +1,11 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { formal, verificationTarget, fullInput } from './delivery-support.ts';
-import { runFullTest, fullTestStatus } from '../src/application/delivery-full-test.ts';
+import { runFullTest } from '../src/application/delivery-full-test.ts';
 import { acquireProjectLock } from '../src/adapters/workspace.ts';
 import { query } from '../src/application/project.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
@@ -66,7 +67,7 @@ test('真正非零为 failed，历史 status 读取成功不等于 passed', asyn
   assert.equal(result.ok, false);
   assert.ok(result.run);
   assert.equal(result.run.fullTest!.outcome, 'failed');
-  const readback = fullTestStatus({ project: root, runRef: result.run.ref });
+  const readback = legacyFullTestStatus({ project: root, runRef: result.run.ref });
   assert.equal(readback.ok, true);
   assert.equal(readback.verification.outcome, 'failed');
   assert.equal(readback.verification.child!.exitCode, 7);
@@ -99,7 +100,7 @@ test('声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安
       assert.equal(typeof raw.details.stderr, 'string');
     }
     assert.equal(
-      fullTestStatus({ project: root, runRef: result.run.ref }).verification.outcome,
+      legacyFullTestStatus({ project: root, runRef: result.run.ref }).verification.outcome,
       'not-run',
     );
   }

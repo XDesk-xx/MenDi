@@ -1,4 +1,6 @@
 import { runFullTest, fullTestStatus } from '../application/delivery-full-test.ts';
+import { groupProgressDisplay } from './output.ts';
+import { createVerification, verificationStatus } from '../application/candidate-verification.ts';
 import { startDeliveryRepair, startDeliveryReview } from '../application/delivery-repair.ts';
 import { actionInstructions } from '../application/action-instructions.ts';
 import { resolveAction } from '../application/action-resolution.ts';
@@ -32,6 +34,10 @@ export async function dispatch(parsed: Arguments) {
   const input = { project: parsed.values.project, openspecBin: parsed.values['openspec-bin'] };
   const actor = { ...input, role: parsed.values.role, actor: parsed.values.actor };
   switch (parsed.command) {
+    case 'delivery-verification-create':
+      return createVerification({ ...actor, inputFile: parsed.values.input });
+    case 'delivery-verification-status':
+      return verificationStatus({ ...target, runRef: parsed.values.run });
     case 'delivery-migrate-preview':
     case 'delivery-migrate-apply':
     case 'delivery-migrate-resume':
@@ -51,11 +57,14 @@ export async function dispatch(parsed: Arguments) {
         resumeRef: parsed.values.resume,
       });
     case 'delivery-full-test-run':
-      return runFullTest({
-        ...actor,
-        inputFile: parsed.values.input,
-        pnpmBin: parsed.values['pnpm-bin'],
-      });
+      return runFullTest(
+        {
+          ...actor,
+          inputFile: parsed.values.input,
+          pnpmBin: parsed.values['pnpm-bin'],
+        },
+        parsed.json ? {} : { onGroupProgress: groupProgressDisplay() },
+      );
     case 'delivery-full-test-status':
       return fullTestStatus({ ...target, runRef: parsed.values.run });
     case 'delivery-repair-start':
@@ -64,6 +73,7 @@ export async function dispatch(parsed: Arguments) {
         from: parsed.values.from,
         reason: parsed.values.reason,
         revisesRunRef: parsed.values.revises,
+        inputFile: parsed.values.input,
       });
     case 'delivery-repair-review':
       return startDeliveryReview({ ...actor, authorRunRef: parsed.values['author-run'] });

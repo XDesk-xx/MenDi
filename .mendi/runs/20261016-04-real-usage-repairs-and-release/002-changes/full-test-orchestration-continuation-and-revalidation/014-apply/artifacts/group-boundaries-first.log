@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+ok 1 - 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+  ---
+  duration_ms: 41179.4343
+  type: 'test'
+  ...
+# Subtest: E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+ok 2 - E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+  ---
+  duration_ms: 19287.6729
+  type: 'test'
+  ...
+# Subtest: 清理未知阻断共享后项，陌生端口实际占用不抢占
+ok 3 - 清理未知阻断共享后项，陌生端口实际占用不抢占
+  ---
+  duration_ms: 12810.5437
+  type: 'test'
+  ...
+# Subtest: 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+ok 4 - 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+  ---
+  duration_ms: 6642.2667
+  type: 'test'
+  ...
+# Subtest: 真实取消停止本次树，不从取消中的 prefix 认领通过
+ok 5 - 真实取消停止本次树，不从取消中的 prefix 认领通过
+  ---
+  duration_ms: 13133.1573
+  type: 'test'
+  ...
+# Subtest: 候选终态持久失败保留现场，不发布或回退旧 verified
+ok 6 - 候选终态持久失败保留现场，不发布或回退旧 verified
+  ---
+  duration_ms: 9305.0304
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 102816.1013

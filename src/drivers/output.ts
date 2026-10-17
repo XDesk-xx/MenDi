@@ -2,6 +2,26 @@ import type { Arguments } from './arguments.ts';
 import type { dispatch } from './dispatch.ts';
 import type { loadMethods } from '../adapters/methods.ts';
 
+export function groupProgressDisplay() {
+  const seen = new Set<string>();
+  return (value: unknown) => {
+    if (
+      !value ||
+      typeof value !== 'object' ||
+      !('group' in value) ||
+      typeof value.group !== 'string'
+    )
+      return;
+    const data = value as { group: string; event?: { type?: string; data?: { file?: unknown } } };
+    if (!seen.has(data.group)) {
+      seen.add(data.group);
+      console.error(`组进度：${data.group} 已观察目标活动；等待实际终态。`);
+    }
+    if (data.event?.type === 'test:summary' && data.event.data?.file === undefined)
+      console.error(`组进度：${data.group} 根汇总已到达；仍等待回执、真实结束与持久确认。`);
+  };
+}
+
 // 面向人的呈现不访问项目，也不执行推荐的下一步。
 export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Arguments) {
   console.log(
@@ -51,6 +71,21 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
   }
   if ('run' in result && result.run)
     console.log(`Action：${result.run.actionId}\nRun：${result.run.ref} (${result.run.status})`);
+  if ('groupExecution' in result && result.groupExecution) {
+    const f = result.groupExecution;
+    console.log(
+      `组尝试：protocolState:${f.protocolState}；原命令:${f.child?.outcome ?? 'not-run'}；候选:${f.candidate.id}；所属轮:${f.roundId}；当前实际进展:${f.current}`,
+    );
+    for (const g of f.progress) console.log(`${g.id}: ${g.state}；${g.reason}`);
+    console.log('选中范围通过不代表候选 verified；未测阶段及百分比 / ETA 不推算。');
+  }
+  if ('candidateVerification' in result && result.candidateVerification) {
+    const f = result.candidateVerification;
+    console.log(
+      `候选:${f.candidate.id}；保存结论:${f.conclusion}；所属轮:${f.roundId}；当前收口入口:${f.current}；材料适用性仍需阶段判断。`,
+    );
+    for (const gap of f.gaps) console.log(`缺口:${gap}`);
+  }
   if ('run' in result && result.run && 'lifecycle' in result.run && result.run.lifecycle) {
     const value = result.run.lifecycle;
     console.log(`生命周期：${value.operation}；本次持久事实。`);
@@ -94,7 +129,7 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     if (reservations.length)
       console.log(`不完整编号占位：${reservations.map((item) => item.ref).join(', ')}`);
   }
-  if ('next' in result) {
+  if ('next' in result && result.next) {
     console.log(`下一步：${String(result.next.action)}，来源：${result.next.source}`);
     if ('reason' in result.next) console.log(String(result.next.reason));
     if ('upstream' in result && result.upstream)

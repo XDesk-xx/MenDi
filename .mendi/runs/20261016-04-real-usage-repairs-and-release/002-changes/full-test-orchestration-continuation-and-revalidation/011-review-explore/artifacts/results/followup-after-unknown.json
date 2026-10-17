@@ -1,0 +1,19 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project",
+  "executionId": null,
+  "outcome": "not-run",
+  "observed": null,
+  "error": {
+    "message": "目标存在写入锁，操作可能正在进行或已中断。",
+    "code": "write-in-progress-or-interrupted",
+    "details": {
+      "lock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\.mendi\\write.lock"
+    }
+  }
+}

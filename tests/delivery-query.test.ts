@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -13,7 +14,6 @@ import {
 } from './delivery-support.ts';
 import { startDeliveryRepair, startDeliveryReview } from '../src/application/delivery-repair.ts';
 import { query, bindChange } from '../src/application/project.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { diagnoseWorkspace } from '../src/application/diagnosis.ts';
 import { loadMethods } from '../src/adapters/methods.ts';
 import { writePackage } from './test-support.ts';
@@ -81,16 +81,19 @@ test('结果与材料 / 当前配置匹配分开，缺当前 package 仍可解�
   writePackage(root, (p) => {
     p.description = '说明整理';
   });
-  assert.equal(fullTestStatus({ project: root, runRef: ref }).verification.commandMatch, 'match');
+  assert.equal(
+    legacyFullTestStatus({ project: root, runRef: ref }).verification.commandMatch,
+    'match',
+  );
   writePackage(root, (p) => {
     (p.scripts as Record<string, string>)['test:full'] = 'node foreground.ts fail';
   });
-  const changed = fullTestStatus({ project: root, runRef: ref });
+  const changed = legacyFullTestStatus({ project: root, runRef: ref });
   assert.equal(changed.verification.commandMatch, 'changed');
   assert.equal(changed.verification.outcome, 'passed');
   assert.equal((await formal(root)).ok, false);
   fs.unlinkSync(path.join(root, 'package.json'));
-  const unavailable = fullTestStatus({ project: root, runRef: ref });
+  const unavailable = legacyFullTestStatus({ project: root, runRef: ref });
   assert.equal(unavailable.ok, true);
   assert.equal(unavailable.verification.commandMatch, 'unavailable');
 });
@@ -110,7 +113,7 @@ test('当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界
     const file = path.join(root, required);
     const bytes = fs.readFileSync(file);
     fs.unlinkSync(file);
-    assert.throws(() => fullTestStatus({ project: root, runRef: ref }));
+    assert.throws(() => legacyFullTestStatus({ project: root, runRef: ref }));
     fs.writeFileSync(file, bytes);
   }
   const data = manifest(root);
@@ -160,7 +163,7 @@ test('顶层计划改写不是 Reopen，写前拒绝并保留正式历史；活�
     code: 'invalid-rounds',
   });
   fs.writeFileSync(path.join(root, '.mendi/delivery-groups/d01/manifest.json'), original);
-  const historical = fullTestStatus({ project: root, runRef: result.run!.ref });
+  const historical = legacyFullTestStatus({ project: root, runRef: result.run!.ref });
   assert.equal(historical.verification.scopeMatch, 'match');
   assert.equal(historical.verification.outcome, 'passed');
   assert.deepEqual(fs.readFileSync(path.join(root, result.run!.ref)), bytes);

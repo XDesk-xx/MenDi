@@ -61,6 +61,8 @@ export function testEnvironment(policy: 'error' | 'warn', source = process.env):
         'pnpm_config_verify_deps_before_run',
         // node:test 的内部上下文不能传给目标的独立测试运行。
         'node_test_context',
+        'mendi_group_test_request',
+        'mendi_group_test_report',
       ].includes(key.toLowerCase())
     )
       env[key] = value;

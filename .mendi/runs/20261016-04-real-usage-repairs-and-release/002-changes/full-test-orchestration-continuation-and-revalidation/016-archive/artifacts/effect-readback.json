@@ -1,0 +1,37 @@
+{
+  "native": {
+    "change": "full-test-orchestration-continuation-and-revalidation",
+    "archivedAs": "2026-10-17-full-test-orchestration-continuation-and-revalidation",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-17-full-test-orchestration-continuation-and-revalidation",
+    "specsUpdated": true,
+    "totals": {
+      "added": 11,
+      "modified": 14,
+      "removed": 0,
+      "renamed": 0
+    }
+  },
+  "archiveRef": "openspec/changes/archive/2026-10-17-012-full-test-orchestration-continuation-and-revalidation",
+  "specs": [
+    {
+      "capability": "delivery-lifecycle",
+      "deltaRequirements": 5,
+      "unchangedRequirements": 5,
+      "purposeAndTitlePreserved": true
+    },
+    {
+      "capability": "delivery-verification",
+      "deltaRequirements": 14,
+      "unchangedRequirements": 1,
+      "purposeAndTitlePreserved": true
+    },
+    {
+      "capability": "test-execution",
+      "deltaRequirements": 6,
+      "unchangedRequirements": 7,
+      "purposeAndTitlePreserved": true
+    }
+  ],
+  "unchangedChangeInputs": 7,
+  "authorAndReviewUnchanged": true
+}

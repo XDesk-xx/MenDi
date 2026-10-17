@@ -1,0 +1,115 @@
+{
+  "label": "fresh-whole",
+  "wallMs": 5215.91399999999,
+  "preLaunchMs": 2843.978600000002,
+  "launchedThroughTerminalMs": 2259.7658999999985,
+  "terminalThroughReturnMs": 112.16949999998906,
+  "groupsActuallyExecuted": [
+    "unit",
+    "integration",
+    "unit"
+  ],
+  "stages": [
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 2667.4602999999915
+    },
+    {
+      "phase": "prepared",
+      "elapsedMs": 2673.936300000001
+    },
+    {
+      "phase": "before-intent-commit",
+      "elapsedMs": 2680.2844999999943
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 2686.9351999999926
+    },
+    {
+      "phase": "before-pid-commit",
+      "elapsedMs": 2833.203899999993
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 2840.6054999999906
+    },
+    {
+      "phase": "after-launch",
+      "elapsedMs": 2843.978600000002
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4017.527799999996
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4234.1670999999915
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4355.872000000003
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4359.431899999996
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4374.649799999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4378.054600000003
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4565.757700000002
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4683.604999999996
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4687.206699999995
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4703.669699999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4707.169699999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4915.561499999996
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5035.202799999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5038.22189999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5056.100099999996
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5059.941099999996
+    },
+    {
+      "phase": "before-terminal-commit",
+      "elapsedMs": 5103.744500000001
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 5109.600200000001
+    }
+  ],
+  "limitation": "one bounded sample; spans include nested work, not independent additive task costs"
+}

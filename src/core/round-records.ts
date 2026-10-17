@@ -24,7 +24,8 @@ export function recordRound(
   record: DeliveryRunRecord,
 ): DeliveryRound | undefined {
   if (!workspace.rounds) return undefined;
-  const summary = record.lifecycle ?? record.fullTest ?? record.repair;
+  const summary =
+    record.lifecycle ?? record.fullTest ?? record.attempt ?? record.verification ?? record.repair;
   if (!summary) throw new MendiError('invalid-round-record', '记录没有可解释的轮次摘要。');
   const matching = workspace.rounds.filter((r) =>
     isDeepStrictEqual(comparableScope(r.scope), comparableScope(readScope(summary.scope))),

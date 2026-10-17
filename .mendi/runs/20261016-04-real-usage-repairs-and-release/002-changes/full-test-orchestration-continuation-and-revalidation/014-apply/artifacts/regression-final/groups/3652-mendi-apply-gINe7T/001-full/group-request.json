@@ -1,0 +1,70 @@
+{
+  "protocol": "mendi-group-tests/1",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-gINe7T\\project",
+  "deliveryId": "d01",
+  "roundId": "r001",
+  "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+  "executionId": "001-full",
+  "candidate": {
+    "id": "c1",
+    "basis": {
+      "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+      "changes": ""
+    }
+  },
+  "plan": {
+    "protocol": "mendi-group-tests/1",
+    "groups": [
+      {
+        "id": "prefix",
+        "title": "prefix",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "prefix.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      },
+      {
+        "id": "middle",
+        "title": "middle",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "middle.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      },
+      {
+        "id": "tail",
+        "title": "tail",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "tail.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      }
+    ]
+  },
+  "selection": [
+    "prefix",
+    "middle",
+    "tail"
+  ],
+  "prerequisites": [],
+  "reportRef": ".mendi/delivery-groups/d01/tests/001-full/group-report.json",
+  "eventsRef": ".mendi/delivery-groups/d01/tests/001-full/group-events.jsonl"
+}

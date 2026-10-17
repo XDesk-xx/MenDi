@@ -6,6 +6,8 @@ role: author
 
 # 正式 Delivery Full Test
 
+显式 groups-v1 遵循[组级协议](../../group-tests.md)；以下整次规则继续用于默认旧 command。新模式分别保存原命令、protocolState 和 typed 候选结论，选中范围通过不等于候选完整。
+
 先核对实际 Owner 授权、本轮全部完成槽位及直接 Apply / Review 批准。提供项目内声明 JSON：非空无重复 `collection`、`basis.materials` 和 `basis.changes`；有 Git 基准时填写真实完整 `basis.commit`，无基准省略。说明实际源码、测试、依赖、执行配置及差异，不以任意版本数或文件 hash 清单代替。
 
 使用目标已有 full 入口一次执行全部声明集合。调用者正常准备依赖，工具不自动安装。父 Run 保存 `scope:delivery`、完整范围与已核对批准快照、声明、实际入口和 prepared / running / finished 状态；子结果保持 `scope:command / formalDeliveryTest:false`。父 Run 保存 `executionId` 和实际 outcome，依赖 / 工具拒绝时为 not-run、子 ID 可为空，原始预检输出放当前 artifacts。普通 submit / continue 不能产生正式终态。

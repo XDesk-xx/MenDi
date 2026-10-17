@@ -1,0 +1,34 @@
+[
+  {
+    "key": "6.2",
+    "progress": {
+      "total": 28,
+      "complete": 23,
+      "remaining": 5
+    }
+  },
+  {
+    "key": "6.3",
+    "progress": {
+      "total": 28,
+      "complete": 24,
+      "remaining": 4
+    }
+  },
+  {
+    "key": "7.1",
+    "progress": {
+      "total": 28,
+      "complete": 25,
+      "remaining": 3
+    }
+  },
+  {
+    "key": "10.1",
+    "progress": {
+      "total": 28,
+      "complete": 26,
+      "remaining": 2
+    }
+  }
+]

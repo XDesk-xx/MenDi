@@ -1,0 +1,77 @@
+{
+  "label": "repaired-focused",
+  "wallMs": 8579.400999999998,
+  "preLaunchMs": 5884.076100000006,
+  "launchedThroughTerminalMs": 2672.0439999999944,
+  "terminalThroughReturnMs": 23.280899999997928,
+  "groupsActuallyExecuted": [
+    "integration"
+  ],
+  "stages": [
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 5535.014500000005
+    },
+    {
+      "phase": "prepared",
+      "elapsedMs": 5540.853799999997
+    },
+    {
+      "phase": "before-intent-commit",
+      "elapsedMs": 5618.391399999993
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 5629.254799999995
+    },
+    {
+      "phase": "before-pid-commit",
+      "elapsedMs": 5873.108999999997
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 5880.839500000002
+    },
+    {
+      "phase": "after-launch",
+      "elapsedMs": 5884.076100000006
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 7610.823499999999
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 8105.689400000003
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 8379.877699999997
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 8383.169299999994
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 8435.7169
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 8439.0818
+    },
+    {
+      "phase": "before-terminal-commit",
+      "elapsedMs": 8556.1201
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 8563.8073
+    },
+    {
+      "phase": "before-test-lock-release",
+      "elapsedMs": 8577.8275
+    }
+  ],
+  "limitation": "one bounded sample; spans include nested work, not independent additive task costs"
+}

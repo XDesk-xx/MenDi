@@ -15,6 +15,7 @@ import { errorInfo, identifier, MendiError, object, text } from '../core/errors.
 import { actionNext } from '../core/actions.ts';
 import { currentRun } from '../adapters/runs.ts';
 import { currentDeliveryRun } from '../adapters/delivery-runs.ts';
+import { inspectAttempt, inspectCandidate } from '../adapters/group-store.ts';
 import {
   inspectFullTest,
   assertBindingAfterVerification,
@@ -128,6 +129,25 @@ export function query(input: Selection, options: OperationOptions = {}) {
     };
   const delivery = currentDeliveryRun(root, workspace);
   if (delivery) {
+    if (delivery.record.attempt || delivery.record.verification) {
+      const groupExecution = delivery.record.attempt
+        ? inspectAttempt(root, workspace, delivery)
+        : undefined;
+      const candidateVerification = delivery.record.verification
+        ? inspectCandidate(root, workspace, delivery)
+        : undefined;
+      const stable = groupExecution?.stable ?? candidateVerification!.stable;
+      return {
+        ...base,
+        ok: stable,
+        local: state(workspace),
+        upstream: null,
+        run: { ref: delivery.ref, ...delivery.record },
+        ...(groupExecution ? { groupExecution } : {}),
+        ...(candidateVerification ? { candidateVerification } : {}),
+        next: deliveryNext(delivery.record, delivery.ref, stable ? undefined : 'unknown'),
+      };
+    }
     const verification = delivery.record.fullTest
       ? inspectFullTest(root, workspace, delivery)
       : undefined;

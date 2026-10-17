@@ -1,0 +1,16 @@
+{
+  "openspec": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-L5g9z6\\project",
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "范围或原完整集合变化，停 Owner。",
+    "code": "delivery-state-conflict",
+    "details": {}
+  },
+  "committedPaths": []
+}

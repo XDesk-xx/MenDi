@@ -23,11 +23,19 @@ import type { ExecutionProcessOptions } from '../adapters/test-process.ts';
 import { executionState, executeTestUnderLease } from './test-execution.ts';
 import { state } from './project.ts';
 import { executionWorkspace } from '../adapters/test-store.ts';
+import { runGroupAttempt } from './group-attempt.ts';
+import { inspectAttempt } from '../adapters/group-store.ts';
 
-import { admission, confirmInputs, type FullTestInput } from './full-test-admission.ts';
+import {
+  admission,
+  confirmInputs,
+  formalWorkspace,
+  type FullTestInput,
+} from './full-test-admission.ts';
 export type { FullTestInput } from './full-test-admission.ts';
 
 export interface FullTestOptions extends ExecutionProcessOptions {
+  onGroupProgress?: (event: unknown) => void;
   observeWrite?: WriteObserver;
   methodsRoot?: string;
 }
@@ -44,7 +52,17 @@ export async function runFullTest(input: FullTestInput, options: FullTestOptions
   const execution = executionState();
   let workspace: Workspace | undefined;
   try {
+    formalWorkspace(root, input, false);
+    const dispatchBytes = fs.readFileSync(managedPath(root, input.inputFile));
+    const raw = JSON.parse(dispatchBytes.toString());
+    if (raw?.mode !== undefined) {
+      if (raw.mode !== 'groups-v1')
+        throw new MendiError('invalid-group-input', '不支持的显式 mode。');
+      return await runGroupAttempt(input, options, dispatchBytes);
+    }
     const before = admission(root, input, false);
+    if (!before.inputBytes.equals(dispatchBytes))
+      throw new MendiError('delivery-input-changed', '分流期间正式输入变化。');
     const methods = loadMethods('delivery-full-test', [], options.methodsRoot);
     lease = acquireProjectLock(root, 'delivery-full-test');
     options.observeWrite?.('lock-acquired', lease.lock);
@@ -241,6 +259,19 @@ export function fullTestStatus(input: { project: string; runRef: string }) {
   if (!workspace || workspace.mode !== 'product')
     throw new MendiError('invalid-run', '需要当前 product Delivery。');
   const run = readDeliveryRun(root, input.runRef, workspace.id);
+  if (run.record.attempt) {
+    const groupExecution = inspectAttempt(root, workspace, run);
+    return {
+      ...local,
+      ok: groupExecution.stable,
+      operation: 'delivery-full-test-status',
+      projectRoot: root,
+      local: state(workspace),
+      run: { ref: run.ref, ...run.record },
+      groupExecution,
+      next: deliveryNext(run.record, run.ref, groupExecution.stable ? undefined : 'unknown'),
+    };
+  }
   const verification = inspectFullTest(root, workspace, run);
   return {
     ...local,

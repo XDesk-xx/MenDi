@@ -1,3 +1,4 @@
+import { legacyFullTestStatus as fullTestStatus } from '../tests/delivery-support.ts';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,7 +11,6 @@ import {
 } from '../tests/lifecycle-support.ts';
 import { sandbox, repository } from '../tests/helpers.ts';
 import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { bindChange } from '../src/application/project.ts';
 import { startAction } from '../src/application/actions.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';

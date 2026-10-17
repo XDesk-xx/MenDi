@@ -3,6 +3,8 @@ import { readScope, bindingFor, type Scope } from './records.ts';
 import { parseFullTest } from './full-test-record.ts';
 import { deliveryLocation } from './delivery-runs.ts';
 import type { FullTest } from './delivery-verification.ts';
+import { parseCandidateVerification, type CandidateVerification } from './group-records.ts';
+import { comparableScope } from './round-records.ts';
 
 export type LifecycleType = 'delivery-open' | 'delivery-close' | 'delivery-reopen';
 export interface Applicability {
@@ -18,7 +20,8 @@ export interface Lifecycle {
   scope: Scope;
   priorCloseRef?: string;
   fullTestRunRef?: string;
-  acceptance?: FullTest;
+  verificationRunRef?: string;
+  acceptance?: FullTest | CandidateVerification;
   applicability?: Applicability;
   reason?: string;
   title?: string;
@@ -75,6 +78,31 @@ export function parseLifecycle(
   if (operation === 'delivery-reopen' || (operation === 'delivery-open' && source !== null))
     text(value.priorCloseRef, '直接 Close');
   if (operation === 'delivery-close') {
+    if ((value.fullTestRunRef === undefined) === (value.verificationRunRef === undefined))
+      throw new MendiError('invalid-run', 'Close 必须恰选一个验收入口。');
+    if (value.verificationRunRef !== undefined) {
+      const ref = text(value.verificationRunRef, '候选入口');
+      const prior = deliveryLocation(ref, id);
+      const accepted = parseCandidateVerification(value.acceptance, id, prior.number);
+      if (
+        prior.type !== 'delivery-verification' ||
+        prior.number >= number ||
+        accepted.conclusion !== 'verified' ||
+        JSON.stringify(comparableScope(readScope(accepted.scope))) !==
+          JSON.stringify(comparableScope(scope))
+      )
+        throw new MendiError('invalid-run', '候选 Close 快照与范围 / 入口不一致。');
+      return {
+        ...round,
+        operation,
+        sourceDeliveryId: source,
+        scope,
+        recordedOn,
+        verificationRunRef: ref,
+        acceptance: accepted,
+        applicability: applicability(value.applicability),
+      };
+    }
     const prior = deliveryLocation(text(value.fullTestRunRef, '正式入口'), id);
     if (prior.type !== 'delivery-full-test' || prior.number >= number)
       throw new MendiError('invalid-run', '正式入口身份不一致。');

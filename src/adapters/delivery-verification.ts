@@ -4,6 +4,7 @@ import { readRun } from './runs.ts';
 import { readDeliveryRun, currentDeliveryRun, type DeliveryDocument } from './delivery-runs.ts';
 import { readExecution, observeExecution, executionWorkspace } from './test-store.ts';
 import { selectedTest } from './test-entries.ts';
+import { currentGroupProgress, inspectAttempt } from './group-store.ts';
 import { MendiError } from '../core/errors.ts';
 import {
   verificationScope,
@@ -156,6 +157,27 @@ export function inspectFullTest(
   };
 }
 export function currentFailure(root: string, workspace: Workspace, ref: string, ownLock = false) {
+  if (workspace.manifest.testAttemptRunRef !== undefined) {
+    const { run: latest, facts } = currentGroupProgress(root, workspace, ownLock);
+    const source = readDeliveryRun(root, ref, workspace.id);
+    requireCurrentRound(workspace, source.record);
+    const observed = inspectAttempt(root, workspace, source, ownLock);
+    if (
+      !source.record.attempt ||
+      !observed.stable ||
+      observed.protocolState === 'unconfirmed' ||
+      !same(source.record.attempt.plan, latest.record.attempt!.plan) ||
+      !same(source.record.attempt.scope, latest.record.attempt!.scope) ||
+      !(
+        latest.record.attempt!.progress.some(
+          (p) => p.sourceRunRef === ref && p.state === 'failed',
+        ) ||
+        (latest.ref === ref && facts.protocolState === 'invalid')
+      )
+    )
+      throw new MendiError('delivery-state-conflict', '来源不是当前未解决的直接组失败。');
+    return source;
+  }
   if (workspace.manifest.fullTestRunRef !== ref)
     throw new MendiError('run-not-current', '修复必须固定最近正式失败。');
   const run = readDeliveryRun(root, ref, workspace.id);
@@ -163,6 +185,12 @@ export function currentFailure(root: string, workspace: Workspace, ref: string, 
   if (!facts.stable || facts.outcome !== 'failed' || facts.scopeMatch !== 'match')
     throw new MendiError('delivery-state-conflict', '需要本轮一致且完整的正式 failed。');
   return run;
+}
+export function failureSummary(run: DeliveryDocument) {
+  if (run.record.fullTest) return run.record.fullTest;
+  if (run.record.attempt)
+    return { ...run.record.attempt, collection: run.record.attempt.plan.groups.map((g) => g.id) };
+  throw new MendiError('invalid-run', '缺正式失败摘要。');
 }
 export function repairAuthor(root: string, workspace: Workspace, ref: string, actor?: string) {
   const author = readDeliveryRun(root, ref, workspace.id);
@@ -195,8 +223,8 @@ export function reviewRepairInputs(
   );
   if (
     !same(comparableRepair(author.record.repair), comparableRepair(review.record.repair)) ||
-    !same(author.record.repair!.scope, failure.record.fullTest!.scope) ||
-    !same(author.record.repair!.collection, failure.record.fullTest!.collection)
+    !same(author.record.repair!.scope, failureSummary(failure).scope) ||
+    !same(author.record.repair!.collection, failureSummary(failure).collection)
   )
     throw new MendiError('review-input-invalid', '审核固定对象、失败范围或集合矛盾。');
   return { author, failure };

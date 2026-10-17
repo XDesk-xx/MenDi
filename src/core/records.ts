@@ -116,11 +116,23 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
           'delivery-migrate')
     )
       throw new MendiError('invalid-record', 'migrationRunRef 必须是新格式的独立迁移收据。');
-    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef']) {
+    for (const key of [
+      'deliveryRunRef',
+      'fullTestRunRef',
+      'testAttemptRunRef',
+      'verificationRunRef',
+      'closeRunRef',
+      'openRunRef',
+    ]) {
       if (manifest[key] !== undefined) {
         const location = deliveryLocation(text(manifest[key], key), index.id);
         if (key === 'fullTestRunRef' && location.type !== 'delivery-full-test')
           throw new MendiError('invalid-record', 'fullTestRunRef 必须指向正式测试。');
+        if (
+          (key === 'testAttemptRunRef' && location.type !== 'delivery-test-attempt') ||
+          (key === 'verificationRunRef' && location.type !== 'delivery-verification')
+        )
+          throw new MendiError('invalid-record', '组模式指针类型不符。');
         if (
           (key === 'closeRunRef' && location.type !== 'delivery-close') ||
           (key === 'openRunRef' && location.type !== 'delivery-open')
@@ -135,9 +147,17 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
     if (manifest.deliveryRunRef !== undefined && activeChangeId)
       throw new MendiError('invalid-record', '当前 Delivery 操作与活动 Change / 状态冲突。');
     if (
+      (currentType === 'delivery-test-attempt' &&
+        manifest.testAttemptRunRef !== manifest.deliveryRunRef) ||
+      (currentType === 'delivery-verification' &&
+        manifest.verificationRunRef !== manifest.deliveryRunRef)
+    )
+      throw new MendiError('invalid-record', '当前组模式与实际指针矛盾。');
+    if (
       currentType &&
       !['delivery-open', 'delivery-reopen'].includes(currentType) &&
-      manifest.fullTestRunRef === undefined
+      manifest.fullTestRunRef === undefined &&
+      manifest.testAttemptRunRef === undefined
     )
       throw new MendiError('invalid-record', 'Delivery 操作缺少最近正式测试入口。');
     if (

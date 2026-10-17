@@ -1,0 +1,5 @@
+{
+  "extends": "../../../../../../../tsconfig.scripts.json",
+  "include": ["adversarial.ts", "event-worker.ts", "fixtures/*.ts"],
+  "exclude": []
+}

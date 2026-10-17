@@ -1,0 +1,44 @@
+TAP version 13
+# Subtest: consumer accepts archived completion and rejects a wrong contract
+ok 1 - consumer accepts archived completion and rejects a wrong contract
+  ---
+  duration_ms: 3.5985
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 295.7374
+TAP version 13
+# Subtest: producer and consumer share the archived completion contract
+not ok 1 - producer and consumer share the archived completion contract
+  ---
+  duration_ms: 2.7733
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-N7WY8u\\project\\checks\\integration.test.ts:7:1'
+  failureType: 'testCodeFailure'
+  error: 'expected archived completion'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    consumeCompletion (file:///D:/Projects/MenDi/.tmp/mendi-apply-N7WY8u/project/checks/consumer.ts:2:49)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/.tmp/mendi-apply-N7WY8u/project/checks/integration.test.ts:9:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 311.0775
+[ELIFECYCLE] Command failed with exit code 1.

@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -7,7 +8,6 @@ import { readWorkspace } from '../src/adapters/workspace.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
 import { renderRun, scanRunNumbers } from '../src/adapters/runs.ts';
 import { MendiError } from '../src/core/errors.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 import { query } from '../src/application/project.ts';
 import { passedTarget, writeJson, queryCli, lifecycleCli } from './lifecycle-support.ts';
 import { options } from './action-support.ts';
@@ -33,17 +33,20 @@ test('Close 只消费当前事实与直接日志；历史正文、说明与未�
   const closedBytes = fs.readFileSync(path.join(root, readWorkspace(root)!.manifestRef));
   assert.equal(queryCli(root).upstream, null);
   assert.equal(lifecycleCli(root, 'close', ['--resume', result.run.ref]).alreadyCompleted, true);
-  const child = fullTestStatus({ project: root, runRef: full.ref }).verification.child!;
+  const child = legacyFullTestStatus({ project: root, runRef: full.ref }).verification.child!;
   const logBytes = fs.readFileSync(path.join(root, child.stdoutRef));
   fs.unlinkSync(path.join(root, child.stdoutRef));
   assert.equal(queryCli(root).local.state, 'closed');
-  assert.throws(() => fullTestStatus({ project: root, runRef: full.ref }));
+  assert.throws(() => legacyFullTestStatus({ project: root, runRef: full.ref }));
   assert.ok(fs.readFileSync(path.join(root, '.mendi/project.json')).equals(indexBytes));
   assert.ok(fs.readFileSync(path.join(root, readWorkspace(root)!.manifestRef)).equals(closedBytes));
   fs.unlinkSync(path.join(root, result.run.ref));
   assert.throws(() => query({ project: root }, options));
   fs.writeFileSync(path.join(root, child.stdoutRef), logBytes);
-  assert.equal(fullTestStatus({ project: root, runRef: full.ref }).verification.outcome, 'passed');
+  assert.equal(
+    legacyFullTestStatus({ project: root, runRef: full.ref }).verification.outcome,
+    'passed',
+  );
 });
 test('必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝', async () => {
   const { root, passed, input } = await passedTarget();
@@ -114,7 +117,7 @@ test('必要适用性输入、当前指针、快照、命令与日志错误都�
   writeJson(root, 'package.json', data);
   reject();
   fs.writeFileSync(pkgFile, pkg);
-  const child = fullTestStatus({ project: root, runRef: full.ref }).verification.child!;
+  const child = legacyFullTestStatus({ project: root, runRef: full.ref }).verification.child!;
   const log = path.join(root, child.stderrRef);
   const bytes = fs.readFileSync(log);
   fs.unlinkSync(log);
