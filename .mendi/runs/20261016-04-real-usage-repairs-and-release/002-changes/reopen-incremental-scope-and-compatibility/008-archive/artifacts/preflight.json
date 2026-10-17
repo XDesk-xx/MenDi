@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-17",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "role": "author",
+  "recordingMode": "manual-bootstrap",
+  "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+  "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/run.md",
+  "list": {
+    "changes": [
+      {
+        "name": "reopen-incremental-scope-and-compatibility",
+        "completedTasks": 27,
+        "totalTasks": 27,
+        "lastModified": "2026-10-16T17:41:21.549Z",
+        "status": "complete"
+      }
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "status": {
+    "changeName": "reopen-incremental-scope-and-compatibility",
+    "schemaName": "spec-driven",
+    "planningHome": {
+      "kind": "repo",
+      "root": "D:\\Projects\\MenDi",
+      "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+      "defaultSchema": "spec-driven"
+    },
+    "changeRoot": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility",
+    "artifactPaths": {
+      "proposal": {
+        "outputPath": "proposal.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\proposal.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\proposal.md"
+        ]
+      },
+      "specs": {
+        "outputPath": "specs/**/*.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\**\\*.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-lifecycle\\spec.md",
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-verification\\spec.md",
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-workspace\\spec.md"
+        ]
+      },
+      "design": {
+        "outputPath": "design.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\design.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\design.md"
+        ]
+      },
+      "tasks": {
+        "outputPath": "tasks.md",
+        "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+        "existingOutputPaths": [
+          "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md"
+        ]
+      }
+    },
+    "isPlanningComplete": true,
+    "isComplete": true,
+    "applyRequires": [
+      "tasks"
+    ],
+    "nextSteps": [
+      "All planning artifacts are complete. Run openspec instructions apply --change \"reopen-incremental-scope-and-compatibility\" --json to inspect implementation progress."
+    ],
+    "actionContext": {
+      "mode": "repo-local",
+      "sourceOfTruth": "repo",
+      "planningArtifacts": [
+        "proposal",
+        "specs",
+        "design",
+        "tasks"
+      ],
+      "linkedContext": [],
+      "allowedEditRoots": [
+        "D:\\Projects\\MenDi"
+      ],
+      "requiresAffectedAreaSelection": false,
+      "constraints": [
+        "Repo-local change artifacts and implementation edits are scoped to this project."
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "proposal",
+        "outputPath": "proposal.md",
+        "status": "done",
+        "requires": []
+      },
+      {
+        "id": "specs",
+        "outputPath": "specs/**/*.md",
+        "status": "done",
+        "requires": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "design",
+        "outputPath": "design.md",
+        "status": "done",
+        "requires": [
+          "proposal"
+        ]
+      },
+      {
+        "id": "tasks",
+        "outputPath": "tasks.md",
+        "status": "done",
+        "requires": [
+          "specs",
+          "design"
+        ]
+      }
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "instructions": {
+    "changeName": "reopen-incremental-scope-and-compatibility",
+    "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04 范围 checkpoint 为 982159b；当前 MVP-D04-A reopen-incremental-scope-and-compatibility 的 006 Author Apply 已由 007 独立审核批准，独立工程检查与 49 项定向回归通过。006 完成 27/27 项、根行为测试 250/250；当前停 archive / author / awaiting-instruction，尚未归档，B / C 未激活。\n方案支持完整 open / closed 与活动 Change / draft 迁移，同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，累计成功归档 10；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。\n",
+    "operationGuidance": [
+      "核对当前批准与实际归档效果，保留简短收口说明。",
+      "不自动执行 Git、下一 Change 或 Delivery Full Test。"
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "specRules": {
+    "changeName": "reopen-incremental-scope-and-compatibility",
+    "artifactId": "specs",
+    "schemaName": "spec-driven",
+    "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility",
+    "planningHome": {
+      "kind": "repo",
+      "root": "D:\\Projects\\MenDi",
+      "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+      "defaultSchema": "spec-driven"
+    },
+    "outputPath": "specs/**/*.md",
+    "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\**\\*.md",
+    "existingOutputPaths": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-lifecycle\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-verification\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-workspace\\spec.md"
+    ],
+    "description": "Detailed specifications for the change",
+    "instruction": "Create specification files that define WHAT the system should do.\n\nA spec is a behavior contract, not an implementation plan.\n\nGood spec content:\n- Observable behavior users or downstream systems rely on\n- Inputs, outputs, and error conditions\n- External constraints (security, privacy, reliability, compatibility)\n- Scenarios that can be tested or explicitly validated\n\nAvoid in specs:\n- Internal class/function names\n- Library or framework choices\n- Step-by-step implementation details\n- Detailed execution plans (those belong in design.md or tasks.md)\n\nQuick test: if the implementation can change without changing externally\nvisible behavior, it likely does not belong in the spec.\n\nCreate one spec file per capability listed in the proposal's Capabilities section.\n`<capability-path>` is the spec directory relative to `specs/` (for example,\n`user-auth` or `identity/user-auth`). Preserve the full path:\n- New capabilities: use the exact path from the proposal at `specs/<capability-path>/spec.md`. Any path segment newly introduced in the proposal must be kebab-case. Follow the project's existing organization; do not add a new domain level when the project uses a flat layout.\n- Modified capabilities: use the exact existing path from `openspec/specs/<capability-path>/` when creating the delta at `specs/<capability-path>/spec.md`. Run `openspec list --specs` to confirm that path before writing the delta, appending `--store \"<id>\"` only for a registered standalone store - a mistyped or invented path targets a capability that does not exist rather than the one you meant. Do not move or rename the capability.\n\nWrite the spec files one at a time, so the user sees progress and an\ninterrupted run keeps the files it already wrote:\n- Before writing anything, compare the capabilities the proposal lists\n  with the `specs/<capability-path>/spec.md` files that already exist,\n  and start with the first capability that has no file. Do not rewrite\n  an existing file unless the user asks you to.\n- Before each file, say in one line which capability you are writing.\n- Write each file as soon as you have drafted it. Do not plan every file\n  before writing the first.\n- Stop when every capability the proposal lists has its file.\n\nThere must be at least one spec file unless the change's `.openspec.yaml`\nsets `skip_specs: true` (no spec-level behavior change) - `openspec validate`\nrejects a zero-delta change without that marker. If the proposal lists no\ncapabilities and `skip_specs` is not set, revisit the proposal first.\n\nDelta operations (use ## headers):\n- **ADDED Requirements**: New capabilities\n- **MODIFIED Requirements**: Changed behavior - MUST include full updated content\n- **REMOVED Requirements**: Deprecated features - MUST include **Reason** and **Migration**\n- **RENAMED Requirements**: Name changes only - use FROM:/TO: format\n\nFormat requirements:\n- Each requirement: `### Requirement: <name>` followed by description\n- Use SHALL/MUST for normative requirements (avoid should/may)\n- Each scenario: `#### Scenario: <name>` with WHEN/THEN format\n- **CRITICAL**: Scenarios MUST use exactly 4 hashtags (`####`). Using 3 hashtags or bullets will fail silently.\n- Every requirement MUST have at least one scenario.\n- Keep each requirement's description (the text between `### Requirement:` and its first scenario) to 500 characters or fewer. `openspec validate` flags longer descriptions in ADDED requirements and in the main spec. This is a warning: normal validation still passes, but `openspec validate --strict` fails on it. When writing a new requirement, state one behavior per requirement: move examples and edge cases into scenarios, and split a requirement that covers several behaviors into separate `### Requirement:` blocks, each with its own scenarios. Under MODIFIED, keep the existing requirement block whole; never split, trim or rewrite existing text just to meet the length. Split an existing long requirement only when the user asks for it, in a change made for that purpose: under MODIFIED, keep its header and every scenario and cut its description down to one behavior without changing its meaning, then add each behavior you removed as its own ADDED requirement with its own scenarios.\n\nNew capabilities only: the delta spec's first section is `## Purpose` -\none or two sentences (50+ characters, or `openspec validate --strict`\nreports it as too brief) describing what the capability is for. Archive\ncopies it into the main spec it creates; without it the new main spec is\nleft with a `TBD ... Update Purpose after archive` placeholder to fill in\nby hand. Do NOT add `## Purpose` to a delta for an existing capability -\nthat spec already has one and the delta's is ignored. To change an\nexisting capability's Purpose - including a leftover `TBD` placeholder -\nedit `<planningHome.root>/openspec/specs/<capability-path>/spec.md`\ndirectly. `planningHome.root` comes from the `openspec instructions ...\n--json` response. Always use it rather than a repo-relative path: it\nresolves to the store whenever the change lives in one - whether that\ncame from `--store`, a project `store:` pointer, or a global default\nstore - and to the current repository otherwise. Do not try to work out\nwhich case applies; the field already has.\n\nMODIFIED requirements workflow:\n1. Locate the existing requirement in `<planningHome.root>/openspec/specs/<capability-path>/spec.md` (the same store-aware root as above)\n2. Copy the ENTIRE requirement block (from `### Requirement:` through all scenarios)\n3. Paste under `## MODIFIED Requirements` and edit to reflect new behavior\n4. Ensure header text matches exactly (whitespace-insensitive)\n\nCommon pitfall: Using MODIFIED with partial content loses detail at archive time.\nIf adding new concerns without changing existing behavior, use ADDED instead.\n\nExample (a new capability, so its first section is `## Purpose`):\n```\n# Spec Delta\n\n## Purpose\n\nLets users take their data out of the product in a portable format.\n\n## ADDED Requirements\n\n### Requirement: User can export data\nThe system SHALL allow users to export their data in CSV format.\n\n#### Scenario: Successful export\n- **WHEN** user clicks \"Export\" button\n- **THEN** system downloads a CSV file with all user data\n\n## REMOVED Requirements\n\n### Requirement: Legacy export\n**Reason**: Replaced by new export system\n**Migration**: Use new export endpoint at /api/v2/export\n```\n\nSpecs should be testable - each scenario is a potential test case.\n",
+    "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04 范围 checkpoint 为 982159b；当前 MVP-D04-A reopen-incremental-scope-and-compatibility 的 006 Author Apply 已由 007 独立审核批准，独立工程检查与 49 项定向回归通过。006 完成 27/27 项、根行为测试 250/250；当前停 archive / author / awaiting-instruction，尚未归档，B / C 未激活。\n方案支持完整 open / closed 与活动 Change / draft 迁移，同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，累计成功归档 10；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。",
+    "template": "# Spec Delta\n\n## Purpose\n<!-- New capabilities only: one or two sentences (50+ characters) on what this capability is for. Delete this section for an existing capability. -->\n\n## ADDED Requirements\n\n### Requirement: <!-- requirement name -->\n<!-- requirement text -->\n\n#### Scenario: <!-- scenario name -->\n- **WHEN** <!-- condition -->\n- **THEN** <!-- expected outcome -->\n",
+    "dependencies": [
+      {
+        "id": "proposal",
+        "done": true,
+        "path": "proposal.md",
+        "description": "Initial proposal document outlining the change"
+      }
+    ],
+    "unlocks": [
+      "tasks"
+    ],
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "strict": {
+    "items": [
+      {
+        "id": "reopen-incremental-scope-and-compatibility",
+        "type": "change",
+        "valid": true,
+        "issues": [],
+        "durationMs": 93
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "change": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "archiveOrdinal": 11,
+  "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+  "specs": [
+    {
+      "capability": "delivery-lifecycle",
+      "ref": "openspec/specs/delivery-lifecycle/spec.md",
+      "operations": [
+        {
+          "type": "modified",
+          "name": "Explicit applicable delivery close"
+        },
+        {
+          "type": "modified",
+          "name": "Explicit reopen with a fresh work scope"
+        },
+        {
+          "type": "modified",
+          "name": "Durable lifecycle progress and closed queries"
+        },
+        {
+          "type": "modified",
+          "name": "Bounded explicit lifecycle resume"
+        },
+        {
+          "type": "modified",
+          "name": "Lifecycle authority and manual history preservation"
+        },
+        {
+          "type": "added",
+          "name": "Read-only migration preview"
+        },
+        {
+          "type": "added",
+          "name": "Truthful legacy baseline reconstruction"
+        },
+        {
+          "type": "added",
+          "name": "Authorized migration preserves work and history"
+        }
+      ]
+    },
+    {
+      "capability": "delivery-verification",
+      "ref": "openspec/specs/delivery-verification/spec.md",
+      "operations": [
+        {
+          "type": "modified",
+          "name": "Explicit formal delivery test admission"
+        },
+        {
+          "type": "modified",
+          "name": "Direct result readback and bounded applicability"
+        },
+        {
+          "type": "modified",
+          "name": "First fresh acceptance after lifecycle work"
+        },
+        {
+          "type": "added",
+          "name": "Round bound verification and repair"
+        },
+        {
+          "type": "added",
+          "name": "Direct delivered baseline facts in acceptance"
+        }
+      ]
+    },
+    {
+      "capability": "delivery-workspace",
+      "ref": "openspec/specs/delivery-workspace/spec.md",
+      "operations": [
+        {
+          "type": "modified",
+          "name": "First delivery open"
+        },
+        {
+          "type": "modified",
+          "name": "Existing state is preserved"
+        },
+        {
+          "type": "modified",
+          "name": "Read-only status and next"
+        },
+        {
+          "type": "modified",
+          "name": "Ordered product associations and shared batch identity"
+        },
+        {
+          "type": "added",
+          "name": "Authoritative delivery rounds"
+        },
+        {
+          "type": "added",
+          "name": "Legacy read compatibility and explicit write migration"
+        },
+        {
+          "type": "added",
+          "name": "Structured delivered baseline dependencies"
+        }
+      ]
+    }
+  ],
+  "syncPolicy": "native archive once; no separate sync",
+  "stopBoundary": "change-checkpoint"
+}

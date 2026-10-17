@@ -1,6 +1,7 @@
 import { MendiError, text } from './errors.ts';
 import { parseProject, parseWorkspace, bindingFor, type Workspace } from './records.ts';
 import type { DeliveryRunRecord } from './delivery-runs.ts';
+import { initialRound, projectProgress, projectRound } from './rounds.ts';
 
 export interface LifecycleBefore {
   project: string | null;
@@ -40,6 +41,7 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
   let project: Record<string, unknown>;
   let manifest: Record<string, unknown>;
   if (value.operation === 'delivery-open') {
+    if (value.roundId !== 'r001') throw new MendiError('invalid-rounds', '新 Open 必须属于 r001。');
     if (
       before &&
       (before.state !== 'closed' ||
@@ -54,7 +56,7 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
           deliveries: [...(before.project.deliveries as unknown[]), { id, manifestRef: ref }],
         }
       : {
-          formatVersion: 1,
+          formatVersion: 2,
           recordingMode: 'product',
           name: run.header.projectName,
           deliveryGroupsDir: '.mendi/delivery-groups',
@@ -64,26 +66,31 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
     const binding = value.initialBinding
       ? bindingFor(value.scope, value.initialBinding.planningSlot, value.initialBinding.changeId)
       : null;
-    manifest = {
-      formatVersion: 1,
-      recordingMode: 'product',
-      id,
-      title: value.title,
-      state: 'open',
-      openedOn: value.recordedOn,
-      ...value.scope,
-      activeChangeId: binding?.changeId ?? null,
-      changeBindings: binding ? [binding] : [],
-      changeBatches: [],
-      currentBatchId: null,
-      openRunRef: run.ref,
-      ...(binding ? {} : { deliveryRunRef: run.ref }),
-    };
+    manifest = initialRound(
+      {
+        formatVersion: 2,
+        recordingMode: 'product',
+        id,
+        title: value.title,
+        state: 'open',
+        openedOn: value.recordedOn,
+        ...value.scope,
+        activeChangeId: binding?.changeId ?? null,
+        changeBindings: binding ? [binding] : [],
+        changeBatches: [],
+        currentBatchId: null,
+        openRunRef: run.ref,
+        ...(binding ? {} : { deliveryRunRef: run.ref }),
+      },
+      run.ref,
+    );
   } else {
     if (!before || before.id !== id)
       throw new MendiError('invalid-lifecycle-basis', '当前 Delivery 不一致。');
     project = { ...before.project };
     if (value.operation === 'delivery-close') {
+      if (value.roundId !== before.currentRoundId)
+        throw new MendiError('invalid-rounds', 'Close 轮次不符。');
       if (
         before.state !== 'open' ||
         before.activeChangeId ||
@@ -91,13 +98,13 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
         before.manifest.fullTestRunRef !== value.fullTestRunRef
       )
         throw new MendiError('invalid-lifecycle-basis', 'Close 原入口不一致。');
-      manifest = {
+      manifest = projectProgress(before, {
         ...before.manifest,
         state: 'closed',
         closedOn: value.recordedOn,
         deliveryRunRef: run.ref,
         closeRunRef: run.ref,
-      };
+      });
     } else {
       if (
         before.state !== 'closed' ||
@@ -107,15 +114,28 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
         )
       )
         throw new MendiError('invalid-lifecycle-basis', 'Reopen 原收口或新槽位不一致。');
-      manifest = {
-        ...before.manifest,
-        ...value.scope,
-        state: 'open',
-        reopenedOn: value.recordedOn,
-        currentBatchId: null,
-        activeChangeId: null,
-        deliveryRunRef: run.ref,
-      };
+      if (!before.rounds)
+        throw new MendiError('legacy-product-read-only', '旧 product 写入须先显式迁移。');
+      const roundId = `r${String(before.rounds.length + 1).padStart(3, '0')}`;
+      if (value.roundId !== roundId)
+        throw new MendiError('invalid-rounds', 'Reopen 目标轮次不符。');
+      manifest = projectRound(
+        { ...before.manifest, activeChangeId: null },
+        [
+          ...before.rounds,
+          {
+            id: roundId,
+            origin: { kind: 'reopen', runRef: run.ref },
+            scope: value.scope,
+            state: 'open',
+            openedOn: value.recordedOn,
+            reason: value.reason,
+            currentBatchId: null,
+            deliveryRunRef: run.ref,
+          },
+        ],
+        roundId,
+      );
     }
   }
   delete project.pendingDeliveryRunRef;

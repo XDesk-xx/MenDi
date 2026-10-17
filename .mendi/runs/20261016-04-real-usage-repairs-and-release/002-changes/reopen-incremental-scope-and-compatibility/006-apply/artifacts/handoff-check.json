@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-16T17:41:46.634Z",
+  "candidate": {
+    "source": "manual-bootstrap",
+    "next": {
+      "action": "review-apply",
+      "status": "awaiting-review",
+      "role": "reviewer",
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+      "reason": "006 Author 已完成实施与验证，等待独立 Review Apply。",
+      "source": "manual-bootstrap",
+      "executable": false
+    }
+  },
+  "stable": {
+    "source": "manual-bootstrap",
+    "next": {
+      "action": "review-apply",
+      "status": "awaiting-review",
+      "role": "reviewer",
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+      "reason": "006 Author 已完成实施与验证，等待独立 Review Apply。",
+      "source": "manual-bootstrap",
+      "executable": false
+    }
+  },
+  "strictValid": true,
+  "gitDiffCheck": "passed",
+  "protectedDiff": "",
+  "rootLockPresent": false,
+  "branch": "delivery/20261016-04-real-usage-repairs-and-release",
+  "head": "982159b42d7b6ce88dea0ebf178e13d75514adae",
+  "actualSessionRole": "author",
+  "rootArchive": false,
+  "rootFormalFullTest": false,
+  "rootClose": false,
+  "gitWrite": false,
+  "push": false,
+  "stableInstallSwitch": false
+}

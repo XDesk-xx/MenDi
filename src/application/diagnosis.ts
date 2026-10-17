@@ -117,7 +117,8 @@ export function diagnoseWorkspace(
       track(ref);
       temporaryPaths(ref);
       track(`.mendi/delivery-groups/${id}/manifest.json`);
-      for (const name of ['input', 'before-project', 'before-manifest'])
+      const migration = deliveryLocation(ref, id).type === 'delivery-migrate';
+      for (const name of migration ? ['intent'] : ['input', 'before-project', 'before-manifest'])
         track(ref.replace(/run\.md$/, `artifacts/${name}.json`));
       return readDeliveryRun(root, ref, id);
     });
@@ -136,7 +137,7 @@ export function diagnoseWorkspace(
     if (input.runRef !== undefined)
       reservation = attempt(() => {
         if (
-          /^\.mendi\/runs\/[^/]+\/\d{3,}-(?:delivery-open|delivery-close|delivery-reopen|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.test(
+          /^\.mendi\/runs\/[^/]+\/\d{3,}-(?:delivery-open|delivery-close|delivery-reopen|delivery-migrate|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.test(
             input.runRef!,
           )
         ) {
@@ -145,6 +146,7 @@ export function diagnoseWorkspace(
           track(input.runRef!);
           temporaryPaths(input.runRef!);
           const run = readDeliveryRun(root, input.runRef!, owner);
+          if (run.record.migration) track(run.record.migration.planRef);
           if (
             owner !== workspace.id &&
             !(
@@ -165,7 +167,9 @@ export function diagnoseWorkspace(
       });
   } else if (
     input.runRef !== undefined &&
-    /^\.mendi\/runs\/[^/]+\/\d{3,}-delivery-(open|close|reopen)\/run\.md$/.test(input.runRef)
+    /^\.mendi\/runs\/[^/]+\/\d{3,}-delivery-(open|close|reopen|migrate)\/run\.md$/.test(
+      input.runRef,
+    )
   ) {
     reservation = attempt(() => {
       const ref = input.runRef!;
@@ -184,7 +188,9 @@ export function diagnoseWorkspace(
         )
       )
         throw new MendiError('run-not-current', '该占号不是已登记 pending 或无入口的首次 Open。');
-      for (const name of ['input', 'before-project', 'before-manifest'])
+      for (const name of run.record.migration
+        ? ['intent']
+        : ['input', 'before-project', 'before-manifest'])
         track(ref.replace(/run\.md$/, `artifacts/${name}.json`));
       return run;
     });

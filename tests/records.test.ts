@@ -108,7 +108,7 @@ test('记录格式、身份、关联与版本必须一致', () => {
   };
   assert.equal(parseWorkspace(index, manifest).mode, 'product');
   for (const input of [
-    { ...project, formatVersion: 2 },
+    { ...project, formatVersion: 3 },
     { ...project, formatVersion: undefined, recordingMode: undefined },
     { ...project, activeDeliveryId: 'missing' },
     { ...project, deliveries: [{ id: 'd01', manifestRef: '../outside' }] },

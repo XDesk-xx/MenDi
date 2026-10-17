@@ -7,7 +7,7 @@
 
 ### Requirement: Explicit formal delivery test admission
 
-系统 SHALL 通过显式 delivery full-test 接受验收声明，要求当前 open product Delivery、无活动 / 归档中 Change、无待提交生命周期操作，本轮范围的槽位均具有一致归档关联及直接审核。历史范围外 archived binding SHALL 保留但不成为本轮执行输入。声明 MUST 包含完整集合和受测材料基准；缺失、矛盾、陈旧审核、不安全路径、未结束修复或写入冲突须拒绝，不以普通 PASS 替代。
+系统 SHALL 通过显式 delivery full-test 接受当前 open version 2 product 的当前轮验收，要求无活动 / 归档中 Change、无 pending、本轮槽位全部一致归档且有直接审核，已声明结构化基线可核对。历史 binding 与来源成果不成为本轮新增完成项。声明 MUST 含完整集合与受测材料；固定轮次、直接批准及必要基线完成事实，缺失 / 矛盾 / 未确认时拒绝，不以普通或跨轮 PASS 替代。
 
 #### Scenario: Start acceptance for multiple completed changes
 - **WHEN** Owner 已授权正式验收，当前全部计划槽位完成且相关直接 Review Apply approved，Author 提供完整声明和受支持工具
@@ -119,7 +119,7 @@
 
 ### Requirement: Direct result readback and bounded applicability
 
-指定正式结果 SHALL 按 Run 路径中明确 Delivery 与项目已登记索引读取父 / 子结果和必要日志，不借当前选择或执行准入拒绝 closed / 历史记录。查询 MUST 分开 outcome、范围 / 命令匹配及需语义判断的材料适用性，不自动认证当前源码、回退旧 PASS或读失败父链 / 审核正文。默认查询只消费当前对象；Close 使用本轮适用结果的直接入口。
+指定正式结果 SHALL 按其明确 Delivery、所属轮次及直接父 / 子结果和必要日志读取，不借当前执行准入拒绝旧格式、closed 或历史结果。查询 MUST 分开原 outcome、轮次 / 范围 / 命令匹配与材料适用性；未迁移旧记录可如实显示轮次未结构化，不猜归属、不改 outcome。默认查询只消费当前对象；Close 只消费当前轮适用入口，不递归读失败父链 / 旧审核或基线来源正文。
 
 #### Scenario: Read a formal failure and a later success in new processes
 - **WHEN** 新进程读取明确正式 Run，或 status / next 查询最新完整正式 Run
@@ -145,6 +145,10 @@
 - **WHEN** 指定结果所属 Delivery closed 或随后 Reopen 已改变本轮范围
 - **THEN** 结果可读性按自身直接身份判断；closed 同范围可显示 match，Reopen 后旧范围可显示 changed，材料仍 requires-semantic-check，不授予新工作通过
 
+#### Scenario: Legacy results lack new round metadata
+- **WHEN** 旧 product 的正式结果按旧合同可读，或已迁移记录中的历史结果可由迁移时保存的范围 / 归属和原编号唯一解释
+- **THEN** 保留 outcome 与来源，未迁移时不虚构轮次，迁移后明确映射到旧轮；不改写旧 Run，也不把缺少新字段泛化成查询失败
+
 ### Requirement: Formal acceptance preserves lifecycle authority
 
 正式执行与范围内修复 SHALL 依赖实际 Owner 范围授权；CLI 只校验操作声明与记录，不认证授权身份。passed MUST 不自动执行 Close / Archive / Git / 下一 Change；工程 check、结构验证或文件齐备不成为普通查询 gate，也不代替阶段独立结论。
@@ -155,7 +159,7 @@
 
 ### Requirement: First fresh acceptance after lifecycle work
 
-Reopen 或新 Open 后首次正式 Full Test SHALL 从当前范围及本轮直接归档 / 批准开始，接受当前明确完整集合与受测材料；旧 fullTestRunRef 仅为历史，MUST 不进入旧修复重试分支或继承旧 repairApproval / PASS。新工作后同一范围的失败、修复审核和再完整执行 SHALL 继续使用既有当前直接规则，不建立轮次目录或递归历史链。
+Reopen / 新 Open 后首次正式 Full Test SHALL 以当前轮范围、本轮归档 / 批准和当前明确集合 / 材料开始。旧轮正式入口、PASS 或 repairApproval 不能进入本轮重试准入或满足本轮 Close；同一轮失败、修复审核与新的完整执行继续既有规则。结构化已交付基线只证明前置成果，不替代当前轮真实执行；不新增轮次目录或递归历史链。
 
 #### Scenario: Reopen changes the declared scope and collection
 - **WHEN** Reopen 的新槽位全部实际归档，Author 明确新的完整验收集合，Owner 授权新正式执行
@@ -168,3 +172,39 @@ Reopen 或新 Open 后首次正式 Full Test SHALL 从当前范围及本轮直�
 #### Scenario: The fresh acceptance fails and is repaired
 - **WHEN** 新范围的正式执行失败，随后完成范围内 Author 修复及独立定向审核
 - **THEN** 重新真实执行该新失败声明的整个集合，核对当前直接审核；旧范围的集合和失败链不是本次输入
+
+### Requirement: Round bound verification and repair
+
+新建正式 Full Test、repair / review 及 Close SHALL 明确所属当前轮，并核对其范围、完成项及直接对象归属一致。历史归属不能只由当前指针或相同文本猜测；迁移前旧记录按保存的唯一映射解释，不改原字段。轮次不符、同名但来源错误或新记录缺必要归属时 MUST 拒绝当前写入 / 收口，保留旧结果可读性。
+
+#### Scenario: Reopen leaves a previous pass intact
+- **WHEN** 旧轮已 passed / closed，新轮没有自身完整正式结果
+- **THEN** 旧 outcome 仍为 passed，当前验收仍未满足，旧结果不能直接 Close 新轮
+
+#### Scenario: Repair or review points to another round
+- **WHEN** 当前修复、定向审核或复验引用另一轮失败 / 批准，即使集合或入口名称相同
+- **THEN** 写前拒绝错误直接对象，不借旧批准继续，不覆盖旧失败
+
+#### Scenario: A new result contradicts its declared round
+- **WHEN** 新记录的所属轮、完成范围、基线声明或 manifest 当前选择互相矛盾
+- **THEN** 拒绝相应当前操作或如实报告结果不适用，不自动重写轮次
+
+### Requirement: Direct delivered baseline facts in acceptance
+
+正式验收 SHALL 直接核对已声明 product 基线的来源身份、归档绑定和指定 Close 完成快照，保存本次必要完成事实供 Close 核对。来源可为同 Delivery 旧轮或另一登记 Delivery 的旧 / 新 product；来源后续 Reopen、计数增长不使其旧完成事实自动失效。不得递归读取来源旧测试日志、审核正文或其依赖图，manual-bootstrap 不满足硬依赖。
+
+#### Scenario: Accept a historical product source without migrating it
+- **WHEN** 旧 product 来源的归档绑定和指定 Close 快照一致，当前目标本轮自身前置已满足
+- **THEN** 只读取得该已交付基线事实并执行本轮正式集合，不改来源或要求来源重新运行 Full Test
+
+#### Scenario: Source facts change during admission
+- **WHEN** 直接来源、Close 或归档身份在准入 / 锁内复核中变化，或其实际内容不支持声明
+- **THEN** 拒绝或保留当前未确认现场，不把旧保存事实拼接为本轮通过，不扩大成全库材料扫描
+
+#### Scenario: Close consumes the tested baseline declaration
+- **WHEN** 当前轮正式结果稳定 passed，基线声明 / 完成事实与本轮范围一致，且材料适用性明确成立
+- **THEN** Close 消费本次直接保存的完成事实，不重新展开来源历史或把基线成果计作本轮新增完成项
+
+#### Scenario: Baselines do not change same round test policy
+- **WHEN** 当前轮正式执行失败，随后范围内修复与独立定向审核完成
+- **THEN** 仍按现行规则执行该声明整个集合；本 Change 不以轮次 / 依赖能力允许拼接多次结果或缩减集合

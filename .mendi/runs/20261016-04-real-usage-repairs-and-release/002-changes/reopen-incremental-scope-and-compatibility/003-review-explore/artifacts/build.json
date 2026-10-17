@@ -1,0 +1,5 @@
+{
+  "command": "pnpm build",
+  "exitCode": 0,
+  "output": "Already up to date\nDone in 1.1s using pnpm v11.22.0\n$ tsc"
+}

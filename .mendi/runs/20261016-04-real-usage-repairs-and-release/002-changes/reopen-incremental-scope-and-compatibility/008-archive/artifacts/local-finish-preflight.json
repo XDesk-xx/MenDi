@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-17T02:53:57.775Z",
+  "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+  "archiveOrdinal": 11,
+  "nativeExitCode": 0,
+  "nativeCalls": 1,
+  "specsStrictValid": [
+    "delivery-lifecycle",
+    "delivery-verification",
+    "delivery-workspace"
+  ],
+  "sourceAbsent": true,
+  "temporaryNativeNameAbsent": true,
+  "rootRecordingMode": "manual-bootstrap",
+  "activeChangeId": null,
+  "recordedNext": {
+    "action": "change-checkpoint",
+    "status": "awaiting-owner",
+    "role": "author",
+    "reason": "MVP-D04-A 已实际归档为 011，等待独立 Git checkpoint 指令；B / C 未激活。"
+  },
+  "lock": {
+    "path": "D:\\Projects\\MenDi\\.mendi\\write.lock",
+    "owner": {
+      "token": "6dad945f-f8e4-4c32-bf0a-e6b77200f211",
+      "pid": 55176,
+      "operation": "manual-author-archive"
+    },
+    "writerExists": false,
+    "retainedUnchanged": true
+  },
+  "remaining": "Owner 确认处置原锁后，仅释放原锁并完成公开 status / next 读回；不再次原生归档、同步或改终态 Run。"
+}

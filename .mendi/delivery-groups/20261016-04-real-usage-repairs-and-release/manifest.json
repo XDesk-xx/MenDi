@@ -29,8 +29,27 @@
       "roadmapSection": "MVP-D04-C：业务契约、UI 方案与主动澄清"
     }
   ],
-  "changeBatches": [],
-  "changeBindings": [],
+  "changeBatches": [
+    {
+      "id": "002-changes",
+      "firstRun": "002",
+      "runsRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes",
+      "changeIds": [
+        "reopen-incremental-scope-and-compatibility"
+      ]
+    }
+  ],
+  "changeBindings": [
+    {
+      "planningSlot": "MVP-D04-A",
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "changeRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md",
+      "archiveOrdinal": 11
+    }
+  ],
   "activeChangeId": null,
   "exitCriteria": [
     "A / B / C 在各自范围完成实施、独立审核并按授权实际归档；A 先行，B 依赖 A 的轮次边界，C 可独立安排。",
@@ -46,13 +65,12 @@
     "自动 npm 上架、可选工具安装、其他项目测试优化、部署或生产数据写入。"
   ],
   "openRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-  "stopBoundary": "delivery-checkpoint",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md",
+  "stopBoundary": "change-bind",
   "next": {
-    "action": "delivery-checkpoint",
-    "status": "awaiting-owner-instruction",
+    "action": "change-bind",
+    "status": "awaiting-owner",
     "role": "author",
-    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-    "reason": "MVP-D04 已人工 Open，三个规划槽位及依赖已登记；停在 Delivery checkpoint，等待 Owner 下一指令。"
+    "reason": "MVP-D04-A 的实现、011 归档及本地收尾已纳入 Change checkpoint；B / C 未激活，等待 Owner 明确授权下一 Change 与范围。"
   }
 }

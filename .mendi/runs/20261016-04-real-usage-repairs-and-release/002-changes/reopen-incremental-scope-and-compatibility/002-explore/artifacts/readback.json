@@ -1,0 +1,32 @@
+{
+  "result": "proof-supported",
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261016-04-real-usage-repairs-and-release",
+  "changeId": "reopen-incremental-scope-and-compatibility",
+  "authorRole": "author",
+  "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/run.md",
+  "next": {
+    "action": "review-explore",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/run.md",
+    "reason": "Author Explore 已完成；独立核对固定 002 Author、已确认兼容决定及必要 proof。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "archivedChangeCount": 10,
+  "scaffoldOnly": true,
+  "proposalStatus": "ready",
+  "otherArtifacts": "blocked",
+  "engineeringCheck": 0,
+  "proof": "baseline-observed",
+  "sourceExistingTestsSkillsUnchanged": true,
+  "roadmapAndFeedbackUnchanged": true,
+  "stableInstallationWrites": false,
+  "dreMoAccess": false,
+  "rootFormalFullTest": false,
+  "gitWrites": false,
+  "lockReleased": true,
+  "checkedAt": "2026-10-16T14:42:24.511Z"
+}

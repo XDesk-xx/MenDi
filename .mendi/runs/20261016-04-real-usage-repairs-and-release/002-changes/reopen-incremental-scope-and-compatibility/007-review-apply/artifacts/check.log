@@ -1,0 +1,17 @@
+Already up to date
+Done in 1.2s using pnpm v11.22.0
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 11.22.0 → 12.14.0.      │
+   │     Changelog: https://pnpm.io/v/12.14.0      │
+   │   To update, run: corepack use pnpm@12.14.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+Checked 163 files in 102ms. No fixes applied.
+$ biome lint src scripts tests
+Checked 163 files in 86ms. No fixes applied.
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json

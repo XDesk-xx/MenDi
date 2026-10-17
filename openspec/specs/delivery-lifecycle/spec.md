@@ -7,7 +7,7 @@
 
 ### Requirement: Explicit applicable delivery close
 
-系统 SHALL 仅通过明确 Close 操作收口当前 open product Delivery，要求 Author、actor、本轮全部槽位完成、无活动项 / 待处理工作，以及当前稳定 known passed 的正式 Full Test。指定正式入口 MUST 同时为当前进展与最近正式结果，范围 / 命令一致、直接批准快照完整；普通 PASS、陈旧入口、未批准、unknown 或未完成现场 MUST 拒绝。
+系统 SHALL 仅通过明确 Close 收口当前 open version 2 product Delivery 的当前轮，要求 Author、actor、该轮全部槽位完成、无活动项 / 待处理工作，以及该轮当前稳定 known passed 的正式 Full Test。指定入口 MUST 为该轮当前进展和最近正式结果，范围、轮次、命令及直接批准快照一致。普通 PASS、跨轮 / 陈旧入口、unknown 或未完成现场必须拒绝，不能借历史轮次的 Close 满足当前轮。
 
 #### Scenario: Close a completed delivery
 - **WHEN** 实际 Owner 已授权 Close，Author 提供本轮当前正式结果及成立的材料适用性判断，必要输入完整且稳定
@@ -39,7 +39,7 @@ Close SHALL 保存针对指定正式结果的明确材料适用性结论、实�
 
 ### Requirement: Explicit reopen with a fresh work scope
 
-Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅重开当前完整 closed product Delivery。新范围 MUST 非空、依赖自洽，槽位不复用旧 binding；保留旧 Close、正式结果、binding、批次及累计归档数，退出旧验收当前选择。Reopen MUST 不创建 / 复活 Change、不建立批次、不继承旧 PASS。
+Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅重开当前完整 closed version 2 product Delivery。新范围 MUST 非空，本轮依赖自洽，已交付基线可直接核对，槽位不复用旧 binding；追加稳定新轮并保留每轮目标、计划、Close、正式结果、绑定、批次及归档数。Reopen MUST 不创建 / 复活 Change、不预建批次、不继承旧 PASS，当前投影只指向新轮。
 
 #### Scenario: Reopen and later start new work
 - **WHEN** Owner 明确新范围，先完成 Reopen，再显式关联新 Change 并开始首次 Run
@@ -53,9 +53,13 @@ Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅
 - **WHEN** 新进程读取刚完成 Reopen，尚未关联新工作
 - **THEN** 当前进展是 Reopen 和新范围，提示 Owner 范围内显式 bind；旧最近正式结果仅为历史定位，不显示新一轮 verification passed
 
+#### Scenario: Reopen several times on the same day
+- **WHEN** 同日连续完成当前轮后再次合法 Reopen
+- **THEN** 每次只新增一个不同稳定标识的轮次，Delivery ID 和首次日期不变，旧轮可查询，恢复不会再次追加
+
 ### Requirement: Durable lifecycle progress and closed queries
 
-系统 SHALL 将 Open / Close / Reopen Run 放在 Changes 批次同级，独占分配编号并校验 Delivery / Action / 方法 / 角色身份。closed 默认 query SHALL 解释当前 Close 与其收口摘要，不读取旧活动 Change 或遍历历史；新 Open / Reopen 后按新当前指针解释，当前必要记录缺失 MUST 报错，不猜历史最大号。
+系统 SHALL 将 Open / Close / Reopen 及迁移的实际操作 Run 放在 Changes 批次同级，沿 Delivery 编号并校验身份 / 角色。普通生命周期按当前轮解释，closed 默认 query 只读其收口摘要；迁移仅是格式操作收据，不替换活动 Change、draft 或原正式进展。待提交写入阻止普通操作；必要当前记录缺失 MUST 报错，不猜历史最大号。
 
 #### Scenario: Closed progress is read without historical logs
 - **WHEN** 当前 Close Run 与 manifest 完整一致，旧说明、旧 Change 正文或旧测试日志不可用
@@ -67,7 +71,7 @@ Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅
 
 ### Requirement: Bounded explicit lifecycle resume
 
-生命周期写入 SHALL 使用项目独占锁与明确的当前待提交入口，完成读回后才报成功。写前拒绝不占号；写入后失败 MUST 保留占号、已写路径、锁 / 临时现场及未完成状态。仅显式 resume 当前同一操作可补剩余本地提交；必须核对原输入 / 直接基准与实际现场，无新号、无重测、不改终态 Run。
+可写新格式的生命周期和迁移写入 SHALL 使用项目独占锁与明确 pending，完整读回后才成功。写前拒绝不占号；写后失败保留占号、路径、锁 / 临时现场。显式 resume 仅补同一已占号操作的当前 intent / pending，核对原输入 / 直接基准，不新占号、重测或改终态。旧 product 的旧操作 resume 不在新版继续，须先按独立授权用旧版恢复，再迁移。
 
 #### Scenario: Terminal run exists before manifest or index commit
 - **WHEN** Close / Reopen / 后续 Open 终态 Run 已写，manifest / index 或读回未完，Owner 已另外核对停止写者并按既有边界处置残留锁
@@ -81,9 +85,21 @@ Reopen SHALL 要求实际 Owner 明确新范围、Author / actor 和原因，仅
 - **WHEN** 显式 resume 指向仍为当前完成交接的同一生命周期 Run，完整目标记录一致
 - **THEN** 返回 already-completed、只读原结果；若之后已 Reopen / 新 Open / 新工作，则按陈旧对象拒绝，不回退选择
 
+#### Scenario: Resume an interrupted migration
+- **WHEN** 同一迁移的 intent、pending 或部分目标已写，Owner 已单独核对原写者停止及锁处置，原直接输入仍一致
+- **THEN** 仅补原项目入口 / 选定 manifest 的缺失提交，保留原 Run 和轮次标识；完成后恢复原活动交接，重复当前完整恢复只读返回，不重复迁移
+
+#### Scenario: A legacy lifecycle was interrupted before migration
+- **WHEN** version 1 product 存在旧生命周期 pending 或未完成写入，调用新版迁移或旧操作 resume
+- **THEN** 停止并提示先使用兼容旧版处理原现场；不迁移半提交输入、不通过新版例外写旧格式
+
+#### Scenario: Migration intent exists before pending publication
+- **WHEN** 明确指定本次已占号迁移 intent，pending 尚未发布，原入口 / 目标 / 直接输入仍匹配且无其他 pending，原写者及锁已按独立授权核对
+- **THEN** 原 actor 可显式继续发布该 intent 的原 pending 并补剩余提交，不选历史最大号、不新占号；无原 intent 或存在变化时仅报告现场并拒绝猜测
+
 ### Requirement: Lifecycle authority and manual history preservation
 
-Open 新 Delivery、Reopen、Close SHALL 保持各自实际 Owner 授权边界；CLI 只校验声明与直接记录，不认证真人授权。人工 bootstrap MUST 只读，不通过产品生命周期命令迁移。普通 Run save / submit / continue MUST 不生成生命周期完成，工程检查、工具成功和 next 不授予后续权限。
+Open、Reopen、Close 与迁移写入 SHALL 保持各自实际 Owner 授权；CLI 只校验声明与直接记录，不认证真人身份。manual-bootstrap 继续只读，不通过产品迁移。预览、结构验证、工程检查和 next MUST 不授予写入 / 恢复或后续阶段权限；普通 Run 操作不生成生命周期或迁移成功。未迁移旧 product 的普通写入由新版拒绝。
 
 #### Scenario: Author follows a scoped owner instruction
 - **WHEN** Owner 只授权 Close 或 Reopen，操作完成
@@ -92,3 +108,55 @@ Open 新 Delivery、Reopen、Close SHALL 保持各自实际 Owner 授权边界�
 #### Scenario: Manual or generic write attempts to create lifecycle success
 - **WHEN** 目标为 manual-bootstrap，或普通 submit / continue 试图填写 closed / reopened / opened 结果
 - **THEN** 产品拒绝，不修改人工历史或用文本代替实际提交；生命周期 draft 的故障笔记仍按本地同角色 / actor 边界处理
+
+### Requirement: Read-only migration preview
+
+迁移预览 SHALL 只读检查当前选定旧 product Delivery 及必要项目入口，展示真实来源、各轮范围 / 归属、当前选择、差异和直接缺口，不占号或写文件。支持完整 open / closed 记录及活动 Change / draft；有锁、pending、未确认执行 / 原生效果或提交不完整时 MUST 停止。其他 Delivery 不批量转换，人工历史不纳入迁移。
+
+#### Scenario: Preview a closed legacy delivery
+- **WHEN** 当前旧 product 已完整 closed，直接范围、收口及历史轮次来源可核对
+- **THEN** 展示转换后轮次和原收口归属，保留首次日期、身份、编号与真实 outcome，不要求重新验收既有收口
+
+#### Scenario: Preview an active change or draft
+- **WHEN** 当前旧 product open，存在完整的活动 Change / draft 或已完成交接，且无正在写入或未确认执行
+- **THEN** 预览保留其身份、角色、actor、Action、正文、状态与原下一步；不要求先完成 Change 或先 Close
+
+#### Scenario: Source is incomplete or contradictory
+- **WHEN** 无法核对实际必要的历史范围、绑定 / 批次归属或直接收口，或同一身份材料互相矛盾
+- **THEN** 预览报告对应缺口并禁止 apply，不猜造范围、不重建审批、不遍历无关历史补证；普通旧格式查询不因此新增前置
+
+#### Scenario: Unknown explanatory extensions exist
+- **WHEN** 存在未知扩展、旧说明或仅因字段名以 Ref 结尾的内容
+- **THEN** 保留其必要原信息而不递归解析为迁移前置；只核对本次重建实际消费的身份和受管输入
+
+### Requirement: Truthful legacy baseline reconstruction
+
+旧 product 的缺失首次 Open Run SHALL 不单独阻止来源充分的迁移。当前范围、必要前态和直接 Close 能核对已知范围与归属时，系统 MUST 明确标为旧格式基线并保留真实来源，不补造 Open Run 或未知旧轮。当前尚未收口的合法首轮按真实 open 状态保存；缺实际必需范围 / 收口或历史成果无法归属时仍拒绝。
+
+#### Scenario: Sufficient old scope and close exist without an open run
+- **WHEN** 合法旧 product 无记录化首次 Open，但直接范围 / 前态及真实 Close 一致，所有已有成果可唯一归属
+- **THEN** 允许明确的 legacy-baseline 预览，保存真实来源和收口，不新增虚构的 Open Run
+
+#### Scenario: A legacy first round is still open
+- **WHEN** 原格式合法首轮尚无 Close，当前范围、活动交接与已有成果完整，且不存在需解释的更早已关闭轮次
+- **THEN** 可预览该真实 open 基线，不把尚未发生的 Close 当材料缺失，也不宣称它已验收
+
+#### Scenario: Earlier commitments cannot be reconstructed
+- **WHEN** 历史 archived binding 或必要范围显然属于未能恢复的旧轮，或缺少真实必需的收口来源
+- **THEN** 明确拒绝迁移，不能把全部成果塞入最新轮或将部分已知历史伪称完整
+
+### Requirement: Authorized migration preserves work and history
+
+迁移 apply SHALL 在实际 Owner 授权下，由 Author / actor 消费可核对预览，锁内重新生成并复核本次直接输入与差异，只写必要项目入口、当前选定 manifest 和本次迁移收据 / 现场。旧 Run、verdict、日志、归档、Change、其他 Delivery 文件 MUST 保持；已有活动 draft 和协作进展不被迁移提交替换。迁移不执行测试、原生归档、阶段批准或后续操作。
+
+#### Scenario: Apply a preview while preserving active work
+- **WHEN** 获授权且预览后输入一致，当前存在活动 Change / draft
+- **THEN** 保存一次迁移收据和新格式，原 draft 字节、Action / actor / 状态、绑定、批次、next 和累计归档数保持，可按原阶段显式继续
+
+#### Scenario: Inputs change after preview
+- **WHEN** 预览目标、直接 scope / 记录、基线材料或文件内容在预览后或锁内复核时改变
+- **THEN** 新写入前拒绝陈旧预览；若已开始提交则保留原占号与现场，不重算并悄悄采用不同结果
+
+#### Scenario: A migrated target is supplied again
+- **WHEN** 普通迁移 apply 指向已经完成迁移的新格式，或请求重复同一当前完整迁移的 resume
+- **THEN** 不再次新增轮次 / 收据或改历史；普通 apply 返回已迁移事实，同次 resume 在目标仍匹配时只读返回完整结果，后续状态已变化则拒绝陈旧恢复

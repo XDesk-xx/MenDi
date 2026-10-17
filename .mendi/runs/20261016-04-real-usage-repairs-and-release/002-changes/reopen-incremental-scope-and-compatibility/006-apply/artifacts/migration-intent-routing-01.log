@@ -1,0 +1,51 @@
+TAP version 13
+# Subtest: 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+not ok 1 - 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 969.5848
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration.test.ts:137:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      Comparison {
+    +   code: 'legacy-recovery-required'
+    -   code: 'migration-commit-pending'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'migration-commit-pending'
+  actual:
+  error: '最新占号已有 Run，但尚未登记为实际交接，须先由旧版处理半提交。'
+  stack: |-
+    restore (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:22:9)
+    migrationPreview (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:202:5)
+    migrateDelivery (file:///D:/Projects/MenDi/src/application/delivery-migration.ts:53:18)
+    preview (file:///D:/Projects/MenDi/tests/migration-support.ts:27:18)
+    assert.throws.code (file:///D:/Projects/MenDi/tests/migration.test.ts:162:27)
+    getActual (node:assert:609:5)
+    Function.throws (node:assert:757:24)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration.test.ts:162:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration.test.ts:162:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1665.8852

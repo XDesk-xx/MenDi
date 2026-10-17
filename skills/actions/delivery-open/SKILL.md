@@ -10,6 +10,8 @@ role: author
 
 两种首次入口使用相同槽位与依赖准入；未归档依赖不能由 role / actor 绕过。普通错误槽位等可预检输入在创建 `.mendi` 前拒绝，修正后直接重试；锁内仍复核必要直接 Change，真实提交中断保留现场，不自动清理既有状态。
 
+两种首次入口均创建 version 2 项目 / manifest 和 r001 权威范围，不预建批次。省略身份的首次入口没有记录化 Open Run，不补造来源。顶层目标 / 状态 / 指针由当前轮统一投影。已有旧 product 必须先显式迁移，旧 pending 先用兼容旧版恢复；新版 Open / resume 不恢复旧提交。新 Delivery 的 baselineDependencies 可引用同项目已登记 product 的直接 Close 完成事实，首次空项目没有已登记来源。
+
 当前完整 closed 后，新 Open 必须指定 Author / actor 与新 ID、自包含范围；追加独立索引与 manifest，保留旧 Delivery、累计归档数和历史字节。Change bind 分开执行。拒绝仍 open、人工记录、重复 ID、未登记目录与中断残留；不自动安装工具或迁移人工历史。
 
 正常提交依次保存 draft intent、原入口 / manifest / 实际输入，再发布 pendingDeliveryRunRef、terminal、manifest、项目选择 / 清 pending 并读回。成功只保存本次事实，不激活 Change、不授予 Git 或下一阶段权限。

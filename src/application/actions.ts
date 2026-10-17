@@ -8,7 +8,7 @@ import {
   submitDeliveryRun,
 } from './delivery-repair.ts';
 import { state } from './project.ts';
-import { readWorkspace } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite } from '../adapters/workspace.ts';
 import { currentRun } from '../adapters/runs.ts';
 import { createRun, replaceDraft, writeAction } from '../adapters/action-store.ts';
 import { loadChangeMethods } from '../adapters/methods.ts';
@@ -173,6 +173,7 @@ export function continueAction(input: ContinueInput, options: ActionOptions = {}
 }
 export function saveRun(input: SaveInput, options: ActionOptions = {}) {
   const { root: noteRoot } = inspectProject(input.project);
+  guardProductWrite(noteRoot);
   if (pendingLifecycle(noteRoot)) {
     if (input.role !== 'author')
       throw new MendiError('action-role-mismatch', '生命周期说明需要 Author。');

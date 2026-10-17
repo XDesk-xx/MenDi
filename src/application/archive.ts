@@ -7,7 +7,7 @@ import { inspectProject } from '../adapters/project.ts';
 import { managedPath, present } from '../adapters/paths.ts';
 import { currentRun, type RunDocument } from '../adapters/runs.ts';
 import { replaceDraft, writeAction } from '../adapters/action-store.ts';
-import { readWorkspace, type WriteObserver } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite, type WriteObserver } from '../adapters/workspace.ts';
 import {
   captureArchiveInputs,
   loadArchiveInputs,
@@ -131,6 +131,7 @@ export function archiveAction(input: ArchiveInput, options: ArchiveOptions = {})
     throw new MendiError('action-role-mismatch', 'Archive 仅允许当前 Author。');
   text(input.actor, '操作者标识');
   const { root } = inspectProject(input.project);
+  guardProductWrite(root);
   const before = readWorkspace(root);
   const prior = archiveCurrent(root, before, input);
   if (

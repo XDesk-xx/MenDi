@@ -11,6 +11,12 @@ import {
   type ApprovalFact,
 } from '../core/delivery-verification.ts';
 import type { Workspace } from '../core/records.ts';
+import {
+  comparableScope,
+  comparableRepair,
+  recordRound,
+  requireCurrentRound,
+} from '../core/round-records.ts';
 
 export function same(left: unknown, right: unknown) {
   return JSON.stringify(left) === JSON.stringify(right);
@@ -68,6 +74,7 @@ export function inspectFullTest(
 ) {
   const full = run.record.fullTest;
   if (!full) throw new MendiError('invalid-run', '指定 Run 不是正式 Full Test。');
+  const round = recordRound(workspace, run.record);
   const basis = ownLock ? null : executionWorkspace(root, workspace.id);
   const lock = managedPath(root, '.mendi/write.lock');
   const lockedBefore = !ownLock && present(lock);
@@ -109,14 +116,12 @@ export function inspectFullTest(
         same(basis.workspace.manifest, workspace.manifest)));
   let scopeMatch: 'match' | 'changed' | 'unavailable' = 'unavailable';
   try {
-    const planned = workspace.scope.plannedChanges.map(({ slot, title, dependsOn }) => ({
-      slot,
-      title,
-      dependsOn,
-    }));
+    const planned = comparableScope(workspace.scope).plannedChanges;
     scopeMatch = workspace.activeChangeId
       ? 'unavailable'
-      : workspace.scope.goal !== full.scope.goal || !same(planned, full.scope.plannedChanges)
+      : (round && round.id !== workspace.currentRoundId) ||
+          workspace.scope.goal !== full.scope.goal ||
+          !same(planned, full.scope.plannedChanges)
         ? 'changed'
         : same(completionScope(workspace), full.scope)
           ? 'match'
@@ -144,6 +149,7 @@ export function inspectFullTest(
     basis: full.basis,
     entry: full.entry,
     scopeMatch,
+    ...(round ? { roundId: round.id } : { roundCompatibility: 'legacy-unstructured' }),
     commandMatch,
     materialApplicability: 'requires-semantic-check' as const,
     ...(child ? { child } : {}),
@@ -160,6 +166,7 @@ export function currentFailure(root: string, workspace: Workspace, ref: string, 
 }
 export function repairAuthor(root: string, workspace: Workspace, ref: string, actor?: string) {
   const author = readDeliveryRun(root, ref, workspace.id);
+  requireCurrentRound(workspace, author.record);
   if (
     author.record.role !== 'author' ||
     !author.record.repair ||
@@ -178,6 +185,7 @@ export function reviewRepairInputs(
   review: DeliveryDocument,
   ownLock = false,
 ) {
+  requireCurrentRound(workspace, review.record);
   const author = repairAuthor(root, workspace, review.record.authorRunRef!, review.record.actorId);
   const failure = currentFailure(
     root,
@@ -186,7 +194,7 @@ export function reviewRepairInputs(
     ownLock,
   );
   if (
-    !same(author.record.repair, review.record.repair) ||
+    !same(comparableRepair(author.record.repair), comparableRepair(review.record.repair)) ||
     !same(author.record.repair!.scope, failure.record.fullTest!.scope) ||
     !same(author.record.repair!.collection, failure.record.fullTest!.collection)
   )

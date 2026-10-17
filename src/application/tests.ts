@@ -1,4 +1,5 @@
 import { inspectProject } from '../adapters/project.ts';
+import { requireWritable } from '../core/rounds.ts';
 import { readWorkspace, acquireProjectLock, releaseProjectLock } from '../adapters/workspace.ts';
 import { currentBinding } from '../core/associations.ts';
 import { MendiError, errorInfo, text } from '../core/errors.ts';
@@ -36,6 +37,7 @@ function runnable(root: string, ownLock = false) {
       'test-workspace-unavailable',
       '测试要求无归档过渡的 open product Delivery，未运行。',
     );
+  requireWritable(workspace);
   return workspace;
 }
 export async function runTest(

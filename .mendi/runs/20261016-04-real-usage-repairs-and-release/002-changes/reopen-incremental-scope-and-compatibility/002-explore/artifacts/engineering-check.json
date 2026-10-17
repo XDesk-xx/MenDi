@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "check"
+  ],
+  "startedAt": "2026-10-16T14:37:23.549Z",
+  "finishedAt": "2026-10-16T14:37:44.480Z",
+  "exitCode": 0,
+  "stdout": "Already up to date\nDone in 1.1s using pnpm v11.22.0\nChecked 140 files in 71ms. No fixes applied.\nChecked 140 files in 74ms. No fixes applied.\n",
+  "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+}

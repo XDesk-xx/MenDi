@@ -1,0 +1,53 @@
+TAP version 13
+# Subtest: 后续实际交接已成立时保留旧空占号，不把历史失败占号当当前半提交
+not ok 1 - 后续实际交接已成立时保留旧空占号，不把历史失败占号当当前半提交
+  ---
+  duration_ms: 522.3501
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration-reservations.test.ts:56:1'
+  failureType: 'testCodeFailure'
+  error: '存在未完成 Run 占号，须先由旧版处理现场。'
+  code: 'legacy-recovery-required'
+  name: 'MendiError'
+  stack: |-
+    restore (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:22:9)
+    migrationPreview (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:191:5)
+    migrateDelivery (file:///D:/Projects/MenDi/src/application/delivery-migration.ts:53:18)
+    preview (file:///D:/Projects/MenDi/tests/migration-support.ts:27:18)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration-reservations.test.ts:62:41)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: 未知历史说明目录只保留占号，不读取正文或增加迁移前置
+not ok 2 - 未知历史说明目录只保留占号，不读取正文或增加迁移前置
+  ---
+  duration_ms: 376.4732
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration-reservations.test.ts:67:1'
+  failureType: 'testCodeFailure'
+  error: '最新占号已有 Run，但尚未登记为实际交接，须先由旧版处理半提交。'
+  code: 'legacy-recovery-required'
+  name: 'MendiError'
+  stack: |-
+    restore (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:22:9)
+    migrationPreview (file:///D:/Projects/MenDi/src/adapters/migration-preview.ts:211:5)
+    migrateDelivery (file:///D:/Projects/MenDi/src/application/delivery-migration.ts:53:18)
+    preview (file:///D:/Projects/MenDi/tests/migration-support.ts:27:18)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration-reservations.test.ts:71:41)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1811.1481

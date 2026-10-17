@@ -6,6 +6,9 @@ export interface Arguments {
     | 'delivery-open'
     | 'delivery-close'
     | 'delivery-reopen'
+    | 'delivery-migrate-preview'
+    | 'delivery-migrate-apply'
+    | 'delivery-migrate-resume'
     | 'delivery-full-test-run'
     | 'delivery-full-test-status'
     | 'delivery-repair-start'
@@ -36,6 +39,7 @@ export function parseArguments(args: string[]): Arguments {
   if (
     args[0] === 'delivery' &&
     ((args[1] === 'full-test' && ['run', 'status'].includes(args[2])) ||
+      (args[1] === 'migrate' && ['preview', 'apply', 'resume'].includes(args[2])) ||
       (args[1] === 'repair' && ['start', 'review'].includes(args[2])))
   ) {
     command = `delivery-${args[1]}-${args[2]}` as Arguments['command'];
@@ -67,6 +71,11 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(command === 'delivery-migrate-apply'
+      ? ['input', 'role', 'actor']
+      : command === 'delivery-migrate-resume'
+        ? ['run', 'role', 'actor']
+        : []),
     ...(['delivery-open', 'delivery-close', 'delivery-reopen'].includes(command)
       ? ['role', 'actor', 'resume']
       : []),
@@ -76,6 +85,7 @@ export function parseArguments(args: string[]): Arguments {
         ? ['scope', 'reason']
         : []),
     ...(['status', 'next', 'test-status'].includes(command) ? ['delivery'] : []),
+    ...(command === 'status' ? ['round'] : []),
     ...(command === 'delivery-full-test-run'
       ? ['input', 'role', 'actor', 'pnpm-bin']
       : command === 'delivery-full-test-status'
@@ -89,7 +99,8 @@ export function parseArguments(args: string[]): Arguments {
     ...(command === 'workspace-diagnose' ||
     command.startsWith('test-') ||
     command.startsWith('delivery-full-test-') ||
-    command.startsWith('delivery-repair-')
+    command.startsWith('delivery-repair-') ||
+    command.startsWith('delivery-migrate-')
       ? []
       : ['openspec-bin']),
     ...(command === 'test-run'
@@ -135,6 +146,11 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'delivery-migrate-apply'
+      ? ['input', 'role', 'actor']
+      : command === 'delivery-migrate-resume'
+        ? ['run', 'role', 'actor']
+        : []),
     ...(['delivery-close', 'delivery-reopen'].includes(command)
       ? [
           'role',
@@ -206,9 +222,12 @@ export const help = `MenDi：项目入口与最小 Delivery 协作
 mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --scope <JSON 路径> [--role author --actor <标识>] [--change <既有 Change> --slot <槽位>]
 mendi delivery close --project <项目根> --input <项目内 Close JSON> --role author --actor <标识>
 mendi delivery reopen --project <项目根> --scope <项目内新范围 JSON> --reason <原因> --role author --actor <标识>
+mendi delivery migrate preview --project <项目根> --json
+mendi delivery migrate apply --project <项目根> --input <项目内预览 JSON> --role author --actor <标识>
+mendi delivery migrate resume --project <项目根> --run <同次迁移 Run> --role author --actor <原标识>
 mendi delivery <open|close|reopen> --project <项目根> --resume <当前生命周期 Run> --role author --actor <原标识>
 mendi change bind --project <项目根> --change <既有 Change> --slot <槽位>
-mendi status --project <项目根> [--delivery <登记 ID>]
+mendi status --project <项目根> [--delivery <登记 ID>] [--round <rNNN>]
 mendi next --project <项目根> [--delivery <登记 ID>]
 mendi test list --project <项目根>
 mendi test run --project <项目根> --kind <focused|fast|full> --actor <标识> --pnpm-bin <既有绝对 JS 入口>
@@ -226,10 +245,14 @@ mendi workspace diagnose --project <项目根> [--run <同 Change 占号 Run>]
 mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
 mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
 
-项目命令支持 --json；除本地 diagnose / test 外支持 --openspec-bin <稳定 OpenSpec 1.14.1 绝对入口>，save 忽略该兼容参数且不访问上游。
+项目命令支持 --json；本地 diagnose / test / migrate / full-test / repair 不接受 --openspec-bin。其他命令可指定稳定 OpenSpec 1.14.1 绝对入口；save 忽略该兼容参数且不访问上游。
 --project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
 无状态旧首次 Open 可省略身份且不补 Run；显式身份记录 001。closed 后新 ID Open 必须提供 Author / actor，追加索引且分开 bind。
 Reopen 使用自包含新范围 / reason，不复用旧槽位，首次实际 Change Run 才追加新批次。
+新 Open 使用 version 2 的 r001；Reopen 追加权威轮次，旧结果保存在旧轮。status --round 仅展示只读摘要，next 不选择历史轮。
+旧 product 普通查询保持，所有普通写入须先显式迁移；旧 pending / 中断必须先兼容旧版恢复。manual-bootstrap 不迁移。
+迁移 preview 不写入或占号；apply 消费项目内预览并重新计算，只转换当前选定 manifest 和必要入口，收据不替代原 draft / Action / actor。
+baselineDependencies 指定同项目 product 的 deliveryId / planningSlot / closeRunRef；dependsOn 仅本轮 DAG。基线只读直接完成事实，不展开旧审核 / 日志或来源活动状态。
 resume 只补本次缺失的本地提交；先由 Owner 核对停止写者并处置锁，不自动解锁。陈旧对象拒绝。
 test 仅读取本地配置；list 不要求 Open，run 要求 open product / Windows / Node 22 / pnpm 11.22.0；不自动下载或安装。
 依赖预检失败为 not-run；full 仍是普通 command，不代替正式 Full Test 或批准。取消只处理本次前台进程树。

@@ -13,6 +13,7 @@ export const deliveryTypes = [
   'delivery-open',
   'delivery-close',
   'delivery-reopen',
+  'delivery-migrate',
   'delivery-full-test',
   'delivery-repair',
   'revise-delivery-repair',
@@ -26,7 +27,7 @@ export function deliveryDefinition(value: unknown) {
   const review = type === 'review-delivery-repair';
   const phase =
     type === 'delivery-full-test' ||
-    ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(type)
+    ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(type)
       ? type
       : 'delivery-repair';
   return {
@@ -38,7 +39,7 @@ export function deliveryDefinition(value: unknown) {
 }
 export function deliveryLocation(ref: string, id: string) {
   const match =
-    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
+    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-migrate|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
       ref,
     );
   if (
@@ -73,6 +74,7 @@ export interface DeliveryRunRecord {
   fullTest?: FullTest;
   lifecycle?: Lifecycle;
   repair?: Repair;
+  migration?: { sourceVersion: 1; targetVersion: 2; manifestRef: string; planRef: string };
   ownerDecision?: never;
 }
 export function parseDeliveryRun(value: unknown, ref: string, id: string): DeliveryRunRecord {
@@ -102,7 +104,9 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
   text(data.actorId, 'actor');
   if (
     (location.type === 'delivery-full-test' ||
-      ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) &&
+      ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(
+        location.type,
+      )) &&
     Number(first![1]) !== location.number
   )
     throw new MendiError('invalid-run', '正式 Full Test 不沿旧 Action 继续。');
@@ -133,6 +137,24 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
     } else if (data[key] !== undefined)
       throw new MendiError('invalid-run', '多余的直接 Author 字段。');
   }
+  if (location.type === 'delivery-migrate') {
+    const migration = object(data.migration, '迁移收据');
+    if (
+      migration.sourceVersion !== 1 ||
+      migration.targetVersion !== 2 ||
+      migration.manifestRef !== `.mendi/delivery-groups/${id}/manifest.json` ||
+      migration.planRef !== ref.replace(/run\.md$/, 'artifacts/intent.json') ||
+      data.lifecycle !== undefined ||
+      data.fullTest !== undefined ||
+      data.repair !== undefined ||
+      (data.status === 'submitted' && (data.outcome !== 'complete' || data.result !== 'migrated'))
+    )
+      throw new MendiError('invalid-run', '迁移收据身份或提交字段不一致。');
+    record.migration = migration as unknown as DeliveryRunRecord['migration'];
+    return record;
+  }
+  if (data.migration !== undefined)
+    throw new MendiError('invalid-run', '普通 Run 不能携带迁移收据。');
   if (['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) {
     if (data.fullTest !== undefined || data.repair !== undefined)
       throw new MendiError('invalid-run', '生命周期不能携带执行或修复字段。');
@@ -157,6 +179,7 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
       basis: { materials: text(repair.reason, '修复原因'), changes: '' },
     });
     record.repair = {
+      ...(repair.roundId === undefined ? {} : { roundId: text(repair.roundId, 'roundId') }),
       failedFullTestRunRef: String(repair.failedFullTestRunRef),
       scope,
       collection: repair.collection as string[],

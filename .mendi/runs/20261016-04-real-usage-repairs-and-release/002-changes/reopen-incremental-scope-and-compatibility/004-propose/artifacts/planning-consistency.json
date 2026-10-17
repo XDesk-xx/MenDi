@@ -1,0 +1,28 @@
+{
+  "capabilities": [
+    {
+      "name": "delivery-workspace",
+      "modifiedRequirements": 4,
+      "addedRequirements": 3
+    },
+    {
+      "name": "delivery-lifecycle",
+      "modifiedRequirements": 5,
+      "addedRequirements": 3
+    },
+    {
+      "name": "delivery-verification",
+      "modifiedRequirements": 3,
+      "addedRequirements": 2
+    }
+  ],
+  "artifacts": [
+    "proposal.md",
+    "design.md",
+    "tasks.md"
+  ],
+  "taskCount": 27,
+  "unfinishedTasks": 27,
+  "skippedArtifacts": [],
+  "modifiedScenariosPreserved": true
+}

@@ -1,0 +1,38 @@
+{
+  "command": "stable MenDi next --project D:/Projects/MenDi --json",
+  "ok": true,
+  "source": "manual-bootstrap",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/run.md",
+  "next": {
+    "action": "apply",
+    "status": "awaiting-instruction",
+    "role": "author",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "reason": "005 独立 Review Propose 已批准；Author 按已审方案和任务实施并取得实际验证。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": true,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "done"
+      },
+      {
+        "id": "specs",
+        "status": "done"
+      },
+      {
+        "id": "design",
+        "status": "done"
+      },
+      {
+        "id": "tasks",
+        "status": "done"
+      }
+    ]
+  }
+}

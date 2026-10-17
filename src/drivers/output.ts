@@ -11,8 +11,27 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     console.log(
       `Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map((slot) => slot.slot).join(', ')}\nChange：${result.local.activeChangeId ?? (result.local.changeBindings.some((binding) => binding.state === 'archived') ? '已归档、当前无活动 Change' : '尚未关联')}`,
     );
+    if ('rounds' in result.local && result.local.rounds)
+      console.log(
+        `当前轮：${result.local.currentRoundId}；历轮：${result.local.rounds.map((r) => `${r.id}(${r.state})`).join(', ')}`,
+      );
+    if ('compatibility' in result.local)
+      console.log(
+        result.local.compatibility === 'legacy-product-read-only'
+          ? '格式：旧 product，只读；写入前先预览并显式迁移，旧中断先用兼容旧版恢复。'
+          : '来源：manual-bootstrap，人工记录只读。',
+      );
   } else if ('pending' in result) console.log('生命周期提交未确认，停止并核对现场。');
   else if (!result.operation.startsWith('test-')) console.log('MenDi 尚未 Open。');
+  if ('historicalRound' in result) {
+    const round = result.historicalRound;
+    console.log(
+      `轮次：${round.id} (${round.state})；只读保存摘要\n目标：${round.scope.goal}\n槽位：${round.scope.plannedChanges.map((p) => p.slot).join(', ')}\n来源：${JSON.stringify(round.origin)}\n批次：${round.currentBatchId ?? '未开始'}\n收口：${round.closeRunRef ?? '尚未收口'}`,
+    );
+  }
+  if ('plan' in result && result.plan) console.log(JSON.stringify(result.plan, null, 2));
+  if (result.operation.startsWith('delivery-migrate-') && 'result' in result)
+    console.log(`迁移：${result.result}`);
   if ('entries' in result)
     for (const entry of result.entries)
       console.log(
@@ -45,6 +64,9 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     const facts = result.verification;
     console.log(
       `正式 Full Test：${facts.outcome}；scope:delivery\n完整集合：${facts.collection.join(' / ')}\n材料声明：${JSON.stringify(facts.basis)}\n范围 / 命令匹配：${facts.scopeMatch} / ${facts.commandMatch}\nmaterialApplicability:${facts.materialApplicability}`,
+    );
+    console.log(
+      `结果所属轮：${'roundId' in facts ? facts.roundId : '旧格式未结构化'}；原 outcome 与当前适用性分别解释。`,
     );
     if (facts.child)
       console.log(

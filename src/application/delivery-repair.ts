@@ -20,6 +20,7 @@ import { deliveryDefinition, deliveryNext, parseDeliveryRun } from '../core/deli
 import { verificationScope } from '../core/delivery-verification.ts';
 import { MendiError, text } from '../core/errors.ts';
 import type { Workspace } from '../core/records.ts';
+import { requireWritable } from '../core/rounds.ts';
 import type { ActorInput, ActionOptions } from './action-context.ts';
 import { state } from './project.ts';
 
@@ -31,6 +32,7 @@ function workspaceInput(root: string, ownLock = false) {
   const workspace = readWorkspace(root, ownLock);
   if (!workspace || workspace.mode !== 'product')
     throw new MendiError('manual-state-read-only', 'Delivery 修复仅支持 product。');
+  requireWritable(workspace);
   verificationScope(workspace);
   return workspace;
 }
@@ -93,6 +95,7 @@ export function startDeliveryRepair(
       repairAuthor(root, workspace, input.revisesRunRef!);
     }
     return {
+      roundId: workspace.currentRoundId!,
       failedFullTestRunRef: failure.ref,
       scope: failure.record.fullTest!.scope,
       collection: failure.record.fullTest!.collection,
@@ -186,7 +189,7 @@ export function startDeliveryReview(
           status: 'draft',
           stageSkill: 'review-delivery-repair',
           toolGuidance: [],
-          repair: author.record.repair!,
+          repair: { ...author.record.repair!, roundId: workspace.currentRoundId! },
           authorRunRef: author.ref,
         },
         written,
@@ -306,7 +309,11 @@ export function continueDeliveryAction(
       return createDeliveryRun(
         root,
         workspace,
-        { ...seed, status: 'draft' },
+        {
+          ...seed,
+          repair: { ...seed.repair!, roundId: workspace.currentRoundId! },
+          status: 'draft',
+        },
         written,
         options.observeWrite,
       );

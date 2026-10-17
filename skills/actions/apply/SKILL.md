@@ -18,4 +18,6 @@ product 当前 Apply / revise-apply 可显式读取 `action instructions --actio
 
 在当前 draft 保存必要摘要、方法、实际结果 / 限制和直接材料引用。同阶段未完成可提交 continuing，再以同 actionId 继续；完成后提交 complete，停在独立 review-apply。修订说明当前直接对象与变化，不覆盖旧提交，不自签 verdict，不自动激活下一阶段。
 
+产品写入须为可写 version 2；Action / Run 沿 planningSlot 的唯一轮次及原 batchId 归属，首次实际 Run 才建批次，不移动旧轮成员或给旧 Run 补 roundId。旧 product 的只读 instructions 保持可用，保存 / 提交 / 继续必须先获授权迁移；迁移保留的旧 draft 继续使用原 Action、actor 和固定 Author，不因格式收据切换阶段。
+
 Owner 可显式 handoff 未完成 Apply / Review Apply，或对当前 rejected Review Apply 选择同阶段 revise；更早阶段回退必须显式 rollback，指定当前 Run、较早阶段及完整直接 Author。回退创建新的目标 Author 修订，完成后重新独立审核并顺序继续，不删除已有实现，不沿用过去批准跳段。CLI actor 只记录责任标签，实际授权仍来自 Owner。

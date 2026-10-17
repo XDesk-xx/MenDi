@@ -17,3 +17,5 @@ role: author
 异常后停止，不自动重试或处理锁。Owner 按既有现场处置约定核对原写者及可能的原生进程已经停止，再处置原锁。显式 `--mode finish` 完全 local-only，不构造或调用 OpenSpec；完整现场证明无效果时，仅保存 invoking → none，返回 observed-none / pending。none 不代表完成、批准或再次执行。后续 execute 或 prepared / none 的 Owner rollback 各自需要显式命令。活跃 / unknown 写者、缺必要输入、源与目标并存、候选不唯一或输入变化均须停止，不能以重新取得锁作为写者停止证据。
 
 实际效果确认后，按实际日期安全改为 `YYYY-MM-DD-NNN-change-id`，NNN 为项目累计 archivedChangeCount + 1；依次提交计数、终态 Run、manifest 并完整读回。finish 只补当前确定序号的缺失提交，不改已提交 Run，不再次同步或原生调用。完整收口后重复 finish 返回 already-completed，无新 Run、计数或笔记变更。归档后没有活动 Change；后续 Change、checkpoint、Delivery Full Test / Close / Reopen 均保持各自授权边界。
+
+Archive 准备 / execute / finish 均要求可写 version 2，按 binding 的唯一轮次和原批次归属，不搬动旧轮成员。旧 product 的半提交 / 未确认原生效果必须先兼容旧版恢复，新版 finish 不恢复旧格式。完整 prepared / none 经明确迁移后保留原 Run / actor 和实际效果判断；迁移收据不代表归档成功，也不授权执行原生。

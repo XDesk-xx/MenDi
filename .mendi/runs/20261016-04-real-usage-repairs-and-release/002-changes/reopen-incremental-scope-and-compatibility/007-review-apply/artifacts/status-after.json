@@ -1,0 +1,160 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "manual-bootstrap",
+    "deliveryId": "20261016-04-real-usage-repairs-and-release",
+    "title": "真实使用修复与再次发布",
+    "state": "open",
+    "goal": "修复 Reopen 历轮范围保留、Full Test 完整失败收集与同轮续测复验，统一业务契约与 UI 方法；经独立审核和本轮验收后，按独立授权完成兼容核对、打包及稳定安装切换。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D04-A",
+        "title": "Reopen 增量范围与兼容",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D04-A：Reopen 增量范围与兼容"
+      },
+      {
+        "slot": "MVP-D04-B",
+        "title": "Full Test 编排、续测与复验",
+        "dependsOn": [
+          "MVP-D04-A"
+        ],
+        "roadmapSection": "MVP-D04-B：Full Test 编排、续测与复验"
+      },
+      {
+        "slot": "MVP-D04-C",
+        "title": "业务契约、UI 方案与主动澄清",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D04-C：业务契约、UI 方案与主动澄清"
+      }
+    ],
+    "activeChangeId": "reopen-incremental-scope-and-compatibility",
+    "changeBindings": [
+      {
+        "changeId": "reopen-incremental-scope-and-compatibility",
+        "changeRef": "openspec/changes/reopen-incremental-scope-and-compatibility",
+        "planningSlot": "MVP-D04-A",
+        "state": "review-apply-approved"
+      }
+    ],
+    "compatibility": "manual-bootstrap-read-only",
+    "recorded": {
+      "id": "20261016-04-real-usage-repairs-and-release",
+      "planningSlot": "MVP-D04",
+      "title": "真实使用修复与再次发布",
+      "state": "open",
+      "recordingMode": "manual-bootstrap",
+      "openedOn": "2026-10-16",
+      "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+      "goal": "修复 Reopen 历轮范围保留、Full Test 完整失败收集与同轮续测复验，统一业务契约与 UI 方法；经独立审核和本轮验收后，按独立授权完成兼容核对、打包及稳定安装切换。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D04-A",
+          "title": "Reopen 增量范围与兼容",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D04-A：Reopen 增量范围与兼容"
+        },
+        {
+          "slot": "MVP-D04-B",
+          "title": "Full Test 编排、续测与复验",
+          "dependsOn": [
+            "MVP-D04-A"
+          ],
+          "roadmapSection": "MVP-D04-B：Full Test 编排、续测与复验"
+        },
+        {
+          "slot": "MVP-D04-C",
+          "title": "业务契约、UI 方案与主动澄清",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D04-C：业务契约、UI 方案与主动澄清"
+        }
+      ],
+      "changeBatches": [
+        {
+          "id": "002-changes",
+          "firstRun": "002",
+          "runsRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes",
+          "changeIds": [
+            "reopen-incremental-scope-and-compatibility"
+          ]
+        }
+      ],
+      "changeBindings": [
+        {
+          "planningSlot": "MVP-D04-A",
+          "changeId": "reopen-incremental-scope-and-compatibility",
+          "changeRef": "openspec/changes/reopen-incremental-scope-and-compatibility",
+          "batchId": "002-changes",
+          "state": "review-apply-approved",
+          "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/run.md"
+        }
+      ],
+      "activeChangeId": "reopen-incremental-scope-and-compatibility",
+      "exitCriteria": [
+        "A / B / C 在各自范围完成实施、独立审核并按授权实际归档；A 先行，B 依赖 A 的轮次边界，C 可独立安排。",
+        "Reopen 历轮承诺可查询且当前轮独立推进与验收；旧格式只读与授权迁移边界明确，不改写历史。",
+        "Full Test 执行收集、同轮续测、按影响复验和 Close 共同消费可核对的当前候选结论，保留原失败及来源；性能改动有同口径实测依据。",
+        "随包 Author / Reviewer 方法一致区分业务约束、UI 设计选择与未决产品决定，关键选择主动澄清。",
+        "按实际影响取得本轮正式验收结论，覆盖范围模型、兼容、测试结果消费、方法与独立安装接线；正式 Full Test / Close、Git、打包与稳定安装切换各依授权执行。"
+      ],
+      "outOfScope": [
+        "Reopen D03、倒改旧 Run / verdict / Full Test / Close，或将旧 PASS 直接用于 D04 收口。",
+        "MenDi 修复期间修改 DreMo manifest、Run029、checkpoint，或恢复 DreMo 推进；其迁移与继续另行授权。",
+        "外接工具升级、自动审核、通用调度 / 性能 / 版本管理平台、全库 hash 或递归证据链。",
+        "自动 npm 上架、可选工具安装、其他项目测试优化、部署或生产数据写入。"
+      ],
+      "openRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
+      "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/run.md",
+      "stopBoundary": "archive",
+      "next": {
+        "action": "archive",
+        "status": "awaiting-instruction",
+        "role": "author",
+        "changeId": "reopen-incremental-scope-and-compatibility",
+        "reason": "007 独立 Review Apply 已批准，等待 Author 按指令执行 Archive。"
+      }
+    }
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": true,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "done"
+      },
+      {
+        "id": "specs",
+        "status": "done"
+      },
+      {
+        "id": "design",
+        "status": "done"
+      },
+      {
+        "id": "tasks",
+        "status": "done"
+      }
+    ]
+  },
+  "next": {
+    "action": "archive",
+    "status": "awaiting-instruction",
+    "role": "author",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "reason": "007 独立 Review Apply 已批准，等待 Author 按指令执行 Archive。",
+    "source": "manual-bootstrap",
+    "executable": false
+  }
+}

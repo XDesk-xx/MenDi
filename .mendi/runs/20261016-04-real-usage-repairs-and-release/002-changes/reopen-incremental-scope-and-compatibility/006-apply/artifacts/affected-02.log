@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+ok 1 - 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+  ---
+  duration_ms: 119567.5169
+  type: 'test'
+  ...
+# Subtest: 本轮 DAG 与基线分开，省略 / 空声明一致，非法 / 重复基线明确拒绝
+ok 2 - 本轮 DAG 与基线分开，省略 / 空声明一致，非法 / 重复基线明确拒绝
+  ---
+  duration_ms: 4.0518
+  type: 'test'
+  ...
+# Subtest: 共享写锁内重新检查格式，出现旧格式时不占 Run / 执行业务
+ok 3 - 共享写锁内重新检查格式，出现旧格式时不占 Run / 执行业务
+  ---
+  duration_ms: 136.246
+  type: 'test'
+  ...
+# Subtest: manual 历史轮请求明确拒绝，迁移不写人工记录
+ok 4 - manual 历史轮请求明确拒绝，迁移不写人工记录
+  ---
+  duration_ms: 121.3898
+  type: 'test'
+  ...
+# Subtest: 迁移锁内复核原输入及占号，发生变化时不创建 intent
+ok 5 - 迁移锁内复核原输入及占号，发生变化时不创建 intent
+  ---
+  duration_ms: 530.8978
+  type: 'test'
+  ...
+# Subtest: 迁移 intent 缺失、输入变化或目标错误只诊断；不补造或新占号
+ok 6 - 迁移 intent 缺失、输入变化或目标错误只诊断；不补造或新占号
+  ---
+  duration_ms: 1076.8086
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 7 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 110056.8708
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 8 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 11232.3945
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 9 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 57947.034
+  type: 'test'
+  ...
+# Subtest: 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+ok 10 - 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+  ---
+  duration_ms: 1667.8672
+  type: 'test'
+  ...
+# Subtest: 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+ok 11 - 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+  ---
+  duration_ms: 73041.7971
+  type: 'test'
+  ...
+# Subtest: 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+ok 12 - 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 13988.5335
+  type: 'test'
+  ...
+# Subtest: 旧 Archive none 保留当前 Run，迁移后可显式 execute
+ok 13 - 旧 Archive none 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 19809.363
+  type: 'test'
+  ...
+# Subtest: 旧 Archive launch 后无退出见证不能迁移，新版 finish 不恢复旧格式
+ok 14 - 旧 Archive launch 后无退出见证不能迁移，新版 finish 不恢复旧格式
+  ---
+  duration_ms: 12805.0188
+  type: 'test'
+  ...
+# Subtest: 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+ok 15 - 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+  ---
+  duration_ms: 290.1236
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 16 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 678.5741
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 17 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 115987.8323
+  type: 'test'
+  ...
+# Subtest: 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+ok 18 - 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+  ---
+  duration_ms: 460.8203
+  type: 'test'
+  ...
+# Subtest: 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+ok 19 - 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+  ---
+  duration_ms: 2677.6404
+  type: 'test'
+  ...
+# Subtest: 预览手改、源变化、项目外输入、错误角色在写前拒绝
+ok 20 - 预览手改、源变化、项目外输入、错误角色在写前拒绝
+  ---
+  duration_ms: 1516.0974
+  type: 'test'
+  ...
+# Subtest: 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+ok 21 - 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 4037.9954
+  type: 'test'
+  ...
+# Subtest: 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+ok 22 - 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1792.0477
+  type: 'test'
+  ...
+# Subtest: 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+ok 23 - 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2353.3912
+  type: 'test'
+  ...
+# Subtest: 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+ok 24 - 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2941.7641
+  type: 'test'
+  ...
+# Subtest: 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+ok 25 - 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1538.8905
+  type: 'test'
+  ...
+# Subtest: 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+ok 26 - 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1765.6189
+  type: 'test'
+  ...
+# Subtest: 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+ok 27 - 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1822.9004
+  type: 'test'
+  ...
+# Subtest: 真实 CLI 两种首次入口保存 v2，轮次查询跨进程只读，next 不接受历史选择
+ok 28 - 真实 CLI 两种首次入口保存 v2，轮次查询跨进程只读，next 不接受历史选择
+  ---
+  duration_ms: 13770.8789
+  type: 'test'
+  ...
+# Subtest: 真实 CLI 旧格式全类写请求写前拒绝，查询及 instructions 保持只读；迁移命令本地接线
+ok 29 - 真实 CLI 旧格式全类写请求写前拒绝，查询及 instructions 保持只读；迁移命令本地接线
+  ---
+  duration_ms: 25183.3238
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 303661.543

@@ -1,0 +1,101 @@
+[
+  {
+    "capability": "delivery-lifecycle",
+    "result": {
+      "items": [
+        {
+          "id": "delivery-lifecycle",
+          "type": "spec",
+          "valid": true,
+          "issues": [],
+          "durationMs": 12
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "spec": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "D:\\Projects\\MenDi",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "capability": "delivery-verification",
+    "result": {
+      "items": [
+        {
+          "id": "delivery-verification",
+          "type": "spec",
+          "valid": true,
+          "issues": [],
+          "durationMs": 17
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "spec": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "D:\\Projects\\MenDi",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "capability": "delivery-workspace",
+    "result": {
+      "items": [
+        {
+          "id": "delivery-workspace",
+          "type": "spec",
+          "valid": true,
+          "issues": [],
+          "durationMs": 25
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "spec": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "D:\\Projects\\MenDi",
+        "source": "nearest"
+      }
+    }
+  }
+]

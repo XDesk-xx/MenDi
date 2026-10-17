@@ -1,5 +1,5 @@
 import { selected, state, type Selection, type OperationOptions } from './project.ts';
-import { readWorkspace } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite } from '../adapters/workspace.ts';
 import { currentRun, readRun, type RunDocument } from '../adapters/runs.ts';
 import { actionDefinition, actionNext } from '../core/actions.ts';
 import { MendiError, text } from '../core/errors.ts';
@@ -17,6 +17,7 @@ export function context(input: ActorInput, options: ActionOptions) {
   if (input.role !== 'author' && input.role !== 'reviewer')
     throw new MendiError('action-role-mismatch', '必须声明 author 或 reviewer。');
   const selectedProject = selected(input, options);
+  guardProductWrite(selectedProject.root);
   const workspace = readWorkspace(selectedProject.root);
   checkWorkspace(workspace);
   if (workspace.bindings.some((b) => b.state === 'archiving'))

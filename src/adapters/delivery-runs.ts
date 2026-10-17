@@ -8,6 +8,8 @@ import {
   type DeliveryRunRecord,
 } from '../core/delivery-runs.ts';
 import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts';
+import { projectProgress } from '../core/rounds.ts';
+import { requireCurrentRound } from '../core/round-records.ts';
 import { errorInfo, MendiError } from '../core/errors.ts';
 import { readWorkspace, type WriteObserver } from './workspace.ts';
 import { replaceManagedFile } from './action-store.ts';
@@ -32,9 +34,12 @@ export function readDeliveryRun(root: string, ref: string, id: string): Delivery
   }
 }
 export function currentDeliveryRun(root: string, workspace: Workspace) {
-  return workspace.mode === 'product' && workspace.manifest.deliveryRunRef !== undefined
-    ? readDeliveryRun(root, String(workspace.manifest.deliveryRunRef), workspace.id)
-    : null;
+  const current =
+    workspace.mode === 'product' && workspace.manifest.deliveryRunRef !== undefined
+      ? readDeliveryRun(root, String(workspace.manifest.deliveryRunRef), workspace.id)
+      : null;
+  if (current) requireCurrentRound(workspace, current.record);
+  return current;
 }
 export function currentProgress(root: string, workspace: Workspace) {
   return currentDeliveryRun(root, workspace) ?? currentRun(root, workspace);
@@ -64,11 +69,11 @@ export function createDeliveryRun(
   fs.writeFileSync(managedPath(root, ref), content, { flag: 'wx' });
   written.push(managedPath(root, ref));
   observe?.('run-written', managedPath(root, ref));
-  const manifest = {
+  const manifest = projectProgress(workspace, {
     ...workspace.manifest,
     deliveryRunRef: ref,
     ...(seed.fullTest ? { fullTestRunRef: ref } : {}),
-  };
+  });
   parseWorkspace(parseProject(workspace.project), manifest);
   const manifestContent = JSON.stringify(manifest, null, 2) + '\n';
   replaceManagedFile(

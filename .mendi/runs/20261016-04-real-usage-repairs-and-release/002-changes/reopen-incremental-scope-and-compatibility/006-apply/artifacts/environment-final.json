@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-16T17:37:39.597Z",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "branch": "delivery/20261016-04-real-usage-repairs-and-release",
+  "head": "982159b42d7b6ce88dea0ebf178e13d75514adae",
+  "rootRecordingMode": "manual-bootstrap",
+  "packageVersion": "0.1.0",
+  "stable": {
+    "manifest": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+21226a8+mendi-0.1.0.tgz\\node_modules\\mendi\\package.json",
+    "version": "0.1.0",
+    "lastWriteTime": "2026-10-10T16:37:05.661Z"
+  },
+  "protectedFiles": [
+    "package.json",
+    "pnpm-lock.yaml",
+    ".mendi/project.json",
+    "mendi-foundation-and-delivery-roadmap.md",
+    "mendi-full-test-continuation-improvement.md",
+    "mendi-reopen-incremental-scope-improvement.md",
+    "mendi-ui-spec-granularity-improvement.md"
+  ],
+  "protectedDiff": "",
+  "rootLockPresent": false,
+  "boundary": "只读核对；没有执行真实目标迁移、Git 写入、稳定安装切换或 DreMo 操作。"
+}

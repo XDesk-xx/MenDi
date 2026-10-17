@@ -1,0 +1,38 @@
+{
+  "command": "stable MenDi next --project D:/Projects/MenDi --json",
+  "ok": true,
+  "source": "manual-bootstrap",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/run.md",
+  "next": {
+    "action": "propose",
+    "status": "awaiting-instruction",
+    "role": "author",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "reason": "003 独立 Review Explore 已批准；Author 可依据已确认兼容决定与 proof 限制收敛正式方案。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "upstream": {
+    "schemaName": "spec-driven",
+    "mode": "repo-local",
+    "isPlanningComplete": false,
+    "artifacts": [
+      {
+        "id": "proposal",
+        "status": "ready"
+      },
+      {
+        "id": "specs",
+        "status": "blocked"
+      },
+      {
+        "id": "design",
+        "status": "blocked"
+      },
+      {
+        "id": "tasks",
+        "status": "blocked"
+      }
+    ]
+  }
+}

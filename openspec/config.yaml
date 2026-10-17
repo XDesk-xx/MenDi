@@ -8,9 +8,11 @@ context: |
   使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。
   当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。
   规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。
-  当前仅完成 001 Delivery Open，无活动根 Change，不预建批次；next 为 delivery-checkpoint / awaiting-owner-instruction / author，未执行 Git。
+  D04 范围 checkpoint 为 982159b；当前 MVP-D04-A 已由 007 独立审核批准，008 Author 实际归档为 2026-10-17-011-reopen-incremental-scope-and-compatibility，三份主规格同步完成。006 完成 27/27、根行为测试 250/250，007 独立工程检查及 49 项回归通过；A 的实现、011 归档与本地收尾纳入 Change checkpoint；当前停 change-bind / author / awaiting-owner，B / C 未激活。
+  方案支持完整 open / closed 与活动 Change / draft 迁移，同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。
+  旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。
   状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。
-  D03 已 closed，累计成功归档 10；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。
+  D03 已 closed，项目累计成功归档 11；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。
   后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。
   迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。
   必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。

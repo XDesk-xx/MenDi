@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import { managedPath } from '../adapters/paths.ts';
 import type { ProjectLock } from '../adapters/workspace.ts';
+import { guardProductWrite } from '../adapters/workspace.ts';
+import { requireWritable } from '../core/rounds.ts';
 import { MendiError, errorInfo } from '../core/errors.ts';
 import type { Workspace } from '../core/records.ts';
 import type { TestKind, TestExecution, TestOutcome } from '../core/test-execution.ts';
@@ -28,6 +30,8 @@ export async function executeTestUnderLease(
   options: ExecutionProcessOptions = {},
   onIntent?: (record: TestExecution) => void,
 ) {
+  requireWritable(workspace);
+  guardProductWrite(root);
   if (fs.readFileSync(managedPath(root, '.mendi/write.lock'), 'utf8') !== lease.owner)
     throw new MendiError('write-conflict', '执行服务没有自己的 lease。');
   const script = selectedTest(root, kind);
@@ -43,6 +47,7 @@ export async function executeTestUnderLease(
     );
   if (options.signal?.aborted)
     throw new MendiError('test-cancelled-before-launch', '调用者已取消，未运行。');
+  guardProductWrite(root);
   const reservation = reserveExecution(root, workspace.id, kind);
   execution.preserve = true;
   executionId = reservation.id;

@@ -1,0 +1,9 @@
+{
+  "task": "3.4",
+  "evidence": "test-final-02.log lifecycle fault groups passed",
+  "progress": {
+    "total": 27,
+    "complete": 22,
+    "remaining": 5
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "authorizedBy": "Owner 原始答复：授权本地收尾（仅本次原锁）",
+  "checkedAt": "2026-10-17T02:58:22.955Z",
+  "scope": "仅释放原锁并公开读回；不重跑归档 / 同步或改终态 Run",
+  "lock": {
+    "path": "D:\\Projects\\MenDi\\.mendi\\write.lock",
+    "owner": {
+      "token": "6dad945f-f8e4-4c32-bf0a-e6b77200f211",
+      "pid": 55176,
+      "operation": "manual-author-archive"
+    },
+    "writerExists": false
+  }
+}

@@ -57,6 +57,26 @@ Run 按 `.mendi/runs/<delivery-id>/<操作序号>-<操作名称>/` 或同级 `<�
 
 并发写使用独占锁，错误保留实际现场；诊断不解除锁。Windows 测试结果替换遇到 EPERM / EBUSY 时仅对同一暂存文件有限重试，等待预算 500ms；持续失败或直接输入改变仍停止，不重跑业务命令、不删除原结果或清锁。人工 manual-bootstrap 只支持查询，产品写命令不迁移开发历史。Owner 标签不认证真实身份，工具成功与 ready / all_done 不表示实际完成或批准。
 
+## 当前候选的轮次与兼容入口
+
+D04-A 候选使用 version 2 项目入口及 manifest；稳定安装尚未切换，以下新命令使用本仓库构建后的 `node dist/drivers/cli.js`。`rounds[]` 保存每次范围及收口，`currentRoundId` 只选择最新轮。顶层目标、计划、状态、批次和结果指针是当前轮投影；矛盾拒绝，不自动修复。Reopen 追加 rNNN，不预建批次，旧 PASS / Close 留在旧轮。省略身份的首次 Open 同样创建 r001，但没有虚构 Open Run。
+
+```powershell
+node dist/drivers/cli.js status --project D:\work\target --round r001 --json
+node dist/drivers/cli.js delivery migrate preview --project D:\work\target --json |
+  Set-Content -LiteralPath D:\work\target\migration-preview.json -Encoding utf8
+# 核对预览并取得该目标本次迁移的 Owner 授权后：
+node dist/drivers/cli.js delivery migrate apply --project D:\work\target --input migration-preview.json --role author --actor author-id --json
+```
+
+历史轮查询仅展示已保存摘要，没有历史执行 next，不改变 Delivery / 轮次选择、不访问旧 Change status。旧 product 保留普通 status / next、instructions 及指定结果读取；普通写入（包括 save / submit、test、Archive finish 和旧 resume）拒绝，先显式迁移。v2 项目可登记其他 v1 manifest，旧来源不强制迁移。manual-bootstrap 继续只读。
+
+迁移仅转换当前选定 manifest 和必要入口，保留原 Action、actor、draft、固定 Author、业务进展指针和累计编号；收据 migrationRunRef 不成为当前进展。预览不建文件或占号、不执行 OpenSpec。输入须在项目内，apply 重算实际计划并锁内复核；陈旧 / 手改预览拒绝。缺首次 Open 但范围 / Close 充分时标明 legacy-baseline，不补未知历史；真实缺口拒绝。完整活动 draft 可迁移；旧 pending、未确认原生效果或运行 / 不完整测试须先兼容旧版恢复，再重新预览。新版没有旧格式恢复例外。
+
+迁移中断保存原 intent、编号及锁。Owner 另行核对写者与锁处置后，原 actor 显式 `delivery migrate resume --project <root> --run <同次 NNN-delivery-migrate/run.md> --role author --actor <原标识>`；只补原提交，不自动清锁、降级或改终态。重复 apply 返回 already-migrated，同次完整 resume 返回 already-completed；后续工作改变则拒绝旧恢复。详细边界见 `skills/actions/delivery-migrate/SKILL.md`。
+
+本轮 `dependsOn` 仍是本轮 DAG；已交付前置放 `baselineDependencies:[{deliveryId,planningSlot,closeRunRef}]`，示例见 `tests/fixtures/delivery-scope-baseline.json`，引用必须换成目标实际记录。仅核对同项目登记 product 的 archived binding 与指定 Close 完成快照；支持同 Delivery 更早关闭轮和跨 Delivery，来源可后来 Reopen、ordinal 可小于当前累计数、v1 来源无需迁移。manual 来源只能说明。准入只读直接来源，不递归其依赖、旧审核、日志或活动状态；普通 query 不展开来源。新正式结果固定 roundId 和 baselineFacts，Close 消费本轮实际结果及保存快照。现行失败 → 修复 → 独立审核 → 新整次执行规则保持。
+
 ## 显式安装验收
 
 ```powershell
@@ -87,6 +107,6 @@ pnpm test:ui
 
 ## 开发交接
 
-当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[001 Delivery Open](.mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md)。MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，登记 A「Reopen 增量范围与兼容」、B「Full Test 编排、续测与复验」、C「业务契约、UI 方案与主动澄清」三个规划槽位；B 依赖 A，C 可独立安排。当前无活动 Change，停在 delivery-checkpoint / awaiting-owner-instruction / author，未执行 Git。
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[A 008 Author Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/008-archive/run.md)。A 已由 007 独立批准并实际归档为 [011](openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility)，三份主规格同步完成；A 的实现、归档及本地收尾纳入 Change checkpoint；当前停 change-bind / author / awaiting-owner。B / C 未激活，项目累计成功归档为 11。
 
-D03 的 Full Test / Close、归档与 Git / 稳定安装事实保持；累计成功归档仍为 10。D04 后续方案与验收遵循唯一路线图及各 Change，旧失败和 verdict 保留；迁移、正式 Full Test / Close、Git、打包与稳定安装切换保持各自授权边界。
+范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。

@@ -1,0 +1,5 @@
+{
+  "command": "node scripts/mvp-d04-a-explore.ts .mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01",
+  "exitCode": 0,
+  "output": "cross-round-dependency: observed\nold-scope-union: observed\nreal-reopen-scope-replacement: observed\nold-pass-is-history: observed\ndirect-history-gap: observed\nformat-boundary: observed\nfirst-current-round-run: observed\nmanual-read-only: observed"
+}

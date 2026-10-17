@@ -1,0 +1,5 @@
+{
+  "command": "pnpm check",
+  "exitCode": 0,
+  "output": "Already up to date\nDone in 1.1s using pnpm v11.22.0\n$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\nChecked 140 files in 91ms. No fixes applied.\n$ biome lint src scripts tests\nChecked 140 files in 77ms. No fixes applied.\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json"
+}

@@ -12,6 +12,7 @@ export interface Applicability {
   reason: string;
 }
 export interface Lifecycle {
+  roundId?: string;
   operation: LifecycleType;
   sourceDeliveryId: string | null;
   scope: Scope;
@@ -58,6 +59,9 @@ export function parseLifecycle(
     value.sourceDeliveryId === null ? null : identifier(value.sourceDeliveryId, '来源 Delivery');
   const scope = readScope(value.scope);
   const recordedOn = text(value.recordedOn, '记录日期');
+  const round = value.roundId === undefined ? {} : { roundId: text(value.roundId, 'roundId') };
+  if ('roundId' in round && !/^r\d{3,}$/.test(round.roundId!))
+    throw new MendiError('invalid-run', 'roundId 无效。');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(recordedOn))
     throw new MendiError('invalid-run', '记录日期无效。');
   if (operation !== 'delivery-open' && source !== id)
@@ -81,11 +85,14 @@ export function parseLifecycle(
     );
     const comparable = (input: Scope) => ({
       goal: input.goal,
-      plannedChanges: input.plannedChanges.map(({ slot, title, dependsOn }) => ({
-        slot,
-        title,
-        dependsOn,
-      })),
+      plannedChanges: input.plannedChanges.map(
+        ({ slot, title, dependsOn, baselineDependencies }) => ({
+          slot,
+          title,
+          dependsOn,
+          ...(baselineDependencies?.length ? { baselineDependencies } : {}),
+        }),
+      ),
     });
     if (
       accepted.outcome !== 'passed' ||
@@ -93,6 +100,7 @@ export function parseLifecycle(
     )
       throw new MendiError('invalid-run', '收口快照与范围不一致。');
     return {
+      ...round,
       operation,
       sourceDeliveryId: source,
       scope,
@@ -115,6 +123,7 @@ export function parseLifecycle(
     initialBinding = { changeId: binding.changeId, planningSlot: binding.planningSlot };
   }
   return {
+    ...round,
     operation,
     sourceDeliveryId: source,
     scope,

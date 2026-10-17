@@ -17,3 +17,5 @@ failed 转范围内 Author 修复及独立定向 Review，approved 后显式重�
 修复后首次执行和后续重跑都需要当前必要 Review 的完整头部与非空正文，查询不因此倒查正文。取消时停止命令返回成功仍需本次 child / 日志管道关闭确认；无法确认则有界返回 unknown，可能仍有存活后代，须核对现场，不能据入口退出宣称整树停止。查询遇到本次不稳定观察时 next 同样停 Owner，不以旧 passed 提示收口。
 
 结果与最新正式入口只供后续 Close 直接核对本轮范围、必要审核和实际候选影响，不构成 Close / Archive / Git / 下一 Change 授权。
+
+新正式记录固定当前 version 2 轮次 roundId 和本轮完成范围，并直接核对 baselineDependencies，保存 baselineFacts（当前槽位、来源 Delivery / 槽位 / Close / Change / ordinal）。只读直接来源，不读取来源活动 status、旧审核正文或旧日志，不迁移旧来源。Close 消费本次保存快照与本轮声明；基线不替代当前轮执行。旧结果保留原 outcome，只在明确迁移收据的旧编号边界内解释缺 roundId；新记录缺归属或跨轮批准拒绝。旧 product status 可读，run 必须先显式迁移，旧未确认执行先兼容旧版恢复。

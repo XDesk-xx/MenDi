@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 1 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 70858.6559
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 2 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 11214.3415
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 3 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 6955.354
+  type: 'test'
+  ...
+# Subtest: closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+ok 4 - closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+  ---
+  duration_ms: 112052.8531
+  type: 'test'
+  ...
+# Subtest: 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+ok 5 - 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+  ---
+  duration_ms: 2584.0056
+  type: 'test'
+  ...
+# Subtest: 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+ok 6 - 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+  ---
+  duration_ms: 15804.7854
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+not ok 7 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 65745.6125
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\lifecycle-reopen.test.ts:29:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - '.mendi/runs/d01/015-delivery-full-test/run.md'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '.mendi/runs/d01/015-delivery-full-test/run.md'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/lifecycle-reopen.test.ts:45:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 8 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 9761.4367
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 9 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 50918.2929
+  type: 'test'
+  ...
+# Subtest: close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 10 - close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 163265.4221
+  type: 'test'
+  ...
+# Subtest: reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 11 - reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 106662.2157
+  type: 'test'
+  ...
+# Subtest: open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 12 - open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 140382.8283
+  type: 'test'
+  ...
+# Subtest: resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+ok 13 - resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+  ---
+  duration_ms: 14862.4142
+  type: 'test'
+  ...
+# Subtest: 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+ok 14 - 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+  ---
+  duration_ms: 15825.4448
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 13
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 573234.1736

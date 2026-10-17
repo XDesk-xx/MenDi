@@ -1,0 +1,40 @@
+{
+  "result": "planning-ready",
+  "role": "author",
+  "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/run.md",
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/run.md",
+    "reason": "004 Author Propose 已完成；独立审核当前方案、已确认产品决定及验证范围。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "planningComplete": true,
+  "deltaCapabilities": [
+    "delivery-workspace",
+    "delivery-lifecycle",
+    "delivery-verification"
+  ],
+  "tasks": 27,
+  "tasksCompleted": 0,
+  "strictValidation": {
+    "id": "reopen-incremental-scope-and-compatibility",
+    "type": "change",
+    "valid": true,
+    "issues": [],
+    "durationMs": 91
+  },
+  "archivedChangeCount": 10,
+  "productCodeChanged": false,
+  "mainSpecsChanged": false,
+  "oldRunVerdictsChanged": false,
+  "rootFullTest": false,
+  "dreMoAccess": false,
+  "stableInstallationWrites": false,
+  "gitWrites": false,
+  "lockReleased": true,
+  "checkedAt": "2026-10-16T15:15:57.841Z"
+}

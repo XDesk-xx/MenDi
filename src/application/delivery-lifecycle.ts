@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { inspectProject } from '../adapters/project.ts';
 import { managedPath, present } from '../adapters/paths.ts';
-import { readWorkspace, type WriteObserver } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite, type WriteObserver } from '../adapters/workspace.ts';
 import { readDeliveryRun, currentDeliveryRun } from '../adapters/delivery-runs.ts';
 import { inspectFullTest, same } from '../adapters/delivery-verification.ts';
 import { loadMethods } from '../adapters/methods.ts';
@@ -18,6 +18,9 @@ import { bindingFor, readScope, type Workspace } from '../core/records.ts';
 import { assertAssociationAvailable } from '../core/associations.ts';
 import { MendiError, object, text } from '../core/errors.ts';
 import { state, selected, type OpenInput, type OperationOptions } from './project.ts';
+import { requireWritable } from '../core/rounds.ts';
+import { deliveredBaselines } from '../adapters/baselines.ts';
+import { checkBaselineSnapshot } from '../core/baselines.ts';
 
 export interface LifecycleInput {
   project: string;
@@ -51,6 +54,7 @@ function inputBasis(root: string, ref: string, workspace: Workspace | null): Lif
 function product(workspace: Workspace | null): asserts workspace is Workspace {
   if (!workspace || workspace.mode !== 'product')
     throw new MendiError('manual-state-read-only', '生命周期写入仅支持 product，不迁移人工历史。');
+  requireWritable(workspace);
 }
 function closed(root: string, workspace: Workspace) {
   const run = currentDeliveryRun(root, workspace);
@@ -67,6 +71,8 @@ function closed(root: string, workspace: Workspace) {
 }
 export function confirmLifecycle(root: string, workspace: Workspace | null, lifecycle: Lifecycle) {
   if (lifecycle.operation === 'delivery-open' && !workspace) {
+    if (lifecycle.scope.plannedChanges.some((p) => p.baselineDependencies?.length))
+      throw new MendiError('baseline-source-unavailable', '首次 Open 没有登记基线来源。');
     if (lifecycle.sourceDeliveryId !== null)
       throw new MendiError('delivery-state-conflict', '首次 Open 来源不符。');
     if (lifecycle.initialBinding) {
@@ -83,6 +89,15 @@ export function confirmLifecycle(root: string, workspace: Workspace | null, life
   }
   product(workspace);
   if (lifecycle.operation !== 'delivery-close') {
+    deliveredBaselines(
+      root,
+      {
+        ...workspace,
+        id: lifecycle.operation === 'delivery-open' ? '__new-delivery__' : workspace.id,
+      },
+      lifecycle.scope,
+      lifecycle.roundId,
+    );
     const prior = closed(root, workspace);
     if (prior.ref !== lifecycle.priorCloseRef || workspace.id !== lifecycle.sourceDeliveryId)
       throw new MendiError('lifecycle-input-changed', '直接来源 Close 已变化。');
@@ -96,6 +111,7 @@ export function confirmLifecycle(root: string, workspace: Workspace | null, life
   )
     throw new MendiError('delivery-state-conflict', 'Close 需要当前本轮正式入口与两个指针一致。');
   const run = readDeliveryRun(root, lifecycle.fullTestRunRef!, workspace.id);
+  checkBaselineSnapshot(workspace.scope, lifecycle.acceptance?.baselineFacts ?? []);
   verificationScope(workspace);
   const facts = inspectFullTest(root, workspace, run, true);
   if (
@@ -145,6 +161,7 @@ export function deliveryLifecycle(
 ) {
   const actorId = actor(input.role, input.actor);
   const { root } = inspectProject(input.project);
+  guardProductWrite(root);
   const methods = loadMethods(type, [], options.methodsRoot);
   if (input.resumeRef)
     return output(
@@ -174,6 +191,7 @@ export function deliveryLifecycle(
     const run = readDeliveryRun(root, ref, workspace.id);
     if (!run.record.fullTest) throw new MendiError('invalid-run', 'Close 不能使用普通测试 PASS。');
     lifecycle = {
+      roundId: workspace.currentRoundId!,
       operation: type,
       sourceDeliveryId: workspace.id,
       scope: workspace.scope,
@@ -187,6 +205,7 @@ export function deliveryLifecycle(
   } else {
     const prior = closed(root, workspace);
     lifecycle = {
+      roundId: `r${String(workspace.rounds!.length + 1).padStart(3, '0')}`,
       operation: type,
       sourceDeliveryId: workspace.id,
       scope: readScope(declared),
@@ -218,11 +237,16 @@ export function deliveryLifecycle(
       );
   }
   // 可选配置文件不存在时 selectedTest 已解释其默认值；存在者才是此处字节复核输入。
-  const bytes = new Map(
+  const bytes = new Map<string, Buffer>(
     refs
       .filter((ref) => present(managedPath(root, ref)))
       .map((ref) => [ref, fs.readFileSync(managedPath(root, ref))]),
   );
+  if (type === 'delivery-reopen') {
+    const baseline = deliveredBaselines(root, workspace, lifecycle.scope, lifecycle.roundId);
+    for (const [ref, content] of baseline.bytes)
+      if (ref !== workspace.manifestRef) bytes.set(ref, content);
+  }
   const result = commitLifecycle(
     root,
     workspace.id,
@@ -246,6 +270,7 @@ export function recordedOpen(
   const methods = loadMethods('delivery-open', [], options.methodsRoot);
   if (input.resumeRef) {
     const { root } = inspectProject(input.project);
+    guardProductWrite(root);
     return output(
       root,
       'delivery-open',
@@ -278,6 +303,7 @@ export function recordedOpen(
   const basis = inputBasis(root, input.scopePath, workspace);
   const scope = readScope(JSON.parse(basis.input.content));
   const lifecycle: Lifecycle = {
+    roundId: 'r001',
     operation: 'delivery-open',
     sourceDeliveryId: workspace?.id ?? null,
     scope,

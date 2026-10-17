@@ -3,10 +3,15 @@ import { declaration, parseVerificationScope, type FullTest } from './delivery-v
 import { runLocation } from './actions.ts';
 import { executionLocation } from './test-execution.ts';
 import { deliveryLocation } from './delivery-runs.ts';
+import { checkBaselineSnapshot } from './baselines.ts';
 export function parseFullTest(data: Record<string, unknown>, id: string, number: number): FullTest {
   const full = object(data.fullTest, '正式测试');
   declaration(full);
   const scope = parseVerificationScope(full.scope);
+  if (full.roundId !== undefined && !/^r\d{3,}$/.test(text(full.roundId, 'roundId')))
+    throw new MendiError('invalid-run', '正式 roundId 无效。');
+  if (full.roundId !== undefined || full.baselineFacts !== undefined)
+    checkBaselineSnapshot(scope, full.baselineFacts as FullTest['baselineFacts']);
   if (!Array.isArray(full.approvals) || full.approvals.length !== scope.completed.length)
     throw new MendiError('invalid-run', '缺少已核对批准快照。');
   for (const [i, v] of full.approvals.entries()) {

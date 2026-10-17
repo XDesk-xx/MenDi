@@ -1,0 +1,9 @@
+{
+  "operation": "补充 formal status 读回断言",
+  "exitCode": 1,
+  "error": "unexpected formal status",
+  "expectedScopeMatch": "changed",
+  "actualScopeMatch": "unavailable",
+  "cause": "Reviewer 辅助断言混淆了 Reopen 后未绑定与 proof 结束后已有 activeChangeId 的两个时点。产品原始读回 exit 0，proof 本身 exit 0；保留原文件，未改源码或 Author proof。",
+  "source": "src/adapters/delivery-verification.ts inspectFullTest: activeChangeId 优先返回 unavailable"
+}

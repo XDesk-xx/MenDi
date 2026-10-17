@@ -1,0 +1,18 @@
+[
+  {
+    "task": "8.1",
+    "progress": {
+      "total": 27,
+      "complete": 26,
+      "remaining": 1
+    }
+  },
+  {
+    "task": "8.3",
+    "progress": {
+      "total": 27,
+      "complete": 27,
+      "remaining": 0
+    }
+  }
+]

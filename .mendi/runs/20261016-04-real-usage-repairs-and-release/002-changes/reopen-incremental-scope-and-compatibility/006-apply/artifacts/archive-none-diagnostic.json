@@ -1,0 +1,15 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-DJDuqU\\minimal-project",
+  "exitCode": 88,
+  "code": "workspace-write-failed",
+  "details": {
+    "operation": "archive-finish",
+    "lock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-DJDuqU\\minimal-project\\.mendi\\write.lock",
+    "committedPaths": [],
+    "error": {
+      "message": "ENOENT: no such file or directory, open 'D:\\Projects\\MenDi\\.tmp\\mendi-apply-DJDuqU\\minimal-project\\.mendi\\runs\\d01\\001-changes\\proof-entry\\007-archive\\artifacts\\attempt-001\\native-exit.json'",
+      "code": "ENOENT"
+    }
+  },
+  "stack": "MendiError: MenDi 写入未完整成功。\n    at lockedWrite (file:///D:/Projects/MenDi/src/adapters/workspace.ts:248:11)\n    at writeAction (file:///D:/Projects/MenDi/src/adapters/action-store.ts:48:10)\n    at archiveAction (file:///D:/Projects/MenDi/src/application/archive.ts:166:18)\n    at file:///D:/Projects/MenDi/[eval1]:4:58\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:282:26)\n    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:278:20)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+}

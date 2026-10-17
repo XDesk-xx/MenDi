@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fixture, sandbox } from './helpers.ts';
 import { createWorkspace } from '../src/adapters/workspace.ts';
+import { initialRound } from '../src/core/rounds.ts';
 import type { ProcessRunner } from '../src/adapters/openspec.ts';
 import { saveRun, startAction, submitRun } from '../src/application/actions.ts';
 import { prepareTargetMethods } from './target-method-support.ts';
@@ -32,15 +33,15 @@ export function actionTarget() {
   createWorkspace(
     root,
     {
-      formatVersion: 1,
+      formatVersion: 2,
       recordingMode: 'product',
       name: 'test',
       deliveryGroupsDir: '.mendi/delivery-groups',
       activeDeliveryId: 'd01',
       deliveries: [{ id: 'd01', manifestRef: '.mendi/delivery-groups/d01/manifest.json' }],
     },
-    {
-      formatVersion: 1,
+    initialRound({
+      formatVersion: 2,
       recordingMode: 'product',
       id: 'd01',
       title: '受控目标',
@@ -58,7 +59,7 @@ export function actionTarget() {
         },
       ],
       changeBatches: [],
-    },
+    }),
   );
   return root;
 }
