@@ -1,0 +1,17 @@
+{
+  "operation": "manual-d04-delivery-close-027",
+  "completed": true,
+  "closedAt": "2026-10-17T13:51:54.509Z",
+  "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "fullTestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+  "ownLockReleased": true,
+  "rootState": "closed",
+  "next": {
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D04已基于026完整正式PASS完成027 Close；等待Owner下一指令，Git/checkpoint、0.2.0稳定切换及DreMo推进分别授权。"
+  },
+  "noGit": true,
+  "noStableSwitch": true
+}

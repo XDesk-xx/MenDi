@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
+import { installationPackage } from './installation-package.ts';
 
 export interface InstallationSession {
   installation: string;
@@ -11,6 +12,9 @@ export interface InstallationSession {
   targets: string[];
   openspecEntry: string;
   evidence: string;
+  packagePath?: string;
+  packageVersion?: string;
+  packageSha256?: string;
 }
 const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -19,13 +23,20 @@ function within(root: string, candidate: string) {
   return !path.isAbsolute(relative) && relative !== '..' && !relative.startsWith('..' + path.sep);
 }
 
-export function prepareInstallation(evidence: string, installation: string) {
+export function prepareInstallation(evidence: string, installation: string, packageFile?: string) {
   assert.ok(
     path.isAbsolute(evidence) && path.isAbsolute(installation),
     '需要证据与新安装的绝对目录',
   );
   evidence = path.resolve(evidence);
   installation = path.resolve(installation);
+  const expected = JSON.parse(fs.readFileSync(path.join(repository, 'package.json'), 'utf8')) as {
+    name: string;
+    version: string;
+  };
+  assert.equal(expected.name, 'mendi');
+  // An explicit frozen package skips build / pack; validate it before creating either output.
+  let selected = packageFile ? installationPackage(packageFile, expected) : undefined;
   assert.ok(!fs.existsSync(evidence) && !fs.existsSync(installation), '不覆盖已占用目录');
   assert.ok(
     !within(repository, installation) && !within(installation, repository),
@@ -85,21 +96,26 @@ export function prepareInstallation(evidence: string, installation: string) {
   }
   assert.equal(run(pnpm, ['--version'], repository).trim(), '11.22.0');
   // 正常根工程环境，不继承 UI helper 的目标 verifyDepsBeforeRun=error 策略。
-  run(pnpm, ['run', 'build'], repository);
-  run(pnpm, ['pack', '--pack-destination', evidence], repository);
+  if (!selected) {
+    run(pnpm, ['run', 'build'], repository);
+    run(pnpm, ['pack', '--pack-destination', evidence], repository);
+    const packages = fs.readdirSync(evidence).filter((name) => name.endsWith('.tgz'));
+    assert.deepEqual(packages, [`mendi-${expected.version}.tgz`], '本次pack必须产生唯一当前版本包');
+    selected = installationPackage(path.join(evidence, packages[0]), expected);
+  }
   fs.mkdirSync(installation, { recursive: true });
   fs.writeFileSync(
     path.join(installation, 'package.json'),
     JSON.stringify({ name: 'mendi-installation-acceptance', private: true, type: 'module' }),
   );
-  run(
-    pnpm,
-    ['add', '--offline', '--ignore-scripts', path.join(evidence, 'mendi-0.1.0.tgz')],
-    installation,
-  );
+  run(pnpm, ['add', '--offline', '--ignore-scripts', selected.file], installation);
   const installedRoot = fs.realpathSync(path.join(installation, 'node_modules/mendi'));
   assert.ok(!within(fs.realpathSync(repository), installedRoot));
   const installedCLI = path.join(installedRoot, 'dist/drivers/cli.js');
+  const installed = JSON.parse(fs.readFileSync(path.join(installedRoot, 'package.json'), 'utf8'));
+  assert.equal(installed.name, expected.name);
+  assert.equal(installed.version, expected.version);
+  assert.equal(installationPackage(selected.file, expected).sha256, selected.sha256);
   fs.mkdirSync(path.join(repository, '.tmp'), { recursive: true });
   const sandbox = fs.mkdtempSync(path.join(repository, '.tmp/mendi-installation-'));
   const targets = ['alpha', 'beta'].map((name) => path.join(sandbox, name));
@@ -159,6 +175,9 @@ export function prepareInstallation(evidence: string, installation: string) {
     targets,
     openspecEntry,
     evidence,
+    packagePath: selected.file,
+    packageVersion: selected.version,
+    packageSha256: selected.sha256,
   };
   fs.writeFileSync(path.join(evidence, 'session.json'), JSON.stringify(session, null, 2) + '\n', {
     flag: 'wx',
@@ -168,10 +187,10 @@ export function prepareInstallation(evidence: string, installation: string) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [evidence, installation] = process.argv.slice(2);
+  const [evidence, installation, packageFile] = process.argv.slice(2);
   assert.ok(
     evidence && installation,
-    '用法：node scripts/prepare-installation-tests.ts <新证据绝对目录> <仓库外新安装绝对目录>',
+    '用法：node scripts/prepare-installation-tests.ts <新证据绝对目录> <仓库外新安装绝对目录> [已冻结tgz绝对路径]',
   );
-  prepareInstallation(evidence, installation);
+  prepareInstallation(evidence, installation, packageFile);
 }

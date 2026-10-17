@@ -1,0 +1,25 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "id": "F04-installation-prepare",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "prepare:installation-tests",
+    "D:/Projects/MenDi/.mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/installation",
+    "D:/tools/mendi/acceptance/d04-0.2.0-full-test-026",
+    "D:/Projects/MenDi/.mendi/runs/20261016-04-real-usage-repairs-and-release/024-candidate-preparation/artifacts/candidate-01/mendi-0.2.0.tgz"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "pid": 30568,
+  "startedAt": "2026-10-17T10:24:20.885Z",
+  "state": "finished",
+  "timeoutMs": 600000,
+  "log": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F04-installation-prepare.log",
+  "endedAt": "2026-10-17T10:24:35.330Z",
+  "durationMs": 14445,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

@@ -1,0 +1,151 @@
+{
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "packageFilesComparedToCurrentAndInstalled": 221,
+  "packageManifest": "Matches packed manifest; source differs only by omitted packageManager and serialization order",
+  "noBuildOrRepack": true,
+  "onlyVersionChangedInPackageJson": true,
+  "authorGroupEvidenceReadOnly": [
+    {
+      "id": "001-full",
+      "complete": true,
+      "cleanup": "confirmed",
+      "selection": [
+        "prefix",
+        "middle",
+        "tail"
+      ],
+      "groups": [
+        {
+          "id": "prefix",
+          "state": "passed",
+          "exitCode": 0,
+          "counts": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "pending": 0
+          }
+        },
+        {
+          "id": "middle",
+          "state": "failed",
+          "exitCode": 1,
+          "counts": {
+            "total": 1,
+            "passed": 0,
+            "failed": 1,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "pending": 0
+          }
+        },
+        {
+          "id": "tail",
+          "state": "not-run"
+        }
+      ]
+    },
+    {
+      "id": "002-full",
+      "complete": true,
+      "cleanup": "confirmed",
+      "selection": [
+        "tail"
+      ],
+      "groups": [
+        {
+          "id": "tail",
+          "state": "passed",
+          "exitCode": 0,
+          "counts": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "003-full",
+      "complete": true,
+      "cleanup": "confirmed",
+      "selection": [
+        "middle"
+      ],
+      "groups": [
+        {
+          "id": "middle",
+          "state": "passed",
+          "exitCode": 0,
+          "counts": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "pending": 0
+          }
+        }
+      ]
+    }
+  ],
+  "authorGroupExitCodes": [
+    1,
+    0,
+    0
+  ],
+  "authorVerification": "verified",
+  "topPhysicalLines": {
+    "src": [
+      {
+        "file": "src\\application\\project.ts",
+        "lines": 374
+      },
+      {
+        "file": "src\\core\\delivery-runs.ts",
+        "lines": 372
+      },
+      {
+        "file": "src\\application\\delivery-lifecycle.ts",
+        "lines": 371
+      }
+    ],
+    "tests": [
+      {
+        "file": "tests\\action-write.test.ts",
+        "lines": 467
+      },
+      {
+        "file": "tests\\planning-cli.test.ts",
+        "lines": 444
+      },
+      {
+        "file": "tests\\delivery-repair.test.ts",
+        "lines": 394
+      }
+    ],
+    "scripts": [
+      {
+        "file": "scripts\\proofs\\mvp-d01-c-explore.ts",
+        "lines": 678
+      },
+      {
+        "file": "scripts\\proofs\\mvp-d01-d-explore.ts",
+        "lines": 487
+      },
+      {
+        "file": "scripts\\proofs\\mvp-d01-a-explore.ts",
+        "lines": 463
+      }
+    ]
+  }
+}

@@ -1,0 +1,820 @@
+{
+  "src": [
+    {
+      "file": "src\\application\\project.ts",
+      "lines": 374
+    },
+    {
+      "file": "src\\core\\delivery-runs.ts",
+      "lines": 372
+    },
+    {
+      "file": "src\\application\\delivery-lifecycle.ts",
+      "lines": 371
+    },
+    {
+      "file": "src\\application\\group-attempt.ts",
+      "lines": 367
+    },
+    {
+      "file": "src\\adapters\\openspec.ts",
+      "lines": 346
+    },
+    {
+      "file": "src\\application\\delivery-repair.ts",
+      "lines": 344
+    },
+    {
+      "file": "src\\adapters\\workspace.ts",
+      "lines": 342
+    },
+    {
+      "file": "src\\adapters\\lifecycle-store.ts",
+      "lines": 336
+    },
+    {
+      "file": "src\\application\\archive.ts",
+      "lines": 334
+    },
+    {
+      "file": "src\\core\\actions.ts",
+      "lines": 322
+    },
+    {
+      "file": "src\\drivers\\arguments.ts",
+      "lines": 287
+    },
+    {
+      "file": "src\\application\\delivery-full-test.ts",
+      "lines": 286
+    },
+    {
+      "file": "src\\adapters\\archive-effects.ts",
+      "lines": 283
+    },
+    {
+      "file": "src\\application\\actions.ts",
+      "lines": 274
+    },
+    {
+      "file": "src\\application\\candidate-verification.ts",
+      "lines": 260
+    },
+    {
+      "file": "src\\core\\rounds.ts",
+      "lines": 253
+    },
+    {
+      "file": "src\\application\\diagnosis.ts",
+      "lines": 249
+    },
+    {
+      "file": "src\\adapters\\delivery-verification.ts",
+      "lines": 247
+    },
+    {
+      "file": "src\\adapters\\migration-preview.ts",
+      "lines": 246
+    },
+    {
+      "file": "src\\core\\group-records.ts",
+      "lines": 244
+    },
+    {
+      "file": "src\\core\\group-report.ts",
+      "lines": 231
+    },
+    {
+      "file": "src\\adapters\\migration-store.ts",
+      "lines": 226
+    },
+    {
+      "file": "src\\application\\action-resolution.ts",
+      "lines": 222
+    },
+    {
+      "file": "src\\application\\group-admission.ts",
+      "lines": 218
+    },
+    {
+      "file": "src\\core\\records.ts",
+      "lines": 199
+    },
+    {
+      "file": "src\\core\\associations.ts",
+      "lines": 194
+    },
+    {
+      "file": "src\\adapters\\group-store.ts",
+      "lines": 188
+    },
+    {
+      "file": "src\\application\\full-test-admission.ts",
+      "lines": 187
+    },
+    {
+      "file": "src\\adapters\\test-process.ts",
+      "lines": 175
+    },
+    {
+      "file": "src\\core\\delivery-verification.ts",
+      "lines": 165
+    },
+    {
+      "file": "src\\core\\delivery-lifecycle.ts",
+      "lines": 164
+    },
+    {
+      "file": "src\\drivers\\output.ts",
+      "lines": 158
+    },
+    {
+      "file": "src\\adapters\\action-store.ts",
+      "lines": 158
+    },
+    {
+      "file": "src\\core\\lifecycle-transition.ts",
+      "lines": 150
+    },
+    {
+      "file": "src\\adapters\\test-store.ts",
+      "lines": 150
+    },
+    {
+      "file": "src\\application\\test-execution.ts",
+      "lines": 149
+    },
+    {
+      "file": "src\\application\\tests.ts",
+      "lines": 148
+    },
+    {
+      "file": "src\\application\\archive-prepare.ts",
+      "lines": 146
+    },
+    {
+      "file": "src\\drivers\\dispatch.ts",
+      "lines": 144
+    },
+    {
+      "file": "src\\core\\test-execution.ts",
+      "lines": 139
+    },
+    {
+      "file": "src\\adapters\\openspec-operations.ts",
+      "lines": 129
+    },
+    {
+      "file": "src\\adapters\\delivery-runs.ts",
+      "lines": 124
+    },
+    {
+      "file": "src\\core\\legacy-conversion.ts",
+      "lines": 119
+    },
+    {
+      "file": "src\\adapters\\test-entries.ts",
+      "lines": 119
+    },
+    {
+      "file": "src\\adapters\\methods.ts",
+      "lines": 109
+    },
+    {
+      "file": "src\\adapters\\archive-commit.ts",
+      "lines": 106
+    },
+    {
+      "file": "src\\core\\archive.ts",
+      "lines": 102
+    },
+    {
+      "file": "src\\adapters\\runs.ts",
+      "lines": 98
+    },
+    {
+      "file": "src\\core\\group-plan.ts",
+      "lines": 96
+    },
+    {
+      "file": "src\\application\\action-context.ts",
+      "lines": 91
+    },
+    {
+      "file": "src\\adapters\\baselines.ts",
+      "lines": 91
+    },
+    {
+      "file": "src\\core\\full-test-record.ts",
+      "lines": 85
+    },
+    {
+      "file": "src\\core\\scope.ts",
+      "lines": 80
+    },
+    {
+      "file": "src\\core\\migration-intent.ts",
+      "lines": 76
+    },
+    {
+      "file": "src\\core\\batches.ts",
+      "lines": 73
+    },
+    {
+      "file": "src\\core\\round-records.ts",
+      "lines": 70
+    },
+    {
+      "file": "src\\application\\delivery-migration.ts",
+      "lines": 68
+    },
+    {
+      "file": "src\\core\\repair-record.ts",
+      "lines": 64
+    },
+    {
+      "file": "src\\core\\errors.ts",
+      "lines": 58
+    },
+    {
+      "file": "src\\adapters\\project.ts",
+      "lines": 56
+    },
+    {
+      "file": "src\\adapters\\paths.ts",
+      "lines": 56
+    },
+    {
+      "file": "src\\application\\action-instructions.ts",
+      "lines": 51
+    },
+    {
+      "file": "src\\adapters\\archive-attempt.ts",
+      "lines": 38
+    },
+    {
+      "file": "src\\drivers\\cli.ts",
+      "lines": 36
+    },
+    {
+      "file": "src\\adapters\\group-events.ts",
+      "lines": 35
+    },
+    {
+      "file": "src\\core\\baselines.ts",
+      "lines": 26
+    },
+    {
+      "file": "src\\core\\migration-plan.ts",
+      "lines": 15
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests\\action-write.test.ts",
+      "lines": 467
+    },
+    {
+      "file": "tests\\planning-cli.test.ts",
+      "lines": 444
+    },
+    {
+      "file": "tests\\delivery-repair.test.ts",
+      "lines": 394
+    },
+    {
+      "file": "tests\\query.test.ts",
+      "lines": 335
+    },
+    {
+      "file": "tests\\group-verification.test.ts",
+      "lines": 325
+    },
+    {
+      "file": "tests\\group-boundaries.test.ts",
+      "lines": 324
+    },
+    {
+      "file": "tests\\action-cli.test.ts",
+      "lines": 322
+    },
+    {
+      "file": "tests\\test-execution.test.ts",
+      "lines": 312
+    },
+    {
+      "file": "tests\\lifecycle-records.test.ts",
+      "lines": 295
+    },
+    {
+      "file": "tests\\cli.test.ts",
+      "lines": 294
+    },
+    {
+      "file": "tests\\owner-resolution.test.ts",
+      "lines": 283
+    },
+    {
+      "file": "tests\\rounds.test.ts",
+      "lines": 268
+    },
+    {
+      "file": "tests\\test-store.test.ts",
+      "lines": 267
+    },
+    {
+      "file": "tests\\fixtures\\group-node-runner.ts",
+      "lines": 249
+    },
+    {
+      "file": "tests\\delivery-query.test.ts",
+      "lines": 237
+    },
+    {
+      "file": "tests\\planning-inputs.test.ts",
+      "lines": 235
+    },
+    {
+      "file": "tests\\actions.test.ts",
+      "lines": 227
+    },
+    {
+      "file": "tests\\archive-finish.test.ts",
+      "lines": 219
+    },
+    {
+      "file": "tests\\lifecycle-reopen.test.ts",
+      "lines": 217
+    },
+    {
+      "file": "tests\\lifecycle-writes.test.ts",
+      "lines": 216
+    },
+    {
+      "file": "tests\\apply-resolution.test.ts",
+      "lines": 213
+    },
+    {
+      "file": "tests\\group-cli.test.ts",
+      "lines": 207
+    },
+    {
+      "file": "tests\\installation\\handoff.test.ts",
+      "lines": 196
+    },
+    {
+      "file": "tests\\workspace.test.ts",
+      "lines": 192
+    },
+    {
+      "file": "tests\\openspec.test.ts",
+      "lines": 192
+    },
+    {
+      "file": "tests\\archive-execute.test.ts",
+      "lines": 187
+    },
+    {
+      "file": "tests\\round-cli.test.ts",
+      "lines": 187
+    },
+    {
+      "file": "tests\\migration.test.ts",
+      "lines": 183
+    },
+    {
+      "file": "tests\\diagnosis.test.ts",
+      "lines": 178
+    },
+    {
+      "file": "tests\\target-method-handoff.test.ts",
+      "lines": 174
+    },
+    {
+      "file": "tests\\lifecycle-support.ts",
+      "lines": 172
+    },
+    {
+      "file": "tests\\sequential-changes.test.ts",
+      "lines": 171
+    },
+    {
+      "file": "tests\\archive-effects.test.ts",
+      "lines": 165
+    },
+    {
+      "file": "tests\\lifecycle-open.test.ts",
+      "lines": 165
+    },
+    {
+      "file": "tests\\delivery-full-test.test.ts",
+      "lines": 157
+    },
+    {
+      "file": "tests\\lifecycle-close.test.ts",
+      "lines": 157
+    },
+    {
+      "file": "tests\\migration-active.test.ts",
+      "lines": 154
+    },
+    {
+      "file": "tests\\group-contract.test.ts",
+      "lines": 150
+    },
+    {
+      "file": "tests\\baseline-integration.test.ts",
+      "lines": 148
+    },
+    {
+      "file": "tests\\ui\\support.ts",
+      "lines": 148
+    },
+    {
+      "file": "tests\\test-entries.test.ts",
+      "lines": 141
+    },
+    {
+      "file": "tests\\cancellation-support.ts",
+      "lines": 140
+    },
+    {
+      "file": "tests\\test-support.ts",
+      "lines": 137
+    },
+    {
+      "file": "tests\\ui\\preview.test.ts",
+      "lines": 131
+    },
+    {
+      "file": "tests\\migration-rounds.test.ts",
+      "lines": 129
+    },
+    {
+      "file": "tests\\records.test.ts",
+      "lines": 127
+    },
+    {
+      "file": "tests\\delivery-support.ts",
+      "lines": 127
+    },
+    {
+      "file": "tests\\test-dependencies.test.ts",
+      "lines": 124
+    },
+    {
+      "file": "tests\\migration-support.ts",
+      "lines": 121
+    },
+    {
+      "file": "tests\\delivery-admission.test.ts",
+      "lines": 119
+    },
+    {
+      "file": "tests\\legacy-write-gate.test.ts",
+      "lines": 117
+    },
+    {
+      "file": "tests\\delivery-write.test.ts",
+      "lines": 117
+    },
+    {
+      "file": "tests\\delivery-boundaries.test.ts",
+      "lines": 112
+    },
+    {
+      "file": "tests\\associations.test.ts",
+      "lines": 112
+    },
+    {
+      "file": "tests\\archive-retirement.test.ts",
+      "lines": 112
+    },
+    {
+      "file": "tests\\group-support.ts",
+      "lines": 108
+    },
+    {
+      "file": "tests\\archive-query.test.ts",
+      "lines": 107
+    },
+    {
+      "file": "tests\\fixtures\\group-reuse-target.ts",
+      "lines": 104
+    },
+    {
+      "file": "tests\\sequential-support.ts",
+      "lines": 103
+    },
+    {
+      "file": "tests\\archive-support.ts",
+      "lines": 102
+    },
+    {
+      "file": "tests\\group-attempt.test.ts",
+      "lines": 98
+    },
+    {
+      "file": "tests\\concurrency.test.ts",
+      "lines": 96
+    },
+    {
+      "file": "tests\\lifecycle-open-admission.test.ts",
+      "lines": 95
+    },
+    {
+      "file": "tests\\action-support.ts",
+      "lines": 90
+    },
+    {
+      "file": "tests\\archive-concurrency.test.ts",
+      "lines": 88
+    },
+    {
+      "file": "tests\\group-consistency.test.ts",
+      "lines": 88
+    },
+    {
+      "file": "tests\\archive-attempts.test.ts",
+      "lines": 86
+    },
+    {
+      "file": "tests\\helpers.ts",
+      "lines": 86
+    },
+    {
+      "file": "tests\\methods-and-numbers.test.ts",
+      "lines": 85
+    },
+    {
+      "file": "tests\\operation-inputs.test.ts",
+      "lines": 83
+    },
+    {
+      "file": "tests\\group-completion.test.ts",
+      "lines": 82
+    },
+    {
+      "file": "tests\\migration-reservations.test.ts",
+      "lines": 78
+    },
+    {
+      "file": "tests\\ui\\results.test.ts",
+      "lines": 77
+    },
+    {
+      "file": "tests\\delivery-stage-support.ts",
+      "lines": 74
+    },
+    {
+      "file": "tests\\project.test.ts",
+      "lines": 74
+    },
+    {
+      "file": "tests\\delivery-cli.test.ts",
+      "lines": 67
+    },
+    {
+      "file": "tests\\target-methods.test.ts",
+      "lines": 67
+    },
+    {
+      "file": "tests\\test-log-integrity.test.ts",
+      "lines": 65
+    },
+    {
+      "file": "tests\\ui-preparation.test.ts",
+      "lines": 62
+    },
+    {
+      "file": "tests\\migration-executions.test.ts",
+      "lines": 54
+    },
+    {
+      "file": "tests\\baseline-scope.test.ts",
+      "lines": 53
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\src\\components\\CounterPanel.stories.ts",
+      "lines": 50
+    },
+    {
+      "file": "tests\\lifecycle-worker.ts",
+      "lines": 49
+    },
+    {
+      "file": "tests\\test-cancellation.test.ts",
+      "lines": 43
+    },
+    {
+      "file": "tests\\ui\\cli.test.ts",
+      "lines": 43
+    },
+    {
+      "file": "tests\\fixtures\\archive-worker.ts",
+      "lines": 43
+    },
+    {
+      "file": "tests\\fixtures\\storybook-project\\browser-proof.ts",
+      "lines": 42
+    },
+    {
+      "file": "tests\\arguments.test.ts",
+      "lines": 38
+    },
+    {
+      "file": "tests\\test-preparation.test.ts",
+      "lines": 37
+    },
+    {
+      "file": "tests\\operation-cli.test.ts",
+      "lines": 35
+    },
+    {
+      "file": "tests\\fixtures\\storybook-project\\src\\Counter.stories.ts",
+      "lines": 33
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\vitest.config.ts",
+      "lines": 32
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\eslint.config.ts",
+      "lines": 31
+    },
+    {
+      "file": "tests\\fixtures\\storybook-project\\src\\Counter.ts",
+      "lines": 28
+    },
+    {
+      "file": "tests\\fixtures\\storybook-project\\vitest.config.ts",
+      "lines": 27
+    },
+    {
+      "file": "tests\\target-method-support.ts",
+      "lines": 22
+    },
+    {
+      "file": "tests\\fixtures\\test-foreground.ts",
+      "lines": 22
+    },
+    {
+      "file": "tests\\ui\\environment.test.ts",
+      "lines": 21
+    },
+    {
+      "file": "tests\\fixtures\\store-writer.ts",
+      "lines": 21
+    },
+    {
+      "file": "tests\\errors.test.ts",
+      "lines": 14
+    },
+    {
+      "file": "tests\\fixtures\\action-writer.ts",
+      "lines": 12
+    },
+    {
+      "file": "tests\\fixtures\\test-entry-project\\check.ts",
+      "lines": 11
+    },
+    {
+      "file": "tests\\fixtures\\action-resolver.ts",
+      "lines": 11
+    },
+    {
+      "file": "tests\\fixtures\\test-worker.ts",
+      "lines": 10
+    },
+    {
+      "file": "tests\\fixtures\\full-test-project\\unit.test.ts",
+      "lines": 10
+    },
+    {
+      "file": "tests\\fixtures\\full-test-project\\integration.test.ts",
+      "lines": 10
+    },
+    {
+      "file": "tests\\fixtures\\storybook-project\\browser-ready.ts",
+      "lines": 8
+    },
+    {
+      "file": "tests\\fixtures\\explicit-install.ts",
+      "lines": 8
+    },
+    {
+      "file": "tests\\fixtures\\full-test-project\\producer.ts",
+      "lines": 4
+    },
+    {
+      "file": "tests\\fixtures\\full-test-project\\consumer.ts",
+      "lines": 4
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\src\\main.ts",
+      "lines": 4
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\vite.config.ts",
+      "lines": 3
+    },
+    {
+      "file": "tests\\fixtures\\d03-b-project\\src\\note.ts",
+      "lines": 2
+    },
+    {
+      "file": "tests\\fixtures\\d03-c-vue-project\\env.d.ts",
+      "lines": 1
+    }
+  ],
+  "scripts": [
+    {
+      "file": "scripts\\proofs\\mvp-d01-c-explore.ts",
+      "lines": 678
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d01-d-explore.ts",
+      "lines": 487
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d01-a-explore.ts",
+      "lines": 463
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d03-b-explore.ts",
+      "lines": 404
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d01-b-explore.ts",
+      "lines": 375
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d02-c-explore.ts",
+      "lines": 336
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d02-b-explore.ts",
+      "lines": 264
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d03-a-explore.ts",
+      "lines": 260
+    },
+    {
+      "file": "scripts\\mvp-d04-a-explore.ts",
+      "lines": 259
+    },
+    {
+      "file": "scripts\\mvp-d04-b-explore.ts",
+      "lines": 248
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d02-a-explore.ts",
+      "lines": 202
+    },
+    {
+      "file": "scripts\\proofs\\mvp-d03-c-explore.ts",
+      "lines": 197
+    },
+    {
+      "file": "scripts\\prepare-installation-tests.ts",
+      "lines": 177
+    },
+    {
+      "file": "scripts\\mvp-d04-c-explore.ts",
+      "lines": 162
+    },
+    {
+      "file": "scripts\\mvp-d04-c-apply.ts",
+      "lines": 159
+    },
+    {
+      "file": "scripts\\proofs\\d03-a\\processes.ts",
+      "lines": 116
+    },
+    {
+      "file": "scripts\\test-ui.ts",
+      "lines": 113
+    },
+    {
+      "file": "scripts\\proofs\\d02-a\\test-entry.ts",
+      "lines": 79
+    },
+    {
+      "file": "scripts\\proofs\\d02-a\\selection.ts",
+      "lines": 64
+    },
+    {
+      "file": "scripts\\mvp-d04-b-event-proof.ts",
+      "lines": 63
+    },
+    {
+      "file": "scripts\\prepare-ui-tests.ts",
+      "lines": 39
+    },
+    {
+      "file": "scripts\\proofs\\d03-b\\method-reading.ts",
+      "lines": 21
+    }
+  ]
+}

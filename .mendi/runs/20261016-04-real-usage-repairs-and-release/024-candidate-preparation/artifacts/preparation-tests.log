@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: 真实tgz内部身份优先于文件名；保留明确包身份与指纹
+ok 1 - 真实tgz内部身份优先于文件名；保留明确包身份与指纹
+  ---
+  duration_ms: 196.9973
+  type: 'test'
+  ...
+# Subtest: 显式旧包在安装或证据目录创建之前拒绝，不回退其他包
+ok 2 - 显式旧包在安装或证据目录创建之前拒绝，不回退其他包
+  ---
+  duration_ms: 66.2377
+  type: 'test'
+  ...
+# Subtest: 缺 UI 依赖明确未执行，不创建 node_modules 或结果
+ok 3 - 缺 UI 依赖明确未执行，不创建 node_modules 或结果
+  ---
+  duration_ms: 23.0299
+  type: 'test'
+  ...
+# Subtest: 根检查隔离 UI 依赖，受控 UI TypeScript 仍参与格式 / lint
+ok 4 - 根检查隔离 UI 依赖，受控 UI TypeScript 仍参与格式 / lint
+  ---
+  duration_ms: 12313.6643
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12562.7413

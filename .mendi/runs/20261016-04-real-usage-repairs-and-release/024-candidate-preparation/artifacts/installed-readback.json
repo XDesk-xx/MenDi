@@ -1,0 +1,29 @@
+{
+  "legacyPendingCode": "delivery-commit-pending",
+  "groupExecutions": [
+    {
+      "exit": 1,
+      "selection": [
+        "prefix",
+        "middle",
+        "tail"
+      ],
+      "protocolState": "valid"
+    },
+    {
+      "exit": 0,
+      "selection": [
+        "tail"
+      ],
+      "protocolState": "valid"
+    },
+    {
+      "exit": 0,
+      "selection": [
+        "middle"
+      ],
+      "protocolState": "valid"
+    }
+  ],
+  "executedCloseAndReopenOnlyInIsolatedFixture": true
+}

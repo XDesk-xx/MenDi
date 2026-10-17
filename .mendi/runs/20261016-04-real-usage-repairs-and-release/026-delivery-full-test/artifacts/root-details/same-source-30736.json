@@ -1,0 +1,9 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-KXqfbJ\\project",
+  "reads": 5,
+  "injected": true,
+  "error": {
+    "message": "重复读取的直接输入变化，保留首次快照。",
+    "code": "delivery-input-changed"
+  }
+}

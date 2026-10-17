@@ -1,0 +1,14 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d04-0.2.0-reuse-01",
+  "installedRoot": "D:\\tools\\mendi\\acceptance\\d04-0.2.0-reuse-01\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_41d6d0b2af0a7ef48aadc632d74e0626\\node_modules\\mendi",
+  "installedCLI": "D:\\tools\\mendi\\acceptance\\d04-0.2.0-reuse-01\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_41d6d0b2af0a7ef48aadc632d74e0626\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-lG39rA\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-lG39rA\\beta"
+  ],
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "evidence": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\024-candidate-preparation\\artifacts\\candidate-reuse-01",
+  "packagePath": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\024-candidate-preparation\\artifacts\\candidate-01\\mendi-0.2.0.tgz",
+  "packageVersion": "0.2.0",
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde"
+}

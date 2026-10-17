@@ -1,0 +1,25 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "id": "F05-next",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/mendi/acceptance/d04-0.2.0-full-test-026/node_modules/mendi/dist/drivers/cli.js",
+    "next",
+    "--project",
+    "D:/Projects/MenDi",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "pid": 16140,
+  "startedAt": "2026-10-17T10:27:23.537Z",
+  "state": "finished",
+  "timeoutMs": 120000,
+  "log": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-next.log",
+  "endedAt": "2026-10-17T10:27:24.424Z",
+  "durationMs": 887,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

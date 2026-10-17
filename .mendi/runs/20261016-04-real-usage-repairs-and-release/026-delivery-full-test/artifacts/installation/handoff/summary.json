@@ -1,0 +1,10 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d04-0.2.0-full-test-026",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-qnPPPr\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-qnPPPr\\beta"
+  ],
+  "proposeRun": ".mendi/runs/installed-0/002-changes/local-note-work/005-propose/run.md",
+  "proposeAction": "local-note-work-005-propose",
+  "result": "handoff-verified-awaiting-agent-planning"
+}

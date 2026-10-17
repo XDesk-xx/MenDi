@@ -20,13 +20,15 @@ pnpm start
 
 ## 稳定安装与目标准备
 
+0.2.0 当前为待独立定向审核的源码候选，稳定安装仍为0.1.0。本节为后续获准切换的操作说明，不表示已更新稳定安装。
+
 在开发仓库构建和打包，然后在仓库外的固定安装目录安装本地包。下面的离线安装要求已有依赖 store；依赖不足时由维护者明确准备，不认证冷安装。
 
 ```powershell
 pnpm build
 pnpm pack --pack-destination D:\work\packages
 # 在一个明确的新安装目录中创建 private package.json 后执行：
-pnpm --dir D:\tools\mendi\current add --offline --ignore-scripts D:\work\packages\mendi-0.1.0.tgz
+pnpm --dir D:\tools\mendi\current add --offline --ignore-scripts D:\work\packages\mendi-0.2.0.tgz
 node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js --help
 ```
 
@@ -81,6 +83,8 @@ node dist/drivers/cli.js delivery migrate apply --project D:\work\target --input
 
 ## 显式安装验收
 
+准备入口可增加第三个参数：已冻结的本地tgz绝对路径；此时只核对并安装该包，跳过build / pack。包名及版本须匹配当前候选，session保存实际路径和包指纹。省略时只消费本次pack产生的唯一当前版本包，不回退旧目录。
+
 ```powershell
 pnpm prepare:installation-tests D:\work\current-run\artifacts\installation D:\tools\mendi\acceptance\new-attempt
 $env:MENDI_INSTALLATION_SESSION = 'D:\work\current-run\artifacts\installation\session.json'
@@ -109,8 +113,16 @@ pnpm test:ui
 
 当前源码候选的方法明确：普通 UI 调整不新建 Change；业务契约、当前 UI 设计和关键未决决定按实际用户影响区分。Explore / Propose 主动澄清关键产品未知，独立 Review 使用相同尺度；UI 定位修复保留原场景、必要断言、失败及清理。完整工作方法随阶段从 `skills/actions/` 返回，交接成功不等于宿主语义判断已获批准。
 
+## 0.2.0 候选变更与兼容
+
+- Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
+- 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
+- 六阶段方法统一业务契约、当前UI方案和主动澄清尺度；普通UI调整不新建Change。候选包与版本号本身不代表D04正式验收或发布批准。
+
 ## 开发交接
 
-当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[C 023 Archive](.mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/023-archive/run.md)。依据022对固定021的独立批准，C已原生归档013，两份主规格同步及strict通过；原Run和verdict保持。A / B / C均已归档，累计13，Delivery仍open/manual-bootstrap，C实现、归档与本地收尾纳入Change checkpoint；当前无活动Change，停delivery-full-test / author / awaiting-owner，验收集合与版本准备待Owner安排。未执行Git、正式Full Test / Close或发布，DreMo / 稳定安装未改，未push。
+[D04 正式验收集合与 0.2.0 候选方案](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/acceptance-and-release-plan.md)已准备：Owner确认0.2.0及根人工整次验收；候选源码 / 安装接线 / 依赖准备、正式执行与稳定切换仍待各自授权。
+
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[024候选准备](.mendi/runs/20261016-04-real-usage-repairs-and-release/024-candidate-preparation/run.md)。Owner已授权0.2.0候选源码、有限安装接线与依赖准备；保持Author，完成停独立定向审核，尚未获得该审核或正式Full Test / Close结论。A / B / C原归档和verdict保留，累计13；稳定current仍0.1.0，未执行Git或push。
 
 范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。

@@ -1,0 +1,35 @@
+{
+  "v": 5,
+  "entries": {
+    "proof-counter--basic": {
+      "type": "story",
+      "subtype": "story",
+      "id": "proof-counter--basic",
+      "name": "Basic",
+      "title": "Proof/Counter",
+      "importPath": "./src/Counter.stories.ts",
+      "tags": [
+        "dev",
+        "test",
+        "manifest",
+        "play-fn"
+      ],
+      "exportName": "Basic"
+    },
+    "proof-counter--disabled": {
+      "type": "story",
+      "subtype": "story",
+      "id": "proof-counter--disabled",
+      "name": "Disabled",
+      "title": "Proof/Counter",
+      "importPath": "./src/Counter.stories.ts",
+      "tags": [
+        "dev",
+        "test",
+        "manifest",
+        "play-fn"
+      ],
+      "exportName": "Disabled"
+    }
+  }
+}

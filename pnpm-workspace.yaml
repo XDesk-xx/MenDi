@@ -1,2 +1,4 @@
+packages:
+  - '.'
 minimumReleaseAgeExclude:
   - '@types/node@22.20.5'

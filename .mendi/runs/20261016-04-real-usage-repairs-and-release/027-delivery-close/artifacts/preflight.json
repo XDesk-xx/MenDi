@@ -1,0 +1,216 @@
+{
+  "checkedAt": "2026-10-17T13:51:10.862Z",
+  "fullTest": {
+    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+    "summaryRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/summary.json",
+    "declarationRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/declaration.json",
+    "executionId": "d04-full-test-026",
+    "outcome": "passed",
+    "collection": [
+      "F01-check",
+      "F02-root",
+      "F03-ui",
+      "F04-installation",
+      "F05-spec-status"
+    ],
+    "counts": {
+      "F02-root": {
+        "tests": 278,
+        "pass": 278,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "F03-ui": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "F04-installation": {
+        "tests": 4,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  },
+  "approvals": [
+    {
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+      "authorComplete": true
+    },
+    {
+      "changeId": "full-test-orchestration-continuation-and-revalidation",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/014-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/015-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-012-full-test-orchestration-continuation-and-revalidation",
+      "authorComplete": true
+    },
+    {
+      "changeId": "business-contract-ui-design-and-proactive-clarification",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/022-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-013-business-contract-ui-design-and-proactive-clarification",
+      "authorComplete": true
+    }
+  ],
+  "candidateReview": {
+    "author": "024-candidate-preparation",
+    "review": ".mendi/runs/20261016-04-real-usage-repairs-and-release/025-review-candidate-preparation/run.md",
+    "verdict": "approved",
+    "scope": "candidate preparation"
+  },
+  "children": [
+    {
+      "id": "F01-check",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F01-check.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F01-check.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F02-root",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F02-root.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F02-root.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F03-ui-prepare",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F03-ui-prepare.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F03-ui-prepare.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F03-ui",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F03-ui.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F03-ui.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F04-installation-prepare",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F04-installation-prepare.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F04-installation-prepare.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F04-installation",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F04-installation.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F04-installation.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-action-runs",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-action-runs.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-action-runs.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-delivery-lifecycle",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-lifecycle.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-lifecycle.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-delivery-verification",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-verification.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-verification.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-delivery-workspace",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-workspace.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-workspace.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-project-entry",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-project-entry.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-project-entry.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-storybook-integration",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-storybook-integration.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-storybook-integration.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-spec-test-execution",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-test-execution.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-test-execution.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-status",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-status.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-status.log",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "id": "F05-next",
+      "recordRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-next.json",
+      "logRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-next.log",
+      "exitCode": 0,
+      "signal": null
+    }
+  ],
+  "changedDirectInputs": [],
+  "newerMaintainedMaterials": [],
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "stableNow": {
+    "version": "0.1.0",
+    "mtime": "2026-10-10T16:37:05.661Z"
+  },
+  "project": {
+    "mode": "manual-bootstrap",
+    "archivedChangeCount": 13,
+    "activeDeliveryId": "20261016-04-real-usage-repairs-and-release"
+  },
+  "bindings": [
+    {
+      "slot": "MVP-D04-A",
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+      "archiveOrdinal": 11
+    },
+    {
+      "slot": "MVP-D04-B",
+      "changeId": "full-test-orchestration-continuation-and-revalidation",
+      "archiveRef": "openspec/changes/archive/2026-10-17-012-full-test-orchestration-continuation-and-revalidation",
+      "archiveOrdinal": 12
+    },
+    {
+      "slot": "MVP-D04-C",
+      "changeId": "business-contract-ui-design-and-proactive-clarification",
+      "archiveRef": "openspec/changes/archive/2026-10-17-013-business-contract-ui-design-and-proactive-clarification",
+      "archiveOrdinal": 13
+    }
+  ],
+  "checkedOldReviewBodies": false,
+  "reexecutedFullTest": false
+}

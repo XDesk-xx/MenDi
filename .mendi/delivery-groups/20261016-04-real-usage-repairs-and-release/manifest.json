@@ -2,7 +2,7 @@
   "id": "20261016-04-real-usage-repairs-and-release",
   "planningSlot": "MVP-D04",
   "title": "真实使用修复与再次发布",
-  "state": "open",
+  "state": "closed",
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-16",
   "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
@@ -85,12 +85,57 @@
     "自动 npm 上架、可选工具安装、其他项目测试优化、部署或生产数据写入。"
   ],
   "openRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/023-archive/run.md",
-  "stopBoundary": "change-checkpoint",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "stopBoundary": "owner-decision",
   "next": {
-    "action": "delivery-full-test",
-    "status": "awaiting-owner",
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "A / B / C已归档并分别完成本地Change checkpoint；D04验收集合与版本准备等待Owner安排，不自动执行正式Full Test / Close或发布。"
+    "reason": "MVP-D04已基于026完整正式PASS完成027 Close；等待Owner下一指令，Git/checkpoint、0.2.0稳定切换及DreMo推进分别授权。"
+  },
+  "fullTest": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "passed",
+    "result": "passed",
+    "executionId": "d04-full-test-026",
+    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/declaration.json",
+    "resultRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/summary.json",
+    "testedCommit": "572b94f65555b71d792a056ac18921495b2bc8a4",
+    "testedWorktree": "024明确八项工作区差异；无Git操作，不声称新核对HEAD。固定0.2.0同包与当前发行文件一致。",
+    "candidatePreparationReviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/025-review-candidate-preparation/run.md"
+  },
+  "closedOn": "2026-10-17",
+  "closedAt": "2026-10-17T13:51:54.509Z",
+  "closeRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "close": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "status": "completed",
+    "result": "closed",
+    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+    "fullTestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/artifacts/declaration.json",
+    "applicability": {
+      "conclusion": "applicable",
+      "materials": [
+        "package.json",
+        "pnpm-workspace.yaml",
+        "pnpm-lock.yaml",
+        "src/",
+        "tests/",
+        "scripts/",
+        "skills/",
+        "openspec/specs/",
+        "README.md",
+        "024-candidate-preparation/artifacts/candidate.json"
+      ],
+      "changes": "相较026无受测实现、测试、依赖、方法、规格、配置或候选包变化；本次仅新增027收口和当前manifest/context交接说明，README保持受测包正文。",
+      "reason": "026本次完整F01–F05正式passed、必要批准快照与当前A/B/C归档范围一致；全部直接子命令finished/exit0，无skip/TODO/取消或未执行缺口；当前直接输入与固定0.2.0包保持，说明整理不改变适用性。"
+    },
+    "closedAt": "2026-10-17T13:51:54.509Z"
   }
 }
