@@ -1,0 +1,52 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": true,
+  "operation": "test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+  "executionId": "004-focused",
+  "outcome": "passed",
+  "record": {
+    "formatVersion": 1,
+    "executionId": "004-focused",
+    "kind": "focused",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "delivery-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:focused",
+    "scriptText": "node --test checks/integration.test.ts",
+    "startedAt": "2026-10-17T03:17:00.819Z",
+    "finishedAt": "2026-10-17T03:17:03.823Z",
+    "executionState": "finished",
+    "outcome": "passed",
+    "exitCode": 0,
+    "signal": null,
+    "pid": 61160,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/004-focused/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/004-focused/stderr.log"
+  }
+}

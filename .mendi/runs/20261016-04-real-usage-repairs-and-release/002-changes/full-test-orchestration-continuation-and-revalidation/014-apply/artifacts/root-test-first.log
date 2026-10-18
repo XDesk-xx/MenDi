@@ -1,0 +1,5 @@
+Already up to date
+Done in 839ms using pnpm v11.22.0
+$ pnpm build && node --test --test-concurrency=2 tests/*.test.ts
+$ tsc
+TAP version 13

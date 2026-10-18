@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认领局部成功；可显式 initial 重跑
+ok 1 - 目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认领局部成功；可显式 initial 重跑
+  ---
+  duration_ms: 56038.6858
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 56611.5254

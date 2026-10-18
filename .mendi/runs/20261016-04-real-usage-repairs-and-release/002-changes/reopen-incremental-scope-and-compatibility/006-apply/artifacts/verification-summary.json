@@ -1,0 +1,43 @@
+{
+  "check": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "logRef": "check-final-02.log"
+  },
+  "tests": {
+    "command": "pnpm test",
+    "exitCode": 0,
+    "total": 250,
+    "passed": 250,
+    "failed": 0,
+    "skipped": 0,
+    "logRef": "test-final-02.log",
+    "detailsRef": "test-details-02"
+  },
+  "priorFullAttempt": {
+    "total": 248,
+    "passed": 246,
+    "failed": 2,
+    "logRef": "test-final-01.log",
+    "preserved": true
+  },
+  "strict": {
+    "valid": true,
+    "logRef": "validate-final.json"
+  },
+  "taskProgress": {
+    "total": 27,
+    "complete": 27,
+    "remaining": 0
+  },
+  "recordingMode": "manual-bootstrap",
+  "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+  "next": {
+    "action": "review-apply",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "changeId": "reopen-incremental-scope-and-compatibility",
+    "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+    "reason": "006 Author 已完成实施与验证，等待独立 Review Apply。"
+  }
+}

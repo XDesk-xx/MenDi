@@ -1,0 +1,48 @@
+TAP version 13
+# Subtest: 旧 Action 已占号写 Run、未登记批次 / 指针的半提交不能迁移
+not ok 1 - 旧 Action 已占号写 Run、未登记批次 / 指针的半提交不能迁移
+  ---
+  duration_ms: 225.7014
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration-reservations.test.ts:19:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'legacy-recovery-required'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration-reservations.test.ts:27:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: 旧正式 prepared Run 未发布当前指针时不能绕过迁移完整性检查
+not ok 2 - 旧正式 prepared Run 未发布当前指针时不能绕过迁移完整性检查
+  ---
+  duration_ms: 52616.373
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration-reservations.test.ts:30:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    code: 'legacy-recovery-required'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration-reservations.test.ts:39:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53475.6115

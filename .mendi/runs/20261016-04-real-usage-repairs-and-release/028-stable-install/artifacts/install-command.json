@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "--dir",
+    "D:\\tools\\mendi\\current",
+    "add",
+    "--offline",
+    "--ignore-scripts",
+    "--save-exact",
+    "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz"
+  ],
+  "cwd": "D:\\tools\\mendi\\current",
+  "startedAt": "2026-10-17T13:59:39.041Z",
+  "finishedAt": "2026-10-17T13:59:41.702Z",
+  "exitCode": 0,
+  "signal": null
+}

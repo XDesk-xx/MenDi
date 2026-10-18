@@ -20,13 +20,15 @@ pnpm start
 
 ## 稳定安装与目标准备
 
+0.2.0 当前为待独立定向审核的源码候选，稳定安装仍为0.1.0。本节为后续获准切换的操作说明，不表示已更新稳定安装。
+
 在开发仓库构建和打包，然后在仓库外的固定安装目录安装本地包。下面的离线安装要求已有依赖 store；依赖不足时由维护者明确准备，不认证冷安装。
 
 ```powershell
 pnpm build
 pnpm pack --pack-destination D:\work\packages
 # 在一个明确的新安装目录中创建 private package.json 后执行：
-pnpm --dir D:\tools\mendi\current add --offline --ignore-scripts D:\work\packages\mendi-0.1.0.tgz
+pnpm --dir D:\tools\mendi\current add --offline --ignore-scripts D:\work\packages\mendi-0.2.0.tgz
 node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js --help
 ```
 
@@ -47,7 +49,9 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js status --proj
 node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --project D:\work\target --json
 ```
 
-`--help` 列出 delivery open / full-test / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
+`--help` 列出 delivery open / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
+
+默认 Full Test 保持旧 command 语义。显式 `groups-v1` 接入有版本的计划 / 回执、同轮续测、独立修复审核后的影响复验及多来源候选结论，完整方法与 JSON 示例见[组级协议](skills/group-tests.md)。原命令 outcome、协议观察与候选 verified 分别保存；必需 skip / TODO / 取消 / 零业务执行留下缺口。Close 恰选旧 `fullTestRunRef` 或当前 `verificationRunRef`，不递归旧来源历史；新进展不能回退旧 verified。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -57,7 +61,29 @@ Run 按 `.mendi/runs/<delivery-id>/<操作序号>-<操作名称>/` 或同级 `<�
 
 并发写使用独占锁，错误保留实际现场；诊断不解除锁。Windows 测试结果替换遇到 EPERM / EBUSY 时仅对同一暂存文件有限重试，等待预算 500ms；持续失败或直接输入改变仍停止，不重跑业务命令、不删除原结果或清锁。人工 manual-bootstrap 只支持查询，产品写命令不迁移开发历史。Owner 标签不认证真实身份，工具成功与 ready / all_done 不表示实际完成或批准。
 
+## 当前候选的轮次与兼容入口
+
+D04-A 候选使用 version 2 项目入口及 manifest；稳定安装尚未切换，以下新命令使用本仓库构建后的 `node dist/drivers/cli.js`。`rounds[]` 保存每次范围及收口，`currentRoundId` 只选择最新轮。顶层目标、计划、状态、批次和结果指针是当前轮投影；矛盾拒绝，不自动修复。Reopen 追加 rNNN，不预建批次，旧 PASS / Close 留在旧轮。省略身份的首次 Open 同样创建 r001，但没有虚构 Open Run。
+
+```powershell
+node dist/drivers/cli.js status --project D:\work\target --round r001 --json
+node dist/drivers/cli.js delivery migrate preview --project D:\work\target --json |
+  Set-Content -LiteralPath D:\work\target\migration-preview.json -Encoding utf8
+# 核对预览并取得该目标本次迁移的 Owner 授权后：
+node dist/drivers/cli.js delivery migrate apply --project D:\work\target --input migration-preview.json --role author --actor author-id --json
+```
+
+历史轮查询仅展示已保存摘要，没有历史执行 next，不改变 Delivery / 轮次选择、不访问旧 Change status。旧 product 保留普通 status / next、instructions 及指定结果读取；普通写入（包括 save / submit、test、Archive finish 和旧 resume）拒绝，先显式迁移。v2 项目可登记其他 v1 manifest，旧来源不强制迁移。manual-bootstrap 继续只读。
+
+迁移仅转换当前选定 manifest 和必要入口，保留原 Action、actor、draft、固定 Author、业务进展指针和累计编号；收据 migrationRunRef 不成为当前进展。预览不建文件或占号、不执行 OpenSpec。输入须在项目内，apply 重算实际计划并锁内复核；陈旧 / 手改预览拒绝。缺首次 Open 但范围 / Close 充分时标明 legacy-baseline，不补未知历史；真实缺口拒绝。完整活动 draft 可迁移；旧 pending、未确认原生效果或运行 / 不完整测试须先兼容旧版恢复，再重新预览。新版没有旧格式恢复例外。
+
+迁移中断保存原 intent、编号及锁。Owner 另行核对写者与锁处置后，原 actor 显式 `delivery migrate resume --project <root> --run <同次 NNN-delivery-migrate/run.md> --role author --actor <原标识>`；只补原提交，不自动清锁、降级或改终态。重复 apply 返回 already-migrated，同次完整 resume 返回 already-completed；后续工作改变则拒绝旧恢复。详细边界见 `skills/actions/delivery-migrate/SKILL.md`。
+
+本轮 `dependsOn` 仍是本轮 DAG；已交付前置放 `baselineDependencies:[{deliveryId,planningSlot,closeRunRef}]`，示例见 `tests/fixtures/delivery-scope-baseline.json`，引用必须换成目标实际记录。仅核对同项目登记 product 的 archived binding 与指定 Close 完成快照；支持同 Delivery 更早关闭轮和跨 Delivery，来源可后来 Reopen、ordinal 可小于当前累计数、v1 来源无需迁移。manual 来源只能说明。准入只读直接来源，不递归其依赖、旧审核、日志或活动状态；普通 query 不展开来源。新正式结果固定 roundId 和 baselineFacts，Close 消费本轮实际结果及保存快照。现行失败 → 修复 → 独立审核 → 新整次执行规则保持。
+
 ## 显式安装验收
+
+准备入口可增加第三个参数：已冻结的本地tgz绝对路径；此时只核对并安装该包，跳过build / pack。包名及版本须匹配当前候选，session保存实际路径和包指纹。省略时只消费本次pack产生的唯一当前版本包，不回退旧目录。
 
 ```powershell
 pnpm prepare:installation-tests D:\work\current-run\artifacts\installation D:\tools\mendi\acceptance\new-attempt
@@ -85,6 +111,18 @@ pnpm test:ui
 
 当前 HTML-Vite / Storybook 10.6.1 实验有明确边界，不要求所有目标统一版本。D03-C 在唯一从空目录建立的 Vue + Naive UI 工程中验证最小真实使用，无 UI 复用工程结果；取消额外新会话恢复和目标正式收口演示，MCP 未认证。旧 PASS 不覆盖新修改，有限测试不代替正式 Full Test。
 
+当前源码候选的方法明确：普通 UI 调整不新建 Change；业务契约、当前 UI 设计和关键未决决定按实际用户影响区分。Explore / Propose 主动澄清关键产品未知，独立 Review 使用相同尺度；UI 定位修复保留原场景、必要断言、失败及清理。完整工作方法随阶段从 `skills/actions/` 返回，交接成功不等于宿主语义判断已获批准。
+
+## 0.2.0 候选变更与兼容
+
+- Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
+- 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
+- 六阶段方法统一业务契约、当前UI方案和主动澄清尺度；普通UI调整不新建Change。候选包与版本号本身不代表D04正式验收或发布批准。
+
 ## 开发交接
 
-当前状态读取[D03 manifest](.mendi/delivery-groups/20261010-03-storybook-and-real-usage/manifest.json)与[045 Delivery Close](.mendi/runs/20261010-03-storybook-and-real-usage/045-delivery-close/run.md)。Owner授权后基于044新整次正式Full Test的passed结果完成收口，当前修复及038优化仍适用；A/B/C已归档、累计10、无活动根Change，D03为closed/manual-bootstrap。历史Run与verdict保持，取消的目标收口不恢复；等待Owner下一指令，本次未执行Git或清理。
+[D04 正式验收集合与 0.2.0 候选方案](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/acceptance-and-release-plan.md)已准备：Owner确认0.2.0及根人工整次验收；候选源码 / 安装接线 / 依赖准备、正式执行与稳定切换仍待各自授权。
+
+当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[024候选准备](.mendi/runs/20261016-04-real-usage-repairs-and-release/024-candidate-preparation/run.md)。Owner已授权0.2.0候选源码、有限安装接线与依赖准备；保持Author，完成停独立定向审核，尚未获得该审核或正式Full Test / Close结论。A / B / C原归档和verdict保留，累计13；稳定current仍0.1.0，未执行Git或push。
+
+范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。

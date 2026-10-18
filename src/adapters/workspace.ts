@@ -2,13 +2,14 @@ import { currentBinding } from '../core/associations.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { MendiError, errorInfo } from '../core/errors.ts';
+import { MendiError, errorInfo, object } from '../core/errors.ts';
 import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts';
 import { managedPath, present } from './paths.ts';
 import { readRun } from './runs.ts';
 import { archivedCount } from '../core/archive.ts';
 import { currentDeliveryRun } from './delivery-runs.ts';
 import { completionScope } from '../core/delivery-verification.ts';
+import { projectProgress, requireWritable } from '../core/rounds.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -55,6 +56,7 @@ export function readWorkspace(
   root: string,
   ownLock = false,
   deliveryId?: string,
+  summaryOnly = false,
 ): Workspace | null {
   const directory = managedPath(root, '.mendi');
   if (!present(directory)) return null;
@@ -72,9 +74,12 @@ export function readWorkspace(
       'delivery-commit-pending',
       '生命周期提交未确认，停止普通操作。',
       { pendingDeliveryRunRef: index.project.pendingDeliveryRunRef },
-      '核对现场后显式 resume；不自动清锁。',
+      index.project.formatVersion === 1
+        ? '旧 product pending 必须先使用兼容旧版恢复完成，再由新版预览迁移；不自动清锁。'
+        : '核对现场后显式 resume；不自动清锁。',
     );
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
+  if (summaryOnly) return workspace;
   const selected = currentBinding(workspace);
   const delivery = currentDeliveryRun(root, workspace);
   if (delivery?.record.lifecycle) {
@@ -83,10 +88,13 @@ export function readWorkspace(
       delivery.record.status !== 'submitted' ||
       JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
       (lifecycle.operation === 'delivery-close' &&
-        (lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef ||
+        ((lifecycle.verificationRunRef !== undefined
+          ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
+          : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
           JSON.stringify(lifecycle.acceptance?.scope) !==
             JSON.stringify(completionScope(workspace)))) ||
-      (lifecycle.operation === 'delivery-reopen' &&
+      (workspace.manifest.formatVersion === 1 &&
+        lifecycle.operation === 'delivery-reopen' &&
         lifecycle.priorCloseRef !== workspace.manifest.closeRunRef) ||
       (lifecycle.operation === 'delivery-open' &&
         (workspace.manifest.openRunRef !== delivery.ref || lifecycle.title !== workspace.title))
@@ -94,10 +102,18 @@ export function readWorkspace(
       throw new MendiError('invalid-record', '当前生命周期摘要与 manifest 不一致。');
   }
   if (workspace.mode === 'product') {
-    for (const key of ['deliveryRunRef', 'fullTestRunRef', 'closeRunRef', 'openRunRef'])
+    for (const key of [
+      'deliveryRunRef',
+      'fullTestRunRef',
+      'testAttemptRunRef',
+      'verificationRunRef',
+      'closeRunRef',
+      'openRunRef',
+    ])
       if (workspace.manifest[key] !== undefined) managedPath(root, String(workspace.manifest[key]));
     if (
       delivery?.record.repair &&
+      !delivery.record.repair.groups &&
       delivery.record.repair.failedFullTestRunRef !== workspace.manifest.fullTestRunRef
     )
       throw new MendiError('invalid-record', '修复当前来源与最近正式指针矛盾。');
@@ -190,6 +206,24 @@ export function releaseProjectLock(root: string, lease: ProjectLock): void {
   fs.unlinkSync(lock);
 }
 
+// Write admission is separate from all read paths, including pending diagnosis.
+export function guardProductWrite(root: string) {
+  const entry = managedPath(root, '.mendi/project.json');
+  if (!present(entry)) return;
+  const index = parseProject(readJson(entry));
+  if (index.mode !== 'product') return;
+  if (index.project.formatVersion === 1)
+    requireWritable({ mode: index.mode, project: index.project, manifest: {} });
+  const file = managedPath(root, index.manifestRef);
+  if (!present(file) && String(index.project.pendingDeliveryRunRef).includes('-delivery-open/'))
+    return;
+  requireWritable({
+    mode: index.mode,
+    project: index.project,
+    manifest: object(readJson(file), 'manifest'),
+  });
+}
+
 export function lockedWrite<T>(
   root: string,
   operation: string,
@@ -197,6 +231,7 @@ export function lockedWrite<T>(
   observe?: WriteObserver,
   retainOnFailure = false,
 ): T {
+  if (!['delivery-migrate', 'delivery-migrate-resume'].includes(operation)) guardProductWrite(root);
   const lease = acquireProjectLock(root, operation);
   const { lock } = lease;
   const committed: string[] = [];
@@ -205,6 +240,8 @@ export function lockedWrite<T>(
   let releaseError: unknown;
   try {
     observe?.('lock-acquired', lock);
+    if (!['delivery-migrate', 'delivery-migrate-resume'].includes(operation))
+      guardProductWrite(root);
     output = action(committed);
   } catch (error) {
     actionError = error;
@@ -290,7 +327,7 @@ export function updateWorkspace(
     (committed) => {
       const current = readWorkspace(root, true);
       if (!current) throw new MendiError('incomplete-mendi-state', '加锁后项目入口不存在。');
-      const manifest = update(current);
+      const manifest = projectProgress(current, update(current));
       parseWorkspace(parseProject(current.project), manifest);
       committed.push(
         replaceJson(root, current.manifestRef, manifest, 'before-manifest-commit', observe),

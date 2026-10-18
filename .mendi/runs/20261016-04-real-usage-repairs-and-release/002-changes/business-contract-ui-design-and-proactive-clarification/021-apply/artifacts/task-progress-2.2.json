@@ -1,0 +1,116 @@
+{
+  "changeName": "business-contract-ui-design-and-proactive-clarification",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\specs\\storybook-integration\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 11,
+    "complete": 5,
+    "remaining": 6
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 收敛 Explore 自有方法：稳定约束 / 当前 UI 候选 / 未决产品决定、先查事实和已确认答复、关键未知提问、必要 proof；结合菜单等价调整和非 UI 保留期限未答两类输入核对实际正文，确认不要求普通 UI 新建 Change，也不把等待当批准。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 收敛 Propose 自有方法：specs / design / tasks 分工、定稿前复核答案、重要假设不能留给 Apply；用默认截止、草稿改发布、Owner 明确验收 UI 要求核对其处理，保持普通 UI 不新建 Change、不回改历史和无新增审批 / 台账。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 随本组复用已有 TypeScript 方法交接测试，验证两个 Author 阶段及修订映射返回真实阶段正文、目标上游和正确角色；仅在实际覆盖缺口处补场景，不新增关键词或镜像测试。语义判断记录在 Apply Run，不以固定证据数量认证方法有效。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 收敛 Review Explore / Review Propose 自有方法，分别核对约束 / 候选 / proof 和正式产物 / 答案承接；以“旧顶部菜单词面差异”“重要假设冒充确认”“测试绿但权限或确认缺口”核对正文能同时拒绝机械冻结和业务豁免。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 随本组验证 Reviewer 的实际方法内容和无需 Author 上游的边界，复用现有 target-methods / handoff 场景；保持独立角色和固定 Author，不为获取方法伪造完整阶段批准，说明加载成功与语义审核的不同结论。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "3.1 在 Apply / Review Apply 自有方法补短指引，明确真实入口、可观察结果 / 语义角色 / 正确目标，保留原场景、必要技术断言、失败与清理；用 force 点击、删确认断言、直达成功但正常入口丢失的负例核对，不新增通用 UI 工程或工具前置。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "7",
+      "description": "3.2 随本组核对六阶段方法的加载身份 / 正文及当前使用说明，记录页面合并丢历史入口、滚动影响键盘及 PDF 明确功能的判断理由；不把人工推演冒称浏览器测试 PASS，不强加无关设备矩阵，不重复维护 Storybook 通用语义长文。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "4.1 用当前候选 CLI 在可重建隔离目标取得更新后的真实阶段交接和动态 proposal instructions，保存直接输出；核对正文来源 / 内容、context / rules 和未选 Storybook 路径，不重放旧 Explore 树或修改稳定安装。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "9",
+      "description": "4.2 完成 design 代表情形的语义核对，逐项记录具体事实 / 未知、处理和理由供独立 Reviewer 检查；确认主动澄清同时覆盖 UI / 非 UI、既有决定不重复问、未答只暂停依赖部分，且旧归档 / Run / verdict 保持。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 24
+    },
+    {
+      "id": "10",
+      "description": "4.3 运行 pnpm check 与受影响方法分组测试，保存实际失败 / 修正 / 最终结果；仅在真实实现扩大影响时说明依据并增加相应验证，不把定向或工程 PASS 当正式 Full Test。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "11",
+      "description": "4.4 完成 Apply 摘要及当前 next：列出 src / tests / scripts 各维护代码行数前三名、可靠前后增长和职责判断，说明方法交接 / 人工语义验证的限制及无 DreMo / 稳定安装 / Git 写入；停独立 Review Apply，不自签。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\business-contract-ui-design-and-proactive-clarification\\tasks.md",
+      "line": 26
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04范围checkpoint为982159b；A已归档011 / checkpoint168a4cb，B已归档012 / checkpoint1cb4080。C business-contract-ui-design-and-proactive-clarification 的020独立Review Propose已批准固定019，018边界已落实到方案和验收；当前停apply / author / awaiting-instruction，11项任务尚未实施。\nA 已交付完整 open / closed 与活动 Change / draft 迁移、同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，项目累计成功归档 12；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\nB确认可选目标组级协议及材料声明 / 独立审核边界；必需skip / TODO / 取消 / 零执行不覆盖，执行前可明确非必需排除。方案分开原命令、组终态与候选结论，工具核对直接来源 / 覆盖 / 批准，新合同实施前维持现行规则。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，各 Author 阶段完成停当前对应独立审核；当前C已获020独立Review Propose批准，Reviewer完成后停下，Apply仍待指令；普通UI调整不新建Change，实际业务 / 明确验收约束变化先澄清，旧Run / verdict保留。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

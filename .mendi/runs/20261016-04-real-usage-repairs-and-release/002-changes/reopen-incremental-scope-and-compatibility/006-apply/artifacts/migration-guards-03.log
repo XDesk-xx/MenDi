@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: 共享写锁内重新检查格式，出现旧格式时不占 Run / 执行业务
+ok 1 - 共享写锁内重新检查格式，出现旧格式时不占 Run / 执行业务
+  ---
+  duration_ms: 211.8934
+  type: 'test'
+  ...
+# Subtest: manual 历史轮请求明确拒绝，迁移不写人工记录
+ok 2 - manual 历史轮请求明确拒绝，迁移不写人工记录
+  ---
+  duration_ms: 106.1684
+  type: 'test'
+  ...
+# Subtest: 迁移锁内复核原输入及占号，发生变化时不创建 intent
+ok 3 - 迁移锁内复核原输入及占号，发生变化时不创建 intent
+  ---
+  duration_ms: 668.8581
+  type: 'test'
+  ...
+# Subtest: 迁移 intent 缺失、输入变化或目标错误只诊断；不补造或新占号
+ok 4 - 迁移 intent 缺失、输入变化或目标错误只诊断；不补造或新占号
+  ---
+  duration_ms: 1066.0336
+  type: 'test'
+  ...
+# Subtest: 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+ok 5 - 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+  ---
+  duration_ms: 447.8365
+  type: 'test'
+  ...
+# Subtest: 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+ok 6 - 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+  ---
+  duration_ms: 2176.7339
+  type: 'test'
+  ...
+# Subtest: 预览手改、源变化、项目外输入、错误角色在写前拒绝
+ok 7 - 预览手改、源变化、项目外输入、错误角色在写前拒绝
+  ---
+  duration_ms: 584.8571
+  type: 'test'
+  ...
+# Subtest: open 旧记录的已知 Close 指针缺失仍是迁移缺口，不作为未知说明忽略
+ok 8 - open 旧记录的已知 Close 指针缺失仍是迁移缺口，不作为未知说明忽略
+  ---
+  duration_ms: 310.1289
+  type: 'test'
+  ...
+# Subtest: 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+ok 9 - 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2916.873
+  type: 'test'
+  ...
+# Subtest: 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+ok 10 - 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2538.5765
+  type: 'test'
+  ...
+# Subtest: 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+ok 11 - 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1606.5786
+  type: 'test'
+  ...
+# Subtest: 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+ok 12 - 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1618.7333
+  type: 'test'
+  ...
+# Subtest: 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+ok 13 - 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1602.6351
+  type: 'test'
+  ...
+# Subtest: 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+ok 14 - 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1654.3897
+  type: 'test'
+  ...
+# Subtest: 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+ok 15 - 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1937.4645
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 18479.256

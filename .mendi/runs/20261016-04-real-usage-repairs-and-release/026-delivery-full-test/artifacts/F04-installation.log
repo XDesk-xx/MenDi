@@ -1,0 +1,35 @@
+$ node --test tests/installation/*.test.ts
+TAP version 13
+# Subtest: 安装后CLI：旧活动draft只读 / 预览 / 显式迁移，pending拒绝且保留原记录
+ok 1 - 安装后CLI：旧活动draft只读 / 预览 / 显式迁移，pending拒绝且保留原记录
+  ---
+  duration_ms: 4287.8743
+  type: 'test'
+  ...
+# Subtest: 安装后CLI：失败 / 尾项续测 / 原失败修复与审核夹具 / 局部复验 / 多来源 / Close及Reopen
+ok 2 - 安装后CLI：失败 / 尾项续测 / 原失败修复与审核夹具 / 局部复验 / 多来源 / Close及Reopen
+  ---
+  duration_ms: 54478.0644
+  type: 'test'
+  ...
+# Subtest: 候选包六阶段正文与当前来源一致，Reviewer无Author上游，未选Storybook不强制加载
+ok 3 - 候选包六阶段正文与当前来源一致，Reviewer无Author上游，未选Storybook不强制加载
+  ---
+  duration_ms: 28.4755
+  type: 'test'
+  ...
+# Subtest: 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+ok 4 - 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+  ---
+  duration_ms: 25987.3219
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59209.5997

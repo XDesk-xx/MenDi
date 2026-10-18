@@ -1,0 +1,1 @@
+$ node --test checks/unit.test.ts && node --test checks/integration.test.ts && node --test checks/tail.test.ts

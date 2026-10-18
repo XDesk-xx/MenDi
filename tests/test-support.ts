@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fixture, sandbox, repository, cli, isolatedEnv, command } from './helpers.ts';
 import { createWorkspace } from '../src/adapters/workspace.ts';
+import { initialRound } from '../src/core/rounds.ts';
 import { runTest } from '../src/application/tests.ts';
 import type { ExecutionProcessOptions } from '../src/adapters/test-process.ts';
 import assert from 'node:assert/strict';
@@ -65,15 +66,15 @@ export function testTarget(open = true, ready = true) {
     createWorkspace(
       root,
       {
-        formatVersion: 1,
+        formatVersion: 2,
         recordingMode: 'product',
         name: 'test',
         deliveryGroupsDir: '.mendi/delivery-groups',
         activeDeliveryId: 'd01',
         deliveries: [{ id: 'd01', manifestRef: '.mendi/delivery-groups/d01/manifest.json' }],
       },
-      {
-        formatVersion: 1,
+      initialRound({
+        formatVersion: 2,
         recordingMode: 'product',
         id: 'd01',
         title: '测试',
@@ -84,7 +85,7 @@ export function testTarget(open = true, ready = true) {
         activeChangeId: null,
         changeBindings: [],
         changeBatches: [],
-      },
+      }),
     );
   return root;
 }

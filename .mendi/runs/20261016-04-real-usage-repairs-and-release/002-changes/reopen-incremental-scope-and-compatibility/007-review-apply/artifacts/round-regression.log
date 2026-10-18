@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 1 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 109000.7537
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 2 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 12842.42
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 3 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 60954.1097
+  type: 'test'
+  ...
+# Subtest: 人工归档累计编号与路径一致，保留旧无编号格式
+ok 4 - 人工归档累计编号与路径一致，保留旧无编号格式
+  ---
+  duration_ms: 5.501
+  type: 'test'
+  ...
+# Subtest: 范围的唯一性、依赖闭合与无环检查
+ok 5 - 范围的唯一性、依赖闭合与无环检查
+  ---
+  duration_ms: 0.659
+  type: 'test'
+  ...
+# Subtest: 记录格式、身份、关联与版本必须一致
+ok 6 - 记录格式、身份、关联与版本必须一致
+  ---
+  duration_ms: 1.9032
+  type: 'test'
+  ...
+# Subtest: 完整提交可读回，重复 Open 保留原文件
+ok 7 - 完整提交可读回，重复 Open 保留原文件
+  ---
+  duration_ms: 80.2513
+  type: 'test'
+  ...
+# Subtest: manifest 后 / entry 前 / 读回 / 锁释放故障均不伪报完整成功
+ok 8 - manifest 后 / entry 前 / 读回 / 锁释放故障均不伪报完整成功
+  ---
+  duration_ms: 173.0293
+  type: 'test'
+  ...
+# Subtest: 更新替换失败保持原文件并保留临时现场
+ok 9 - 更新替换失败保持原文件并保留临时现场
+  ---
+  duration_ms: 125.5863
+  type: 'test'
+  ...
+# Subtest: 实际 rename 调用失败时正式 manifest 字节不变
+ok 10 - 实际 rename 调用失败时正式 manifest 字节不变
+  ---
+  duration_ms: 72.5137
+  type: 'test'
+  ...
+# Subtest: 并发写冲突不会删除他人的锁，锁归属改变也不删除
+ok 11 - 并发写冲突不会删除他人的锁，锁归属改变也不删除
+  ---
+  duration_ms: 179.3082
+  type: 'test'
+  ...
+# Subtest: 已有关联的 bind 在创建锁前拒绝
+ok 12 - 已有关联的 bind 在创建锁前拒绝
+  ---
+  duration_ms: 126.1674
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 183408.7787

@@ -1,0 +1,10 @@
+{
+  "target": "D:\\Projects\\MenDi\\.tmp\\d04-full-test-026-ui\\finite-results",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d04-full-test-026-ui\\finite-results",
+  "script": "preview:components",
+  "config": ".storybook/main.ts",
+  "pid": 22252,
+  "address": "http://127.0.0.1:6113",
+  "stdout": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\026-delivery-full-test\\artifacts\\ui\\finite-results\\preview.stdout.log",
+  "stderr": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\026-delivery-full-test\\artifacts\\ui\\finite-results\\preview.stderr.log"
+}

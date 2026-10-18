@@ -1,0 +1,3 @@
+# 额外读回断言修正
+
+原安装定向集合4/4通过。Author额外读取原命令时误以为公开preview会返回内部legacy-recovery-required，断言失败；实际公开入口先由delivery-commit-pending拒绝，并明确pendingDeliveryRunRef与旧版恢复提示。原命令事实保留在candidate-01/d04-migration/commands.jsonl，未修改产品代码或错误优先级。现将安装测试补成对实际公开code和pending身份的精确断言，再用同包的新安装session复验；此补强不作为旧集合失败或旧格式已恢复。

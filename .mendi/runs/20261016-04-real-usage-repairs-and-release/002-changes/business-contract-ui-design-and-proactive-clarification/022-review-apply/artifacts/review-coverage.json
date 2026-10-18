@@ -1,0 +1,43 @@
+{
+  "total": 112,
+  "excluded": 109,
+  "selected": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 2,
+      "review": "reviewed"
+    },
+    {
+      "path": "openspec/changes/business-contract-ui-design-and-proactive-clarification/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "review": "reviewed"
+    },
+    {
+      "path": "scripts/mvp-d04-c-apply.ts",
+      "status": "added",
+      "insertions": 159,
+      "deletions": 0,
+      "review": "reviewed"
+    }
+  ],
+  "skipped": [],
+  "supplemented": [
+    "README.md",
+    "skills/actions/explore/SKILL.md",
+    "skills/actions/propose/SKILL.md",
+    "skills/actions/apply/SKILL.md",
+    "skills/actions/review-explore/SKILL.md",
+    "skills/actions/review-propose/SKILL.md",
+    "skills/actions/review-apply/SKILL.md",
+    "019 proposal/design/delta/tasks and 020 review",
+    "tests/target-methods.test.ts",
+    "tests/target-method-handoff.test.ts",
+    "tests/methods-and-numbers.test.ts",
+    "021 Author Run and direct failure/final evidence"
+  ],
+  "exclusionReason": "preview前排除历史artifacts、依赖、生成物及未扩展017脚本；默认排除Markdown，实际六份方法已逐份补读。"
+}

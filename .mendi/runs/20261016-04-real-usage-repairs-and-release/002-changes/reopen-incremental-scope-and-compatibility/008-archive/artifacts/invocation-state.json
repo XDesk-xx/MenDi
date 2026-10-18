@@ -1,0 +1,13 @@
+{
+  "phase": "invoking",
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "archive",
+    "reopen-incremental-scope-and-compatibility",
+    "--json",
+    "--yes"
+  ],
+  "source": "openspec/changes/reopen-incremental-scope-and-compatibility",
+  "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+  "date": "2026-10-17"
+}

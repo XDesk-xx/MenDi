@@ -1,0 +1,1 @@
+$ node --test --test-concurrency=1 checks/unit.test.ts checks/integration.test.ts checks/tail.test.ts

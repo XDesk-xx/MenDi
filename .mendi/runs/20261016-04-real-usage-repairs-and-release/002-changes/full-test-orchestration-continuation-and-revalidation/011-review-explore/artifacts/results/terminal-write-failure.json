@@ -1,0 +1,56 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project",
+  "executionId": "002-focused",
+  "outcome": "unknown",
+  "observed": {
+    "formatVersion": 1,
+    "executionId": "002-focused",
+    "kind": "focused",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "test-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:focused"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:focused",
+    "scriptText": "node foreground.ts pass",
+    "startedAt": "2026-10-17T05:14:07.592Z",
+    "finishedAt": "2026-10-17T05:14:09.339Z",
+    "executionState": "finished",
+    "outcome": "passed",
+    "exitCode": 0,
+    "signal": null,
+    "pid": 33732,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/002-focused/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/002-focused/stderr.log"
+  },
+  "error": {
+    "message": "reviewer injected terminal persistence failure after child close"
+  },
+  "retainedLock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\.mendi\\write.lock"
+}

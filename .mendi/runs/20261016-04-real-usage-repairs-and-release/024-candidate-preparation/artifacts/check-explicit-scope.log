@@ -1,0 +1,6 @@
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+Checked 187 files in 93ms. No fixes applied.
+$ biome lint src scripts tests
+Checked 187 files in 101ms. No fixes applied.
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json

@@ -3,7 +3,8 @@ import fs from 'node:fs';
 import { parse, stringify } from 'yaml';
 import { managedPath } from './paths.ts';
 import { errorInfo, MendiError } from '../core/errors.ts';
-import { parseRun, runLocation, type RunRecord } from '../core/actions.ts';
+import { actionTypes, parseRun, runLocation, type RunRecord } from '../core/actions.ts';
+import { deliveryTypes } from '../core/delivery-runs.ts';
 import type { Workspace } from '../core/records.ts';
 
 export interface RunDocument {
@@ -87,4 +88,11 @@ export function scanRunNumbers(root: string, deliveryId: string) {
   if (!Number.isSafeInteger(number))
     throw new MendiError('run-number-conflict', 'Run 编号超出可安全表示范围。');
   return { number, incompleteReservations: reservations.filter((r) => r.incomplete), reservations };
+}
+
+export function isProductRunReservation(ref: string) {
+  const type = /\/\d{3,}-([a-z-]+)\/run\.md$/.exec(ref)?.[1];
+  return (
+    actionTypes.some((value) => value === type) || deliveryTypes.some((value) => value === type)
+  );
 }

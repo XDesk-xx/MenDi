@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+ok 1 - 产品 Run 校验真实身份与状态，未知说明不产生路径依赖
+  ---
+  duration_ms: 13.6599
+  type: 'test'
+  ...
+# Subtest: Run 进展、Author 完成和三种 Review verdict 产生最小 next
+ok 2 - Run 进展、Author 完成和三种 Review verdict 产生最小 next
+  ---
+  duration_ms: 1.2575
+  type: 'test'
+  ...
+# Subtest: 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+ok 3 - 查询只解析当前 Run，坏旧 Run 和失效说明不成为运行前置
+  ---
+  duration_ms: 238.2883
+  type: 'test'
+  ...
+# Subtest: 当前 product 指针和批次身份矛盾不能回退猜历史
+ok 4 - 当前 product 指针和批次身份矛盾不能回退猜历史
+  ---
+  duration_ms: 118.2679
+  type: 'test'
+  ...
+# Subtest: 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+ok 5 - 阶段 start 拒绝 draft / continuing / 错对象；Review 与局部修订有明确边界
+  ---
+  duration_ms: 2.2207
+  type: 'test'
+  ...
+# Subtest: 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+ok 6 - 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+  ---
+  duration_ms: 9.5295
+  type: 'test'
+  ...
+# Subtest: 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+ok 7 - 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+  ---
+  duration_ms: 1.5308
+  type: 'test'
+  ...
+# Subtest: CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+ok 8 - CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+  ---
+  duration_ms: 0.9142
+  type: 'test'
+  ...
+# Subtest: Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+ok 9 - Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+  ---
+  duration_ms: 1.3977
+  type: 'test'
+  ...
+# Subtest: 人工归档累计编号与路径一致，保留旧无编号格式
+ok 10 - 人工归档累计编号与路径一致，保留旧无编号格式
+  ---
+  duration_ms: 25.7365
+  type: 'test'
+  ...
+# Subtest: 范围的唯一性、依赖闭合与无环检查
+ok 11 - 范围的唯一性、依赖闭合与无环检查
+  ---
+  duration_ms: 0.4979
+  type: 'test'
+  ...
+# Subtest: 记录格式、身份、关联与版本必须一致
+ok 12 - 记录格式、身份、关联与版本必须一致
+  ---
+  duration_ms: 1.4593
+  type: 'test'
+  ...
+# Subtest: 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+ok 13 - 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+  ---
+  duration_ms: 8.1166
+  type: 'test'
+  ...
+# Subtest: v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+ok 14 - v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+  ---
+  duration_ms: 1.1066
+  type: 'test'
+  ...
+# Subtest: 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+ok 15 - 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+  ---
+  duration_ms: 16.2714
+  type: 'test'
+  ...
+# Subtest: 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+ok 16 - 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+  ---
+  duration_ms: 2.8735
+  type: 'test'
+  ...
+# Subtest: legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+ok 17 - legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+  ---
+  duration_ms: 1.0661
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1100.0847

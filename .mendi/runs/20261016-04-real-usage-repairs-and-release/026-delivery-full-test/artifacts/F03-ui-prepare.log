@@ -1,0 +1,7 @@
+$ node scripts/prepare-ui-tests.ts "D:/Projects/MenDi/.tmp/d04-full-test-026-ui"
+已显式准备 D:\Projects\MenDi\.tmp\d04-full-test-026-ui\official-cli
+已显式准备 D:\Projects\MenDi\.tmp\d04-full-test-026-ui\environment
+已显式准备 D:\Projects\MenDi\.tmp\d04-full-test-026-ui\preview
+已显式准备 D:\Projects\MenDi\.tmp\d04-full-test-026-ui\unknown-service
+已显式准备 D:\Projects\MenDi\.tmp\d04-full-test-026-ui\finite-results
+设置 MENDI_UI_TARGETS_DIR 为该目录，再运行 test:ui；未认证冷安装或其他平台。

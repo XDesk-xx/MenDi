@@ -1,0 +1,18 @@
+{
+  "scope": "skill-only maintenance",
+  "method": "delivery-full-test",
+  "loader": "actual dist/adapters/methods.js",
+  "stageRef": "skills/actions/delivery-full-test/SKILL.md",
+  "differences": [
+    "skills/actions/delivery-full-test/SKILL.md"
+  ],
+  "unchangedDistributionFiles": 220,
+  "originalPackage": {
+    "path": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+    "sha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde"
+  },
+  "plannedPackage": "D:/tools/mendi/packages/0.2.0-skill-20261018-resource-check/mendi-0.2.0.tgz",
+  "version": "0.2.0",
+  "revision": "skill-20261018-resource-check",
+  "limits": "正文及加载核对，不是新增自动端口扫描/预检实现，也不认证任意目标已遵循方法；不重跑正式Full Test"
+}

@@ -1,0 +1,25 @@
+{"type":"test:enqueue","data":{"nesting":0,"name":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts","type":"test","line":1,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:dequeue","data":{"nesting":0,"name":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts","type":"test","line":1,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:enqueue","data":{"nesting":0,"name":"one-good-assertion","type":"test","line":3,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:dequeue","data":{"nesting":0,"name":"one-good-assertion","type":"test","line":3,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:enqueue","data":{"nesting":0,"name":"one-bad-assertion","type":"test","line":4,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:complete","data":{"name":"one-good-assertion","nesting":0,"testNumber":1,"details":{"duration_ms":1.3112,"type":"test","passed":true},"line":3,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:start","data":{"nesting":0,"name":"one-good-assertion","line":3,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:pass","data":{"name":"one-good-assertion","nesting":0,"testNumber":1,"details":{"duration_ms":1.3112,"type":"test"},"line":3,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:dequeue","data":{"nesting":0,"name":"one-bad-assertion","type":"test","line":4,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:complete","data":{"name":"one-bad-assertion","nesting":0,"testNumber":2,"details":{"duration_ms":1.9469,"type":"test","error":{"code":"ERR_TEST_FAILURE","failureType":"testCodeFailure","cause":{"generatedMessage":true,"code":"ERR_ASSERTION","actual":1,"expected":2,"operator":"strictEqual","diff":"simple","name":"AssertionError","message":"Expected values to be strictly equal:\n\n1 !== 2\n"},"name":"Error","message":"Expected values to be strictly equal:\n\n1 !== 2\n"},"passed":false},"line":4,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:start","data":{"nesting":0,"name":"one-bad-assertion","line":4,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:fail","data":{"name":"one-bad-assertion","nesting":0,"testNumber":2,"details":{"duration_ms":1.9469,"type":"test","error":{"code":"ERR_TEST_FAILURE","failureType":"testCodeFailure","cause":{"generatedMessage":true,"code":"ERR_ASSERTION","actual":1,"expected":2,"operator":"strictEqual","diff":"simple","name":"AssertionError","message":"Expected values to be strictly equal:\n\n1 !== 2\n"},"name":"Error","message":"Expected values to be strictly equal:\n\n1 !== 2\n"}},"line":4,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:summary","data":{"success":false,"counts":{"tests":2,"failed":1,"passed":1,"cancelled":0,"skipped":0,"todo":0,"topLevel":2,"suites":0},"duration_ms":17.6523,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:complete","data":{"name":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts","nesting":0,"testNumber":1,"details":{"duration_ms":262.7457,"type":"test","error":{"code":"ERR_TEST_FAILURE","failureType":"subtestsFailed","cause":"test failed","exitCode":1,"signal":null,"name":"Error","message":"test failed"},"passed":false},"line":1,"column":1,"file":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project\\fixtures\\mixed.ts"}}
+{"type":"test:plan","data":{"nesting":0,"count":2}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"tests 2","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"suites 0","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"pass 1","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"fail 1","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"cancelled 0","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"skipped 0","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"todo 0","level":"info"}}
+{"type":"test:diagnostic","data":{"nesting":0,"message":"duration_ms 265.3937","level":"info"}}
+{"type":"test:summary","data":{"success":false,"counts":{"tests":2,"failed":1,"passed":1,"cancelled":0,"skipped":0,"todo":0,"topLevel":2,"suites":0},"duration_ms":265.3937}}
+{"type":"reviewer:stream-ended","abortRequested":false}

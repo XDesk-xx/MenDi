@@ -1,0 +1,12 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+  "candidateBase": "168a4cb54f0c9028eaf9c271b43d9ee14c3ae904",
+  "fixture": "tests/fixtures/full-test-project",
+  "full": {
+    "test:focused": "node --test checks/tail.test.ts",
+    "test:fast": "node --test --test-concurrency=1 checks/unit.test.ts checks/integration.test.ts checks/tail.test.ts",
+    "test:full": "node --test checks/unit.test.ts && node --test checks/integration.test.ts && node --test checks/tail.test.ts"
+  },
+  "purpose": "existing opaque command / formal repair admission / material applicability only",
+  "approvalBoundary": "synthetic stage records in isolated target, not independent product approval"
+}

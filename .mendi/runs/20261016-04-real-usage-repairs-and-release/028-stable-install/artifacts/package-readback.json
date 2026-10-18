@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "installedRoot": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+d04-0.2.0-2d0a0e0+mendi-0.2.0.tgz\\node_modules\\mendi",
+  "stableCLI": "D:\\tools\\mendi\\current/node_modules/mendi/dist/drivers/cli.js",
+  "packagePath": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "nonManifestFilesCompared": 221,
+  "differences": [],
+  "reference": "D:\\tools\\mendi\\acceptance\\d04-0.2.0-full-test-026\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_41d6d0b2af0a7ef48aadc632d74e0626\\node_modules\\mendi",
+  "backupCLIValidated": true,
+  "checkedAt": "2026-10-17T14:00:10.883Z"
+}

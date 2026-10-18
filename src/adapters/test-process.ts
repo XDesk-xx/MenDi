@@ -23,6 +23,7 @@ export function stopCurrentChild(child: ChildProcess) {
   };
 }
 export interface ExecutionProcessOptions {
+  groupEnvironment?: { MENDI_GROUP_TEST_REQUEST: string; MENDI_GROUP_TEST_REPORT: string };
   signal?: AbortSignal;
   spawnExecution?: (command: string, args: string[], options: SpawnOptions) => ChildProcess;
   stop?: typeof stopCurrentChild;
@@ -57,7 +58,7 @@ export async function executeForeground(
       try {
         child = (options.spawnExecution ?? spawn)(record.command.executable, record.command.args, {
           cwd: root,
-          env: testEnvironment('warn'),
+          env: { ...testEnvironment('warn'), ...options.groupEnvironment },
           stdio: ['ignore', 'pipe', 'pipe'],
           shell: false,
           windowsHide: true,

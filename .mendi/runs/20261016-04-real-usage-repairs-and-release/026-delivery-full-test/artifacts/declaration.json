@@ -1,0 +1,133 @@
+{
+  "scope": "delivery",
+  "formalDeliveryTest": true,
+  "recordingMode": "manual-bootstrap",
+  "deliveryId": "20261016-04-real-usage-repairs-and-release",
+  "executionId": "d04-full-test-026",
+  "startedAt": "2026-10-17T09:44:06.921Z",
+  "deadline": "2026-10-17T11:14:06.922Z",
+  "collection": [
+    "F01-check",
+    "F02-root",
+    "F03-ui",
+    "F04-installation",
+    "F05-spec-status"
+  ],
+  "basis": {
+    "commit": "572b94f65555b71d792a056ac18921495b2bc8a4",
+    "materials": [
+      "package.json",
+      "pnpm-workspace.yaml",
+      "pnpm-lock.yaml",
+      "src/",
+      "tests/",
+      "scripts/",
+      "skills/",
+      "openspec/specs/",
+      "README.md",
+      "024-candidate-preparation/artifacts/candidate.json"
+    ],
+    "changes": [
+      "package.json",
+      "pnpm-workspace.yaml",
+      "scripts/installation-package.ts",
+      "scripts/prepare-installation-tests.ts",
+      "tests/installation-package.test.ts",
+      "tests/installation/support.ts",
+      "tests/installation/d04.test.ts",
+      "README.md"
+    ],
+    "qualification": "已确认C checkpoint及本次明确工作区差异；本次按Owner约束未执行Git，未新核对HEAD"
+  },
+  "approvals": [
+    {
+      "changeId": "reopen-incremental-scope-and-compatibility",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-011-reopen-incremental-scope-and-compatibility",
+      "authorComplete": true
+    },
+    {
+      "changeId": "full-test-orchestration-continuation-and-revalidation",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/014-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/015-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-012-full-test-orchestration-continuation-and-revalidation",
+      "authorComplete": true
+    },
+    {
+      "changeId": "business-contract-ui-design-and-proactive-clarification",
+      "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/021-apply/run.md",
+      "reviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/business-contract-ui-design-and-proactive-clarification/022-review-apply/run.md",
+      "verdict": "approved",
+      "archiveRef": "openspec/changes/archive/2026-10-17-013-business-contract-ui-design-and-proactive-clarification",
+      "authorComplete": true
+    }
+  ],
+  "candidateReview": {
+    "author": "024-candidate-preparation",
+    "review": ".mendi/runs/20261016-04-real-usage-repairs-and-release/025-review-candidate-preparation/run.md",
+    "verdict": "approved",
+    "scope": "candidate preparation"
+  },
+  "package": {
+    "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\024-candidate-preparation\\artifacts\\candidate-01\\mendi-0.2.0.tgz",
+    "sha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+    "observedSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde"
+  },
+  "environment": {
+    "node": "v22.23.2",
+    "platform": "win32",
+    "strictDependencyPrecheck": "error",
+    "pnpm": "11.22.0",
+    "openspec": "1.14.1"
+  },
+  "stableBefore": {
+    "version": "0.1.0",
+    "mtime": "2026-10-10T16:37:05.661Z"
+  },
+  "directInputs": [
+    {
+      "path": "package.json",
+      "size": 1221,
+      "mtimeMs": 1792228633156.844
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "size": 70,
+      "mtimeMs": 1792228714937.3462
+    },
+    {
+      "path": "scripts/installation-package.ts",
+      "size": 1252,
+      "mtimeMs": 1792228636376.5452
+    },
+    {
+      "path": "scripts/prepare-installation-tests.ts",
+      "size": 7222,
+      "mtimeMs": 1792229036633.1187
+    },
+    {
+      "path": "tests/installation-package.test.ts",
+      "size": 2045,
+      "mtimeMs": 1792228804312.267
+    },
+    {
+      "path": "tests/installation/support.ts",
+      "size": 2667,
+      "mtimeMs": 1792228804312.267
+    },
+    {
+      "path": "tests/installation/d04.test.ts",
+      "size": 8172,
+      "mtimeMs": 1792229087876.2583
+    },
+    {
+      "path": "README.md",
+      "size": 13834,
+      "mtimeMs": 1792228843999.5613
+    }
+  ],
+  "limitations": "Windows本机已准备环境；非冷安装或其他平台认证；不改根记录格式；无Git操作"
+}

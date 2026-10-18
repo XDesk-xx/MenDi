@@ -2,6 +2,26 @@ import type { Arguments } from './arguments.ts';
 import type { dispatch } from './dispatch.ts';
 import type { loadMethods } from '../adapters/methods.ts';
 
+export function groupProgressDisplay() {
+  const seen = new Set<string>();
+  return (value: unknown) => {
+    if (
+      !value ||
+      typeof value !== 'object' ||
+      !('group' in value) ||
+      typeof value.group !== 'string'
+    )
+      return;
+    const data = value as { group: string; event?: { type?: string; data?: { file?: unknown } } };
+    if (!seen.has(data.group)) {
+      seen.add(data.group);
+      console.error(`组进度：${data.group} 已观察目标活动；等待实际终态。`);
+    }
+    if (data.event?.type === 'test:summary' && data.event.data?.file === undefined)
+      console.error(`组进度：${data.group} 根汇总已到达；仍等待回执、真实结束与持久确认。`);
+  };
+}
+
 // 面向人的呈现不访问项目，也不执行推荐的下一步。
 export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Arguments) {
   console.log(
@@ -11,8 +31,27 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     console.log(
       `Delivery：${result.local.deliveryId} ${result.local.title} (${result.local.state})\n目标：${result.local.goal}\n槽位：${result.local.plannedChanges.map((slot) => slot.slot).join(', ')}\nChange：${result.local.activeChangeId ?? (result.local.changeBindings.some((binding) => binding.state === 'archived') ? '已归档、当前无活动 Change' : '尚未关联')}`,
     );
+    if ('rounds' in result.local && result.local.rounds)
+      console.log(
+        `当前轮：${result.local.currentRoundId}；历轮：${result.local.rounds.map((r) => `${r.id}(${r.state})`).join(', ')}`,
+      );
+    if ('compatibility' in result.local)
+      console.log(
+        result.local.compatibility === 'legacy-product-read-only'
+          ? '格式：旧 product，只读；写入前先预览并显式迁移，旧中断先用兼容旧版恢复。'
+          : '来源：manual-bootstrap，人工记录只读。',
+      );
   } else if ('pending' in result) console.log('生命周期提交未确认，停止并核对现场。');
   else if (!result.operation.startsWith('test-')) console.log('MenDi 尚未 Open。');
+  if ('historicalRound' in result) {
+    const round = result.historicalRound;
+    console.log(
+      `轮次：${round.id} (${round.state})；只读保存摘要\n目标：${round.scope.goal}\n槽位：${round.scope.plannedChanges.map((p) => p.slot).join(', ')}\n来源：${JSON.stringify(round.origin)}\n批次：${round.currentBatchId ?? '未开始'}\n收口：${round.closeRunRef ?? '尚未收口'}`,
+    );
+  }
+  if ('plan' in result && result.plan) console.log(JSON.stringify(result.plan, null, 2));
+  if (result.operation.startsWith('delivery-migrate-') && 'result' in result)
+    console.log(`迁移：${result.result}`);
   if ('entries' in result)
     for (const entry of result.entries)
       console.log(
@@ -32,6 +71,21 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
   }
   if ('run' in result && result.run)
     console.log(`Action：${result.run.actionId}\nRun：${result.run.ref} (${result.run.status})`);
+  if ('groupExecution' in result && result.groupExecution) {
+    const f = result.groupExecution;
+    console.log(
+      `组尝试：protocolState:${f.protocolState}；原命令:${f.child?.outcome ?? 'not-run'}；候选:${f.candidate.id}；所属轮:${f.roundId}；当前实际进展:${f.current}`,
+    );
+    for (const g of f.progress) console.log(`${g.id}: ${g.state}；${g.reason}`);
+    console.log('选中范围通过不代表候选 verified；未测阶段及百分比 / ETA 不推算。');
+  }
+  if ('candidateVerification' in result && result.candidateVerification) {
+    const f = result.candidateVerification;
+    console.log(
+      `候选:${f.candidate.id}；保存结论:${f.conclusion}；所属轮:${f.roundId}；当前收口入口:${f.current}；材料适用性仍需阶段判断。`,
+    );
+    for (const gap of f.gaps) console.log(`缺口:${gap}`);
+  }
   if ('run' in result && result.run && 'lifecycle' in result.run && result.run.lifecycle) {
     const value = result.run.lifecycle;
     console.log(`生命周期：${value.operation}；本次持久事实。`);
@@ -45,6 +99,9 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     const facts = result.verification;
     console.log(
       `正式 Full Test：${facts.outcome}；scope:delivery\n完整集合：${facts.collection.join(' / ')}\n材料声明：${JSON.stringify(facts.basis)}\n范围 / 命令匹配：${facts.scopeMatch} / ${facts.commandMatch}\nmaterialApplicability:${facts.materialApplicability}`,
+    );
+    console.log(
+      `结果所属轮：${'roundId' in facts ? facts.roundId : '旧格式未结构化'}；原 outcome 与当前适用性分别解释。`,
     );
     if (facts.child)
       console.log(
@@ -72,7 +129,7 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
     if (reservations.length)
       console.log(`不完整编号占位：${reservations.map((item) => item.ref).join(', ')}`);
   }
-  if ('next' in result) {
+  if ('next' in result && result.next) {
     console.log(`下一步：${String(result.next.action)}，来源：${result.next.source}`);
     if ('reason' in result.next) console.log(String(result.next.reason));
     if ('upstream' in result && result.upstream)

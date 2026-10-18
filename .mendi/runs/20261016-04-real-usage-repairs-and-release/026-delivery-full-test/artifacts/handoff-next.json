@@ -1,0 +1,25 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "id": "handoff-next",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/mendi/acceptance/d04-0.2.0-full-test-026/node_modules/mendi/dist/drivers/cli.js",
+    "next",
+    "--project",
+    "D:/Projects/MenDi",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "pid": 51672,
+  "startedAt": "2026-10-17T10:29:23.382Z",
+  "state": "finished",
+  "timeoutMs": 120000,
+  "log": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/handoff-next.log",
+  "endedAt": "2026-10-17T10:29:24.284Z",
+  "durationMs": 902,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

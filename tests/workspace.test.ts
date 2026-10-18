@@ -12,18 +12,19 @@ import { MendiError } from '../src/core/errors.ts';
 import { bindChange } from '../src/application/project.ts';
 import { openspecEntry } from './helpers.ts';
 import { fixture, sandbox, snapshot } from './helpers.ts';
+import { initialRound } from '../src/core/rounds.ts';
 
 function records() {
   const project = {
-    formatVersion: 1,
+    formatVersion: 2,
     recordingMode: 'product',
     name: 'test',
     deliveryGroupsDir: '.mendi/delivery-groups',
     activeDeliveryId: 'd01',
     deliveries: [{ id: 'd01', manifestRef: '.mendi/delivery-groups/d01/manifest.json' }],
   };
-  const manifest = {
-    formatVersion: 1,
+  const manifest = initialRound({
+    formatVersion: 2,
     recordingMode: 'product',
     id: 'd01',
     title: 'D01',
@@ -34,7 +35,7 @@ function records() {
     activeChangeId: null,
     changeBindings: [],
     changeBatches: [],
-  };
+  });
   return { project, manifest };
 }
 function code(expected: string) {

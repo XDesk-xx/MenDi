@@ -6,11 +6,20 @@ import { archiveAction } from '../src/application/archive.ts';
 import { archiveInput } from './archive-support.ts';
 import { pnpmEntry, prepareEmptyDependencies } from './test-support.ts';
 import { repository, sandbox } from './helpers.ts';
-import { runFullTest, type FullTestOptions } from '../src/application/delivery-full-test.ts';
+import {
+  runFullTest,
+  fullTestStatus,
+  type FullTestOptions,
+} from '../src/application/delivery-full-test.ts';
 import { saveRun, submitRun } from '../src/application/actions.ts';
 
 export const authorActor = 'delivery-author';
 export const reviewActor = 'independent-fixture-reviewer';
+export function legacyFullTestStatus(input: Parameters<typeof fullTestStatus>[0]) {
+  const result = fullTestStatus(input);
+  assert.ok('verification' in result, '旧 command 不能升级为组模式');
+  return result;
+}
 export function fullInput(project: string) {
   return {
     project,

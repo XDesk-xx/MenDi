@@ -1,0 +1,13 @@
+{
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-12VHJV\\minimal-project",
+  "actionId": "proof-entry-001-explore",
+  "realCLIStart": true,
+  "proposalContext": "教师发布练习需明确确认；学生只能读取获准材料。当前界面名称不等于长期业务契约。",
+  "proposalRules": [
+    "proposal 须说明权限、默认截止与关键能力可达性的未决决定；事实不足不能冒称已确认。"
+  ],
+  "selectedStorybook": false,
+  "businessArtifactsCreated": false,
+  "facts": "四阶段实际正文及目标上游来源均可交接；Reviewer不继承Author上游；context/rules由真实instructions原样传递。",
+  "limits": "仅证明已有交接机制；不证明宿主会提问、会识别UI业务影响或已通过独立审核。未运行UI、修改产品方法或提交目标阶段。"
+}

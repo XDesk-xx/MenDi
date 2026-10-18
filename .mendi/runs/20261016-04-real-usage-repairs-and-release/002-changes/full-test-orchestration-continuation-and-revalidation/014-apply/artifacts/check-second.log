@@ -1,0 +1,25 @@
+Already up to date
+Done in 930ms using pnpm v11.22.0
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+src\application\group-attempt.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    225 225 │           ...p,
+    226 226 │           ...(fact ?? {
+    227     │ - ············state:·'not-run'·as·const,
+        227 │ + ··········state:·'not-run'·as·const,
+    228 228 │             reason: observation.reasons.join('；'),
+    229 229 │           }),
+  
+
+Checked 183 files in 92ms. No fixes applied.
+Found 1 error.
+format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+[ELIFECYCLE] Command failed with exit code 1.
+[ELIFECYCLE] Command failed with exit code 1.

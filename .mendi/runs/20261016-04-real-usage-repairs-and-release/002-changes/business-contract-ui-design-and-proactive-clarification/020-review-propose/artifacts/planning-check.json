@@ -1,0 +1,16 @@
+{
+  "modifiedRequirement": "Finite UI tests and fresh results",
+  "originalScenariosPreserved": [
+    "An interaction defect fails the selected test",
+    "Updated code requires a new result"
+  ],
+  "addedRequirements": [
+    "Business contracts and iterative UI decisions",
+    "Proactive clarification of material product uncertainty"
+  ],
+  "tasks": {
+    "total": 11,
+    "complete": 0
+  },
+  "limit": "结构核对不代替语义审核；未执行Apply"
+}

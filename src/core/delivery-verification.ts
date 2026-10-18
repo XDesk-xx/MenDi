@@ -3,6 +3,7 @@ import type { TestOutcome } from './test-execution.ts';
 import { readScope, type Workspace } from './records.ts';
 import { archivedCount } from './archive.ts';
 import { currentScopeBindings } from './batches.ts';
+import type { PlannedChange } from './scope.ts';
 export interface Declaration {
   collection: string[];
   basis: { materials: string; changes: string; commit?: string };
@@ -34,7 +35,7 @@ export function declaration(value: unknown): Declaration {
 }
 export interface DeliveryScope {
   goal: string;
-  plannedChanges: { slot: string; title: string; dependsOn: string[] }[];
+  plannedChanges: Omit<PlannedChange, 'roadmapSection'>[];
   completed: { slot: string; changeId: string; archiveOrdinal: number }[];
 }
 export function completionScope(workspace: Workspace): DeliveryScope {
@@ -56,11 +57,14 @@ export function completionScope(workspace: Workspace): DeliveryScope {
   });
   return {
     goal: workspace.scope.goal,
-    plannedChanges: workspace.scope.plannedChanges.map(({ slot, title, dependsOn }) => ({
-      slot,
-      title,
-      dependsOn,
-    })),
+    plannedChanges: workspace.scope.plannedChanges.map(
+      ({ slot, title, dependsOn, baselineDependencies }) => ({
+        slot,
+        title,
+        dependsOn,
+        ...(baselineDependencies?.length ? { baselineDependencies } : {}),
+      }),
+    ),
     completed,
   };
 }
@@ -103,11 +107,14 @@ export function parseVerificationScope(value: unknown): DeliveryScope {
     throw new MendiError('invalid-run', '验收完成身份重复。');
   return {
     goal: scope.goal,
-    plannedChanges: scope.plannedChanges.map(({ slot, title, dependsOn }) => ({
-      slot,
-      title,
-      dependsOn,
-    })),
+    plannedChanges: scope.plannedChanges.map(
+      ({ slot, title, dependsOn, baselineDependencies }) => ({
+        slot,
+        title,
+        dependsOn,
+        ...(baselineDependencies?.length ? { baselineDependencies } : {}),
+      }),
+    ),
     completed,
   };
 }
@@ -120,6 +127,8 @@ export interface ApprovalFact {
   reviewerActor: string;
 }
 export interface FullTest extends Declaration {
+  roundId?: string;
+  baselineFacts?: BaselineFact[];
   scope: DeliveryScope;
   approvals: ApprovalFact[];
   repairApproval?: {
@@ -135,8 +144,22 @@ export interface FullTest extends Declaration {
   reason?: string;
 }
 export interface Repair {
+  groups?: {
+    plan: import('./group-plan.ts').GroupPlan;
+    impact: import('./group-records.ts').GroupImpact;
+  };
+  roundId?: string;
   failedFullTestRunRef: string;
   scope: DeliveryScope;
   collection: string[];
   reason: string;
+}
+
+export interface BaselineFact {
+  targetSlot: string;
+  deliveryId: string;
+  planningSlot: string;
+  closeRunRef: string;
+  changeId: string;
+  archiveOrdinal: number;
 }

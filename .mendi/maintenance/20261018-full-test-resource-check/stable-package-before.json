@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "name": "mendi-local-runtime",
+  "dependencies": {
+    "mendi": "file:D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-10-16T16:34:10.511Z",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "branch": "delivery/20261016-04-real-usage-repairs-and-release",
+  "head": "982159b42d7b6ce88dea0ebf178e13d75514adae",
+  "package": {
+    "name": "mendi",
+    "version": "0.1.0"
+  },
+  "stable": {
+    "manifest": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+21226a8+mendi-0.1.0.tgz\\node_modules\\mendi\\package.json",
+    "cli": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+21226a8+mendi-0.1.0.tgz\\node_modules\\mendi\\dist\\drivers\\cli.js",
+    "name": "mendi",
+    "version": "0.1.0",
+    "lastWriteTime": "2026-10-10T16:37:05.661Z"
+  },
+  "rootRecordingMode": "manual-bootstrap",
+  "protectedDiff": "",
+  "boundary": "仅只读观察稳定安装；未执行其写命令、安装切换、DreMo 操作、根生命周期或 Git 写入。"
+}

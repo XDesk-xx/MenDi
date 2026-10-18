@@ -1,9 +1,10 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { openDelivery, query } from '../src/application/project.ts';
-import { fullTestStatus, runFullTest } from '../src/application/delivery-full-test.ts';
+import { runFullTest } from '../src/application/delivery-full-test.ts';
 import { testStatus, runTest } from '../src/application/tests.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { scanRunNumbers } from '../src/adapters/runs.ts';
@@ -70,7 +71,7 @@ test('closed 后新 Delivery 追加选择，原生归档累计增长，同名 ex
   const index = fs.readFileSync(path.join(root, '.mendi/project.json'));
   assert.equal(queryCli(root, ['--delivery', 'd01']).local.state, 'closed');
   assert.equal(
-    fullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
+    legacyFullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
     'passed',
   );
   assert.ok(fs.readFileSync(path.join(root, '.mendi/project.json')).equals(index));

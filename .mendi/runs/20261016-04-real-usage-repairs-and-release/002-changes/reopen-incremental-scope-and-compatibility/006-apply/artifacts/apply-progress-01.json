@@ -1,0 +1,229 @@
+{
+  "changeName": "reopen-incremental-scope-and-compatibility",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-lifecycle\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-verification\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\specs\\delivery-workspace\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 27,
+    "complete": 2,
+    "remaining": 25
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 分开解释项目 / manifest 版本，支持 v2 当前对象、v1 只读来源及原 manual-bootstrap，建立统一 round / scope 规范化；用记录解析场景验证混合登记、未知版本、单批次旧兼容及查询无写入。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 实现轮次唯一性、跨轮槽位唯一、binding / batch 归属及顶层投影的统一生成 / 核对；用 P09/P10-L → P10/P13、多批次与矛盾投影场景验证，确认不需要给旧 binding / Run 批量补字段。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 将正常可写共享夹具调整到显式 v2 首轮模型，另保留专门 v1 / manual 受控输入；运行相关记录测试及 scripts / tests 类型检查，补充格式与旧记录读取说明，不改历史证据或字节敏感原件。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 接入默认当前轮及 `status --round` 历史摘要，保持 `next` 只解释当前；真实 CLI 跨进程验证历史 / 未知轮次、旧格式、closed、来源缺解释历史及 activeDeliveryId / currentRoundId 不变，核对人读与 JSON 输出并同步 README 示例。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 将可写新格式 gate 接到 bind、Action / Run、Archive、普通 test、正式 Full Test / repair 和生命周期全部实际写入口，并在持锁后复核；按 CLI 写类别验证 v1 请求在占号、命令 / 原生调用和替换前拒绝，同时只读 instructions / test status / formal status 保持可用。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "2.3 明确拒绝新版对旧格式操作的 resume / finish 写入，提示旧版恢复后再迁移；用旧 pending / 未完成 Archive / 未确认执行及诊断场景验证不越界恢复，落地对应错误与方法说明，不增加自动解锁 / 安装旧版入口。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "7",
+      "description": "3.1 让两种首次 Open 入口均创建 v2 首轮，closed 后新 ID Open 保留旧 manifest；真实 CLI 验证首次 / 后续 Open、独立索引、累计数和不预建批次，更新 Delivery Open 方法。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "3.2 改为锁内追加单一新轮并投影当前字段，保留旧轮范围与收口；用连续及同日 Reopen、旧槽位复用拒绝和原指针保留在旧轮的场景验证，更新 Reopen 方法及受控 scope 示例。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "3.3 将 bind、Action / Archive 记录与批次接到唯一轮次归属，保持首次实际 Run 才建批次；跨进程验证新轮只推进新槽位、旧批次 / Run / ordinal 不变以及跨轮混成员拒绝，同步必要阶段 / Archive 指导。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "10",
+      "description": "3.4 维护新生命周期 roundId 和有界恢复，重放必要提交边界的故障注入；验证同次恢复不重复追加轮次 / 占号、终态不改、原输入变化与锁冲突拒绝，不重跑不受影响的历史 proof 树。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 22
+    },
+    {
+      "id": "11",
+      "description": "4.1 增加 planned slot 的 baselineDependencies 解析与文档，保持 dependsOn 为同轮 DAG；用空 / 重复 / 悬空 / 循环本轮依赖、同轮依赖与基线混淆、非法 Delivery / Close 路径场景验证各自准入。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "12",
+      "description": "4.2 实现来源索引、必要 manifest 身份 / archived binding 与指定 Close 快照的直接核对，支持同 Delivery 旧轮及跨 Delivery 的 v1 / v2 product；用来源后来 Reopen、旧 ordinal 小于累计数、无旧审核正文 / 日志的场景验证，不调用来源活动 status 或迁移来源。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "13",
+      "description": "4.3 将范围准入、bind 锁内复核和后续正式验收接到直接基线事实；验证 manual 来源不能满足硬依赖、未登记 / 越界 / 错 Close / 非归档来源拒绝，以及读取期间变化拒绝，确认普通 query 不递归检查来源。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 28
+    },
+    {
+      "id": "14",
+      "description": "4.4 更新基线 JSON 示例和错误处理指导；通过真实 CLI 建立两个隔离 Delivery 的 product 完成事实并消费跨 Delivery 基线，核对项目选择和来源文件保持，不把来源算作本轮新增完成项。阶段批准夹具须明确标识用途。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "15",
+      "description": "5.1 为新 Full Test、repair / review 和 Close 固定 / 校验 roundId，兼容迁移边界内旧记录的唯一归属；验证跨轮失败 / 批准 / PASS、缺新归属和范围矛盾均不能准入，历史结果的原 outcome 仍可读。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 33
+    },
+    {
+      "id": "16",
+      "description": "5.2 保存本轮正式准入的必要 baselineFacts，Close 只消费本轮实际结果、直接快照与材料适用性；用真实受控 full 命令验证基线声明一致、来源直接变化拒绝及不读取来源旧日志，更新 Full Test / repair / Close 方法。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 34
+    },
+    {
+      "id": "17",
+      "description": "5.3 完成真实隔离 Open → Full Test → Close → Reopen → 新批次 / 归档 → 新正式集合 → Close 的集成场景，并覆盖旧 PASS 不能 Close 新轮和当前修复仍需独立审核 / 新整次执行；新结果不改旧失败，不引入 B 的多次聚合政策。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 35
+    },
+    {
+      "id": "18",
+      "description": "6.1 实现当前选定旧 product 的必要直接来源收集与纯转换，重建轮次、当前选择、绑定 / 批次和正式结果归属；用记录化多轮、无 Open Run 但有充分旧基线、合法首轮未 Close、真实范围缺口和矛盾场景验证，不递归扫 Change 证据 / 测试日志。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 39
+    },
+    {
+      "id": "19",
+      "description": "6.2 实现 `delivery migrate preview` 的本地只读输出与直接差异说明，保持其他 manifest 和原记录；真实 CLI 验证不占号 / 不建文件 / 不访问 OpenSpec，未知扩展不增加前置，unsafe / 手改 / 陈旧输入有明确报告，补充预览操作指导。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 40
+    },
+    {
+      "id": "20",
+      "description": "6.3 覆盖完整 open / closed、Author / Reviewer / repair draft、可确认 Archive prepared / none 的迁移预览；验证其身份 / 当前选择可保留，同时旧 pending、原生效果未确认和运行中 / 不完整执行明确停止并指向旧版恢复。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 41
+    },
+    {
+      "id": "21",
+      "description": "7.1 实现 apply 对项目内预览的重新计算、锁内直接输入 / 预计占号复核，复用项目锁和 pending 保存一次 delivery-migrate 收据及实际前态；验证 preview 后数据改变、输入越界、错误角色 / actor 和冲突在实际写入前拒绝。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 45
+    },
+    {
+      "id": "22",
+      "description": "7.2 提交 v2 入口及当前 manifest，保存 migrationRunRef 旧编号边界而不替换原进展；真实 CLI 验证其他 Delivery / Run / verdict / 日志 / 归档原字节保持，累计数不变，并验证原活动 draft 可按原 actor / Action 保存和继续、原 fixed Author 不变。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 46
+    },
+    {
+      "id": "23",
+      "description": "7.3 对 intent、pending、终态收据、manifest / index、最终读回等必要提交边界注入实际中断；经明确夹具锁处置后显式同 actor resume，验证不改终态 / 不重复轮次、无 pending 的明确 intent 只补原提交、输入变化 / 缺 intent / 错对象拒绝及失败现场保留。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 47
+    },
+    {
+      "id": "24",
+      "description": "7.4 验证重复 apply 返回 already-migrated，同次完整 resume 返回 already-completed，后续工作变化使旧 resume 陈旧；加入迁移方法及诊断说明，明确不存在新版旧格式恢复例外、自动清锁或自动降级。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 48
+    },
+    {
+      "id": "25",
+      "description": "8.1 运行 `pnpm check` 和受影响场景；由于格式与共享写入口影响全部核心写者，再运行根 `pnpm test`，明确记录命令、结果及范围。仅按实际安装 / UI 接线变化补定向检查，不自动执行根正式 Full Test 或重放全部旧 Explore。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 52
+    },
+    {
+      "id": "26",
+      "description": "8.2 用受控隔离目标验证新 CLI / 随包方法的格式说明、迁移本地模式、历史查询和跨 Delivery 基线接线；核对稳定安装、DreMo、根人工历史和包版本未被实施过程修改，必要唯一证据不留在 `.tmp`。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 53
+    },
+    {
+      "id": "27",
+      "description": "8.3 在 Apply 摘要列出 src / tests / scripts 各自维护代码物理行数前三名，基于真实前后差异说明增长与职责，不设行数 gate；提交实际变更、验证、限制及当前 next，停在独立 Review Apply，不自签批准。",
+      "done": false,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+      "line": 54
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04 范围 checkpoint 为 982159b；当前 MVP-D04-A reopen-incremental-scope-and-compatibility 的 004 Author Propose 已由 005 独立审核批准，停在 apply / author，等待阶段指令。27 项任务未实施，B / C 未激活。\n方案支持完整 open / closed 与活动 Change / draft 迁移，同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前尚无新格式或迁移实现。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，累计成功归档 10；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

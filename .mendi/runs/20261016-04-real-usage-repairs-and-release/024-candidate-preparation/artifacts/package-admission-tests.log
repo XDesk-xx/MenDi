@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 真实tgz内部身份优先于文件名；保留明确包身份与指纹
+ok 1 - 真实tgz内部身份优先于文件名；保留明确包身份与指纹
+  ---
+  duration_ms: 324.7225
+  type: 'test'
+  ...
+# Subtest: 显式旧包在安装或证据目录创建之前拒绝，不回退其他包
+ok 2 - 显式旧包在安装或证据目录创建之前拒绝，不回退其他包
+  ---
+  duration_ms: 51.9534
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 538.0825

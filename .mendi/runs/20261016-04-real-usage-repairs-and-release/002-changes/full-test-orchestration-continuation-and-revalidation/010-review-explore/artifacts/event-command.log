@@ -1,0 +1,20 @@
+{
+  "proofAssertionsPassed": true,
+  "mechanism": "Node 22 node:test run() TestsStream / typed test:pass and test:fail",
+  "selectedFiles": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-L5g9z6\\project\\checks\\unit.test.ts",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-L5g9z6\\project\\checks\\integration.test.ts",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-L5g9z6\\project\\checks\\tail.test.ts"
+  ],
+  "passed": [
+    "unit.test.ts",
+    "tail.test.ts"
+  ],
+  "failed": [
+    "integration.test.ts"
+  ],
+  "observedCollectionOutcome": "failed",
+  "wallMs": 722.5264999999999,
+  "stdoutWasParsedForOutcomes": false,
+  "limitation": "Node event feasibility only; no MenDi schema, resource scheduler, cross-attempt aggregation or Close admission implemented."
+}

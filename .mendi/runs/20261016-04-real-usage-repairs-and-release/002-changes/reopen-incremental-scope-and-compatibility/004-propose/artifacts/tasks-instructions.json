@@ -1,0 +1,38 @@
+{
+  "changeName": "reopen-incremental-scope-and-compatibility",
+  "artifactId": "tasks",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility",
+  "planningHome": {
+    "kind": "repo",
+    "root": "D:\\Projects\\MenDi",
+    "changesDir": "D:\\Projects\\MenDi\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "outputPath": "tasks.md",
+  "resolvedOutputPath": "D:\\Projects\\MenDi\\openspec\\changes\\reopen-incremental-scope-and-compatibility\\tasks.md",
+  "existingOutputPaths": [],
+  "description": "Implementation checklist with trackable tasks",
+  "instruction": "Create the task list that breaks down the implementation work.\n\nBefore writing tasks, check design.md for Open Questions. If any of them\nwould change what gets built, resolve them with the user first - do not\nbake an unstated assumption into the task list.\n\n**IMPORTANT: Follow the template below for tracked tasks.** The apply phase parses\ncheckbox format to track progress. A box holding only `x` counts as done,\nupper or lower case and with any spacing, so `- [ x]` is done too. Every\nother marker, including `- [~]`, `- [-]` and an empty `- []`, reads as\nunfinished. A line with no checkbox is not tracked at all.\n\nGuidelines:\n- Group related tracked tasks under ## numbered headings\n- Each tracked task MUST be a checkbox: `- [ ] X.Y Task description`\n- Tasks should be small enough to complete in one session\n- Order tasks by dependency (what must be done first?)\n- Track implementation and verification work that can be completed before\n  archive. If the requested workflow includes archive or work that requires\n  this change to be archived, preserve those steps as plain bullets in an\n  optional `## Workflow follow-up` section at the end of tasks.md. These\n  bullets are reference information outside tracked task progress.\n- Each task MUST state how to verify completion (a test, command,\n  observable behavior, or delivered artifact). Put the verification in\n  that task's checkbox description. Use a separate verification task only\n  when it checks broader integration or system behavior that spans\n  multiple implementation tasks.\n- Each task group MUST land the tests and documentation its own work\n  calls for. Do NOT collect testing or documentation into a final group -\n  when a late group first exercises work from an early one, the failures\n  cascade back through every group in between and force rework. A group\n  whose work calls for neither, such as scaffolding or dependency setup,\n  carries neither. A final group is for integration checks only, not for\n  the tests and docs an earlier group owed.\n\nExample:\n```\n# Tasks\n\n## 1. Setup\n\n- [ ] 1.1 Create new module structure and verify expected files are present\n- [ ] 1.2 Add dependencies to package.json and verify package installation succeeds\n\n## 2. Core Implementation\n\n- [ ] 2.1 Implement data export function and verify the export test passes\n- [ ] 2.2 Add CSV formatting utilities and verify unit tests cover quoting and delimiters\n- [ ] 2.3 Document the export API in docs/export.md and verify the documented command runs as written\n```\n\nWhen applicable, append workflow follow-up as plain bullets, for example:\n```\n## Workflow follow-up\n\n- Archive the change after the project's review requirements are satisfied.\n- Verify the archived result.\n```\n\nReference specs for what needs to be built, design for how to build it.\n",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04 范围已保存为 checkpoint 982159b；当前 MVP-D04-A reopen-incremental-scope-and-compatibility 的 002 Author Explore 已由 003 独立审核批准，停在 propose / author，等待阶段指令。B / C 未激活。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前尚无新格式或迁移实现。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，累计成功归档 10；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，Author 完成停独立 Review Apply。",
+  "template": "# Tasks\n\n## 1. <!-- Task Group Name -->\n\n- [ ] 1.1 <!-- Task description -->\n- [ ] 1.2 <!-- Task description -->\n\n## 2. <!-- Task Group Name -->\n\n- [ ] 2.1 <!-- Task description -->\n- [ ] 2.2 <!-- Task description -->\n",
+  "dependencies": [
+    {
+      "id": "specs",
+      "done": true,
+      "path": "specs/**/*.md",
+      "description": "Detailed specifications for the change"
+    },
+    {
+      "id": "design",
+      "done": true,
+      "path": "design.md",
+      "description": "Technical design document with implementation details"
+    }
+  ],
+  "unlocks": [],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

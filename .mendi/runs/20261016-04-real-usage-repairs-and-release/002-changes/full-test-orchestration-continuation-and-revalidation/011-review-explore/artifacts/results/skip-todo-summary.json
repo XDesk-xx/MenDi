@@ -1,0 +1,76 @@
+{
+  "status": 0,
+  "signal": null,
+  "passed": [
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "required-but-skipped",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 1.3635,
+          "type": "test"
+        },
+        "line": 2,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\skip.ts",
+        "skip": "fixture prerequisite unavailable"
+      }
+    },
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "required-but-todo",
+        "nesting": 0,
+        "testNumber": 2,
+        "details": {
+          "duration_ms": 1.0694,
+          "type": "test"
+        },
+        "line": 5,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\skip.ts",
+        "todo": true
+      }
+    }
+  ],
+  "failed": [],
+  "summaries": [
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 2,
+          "failed": 0,
+          "passed": 0,
+          "cancelled": 0,
+          "skipped": 1,
+          "todo": 1,
+          "topLevel": 2,
+          "suites": 0
+        },
+        "duration_ms": 14.2078,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\skip.ts"
+      }
+    },
+    {
+      "type": "test:summary",
+      "data": {
+        "success": true,
+        "counts": {
+          "tests": 2,
+          "failed": 0,
+          "passed": 0,
+          "cancelled": 0,
+          "skipped": 1,
+          "todo": 1,
+          "topLevel": 2,
+          "suites": 0
+        },
+        "duration_ms": 212.9662
+      }
+    }
+  ]
+}

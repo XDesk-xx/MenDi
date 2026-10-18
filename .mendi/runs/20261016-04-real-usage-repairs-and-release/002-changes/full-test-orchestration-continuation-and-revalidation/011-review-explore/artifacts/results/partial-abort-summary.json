@@ -1,0 +1,82 @@
+{
+  "status": 0,
+  "signal": null,
+  "passed": [
+    {
+      "type": "test:pass",
+      "data": {
+        "name": "first-completed",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 1.4382,
+          "type": "test"
+        },
+        "line": 2,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\partial.ts"
+      }
+    }
+  ],
+  "failed": [
+    {
+      "type": "test:fail",
+      "data": {
+        "name": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\partial.ts",
+        "nesting": 0,
+        "testNumber": 1,
+        "details": {
+          "duration_ms": 180.0987,
+          "type": "test",
+          "error": {
+            "failureType": "testAborted",
+            "name": "AbortError",
+            "message": "This operation was aborted"
+          }
+        },
+        "line": 1,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\partial.ts"
+      }
+    },
+    {
+      "type": "test:fail",
+      "data": {
+        "name": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts",
+        "nesting": 0,
+        "testNumber": 2,
+        "details": {
+          "duration_ms": 0.0052,
+          "type": "test",
+          "error": {
+            "failureType": "testAborted",
+            "name": "AbortError",
+            "message": "This operation was aborted"
+          }
+        },
+        "line": 1,
+        "column": 1,
+        "file": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\full-test-orchestration-continuation-and-revalidation\\011-review-explore\\artifacts\\fixtures\\tail.ts"
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "type": "test:summary",
+      "data": {
+        "success": false,
+        "counts": {
+          "tests": 3,
+          "failed": 0,
+          "passed": 1,
+          "cancelled": 2,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 3,
+          "suites": 0
+        },
+        "duration_ms": 181.8104
+      }
+    }
+  ]
+}

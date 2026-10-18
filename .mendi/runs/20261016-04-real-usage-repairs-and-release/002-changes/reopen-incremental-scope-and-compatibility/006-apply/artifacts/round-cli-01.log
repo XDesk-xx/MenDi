@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 真实 CLI 两种首次入口保存 v2，轮次查询跨进程只读，next 不接受历史选择
+ok 1 - 真实 CLI 两种首次入口保存 v2，轮次查询跨进程只读，next 不接受历史选择
+  ---
+  duration_ms: 15035.2663
+  type: 'test'
+  ...
+# Subtest: 真实 CLI 旧格式全类写请求写前拒绝，查询及 instructions 保持只读；迁移命令本地接线
+ok 2 - 真实 CLI 旧格式全类写请求写前拒绝，查询及 instructions 保持只读；迁移命令本地接线
+  ---
+  duration_ms: 23301.8822
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 38903.8019

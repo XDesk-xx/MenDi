@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "006-focused",
+  "kind": "focused",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BRs8u8\\project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "delivery-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:focused"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:focused",
+  "scriptText": "node --test checks/integration.test.ts",
+  "startedAt": "2026-10-17T03:17:18.835Z",
+  "finishedAt": "2026-10-17T03:17:21.706Z",
+  "executionState": "finished",
+  "outcome": "failed",
+  "exitCode": 1,
+  "signal": null,
+  "pid": 12600,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/006-focused/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/006-focused/stderr.log"
+}

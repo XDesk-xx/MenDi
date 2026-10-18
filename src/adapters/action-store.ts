@@ -12,6 +12,7 @@ import {
 } from './workspace.ts';
 import { parseRun, type RunRecord } from '../core/actions.ts';
 import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts';
+import { projectProgress } from '../core/rounds.ts';
 import { MendiError, object } from '../core/errors.ts';
 
 function writeExclusive(root: string, ref: string, content: string, written: string[]) {
@@ -90,7 +91,7 @@ export function createRun(
   const content = renderRun(header, initialBody);
   writeExclusive(root, ref, content, written);
   observe?.('run-written', managedPath(root, ref));
-  const manifest = {
+  const manifest = projectProgress(workspace, {
     ...workspace.manifest,
     changeBindings: (workspace.manifest.changeBindings as unknown[]).map((value) => {
       const b = object(value, 'binding');
@@ -115,7 +116,7 @@ export function createRun(
           },
         ],
     currentBatchId: batchId,
-  };
+  });
   parseWorkspace(parseProject(workspace.project), manifest);
   replaceManagedFile(
     root,

@@ -1,0 +1,232 @@
+{
+  "total": 1263,
+  "selectedCount": 38,
+  "excludedCount": 1225,
+  "selected": [
+    {
+      "path": "biome.json",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "scripts/mvp-d04-a-explore.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "scripts/proofs/mvp-d02-c-explore.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/baselines.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/delivery-runs.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/delivery-verification.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/methods.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/test-entries.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/test-process.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/delivery-repair.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/full-test-admission.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/delivery-lifecycle.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/delivery-verification.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/lifecycle-transition.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/round-records.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/rounds.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "tests/delivery-support.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "openspec/changes/full-test-orchestration-continuation-and-revalidation/.openspec.yaml",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/group-events.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/adapters/group-store.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/candidate-verification.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/group-admission.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/application/group-attempt.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/group-plan.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/group-records.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/group-report.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "src/core/repair-record.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    },
+    {
+      "path": "tests/group-support.ts",
+      "status": "reviewed",
+      "method": "读差异及相关上下文"
+    }
+  ],
+  "skipped": [],
+  "supplemented": [
+    "tests/group-completion.test.ts",
+    "tests/group-boundaries.test.ts",
+    "tests/group-cli.test.ts",
+    "tests/group-contract.test.ts",
+    "tests/group-consistency.test.ts",
+    "tests/group-verification.test.ts",
+    "tests/group-attempt.test.ts",
+    "tests/fixtures/group-reuse-target.ts",
+    "tests/fixtures/group-node-runner.ts",
+    "skills/actions/delivery-close/SKILL.md",
+    "skills/actions/delivery-full-test/SKILL.md",
+    "skills/actions/delivery-repair/SKILL.md",
+    "skills/actions/review-delivery-repair/SKILL.md",
+    "tests/delivery-boundaries.test.ts",
+    "tests/delivery-full-test.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/delivery-repair.test.ts",
+    "tests/delivery-write.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-open.test.ts",
+    "tests/lifecycle-records.test.ts",
+    "tests/lifecycle-reopen.test.ts",
+    "tests/migration-rounds.test.ts",
+    "skills/group-tests.md",
+    "README.md",
+    "openspec/changes/full-test-orchestration-continuation-and-revalidation/design.md",
+    "openspec/changes/full-test-orchestration-continuation-and-revalidation/tasks.md",
+    "openspec/changes/full-test-orchestration-continuation-and-revalidation/specs/test-execution/spec.md",
+    "openspec/changes/full-test-orchestration-continuation-and-revalidation/specs/delivery-verification/spec.md",
+    "openspec/changes/full-test-orchestration-continuation-and-revalidation/specs/delivery-lifecycle/spec.md"
+  ],
+  "exclusions": "preview 前排除 .mendi 历史与 artifacts、.tmp、runtime、dist、node_modules、009 Explore 两份未扩展脚本；默认漏选测试 / Markdown / 关键 fixtures 已主动补读。",
+  "rulesNote": "初次 PowerShell 表达式误把路径合成一个参数；ocr-rules.json 保留该失败接线，仅采用显式路径数组重取的 ocr-rules-corrected.json。规则中的风格偏好按项目实际约定解释，不将行数/覆盖率当结论。"
+}

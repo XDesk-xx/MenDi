@@ -1,0 +1,9 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "tests/methods-and-numbers.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null
+}

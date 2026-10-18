@@ -15,6 +15,7 @@ import { errorInfo, identifier, MendiError, object, text } from '../core/errors.
 import { actionNext } from '../core/actions.ts';
 import { currentRun } from '../adapters/runs.ts';
 import { currentDeliveryRun } from '../adapters/delivery-runs.ts';
+import { inspectAttempt, inspectCandidate } from '../adapters/group-store.ts';
 import {
   inspectFullTest,
   assertBindingAfterVerification,
@@ -22,6 +23,8 @@ import {
 import { deliveryNext } from '../core/delivery-runs.ts';
 import { currentBatchId } from '../core/batches.ts';
 import { recordedOpen } from './delivery-lifecycle.ts';
+import { initialRound, requireWritable } from '../core/rounds.ts';
+import { deliveredBaselines } from '../adapters/baselines.ts';
 
 export interface Selection {
   project: string;
@@ -62,6 +65,23 @@ export function state(workspace: Workspace) {
     ...workspace.scope,
     activeChangeId: workspace.activeChangeId,
     changeBindings: workspace.bindings,
+    ...(workspace.rounds
+      ? {
+          currentRoundId: workspace.currentRoundId,
+          rounds: workspace.rounds.map(({ id, state, openedOn, closedOn, closeRunRef }) => ({
+            id,
+            state,
+            openedOn,
+            closedOn,
+            closeRunRef,
+          })),
+        }
+      : {
+          compatibility:
+            workspace.mode === 'product'
+              ? 'legacy-product-read-only'
+              : 'manual-bootstrap-read-only',
+        }),
     ...(workspace.mode === 'manual-bootstrap' ? { recorded: workspace.manifest } : {}),
   };
 }
@@ -109,6 +129,25 @@ export function query(input: Selection, options: OperationOptions = {}) {
     };
   const delivery = currentDeliveryRun(root, workspace);
   if (delivery) {
+    if (delivery.record.attempt || delivery.record.verification) {
+      const groupExecution = delivery.record.attempt
+        ? inspectAttempt(root, workspace, delivery)
+        : undefined;
+      const candidateVerification = delivery.record.verification
+        ? inspectCandidate(root, workspace, delivery)
+        : undefined;
+      const stable = groupExecution?.stable ?? candidateVerification!.stable;
+      return {
+        ...base,
+        ok: stable,
+        local: state(workspace),
+        upstream: null,
+        run: { ref: delivery.ref, ...delivery.record },
+        ...(groupExecution ? { groupExecution } : {}),
+        ...(candidateVerification ? { candidateVerification } : {}),
+        next: deliveryNext(delivery.record, delivery.ref, stable ? undefined : 'unknown'),
+      };
+    }
     const verification = delivery.record.fullTest
       ? inspectFullTest(root, workspace, delivery)
       : undefined;
@@ -206,6 +245,8 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
     });
   }
   const scope = readScope(value);
+  if (scope.plannedChanges.some((p) => p.baselineDependencies?.length))
+    throw new MendiError('baseline-source-unavailable', '首次 Open 没有已登记的产品基线来源。');
   const binding =
     input.changeId !== undefined
       ? bindingFor(scope, text(input.slot, '计划槽位'), input.changeId)
@@ -218,15 +259,15 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
   const date = new Date();
   const openedOn = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
   const project = {
-    formatVersion: 1,
+    formatVersion: 2,
     recordingMode: 'product',
     name: path.basename(root),
     deliveryGroupsDir: '.mendi/delivery-groups',
     activeDeliveryId: id,
     deliveries: [{ id, manifestRef: `.mendi/delivery-groups/${id}/manifest.json` }],
   };
-  const manifest = {
-    formatVersion: 1,
+  const manifest = initialRound({
+    formatVersion: 2,
     recordingMode: 'product',
     id,
     title,
@@ -236,7 +277,7 @@ export function openDelivery(input: OpenInput, options: OperationOptions = {}) {
     changeBindings: binding ? [binding] : [],
     activeChangeId: binding?.changeId ?? null,
     changeBatches: [],
-  };
+  });
   const workspace = createWorkspace(root, project, manifest, options.observeWrite);
   return {
     ok: true as const,
@@ -251,6 +292,7 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
   identifier(input.changeId, 'Change ID');
   text(input.slot, '计划槽位');
   const { root, upstream } = selected(input, options);
+  let baseline: ReturnType<typeof deliveredBaselines> | undefined;
   const associate = (current: Workspace) => {
     if (current.mode !== 'product')
       throw new MendiError(
@@ -259,6 +301,7 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
         {},
         '保留人工历史，不通过产品 bind 改写。',
       );
+    requireWritable(current);
     if (current.state !== 'open' || current.activeChangeId)
       throw new MendiError(
         'change-bind-conflict',
@@ -267,6 +310,12 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
       );
     assertBindingAfterVerification(root, current);
     assertAssociationAvailable(current.scope, current.bindings, input.slot, input.changeId);
+    const direct = deliveredBaselines(root, current, {
+      goal: current.scope.goal,
+      plannedChanges: current.scope.plannedChanges.filter((p) => p.slot === input.slot),
+    });
+    baseline?.confirm();
+    baseline ??= direct;
     const binding = bindingFor(current.scope, input.slot, input.changeId);
     const batches = current.manifest.changeBatches as Record<string, unknown>[];
     const batchId = currentBatchId(current.manifest);
@@ -298,5 +347,28 @@ export function bindChange(input: BindInput, options: OperationOptions = {}) {
     projectRoot: root,
     openspec: upstream.info(),
     local: state(workspace),
+  };
+}
+
+export function queryRound(input: Selection & { roundId: string }, options: OperationOptions = {}) {
+  const { root, upstream } = selected(input, options);
+  const workspace = readWorkspace(root, false, input.deliveryId, true);
+  const base = {
+    ok: true as const,
+    operation: 'query' as const,
+    projectRoot: root,
+    openspec: upstream.info(),
+  };
+  if (!workspace?.rounds)
+    throw new MendiError('round-query-unsupported', '该记录没有结构化轮次；普通查询仍可用。');
+  const round = workspace.rounds.find((r) => r.id === input.roundId);
+  if (!round)
+    throw new MendiError('round-not-found', '指定轮次不存在。', { roundId: input.roundId });
+  return {
+    ...base,
+    upstream: null,
+    local: state(workspace),
+    historicalRound: round,
+    readOnly: true,
   };
 }

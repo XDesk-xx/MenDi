@@ -1,0 +1,95 @@
+{
+  "protocol": "mendi-group-tests/1",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-sgsucn\\project",
+  "deliveryId": "d01",
+  "roundId": "r001",
+  "runRef": ".mendi/runs/d01/019-delivery-test-attempt/run.md",
+  "executionId": "003-full",
+  "candidate": {
+    "id": "c2",
+    "basis": {
+      "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+      "changes": "只修复middle真实断言，prefix / tail材料与依赖未变"
+    }
+  },
+  "plan": {
+    "protocol": "mendi-group-tests/1",
+    "groups": [
+      {
+        "id": "prefix",
+        "title": "prefix",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "prefix.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      },
+      {
+        "id": "middle",
+        "title": "middle",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "middle.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      },
+      {
+        "id": "tail",
+        "title": "tail",
+        "kind": "tests",
+        "required": true,
+        "dependsOn": [],
+        "resources": [],
+        "selection": [
+          "tail.test.ts"
+        ],
+        "completion": "业务断言、Node容器及根汇总均完成",
+        "preparation": "隔离本次目标，无共享服务",
+        "exclusions": []
+      }
+    ]
+  },
+  "selection": [
+    "middle"
+  ],
+  "prerequisites": [
+    {
+      "id": "prefix",
+      "state": "passed",
+      "reason": "",
+      "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+      "candidate": {
+        "id": "c2",
+        "basis": {
+          "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+          "changes": "只修复middle真实断言，prefix / tail材料与依赖未变"
+        }
+      }
+    },
+    {
+      "id": "tail",
+      "state": "passed",
+      "reason": "",
+      "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+      "candidate": {
+        "id": "c2",
+        "basis": {
+          "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+          "changes": "只修复middle真实断言，prefix / tail材料与依赖未变"
+        }
+      }
+    }
+  ],
+  "reportRef": ".mendi/delivery-groups/d01/tests/003-full/group-report.json",
+  "eventsRef": ".mendi/delivery-groups/d01/tests/003-full/group-events.jsonl"
+}

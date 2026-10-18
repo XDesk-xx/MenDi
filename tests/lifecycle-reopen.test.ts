@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -16,8 +17,8 @@ import {
 import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
 import { bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
-import { scanRunNumbers } from '../src/adapters/runs.ts';
-import { fullTestStatus, runFullTest } from '../src/application/delivery-full-test.ts';
+import { scanRunNumbers, readRunSource, renderRun } from '../src/adapters/runs.ts';
+import { runFullTest } from '../src/application/delivery-full-test.ts';
 import { fullInput, declarationFile } from './delivery-support.ts';
 import { MendiError } from '../src/core/errors.ts';
 import { approvedArchive } from './sequential-support.ts';
@@ -36,17 +37,42 @@ test('真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次
     ...before.bindings.map((item) => item.latestRunRef!),
   ];
   const bytes = new Map(original.map((ref) => [ref, fs.readFileSync(path.join(root, ref))]));
-  const reopened = deliveryLifecycle('delivery-reopen', reopenInput(root));
+  const reopening = reopenInput(root);
+  const newScope = JSON.parse(fs.readFileSync(path.join(root, 'reopen.json'), 'utf8'));
+  newScope.plannedChanges[0].baselineDependencies = [
+    { deliveryId: 'd01', planningSlot: 'A', closeRunRef: close.run.ref },
+  ];
+  writeJson(root, 'reopen.json', newScope);
+  const reopened = deliveryLifecycle('delivery-reopen', reopening);
   assert.equal(reopened.local.state, 'open');
   let current = readWorkspace(root)!;
   assert.equal(current.manifest.currentBatchId, null);
   assert.deepEqual(current.manifest.changeBatches, before.manifest.changeBatches);
   assert.deepEqual(current.manifest.changeBindings, before.manifest.changeBindings);
-  assert.equal(current.manifest.fullTestRunRef, passed.run.ref);
-  assert.equal(current.manifest.closeRunRef, close.run.ref);
+  assert.equal(current.manifest.fullTestRunRef, undefined);
+  assert.equal(current.manifest.closeRunRef, undefined);
+  assert.equal(current.rounds![0].fullTestRunRef, passed.run.ref);
+  assert.equal(current.rounds![0].closeRunRef, close.run.ref);
   assert.equal(current.project.archivedChangeCount, 2);
+  const selection = fs.readFileSync(path.join(root, '.mendi/project.json'));
+  const historical = queryCli(root, ['--round', 'r001']);
+  assert.equal(historical.readOnly, true);
+  assert.equal(historical.historicalRound.closeRunRef, close.run.ref);
+  assert.deepEqual(historical.historicalRound.scope, before.scope);
+  assert.equal(historical.next, undefined);
+  assert.ok(fs.readFileSync(path.join(root, '.mendi/project.json')).equals(selection));
+  assert.equal(readWorkspace(root)!.currentRoundId, 'r002');
+  const oldFull = readRunSource(root, passed.run.ref);
+  for (const roundId of [undefined, 'r002', 'r999']) {
+    const header = structuredClone(oldFull.header);
+    if (roundId === undefined) delete (header.fullTest as Record<string, unknown>).roundId;
+    else (header.fullTest as Record<string, unknown>).roundId = roundId;
+    fs.writeFileSync(path.join(root, passed.run.ref), renderRun(header, oldFull.body));
+    assert.throws(() => legacyFullTestStatus({ project: root, runRef: passed.run!.ref }));
+  }
+  fs.writeFileSync(path.join(root, passed.run.ref), bytes.get(passed.run.ref)!);
   assert.equal(
-    fullTestStatus({ project: root, runRef: passed.run.ref }).verification.scopeMatch,
+    legacyFullTestStatus({ project: root, runRef: passed.run.ref }).verification.scopeMatch,
     'changed',
   );
   assert.throws(
@@ -82,17 +108,29 @@ test('真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次
     ['third-entry'],
   );
   assert.equal(next.run.fullTest!.repairApproval, undefined);
+  assert.equal(next.run.fullTest!.roundId, 'r002');
+  assert.deepEqual(next.run.fullTest!.baselineFacts, [
+    {
+      targetSlot: 'C',
+      deliveryId: 'd01',
+      planningSlot: 'A',
+      closeRunRef: close.run.ref,
+      changeId: before.bindings[0].changeId,
+      archiveOrdinal: 1,
+    },
+  ]);
   const logs = fs.readFileSync(path.join(root, next.verification.child.stdoutRef), 'utf8');
   assert.match(logs, /consumer accepts archived completion/);
   assert.match(logs, /producer and consumer/);
   const secondClose = deliveryLifecycle('delivery-close', closeInput(root));
   assert.equal(secondClose.local.state, 'closed');
+  assert.equal(secondClose.run.lifecycle!.roundId, 'r002');
   assert.equal(queryCli(root).upstream, null);
   assert.equal(queryCli(root).local.plannedChanges[0].slot, 'C');
   for (const [ref, expected] of bytes)
     assert.ok(fs.readFileSync(path.join(root, ref)).equals(expected));
   assert.equal(
-    fullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
+    legacyFullTestStatus({ project: root, runRef: passed.run.ref }).verification.outcome,
     'passed',
   );
   assert.ok('verification' in passed && passed.verification.child);

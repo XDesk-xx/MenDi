@@ -1,0 +1,90 @@
+{
+  "taskTotal": 28,
+  "checked": 0,
+  "modified": [
+    {
+      "spec": "delivery-lifecycle",
+      "requirement": "Explicit applicable delivery close",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-lifecycle",
+      "requirement": "Material applicability and direct approval facts",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-lifecycle",
+      "requirement": "Explicit reopen with a fresh work scope",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-lifecycle",
+      "requirement": "Durable lifecycle progress and closed queries",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Explicit formal delivery test admission",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Declared collection and tested material basis",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Single operation execution and durable formal outcome",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Delivery scoped author repair",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Independent targeted repair review",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "New whole collection after approved repair",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Direct result readback and bounded applicability",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "First fresh acceptance after lifecycle work",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Round bound verification and repair",
+      "exists": true,
+      "missingScenarios": []
+    },
+    {
+      "spec": "delivery-verification",
+      "requirement": "Direct delivered baseline facts in acceptance",
+      "exists": true,
+      "missingScenarios": []
+    }
+  ]
+}

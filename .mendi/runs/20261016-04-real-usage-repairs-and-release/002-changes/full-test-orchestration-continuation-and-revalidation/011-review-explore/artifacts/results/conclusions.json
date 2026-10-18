@@ -1,0 +1,15 @@
+{
+  "proofAssertionsPassed": true,
+  "roots": {
+    "command": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-qmeqPN\\minimal-project",
+    "formal": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-lcRmKr\\project"
+  },
+  "skippedAndTodoEmitPass": true,
+  "sameFileCanEmitPassAndFail": true,
+  "wrapperZeroCanContainMachineFailure": true,
+  "lateExitProducesFailure": true,
+  "abortLeavesTailUnexecuted": true,
+  "unknownPersistenceBlocksNewExecution": true,
+  "formalPassedIsNotMeasuredCoverage": true,
+  "limits": "Current contract and event semantics only; no implementation of future protocol, aggregation or scheduler. Preserved failed persistence fixture lock; no external resource cleanup performed."
+}

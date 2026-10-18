@@ -1,0 +1,14 @@
+{
+  "evidenceRef": "test-details-02/commands-35688.jsonl",
+  "line": 33,
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-pTTtjJ\\minimal-project",
+  "operation": "delivery-migrate-preview",
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "openspec": null,
+  "stage": {
+    "ref": "skills/actions/delivery-migrate/SKILL.md",
+    "file": "D:\\Projects\\MenDi\\skills\\actions\\delivery-migrate\\SKILL.md"
+  },
+  "result": "actual CLI returned local migration method and no upstream access"
+}

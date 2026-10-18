@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "001-full",
+  "kind": "full",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ha1Qmi\\project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ha1Qmi\\project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "delivery-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:full"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:full",
+  "scriptText": "node group-runner.ts",
+  "startedAt": "2026-10-17T06:58:30.725Z",
+  "finishedAt": "2026-10-17T06:58:33.567Z",
+  "executionState": "finished",
+  "outcome": "failed",
+  "exitCode": 1,
+  "signal": null,
+  "pid": 45468,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log"
+}

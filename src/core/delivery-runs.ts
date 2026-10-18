@@ -1,19 +1,24 @@
+import { parseRepair } from './repair-record.ts';
 import { MendiError, object, text } from './errors.ts';
 import type { Role, Verdict } from './actions.ts';
-import {
-  declaration,
-  parseVerificationScope,
-  type FullTest,
-  type Repair,
-} from './delivery-verification.ts';
+import { type FullTest, type Repair } from './delivery-verification.ts';
 import { parseFullTest } from './full-test-record.ts';
+import {
+  parseAttempt,
+  parseCandidateVerification,
+  type GroupAttempt,
+  type CandidateVerification,
+} from './group-records.ts';
 import { parseLifecycle, type Lifecycle } from './delivery-lifecycle.ts';
 
 export const deliveryTypes = [
   'delivery-open',
   'delivery-close',
   'delivery-reopen',
+  'delivery-migrate',
   'delivery-full-test',
+  'delivery-test-attempt',
+  'delivery-verification',
   'delivery-repair',
   'revise-delivery-repair',
   'review-delivery-repair',
@@ -25,20 +30,24 @@ export function deliveryDefinition(value: unknown) {
   const type = value as DeliveryType;
   const review = type === 'review-delivery-repair';
   const phase =
-    type === 'delivery-full-test' ||
-    ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(type)
+    ['delivery-full-test', 'delivery-test-attempt', 'delivery-verification'].includes(type) ||
+    ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(type)
       ? type
       : 'delivery-repair';
   return {
     type,
     phase,
     role: (review ? 'reviewer' : 'author') as Role,
-    skill: review ? type : phase,
+    skill: ['delivery-test-attempt', 'delivery-verification'].includes(type)
+      ? 'delivery-full-test'
+      : review
+        ? type
+        : phase,
   };
 }
 export function deliveryLocation(ref: string, id: string) {
   const match =
-    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-full-test|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
+    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-migrate|delivery-full-test|delivery-test-attempt|delivery-verification|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
       ref,
     );
   if (
@@ -71,8 +80,11 @@ export interface DeliveryRunRecord {
   authorRunRef?: string;
   revisesRunRef?: string;
   fullTest?: FullTest;
+  attempt?: GroupAttempt;
+  verification?: CandidateVerification;
   lifecycle?: Lifecycle;
   repair?: Repair;
+  migration?: { sourceVersion: 1; targetVersion: 2; manifestRef: string; planRef: string };
   ownerDecision?: never;
 }
 export function parseDeliveryRun(value: unknown, ref: string, id: string): DeliveryRunRecord {
@@ -100,9 +112,79 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
   )
     throw new MendiError('invalid-run', 'Delivery Run 头部、方法或 Action 身份不一致。');
   text(data.actorId, 'actor');
+  if (['delivery-test-attempt', 'delivery-verification'].includes(location.type)) {
+    if (
+      data.verdict !== undefined ||
+      data.ownerDecision !== undefined ||
+      data.archive !== undefined
+    )
+      throw new MendiError(
+        'invalid-run',
+        'typed Author 不能携带 verdict、Owner resolve 或 Archive 字段。',
+      );
+    if (data.status === 'draft' && (data.outcome !== undefined || data.result !== undefined))
+      throw new MendiError('invalid-run', 'typed draft 不能携带提交字段。');
+    if (
+      Number(first![1]) !== location.number ||
+      data.fullTest !== undefined ||
+      data.repair !== undefined ||
+      data.lifecycle !== undefined ||
+      data.migration !== undefined
+    )
+      throw new MendiError('invalid-run', '新 typed 记录不可混入旧模式。');
+    if (location.type === 'delivery-test-attempt') {
+      if (data.verification !== undefined)
+        throw new MendiError('invalid-run', '尝试不能携带候选结论。');
+      record.attempt = parseAttempt(data.attempt, id, location.number);
+      if (
+        (record.attempt.phase === 'finished') !== (data.status === 'submitted') ||
+        (data.status === 'submitted' && data.outcome !== 'complete')
+      )
+        throw new MendiError('invalid-run', '尝试持久终态矛盾。');
+      if (data.status === 'submitted') {
+        const a = record.attempt;
+        const o = a.observation!;
+        if (
+          (o.notRun && o.protocolState !== 'unconfirmed') ||
+          (o.cancelled && o.protocolState === 'valid') ||
+          (o.notRun && o.cancelled)
+        )
+          throw new MendiError('invalid-run', '尝试终态标记矛盾。');
+        const expected =
+          o.protocolState === 'invalid'
+            ? 'invalid'
+            : o.notRun
+              ? 'not-run'
+              : o.cancelled
+                ? 'interrupted'
+                : o.protocolState === 'valid'
+                  ? a.plan.groups
+                      .filter((g) => a.selection.includes(g.id) && g.required)
+                      .every((g) => o.groups.some((f) => f.id === g.id && f.state === 'passed'))
+                    ? 'passed'
+                    : 'failed'
+                  : 'unknown';
+        if (expected === 'unknown' || data.result !== expected)
+          throw new MendiError('invalid-run', '尝试 result 与已确认协议终态矛盾。');
+      }
+    } else {
+      if (data.attempt !== undefined) throw new MendiError('invalid-run', '结论不能携带尝试。');
+      record.verification = parseCandidateVerification(data.verification, id, location.number);
+      if (
+        data.status === 'submitted' &&
+        (data.outcome !== 'complete' || data.result !== record.verification.conclusion)
+      )
+        throw new MendiError('invalid-run', '候选提交矛盾。');
+    }
+    return record;
+  }
+  if (data.attempt !== undefined || data.verification !== undefined)
+    throw new MendiError('invalid-run', '旧类型不能携带新组结果。');
   if (
     (location.type === 'delivery-full-test' ||
-      ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) &&
+      ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(
+        location.type,
+      )) &&
     Number(first![1]) !== location.number
   )
     throw new MendiError('invalid-run', '正式 Full Test 不沿旧 Action 继续。');
@@ -133,6 +215,24 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
     } else if (data[key] !== undefined)
       throw new MendiError('invalid-run', '多余的直接 Author 字段。');
   }
+  if (location.type === 'delivery-migrate') {
+    const migration = object(data.migration, '迁移收据');
+    if (
+      migration.sourceVersion !== 1 ||
+      migration.targetVersion !== 2 ||
+      migration.manifestRef !== `.mendi/delivery-groups/${id}/manifest.json` ||
+      migration.planRef !== ref.replace(/run\.md$/, 'artifacts/intent.json') ||
+      data.lifecycle !== undefined ||
+      data.fullTest !== undefined ||
+      data.repair !== undefined ||
+      (data.status === 'submitted' && (data.outcome !== 'complete' || data.result !== 'migrated'))
+    )
+      throw new MendiError('invalid-run', '迁移收据身份或提交字段不一致。');
+    record.migration = migration as unknown as DeliveryRunRecord['migration'];
+    return record;
+  }
+  if (data.migration !== undefined)
+    throw new MendiError('invalid-run', '普通 Run 不能携带迁移收据。');
   if (['delivery-open', 'delivery-close', 'delivery-reopen'].includes(location.type)) {
     if (data.fullTest !== undefined || data.repair !== undefined)
       throw new MendiError('invalid-run', '生命周期不能携带执行或修复字段。');
@@ -147,21 +247,7 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
     record.fullTest = parseFullTest(data, id, location.number);
   } else {
     if (data.fullTest !== undefined) throw new MendiError('invalid-run', '修复不能携带 fullTest。');
-    const repair = object(data.repair, '局部修复');
-    const source = deliveryLocation(text(repair.failedFullTestRunRef, '直接失败'), id);
-    if (source.type !== 'delivery-full-test' || source.number >= location.number)
-      throw new MendiError('invalid-run', '失败来源必须是正式 Run。');
-    const scope = parseVerificationScope(repair.scope);
-    declaration({
-      collection: repair.collection,
-      basis: { materials: text(repair.reason, '修复原因'), changes: '' },
-    });
-    record.repair = {
-      failedFullTestRunRef: String(repair.failedFullTestRunRef),
-      scope,
-      collection: repair.collection as string[],
-      reason: String(repair.reason),
-    };
+    record.repair = parseRepair(data.repair, id, location.number);
   }
   return record;
 }
@@ -171,6 +257,43 @@ export function deliveryNext(
   observedOutcome?: FullTest['outcome'],
 ) {
   const base = { source: 'local-state', executable: false, currentRunRef: ref };
+  if (run.attempt || run.verification) {
+    const plan = run.attempt?.plan ?? run.verification!.plan;
+    const progress = run.attempt?.progress ?? run.verification!.progress;
+    const knownStopped =
+      run.attempt?.phase === 'finished' &&
+      (run.attempt.executionId === null ||
+        run.attempt.observation?.cancelled === true ||
+        run.attempt.observation?.notRun === true);
+    const unknown =
+      run.status !== 'submitted' ||
+      (run.attempt?.observation?.protocolState === 'unconfirmed' && !knownStopped) ||
+      observedOutcome === 'unknown';
+    const failed =
+      run.attempt?.observation?.protocolState === 'invalid' ||
+      progress.some(
+        (f) => f.state === 'failed' && plan.groups.find((g) => g.id === f.id)?.required,
+      );
+    return {
+      ...base,
+      role: unknown || run.verification?.conclusion === 'verified' ? 'owner' : 'author',
+      action: unknown
+        ? 'owner-decision'
+        : run.verification?.conclusion === 'verified'
+          ? 'delivery-next'
+          : failed
+            ? 'delivery-repair'
+            : progress.some(
+                  (f) => f.state !== 'passed' && plan.groups.find((g) => g.id === f.id)?.required,
+                )
+              ? 'delivery-full-test'
+              : 'delivery-verification',
+      status: unknown ? 'stopped' : 'awaiting-owner-instruction',
+      reason: unknown
+        ? '本次终态 / 资源未确认，核对现场。'
+        : '按完整计划、直接组来源及必要审核显式继续；选中范围成功不等于完整候选。',
+    };
+  }
   if (run.lifecycle)
     return {
       ...base,

@@ -1,0 +1,25 @@
+{
+  "oldFormat": 1,
+  "oldRecordingMode": "product",
+  "openedOn": "2026-10-16",
+  "hasOpenRunRef": false,
+  "closeRunRef": ".mendi/runs/d01/016-delivery-close/run.md",
+  "scope": {
+    "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "项目入口",
+        "dependsOn": []
+      },
+      {
+        "slot": "B",
+        "title": "后续工作",
+        "dependsOn": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "observation": "合法旧 product 没有首次记录化 Open；本次能从直接 before-manifest 和真实 Close 核对旧范围。迁移方案须区分充分旧来源与真实历史缺口，不能统一追加新必填历史字段。"
+}

@@ -1,0 +1,48 @@
+{
+  "formatVersion": 1,
+  "executionId": "001-full",
+  "kind": "full",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-VlwFE3\\project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-VlwFE3\\project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "delivery-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:full"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:full",
+  "scriptText": "node group-runner.ts",
+  "startedAt": "2026-10-17T06:35:02.301Z",
+  "finishedAt": "2026-10-17T06:35:09.337Z",
+  "executionState": "finished",
+  "outcome": "unknown",
+  "exitCode": null,
+  "signal": null,
+  "pid": 43544,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/001-full/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/001-full/stderr.log",
+  "stop": {
+    "confirmed": false,
+    "exitCode": 0,
+    "stdout": "�ɹ�: ����ֹ PID 8496 (���� PID 43544 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 11416 (���� PID 43544 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 43544 (���� PID 30736 �ӽ���)�Ľ��̡�\r\n",
+    "stderr": "\n停止命令返回后 5000ms 未收到 close；前台树停止未确认，保留现场。"
+  },
+  "reason": "\"执行 / 停止未确认。\""
+}

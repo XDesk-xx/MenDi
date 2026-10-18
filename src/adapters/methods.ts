@@ -41,7 +41,9 @@ export function loadMethods(type: ActionType | DeliveryType, tools: string[], ro
   }
   const stage = read(`skills/actions/${definition.skill}/SKILL.md`, {
     name: `mendi-${definition.skill}`,
-    phase: definition.phase,
+    phase: ['delivery-test-attempt', 'delivery-verification'].includes(type)
+      ? 'delivery-full-test'
+      : definition.phase,
     role: definition.role,
   });
   const guidance = tools.map((tool) =>

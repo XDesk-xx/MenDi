@@ -1,0 +1,5 @@
+{
+  "question": "必需测试 skip / TODO / 取消 / 零执行不能覆盖；执行前允许明确非必需排除；构建另核真实输出条件",
+  "answer": "好的",
+  "scope": "planning decision only"
+}

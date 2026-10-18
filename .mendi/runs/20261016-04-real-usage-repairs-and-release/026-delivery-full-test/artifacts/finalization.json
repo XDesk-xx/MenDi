@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "releasedOwnLock": true,
+  "operation": "manual-d04-full-test-026-finalize",
+  "next": {
+    "action": "delivery-close",
+    "status": "awaiting-instruction",
+    "role": "author",
+    "reason": "026本次完整F01–F05正式验收passed，包含经025独立批准的0.2.0固定同包；等待Owner授权Close。"
+  }
+}

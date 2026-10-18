@@ -1,0 +1,12 @@
+{
+  "rootMode": "manual-bootstrap",
+  "archivedCount": 13,
+  "stableVersion": "0.1.0",
+  "stablePackageMtime": "2026-10-10T16:37:05.661Z",
+  "candidateVersion": "0.2.0",
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "lockPresent": false,
+  "gitExecuted": false,
+  "dremoAccessed": false,
+  "formalD04FullTestExecuted": false
+}

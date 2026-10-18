@@ -1,0 +1,236 @@
+{
+  "changeName": "full-test-orchestration-continuation-and-revalidation",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\specs\\delivery-lifecycle\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\specs\\delivery-verification\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\specs\\test-execution\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 28,
+    "complete": 28,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 先分离本次继续扩展的混杂准入 / 执行 / 解释职责，明确计划 / 回执、attempt、candidate verification 和旧分支的实际模块边界；用现有受影响记录测试及真正类型检查证明整理保持行为，不加纯转发层。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 实现有版本的计划、候选 / selection 与请求解析，核对稳定 ID、前向依赖、明确排除、kind / 完成条件及受管路径；以非法 / 重复 / 悬空 / 越界 / 未知版本场景验证，提供计划说明和受控 JSON 示例。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "1.3 增加新的 typed attempt / verification 记录与协议状态，保留旧单次字段及读取分支；验证旧记录无需补字段、新类型不能误入旧 passed、普通 command 不自动升级，同步格式说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 9
+    },
+    {
+      "id": "4",
+      "description": "2.1 将 groups-v1 输入接到正式 run 的 initial / continue / retest 分支，锁内固定请求 / execution / 报告位置及完整计划；真实 CLI 验证默认旧模式、显式新模式、工具 / 依赖 / 角色 / 冲突及输入漂移均在相应副作用前拒绝，不安装或猜命令。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.2 复用真实 pnpm / 前台进程树、意图与父子持久原语，扩展仅新模式的受管请求 / 回执环境接线；验证目标实际收到本次身份、外部 / 陈旧 / 部分报告拒绝、原 stdout / stderr 和 child outcome 保持，更新 Full Test 方法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "3.1 实现必需 / 排除覆盖和 tests / command 完成条件，提供受控 Node 参考接线；以 E1 / E5 的全 skip / TODO、零执行和合法排除 / 实际构建产物验证，不以 collection 文字、summary.success 或退出 0 证明覆盖。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "7",
+      "description": "3.2 实现分层事件到最终组的解释，覆盖 E2 同文件 pass / fail、E3 先 pass 后真实 exit 7、取消事件与根 cancelled / failed 不同的真实场景；证明晚期失败不能被前后成功覆盖，方法明确进度事件不是终态。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "8",
+      "description": "3.3 实现命令 / 最终回执一致性和 valid / invalid / unconfirmed 区分；E4 真实包装器 exit0 / 回执失败必须 invalid、不复用组且安全完成时释放自有锁，未确认清理则不放行，保留两通道原始输出。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "9",
+      "description": "3.4 用实际故障注入覆盖 E6 终态保存 / 读回 / 释放未确认，验证内存成功不成为来源、后续不占号、原锁 / 临时现场保留；正常 durable finished 才可消费，不增加自动恢复或清锁入口。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "10",
+      "description": "4.1 在受控目标验证中段独立失败后继续并发现多个后续问题，构建失败仅阻断其依赖，最终非零与各组终态一致；交付目标 runner 接线指导，不将目标业务执行迁入通用平台。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "11",
+      "description": "4.2 验证明确全局取消不再启动后项，真实前台树关闭与未确认分别 interrupted / unknown；保留现有必要真实取消链，不从历史 pid 或单一停止命令成功判断清理完成。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "12",
+      "description": "4.3 验证清理 / 资源未知阻断共享后项、无法界定时停止相关执行，独立资源只有能直接证明时继续；真实占用拒绝陌生端口，不复用旧服务 / 数据或凭旧 PASS 认领资源，同步诊断说明。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "13",
+      "description": "5.1 实现 initial 选择全部必需组、fromRunRef 当前对象与扁平 progress 快照及新 attempt 事实保存；真实跨进程验证原失败 / 日志保持，选中范围 passed 不使候选完整，Run / execution / archive 编号各自正确。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 31
+    },
+    {
+      "id": "14",
+      "description": "5.2 实现 known finished 失败后的授权 continue，只选择未执行或现可运行的 blocked 组并核对前置 / 资源；验证不为独立尾项重跑通过前缀、不要求先修复中段，但中段失败仍未解决，更新续测方法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 32
+    },
+    {
+      "id": "15",
+      "description": "5.3 验证计划 / 候选 / 选择漂移、取消来源、unknown / pending / 资源不明不能冒充正常续测，initial 不能绕过必要修复审核，必需范围变化须显式重新规划 / initial，不能删除失败或从旧不透明命令猜续测位置。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 33
+    },
+    {
+      "id": "16",
+      "description": "6.1 扩展 repair / review 的组模式未解决直接失败、candidate / 计划及影响 / 沿用声明，验证最新尾项通过后仍能修复原中段而不回退指针，保持原 actor、固定 Author 与新修订规则；验证缺当前审核、错轮次、空正文、自签和旧 approved 均拒绝，更新两个方法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 37
+    },
+    {
+      "id": "17",
+      "description": "6.2 实现经批准的 retest 与跨候选来源适用性核对；用真实局部契约修复、公共依赖 / 配置变化和影响无法界定场景验证必要扩大、未确认阻断及旧通过可保留的具体依据，不建全库 hash / 固定比例 gate。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 38
+    },
+    {
+      "id": "18",
+      "description": "6.3 回归旧 command 的整次修复 / 审核 / 新整次执行，以及说明整理不机械失效；验证普通 focused / command PASS 不自动认领为新组来源，未改变旧 verdict / Run，说明两种模式的界线。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 39
+    },
+    {
+      "id": "19",
+      "description": "7.1 实现 verification create 的完整组来源选择、必要直接读取、批准 / 基线与候选核对，保存有限快照；验证缺口 / 重复 / 矛盾 / 跨轮 / invalid / unknown 来源不 verified，不递归历史或依赖来源图。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 43
+    },
+    {
+      "id": "20",
+      "description": "7.2 沿既有锁 / Run 原语完成候选 verified / incomplete 持久与直接读回，注入必要提交失败；验证不改历史尝试、不挑内层成功、不回退旧 verified，本次必要快照坏时明确未确认。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 44
+    },
+    {
+      "id": "21",
+      "description": "7.3 接入真实 CLI 的 Full Test status、verification status、status / next 与人读 / JSON 区分，扩展 round 投影 / 历史摘要 / Reopen 指针；验证旧原 outcome 可读、新尝试后的旧结论不可收口、查询不改选择或递归日志，同步 README / 方法。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 45
+    },
+    {
+      "id": "22",
+      "description": "8.1 实现 Close 的 fullTestRunRef / verificationRunRef 互斥、新快照类型与当前 pointer / round 检查；真实 CLI 验证已 verified 多来源可授权 Close、覆盖 / 审核 / 适用性缺口及混合 / 陈旧入口写前拒绝，不自动执行 Git。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 49
+    },
+    {
+      "id": "23",
+      "description": "8.2 覆盖新 Close 的现有有界本地提交恢复及旧单次 / 旧 Close 读取，验证新轮不继承旧 verified，旧数据不补计划、计时或候选字段，未知类型 / 版本明确拒绝而不静默降级。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 50
+    },
+    {
+      "id": "24",
+      "description": "9.1 实现本次增量进度、目标主要阶段及 MenDi 包络的单调时间 / UTC / 包含关系，验证缺事件不补通过、不同基准不乱相减、父子不重叠求和；在实际受影响入口记录准备 / 执行 / 等待 / 清理和证据成本。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 54
+    },
+    {
+      "id": "25",
+      "description": "9.2 以受控同次目标验证输入相同的只读构建复用与可证独立的有限并发，输入变更失效、数据 / 上下文 / 清理仍隔离、同 dist 不并发写，原真实断言 / 矩阵 / 预算保持；只在同口径样本报告观察，不承诺提速或修改 DreMo。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 55
+    },
+    {
+      "id": "26",
+      "description": "10.1 跑真实隔离完整链：初次前缀通过 / 中段失败 / 独立尾项继续、独立修复审核 / 局部复验、完整候选 verified / 显式 Close；同时覆盖公共变化扩大、skip / TODO、迟到失败、回执 / 退出矛盾、未知资源和缺必要审核不能收口，保留每次原始失败。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 59
+    },
+    {
+      "id": "27",
+      "description": "10.2 运行 pnpm check 与各组定向场景；因共享记录、写入、结果和生命周期消费变化，再运行根 pnpm test，保留实际失败 / 修正及新完整结果。仅在安装 / UI 接线实变时补相应定向检查，不执行根正式 Full Test 或重放旧 Explore 树。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 60
+    },
+    {
+      "id": "28",
+      "description": "10.3 Apply 摘要列出 src / tests / scripts 各维护代码行数前三名、真实前后增长及职责判断，记录实际命令、限制、兼容与当前 next；核对 A、旧 Run / verdict、路线图 / 反馈、根人工历史、包版本、稳定安装和 DreMo 保持，停独立 Review Apply，不自签或 push。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\full-test-orchestration-continuation-and-revalidation\\tasks.md",
+      "line": 61
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。\n规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。\nD04范围checkpoint为982159b，A已归档011 / checkpoint168a4cb。B full-test-orchestration-continuation-and-revalidation 的013独立Review Propose已批准；014 Author Apply完成28项任务，工程根测试273/273及收尾受影响集合31/31、check / strict通过，当前停review-apply / reviewer / awaiting-review，固定Author014；C未激活。\nA 已交付完整 open / closed 与活动 Change / draft 迁移、同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。\n旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。\n状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。\nD03 已 closed，项目累计成功归档 11；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。\nB确认可选目标组级协议及材料声明 / 独立审核边界；必需skip / TODO / 取消 / 零执行不覆盖，执行前可明确非必需排除。方案分开原命令、组终态与候选结论，工具核对直接来源 / 覆盖 / 批准，新合同实施前维持现行规则。\n后续按根路线图 MVP-D04 收敛兼容、执行与验收消费、方法；关键未决产品决定向 Owner 澄清，不预定候选字段、版本号或性能指标。\n迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。\n必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。\nsubmitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。\n根 check 覆盖维护源码、脚本、测试；行为验证按影响。真实安装与 UI 准备显式执行，不自动安装可选工具。\n原生 Archive 负责一次规格同步，本地 finish 不重放原生；归档编号按跨 Delivery 累计成功数增长。\nGit、实际 Archive、下一 Change、正式 Full Test / Close / Reopen 保持各自授权边界，各 Author 阶段完成停当前对应独立审核；当前B实施等待独立Review Apply，Author不自签结论。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

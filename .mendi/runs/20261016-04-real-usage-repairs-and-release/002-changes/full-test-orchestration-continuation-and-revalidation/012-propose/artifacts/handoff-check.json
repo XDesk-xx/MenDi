@@ -1,0 +1,57 @@
+{
+  "checkedOn": "2026-10-17",
+  "strictValidation": {
+    "items": [
+      {
+        "id": "full-test-orchestration-continuation-and-revalidation",
+        "type": "change",
+        "valid": true,
+        "issues": [],
+        "durationMs": 68
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "change": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "planningComplete": true,
+  "taskProgress": {
+    "total": 28,
+    "complete": 0,
+    "remaining": 28
+  },
+  "next": {
+    "action": "review-propose",
+    "status": "awaiting-review",
+    "role": "reviewer",
+    "changeId": "full-test-orchestration-continuation-and-revalidation",
+    "authorRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/012-propose/run.md",
+    "reason": "012 Author Propose六份产物与28项任务已齐备，等待独立Review Propose；尚未实施。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "sessionRole": "author",
+  "rootLockAbsent": true,
+  "head": "168a4cb54f0c9028eaf9c271b43d9ee14c3ae904",
+  "protectedTrackedDiffEmpty": true,
+  "gitDiffCheck": "passed",
+  "implementationPerformed": false,
+  "commit": false,
+  "push": false
+}

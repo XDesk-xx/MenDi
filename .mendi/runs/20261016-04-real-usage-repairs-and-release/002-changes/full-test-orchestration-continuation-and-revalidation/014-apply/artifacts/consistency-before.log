@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: 多个组共用来源时读中变化不能覆盖第一份直接快照
+not ok 1 - 多个组共用来源时读中变化不能覆盖第一份直接快照
+  ---
+  duration_ms: 55063.8696
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\group-consistency.test.ts:11:1'
+  failureType: 'testCodeFailure'
+  error: '不得把首份输入覆盖后发布 verified'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/group-consistency.test.ts:24:38)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+not ok 2 - 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+  ---
+  duration_ms: 6062.9057
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\group-consistency.test.ts:27:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/group-consistency.test.ts:29:120)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 61685.7394

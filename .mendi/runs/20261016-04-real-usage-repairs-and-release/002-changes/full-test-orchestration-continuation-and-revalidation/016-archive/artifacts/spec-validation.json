@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "delivery-lifecycle",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "delivery-lifecycle",
+      "--type",
+      "spec",
+      "--strict"
+    ],
+    "exitCode": 0,
+    "stdout": "Specification 'delivery-lifecycle' is valid\n",
+    "stderr": ""
+  },
+  {
+    "capability": "delivery-verification",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "delivery-verification",
+      "--type",
+      "spec",
+      "--strict"
+    ],
+    "exitCode": 0,
+    "stdout": "Specification 'delivery-verification' is valid\n",
+    "stderr": ""
+  },
+  {
+    "capability": "test-execution",
+    "args": [
+      "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+      "validate",
+      "test-execution",
+      "--type",
+      "spec",
+      "--strict"
+    ],
+    "exitCode": 0,
+    "stdout": "Specification 'test-execution' is valid\n",
+    "stderr": ""
+  }
+]

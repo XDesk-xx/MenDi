@@ -1,0 +1,16 @@
+{
+  "head": "1cb40802e4707bcc405c33de8c881d0c44bcc22c",
+  "trackedChanges": [
+    ".mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json",
+    "README.md",
+    "openspec/config.yaml"
+  ],
+  "protectedChanged": [],
+  "stable": {
+    "version": "0.1.0",
+    "packageMtime": "2026-10-10T16:37:05.661Z"
+  },
+  "rootMode": "manual-bootstrap",
+  "archivedCount": 12,
+  "lockPresent": false
+}

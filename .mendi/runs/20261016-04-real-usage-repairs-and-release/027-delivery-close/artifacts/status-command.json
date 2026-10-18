@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/mendi/acceptance/d04-0.2.0-full-test-026/node_modules/mendi/dist/drivers/cli.js",
+    "status",
+    "--project",
+    "D:\\Projects\\MenDi",
+    "--json"
+  ],
+  "startedAt": "2026-10-17T13:52:10.797Z",
+  "finishedAt": "2026-10-17T13:52:12.160Z",
+  "exitCode": 0,
+  "signal": null
+}

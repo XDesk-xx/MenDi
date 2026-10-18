@@ -1,0 +1,5 @@
+{
+  "message": "首次本地收尾前置将归档 binding 的规范化读取结果误当成原始 manifest，latestRunRef 断言为 undefined。",
+  "effect": "在释放原锁或写入任何文件之前停止；改用原始 manifest 核对该字段，没有修改业务记录。",
+  "originalLockUnchanged": true
+}

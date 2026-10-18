@@ -1,0 +1,1 @@
+$ node event-worker.ts normal fixtures/mixed.ts

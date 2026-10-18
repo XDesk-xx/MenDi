@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+ok 1 - 旧首轮预览本地只读、不占号，充分旧来源不补 Open，未知 Ref 不展开
+  ---
+  duration_ms: 378.6051
+  type: 'test'
+  ...
+# Subtest: 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+ok 2 - 迁移保留 draft 字节、actor / Action；原 actor 可保存、提交和同 Action 继续
+  ---
+  duration_ms: 1588.9456
+  type: 'test'
+  ...
+# Subtest: 预览手改、源变化、项目外输入、错误角色在写前拒绝
+ok 3 - 预览手改、源变化、项目外输入、错误角色在写前拒绝
+  ---
+  duration_ms: 2029.1376
+  type: 'test'
+  ...
+# Subtest: 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+ok 4 - 迁移 intent-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2527.324
+  type: 'test'
+  ...
+# Subtest: 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+ok 5 - 迁移 pending-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1632.9811
+  type: 'test'
+  ...
+# Subtest: 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+ok 6 - 迁移 terminal-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1576.4699
+  type: 'test'
+  ...
+# Subtest: 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+ok 7 - 迁移 lifecycle-manifest-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 2354.4881
+  type: 'test'
+  ...
+# Subtest: 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+ok 8 - 迁移 index-written 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1146.9508
+  type: 'test'
+  ...
+# Subtest: 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+ok 9 - 迁移 before-readback 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1412.2541
+  type: 'test'
+  ...
+# Subtest: 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+ok 10 - 迁移 before-lock-release 中断保留现场；显式原 actor 只补同一提交
+  ---
+  duration_ms: 1584.5151
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16927.7695

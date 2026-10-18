@@ -1,0 +1,37 @@
+{
+  "readAt": "2026-10-17T13:52:13.708Z",
+  "state": "closed",
+  "recordingMode": "manual-bootstrap",
+  "closeRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "fullTest": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "passed",
+    "result": "passed",
+    "executionId": "d04-full-test-026",
+    "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/declaration.json",
+    "resultRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/summary.json",
+    "testedCommit": "572b94f65555b71d792a056ac18921495b2bc8a4",
+    "testedWorktree": "024明确八项工作区差异；无Git操作，不声称新核对HEAD。固定0.2.0同包与当前发行文件一致。",
+    "candidatePreparationReviewRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/025-review-candidate-preparation/run.md"
+  },
+  "next": {
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "MVP-D04已基于026完整正式PASS完成027 Close；等待Owner下一指令，Git/checkpoint、0.2.0稳定切换及DreMo推进分别授权。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "archivedChangeCount": 13,
+  "activeChangeId": null,
+  "ownLockReleased": true,
+  "stableAfter": {
+    "version": "0.1.0",
+    "mtime": "2026-10-10T16:37:05.661Z"
+  },
+  "source": "candidate0.2.0 installed CLI; status/next exit0/ok=true"
+}

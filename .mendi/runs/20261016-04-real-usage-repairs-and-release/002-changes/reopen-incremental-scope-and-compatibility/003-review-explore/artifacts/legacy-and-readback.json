@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "recordingMode": "product",
+  "hasOpenRunRef": false,
+  "closeRunRef": ".mendi/runs/d01/016-delivery-close/run.md",
+  "scope": {
+    "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+    "plannedChanges": [
+      {
+        "slot": "A",
+        "title": "项目入口",
+        "dependsOn": []
+      },
+      {
+        "slot": "B",
+        "title": "后续工作",
+        "dependsOn": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "result": "phase-aware readback passed",
+  "immediatelyAfterReopen": "changed",
+  "afterStartingChange": "unavailable",
+  "oldOutcome": "passed"
+}

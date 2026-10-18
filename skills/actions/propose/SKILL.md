@@ -6,6 +6,10 @@ role: author
 
 # propose 阶段方法
 
+定稿前复核已有事实、Owner 决定与关键未决项。specs 描述稳定业务承诺，design 承载当前菜单 / 布局 / 文案 / 页面与交互选择，tasks / 验证核对实际用户结果。普通 UI 调整不新建 Change，也不额外增加 Action / Run；旧名称或路径不机械冻结 UI。仍须保留权限、正确对象、完整性、状态 / 保存 / 发布 / 确认、历史及失败处理，以及 Owner 明确具有验收意义的 UI 要求；不能仅以 design 说明豁免真正承诺，不回改旧归档、Run 或 verdict。
+
+UI 或非 UI 的关键产品未知须先查事实和已确认回答；会影响目标、角色、范围、流程、权限、默认值、数据保留、兼容 / 历史、不可逆后果或验收时，向 Owner 问具体决定及影响，给有依据的建议。答案未到只暂停依赖定稿，不将假设、沉默或等待写成批准，也不留给 Apply 猜测；低影响可逆细节自行处理并简记，已确认决定不重复问，不设统一问答台账或额外审批。将有效答案落实到范围、specs / design / tasks 与验收的一致性。例如默认截止需核对时区 / 显示 / 请求值与服务器条件，“草稿”改“发布”须看用户理解和确认语义，不能只看 handler 相同或测试绿。
+
 首次 Propose 从 `methods.upstream` 取得当前目标 openspec-propose 的实际正文，当前 Change 已绑定：跳过 new change，只复用上下文检查与按 instructions / 依赖编写产物的片段，包括同 Action continue。revise-propose 使用 openspec-update-change 的已有产物修订规则与适用 glob 新增条件；不能用它代替首次缺失产物创建，不适用的缺项明确报告。正文来源与生成基线必须可读，方法返回不表示产物已创建或已批准。
 
 按当前 Action 请求 proposal / specs / design / tasks instructions，读取已完成的直接依赖和实际产物内容。dependencies.done=false 时先处理该必要前置，不声称已满足，也不要求所有 artifact ready 才能读指引。outputPath 的 specs glob 是输出模式；template 是结构指导，context 与当前 artifact rules 必须进入实际决策。

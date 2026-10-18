@@ -1,3 +1,4 @@
+import { legacyFullTestStatus as fullTestStatus } from '../../tests/delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -9,7 +10,7 @@ import {
   writeManifest,
   fullInput,
 } from '../../tests/delivery-support.ts';
-import { fullTestStatus, runFullTest } from '../../src/application/delivery-full-test.ts';
+import { runFullTest } from '../../src/application/delivery-full-test.ts';
 import { readDeliveryRun } from '../../src/adapters/delivery-runs.ts';
 import { readExecution } from '../../src/adapters/test-store.ts';
 import { bindChange } from '../../src/application/project.ts';

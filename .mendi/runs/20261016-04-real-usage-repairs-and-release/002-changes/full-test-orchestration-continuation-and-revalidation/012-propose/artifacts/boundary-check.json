@@ -1,0 +1,31 @@
+{
+  "head": "168a4cb54f0c9028eaf9c271b43d9ee14c3ae904",
+  "protectedFiles": [
+    "src",
+    "tests",
+    "scripts",
+    "skills",
+    "openspec/specs",
+    "openspec/changes/archive",
+    "package.json",
+    "pnpm-lock.yaml",
+    ".mendi/project.json",
+    "AGENTS.md",
+    "mendi-foundation-and-delivery-roadmap.md",
+    "mendi-full-test-continuation-improvement.md",
+    "mendi-reopen-incremental-scope-improvement.md",
+    "mendi-ui-spec-granularity-improvement.md"
+  ],
+  "protectedDiff": "",
+  "rootMode": "manual-bootstrap",
+  "archivedChangeCount": 11,
+  "stable": {
+    "manifest": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+21226a8+mendi-0.1.0.tgz\\node_modules\\mendi\\package.json",
+    "version": "0.1.0",
+    "lastWriteTime": "2026-10-10T16:37:05.661Z"
+  },
+  "productImplementation": false,
+  "gitWrite": false,
+  "push": false,
+  "DreMoAccess": false
+}

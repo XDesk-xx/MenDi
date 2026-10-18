@@ -1,5 +1,5 @@
 import { selected } from './project.ts';
-import { readWorkspace } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite } from '../adapters/workspace.ts';
 import { currentRun, readRun } from '../adapters/runs.ts';
 import { createRun, writeAction } from '../adapters/action-store.ts';
 import { loadChangeMethods } from '../adapters/methods.ts';
@@ -81,6 +81,7 @@ export function prepareArchive(input: StartInput, options: ActionOptions = {}) {
     );
   text(input.actor, '操作者标识');
   const { root, upstream } = selected(input, options);
+  guardProductWrite(root);
   const workspace = readWorkspace(root);
   function check(current: Workspace | null) {
     checkWorkspace(current);

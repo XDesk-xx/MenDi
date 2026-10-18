@@ -1,0 +1,95 @@
+{
+  "files": [
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/test-execution/spec.md",
+    "specs/delivery-verification/spec.md",
+    "specs/delivery-lifecycle/spec.md"
+  ],
+  "capabilities": [
+    "test-execution",
+    "delivery-verification",
+    "delivery-lifecycle"
+  ],
+  "modifiedRequirements": 14,
+  "addedRequirements": 11,
+  "oldScenarioPreservation": [
+    {
+      "capability": "delivery-verification",
+      "requirement": "Explicit formal delivery test admission",
+      "preservedScenarios": 4
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Declared collection and tested material basis",
+      "preservedScenarios": 4
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Single operation execution and durable formal outcome",
+      "preservedScenarios": 5
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Delivery scoped author repair",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Independent targeted repair review",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "New whole collection after approved repair",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Direct result readback and bounded applicability",
+      "preservedScenarios": 7
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "First fresh acceptance after lifecycle work",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Round bound verification and repair",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Direct delivered baseline facts in acceptance",
+      "preservedScenarios": 4
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Explicit applicable delivery close",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Material applicability and direct approval facts",
+      "preservedScenarios": 3
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Explicit reopen with a fresh work scope",
+      "preservedScenarios": 4
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Durable lifecycle progress and closed queries",
+      "preservedScenarios": 2
+    }
+  ],
+  "tasks": {
+    "total": 28,
+    "complete": 0
+  },
+  "noTemplates": true,
+  "boundary": "planning artifacts only; not implementation or independent approval"
+}

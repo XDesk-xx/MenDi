@@ -1,0 +1,17 @@
+{
+  "result": "proof-harness-order-assertion-failed",
+  "actual": [
+    "integration",
+    "unit",
+    "unit"
+  ],
+  "expected": [
+    "unit",
+    "integration",
+    "unit"
+  ],
+  "interpretation": "Node runs test files in its own order; assert actual coverage, do not infer a logical ordered plan from argv.",
+  "nativeProductOperationFailure": false,
+  "rawOutputRef": "../proof-01-command.log",
+  "partialFactsPreserved": true
+}

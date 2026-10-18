@@ -1,0 +1,2219 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "D:/Projects/MenDi",
+  "background": "Review fixed Author 006 against approved D04-A proposal: versioned rounds, v1 read-only, explicit migration with active drafts and bounded resume, direct product baselines, no cross-round PASS, no implementation fixes.",
+  "total_files": 321,
+  "reviewable_count": 43,
+  "excluded_count": 278,
+  "total_insertions": 16280,
+  "total_deletions": 331,
+  "reviewable_files": [
+    {
+      "path": "openspec/config.yaml",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 1
+    },
+    {
+      "path": "src/adapters/action-store.ts",
+      "status": "modified",
+      "insertions": 3,
+      "deletions": 2
+    },
+    {
+      "path": "src/adapters/delivery-runs.ts",
+      "status": "modified",
+      "insertions": 10,
+      "deletions": 5
+    },
+    {
+      "path": "src/adapters/delivery-verification.ts",
+      "status": "modified",
+      "insertions": 15,
+      "deletions": 7
+    },
+    {
+      "path": "src/adapters/runs.ts",
+      "status": "modified",
+      "insertions": 9,
+      "deletions": 1
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "status": "modified",
+      "insertions": 31,
+      "deletions": 4
+    },
+    {
+      "path": "src/application/action-context.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/action-resolution.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/actions.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/archive-prepare.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/archive.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 1
+    },
+    {
+      "path": "src/application/delivery-full-test.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 151
+    },
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "status": "modified",
+      "insertions": 28,
+      "deletions": 2
+    },
+    {
+      "path": "src/application/delivery-repair.ts",
+      "status": "modified",
+      "insertions": 9,
+      "deletions": 2
+    },
+    {
+      "path": "src/application/diagnosis.ts",
+      "status": "modified",
+      "insertions": 10,
+      "deletions": 4
+    },
+    {
+      "path": "src/application/project.ts",
+      "status": "modified",
+      "insertions": 56,
+      "deletions": 4
+    },
+    {
+      "path": "src/application/test-execution.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/tests.ts",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/delivery-lifecycle.ts",
+      "status": "modified",
+      "insertions": 14,
+      "deletions": 5
+    },
+    {
+      "path": "src/core/delivery-runs.ts",
+      "status": "modified",
+      "insertions": 26,
+      "deletions": 3
+    },
+    {
+      "path": "src/core/delivery-verification.ts",
+      "status": "modified",
+      "insertions": 30,
+      "deletions": 11
+    },
+    {
+      "path": "src/core/full-test-record.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/lifecycle-transition.ts",
+      "status": "modified",
+      "insertions": 47,
+      "deletions": 27
+    },
+    {
+      "path": "src/core/records.ts",
+      "status": "modified",
+      "insertions": 40,
+      "deletions": 52
+    },
+    {
+      "path": "src/drivers/arguments.ts",
+      "status": "modified",
+      "insertions": 26,
+      "deletions": 3
+    },
+    {
+      "path": "src/drivers/dispatch.ts",
+      "status": "modified",
+      "insertions": 17,
+      "deletions": 1
+    },
+    {
+      "path": "src/drivers/output.ts",
+      "status": "modified",
+      "insertions": 22,
+      "deletions": 0
+    },
+    {
+      "path": "tests/action-support.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 4
+    },
+    {
+      "path": "tests/test-support.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 4
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/baselines.ts",
+      "status": "added",
+      "insertions": 91,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/migration-preview.ts",
+      "status": "added",
+      "insertions": 246,
+      "deletions": 0
+    },
+    {
+      "path": "src/adapters/migration-store.ts",
+      "status": "added",
+      "insertions": 226,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/delivery-migration.ts",
+      "status": "added",
+      "insertions": 68,
+      "deletions": 0
+    },
+    {
+      "path": "src/application/full-test-admission.ts",
+      "status": "added",
+      "insertions": 181,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/baselines.ts",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/legacy-conversion.ts",
+      "status": "added",
+      "insertions": 119,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/migration-intent.ts",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/migration-plan.ts",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/round-records.ts",
+      "status": "added",
+      "insertions": 69,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/rounds.ts",
+      "status": "added",
+      "insertions": 243,
+      "deletions": 0
+    },
+    {
+      "path": "src/core/scope.ts",
+      "status": "added",
+      "insertions": 80,
+      "deletions": 0
+    },
+    {
+      "path": "tests/migration-support.ts",
+      "status": "added",
+      "insertions": 121,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": ".mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json",
+      "status": "modified",
+      "insertions": 29,
+      "deletions": 10,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 22,
+      "deletions": 2,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/apply/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/archive/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/delivery-close/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/delivery-full-test/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/delivery-open/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/delivery-reopen/SKILL.md",
+      "status": "modified",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "skills/actions/delivery-repair/SKILL.md",
+      "status": "modified",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/delivery-query.test.ts",
+      "status": "modified",
+      "insertions": 14,
+      "deletions": 11,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/lifecycle-reopen.test.ts",
+      "status": "modified",
+      "insertions": 41,
+      "deletions": 4,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/query.test.ts",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/records.test.ts",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 1,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/workspace.test.ts",
+      "status": "modified",
+      "insertions": 5,
+      "deletions": 4,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/activation-commands.json",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/before-manifest.json",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/engineering-check.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/final-commands.json",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/legacy-baseline-observation.json",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01-command.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01/fixture-formal-result.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01/fixture-full-stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01/fixture-full-stdout.log",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01/observations.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proof-01/result.json",
+      "status": "added",
+      "insertions": 148,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proposal-instructions-current.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/artifacts/readback.json",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/002-explore/run.md",
+      "status": "added",
+      "insertions": 88,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/before-manifest.json",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/build.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/engineering-check.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/legacy-and-readback.json",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01/fixture-formal-result.json",
+      "status": "added",
+      "insertions": 214,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01/fixture-full-stderr.log",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01/fixture-full-stdout.log",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01/observations.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-01/result.json",
+      "status": "added",
+      "insertions": 148,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/proof-command.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/readback-assertion-failure.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/artifacts/readback.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/003-review-explore/run.md",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/before-manifest.json",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/design-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/final-commands.json",
+      "status": "added",
+      "insertions": 75,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/planning-consistency.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/proposal-instructions.json",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/readback.json",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/specs-instructions.json",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/start-commands.json",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/status-after-proposal.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/status-after-tasks.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/status-before-tasks.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/validate-final.json",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/artifacts/validate-first.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/004-propose/run.md",
+      "status": "added",
+      "insertions": 77,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/artifacts/planning-check.json",
+      "status": "added",
+      "insertions": 90,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/artifacts/readback.json",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/artifacts/tasks-instructions.json",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/artifacts/validation.json",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/005-review-propose/run.md",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/affected-02.log",
+      "status": "added",
+      "insertions": 184,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-instructions-final.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-instructions-start.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-progress-01.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-progress-02.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-progress-03.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-progress-04.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/apply-progress-05.json",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/archive-none-diagnostic.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/baseline-focused-01.log",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/check-01.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/check-final-01.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/check-final-02.log",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/environment-final.json",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/environment-observation.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/handoff-check.json",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/lifecycle-focused-01.log",
+      "status": "added",
+      "insertions": 112,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/maintained-lines-after.json",
+      "status": "added",
+      "insertions": 844,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/maintained-lines-before.json",
+      "status": "added",
+      "insertions": 540,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/method-wiring.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-active-01.log",
+      "status": "added",
+      "insertions": 78,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-active-02.log",
+      "status": "added",
+      "insertions": 68,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-archive-03.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-executions-01.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-focused-01.log",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-guards-03.log",
+      "status": "added",
+      "insertions": 100,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-historical-reservations-01.log",
+      "status": "added",
+      "insertions": 53,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-historical-reservations-02.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-intent-routing-01.log",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-intent-routing-02.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-reservations-01.log",
+      "status": "added",
+      "insertions": 48,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/migration-reservations-02.log",
+      "status": "added",
+      "insertions": 34,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/records-focused-01.log",
+      "status": "added",
+      "insertions": 112,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/repair-focused-01.log",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/round-cli-01.log",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/same-delivery-baseline-01.log",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/task-progress-03.json",
+      "status": "added",
+      "insertions": 138,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/task-progress-04.json",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/task-progress-05.json",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/task-progress-final.json",
+      "status": "added",
+      "insertions": 18,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-19668.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-20552.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-27632.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-30736.jsonl",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-35368.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-40416.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-53220.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-55064.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/archive-scenes-57140.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/cancel-scenes-51136.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/cancel-scenes-52644.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-14100.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-16752.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-1872.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-19668.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-20552.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-21552.jsonl",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-24244.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-2508.jsonl",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-25412.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-25804.jsonl",
+      "status": "added",
+      "insertions": 175,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-27632.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-27928.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-27952.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-30736.jsonl",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-31756.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-32324.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-32596.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-35368.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-40416.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-42292.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-42744.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-47232.jsonl",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-51136.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-52644.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-53220.jsonl",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-53312.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-53492.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-55064.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-57140.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-58832.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-58924.jsonl",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-60000.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-60868.jsonl",
+      "status": "added",
+      "insertions": 84,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-61268.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-61800.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-62196.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-62508.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-63284.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/commands-9428.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-1872.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-21552.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-25804.jsonl",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-27632.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-42292.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-42744.jsonl",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-51136.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-52644.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-53312.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-53492.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-61268.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-61800.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-62508.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/delivery-scenes-63284.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/integration-scenes-42292.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/lifecycle-scenes.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-2508.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-27928.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-32324.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-42292.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-51136.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-52644.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-53220.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-60000.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-01/test-scenes-62196.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-13124.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-14940.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-2488.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-26872.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-50420.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-58480.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-63424.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-8736.jsonl",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/archive-scenes-9176.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/cancel-scenes-29684.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/cancel-scenes-44836.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-13124.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-13616.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-14940.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-17084.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-1912.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-2488.jsonl",
+      "status": "added",
+      "insertions": 26,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-26872.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-29684.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-30596.jsonl",
+      "status": "added",
+      "insertions": 175,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-32388.jsonl",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-33468.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-35688.jsonl",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-36764.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-38860.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-42784.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-42948.jsonl",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-44836.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-46048.jsonl",
+      "status": "added",
+      "insertions": 40,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-46864.jsonl",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-50420.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-50884.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-51528.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-52560.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-5432.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-54696.jsonl",
+      "status": "added",
+      "insertions": 13,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-55908.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-57736.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-58480.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-58640.jsonl",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-58852.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-60004.jsonl",
+      "status": "added",
+      "insertions": 5,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-62936.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-63064.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-63392.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-63424.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-7120.jsonl",
+      "status": "added",
+      "insertions": 84,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-8736.jsonl",
+      "status": "added",
+      "insertions": 38,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-9176.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/commands-9988.jsonl",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-17084.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-1912.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-29684.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-30596.jsonl",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-32388.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-38860.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-44836.jsonl",
+      "status": "added",
+      "insertions": 7,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-46864.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-50884.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-52560.jsonl",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-54696.jsonl",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-58480.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-60004.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/delivery-scenes-62936.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/integration-scenes-38860.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/lifecycle-scenes.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-2488.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-29684.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-33468.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-38860.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-42784.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-44836.jsonl",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-5432.jsonl",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-58640.jsonl",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-details-02/test-scenes-63392.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-final-01.log",
+      "status": "added",
+      "insertions": 1547,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/test-final-02.log",
+      "status": "added",
+      "insertions": 1514,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/typecheck-01.log",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/validate-final.json",
+      "status": "added",
+      "insertions": 30,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/artifacts/verification-summary.json",
+      "status": "added",
+      "insertions": 43,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/006-apply/run.md",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": ".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/reopen-incremental-scope-and-compatibility/007-review-apply/artifacts/ocr-preview.json",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/design.md",
+      "status": "added",
+      "insertions": 166,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/proposal.md",
+      "status": "added",
+      "insertions": 33,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/specs/delivery-lifecycle/spec.md",
+      "status": "added",
+      "insertions": 149,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/specs/delivery-verification/spec.md",
+      "status": "added",
+      "insertions": 111,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/specs/delivery-workspace/spec.md",
+      "status": "added",
+      "insertions": 188,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/reopen-incremental-scope-and-compatibility/tasks.md",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "scripts/mvp-d04-a-explore.ts",
+      "status": "added",
+      "insertions": 259,
+      "deletions": 0,
+      "exclude_reason": "user_exclude"
+    },
+    {
+      "path": "skills/actions/delivery-migrate/SKILL.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/baseline-integration.test.ts",
+      "status": "added",
+      "insertions": 148,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/baseline-scope.test.ts",
+      "status": "added",
+      "insertions": 53,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/fixtures/delivery-scope-baseline.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/legacy-write-gate.test.ts",
+      "status": "added",
+      "insertions": 117,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/migration-active.test.ts",
+      "status": "added",
+      "insertions": 154,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/migration-executions.test.ts",
+      "status": "added",
+      "insertions": 54,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/migration-reservations.test.ts",
+      "status": "added",
+      "insertions": 78,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/migration-rounds.test.ts",
+      "status": "added",
+      "insertions": 129,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/migration.test.ts",
+      "status": "added",
+      "insertions": 183,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/round-cli.test.ts",
+      "status": "added",
+      "insertions": 187,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/rounds.test.ts",
+      "status": "added",
+      "insertions": 268,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

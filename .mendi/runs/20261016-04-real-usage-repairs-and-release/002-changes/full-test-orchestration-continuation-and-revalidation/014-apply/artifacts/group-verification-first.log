@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 真实失败→独立尾项续测→固定原失败修复与审核→局部复验→多来源 verified / Close
+ok 1 - 真实失败→独立尾项续测→固定原失败修复与审核→局部复验→多来源 verified / Close
+  ---
+  duration_ms: 59625.4076
+  type: 'test'
+  ...
+# Subtest: 当前组复验失败后不得任选旧成功；缺来源 incomplete 和混合 Close 写前拒绝
+ok 2 - 当前组复验失败后不得任选旧成功；缺来源 incomplete 和混合 Close 写前拒绝
+  ---
+  duration_ms: 5742.327
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 65827.4583

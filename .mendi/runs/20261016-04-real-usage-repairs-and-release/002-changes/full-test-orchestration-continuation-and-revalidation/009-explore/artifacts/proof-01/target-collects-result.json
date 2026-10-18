@@ -1,0 +1,52 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-N7WY8u\\project",
+  "executionId": "002-fast",
+  "outcome": "failed",
+  "record": {
+    "formatVersion": 1,
+    "executionId": "002-fast",
+    "kind": "fast",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-N7WY8u\\project",
+    "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-N7WY8u\\project",
+    "deliveryId": "d01",
+    "changeId": null,
+    "actorId": "delivery-author",
+    "scope": "command",
+    "formalDeliveryTest": false,
+    "command": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run",
+        "test:fast"
+      ],
+      "dependencyPolicy": "warn"
+    },
+    "dependencyCheck": {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+        "run"
+      ],
+      "dependencyPolicy": "error",
+      "exitCode": 0
+    },
+    "scriptName": "test:fast",
+    "scriptText": "node --test --test-concurrency=1 checks/unit.test.ts checks/integration.test.ts checks/tail.test.ts",
+    "startedAt": "2026-10-17T03:14:47.007Z",
+    "finishedAt": "2026-10-17T03:14:49.388Z",
+    "executionState": "finished",
+    "outcome": "failed",
+    "exitCode": 1,
+    "signal": null,
+    "pid": 62584,
+    "stdoutRef": ".mendi/delivery-groups/d01/tests/002-fast/stdout.log",
+    "stderrRef": ".mendi/delivery-groups/d01/tests/002-fast/stderr.log"
+  }
+}

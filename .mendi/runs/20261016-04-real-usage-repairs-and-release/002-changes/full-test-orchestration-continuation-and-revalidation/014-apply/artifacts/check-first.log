@@ -1,0 +1,11 @@
+Already up to date
+Done in 957ms using pnpm v11.22.0
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+Checked 183 files in 75ms. No fixes applied.
+$ biome lint src scripts tests
+Checked 183 files in 77ms. No fixes applied.
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json
+src/application/group-attempt.ts(228,13): error TS2367: This comparison appears to be unintentional because the types '"valid" | "unconfirmed"' and '"invalid"' have no overlap.
+[ELIFECYCLE] Command failed with exit code 2.
+[ELIFECYCLE] Command failed with exit code 2.

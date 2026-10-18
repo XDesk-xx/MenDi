@@ -1,0 +1,1 @@
+$ node --test checks/unit.test.ts checks/integration.test.ts

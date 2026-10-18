@@ -1,0 +1,68 @@
+TAP version 13
+# Subtest: 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+ok 1 - 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+  ---
+  duration_ms: 1419.705
+  type: 'test'
+  ...
+# Subtest: 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+ok 2 - 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+  ---
+  duration_ms: 64466.5678
+  type: 'test'
+  ...
+# Subtest: 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+ok 3 - 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 14413.7049
+  type: 'test'
+  ...
+# Subtest: 旧 Archive none 保留当前 Run，迁移后可显式 execute
+not ok 4 - 旧 Archive none 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 13008.2382
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\migration-active.test.ts:55:43'
+  failureType: 'testCodeFailure'
+  error: 'MenDi 写入未完整成功。'
+  code: 'workspace-write-failed'
+  name: 'MendiError'
+  stack: |-
+    lockedWrite (file:///D:/Projects/MenDi/src/adapters/workspace.ts:248:11)
+    writeAction (file:///D:/Projects/MenDi/src/adapters/action-store.ts:48:10)
+    archiveAction (file:///D:/Projects/MenDi/src/application/archive.ts:166:18)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/migration-active.test.ts:61:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+  ...
+# Subtest: 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+ok 5 - 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+  ---
+  duration_ms: 249.6312
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 6 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 686.2482
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 7 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 104401.0017
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 105798.4325

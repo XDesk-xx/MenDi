@@ -319,7 +319,7 @@ test('缺入口 / manifest / 坏 JSON / 身份不符 / 残留锁只诊断不修�
       }
       if (kind === 'unknown-version' || kind === 'unsafe-ref') {
         const value = JSON.parse(fs.readFileSync(projectFile, 'utf8'));
-        if (kind === 'unknown-version') value.formatVersion = 2;
+        if (kind === 'unknown-version') value.formatVersion = 3;
         else value.deliveries[0].manifestRef = '../outside';
         fs.writeFileSync(projectFile, JSON.stringify(value));
       }

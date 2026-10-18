@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "scripts/mvp-d04-a-explore.ts",
+    "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\002-changes\\reopen-incremental-scope-and-compatibility\\002-explore\\artifacts\\proof-01"
+  ],
+  "startedFrom": "D:\\Projects\\MenDi",
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "cross-round-dependency: observed\nold-scope-union: observed\nreal-reopen-scope-replacement: observed\nold-pass-is-history: observed\ndirect-history-gap: observed\nformat-boundary: observed\nfirst-current-round-run: observed\nmanual-read-only: observed\n",
+  "stderr": ""
+}

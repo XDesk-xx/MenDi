@@ -12,6 +12,7 @@ import { writeAction } from '../adapters/action-store.ts';
 import { loadMethods } from '../adapters/methods.ts';
 import {
   currentFailure,
+  failureSummary,
   repairAuthor,
   reviewRepairInputs,
   same,
@@ -19,7 +20,10 @@ import {
 import { deliveryDefinition, deliveryNext, parseDeliveryRun } from '../core/delivery-runs.ts';
 import { verificationScope } from '../core/delivery-verification.ts';
 import { MendiError, text } from '../core/errors.ts';
+import { parseImpact } from '../core/repair-record.ts';
+import { capturedJson } from '../adapters/group-store.ts';
 import type { Workspace } from '../core/records.ts';
+import { requireWritable } from '../core/rounds.ts';
 import type { ActorInput, ActionOptions } from './action-context.ts';
 import { state } from './project.ts';
 
@@ -31,6 +35,7 @@ function workspaceInput(root: string, ownLock = false) {
   const workspace = readWorkspace(root, ownLock);
   if (!workspace || workspace.mode !== 'product')
     throw new MendiError('manual-state-read-only', 'Delivery 修复仅支持 product。');
+  requireWritable(workspace);
   verificationScope(workspace);
   return workspace;
 }
@@ -61,7 +66,7 @@ function output(root: string, operation: string, workspace: Workspace, run: Deli
   };
 }
 export function startDeliveryRepair(
-  input: ActorInput & { from: string; reason: string; revisesRunRef?: string },
+  input: ActorInput & { from: string; reason: string; revisesRunRef?: string; inputFile?: string },
   options: ActionOptions = {},
 ) {
   const { root } = inspectProject(input.project);
@@ -80,26 +85,38 @@ export function startDeliveryRepair(
     )
       throw new MendiError('delivery-state-conflict', '当前交接未完成或 rejected，停 Owner。');
     if (type === 'delivery-repair') {
-      if (current.ref !== failure.ref)
+      if (current.ref !== failure.ref && !current.record.attempt && !current.record.verification)
         throw new MendiError('delivery-state-conflict', '已有修复交接，请继续或明确修订。');
     } else {
       const target = current.record.role === 'reviewer' ? current.record.authorRunRef : current.ref;
       if (
         !current.record.repair ||
         input.revisesRunRef !== target ||
-        !same(current.record.repair.scope, failure.record.fullTest!.scope)
+        !same(current.record.repair.scope, failureSummary(failure).scope)
       )
         throw new MendiError('delivery-state-conflict', '修订必须固定当前修复 Author。');
       repairAuthor(root, workspace, input.revisesRunRef!);
     }
     return {
+      roundId: workspace.currentRoundId!,
       failedFullTestRunRef: failure.ref,
-      scope: failure.record.fullTest!.scope,
-      collection: failure.record.fullTest!.collection,
+      scope: failureSummary(failure).scope,
+      collection: failureSummary(failure).collection,
       reason,
+      ...(failure.record.attempt
+        ? {
+            groups: {
+              plan: failure.record.attempt.plan,
+              impact: parseImpact(
+                capturedJson(root, text(input.inputFile, '组修复 input'), new Map()),
+                failure.record.attempt.plan,
+              ),
+            },
+          }
+        : {}),
     };
   }
-  check(workspaceInput(root));
+  const beforeRepair = check(workspaceInput(root));
   const methods = loadMethods(type, [], options.methodsRoot);
   const result = writeAction(
     root,
@@ -107,6 +124,8 @@ export function startDeliveryRepair(
     (workspace, written) => {
       verificationScope(workspace);
       const repair = check(workspace, true);
+      if (!same(beforeRepair, repair))
+        throw new MendiError('delivery-input-changed', '持锁后修复直接输入变化。');
       return createDeliveryRun(
         root,
         workspace,
@@ -157,8 +176,8 @@ export function startDeliveryReview(
       ownLock,
     );
     if (
-      !same(author.record.repair!.scope, failure.record.fullTest!.scope) ||
-      !same(author.record.repair!.collection, failure.record.fullTest!.collection)
+      !same(author.record.repair!.scope, failureSummary(failure).scope) ||
+      !same(author.record.repair!.collection, failureSummary(failure).collection)
     )
       throw new MendiError('review-input-invalid', 'Author 范围 / 集合与失败矛盾。');
     return author;
@@ -186,7 +205,7 @@ export function startDeliveryReview(
           status: 'draft',
           stageSkill: 'review-delivery-repair',
           toolGuidance: [],
-          repair: author.record.repair!,
+          repair: { ...author.record.repair!, roundId: workspace.currentRoundId! },
           authorRunRef: author.ref,
         },
         written,
@@ -241,8 +260,8 @@ export function submitDeliveryRun(
         ownLock,
       );
       if (
-        !same(run.record.repair!.scope, failure.record.fullTest!.scope) ||
-        !same(run.record.repair!.collection, failure.record.fullTest!.collection)
+        !same(run.record.repair!.scope, failureSummary(failure).scope) ||
+        !same(run.record.repair!.collection, failureSummary(failure).collection)
       )
         throw new MendiError('delivery-state-conflict', '修复范围或完整集合变化，停 Owner。');
     }
@@ -306,7 +325,11 @@ export function continueDeliveryAction(
       return createDeliveryRun(
         root,
         workspace,
-        { ...seed, status: 'draft' },
+        {
+          ...seed,
+          repair: { ...seed.repair!, roundId: workspace.currentRoundId! },
+          status: 'draft',
+        },
         written,
         options.observeWrite,
       );

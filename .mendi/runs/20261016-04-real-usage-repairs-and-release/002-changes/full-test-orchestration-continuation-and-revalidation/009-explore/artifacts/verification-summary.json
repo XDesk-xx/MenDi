@@ -1,0 +1,79 @@
+{
+  "check": {
+    "command": "pnpm check",
+    "exitCode": 0,
+    "logRef": "check-final.log",
+    "scope": "format, lint and actual src / scripts / tests TypeScript checks"
+  },
+  "proof": {
+    "command": "node scripts/mvp-d04-b-explore.ts <artifacts>/proof-02",
+    "exitCode": 0,
+    "resultRef": "proof-02/conclusions.json",
+    "firstHarnessFailureRef": "proof-01/authoring-failure.json"
+  },
+  "machineEvents": {
+    "command": "node scripts/mvp-d04-b-event-proof.ts",
+    "exitCode": 0,
+    "resultRef": "structured-events/result.json"
+  },
+  "timing": {
+    "clock": "performance.now; UTC for tracing",
+    "samples": [
+      {
+        "label": "changed-candidate-focused",
+        "wallMs": 8499.914900000003,
+        "preLaunchMs": 5873.237200000003,
+        "launchedThroughTerminalMs": 2605.7583000000013,
+        "terminalThroughReturnMs": 20.91939999999886
+      },
+      {
+        "label": "fresh-whole",
+        "wallMs": 9223.297000000006,
+        "preLaunchMs": 5099.305500000002,
+        "launchedThroughTerminalMs": 3971.525099999999,
+        "terminalThroughReturnMs": 152.4664000000048
+      },
+      {
+        "label": "opaque-full",
+        "wallMs": 6427.6414,
+        "preLaunchMs": 3826.8619999999937,
+        "launchedThroughTerminalMs": 2437.0836000000054,
+        "terminalThroughReturnMs": 163.69580000000133
+      },
+      {
+        "label": "repaired-focused",
+        "wallMs": 8579.400999999998,
+        "preLaunchMs": 5884.076100000006,
+        "launchedThroughTerminalMs": 2672.0439999999944,
+        "terminalThroughReturnMs": 23.280899999997928
+      },
+      {
+        "label": "tail-continuation",
+        "wallMs": 6329.769899999992,
+        "preLaunchMs": 4392.936999999998,
+        "launchedThroughTerminalMs": 1912.9523999999947,
+        "terminalThroughReturnMs": 23.8804999999993
+      },
+      {
+        "label": "target-collects",
+        "wallMs": 6235.6293000000005,
+        "preLaunchMs": 3963.811600000001,
+        "launchedThroughTerminalMs": 2249.0564000000013,
+        "terminalThroughReturnMs": 22.7612999999983
+      }
+    ],
+    "limitation": "single bounded sample per call; no speedup or DreMo baseline inferred"
+  },
+  "reused": {
+    "source": "MVP-D04-A 006 test-final-02.log",
+    "cases": [
+      "ok 84 launch cancellation",
+      "ok 213 missing close remains unknown",
+      "ok 225 real foreground tree cancellation"
+    ],
+    "scope": "unchanged foreground cancellation implementation only, not new group resource isolation"
+  },
+  "rootFormalFullTest": false,
+  "productImplementation": false,
+  "newProtocolImplemented": false
+}

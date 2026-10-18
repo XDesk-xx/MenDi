@@ -1,0 +1,17 @@
+{
+  "goal": "基于已交付能力继续本轮增量工作；引用须替换为目标实际 Close",
+  "plannedChanges": [
+    {
+      "slot": "P10",
+      "title": "继续扩展能力",
+      "dependsOn": [],
+      "baselineDependencies": [
+        {
+          "deliveryId": "d01",
+          "planningSlot": "P09",
+          "closeRunRef": ".mendi/runs/d01/028-delivery-close/run.md"
+        }
+      ]
+    }
+  ]
+}

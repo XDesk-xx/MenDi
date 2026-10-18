@@ -1,0 +1,98 @@
+{
+  "label": "opaque-full",
+  "wallMs": 6033.784400000004,
+  "preLaunchMs": 3554.168900000004,
+  "launchedThroughTerminalMs": 2298.0567999999985,
+  "terminalThroughReturnMs": 181.5587000000014,
+  "groupsActuallyExecuted": [
+    "unit",
+    "integration"
+  ],
+  "stages": [
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 3327.688900000001
+    },
+    {
+      "phase": "prepared",
+      "elapsedMs": 3334.0233000000007
+    },
+    {
+      "phase": "before-intent-commit",
+      "elapsedMs": 3346.3384000000005
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 3353.7960999999996
+    },
+    {
+      "phase": "before-pid-commit",
+      "elapsedMs": 3540.9864000000016
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 3550.550900000002
+    },
+    {
+      "phase": "after-launch",
+      "elapsedMs": 3554.168900000004
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 4782.872000000003
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5089.985700000005
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5247.3763000000035
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5250.782600000006
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5275.914000000004
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5279.357800000005
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5549.049100000004
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5715.877700000005
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5720.113600000004
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5744.099500000004
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5747.346400000002
+    },
+    {
+      "phase": "before-log-write",
+      "elapsedMs": 5799.3022000000055
+    },
+    {
+      "phase": "before-terminal-commit",
+      "elapsedMs": 5852.225700000003
+    },
+    {
+      "phase": "before-test-readback",
+      "elapsedMs": 5859.231800000001
+    }
+  ],
+  "limitation": "one bounded sample; spans include nested work, not independent additive task costs"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "tests/installation/d04.test.ts"
+  ],
+  "pid": 43808,
+  "startedAt": "2026-10-17T14:00:21.746Z",
+  "state": "finished",
+  "scope": "post-install targeted verification; not a new formal Full Test",
+  "finishedAt": "2026-10-17T14:01:53.613Z",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false
+}

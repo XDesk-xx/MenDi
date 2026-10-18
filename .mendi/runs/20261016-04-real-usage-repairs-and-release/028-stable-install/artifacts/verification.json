@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "current": "D:\\tools\\mendi\\current",
+  "packagePath": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "sameAcceptedPackage": true,
+  "rebuild": false,
+  "repack": false,
+  "install": {
+    "offline": true,
+    "ignoreScripts": true,
+    "exitCode": 0,
+    "commandRecord": ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/artifacts/install-command.json"
+  },
+  "distribution": {
+    "comparedFiles": 221,
+    "differences": []
+  },
+  "stableHelpStatusNext": "exit0",
+  "stableCmdLauncherHelpExitCode": 0,
+  "postInstallTests": {
+    "commandRecord": ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/artifacts/stable-smoke-command.json",
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "scope": "安装后定向验证，不是新一次正式Full Test"
+  },
+  "backup": {
+    "directory": "D:\\tools\\mendi\\backups\\d04-before-0.2.0-028\\current",
+    "archiveCopy": "D:/tools/mendi/backups/d04-before-0.2.0-028/mendi-0.1.0.tgz",
+    "archiveSha256": "4604c452d8799ff445d66b2de032b30e583ae795d0ec9d06200342962a1c38fe",
+    "version": "0.1.0",
+    "oldCLIHelpExitCode": 0,
+    "recoveryInstructions": "D:\\tools\\mendi\\backups\\d04-before-0.2.0-028/README.md",
+    "actualRollbackExercised": false
+  },
+  "formalTestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+  "closeRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "completedAt": "2026-10-17T14:03:16.882Z"
+}

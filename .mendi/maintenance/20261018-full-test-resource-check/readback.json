@@ -1,0 +1,31 @@
+{
+  "completedAt": "2026-10-18T07:27:53.288Z",
+  "changedFiles": [
+    "skills/actions/delivery-full-test/SKILL.md"
+  ],
+  "version": "0.2.0",
+  "revision": "skill-20261018-resource-check",
+  "methodTests": {
+    "tests": 4,
+    "pass": 4,
+    "fail": 0,
+    "skipped": 0
+  },
+  "stableLoader": "actual installed loader returns exact current source",
+  "distributionFilesCompared": 221,
+  "differences": [],
+  "stableReadback": "status/next exit0 ok=true; root closed; owner-decision",
+  "currentDistribution": {
+    "archive": "D:/tools/mendi/packages/0.2.0-skill-20261018-resource-check/mendi-0.2.0.tgz",
+    "sha256": "98d72f1b2afd0a197ed7262887ed87f0bc67f186fdeb51c8fd49868f148270ad",
+    "revision": "skill-20261018-resource-check"
+  },
+  "baseArchive": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "basePackageAndLock": "unchanged; skill-only sync, not a pnpm reinstall",
+  "originalAcceptedArchivesUnchanged": true,
+  "sourceAcceptedArchive": ".mendi/runs/20261016-04-real-usage-repairs-and-release/024-candidate-preparation/artifacts/candidate-01/mendi-0.2.0.tgz",
+  "fullTestRerun": false,
+  "newChange": false,
+  "dremoFilesModified": false,
+  "pushed": false
+}

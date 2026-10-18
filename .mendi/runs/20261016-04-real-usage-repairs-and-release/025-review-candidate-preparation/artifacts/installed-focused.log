@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: 安装后CLI：旧活动draft只读 / 预览 / 显式迁移，pending拒绝且保留原记录
+ok 1 - 安装后CLI：旧活动draft只读 / 预览 / 显式迁移，pending拒绝且保留原记录
+  ---
+  duration_ms: 5682.9033
+  type: 'test'
+  ...
+# Subtest: 候选包六阶段正文与当前来源一致，Reviewer无Author上游，未选Storybook不强制加载
+ok 2 - 候选包六阶段正文与当前来源一致，Reviewer无Author上游，未选Storybook不强制加载
+  ---
+  duration_ms: 83.6268
+  type: 'test'
+  ...
+# Subtest: 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+ok 3 - 真实安装、双目标 / 跨 cwd、新交接失败与恢复、Storybook 并用和已有 Change Propose 交接
+  ---
+  duration_ms: 30416.404
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 30618.3076

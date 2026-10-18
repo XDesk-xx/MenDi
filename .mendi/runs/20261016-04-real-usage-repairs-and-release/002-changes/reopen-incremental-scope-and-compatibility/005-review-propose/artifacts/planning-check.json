@@ -1,0 +1,90 @@
+{
+  "modifiedRequirements": [
+    {
+      "capability": "delivery-workspace",
+      "requirement": "First delivery open",
+      "originalScenarios": 2,
+      "currentScenarios": 2,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Existing state is preserved",
+      "originalScenarios": 4,
+      "currentScenarios": 4,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Read-only status and next",
+      "originalScenarios": 14,
+      "currentScenarios": 16,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-workspace",
+      "requirement": "Ordered product associations and shared batch identity",
+      "originalScenarios": 5,
+      "currentScenarios": 5,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Explicit applicable delivery close",
+      "originalScenarios": 3,
+      "currentScenarios": 3,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Explicit reopen with a fresh work scope",
+      "originalScenarios": 3,
+      "currentScenarios": 4,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Durable lifecycle progress and closed queries",
+      "originalScenarios": 2,
+      "currentScenarios": 2,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Bounded explicit lifecycle resume",
+      "originalScenarios": 3,
+      "currentScenarios": 6,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-lifecycle",
+      "requirement": "Lifecycle authority and manual history preservation",
+      "originalScenarios": 2,
+      "currentScenarios": 2,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Explicit formal delivery test admission",
+      "originalScenarios": 4,
+      "currentScenarios": 4,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "Direct result readback and bounded applicability",
+      "originalScenarios": 6,
+      "currentScenarios": 7,
+      "originalScenarioNamesPreserved": true
+    },
+    {
+      "capability": "delivery-verification",
+      "requirement": "First fresh acceptance after lifecycle work",
+      "originalScenarios": 3,
+      "currentScenarios": 3,
+      "originalScenarioNamesPreserved": true
+    }
+  ],
+  "unfinishedTaskCount": 27,
+  "meaning": "仅核对已有 requirement 与场景名保留、任务状态；语义结论由 Reviewer 对照六份产物及实际源码独立作出。"
+}

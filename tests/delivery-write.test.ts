@@ -1,3 +1,4 @@
+import { legacyFullTestStatus } from './delivery-support.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -5,7 +6,6 @@ import test from 'node:test';
 import { formal, verificationTarget } from './delivery-support.ts';
 import { scanRunNumbers } from '../src/adapters/runs.ts';
 import { diagnoseWorkspace } from '../src/application/diagnosis.ts';
-import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 
 test('同级连续编号、空占号不复用、重复号拒绝', async () => {
   const root = verificationTarget();
@@ -80,7 +80,7 @@ test('日志、子终态 / 读回与父终态失败均非零并保留 unknown / 
     });
     assert.equal(result.ok, false);
     assert.ok('retainedLock' in result);
-    assert.throws(() => fullTestStatus({ project: root, runRef: result.run!.ref }), /锁/);
+    assert.throws(() => legacyFullTestStatus({ project: root, runRef: result.run!.ref }), /锁/);
   }
 });
 test('持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场', async () => {

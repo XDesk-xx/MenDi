@@ -1,0 +1,22 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "id": "F01-check",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "check"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "pid": 61700,
+  "startedAt": "2026-10-17T09:44:10.056Z",
+  "state": "finished",
+  "timeoutMs": 300000,
+  "log": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F01-check.log",
+  "endedAt": "2026-10-17T09:44:25.661Z",
+  "durationMs": 15605,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

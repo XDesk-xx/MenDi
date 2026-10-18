@@ -1,0 +1,27 @@
+{
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "id": "F05-spec-delivery-verification",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "delivery-verification",
+    "--type",
+    "spec",
+    "--strict",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\MenDi",
+  "pid": 56856,
+  "startedAt": "2026-10-17T10:27:16.962Z",
+  "state": "finished",
+  "timeoutMs": 120000,
+  "log": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/artifacts/F05-spec-delivery-verification.log",
+  "endedAt": "2026-10-17T10:27:17.434Z",
+  "durationMs": 472,
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "outcome": "passed"
+}

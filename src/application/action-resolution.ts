@@ -1,5 +1,5 @@
 import { selected } from './project.ts';
-import { readWorkspace } from '../adapters/workspace.ts';
+import { readWorkspace, guardProductWrite } from '../adapters/workspace.ts';
 import { currentRun, type RunDocument } from '../adapters/runs.ts';
 import { createRun, writeAction } from '../adapters/action-store.ts';
 import { loadChangeMethods } from '../adapters/methods.ts';
@@ -37,6 +37,7 @@ export function resolveAction(input: ResolveInput, options: ActionOptions = {}) 
   text(input.reason, 'Owner 原因');
   text(input.toActor, '接收标识');
   const { root, upstream } = selected(input, options);
+  guardProductWrite(root);
   const workspace = readWorkspace(root);
   checkWorkspace(workspace);
   function check(current: Workspace) {
