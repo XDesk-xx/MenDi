@@ -1,0 +1,9 @@
+# D04稳定切换与方法维护checkpoint
+
+Owner授权提交028稳定安装切换及本次Full Test skill、同步和分发记录，标题使用delivery: checkpoint。仅纳入当前manifest/context中的028交接、028原始记录、本次skill及本目录维护材料；路线图和mendi-full-test-continuation-improvement.md的无关修改不纳入。
+
+028安装后定向3/3和本次既有方法测试4/4、真实稳定loader及status/next读回均已有直接证据，本次不重跑正式Full Test。原Run/verdict不改写，原已验收tgz与024原件SHA256保持5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde。
+
+新skill修订分发包在distribution/mendi-0.2.0.tgz，SHA256为98d72f1b2afd0a197ed7262887ed87f0bc67f186fdeb51c8fd49868f148270ad，与当前外部分发包逐字节一致；稳定安装的实际同步身份见installation-after.json。内部版本仍0.2.0，修订为skill-20261018-resource-check，不冒称原已验收同包。
+
+本次只进行本地Git checkpoint；不修改DreMo、稳定安装或旧分发包，不push，保留无关未提交修改。

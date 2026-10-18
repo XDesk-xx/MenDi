@@ -1,0 +1,10 @@
+{
+  "name": "mendi",
+  "version": "0.2.0",
+  "sourceCommit": "2d0a0e03df76c8256365cc62acac4347137af3ec",
+  "archive": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "archiveSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "verification": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\028-stable-install\\artifacts\\verification.json",
+  "recovery": "D:\\tools\\mendi\\backups\\d04-before-0.2.0-028\\recovery.json",
+  "completedAt": "2026-10-17T14:03:16.882Z"
+}

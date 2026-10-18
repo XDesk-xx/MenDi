@@ -1,0 +1,27 @@
+{
+  "finishedAt": "2026-10-17T14:03:43.476Z",
+  "stableVersion": "0.2.0",
+  "stableCLI": "D:/tools/mendi/current/node_modules/mendi/dist/drivers/cli.js",
+  "closed": true,
+  "fullTest": "026 passed",
+  "close": "027 preserved",
+  "latestRun": "028",
+  "next": {
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "reason": "028已将026验收的同一0.2.0包切换到稳定current，0.1.0完整恢复材料保留且安装后定向验证通过；等待Owner下一指令。",
+    "source": "manual-bootstrap",
+    "executable": false
+  },
+  "ownLockReleased": true,
+  "backup": "D:/tools/mendi/backups/d04-before-0.2.0-028",
+  "postInstallTests": "3/3 passed",
+  "uncommittedRecords": [
+    ".mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json",
+    "openspec/config.yaml",
+    ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/"
+  ],
+  "push": false,
+  "dremoModified": false
+}

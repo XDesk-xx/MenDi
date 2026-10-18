@@ -8,13 +8,13 @@ context: |
   使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。
   当前 MVP-D04 已按 Owner 授权以 manual-bootstrap 开启，Delivery ID 为 20261016-04-real-usage-repairs-and-release。
   规划 A：Reopen 增量范围与兼容；B：Full Test 编排、续测与复验，依赖 A；C：业务契约、UI 方案与主动澄清，可独立于 A / B。
-  D04已在027完成Delivery Close，依据026正式F01–F05完整passed；A / B / C归档011 / 012 / 013，候选0.2.0保持024固定同包且025独立批准，稳定安装仍0.1.0。当前owner-decision / author / awaiting-owner-instruction；详细事实读manifest和最近Run。
+  D04已在027完成Delivery Close，依据026正式F01–F05完整passed；A / B / C归档011 / 012 / 013。028按Owner授权将已验收同一0.2.0 tgz切换到稳定current，0.1.0完整恢复材料保留；当前owner-decision / author / awaiting-owner-instruction，详细事实读manifest和028。
   A 已交付完整 open / closed 与活动 Change / draft 迁移、同项目跨 Delivery product 基线直接核对；人工来源仅说明。旧 pending / 中断先用旧版恢复，不保留新版旧格式恢复例外。规划产物齐备不代表已实施或批准。
   旧 product 继续只读查询，写入须先预览并显式迁移；充分旧范围与收口允许标为旧格式基线，不补造 Open Run，真实缺口或矛盾拒绝迁移。当前候选完成 Apply 及独立审核；其批准不代替真实目标迁移、正式 Full Test / Close 或发布授权。
   状态与详细过程读取当前 Delivery manifest 和最近 Run，不从本 context 推导实施、审核或验收完成。
   D03 已 closed，项目累计成功归档 13；既有 Full Test / Close、Git、稳定安装与取消项保持，不借旧 PASS 收口 D04。
   B确认可选目标组级协议及材料声明 / 独立审核边界；必需skip / TODO / 取消 / 零执行不覆盖，执行前可明确非必需排除。方案分开原命令、组终态与候选结论，工具核对直接来源 / 覆盖 / 批准，新合同实施前维持现行规则。
-  后续按根路线图与Owner指令推进；0.2.0候选已确认并验收，Git/checkpoint、发布和稳定切换仍分别授权，关键未决产品决定向Owner澄清。
+  后续按根路线图与Owner指令推进；0.2.0已验收并稳定切换，Git/checkpoint和DreMo迁移/继续各依独立授权，关键未决产品决定向Owner澄清。
   迁移、正式 Full Test / Close、Git、打包与稳定安装切换各依授权；本轮不修改 DreMo 历史、迁移或恢复推进。
   必要输入按操作决定；历史说明、未知 Ref 不成为查询前置，保留身份、路径、角色与写入冲突检查。
   submitted Run、旧 verdict 与 manual-bootstrap 保留，新增探索进 Run / artifacts，不新建 explore.md。

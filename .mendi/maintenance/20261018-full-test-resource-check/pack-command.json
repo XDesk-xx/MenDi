@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "pack",
+    "--pack-destination",
+    "D:/tools/mendi/packages/0.2.0-skill-20261018-resource-check"
+  ],
+  "exitCode": 0,
+  "signal": null
+}

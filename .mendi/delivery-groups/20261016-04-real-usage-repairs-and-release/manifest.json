@@ -85,13 +85,13 @@
     "自动 npm 上架、可选工具安装、其他项目测试优化、部署或生产数据写入。"
   ],
   "openRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/run.md",
   "stopBoundary": "owner-decision",
   "next": {
     "action": "owner-decision",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "reason": "MVP-D04已基于026完整正式PASS完成027 Close；等待Owner下一指令，Git/checkpoint、0.2.0稳定切换及DreMo推进分别授权。"
+    "reason": "028已将026验收的同一0.2.0包切换到稳定current，0.1.0完整恢复材料保留且安装后定向验证通过；等待Owner下一指令。"
   },
   "fullTest": {
     "recordingMode": "manual-bootstrap",

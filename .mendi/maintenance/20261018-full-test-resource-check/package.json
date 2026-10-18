@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "revision": "skill-20261018-resource-check",
+  "archive": "D:/tools/mendi/packages/0.2.0-skill-20261018-resource-check/mendi-0.2.0.tgz",
+  "archiveSha256": "98d72f1b2afd0a197ed7262887ed87f0bc67f186fdeb51c8fd49868f148270ad",
+  "originalAcceptedArchive": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "originalAcceptedSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "changedFiles": [
+    "skills/actions/delivery-full-test/SKILL.md"
+  ],
+  "validation": "4/4 existing method tests and actual loader; new archive skill bytes equal source",
+  "formalFullTest": "not rerun; old accepted tgz retained; new skill revision is not the identical accepted artifact",
+  "createdAt": "2026-10-18T07:25:57.885Z"
+}

@@ -1,0 +1,37 @@
+{
+  "deliveryId": "20261016-04-real-usage-repairs-and-release",
+  "runRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/run.md",
+  "ownerAuthorization": "owner 授权将已验收的同一 0.2.0 tgz 切换到 MenDi 稳定安装，先保留 0.1.0 可恢复材料，完成必要验证和读回后停下；保持 Author，不修改 DreMo，不 push。",
+  "current": "D:\\tools\\mendi\\current",
+  "backup": "D:\\tools\\mendi\\backups\\d04-before-0.2.0-028",
+  "oldCurrent": "D:\\tools\\mendi\\backups\\d04-before-0.2.0-028\\current",
+  "oldArchive": "D:\\tools\\mendi\\packages\\21226a8\\mendi-0.1.0.tgz",
+  "oldArchiveCopy": "D:/tools/mendi/backups/d04-before-0.2.0-028/mendi-0.1.0.tgz",
+  "oldArchiveSha256": "4604c452d8799ff445d66b2de032b30e583ae795d0ec9d06200342962a1c38fe",
+  "oldPackage": {
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@11.22.0",
+    "name": "mendi-local-runtime",
+    "dependencies": {
+      "mendi": "file:D:/tools/mendi/packages/21226a8/mendi-0.1.0.tgz"
+    }
+  },
+  "oldInstallation": {
+    "name": "mendi",
+    "version": "0.1.0",
+    "sourceCommit": "21226a8655dad2af89573cea3b1369ee26f56abd",
+    "archive": "D:\\tools\\mendi\\packages\\21226a8\\mendi-0.1.0.tgz",
+    "verification": "D:\\tools\\mendi\\packages\\21226a8\\verification.json",
+    "completedAt": "2026-10-12T02:04:24.302Z"
+  },
+  "packagePath": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "packageSha256": "5ac71756bc9a1e6bfc813ca5ab75da8f43ecc1ffdbfeea8ec580a47fa9629cde",
+  "approvedPackage": "D:\\Projects\\MenDi\\.mendi\\runs\\20261016-04-real-usage-repairs-and-release\\024-candidate-preparation\\artifacts\\candidate-01\\mendi-0.2.0.tgz",
+  "formalTestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/026-delivery-full-test/run.md",
+  "closeRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+  "version": "0.2.0",
+  "checkpoint": "2d0a0e03df76c8256365cc62acac4347137af3ec",
+  "preparedAt": "2026-10-17T13:59:10.132Z",
+  "restore": "确认没有正在使用current的进程；将本次新current移到新的保留目录，再将backup/current原样移回D:/tools/mendi/current，读回0.1.0版本及CLI。原旧tgz路径及副本保留；不需重打包。"
+}

@@ -1,0 +1,16 @@
+{
+  "mode": "atomic skill-only replacement",
+  "changedFile": "D:\\tools\\mendi\\current\\node_modules\\.pnpm\\mendi@file+..+packages+d04-0.2.0-2d0a0e0+mendi-0.2.0.tgz\\node_modules\\mendi\\skills\\actions\\delivery-full-test\\SKILL.md",
+  "runtimeAndDependenciesReinstalled": false,
+  "reason": "同步前发现PID31404正在从current执行DreMo Full Test；原安装预检查拒绝后未调用pnpm add。保留进程及运行时，仅替换方法文件，后续读取生效；已启动Run不追改。",
+  "activeProcessObserved": {
+    "pid": 31404,
+    "project": "D:/FD/src/DreMo",
+    "action": "delivery full-test run"
+  },
+  "previousMethodCopy": ".mendi/maintenance/20261018-full-test-resource-check/skill-before.md",
+  "currentDistributionArchive": "D:/tools/mendi/packages/0.2.0-skill-20261018-resource-check/mendi-0.2.0.tgz",
+  "currentDistributionSha256": "98d72f1b2afd0a197ed7262887ed87f0bc67f186fdeb51c8fd49868f148270ad",
+  "baseArchiveUnchanged": "D:/tools/mendi/packages/d04-0.2.0-2d0a0e0/mendi-0.2.0.tgz",
+  "synchronizedAt": "2026-10-18T07:26:59.291Z"
+}
