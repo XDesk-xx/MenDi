@@ -1,0 +1,15 @@
+{
+  "command": "openspec validate unified-groups-full-test-and-repair-flow --strict --json",
+  "version": "1.14.1",
+  "exitCode": 0,
+  "valid": true,
+  "issues": [],
+  "changedArtifacts": [
+    "specs/delivery-verification/spec.md",
+    "specs/delivery-lifecycle/spec.md",
+    "design.md",
+    "tasks.md"
+  ],
+  "trackedTasks": 13,
+  "note": "Strict validation and focused semantic checks passed; independent review-propose still required."
+}

@@ -7,7 +7,7 @@
 
 ### Requirement: Explicit formal delivery test admission
 
-系统 SHALL 对当前 open v2 product 的当前轮显式接受正式验收，要求无活动 / 归档中 Change、pending，全部槽位完成且直接审核 / 基线有效。旧 command 模式固定完整声明并单次执行；显式组模式固定完整计划、候选与 initial / continue / retest 选择。普通、跨轮或未经协议确认的 PASS 不能替代任何必需事实。
+系统 SHALL 对当前 open v2 product 的当前轮显式接受正式验收，要求无活动 / 归档中 Change、pending，全部槽位完成且直接审核 / 基线有效。新正式执行 MUST 采用 groups-v1 且本次执行完整必需组；旧 command、continue/retest 和 verification-create 只保留历史读取，不接受新的正式写入。普通、跨轮或未经协议确认的 PASS 不能替代任何必需事实。
 
 #### Scenario: Start acceptance for multiple completed changes
 - **WHEN** Owner 已授权正式验收，当前全部计划槽位完成且相关直接 Review Apply approved，Author 提供完整声明和受支持工具
@@ -24,6 +24,10 @@
 #### Scenario: Manual history is supplied to a product writer
 - **WHEN** 对 manual-bootstrap 执行正式验收或修复记录命令
 - **THEN** 产品拒绝写入，保留原人工历史；人工阶段与产品实施事实分别解释
+
+#### Scenario: Disallow legacy formal writes
+- **WHEN** 新正式输入缺 groups-v1、仅选部分必需组或请求旧 command/continue/retest/verification-create
+- **THEN** 在写入前拒绝，不建立新的正式 PASS，原历史保持只读
 
 ### Requirement: Declared collection and tested material basis
 
@@ -47,11 +51,11 @@
 
 ### Requirement: Single operation execution and durable formal outcome
 
-正式操作 MUST 在项目锁内复核必要输入、保存意图、真实执行并完整持久读回。底层子结果继续为 command / 非正式验收，旧单次模式按真实退出解释 passed / failed；组模式以独立尝试类型核对实际退出、组终态与最终回执，不把原命令或瞬时内存成功改写为新结论。未确认执行、资源或保存保留 unknown / 现场。
+正式操作 MUST 在项目锁内复核必要输入、保存意图、真实执行并完整持久读回。底层子结果继续为 command / 非正式验收，旧单次结果沿历史类型只读。新 groups-v1 SHALL 依据本次完整计划、子执行、全部必需组状态、报告、清理及提交读回给出本次正式 Run 的 passed / failed / blocked / not-run / interrupted / unknown；不得由 wrapper exit0 或多轮 PASS 拼接。未确认执行、资源或保存保留 unknown / 现场。
 
 #### Scenario: Full command actually passes or fails
-- **WHEN** 旧单次模式的 full 命令正常结束，记录与日志完整
-- **THEN** exit 0 为 passed、正常非零为 failed，保存本次执行身份与结果；正式 Run 和普通子结果身份可核对，命令成功不自动 Close
+- **WHEN** 已存在的历史 `delivery-full-test` Run 按旧单次 command 模式完成，显式只读查询其原记录及必要子命令/日志
+- **THEN** 按当时合同解释已经保存的 exit 0 为 passed、正常非零为 failed，保留原正式/子结果身份与历史 outcome；**不启动 command、不创建或改写 Run**，旧 passed 不成为新版正式 Close 的验收输入
 
 #### Scenario: Dependencies or tools prevent a launch
 - **WHEN** 正式声明已固定，但实际工具 / 依赖预检拒绝，测试子程序未启动
@@ -69,9 +73,13 @@
 - **WHEN** 启动即取消，停止命令返回成功但当前 child / 继承日志管道未在有界等待内关闭
 - **THEN** 停止仍为未确认，操作有界返回 unknown / 非零并保留锁与现场；不由命令 exit 0 或入口 pid 消失宣称整树已停止，不自动恢复或清理后代
 
+#### Scenario: Independent failures and dependency gaps
+- **WHEN** 普通失败后存在其他独立可执行项或依赖、共享资源被阻断
+- **THEN** 继续安全独立项并汇总全部失败；阻断项明确标注，完整结果不得 passed
+
 ### Requirement: Delivery scoped author repair
 
-系统 SHALL 为当前 known failed 的正式单次或组级失败（含安全持久完成的协议 invalid）建立 Author repair，固定直接失败、本轮完整范围及必要材料；组模式另固定计划、当前候选和影响 / 沿用组及理由。真实修复 / 分析完成须交独立 Review，修订另建记录，旧失败不改；范围 / 方案实质变化或 rejected 停 Owner，不复活归档 Change。
+系统 SHALL 为当前 known failed 的正式单次或组级失败（含安全持久完成的协议 invalid）建立 Author repair，固定直接失败、本轮完整范围及必要材料；组模式另固定计划、当前候选和影响 / 沿用组及理由。实质修复完成须交独立 Review；仅经证实纯环境准备问题可免无必要的 Repair/Review Runs，修订另建记录，旧失败不改；范围 / 方案实质变化或 rejected 停 Owner，不复活归档 Change。
 
 #### Scenario: Repair after all changes are archived
 - **WHEN** 本轮正式失败已确认，Author 显式开始范围内修复并说明问题
@@ -103,11 +111,11 @@ review-delivery-repair SHALL 固定当前完整 Author，由实际独立 Reviewe
 
 ### Requirement: New whole collection after approved repair
 
-旧 command 模式的修复后正式验收 MUST 消费当前 approved Review 及固定 Author，重新执行原完整集合；组模式可按当前独立批准影响复验，在完整计划下形成新候选结论。两者都不得缩减必需范围、借普通 focused 自动补覆盖或递归失败链；未知现场先停处置，不能忽略必要当前审核。
+新 groups-v1 正式修复后验收 MUST 消费当前 approved Review 和固定 Author，并由新 Run 重新执行完整必需组。旧 command 已存记录及局部 retest 只能历史读取，不形成新的正式通过。两者都不得缩减必需范围、借普通 focused 自动补覆盖或递归失败链；未知现场先停处置，不能忽略必要当前审核。
 
 #### Scenario: Focused passes and a new full is requested
-- **WHEN** 旧 command 模式修复后的 focused 已通过，当前独立定向 Review approved，Author 显式再次正式执行
-- **THEN** 新一次 full 完整运行原声明集合，当前结果指向新 Run；旧失败及日志字节不变，focused 不替代任何未重新执行的组
+- **WHEN** Author 修复后的 focused 已通过，当前独立定向 Review approved，Author 显式再次正式执行
+- **THEN** 新一次 groups-v1 完整运行当前计划全部必需组，当前结果指向新 Run；旧失败及日志字节不变，focused 不替代任何未重新执行的组
 
 #### Scenario: An old review or reduced collection is supplied
 - **WHEN** 修订后引用旧 approved、缺少当前审核，或请求缩减必需范围 / 用不适用 script 规避失败
@@ -211,7 +219,7 @@ Reopen / 新 Open 后首次正式验收 SHALL 以当前轮 scope、必要批准 
 
 ### Requirement: Typed structured formal attempts
 
-显式组模式 SHALL 新建可识别的正式尝试记录，保存 initial / continue / retest、完整计划、选择、当前候选、轮次、直接批准 / 基线、真实 command 子结果及协议观察。已选范围成功不代表整个当前候选通过；原尝试不可变，未知新类型 / 协议不能按旧 fullTest passed 消费。
+显式组模式 SHALL 新建可识别的正式尝试记录，新正式执行保存完整 initial、全部必需组计划、候选、轮次、批准 / 基线、真实子命令、协议观察和正式直接结论；旧 continue/retest 记录保持按原类型可读。已选范围成功不代表整个当前候选通过；原尝试不可变，未知新类型 / 协议不能按旧 fullTest passed 消费。
 
 #### Scenario: Start a fresh structured acceptance
 - **WHEN** 本轮全部 Change 已归档且正式准入有效，调用者显式请求新协议 initial
@@ -225,54 +233,28 @@ Reopen / 新 Open 后首次正式验收 SHALL 以当前轮 scope、必要批准 
 - **WHEN** 完整报告的语义矛盾已确认，但实际执行 / 清理、日志与持久读回均已安全完成
 - **THEN** 保存 invalid 协议失败，禁止复用其组事实，可正常释放本次自有锁并转范围内修复；进程 / 清理 / 保存未确认仍走 unknown 现场边界
 
-### Requirement: Explicit same round continuation
+#### Scenario: Old failed command enters first new group execution
+- **WHEN** 本轮旧 command failed 经 Author 实质修复与独立 Review approved，却不存在旧 testAttemptRunRef
+- **THEN** 新全量 groups-v1 正式运行准入可执行，不补造旧组 attempt、旧 PASS 或修改旧 failed
 
-known finished 的结构化失败后，Author SHALL 可按 Owner 实际范围开始同轮、相同计划 / 候选的 continue，仅执行尚未执行或现可运行的被阻断组，不为独立尾项强迫重跑通过前缀。继续不修改原失败，也不解除未解决失败 / 审核义务；计划 / 候选改变、取消 / 未确认来源或未知现场不能冒充正常续测。
+### Requirement: Confirmed environment-only complete retest
+系统 SHALL 将可确认的纯环境准备问题与业务代码或测试合同实质修复区分。只有本项目资源身份、执行及清理状态确认，且受测代码、断言和执行语义未变时，才能留存实际处置来源并重新完整执行 groups-v1；不机械创建无实变的 Repair/Review Runs。
 
-#### Scenario: Continue an independent tail after a known failure
-- **WHEN** 前缀通过、中段已知失败，尾项未执行且前置 / 资源可确认
-- **THEN** 新 attempt 只执行明确选择的尾项，保留前缀和中段事实；尾项成功仍不能代表未解决的中段通过
+#### Scenario: Owned resource recovered
+- **WHEN** 本项目已知服务或端口冲突安全恢复，原失败真实保留且没有业务或测试语义变更
+- **THEN** Author 可在既有正式测试授权内重新完整运行全部必需组，免无实变 Repair/Review Runs
 
-#### Scenario: Continuation changes the tested material
-- **WHEN** continue 请求对应不同计划、材料候选或越过未知资源 / 未完成提交
-- **THEN** 拒绝该续测身份，不从相同脚本名推断适用；按实际重新规划、修复审核或现场处置边界处理
+#### Scenario: Unknown or semantic fix
+- **WHEN** 进程归属、锁、执行/清理未知，或修复必须改源码、测试断言或执行配置行为
+- **THEN** unknown 停 Owner 核对；实质变化必须经过 Author delivery-repair 和独立 review-delivery-repair
 
-#### Scenario: Repair an unresolved failure after a successful tail
-- **WHEN** 最新 continue 的选中尾项已通过，但当前有界进展仍记录原中段未解决的明确失败
-- **THEN** repair 可显式固定该直接失败并核对当前范围，不要求最新 attempt 自身 failed，也不回退指针或扫描所有旧尝试
+### Requirement: One complete formal Run is the source of new PASS
+新 groups-v1 正式验收 MUST 仅由本次全部必需组真实通过、完整报告、清理与稳定读回产生 passed；新模式不创建跨尝试 verification 汇总来获得 PASS。旧 command、旧 attempt / verification 及其 Close、Repair、review、verdict、日志 MUST 保持可读且不篡改。
 
-#### Scenario: Reinitialization would bypass current repair approval
-- **WHEN** known failed 后请求用 initial 绕开当前必要修复审核，或把未确认现场当作已完成重新开始
-- **THEN** 拒绝该绕行；已安全完成的 not-run / interrupted 可按实际新指令全范围 initial，但不自动续测或复用取消中的部分事实
+#### Scenario: Fresh complete run passes
+- **WHEN** 本次计划全部必需组真实通过、业务计数非空、无必需失败/skip/TODO/取消，报告和真实退出相符，清理及持久读回 confirmed
+- **THEN** 本次正式 Run 直接保存 passed，供未来独立授权的 Close 消费，不要求额外 verification create 或例行 owner-decision
 
-### Requirement: Candidate verification from bounded direct sources
-
-系统 SHALL 以独立类型记录当前候选 verified / incomplete，依据本轮完整计划、每个必需组明确唯一的直接通过来源、候选适用性及必要批准 / 基线形成结论。创建时复核选定来源及保存有限直接快照，不扫描全历史或递归引用图。缺口、重复 / 矛盾、普通结果、跨轮或未确认来源 MUST 不能 verified；不改写原 outcome，不增加专门汇总 Review 阶段。
-
-#### Scenario: Complete a candidate using truthful multiple attempts
-- **WHEN** 已知尝试的有效前缀、授权续测和经独立修复审核后的影响复验共同覆盖本轮全部必需组
-- **THEN** 新结论明确显示当前候选、各组来源和适用依据，原失败仍 failed，多次执行不伪称为一次命令退出 0
-
-#### Scenario: A required group or approval is absent
-- **WHEN** 某必需组缺有效来源、仍失败 / skipped / TODO / cancelled、缺必要当前审核或材料适用性未确认
-- **THEN** 结论不 verified，展示实际缺口；未知 / 持久化不完整来源不能挑内层成功绕过
-
-#### Scenario: Read the current verification without recursive history
-- **WHEN** 当前结论和自身直接快照有效，而未作为当前输入的旧失败正文 / 审核说明缺失
-- **THEN** 仅读本次直接事实解释结论，不展开旧链；当前必要快照坏或读中变化时明确 unknown，不回退旧结论
-
-### Requirement: Reviewed impact and source applicability
-
-跨候选复用 SHALL 具有逐组材料适用性及当前必要修复 Review 的影响依据；相同候选 ID 不得绑定矛盾材料。公共权限、构建、依赖、配置、数据或环境变化须扩大实际复验；无法可靠界定时保留必要完整重跑。工具核对明确声明 / 来源的一致性，不认证任意源码或用全库 hash / 固定复测比例推断影响。
-
-#### Scenario: A local repair retains unaffected passes
-- **WHEN** 新候选的局部变化已由真实独立 Review 核对，受影响组已复验，其余来源有逐组仍适用理由
-- **THEN** 可将那些来源纳入新候选结论，不要求仅因来自多次尝试重跑全部长前缀
-
-#### Scenario: A common input changes
-- **WHEN** 变化影响公共依赖 / 权限 / 配置或无法可靠界定影响
-- **THEN** 扩大必要复验并阻断未确认组，不能只凭旧 PASS、相同脚本名或较少复测比例收口
-
-#### Scenario: Only explanatory material changes
-- **WHEN** 变化仅为说明 / 证据整理，真实受测材料及必要条件仍适用
-- **THEN** 记录具体适用理由，不机械废弃全部来源或新增无必要审核阶段
+#### Scenario: Partial or historical attempts cannot become new PASS
+- **WHEN** 请求把历史 PASS、局部 retest 或 Focused/Fast 与本次组合成正式通过
+- **THEN** 新正式结果与当前 Close 明确拒绝拼接，历史记录本身保持原貌

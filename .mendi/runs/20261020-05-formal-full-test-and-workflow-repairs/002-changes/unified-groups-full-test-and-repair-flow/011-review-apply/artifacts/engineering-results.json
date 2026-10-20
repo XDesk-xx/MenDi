@@ -1,0 +1,61 @@
+{
+  "recordedAt": "2026-10-20T11:21:05.007Z",
+  "checks": [
+    {
+      "id": "check",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm check"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "check.log"
+    },
+    {
+      "id": "build",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm build"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "build.log"
+    },
+    {
+      "id": "openspec",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "validate",
+        "unified-groups-full-test-and-repair-flow",
+        "--strict",
+        "--json"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "openspec.log"
+    },
+    {
+      "id": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "diff-check.log"
+    }
+  ],
+  "allPassed": true,
+  "limits": [
+    "Engineering and OpenSpec only; independent product semantic review is separate",
+    "No root Delivery Full Test/Close, Git commit, or stable install"
+  ]
+}

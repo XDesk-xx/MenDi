@@ -6,6 +6,9 @@ import { MendiError } from '../core/errors.ts';
 import { interpretReport } from '../core/group-report.ts';
 import { requireCurrentRound, recordRound } from '../core/round-records.ts';
 import type { Workspace } from '../core/records.ts';
+import { formalOutcome } from '../core/formal-attempt.ts';
+import { completionScope } from '../core/delivery-verification.ts';
+import { selectedTest } from './test-entries.ts';
 
 export const equal = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 export function rememberBytes(ref: string, value: Buffer, bytes: Map<string, Buffer>) {
@@ -46,8 +49,9 @@ export function inspectAttempt(
     ]),
   );
   if (
-    !equal(JSON.parse(identity.get(workspace.manifestRef)!.toString()), workspace.manifest) ||
-    !equal(JSON.parse(identity.get('.mendi/project.json')!.toString()), workspace.project)
+    !ownLock &&
+    (!equal(JSON.parse(identity.get(workspace.manifestRef)!.toString()), workspace.manifest) ||
+      !equal(JSON.parse(identity.get('.mendi/project.json')!.toString()), workspace.project))
   )
     throw new MendiError('changed-during-read', '当前身份在解释前变化。');
   captureBytes(root, run.ref, bytes);
@@ -116,8 +120,40 @@ export function inspectAttempt(
     }
   confirmBytes(root, bytes);
   confirmBytes(root, identity);
+  const outcome = a.version === 2 && observation ? formalOutcome(a.plan, observation) : undefined;
+  if (outcome === 'unknown') stable = false;
+  if (
+    a.version === 2 &&
+    a.phase === 'finished' &&
+    (outcome !== a.formalOutcome || run.record.result !== outcome)
+  )
+    throw new MendiError('invalid-run', '正式终态与直接读回矛盾。');
+  let scopeMatch = 'unavailable';
+  let commandMatch = 'unavailable';
+  try {
+    scopeMatch =
+      equal(a.scope, completionScope(workspace)) && a.roundId === workspace.currentRoundId
+        ? 'match'
+        : 'changed';
+  } catch {
+    /* 当前范围不可完整解释。 */
+  }
+  try {
+    const entry = selectedTest(root, 'full');
+    commandMatch = equal(entry, {
+      scriptName: a.entry.scriptName,
+      scriptText: a.entry.scriptText,
+      ...(a.entry.packageManager === undefined ? {} : { packageManager: a.entry.packageManager }),
+    })
+      ? 'match'
+      : 'changed';
+  } catch {
+    /* 历史事实不依赖当前配置可用。 */
+  }
   return {
     stable,
+    formalOutcome: stable ? outcome : 'unknown',
+    commandMatch,
     protocolState: stable ? (observation?.protocolState ?? 'unconfirmed') : 'unconfirmed',
     observation,
     child,
@@ -130,10 +166,7 @@ export function inspectAttempt(
     timing: a.timing,
     targetTiming: observation?.timing ?? [],
     unmeasured: ['目标未报告的内部阶段', '跨进程时钟的相对绝对值', '关键路径'],
-    scopeMatch:
-      equal(a.scope.goal, workspace.scope.goal) && a.roundId === workspace.currentRoundId
-        ? 'match'
-        : 'changed',
+    scopeMatch,
   };
 }
 export function inspectCandidate(
@@ -182,7 +215,11 @@ export function currentGroupProgress(root: string, workspace: Workspace, ownLock
   const run = readDeliveryRun(root, ref, workspace.id);
   requireCurrentRound(workspace, run.record);
   const facts = inspectAttempt(root, workspace, run, ownLock);
-  if (!facts.stable || facts.protocolState === 'unconfirmed')
+  const knownNotRun =
+    run.record.attempt?.version === 2 &&
+    run.record.attempt.formalOutcome === 'not-run' &&
+    run.record.attempt.observation?.notRun;
+  if (!facts.stable || (facts.protocolState === 'unconfirmed' && !knownNotRun))
     throw new MendiError('delivery-state-conflict', '当前执行 / 资源未确认。');
   return { run, facts };
 }

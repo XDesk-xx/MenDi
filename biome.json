@@ -9,7 +9,8 @@
       "tests/installation/**/*.ts",
       "tests/fixtures/storybook-project/**/*.ts",
       "tests/fixtures/d03-b-project/**/*.ts",
-      "tests/fixtures/group-*.ts"
+      "tests/fixtures/group-*.ts",
+      "tests/fixtures/legacy-*.ts"
     ]
   },
   "formatter": {

@@ -94,10 +94,13 @@ export function lifecycleTargets(run: DeliveryIntent, basis: LifecycleBefore) {
       if (
         before.state !== 'open' ||
         before.activeChangeId ||
-        before.manifest.deliveryRunRef !== (value.verificationRunRef ?? value.fullTestRunRef) ||
-        (value.verificationRunRef !== undefined
-          ? before.manifest.verificationRunRef !== value.verificationRunRef
-          : before.manifest.fullTestRunRef !== value.fullTestRunRef)
+        before.manifest.deliveryRunRef !==
+          (value.testAttemptRunRef ?? value.verificationRunRef ?? value.fullTestRunRef) ||
+        (value.testAttemptRunRef !== undefined
+          ? before.manifest.testAttemptRunRef !== value.testAttemptRunRef
+          : value.verificationRunRef !== undefined
+            ? before.manifest.verificationRunRef !== value.verificationRunRef
+            : before.manifest.fullTestRunRef !== value.fullTestRunRef)
       )
         throw new MendiError('invalid-lifecycle-basis', 'Close 原入口不一致。');
       manifest = projectProgress(before, {

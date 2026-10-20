@@ -5,7 +5,7 @@ import test from 'node:test';
 import { groupTarget, groupRun, attemptResult, writeGroupInput } from './group-support.ts';
 import { fullTestStatus } from '../src/application/delivery-full-test.ts';
 
-test('真实 pnpm 接收本次请求，完整组通过仍不是候选 verified', async () => {
+test('真实 pnpm 接收本次请求，完整组通过直接正式 passed，Close 仍等 Owner 授权', async () => {
   const { root } = groupTarget();
   const result = attemptResult(await groupRun(root));
   assert.equal(result.ok, true, JSON.stringify(result));
@@ -15,13 +15,15 @@ test('真实 pnpm 接收本次请求，完整组通过仍不是候选 verified',
     ['passed', 'passed', 'passed'],
   );
   assert.equal(result.groupExecution.child!.scope, 'command');
-  assert.equal(result.next.action, 'delivery-verification');
+  assert.equal(result.next.action, 'delivery-close');
+  assert.equal(result.run.attempt!.version, 2);
+  assert.equal(result.run.attempt!.formalOutcome, 'passed');
   assert.equal(fs.existsSync(path.join(root, '.mendi/write.lock')), false);
   const fresh = fullTestStatus({ project: root, runRef: result.run.ref });
   assert.ok('groupExecution' in fresh);
   assert.equal(fresh.groupExecution.protocolState, 'valid');
 });
-test('真实中段失败可续测独立尾项，原失败不变且禁止 initial 绕行', async () => {
+test('真实失败保留，禁止 continue 和无审核 initial 绕行', async () => {
   const { root, declaration } = groupTarget();
   fs.writeFileSync(
     path.join(root, 'middle.test.ts'),
@@ -57,15 +59,11 @@ test('真实中段失败可续测独立尾项，原失败不变且禁止 initial
     selection: ['tail'],
     fromRunRef: first.run.ref,
   });
-  const second = attemptResult(await groupRun(root));
-  assert.equal(second.ok, true, JSON.stringify(second));
-  assert.deepEqual(
-    second.run.attempt!.progress.map((p) => p.state),
-    ['passed', 'failed', 'passed'],
-  );
+  const second = await groupRun(root);
+  assert.equal(second.ok, false);
+  assert.equal('run' in second, false);
   assert.ok(fs.readFileSync(path.join(root, first.run.ref)).equals(bytes));
-  assert.equal(second.next.action, 'delivery-repair');
-  writeGroupInput(root, { ...declaration, fromRunRef: second.run.ref });
+  writeGroupInput(root, { ...declaration, fromRunRef: first.run.ref });
   const rejected = await groupRun(root);
   assert.equal(rejected.ok, false);
   assert.equal('run' in rejected, false);

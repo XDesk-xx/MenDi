@@ -6,9 +6,7 @@ role: author
 
 # Delivery Close
 
-显式组模式按[组级协议](../../group-tests.md)使用当前 verificationRunRef：与 fullTestRunRef 恰选其一，须稳定 verified 和完整本地 candidate-verification 快照。只消费结论自身快照，不递归旧来源 / Review 正文；新 attempt / repair 替代旧结论后不能回退旧 verified。以下父 / 子日志规则继续用于旧单次分支。
-
-仅在 Owner 授权后由 Author 对当前 open product Delivery 收口。声明 JSON 包含当前 `fullTestRunRef` 和 `applicability:{conclusion:"applicable",materials,changes,reason}`；材料与理由非空，差异必须明确填写，可为空文本表示无差异。实际检查本轮范围、两个当前正式指针、完整批准快照、稳定 known passed 父 / 子及必要日志、当前执行命令。
+按[组级协议](../../group-tests.md)只消费当前完整 v2 groups-v1 正式 passed。仅在 Owner 另行授权后由 Author 对当前 open product 当前轮收口。声明 JSON 唯一选择 `testAttemptRunRef`，并含 `applicability:{conclusion:"applicable",materials,changes,reason}`；材料与理由非空，差异明确填文本。输入等于 manifest.testAttemptRunRef 和最新 manifest.deliveryRunRef，实际核对轮次、范围、批准/基线快照、全部必需覆盖、真实协议/子结果/清理/日志及当前命令，保存 typed v2 acceptance。旧 fullTestRunRef / verificationRunRef 选择器单独或混用都不能新 Close；已完成历史 Close 按原类型继续只读。
 
 Author 核对真实材料与差异是否仍适用，并把判断、执行快照与范围保存到 Close。工具成功和 actor 字段不证明源码、Owner 授权或独立语义认证。普通 PASS、failed / not-run / interrupted / unknown、当前活动 Change、修复或陈旧入口都不能收口。说明整理可沿用可靠且适用的正式结果。
 

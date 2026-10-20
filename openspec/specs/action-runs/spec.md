@@ -407,7 +407,7 @@ Delivery 操作 SHALL 在 runs/<delivery-id>/<序号>-<操作名称>/run.md 与 
 
 ### Requirement: Current delivery progress and minimal handoff
 
-Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链。修复与 Review 保持既有交接；passed 仅待 Owner。closed 当前选择 Close；Reopen / Open 完成后提示范围内显式 bind，退出旧 PASS 的当前适用选择但保留最近正式入口。待提交生命周期写入与 unknown MUST 停 Owner 核对 / 显式有限继续。next 只包含当前必要入口，不自动执行或累积旧 Close / 审核链。
+Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链。实质修复与独立 Review 沿用原交接；新 groups-v1 完整正式 Run 自身 passed 即待 Owner 另行授权收口，不增加例行 verification 或 owner-decision。已知普通环境问题按核实事实进行新完整执行，不生成空 Repair/Review Runs。closed 当前选择 Close；Reopen / Open 完成后提示范围内显式 bind，退出旧 PASS 的当前适用选择但保留最近正式入口。待提交生命周期写入与 unknown MUST 停 Owner 核对 / 显式有限继续。next 只包含当前必要入口，不自动执行或累积旧 Close / 审核链。
 
 #### Scenario: Repair completes and reviewer continues
 - **WHEN** Author 修复 complete，随后独立 Review 开始并提交 continuing
@@ -432,6 +432,18 @@ Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链�
 #### Scenario: Current close is retained without execution revalidation
 - **WHEN** 当前 Delivery 为完整 closed，Close 头部 / 摘要与 manifest 一致
 - **THEN** query 展示持久收口事实与等待 Owner 提示，只引用其正式入口供显式查询；不递归检查旧测试 / 审核正文，也不重新认证受测材料
+
+#### Scenario: New complete formal pass needs no aggregation
+- **WHEN** 当前新正式 Full Test Run 自身稳定 passed 且当前范围有效
+- **THEN** next 提示 Owner 决定是否单独授权 Close，不要求创建 verification Run、也不要求对 PASS 作额外 owner-decision
+
+#### Scenario: Failure repair versus confirmed environment retry
+- **WHEN** 当前必需组明确业务失败或测试合同需实变，或仅有已确认环境准备阻断且现场已安全恢复
+- **THEN** 前者 next 指向 delivery-repair 并等待独立 review-delivery-repair，后者可直接提示新完整正式执行，保留旧失败记录
+
+#### Scenario: Unknown runtime must not appear passed
+- **WHEN** 实际执行、清理或持久提交未确认，或新读回与本次保存不一致
+- **THEN** next 停 Owner 核查本次现场，不回退历史 verified 或自动解锁、重试
 
 ### Requirement: Delivery methods and direct review input
 

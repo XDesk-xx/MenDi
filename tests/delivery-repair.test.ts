@@ -200,7 +200,7 @@ test('修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 
   fs.unlinkSync(path.join(root, a.run.ref));
   assert.equal(repair(root, fresh.run!.ref).run.actionType, 'delivery-repair');
 });
-test('两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程', async () => {
+test('两项真实归档 → 旧 command 失败夹具 / focused / 修复审核 → 历史读回及异目录新进程', async () => {
   const root = completedTarget(true);
   const data = manifest(root);
   const bindings = JSON.stringify(data.changeBindings);
@@ -228,7 +228,9 @@ test('两项真实归档 → 正式接线失败 → focused → 定向审核夹�
   ];
   const failedCommand = cli(args, path.dirname(root), env);
   assert.equal(failedCommand.status, 1, failedCommand.stdout);
-  const failedResult = JSON.parse(failedCommand.stdout);
+  assert.equal(JSON.parse(failedCommand.stdout).error.code, 'invalid-group-input');
+  const failedResult = await formal(root);
+  assert.ok('verification' in failedResult && failedResult.verification.child && failedResult.run);
   assert.equal(failedResult.verification.outcome, 'failed');
   assert.equal(failedResult.verification.child.exitCode, 1);
   const failureRef = failedResult.run.ref;
@@ -298,9 +300,8 @@ test('两项真实归档 → 正式接线失败 → focused → 定向审核夹�
   assert.equal(reviewCommand.status, 0, reviewCommand.stdout);
   const r = JSON.parse(reviewCommand.stdout);
   finishRepair(root, r.run.ref, 'reviewer', 'complete', 'approved');
-  const passedCommand = cli(args, path.dirname(root), env);
-  assert.equal(passedCommand.status, 0, passedCommand.stdout);
-  const passed = JSON.parse(passedCommand.stdout);
+  const passed = await formal(root);
+  assert.ok('verification' in passed && passed.verification.child && passed.run);
   assert.equal(passed.verification.outcome, 'passed');
   const groups = fs
     .readFileSync(path.join(root, 'executed-groups.jsonl'), 'utf8')

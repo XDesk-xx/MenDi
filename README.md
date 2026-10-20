@@ -51,7 +51,7 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --projec
 
 `--help` 列出 delivery open / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
 
-稳定版 0.2.0 的 Full Test 仍兼容旧 command，并提供显式 `groups-v1` 计划 / 回执、同轮续测、影响复验及多来源候选结论，详见[组级协议](skills/group-tests.md)；必需 skip / TODO / 取消 / 零业务执行留下缺口。这是 D04 已交付能力的描述，**不是 D05 的新正式验收规则**；D05-A 将统一未来正式执行为完整 groups-v1，修复后重新全量运行，旧历史保持可读。
+稳定安装 0.2.0 的旧 command / 分组与多来源历史继续按旧合同可读。当前 D05-A 源码候选将新正式执行统一为 groups-v1 完整 initial，所有必需组本次真实执行并稳定读回才由该 Run 自身 passed；修复审核后重新全量，不再新建 continue/retest/verification。新 Close 唯一输入 testAttemptRunRef；方法、计划与恢复声明见[组级协议](skills/group-tests.md)。D05-A 已完成 Apply、独立 Review Apply approved 及 OpenSpec 原生 Archive 014，四份主规格已同步；源码尚未经过 D05 Delivery 正式 Full Test、Close 与单独发布，当前稳定安装仍为 0.2.0，不能把代码审核和局部测试冒充发布验收。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -117,10 +117,10 @@ pnpm test:ui
 
 - Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
 - 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
-- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05 新的 Full Test 规则和其他能力尚未实现。
+- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05-A 新的 Full Test 规则已在源码实现、独立审核并归档，D05-B/C/D 尚未实现，D05 整体尚未正式验收或发布。
 
 ## 开发交接
 
-当前活动 Delivery 为 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json)，按 2026-10-20 Owner 授权以 manual-bootstrap 完成 [001 Open](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。四个槽位 A/B/C/D 已登记，activeChangeId 为 null；停在 delivery-checkpoint / author，尚未激活任何 Change。长期规划统一查看根路线图 §7 D05。
+当前活动 Delivery 与阶段读取 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json) 及其最近 Run；初始人工 Open 见 [001](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。D05-A 已在 012 Archive 确认归档（OpenSpec 归档序号 014），当前 activeChangeId=null、下一步为 change-checkpoint；D05-B/C/D 尚未激活，继续须按 Owner 授权。长期规划统一查看根路线图 §7 D05。
 
-[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，累计归档 13；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05 Git 分支已建立，但未 commit/push、未执行 D05 正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。
+[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，D04 归档截止为 013；D05-A 现已登记 014，项目累计归档 14；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05 Git 分支已建立，但未 commit/push、未执行 D05 正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。

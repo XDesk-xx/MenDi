@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 1 - P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 94808.7975
+  type: 'test'
+  ...
+# Subtest: P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 2 - P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 14785.5332
+  type: 'test'
+  ...
+# Subtest: 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+ok 3 - 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+  ---
+  duration_ms: 8320.7981
+  type: 'test'
+  ...
+# Subtest: 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 4 - 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 17533.9979
+  type: 'test'
+  ...
+# Subtest: 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 5 - 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 11724.976
+  type: 'test'
+  ...
+# Subtest: 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+ok 6 - 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+  ---
+  duration_ms: 7434.077
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 155409.1005

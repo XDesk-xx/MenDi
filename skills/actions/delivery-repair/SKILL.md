@@ -6,9 +6,9 @@ role: author
 
 # Delivery 范围内修复
 
-显式组模式按[组级协议](../../group-tests.md)固定当前扁平进展中未解决的直接失败；最新尾项通过也可修原中段。通过 --input 给出完整影响 / 沿用与候选声明，公共 / 未知影响须扩大复验，实际修复完成仍交独立审核。下述整次 collection 规则用于旧 command。
+新正式失败按[组级协议](../../group-tests.md)固定本轮当前直接失败、完整计划及实际受测候选。通过 --input 给出真实影响与候选；影响分析不能缩减下一次正式 selection。源码、断言和入口/配置语义修复须记录实际差异、必要 focused / fast 和限制，完成后交独立审核。已存旧 command failed 同样可以实质修复 / 审核后首次转入新完整 v2 groups-v1，无须补造旧 attempt。
 
-固定当前完整正式 failed、范围和原整个 collection，说明实际问题与范围。局部修复或无需改代码的失败分析都须如实记录原因、实际材料、差异、必要 focused / fast 验证及限制；不要声称仅凭记录命令已修复。
+已确认的纯环境准备失败/blocked，无业务或执行语义改变且本项目资源安全恢复时，按协议保留原失败与 environmentRecovery 证据，免空 Repair/Review；不凭 reason 字符串分类。外部资源、未知执行/清理/锁停 Owner，语义实变回本方法。
 
 在同一 draft 保存正常工作与检查；未完成以 continuing 提交后沿同 Action continue。complete 后交实际独立 Reviewer。正式交接后的实质修订另建 revise-delivery-repair，固定当前直接 Author，旧 verdict / Run 保持，新 Author 必须再次审核。
 

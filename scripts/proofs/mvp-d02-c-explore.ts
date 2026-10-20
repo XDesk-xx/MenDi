@@ -10,7 +10,7 @@ import {
   writeManifest,
   fullInput,
 } from '../../tests/delivery-support.ts';
-import { runFullTest } from '../../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from '../../tests/fixtures/legacy-command.ts';
 import { readDeliveryRun } from '../../src/adapters/delivery-runs.ts';
 import { readExecution } from '../../src/adapters/test-store.ts';
 import { bindChange } from '../../src/application/project.ts';

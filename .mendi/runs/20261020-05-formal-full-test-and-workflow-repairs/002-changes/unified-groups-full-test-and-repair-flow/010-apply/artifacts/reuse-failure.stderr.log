@@ -1,0 +1,7 @@
+$ node group-runner.ts
+Warning: Detected unsettled top-level await at file:///D:/Projects/MenDi/.tmp/mendi-apply-31OrIn/project/reuse.ts:70
+  await Promise.all(
+  ^
+
+
+

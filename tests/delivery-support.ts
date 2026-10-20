@@ -1,3 +1,4 @@
+import { writeLegacyCommand } from './fixtures/legacy-command.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -6,11 +7,7 @@ import { archiveAction } from '../src/application/archive.ts';
 import { archiveInput } from './archive-support.ts';
 import { pnpmEntry, prepareEmptyDependencies } from './test-support.ts';
 import { repository, sandbox } from './helpers.ts';
-import {
-  runFullTest,
-  fullTestStatus,
-  type FullTestOptions,
-} from '../src/application/delivery-full-test.ts';
+import { fullTestStatus, type FullTestOptions } from '../src/application/delivery-full-test.ts';
 import { saveRun, submitRun } from '../src/application/actions.ts';
 
 export const authorActor = 'delivery-author';
@@ -78,7 +75,7 @@ export function verificationTarget() {
   return root;
 }
 export async function formal(root: string, options: FullTestOptions = {}) {
-  const result = await runFullTest(fullInput(root), options);
+  const result = await writeLegacyCommand(fullInput(root), options);
   const evidence = process.env.MENDI_TEST_EVIDENCE_DIR;
   if (evidence) {
     const logs: Record<string, string> = {};

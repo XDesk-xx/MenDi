@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { actionTarget, options, author, startAuthor } from './action-support.ts';
 import { startAction } from '../src/application/actions.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from './fixtures/legacy-command.ts';
 import { fullInput, verificationTarget } from './delivery-support.ts';
 import { releaseProjectLock } from '../src/adapters/workspace.ts';
 import { legacyFixture, legacyTarget, preview } from './migration-support.ts';

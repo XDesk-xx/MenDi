@@ -5,7 +5,7 @@ import { spawn } from 'node:child_process';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { formal, verificationTarget, fullInput } from './delivery-support.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from './fixtures/legacy-command.ts';
 import { acquireProjectLock } from '../src/adapters/workspace.ts';
 import { query } from '../src/application/project.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';

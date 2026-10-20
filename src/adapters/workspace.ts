@@ -88,9 +88,11 @@ export function readWorkspace(
       delivery.record.status !== 'submitted' ||
       JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
       (lifecycle.operation === 'delivery-close' &&
-        ((lifecycle.verificationRunRef !== undefined
-          ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
-          : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
+        ((lifecycle.testAttemptRunRef !== undefined
+          ? lifecycle.testAttemptRunRef !== workspace.manifest.testAttemptRunRef
+          : lifecycle.verificationRunRef !== undefined
+            ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
+            : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
           JSON.stringify(lifecycle.acceptance?.scope) !==
             JSON.stringify(completionScope(workspace)))) ||
       (workspace.manifest.formatVersion === 1 &&

@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+ok 1 - 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+  ---
+  duration_ms: 85195.8447
+  type: 'test'
+  ...
+# Subtest: 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+ok 2 - 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+  ---
+  duration_ms: 45924.6077
+  type: 'test'
+  ...
+# Subtest: changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+ok 3 - changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+  ---
+  duration_ms: 11483.7627
+  type: 'test'
+  ...
+# Subtest: 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+ok 4 - 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+  ---
+  duration_ms: 17094.2157
+  type: 'test'
+  ...
+# Subtest: 两项真实归档 → 旧 command 失败夹具 / focused / 修复审核 → 历史读回及异目录新进程
+ok 5 - 两项真实归档 → 旧 command 失败夹具 / focused / 修复审核 → 历史读回及异目录新进程
+  ---
+  duration_ms: 52616.7235
+  type: 'test'
+  ...
+# Subtest: 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+ok 6 - 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+  ---
+  duration_ms: 15939.3961
+  type: 'test'
+  ...
+# Subtest: 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+ok 7 - 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+  ---
+  duration_ms: 40237.8398
+  type: 'test'
+  ...
+# Subtest: 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+ok 8 - 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+  ---
+  duration_ms: 6225.3804
+  type: 'test'
+  ...
+# Subtest: 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+ok 9 - 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+  ---
+  duration_ms: 6712.8632
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 10 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 67630.5519
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 11 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 6126.4381
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 12 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 25430.6753
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 13 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 398.2758
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 14 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 72120.6837
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 239039.1056

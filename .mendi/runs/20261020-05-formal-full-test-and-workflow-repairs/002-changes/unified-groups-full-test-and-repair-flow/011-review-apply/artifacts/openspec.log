@@ -1,0 +1,35 @@
+$ C:\nvm4w\nodejs\node.exe D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate unified-groups-full-test-and-repair-flow --strict --json
+# stdout
+{
+  "items": [
+    {
+      "id": "unified-groups-full-test-and-repair-flow",
+      "type": "change",
+      "valid": true,
+      "issues": [],
+      "durationMs": 66
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}
+
+# stderr
+

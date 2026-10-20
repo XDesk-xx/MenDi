@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
 import { renderRun, scanRunNumbers } from '../src/adapters/runs.ts';

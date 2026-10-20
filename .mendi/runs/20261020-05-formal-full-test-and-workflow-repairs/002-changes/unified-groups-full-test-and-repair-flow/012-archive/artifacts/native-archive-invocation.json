@@ -1,0 +1,17 @@
+{
+  "start": "2026-10-20T11:41:35.786Z",
+  "completed": "2026-10-20T11:41:37.511Z",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "archive",
+    "unified-groups-full-test-and-repair-flow",
+    "--json",
+    "--yes"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"archive\": {\n    \"change\": \"unified-groups-full-test-and-repair-flow\",\n    \"archivedAs\": \"2026-10-20-unified-groups-full-test-and-repair-flow\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\archive\\\\2026-10-20-unified-groups-full-test-and-repair-flow\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 3,\n      \"modified\": 10,\n      \"removed\": 3,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

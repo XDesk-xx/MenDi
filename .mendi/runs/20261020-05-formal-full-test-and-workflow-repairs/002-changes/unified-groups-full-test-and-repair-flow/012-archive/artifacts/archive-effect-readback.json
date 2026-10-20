@@ -1,0 +1,45 @@
+{
+  "archiveRef": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+  "ordinal": 14,
+  "archiveMovedFrom": "openspec/changes/archive/2026-10-20-unified-groups-full-test-and-repair-flow",
+  "nativeExit": 0,
+  "archiveOutput": {
+    "change": "unified-groups-full-test-and-repair-flow",
+    "archivedAs": "2026-10-20-unified-groups-full-test-and-repair-flow",
+    "path": "D:\\Projects\\MenDi\\openspec\\changes\\archive\\2026-10-20-unified-groups-full-test-and-repair-flow",
+    "specsUpdated": true,
+    "totals": {
+      "added": 3,
+      "modified": 10,
+      "removed": 3,
+      "renamed": 0
+    }
+  },
+  "sourceRemoved": true,
+  "originalNativeRemoved": true,
+  "targetExists": true,
+  "specValidations": [
+    {
+      "name": "action-runs",
+      "valid": true,
+      "exitCode": 0
+    },
+    {
+      "name": "delivery-lifecycle",
+      "valid": true,
+      "exitCode": 0
+    },
+    {
+      "name": "delivery-verification",
+      "valid": true,
+      "exitCode": 0
+    },
+    {
+      "name": "test-execution",
+      "valid": true,
+      "exitCode": 0
+    }
+  ],
+  "tasksComplete": true,
+  "reviewApproved": true
+}

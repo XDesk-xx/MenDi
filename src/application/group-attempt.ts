@@ -18,12 +18,13 @@ import {
   type GroupRequest,
   type ProtocolObservation,
 } from '../core/group-report.ts';
-import { deliveryNext } from '../core/delivery-runs.ts';
+import { deliveryNext } from '../core/delivery-next.ts';
 import { MendiError, errorInfo } from '../core/errors.ts';
 import { groupAdmission, confirmGroupInputs } from './group-admission.ts';
 import { executeTestUnderLease, executionState } from './test-execution.ts';
 import type { FullTestInput, FullTestOptions } from './delivery-full-test.ts';
 import { state } from './project.ts';
+import { formalOutcome } from '../core/formal-attempt.ts';
 
 export async function runGroupAttempt(
   input: FullTestInput,
@@ -267,6 +268,7 @@ export async function runGroupAttempt(
       phase: 'finished',
       executionId: execution.executionId,
       observation,
+      formalOutcome: formalOutcome(a.plan, observation),
       progress,
       timing: [
         {
@@ -289,15 +291,7 @@ export async function runGroupAttempt(
         attempt,
         status: 'submitted',
         outcome: 'complete',
-        result:
-          precheckError || observation.notRun
-            ? 'not-run'
-            : observation.protocolState === 'valid'
-              ? execution.outcome
-              : execution.outcome === 'interrupted' ||
-                  (observation.protocolState === 'unconfirmed' && observation.cancelled)
-                ? 'interrupted'
-                : 'invalid',
+        result: attempt.formalOutcome,
       },
       run.body,
       written,
@@ -326,13 +320,13 @@ export async function runGroupAttempt(
       { flag: 'wx' },
     );
     written.push(timingRef);
-    if (!facts.stable)
+    if (!facts.stable || facts.formalOutcome !== attempt.formalOutcome)
       throw new MendiError('delivery-readback-failed', '结构化父子结果读回未确认。');
     options.observeWrite?.('before-lock-release', lease.lock);
     releaseProjectLock(root, lease);
     lease = undefined;
     return {
-      ok: observation.protocolState === 'valid' && execution.outcome === 'passed',
+      ok: facts.formalOutcome === 'passed',
       operation: 'delivery-full-test-run',
       projectRoot: root,
       openspec: null,

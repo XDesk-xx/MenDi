@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+ok 1 - 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+  ---
+  duration_ms: 77741.4725
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 78846.8567

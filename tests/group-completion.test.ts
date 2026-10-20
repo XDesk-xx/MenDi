@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { groupTarget, groupRun, attemptResult } from './group-support.ts';
+import { groupTarget, groupRun, attemptResult, recordApplyScene } from './group-support.ts';
 import { repository } from './helpers.ts';
 import { groupEventReader } from '../src/adapters/group-events.ts';
 
@@ -79,4 +79,5 @@ test('构建失败只阻断依赖，独立后项仍实际执行并收集多个�
     result.run.attempt!.progress.map((p) => p.state),
     ['failed', 'blocked', 'failed'],
   );
+  recordApplyScene('P01-collection', root, result);
 });

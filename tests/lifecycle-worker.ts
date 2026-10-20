@@ -1,4 +1,7 @@
 import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle as legacyLifecycle } from './fixtures/legacy-lifecycle.ts';
+import fs from 'node:fs';
+import path from 'node:path';
 import { openDelivery } from '../src/application/project.ts';
 import { errorInfo, MendiError } from '../src/core/errors.ts';
 const [project, operation, fault] = process.argv.slice(2);
@@ -24,7 +27,10 @@ try {
           },
           options,
         )
-      : deliveryLifecycle(
+      : (operation === 'close' &&
+          JSON.parse(fs.readFileSync(path.join(project, 'close.json'), 'utf8')).fullTestRunRef
+          ? legacyLifecycle
+          : deliveryLifecycle)(
           operation === 'close' ? 'delivery-close' : 'delivery-reopen',
           {
             project,

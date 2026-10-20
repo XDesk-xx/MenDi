@@ -57,6 +57,41 @@ export function groupTarget() {
 export function writeGroupInput(root: string, value: unknown) {
   fs.writeFileSync(path.join(root, 'group-input.json'), JSON.stringify(value, null, 2));
 }
+/** Apply 的少量指定场景快照；输入仍由受控 tests 重建，不复制历史树。 */
+export function recordApplyScene(
+  label: string,
+  root: string,
+  result: Awaited<ReturnType<typeof groupRun>>,
+  extra: unknown = null,
+) {
+  const evidence = process.env.MENDI_APPLY_EVIDENCE;
+  if (!evidence || !result.run) return;
+  const a = result.run.attempt;
+  const group = 'groupExecution' in result ? result.groupExecution : undefined;
+  const read = (ref: string) => fs.readFileSync(path.join(root, ref), 'utf8');
+  fs.writeFileSync(
+    path.join(evidence, `${label}-${process.pid}.json`),
+    JSON.stringify(
+      {
+        label,
+        authority: '隔离产品场景；actor / verdict 为夹具，不认证 MenDi 根审核',
+        result: {
+          ok: result.ok,
+          run: result.run,
+          groupExecution: group,
+          next: 'next' in result ? result.next : null,
+        },
+        extra,
+        report: a?.request ? JSON.parse(read(a.request.reportRef)) : null,
+        stdout: group?.child ? read(group.child.stdoutRef) : null,
+        stderr: group?.child ? read(group.child.stderrRef) : null,
+      },
+      null,
+      2,
+    ) + '\n',
+    { flag: 'wx' },
+  );
+}
 export async function groupRun(root: string, options: FullTestOptions = {}) {
   const result = await runFullTest({ ...fullInput(root), inputFile: 'group-input.json' }, options);
   const dir = process.env.MENDI_TEST_EVIDENCE_DIR;

@@ -277,8 +277,8 @@ Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选�
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
 submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
 actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询，不通过产品 Open / Close / Reopen 迁移历史。
-Close JSON 恰选 fullTestRunRef 或 verificationRunRef，并包含 applicability:{conclusion:"applicable",materials,changes,reason}；材料 / 理由非空，差异明确填文本。
-显式 mode:groups-v1 使用 mendi-group-tests/1、planRef、candidate、purpose:initial|continue|retest、selection；后续 fromRunRef 固定当前进展。
+新 Close JSON 唯一选择 testAttemptRunRef，并包含 applicability:{conclusion:"applicable",materials,changes,reason}；旧选择器仅历史读取。
+新正式 Full Test 唯一使用 mode:groups-v1、mendi-group-tests/1、planRef、candidate、purpose:initial、全部必需 selection；fromRunRef 固定当前进展，修复后重新全量。
 组修复 start 可用 --input <影响 JSON> 声明 candidate、extent、affectedGroupIds、retained 与 reason；方法见 skills/group-tests.md。
 closed 默认查询只展示持久 Close，不重新读取旧正式日志；显式 formal / test status 仍检查必要日志。
 历史 --delivery 选择只读，不改 activeDeliveryId；结果 ok 与当前材料适用性分开，旧 PASS 不覆盖新工作。

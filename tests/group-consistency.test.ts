@@ -3,12 +3,14 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { groupTarget, groupRun, attemptResult } from './group-support.ts';
-import { createVerification } from '../src/application/candidate-verification.ts';
+import { inspectAttempt } from '../src/adapters/group-store.ts';
+import { readWorkspace } from '../src/adapters/workspace.ts';
+import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
 import { parseDeliveryRun } from '../src/core/delivery-runs.ts';
 import { scanRunNumbers } from '../src/adapters/runs.ts';
 import { errorInfo } from '../src/core/errors.ts';
 
-test('多个组共用来源时读中变化不能覆盖第一份直接快照', async (t) => {
+test('v2 直接读回中报告变化不能覆盖首次快照或发布 passed', async (t) => {
   const { root, declaration } = groupTarget();
   const attempt = attemptResult(await groupRun(root));
   fs.writeFileSync(
@@ -35,7 +37,7 @@ test('多个组共用来源时读中变化不能覆盖第一份直接快照', as
   // 当前进展读 / 复核一对，首个显式来源读 / 复核一对。首来源复核返回后模拟另一写者修改报告。
   t.mock.method(fs, 'readFileSync', ((...args: Parameters<typeof fs.readFileSync>) => {
     const value = read(...args);
-    if (path.normalize(String(args[0])) === report && ++reads === 4) {
+    if (path.normalize(String(args[0])) === report && ++reads === 1) {
       const changed = JSON.parse(value.toString());
       changed.groups[0].counts.total++;
       changed.groups[0].counts.passed++;
@@ -45,12 +47,11 @@ test('多个组共用来源时读中变化不能覆盖第一份直接快照', as
     return value;
   }) as typeof fs.readFileSync);
   try {
-    outcome = createVerification({
-      project: root,
-      inputFile: 'verify.json',
-      role: 'author',
-      actor: 'delivery-author',
-    });
+    outcome = inspectAttempt(
+      root,
+      readWorkspace(root)!,
+      readDeliveryRun(root, attempt.run.ref, 'd01'),
+    );
   } catch (e) {
     error = e;
   } finally {

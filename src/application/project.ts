@@ -20,7 +20,7 @@ import {
   inspectFullTest,
   assertBindingAfterVerification,
 } from '../adapters/delivery-verification.ts';
-import { deliveryNext } from '../core/delivery-runs.ts';
+import { deliveryNext } from '../core/delivery-next.ts';
 import { currentBatchId } from '../core/batches.ts';
 import { recordedOpen } from './delivery-lifecycle.ts';
 import { initialRound, requireWritable } from '../core/rounds.ts';

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { openDelivery, query } from '../src/application/project.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from './fixtures/legacy-command.ts';
 import { testStatus, runTest } from '../src/application/tests.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { scanRunNumbers } from '../src/adapters/runs.ts';

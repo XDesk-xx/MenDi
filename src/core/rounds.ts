@@ -175,7 +175,7 @@ export function readRounds(manifest: Record<string, unknown>, deliveryId: string
       (!round.closedOn ||
         !round.closeRunRef ||
         round.deliveryRunRef !== round.closeRunRef ||
-        (!round.fullTestRunRef && !round.verificationRunRef))
+        (!round.fullTestRunRef && !round.verificationRunRef && !round.testAttemptRunRef))
     )
       invalid('closed 轮次缺少一致收口。');
     if (round.state === 'open' && (round.closedOn || round.closeRunRef))

@@ -3,7 +3,7 @@ import { inspectProject } from '../adapters/project.ts';
 import { managedPath, present } from '../adapters/paths.ts';
 import { readWorkspace, guardProductWrite, type WriteObserver } from '../adapters/workspace.ts';
 import { readDeliveryRun, currentDeliveryRun } from '../adapters/delivery-runs.ts';
-import { inspectFullTest, same } from '../adapters/delivery-verification.ts';
+import { same } from '../adapters/delivery-verification.ts';
 import { loadMethods } from '../adapters/methods.ts';
 import type { OpenSpec } from '../adapters/openspec.ts';
 import {
@@ -13,7 +13,7 @@ import {
 } from '../adapters/lifecycle-store.ts';
 import { applicability, type Lifecycle, type LifecycleType } from '../core/delivery-lifecycle.ts';
 import { completionScope, verificationScope } from '../core/delivery-verification.ts';
-import { deliveryNext } from '../core/delivery-runs.ts';
+import { deliveryNext } from '../core/delivery-next.ts';
 import { bindingFor, readScope, type Workspace } from '../core/records.ts';
 import { assertAssociationAvailable } from '../core/associations.ts';
 import { MendiError, object, text } from '../core/errors.ts';
@@ -21,7 +21,7 @@ import { state, selected, type OpenInput, type OperationOptions } from './projec
 import { requireWritable } from '../core/rounds.ts';
 import { deliveredBaselines } from '../adapters/baselines.ts';
 import { checkBaselineSnapshot } from '../core/baselines.ts';
-import { inspectCandidate } from '../adapters/group-store.ts';
+import { inspectAttempt, captureBytes } from '../adapters/group-store.ts';
 
 export interface LifecycleInput {
   project: string;
@@ -108,23 +108,32 @@ export function confirmLifecycle(root: string, workspace: Workspace | null, life
     workspace.state !== 'open' ||
     workspace.activeChangeId ||
     workspace.manifest.deliveryRunRef !==
-      (lifecycle.verificationRunRef ?? lifecycle.fullTestRunRef) ||
-    (lifecycle.verificationRunRef !== undefined
-      ? workspace.manifest.verificationRunRef !== lifecycle.verificationRunRef
-      : workspace.manifest.fullTestRunRef !== lifecycle.fullTestRunRef)
+      (lifecycle.testAttemptRunRef ?? lifecycle.verificationRunRef ?? lifecycle.fullTestRunRef) ||
+    (lifecycle.testAttemptRunRef !== undefined
+      ? workspace.manifest.testAttemptRunRef !== lifecycle.testAttemptRunRef
+      : lifecycle.verificationRunRef !== undefined
+        ? workspace.manifest.verificationRunRef !== lifecycle.verificationRunRef
+        : workspace.manifest.fullTestRunRef !== lifecycle.fullTestRunRef)
   )
     throw new MendiError('delivery-state-conflict', 'Close 需要当前本轮正式入口与两个指针一致。');
-  if (lifecycle.verificationRunRef !== undefined) {
-    const run = readDeliveryRun(root, lifecycle.verificationRunRef, workspace.id);
-    const facts = inspectCandidate(root, workspace, run, true);
+  if (lifecycle.testAttemptRunRef !== undefined) {
+    const run = readDeliveryRun(root, lifecycle.testAttemptRunRef, workspace.id);
+    const facts = inspectAttempt(root, workspace, run, true);
+    const a = run.record.attempt;
     verificationScope(workspace);
     checkBaselineSnapshot(workspace.scope, lifecycle.acceptance?.baselineFacts ?? []);
     if (
+      !a ||
+      a.version !== 2 ||
+      a.roundId !== workspace.currentRoundId ||
       !facts.stable ||
-      facts.conclusion !== 'verified' ||
-      !same(run.record.verification, lifecycle.acceptance) ||
-      !same(run.record.verification?.scope, completionScope(workspace)) ||
-      run.record.verification?.approvals.some(
+      facts.formalOutcome !== 'passed' ||
+      facts.protocolState !== 'valid' ||
+      facts.scopeMatch !== 'match' ||
+      facts.commandMatch !== 'match' ||
+      !same(a, lifecycle.acceptance) ||
+      !same(a.scope, completionScope(workspace)) ||
+      a.approvals.some(
         (f) =>
           workspace.bindings.find((b) => b.changeId === f.changeId)?.latestRunRef !==
           f.archiveRunRef,
@@ -132,32 +141,14 @@ export function confirmLifecycle(root: string, workspace: Workspace | null, life
     )
       throw new MendiError(
         'delivery-close-unavailable',
-        '需要本轮当前稳定 verified 与完整本地快照。',
+        '需要本轮当前稳定 v2 passed、全部必需组与一致直接快照。',
       );
     return;
   }
-  const run = readDeliveryRun(root, lifecycle.fullTestRunRef!, workspace.id);
-  checkBaselineSnapshot(workspace.scope, lifecycle.acceptance?.baselineFacts ?? []);
-  verificationScope(workspace);
-  const facts = inspectFullTest(root, workspace, run, true);
-  if (
-    run.record.status !== 'submitted' ||
-    run.record.outcome !== 'complete' ||
-    !facts.stable ||
-    facts.outcome !== 'passed' ||
-    facts.scopeMatch !== 'match' ||
-    facts.commandMatch !== 'match' ||
-    !same(run.record.fullTest, lifecycle.acceptance) ||
-    run.record.fullTest?.approvals.some(
-      (fact) =>
-        workspace.bindings.find((binding) => binding.changeId === fact.changeId)?.latestRunRef !==
-        fact.archiveRunRef,
-    )
-  )
-    throw new MendiError(
-      'delivery-close-unavailable',
-      '需要稳定 known passed、当前范围 / 命令与完整批准快照。',
-    );
+  throw new MendiError(
+    'historical-close-read-only',
+    '旧验收 Close 仅供已完成历史读取，不接受新的写入或未完成恢复。',
+  );
 }
 function output(
   root: string,
@@ -189,7 +180,17 @@ export function deliveryLifecycle(
   const { root } = inspectProject(input.project);
   guardProductWrite(root);
   const methods = loadMethods(type, [], options.methodsRoot);
-  if (input.resumeRef)
+  if (input.resumeRef) {
+    if (type === 'delivery-close') {
+      if (
+        !readDeliveryRun(root, input.resumeRef, input.resumeRef.split('/')[2]).record.lifecycle
+          ?.testAttemptRunRef
+      )
+        throw new MendiError(
+          'historical-close-read-only',
+          '旧 Close 只读，未完成的旧写入先用兼容版本核对恢复。',
+        );
+    }
     return output(
       root,
       type,
@@ -203,6 +204,7 @@ export function deliveryLifecycle(
       ),
       methods,
     );
+  }
   const workspace = readWorkspace(root);
   product(workspace);
   const basis = inputBasis(
@@ -213,15 +215,18 @@ export function deliveryLifecycle(
   const declared = object(JSON.parse(basis.input.content), '生命周期声明');
   let lifecycle: Lifecycle;
   if (type === 'delivery-close') {
-    if ((declared.fullTestRunRef === undefined) === (declared.verificationRunRef === undefined))
+    if (
+      declared.testAttemptRunRef === undefined ||
+      declared.fullTestRunRef !== undefined ||
+      declared.verificationRunRef !== undefined
+    )
       throw new MendiError(
         'invalid-declaration',
-        'Close 必须恰选 fullTestRunRef / verificationRunRef。',
+        '新 Close 唯一选择 testAttemptRunRef；旧 fullTestRunRef / verificationRunRef 仅供历史读取。',
       );
-    const isCandidate = declared.verificationRunRef !== undefined;
-    const ref = text(declared.verificationRunRef ?? declared.fullTestRunRef, '正式入口');
+    const ref = text(declared.testAttemptRunRef, '正式入口');
     const run = readDeliveryRun(root, ref, workspace.id);
-    if (isCandidate ? !run.record.verification : !run.record.fullTest)
+    if (run.record.attempt?.version !== 2)
       throw new MendiError('invalid-run', 'Close 入口类型不符。');
     lifecycle = {
       roundId: workspace.currentRoundId!,
@@ -229,13 +234,11 @@ export function deliveryLifecycle(
       sourceDeliveryId: workspace.id,
       scope: workspace.scope,
       recordedOn: date(),
-      ...(isCandidate ? { verificationRunRef: ref } : { fullTestRunRef: ref }),
-      acceptance: isCandidate ? run.record.verification : run.record.fullTest,
+      testAttemptRunRef: ref,
+      acceptance: run.record.attempt,
       applicability: applicability(declared.applicability),
     };
-    const facts = isCandidate
-      ? inspectCandidate(root, workspace, run)
-      : inspectFullTest(root, workspace, run);
+    const facts = inspectAttempt(root, workspace, run);
     if (!facts.stable) throw new MendiError('delivery-close-unavailable', '正式直接执行未稳定。');
   } else {
     const prior = closed(root, workspace);
@@ -259,26 +262,20 @@ export function deliveryLifecycle(
   // 只固定本次直接执行 / 配置的实际字节；不持久化 hash 清单或复制历史证据。
   const refs =
     type === 'delivery-close'
-      ? lifecycle.verificationRunRef
-        ? [lifecycle.verificationRunRef]
-        : [lifecycle.fullTestRunRef!, 'package.json']
+      ? [lifecycle.testAttemptRunRef!, 'package.json']
       : [lifecycle.priorCloseRef!];
-  if (type === 'delivery-close' && !lifecycle.verificationRunRef) {
-    const run = readDeliveryRun(root, lifecycle.fullTestRunRef!, workspace.id);
-    const facts = inspectFullTest(root, workspace, run);
-    if (facts.child)
-      refs.push(
-        `.mendi/delivery-groups/${workspace.id}/tests/${facts.child.executionId}/result.json`,
-        facts.child.stdoutRef,
-        facts.child.stderrRef,
-      );
-  }
   // 可选配置文件不存在时 selectedTest 已解释其默认值；存在者才是此处字节复核输入。
   const bytes = new Map<string, Buffer>(
     refs
       .filter((ref) => present(managedPath(root, ref)))
       .map((ref) => [ref, fs.readFileSync(managedPath(root, ref))]),
   );
+  if (lifecycle.testAttemptRunRef) {
+    const run = readDeliveryRun(root, lifecycle.testAttemptRunRef, workspace.id);
+    inspectAttempt(root, workspace, run, false, bytes);
+    // 锁内及恢复期间同样解释真实子结果，不能只比较父头部。
+    for (const ref of [run.ref, 'package.json']) captureBytes(root, ref, bytes);
+  }
   if (type === 'delivery-reopen') {
     const baseline = deliveredBaselines(root, workspace, lifecycle.scope, lifecycle.roundId);
     for (const [ref, content] of baseline.bytes)

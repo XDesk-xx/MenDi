@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+ok 1 - 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+  ---
+  duration_ms: 122808.6938
+  type: 'test'
+  ...
+# Subtest: P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 2 - P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 98383.8211
+  type: 'test'
+  ...
+# Subtest: P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 3 - P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 19461.4244
+  type: 'test'
+  ...
+# Subtest: 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+ok 4 - 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+  ---
+  duration_ms: 11226.4913
+  type: 'test'
+  ...
+# Subtest: 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+ok 5 - 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+  ---
+  duration_ms: 9136.3914
+  type: 'test'
+  ...
+# Subtest: v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+ok 6 - v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+  ---
+  duration_ms: 99363.0568
+  type: 'test'
+  ...
+# Subtest: P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 7 - P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 23625.0377
+  type: 'test'
+  ...
+# Subtest: P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 8 - P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 18734.6766
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 266278.8309

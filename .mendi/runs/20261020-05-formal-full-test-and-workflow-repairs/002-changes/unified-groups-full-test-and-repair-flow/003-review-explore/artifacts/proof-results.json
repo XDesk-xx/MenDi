@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-20T08:39:17.397Z",
+  "provenance": "independent Reviewer RE-EXECUTION after 003 submission; not original 003 logs",
+  "git": {
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "head": "5a7762bca3656fb99a9e29c55d0fdd5a411d2fab"
+  },
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/run.md",
+  "reviewerRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/003-review-explore",
+  "f1": {
+    "method": "read-only source inspection and synthetic filter counterexample; no file deletion",
+    "source": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts",
+    "sourceLines": "141-151",
+    "foreignSelectedByFilter": true,
+    "rootsUsedByCleanup": false,
+    "limitation": "potential foreign-directory deletion, not proof of actual deletion"
+  },
+  "f2": {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--strict",
+      "--module",
+      "NodeNext",
+      "--moduleResolution",
+      "NodeNext",
+      "--target",
+      "ES2022",
+      "--skipLibCheck",
+      "--allowImportingTsExtensions",
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts"
+    ],
+    "exitCode": 2,
+    "errorCount": 15,
+    "rawLog": "typescript-errors.log"
+  },
+  "reviewerProofTypecheck": {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules/typescript/bin/tsc",
+      "-p",
+      "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\002-changes\\unified-groups-full-test-and-repair-flow\\003-review-explore\\artifacts\\tsconfig.json"
+    ],
+    "exitCode": 0,
+    "rawLog": null
+  },
+  "focusedTests": {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "--experimental-strip-types",
+      "--test",
+      "tests/group-completion.test.ts",
+      "tests/group-verification.test.ts"
+    ],
+    "exitCode": 0,
+    "pass": 6,
+    "fail": 0,
+    "skipped": 0,
+    "rawLog": "focused-tests.tap.log",
+    "stderrLog": null,
+    "applicability": "current D04 behavior only; no D05 formal Full Test PASS"
+  },
+  "authorOriginal": {
+    "resultsRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof-results.json",
+    "cases": 4,
+    "method": "read-only observation; unsafe Author proof was NOT rerun"
+  },
+  "submittedReviewVerdict": "changes-requested (unchanged)"
+}

@@ -6,12 +6,12 @@ context: |
   MenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。
   角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。
   使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。
-  当前为 MVP-D05，Owner 已授权以 manual-bootstrap Open：20261020-05-formal-full-test-and-workflow-repairs，停在 delivery-checkpoint / author / awaiting-owner-instruction。四项 Change 只有规划槽位，尚未激活。
+  当前为 MVP-D05，Owner 已授权以 manual-bootstrap Open：20261020-05-formal-full-test-and-workflow-repairs，当前 D05-A 已通过 011 独立 Review Apply 并完成 012 Archive，序号 014；停在 change-checkpoint / author / awaiting-owner-instruction，activeChangeId=null，D05-B/C/D 尚未激活。
   D05-A：统一未来 groups-v1 正式 Full Test 与完整重跑；D05-B：未 Close 追加 Change CLI，可独立于 A；D05-C：proof / inputs / artifacts 轻量化，依赖 A；D05-D：最新 Run supplement / amend，依赖 C。总设计见根路线图 §7。
-  D04 已在 026 正式 Full Test 通过、027 Close，A/B/C 归档 011/012/013，028 已切换稳定 0.2.0。历史结果不冒充 D05 新轮验收，归档总数仍为 13。
+  D04 已在 026 正式 Full Test 通过、027 Close，A/B/C 归档 011/012/013，028 已切换稳定 0.2.0。历史结果不冒充 D05 新轮验收；D05-A 原生归档后累计成功归档 14。
   MenDi 根目录仍为 manual-bootstrap：产品 CLI 对其只读，人工 Open 事实见本轮 001 Run。旧 product 支持只读查询，写入须按规则显式迁移；未知中断必须保留现场。
-  外部 Full Test 的旧 WIP 已单独存入 Git stash，不视为 D05-A 实现；当前新分支已建立，没有 Git commit/push、D05 Change 激活或 D05 正式测试。
-  按现行安装版运行当前功能；D05 全新执行协议与轻量证据、修订 CLI 尚未实现，禁止仅凭规划文字绕过运行时准入。
+  外部 Full Test 的旧 WIP 已单独存入 Git stash，不视为 D05-A 实现；当前新分支已建立，没有 Git commit/push 或 D05 正式测试；D05-A 已归档，非稳定安装。
+  按现行安装版运行当前功能；D05-A 的新正式 Full Test 已在当前源码实现并归档，但稳定安装版 0.2.0 尚未切换；D05-B/C/D 能力仍待实施，不得仅凭源码/规划绕过目标运行时实际准入。
   提问先查已确定的 Owner 范围，稳定业务契约与 UI 选择分开；Explore proof 只验证关键疑点，真实结果、旧 verdict、Run 和必要日志保留。
   状态与详细过程读取当前 manifest 和最近 Run；Git、Change 激活、Archive、正式 Full Test / Close、安装发布及 DreMo 等外部目标写入均保持独立授权。
   必要输入依操作决定，旧 Ref 和说明不成为普通查询的全量前置；项目 check 覆盖真实类型检查，行为验证按影响，错误现场不自动清理。

@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 两项真实归档 → 旧 command 失败夹具 / focused / 修复审核 → 历史读回及异目录新进程
+ok 1 - 两项真实归档 → 旧 command 失败夹具 / focused / 修复审核 → 历史读回及异目录新进程
+  ---
+  duration_ms: 69232.7169
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 69849.2659

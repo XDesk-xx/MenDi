@@ -18,9 +18,12 @@ const control = fs.existsSync('group-control.json')
       wrapperZero?: boolean;
       ports?: Record<string, number>;
       unknownCleanup?: string;
+      preparationFile?: string;
+      preparationState?: 'blocked' | 'failed';
     })
   : {};
 const facts: Record<string, unknown>[] = [];
+let environmentFailure: unknown;
 const started = performance.now();
 const utc = new Date().toISOString();
 const controller = new AbortController();
@@ -72,6 +75,21 @@ for (const id of request.selection) {
     }) + '\n',
   );
   let server: net.Server | undefined;
+  if (id === 'middle' && control.preparationFile && !fs.existsSync(control.preparationFile)) {
+    const identity = path.resolve(control.preparationFile);
+    if (!identity.startsWith(request.projectRoot + path.sep)) throw new Error('准备资源须归属目标');
+    environmentFailure = {
+      phase: 'preparation',
+      groupIds: [id],
+      resources: [{ id: 'ready-file', projectRoot: request.projectRoot, identity }],
+    };
+    if (control.preparationState !== 'failed') {
+      facts.push({ ...base, state: 'blocked', reason: '本项目已知准备文件尚未就绪' });
+      continue;
+    }
+    if (g.kind !== 'command')
+      throw new Error('failed 准备场景必须执行真实准备命令，不伪造测试计数');
+  }
   const port = control.ports?.[id];
   if (port) {
     server = net.createServer();
@@ -224,6 +242,7 @@ fs.writeFileSync(
       complete: true,
       cleanup: cleanupUnknown ? 'unknown' : 'confirmed',
       groups: facts,
+      ...(environmentFailure ? { environmentFailure } : {}),
       timing: [
         {
           id: 'target',

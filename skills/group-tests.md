@@ -1,6 +1,6 @@
 # 组级正式验收
 
-显式 `mode: groups-v1` 才接入 `mendi-group-tests/1`。默认旧 command 保持单命令语义和整次修复 / 审核 / 重跑；不解析 stdout 或追认旧 PASS 为组来源。
+新的正式 Full Test 唯一接受显式 `mode: groups-v1` 和 `mendi-group-tests/1` 完整协议；父记录为 `delivery-test-attempt` / `attempt.version:2`。旧 command、v1 attempt、verification 与已完成 Close 仅按原类型只读，不再新建旧模式或追认旧 PASS。
 
 ## 声明及计划
 
@@ -31,25 +31,25 @@ ID 唯一有序，dependsOn 只引用此前组。resources 是共享边界，不
 
 参考接线见仓库 tests/fixtures/group-node-runner.ts：真实 Node TestsStream，等容器和根结束，保留原事件；空文件自动容器成功不是业务测试，skip / TODO 不当通过，同文件混合失败、晚退出和 aborted 分别解释。该入口不自动适配任意 runner，断言充分性由阶段工作及独立审核核对。
 
-Node 文件摘要的 cancelled 可能在根摘要中折成文件容器 failed；参考接线按文件业务摘要保留计数，根摘要另核结束 / 错误，不能用根 failed 替代业务取消。真实执行与清理已确认的取消可保存已结束记录并释放本次锁，部分事实仍不可复用；仅允许按实际新指令 initial 全范围重跑。
+Node 文件摘要的 cancelled 可能在根摘要中折成文件容器 failed；参考接线按文件业务摘要保留计数，根摘要另核结束 / 错误，不能用根 failed 替代业务取消。真实执行与清理已确认的取消可保存已结束记录并释放本次锁，部分事实不可复用；重新执行前须确认本次安全处置和材料一致性。
 
-增量事件仅表示进度。包装器 exit0 与必需失败矛盾为 invalid，原 command outcome 保留，全部组来源不可复用；真实执行 / 清理及持久完成时可释放本次自有锁转修复。执行 / 资源 / 保存未知为 unconfirmed，保留现场，不自动清锁、重试、resume 或挑内存成功。确认取消后的部分结果不复用，可按新指令 initial 全量重跑。
+增量事件仅表示进度。包装器 exit0 与必需失败矛盾为 invalid，原 command outcome 保留，全部组来源不可复用；真实执行 / 清理及持久完成时可释放本次自有锁转修复。执行 / 资源 / 保存未知为 unconfirmed，保留现场，不自动清锁、重试、resume 或挑内存成功。确认取消后的部分结果不复用；不能凭局部通过或取消原因绕过必要处置。
 
 普通失败继续独立后项，构建失败只阻断依赖。全局取消停止启动后项；未知清理阻断共享资源，无法限定则停止相关执行。端口须本次实际 listen 等方式确认归属，陌生占用拒绝；旧 PASS / PID / 预检不能代替资源取得。
 
-## 续测、修复和结论
+## 完整执行、修复和结论
 
-initial 选全部必需组；continue 只选同计划 / 同候选当前 not-run 或现可运行 blocked，保留原失败，无须先修中段才跑独立尾项。扁平 progress 只存每组最近状态 / 直接来源 / 未解决问题，不是 verified，也不嵌套历史快照。
+新正式请求只允许 `purpose:initial`，selection 包含计划全部必需组及本次必要前置；continue / retest、缺协议的旧 command、verification create 在占号前拒绝。扁平 progress 的本次已选事实全部指向当前 Run，不沿用旧成功组。完整报告、真实子结果、必需业务计数、结束、清理与持久读回稳定时，本次 Run 直接 `formalOutcome:passed` / `result:passed`，next 等待 Owner 单独授权 Close。failed / blocked / not-run / interrupted / invalid 分别保存，unknown 保留现场停 Owner；query 不写结果。
 
-失败不得借 initial 绕过修复。`delivery repair start --from <当前未解决直接失败> --input impact.json --reason ...` 即使最新尾项通过，也可固定原中段。impact 含 candidate、extent（local / common / unknown）、affectedGroupIds、retained（id / reason）、reason；每组恰归影响或沿用，公共 / 未知变化全部复验。真实 Author 和独立 Reviewer 核对实际差异、业务断言与影响，固定对象、正文非空；actor 仅标签，夹具审批不认证根 Change。
+实质源码、断言或执行配置语义修复使用 `delivery repair start --from <当前直接失败> --input impact.json --reason ...`。impact 含 candidate、extent、affectedGroupIds、retained、reason，用于说明实际影响，**不能豁免正式必需组重跑**。同 draft 正常继续，正式交接后的实质修订使用 revise-delivery-repair；独立 review-delivery-repair 固定当前完整 Author，真实差异和定向验证通过后 approved。新 full-test 输入 `fromRunRef` 必须等于该 Review，候选与批准一致，重新 initial 全量。旧 command failed 可通过本轮真实 Repair / Review 后首次进入 v2，不要求旧 testAttemptRunRef，不改原失败。
 
-retest 固定当前 approved Review 的 fromRunRef，候选与批准一致，选择覆盖全部影响。普通 focused / command PASS 不补组覆盖。
+已知普通环境准备问题可以免空 Repair / Review，但须保留真实失败并提供可核对恢复。首次输入可声明 `materialRefs`，列出本次实际受测源码、断言、runner 和执行配置等直接文件；package.json 自动纳入必要直接输入快照。它不是全库 hash 清单或源码认证；Author 必须核对声明的完整性，未声明必要材料、无法证明语义未变时走实质修复审核。没有该直接快照不允许环境豁免。
 
-`delivery verification create --input verify.json --role author --actor ...` 不执行测试；输入 planRef、candidate、当前 attempt 的 fromRunRef、sources（每个必需组唯一 `{id,runRef,applicability}`）。核对当前 progress 和直接有效来源，后来的失败不能任选旧成功掩盖；跨候选沿用须有当前独立修复批准。有效 known failed 中的独立通过可用，invalid / 取消 / 未知不能挑成功。缺口为 incomplete，完整为 verified，不把多次执行伪称一次 exit0。
+重跑输入含 `environmentRecovery:{failedRunRef,evidenceRef,reason}`，同时 `fromRunRef` 固定同一个当前失败。证据 JSON 包含 `failedRunRef`、实际 `projectRoot`、`phase:"preparation"`、`cleanup:"confirmed"`、`contractUnchanged:true` 和非空 `resources`。每项资源给出 `id/projectRoot/identity/ownership:"project"/state:"recovered"/cleanup:"confirmed"/preflight`（真实恢复与再预检事实）。已运行目标的原报告须有 `environmentFailure:{phase:"preparation",groupIds:["受影响组"],resources:[{id,projectRoot,identity}]}`，身份须逐项匹配；预检未启动的情况核对当前 precheck 的已知工具/依赖错误。不凭 reason 字符串认定环境；外部资源、未知清理/锁、报告无准备失败、材料/完整计划/候选/入口变化均拒绝旁路。恢复合法后仍实际运行全部必需组，处置与指针保存于新 attempt，原 failed/blocked 保持不变。
 
-创建读选定 attempt / child / 最终报告 / 必要日志和当前必要审核，保存有限快照。verification status、普通查询和 Close 只读当前结论及自身快照，不递归旧失败 / Review 正文或日志；当前快照坏不回退旧 verified。查询不写选择或认领资源。
+`delivery full-test status --run <ref>` 和普通 status/next 使用同一 v2 正式观察。已存 v1 attempt / verification 可显式查询，但查询成功不提供新写权限。任意源码的语义适用性仍由阶段工作及独立审核判断。
 
-Close 恰选旧 fullTestRunRef 或新 verificationRunRef，必须是当前轮当前实际进展与对应指针。新入口须稳定 verified，保存 candidate-verification 快照和 applicable 材料说明。新 attempt / repair 替代旧结论后不能用旧结果收口；Reopen 清除新轮指针，旧历史保持。未知版本 / 类型明确拒绝，不静默降级。
+新 Close JSON 唯一选择 `testAttemptRunRef` 并给出 `applicability:{conclusion:"applicable",materials,changes,reason}`。输入须等于当前轮 manifest.testAttemptRunRef 和 manifest.deliveryRunRef，实际为完整 v2 passed。Close 自身保存 typed 指针与 v2 acceptance，不挪用旧 fullTestRunRef；新 Close 拒绝旧 fullTestRunRef / verificationRunRef 选择器（单独或混用）、v1 verified、陈旧选择、未知或不完整结果。Reopen 新轮清除选择，旧轮已完成 Close 按当时类型继续只读。
 
 ## 时间与复用
 

@@ -27,6 +27,11 @@ export interface GroupRequest {
   eventsRef: string;
 }
 export interface ProtocolObservation {
+  environmentFailure?: {
+    phase: 'preparation';
+    groupIds: string[];
+    resources: { id: string; projectRoot: string; identity: string }[];
+  };
   notRun?: true;
   cancelled?: true;
   protocolState: 'valid' | 'invalid' | 'unconfirmed';
@@ -212,6 +217,34 @@ export function interpretReport(
       .every((g) => g.state === 'passed');
     if ((child.exitCode === 0) !== successful) reasons.push('原命令退出与必需组终态矛盾。');
     const cancelled = groups.some((g) => g.state === 'interrupted');
+    let environmentFailure: ProtocolObservation['environmentFailure'];
+    if (report.environmentFailure !== undefined) {
+      const e = object(report.environmentFailure, '准备失败');
+      const ids = strings(e.groupIds, '准备失败组');
+      const gaps = groups.filter((g) => g.state !== 'passed');
+      if (
+        e.phase !== 'preparation' ||
+        !ids.length ||
+        !Array.isArray(e.resources) ||
+        !e.resources.length ||
+        !ids.every((id) => gaps.some((g) => g.id === id)) ||
+        gaps.some((g) => !ids.includes(g.id) || !['failed', 'blocked'].includes(g.state))
+      )
+        throw new Error('准备失败声明不能覆盖普通业务失败或未确认终态。');
+      environmentFailure = {
+        phase: 'preparation',
+        groupIds: ids,
+        resources: e.resources.map((value) => {
+          const r = object(value, '准备资源');
+          if (r.projectRoot !== request.projectRoot) throw new Error('准备资源不归属本目标。');
+          return {
+            id: text(r.id, '资源 id'),
+            projectRoot: request.projectRoot,
+            identity: text(r.identity, '资源身份'),
+          };
+        }),
+      };
+    }
     return {
       protocolState: reasons.length ? 'invalid' : cancelled ? 'unconfirmed' : 'valid',
       groups,
@@ -219,6 +252,7 @@ export function interpretReport(
         cancelled && !reasons.length ? ['本次已取消；执行与清理已结束，局部事实不复用。'] : reasons,
       timing,
       ...(cancelled ? { cancelled: true as const } : {}),
+      ...(environmentFailure ? { environmentFailure } : {}),
     };
   } catch (error) {
     return {

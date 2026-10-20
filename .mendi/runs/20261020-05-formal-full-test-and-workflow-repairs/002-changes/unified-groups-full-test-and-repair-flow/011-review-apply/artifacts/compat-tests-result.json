@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-20T11:26:54.141Z",
+  "files": [
+    "tests/group-completion.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/delivery-repair.test.ts",
+    "tests/lifecycle-reopen.test.ts",
+    "tests/migration-rounds.test.ts"
+  ],
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/group-completion.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/delivery-repair.test.ts",
+    "tests/lifecycle-reopen.test.ts",
+    "tests/migration-rounds.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "results": {
+    "tests": 14,
+    "pass": 14,
+    "fail": 0,
+    "skipped": 0
+  },
+  "logs": {
+    "stdout": "compat-tests.tap.log",
+    "stderr": null
+  },
+  "purpose": "independently recheck earlier Author failing legacy/baseline/reuse and close/reopen tests on current worktree"
+}

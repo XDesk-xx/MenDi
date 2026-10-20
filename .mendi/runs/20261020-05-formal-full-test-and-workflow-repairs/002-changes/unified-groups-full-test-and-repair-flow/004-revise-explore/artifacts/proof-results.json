@@ -1,0 +1,168 @@
+{
+  "status": "passed",
+  "timestamp": "2026-10-20T08:47:03.073Z",
+  "proof": "D05-A 004-revise-explore",
+  "cases": [
+    {
+      "id": "P01",
+      "observed": {
+        "ok": false,
+        "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+        "protocol": "valid",
+        "next": "delivery-repair",
+        "progress": [
+          {
+            "id": "prefix",
+            "state": "passed"
+          },
+          {
+            "id": "middle",
+            "state": "failed"
+          },
+          {
+            "id": "tail",
+            "state": "failed"
+          }
+        ],
+        "actual": [
+          {
+            "id": "prefix",
+            "state": "passed"
+          },
+          {
+            "id": "middle",
+            "state": "failed"
+          },
+          {
+            "id": "tail",
+            "state": "failed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "P02",
+      "observed": {
+        "before": {
+          "ok": false,
+          "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+          "protocol": "valid",
+          "next": "delivery-full-test",
+          "progress": [
+            {
+              "id": "prefix",
+              "state": "passed"
+            },
+            {
+              "id": "middle",
+              "state": "blocked"
+            },
+            {
+              "id": "tail",
+              "state": "passed"
+            }
+          ],
+          "actual": [
+            {
+              "id": "prefix",
+              "state": "passed"
+            },
+            {
+              "id": "middle",
+              "state": "blocked"
+            },
+            {
+              "id": "tail",
+              "state": "passed"
+            }
+          ]
+        },
+        "after": {
+          "ok": true,
+          "runRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+          "protocol": "valid",
+          "next": "delivery-verification",
+          "progress": [
+            {
+              "id": "prefix",
+              "state": "passed"
+            },
+            {
+              "id": "middle",
+              "state": "passed"
+            },
+            {
+              "id": "tail",
+              "state": "passed"
+            }
+          ],
+          "actual": [
+            {
+              "id": "prefix",
+              "state": "passed"
+            },
+            {
+              "id": "middle",
+              "state": "passed"
+            },
+            {
+              "id": "tail",
+              "state": "passed"
+            }
+          ]
+        },
+        "noRepairRun": true,
+        "controlledPort": true
+      }
+    },
+    {
+      "id": "P03",
+      "observed": {
+        "rejection": {
+          "message": "当前 attempt 必须是非空字符串。",
+          "code": "invalid-data"
+        },
+        "originalFailedUnchanged": true,
+        "reviewRunRef": ".mendi/runs/d01/017-review-delivery-repair/run.md",
+        "approvedIsFixtureOnly": true
+      }
+    },
+    {
+      "id": "P04",
+      "observed": {
+        "selected": [
+          "middle"
+        ],
+        "verification": "verified",
+        "sourceRuns": [
+          {
+            "id": "prefix",
+            "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "applicability": "test-only approved fixture"
+          },
+          {
+            "id": "middle",
+            "runRef": ".mendi/runs/d01/018-delivery-test-attempt/run.md",
+            "applicability": "test-only approved fixture"
+          },
+          {
+            "id": "tail",
+            "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "applicability": "test-only approved fixture"
+          }
+        ]
+      }
+    }
+  ],
+  "cleanup": {
+    "fixturePathsVerifiedAndDeleted": 4,
+    "eachUsedExplicitOwnerMarker": true,
+    "unrelatedSamePrefixDirectoryPreserved": true
+  },
+  "boundaries": [
+    "Real fixture execution, not a MenDi root formal Full Test",
+    "Fixture role labels are not a real independent approval",
+    "Known blocked port is narrower than all environmental failed cases",
+    "Unconfirmed/locked fixture must not be deleted; this script stops before cleanup on error"
+  ]
+}
