@@ -20,7 +20,7 @@ pnpm start
 
 ## 稳定安装与目标准备
 
-0.2.0 当前为待独立定向审核的源码候选，稳定安装仍为0.1.0。本节为后续获准切换的操作说明，不表示已更新稳定安装。
+D04 的 026 正式 Full Test、027 Close 和 028 Stable Install 均已记录完成，稳定 current 已切换为 0.2.0。以下构建 / 打包命令为未来再次发布的操作示例，不应误认为 D05 已发布或需要重复安装同一旧包。
 
 在开发仓库构建和打包，然后在仓库外的固定安装目录安装本地包。下面的离线安装要求已有依赖 store；依赖不足时由维护者明确准备，不认证冷安装。
 
@@ -51,7 +51,7 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --projec
 
 `--help` 列出 delivery open / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
 
-默认 Full Test 保持旧 command 语义。显式 `groups-v1` 接入有版本的计划 / 回执、同轮续测、独立修复审核后的影响复验及多来源候选结论，完整方法与 JSON 示例见[组级协议](skills/group-tests.md)。原命令 outcome、协议观察与候选 verified 分别保存；必需 skip / TODO / 取消 / 零业务执行留下缺口。Close 恰选旧 `fullTestRunRef` 或当前 `verificationRunRef`，不递归旧来源历史；新进展不能回退旧 verified。
+稳定版 0.2.0 的 Full Test 仍兼容旧 command，并提供显式 `groups-v1` 计划 / 回执、同轮续测、影响复验及多来源候选结论，详见[组级协议](skills/group-tests.md)；必需 skip / TODO / 取消 / 零业务执行留下缺口。这是 D04 已交付能力的描述，**不是 D05 的新正式验收规则**；D05-A 将统一未来正式执行为完整 groups-v1，修复后重新全量运行，旧历史保持可读。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -63,7 +63,7 @@ Run 按 `.mendi/runs/<delivery-id>/<操作序号>-<操作名称>/` 或同级 `<�
 
 ## 当前候选的轮次与兼容入口
 
-D04-A 候选使用 version 2 项目入口及 manifest；稳定安装尚未切换，以下新命令使用本仓库构建后的 `node dist/drivers/cli.js`。`rounds[]` 保存每次范围及收口，`currentRoundId` 只选择最新轮。顶层目标、计划、状态、批次和结果指针是当前轮投影；矛盾拒绝，不自动修复。Reopen 追加 rNNN，不预建批次，旧 PASS / Close 留在旧轮。省略身份的首次 Open 同样创建 r001，但没有虚构 Open Run。
+D04-A 已交付 version 2 项目入口及 manifest；0.2.0 稳定安装已有记录，以下命令可使用本仓库构建后的 `node dist/drivers/cli.js`。`rounds[]` 保存每次范围及收口，`currentRoundId` 只选择最新轮。顶层目标、计划、状态、批次和结果指针是当前轮投影；矛盾拒绝，不自动修复。Reopen 追加 rNNN，不预建批次，旧 PASS / Close 留在旧轮。省略身份的首次 Open 同样创建 r001，但没有虚构 Open Run。
 
 ```powershell
 node dist/drivers/cli.js status --project D:\work\target --round r001 --json
@@ -113,16 +113,14 @@ pnpm test:ui
 
 当前源码候选的方法明确：普通 UI 调整不新建 Change；业务契约、当前 UI 设计和关键未决决定按实际用户影响区分。Explore / Propose 主动澄清关键产品未知，独立 Review 使用相同尺度；UI 定位修复保留原场景、必要断言、失败及清理。完整工作方法随阶段从 `skills/actions/` 返回，交接成功不等于宿主语义判断已获批准。
 
-## 0.2.0 候选变更与兼容
+## 0.2.0 已交付能力与兼容边界
 
 - Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
 - 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
-- 六阶段方法统一业务契约、当前UI方案和主动澄清尺度；普通UI调整不新建Change。候选包与版本号本身不代表D04正式验收或发布批准。
+- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05 新的 Full Test 规则和其他能力尚未实现。
 
 ## 开发交接
 
-[D04 正式验收集合与 0.2.0 候选方案](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/acceptance-and-release-plan.md)已准备：Owner确认0.2.0及根人工整次验收；候选源码 / 安装接线 / 依赖准备、正式执行与稳定切换仍待各自授权。
+当前活动 Delivery 为 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json)，按 2026-10-20 Owner 授权以 manual-bootstrap 完成 [001 Open](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。四个槽位 A/B/C/D 已登记，activeChangeId 为 null；停在 delivery-checkpoint / author，尚未激活任何 Change。长期规划统一查看根路线图 §7 D05。
 
-当前状态读取[D04 manifest](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)与[024候选准备](.mendi/runs/20261016-04-real-usage-repairs-and-release/024-candidate-preparation/run.md)。Owner已授权0.2.0候选源码、有限安装接线与依赖准备；保持Author，完成停独立定向审核，尚未获得该审核或正式Full Test / Close结论。A / B / C原归档和verdict保留，累计13；稳定current仍0.1.0，未执行Git或push。
-
-范围包含完整 open / closed 与活动 draft 的迁移、同项目跨 Delivery product 基线直接核对；人工来源只作说明，旧中断先用旧版恢复。实现与审核记录见 006 / 007，已完成任务见 011 归档内 tasks。D03 历史、DreMo 和稳定安装保持，各后续操作仍按实际授权。
+[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，累计归档 13；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05 Git 分支已建立，但未 commit/push、未执行 D05 正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。

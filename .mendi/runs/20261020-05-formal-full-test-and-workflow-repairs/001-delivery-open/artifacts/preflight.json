@@ -1,0 +1,34 @@
+{
+  "ownerInstruction": "好的，按照上述处理，owner 授权 open D05",
+  "role": "author",
+  "actor": "codex-author",
+  "checkedAt": "2026-10-20T07:26:02.232Z",
+  "recordingMode": "manual-bootstrap",
+  "reason": "Product CLI cannot write into the historical manual-bootstrap workspace",
+  "prior": {
+    "id": "20261016-04-real-usage-repairs-and-release",
+    "state": "closed",
+    "closeRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/027-delivery-close/run.md",
+    "latestRunRef": ".mendi/runs/20261016-04-real-usage-repairs-and-release/028-stable-install/run.md"
+  },
+  "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+  "head": "78cbdff10f6bd47d4dcc08f4b6fb86ce65fe1f89",
+  "priorDeliveries": [
+    "20261009-01-single-change-manual-collaboration",
+    "20261010-02-delivery-verification-and-close",
+    "20261010-03-storybook-and-real-usage",
+    "20261016-04-real-usage-repairs-and-release"
+  ],
+  "archivedChangeCount": 13,
+  "activeOpenSpecChanges": [],
+  "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+  "roadmapSha256": "af1495c01ecc15d2552106968fe83be4b7f776c008ade3bcf8c528bea539c2d8",
+  "oldIndexSha256": "4354ddf6db3ec44303d78f691b81525a10faed45e5ba0ac83b5923cf61985bfa",
+  "slots": [
+    "MVP-D05-A",
+    "MVP-D05-B",
+    "MVP-D05-C",
+    "MVP-D05-D"
+  ],
+  "stopBoundary": "delivery-checkpoint"
+}

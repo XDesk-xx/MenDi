@@ -2,15 +2,15 @@
 
 规划日期：2026-10-09
 
-最近规划修订：2026-10-16（吸收真实使用问题，增加 MVP-D04 修复规划）。
+最近规划修订：2026-10-20（核对 D04 已交付状态，吸收根目录专项反馈及 Run 补证方案，规划 MVP-D05）。
 
-首版目标版本：v0.1.0；MVP-D04 修复版版本号在兼容与发布方案明确后确认，本次不修改包版本。
+版本事实：首版 v0.1.0；D04 的 manifest / Run028 记录 0.2.0 稳定安装已完成。当前工作区未提交修改不等同于已发布内容；D05 版本另行决定，本次不修改包版本。
 
 规格底座：OpenSpec 1.14.1
 
 首版规模：**3 个 Delivery、10 个 Change，其中前 7 个 Change 完成核心手动交付链。**
 
-使用后修复规划：**新增 MVP-D04，按三类真实问题收敛为 3 个 Change；加上首版共 4 个 Delivery、13 个 Change 规划槽位。** 本次只更新路线图，不代表 Delivery 已 Open、Change 已激活或修复已生效。
+当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05 尚未激活任何 Change，四项能力均待实施。
 
 本文是 MenDi 重新开始后的唯一产品总设计与开发规划。它描述产品目标，实际完成情况以项目记录和最近交接 Run 为准。清除旧工程并重新建立代码与历史是初始化时的决定，不是后续工作的重复清理授权。
 
@@ -48,9 +48,14 @@ Delivery Open
   → Delivery Full Test
   → Delivery Close
 
+同一 Delivery 尚未 Close，Owner 决定增加原本未规划的 Change：
+  追加当前轮计划槽位 → 按独立授权激活 Change → 完成后重新满足本轮 Full Test
+
 Close 后需要新增工作：
-  Reopen → 新增或修复工作 → 本轮 Full Test → 新 Close
+  Reopen → 追加新轮范围 → 本轮 Full Test → 新 Close
 ```
+
+上述「未 Close 追加计划」是 D05 规划能力，当前 0.2.0 尚无对应 CLI；现有 `change bind` 只能关联已规划槽位，不能替代追加。追加不等于激活 Change，也不创建 Reopen 新轮或修改已有已关闭轮次。
 
 每个指定边界都可以停下。查询下一步不等于执行下一步；Change 完成不自动启动下一 Change，Archive 不自动触发 Full Test 或 Git。
 
@@ -91,7 +96,7 @@ Review 重点是当前提交是否成立。approved 支持进入下一步，chan
 
 新 Change 激活仍需要真实 Owner 消息包含连续字样 `owner 授权`，并明确目标与范围。一次 Change 授权可覆盖范围内 Explore、Review、Propose、Apply、普通 Revise、必要检查和 Archive；后续短指令触发当前步骤，不必逐阶段重复授权。
 
-Delivery Open / Reopen、正式 Full Test / Close、Git checkpoint / push / merge、部署和生产数据写入保持独立边界。可在一次消息中明确授权多个步骤与终点；没有覆盖的权限不能从 Change 授权推得。暂停、撤回和收缩范围立即生效。
+Delivery Open / Reopen、正式 Full Test / Close、Git checkpoint / push / merge、部署和生产数据写入保持独立边界。**向已 Open 的当前轮追加原计划外 Change 也是实质扩大交付范围，必须得到 Owner 对新增槽位、目标和依赖的明确许可**；追加计划本身不授予激活权，后续新 Change 激活仍须满足上一段的 `owner 授权` 原始消息要求。可在一次消息中明确授权多个步骤与终点；没有覆盖的权限不能从 Change 授权推得。暂停、撤回和收缩范围立即生效。
 
 ## 3. Explore：必须有 proof，但只做核心验证
 
@@ -191,6 +196,8 @@ Run 最少包含：所属 Delivery / Change、Action 标识与类型、Role、�
 - 只记录本次关键工具的入口与版本，不要求把其全部安装文件重新登记到每个 Run。
 - 遇到实际路径过长或 Git 工具漏报，明确具体文件与保存限制，按原有文件 / Git 授权局部处理；保留历史原文和编号，不为补证重开已 Close 的 Delivery，也不增加通用路径长度 gate。
 
+**D05 后续材料轻量化目标（待实施）：** proof 只保存回答关键疑点的最小真实实验、必要输入和可核实结果；正式测试结果保留完整失败、取消、清理及必要原始日志，但不机械把每次临时目标工程、生成物、成功截图、相同日志整树复制进 Run。`inputs/` 只保存本次唯一必要且不能从受控 fixture/源码重建的输入；原始输出保存一份，其余记录使用直接引用。空 stdout/stderr 文件能否省略须先核对现有执行意图、读回与故障恢复合同，不直接删除既有零字节日志或 submitted 历史。具体数据和验收归入 §7 D05-C，不设文件数/字节数 gate。
+
 ### 4.3 极简验证结果
 
 每项检查只需保存：检查名称、输入或候选的必要说明、命令、实际结果、关键摘要和必要日志路径。同一次原始输出保存一份，其他摘要直接引用，不在多份 JSON 中反复嵌入相同全文；保留复现关键失败所需的输入与现场。运行过但失败、尚未执行、运行效果未知分别如实说明，不写成通过。
@@ -213,7 +220,7 @@ Reviewer 按本次变更、直接合同和受影响依赖独立核对，重验�
 
 ## 5. 三类测试与 Delivery 收口
 
-本节保留 v0.1.0 的现行验收合同。真实使用提出的完整失败收集、同轮续测与当前候选汇总结论见 §7 的 MVP-D04-B；相关规格、实现与方法批准并发布前，不以路线图修改绕过现行准入，也不把多次执行描述成同一次成功命令。
+本节包含首版与 D04 的历史基线。D04-B 已交付 `groups-v1` 分组执行、continue/retest 与跨尝试候选汇总；**2026-10-20 新确认的后续 D05-A 目标改为：今后正式 Full Test 统一新分组协议、默认一轮完整执行、修复审核后重新完整执行，不再提供新的旧 command 正式执行或跨尝试拼接 PASS 作为默认收口路径**。D05 尚未实施；升级前仍以实际安装版 CLI 合同为准，旧 Run 的事实和历史可读性必须保留。
 
 | 类型 | 用途 | 何时执行 |
 |---|---|---|
@@ -326,16 +333,17 @@ DBX 暂不安排。SQLite 场景使用目标项目自身的迁移、SQL 检查�
 
 ## 7. 首版及使用后修复的 Delivery 与 Change 安排
 
-以下使用 **MVP-D01 / MVP-D02 / MVP-D03** 标识首版规划槽位，**MVP-D04** 标识真实使用反馈形成的后续修复规划。正式 Delivery / Change 身份在实际开始时建立，规划编号不代表已经激活或完成。
+**MVP-D01～D03** 表示首版规划，**MVP-D04** 已根据实际记录完成三个 Change、正式测试、Close 及稳定安装。**MVP-D05** 为 2026-10-20 新规划，已获 Owner 授权完成 Open，但 Open 不代表任何 Change 已激活或实现。实际交付身份以 manifest、Run、Archive、Full Test、Close 及安装记录为准，旧章节保留其当时的规划语境。
 
-| 规划 Delivery | Change 数 | 可使用的出口 |
+| 规划 Delivery | Change 数 | 核心出口与状态 |
 |---|---:|---|
-| MVP-D01：单 Change 手动协作 | 4 | Action 编排 Skills，通过 Runs 完成 Explore proof、方案、实现、独立审核及归档 |
-| MVP-D02：Delivery 验收与收口 | 3 | 多 Change 交付、三类测试、Full Test 修复、Close / Reopen |
-| MVP-D03：Storybook 与实际使用 | 3 | UI 预览、固定安装、目标 OpenSpec 方法接入、短入口指导和真实最小项目验收 |
-| **首版合计** | **10** | **最简手动版 v0.1.0** |
-| MVP-D04：真实使用修复与再次发布 | 3 | Reopen 历轮范围保留、完整失败收集与按影响复验、业务规格和 UI 方法收敛；通过实际核对后更新稳定安装 |
-| **含后续修复规划合计** | **13** | **首版与使用后修复分开交付，D04 尚未启动** |
+| MVP-D01：单 Change 手动协作 | 4 | Action 编排 Skills，Runs 交接及核心手动闭环 |
+| MVP-D02：Delivery 验收与收口 | 3 | 多 Change、三类测试、Full Test、Close / Reopen |
+| MVP-D03：Storybook 与实际使用 | 3 | UI 预览、稳定安装、目标 OpenSpec 接入与最小真实项目验收 |
+| **首版合计** | **10** | **v0.1.0 基础交付** |
+| MVP-D04：真实使用修复与再次发布 | 3 | 历轮范围、分组执行/续测、业务/UI 方法；**三项归档、D04 已 Close，0.2.0 稳定安装有记录** |
+| MVP-D05：正式验收与日常工作减负 | 4 | **待实施**：统一新 Full Test、未 Close 追加 Change CLI、proof/inputs 轻量化、最新 Run 补证/修订 |
+| **累计规划/已交付槽位** | **17** | **D01～D04 的记录与 D05 的待办严格区分** |
 
 前两项完成后，核心手动交付链即可验证和试用；第三项让 UI 开发及独立安装真正可用。数量是当前估计，不是固定配额；只有实际复杂度需要时才拆分，不为凑数量新增接口、存储和验收 Change。
 
@@ -528,6 +536,8 @@ Reviewer 按原 B 范围与实际证据独立判断，不因缺少未来升级�
 
 ### MVP-D04：真实使用修复与再次发布
 
+**截至 2026-10-20 的记录状态：** D04-A/B/C 对应 `011/012/013` 已归档，`026-delivery-full-test` 已记录 passed、`027-delivery-close` 已完成，`028-stable-install` 已记录 0.2.0 切换。下列 2026-10-16 的“待实施”“本次只规划”等叙述是当时方案形成的历史说明，不代表当前仍未交付；D05 最新要求另列，不能倒改旧验收结果。
+
 **来源与事实边界：**吸收以下三份 2026-10-16 真实使用反馈。原件保留为问题来源，后续产品决定统一维护在本文及相应当前 Change，不再并行维护三套长期规划；这些说明链接不成为 status / next 的运行前提。
 
 | 问题来源 | 已明确的问题或方向 | 规划归属 |
@@ -604,6 +614,68 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 本次只完成上述规划吸收，保留三份反馈原件；不 Open / Reopen D04、不激活 Change、不创建 Run、不改实现 / Skills / 规格 / 稳定包，不执行测试、迁移或 Git 写操作。
 
+### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 待实施）
+
+**范围与来源：** 本节吸收根目录 `mendi-full-test-continuation-improvement.md` 2026-10-18/20 的最新修订、`mendi-reopen-incremental-scope-improvement.md`、`mendi-ui-spec-granularity-improvement.md` 的已实现结论，以及 Owner 提供的 `mendi-run-amend-supplement-design.md` 和本仓库真实 artifacts 增长问题。D04 原有跨尝试续测/复验属于已交付历史；最新正式执行政策以本 D05 目标为准，反馈原件只作问题来历，不并列维护第二套现行总方案。
+
+**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，但尚未激活 Change。原 Full Test/外部执行来源实验代码已单独保存于 Git stash，不是 D05-A 的实现或批准结果，不自动恢复、发布。D05 对应的新 OpenSpec 变更、规格与测试需后续获得 Change 授权才建立。
+
+| Change | 独立闭环能力 | 依赖 / 优先级 |
+| --- | --- | --- |
+| **D05-A：统一正式 Full Test** | 新正式执行只用分组协议；一次完整执行收集所有可执行项、统一报告；已确认环境问题免无意义 repair/review；修复后完整重跑 | 优先处理；基于 D04-B，不重建通用测试执行器 |
+| **D05-B：未 Close 追加 Change CLI** | 在当前 open Delivery 的当前轮追加新的计划槽位、保持已有执行与轮次；追加后显式授权 bind/activate，重新满足变更后的验收范围 | 可与 A 独立实施；基于 D04-A 的轮次模型 |
+| **D05-C：proof / inputs / artifacts 轻量化** | 区分唯一证据、复现输入与临时生成物，停止不必要整树复制并核对空日志/保留合同 | 与 A 的新完整报告衔接 |
+| **D05-D：当前最新 Run supplement / amend** | 补充真实 proof 与有限正文更正，不改变原 verdict/Run 身份、不会产生无意义新 Run | 复用 C 的材料归属及既有锁/路径校验 |
+
+#### MVP-D05-A：以 groups-v1 统一未来正式执行，不维持旧 command 新执行路径
+
+1. **仅一条新正式执行路径。** 新版 `delivery full-test run` 只接受明确的完整分组计划与目标项目 `groups-v1` 实际 runner，默认完整选取当前轮全部必需组；缺少真实分组能力时明确拒绝并告知目标项目补入口，不能自动回退到旧 command 或把整条脚本 stdout 猜作组回执。Focused/Fast 继续是日常工程验证，不授予正式通过身份。MenDi 负责执行身份、范围和结果核对；目标项目负责实际断言、依赖关系、服务与清理，不为此建设通用调度平台。
+2. **完整执行、集中报错。** 启动前固定声明集合、版本/候选及必要资源边界，调用目标已有的廉价预检；普通失败保留并继续独立项，依赖项标记 blocked；清理未知、资源归属不清、全局取消或执行未确认时停止受影响后项并保留现场。逐组只记实际的 passed/failed/blocked/not-run/interrupted/unknown，零业务执行、必需 skip/TODO、wrapper exit0 不算覆盖通过。最后汇总全部失败、未执行与阻断原因、日志位置、清理状态及真实耗时；必需项有任何缺口均不能 PASS。
+3. **修复后的正式验收重新全量运行。** Author 依据统一报告集中修复，允许 Focused/Fast 排查；代码、业务断言、测试入口或配置语义改变仍须独立 Reviewer 定向审核，批准后用新 Run 身份重新执行完整必需集合。**不再以正式 continue/retest 选组、跨执行沿用旧 PASS 或候选拼装获得 Close 结论**；历史 group attempt/verification 的既有记录保留原貌，旧发布的读/查可用，不在升级时主动改写。以后确需增量正式验收须单独形成新决定。
+4. **旧记录保留，但不为旧模式继续开发新执行。** 既有 command Full Test 的 passed/failed/unknown、修复/评审、Close 和原始日志必须只读可追溯；不迁移成假造的 group 执行，不根据旧 stdout 自动生成组状态。对实际尚未关闭、已经存在旧 command failed 的项目（例如 DreMo Run033），当本轮修复确获必要独立批准且现场可确认结束后，允许**新建一轮全新的 groups-v1 完整正式执行**，不要求一个并不存在的旧 `testAttemptRunRef`，不复用旧 PASS，也不篡改旧失败。此处仅是新执行的准入衔接，不是维护旧 command 再执行。
+5. **区分普通环境问题。** 目标项目维护端口、身份、依赖、构建、数据和资源清理的预检入口；MenDi 只调用与核对通用合同。可核实是本项目资源、无需改代码/断言/配置行为含义且现场已安全恢复的环境问题，在原测试授权内简记处置并启动新的完整执行，**不机械创建 delivery-repair/review Runs**。外部不明进程、未确认停止、锁及中断仍阻断；实质修复仍要 Review。新模式的 CLI 准入、status/next、Skills 和 Close 消费必须同步改变，不能只改文案。
+6. **按测量优化耗时。** 记录测试实际墙钟及主要预检、准备、构建、等待、断言、清理耗时；优先提前识别廉价阻断，同一次执行可按明确输入/配置复用只读构建，普通 UI 等待按可观察就绪而非盲 sleep，独立且隔离的组可有限并发。保留真实权限、时间、安装、锁、取消与清理负控；不放宽断言、不删测试、不编造加速百分比或 ETA。证据输出减负与 C 协同，不追加性能管理平台。
+7. **外部执行来源实验的边界。** 既有 `external-full-test` 实验已从当前源码工作区单独存入 Git stash；其代码不自动进入 D05-A。第三方/先行普通工程 Full 不能仅凭日志或 Owner 接纳被默认为新的正式 `groups-v1` PASS。若确需外部来源例外，须先明确其与“仅新分组正式执行”的冲突及 Owner 决定，不暗中引入第二条通过路径。
+
+**A 的重点验收：** 中段普通失败后仍查出后段独立失败；构建失败仅阻断依赖；未知清理/取消保留真实未执行；全部必需组通过才可形成新正式 PASS；代码修复经独立批准后完整重跑；旧 command failed → 新完整 groups-v1 可正常启动且原记录不变；普通环境重试不强制生成无意义 repair/review；未实现 group 协议、跨轮结果、伪造回执或外部普通 Full 均不能取得正式 PASS。
+
+#### MVP-D05-B：已 Open、未 Close 的 Delivery 直接追加计划 Change
+
+**缺口事实：** 现有 `change bind` 只把当前 `plannedChanges` 中已有的 slot 关联到 OpenSpec Change；缺少“同一已 Open Delivery 计划中途新增槽位”的 CLI。`reopen` 是上一轮完成 Close 后才开始新轮，不能为仍 open 的范围追加硬造新轮。
+
+**建议 CLI：** `mendi delivery change add --project <path> --input <change-add.json> --role author --actor <id>`（命令/输入为待实现草案）。输入给出非空 `slot`、`title`、`dependsOn`、`reason`，可附 `roadmapSection` / 必要跨 Delivery 已交付 `baselineDependencies`，并能指明明确的 Owner 范围决定来历；不要求为这个操作另外运行 OpenSpec Explore/Propose。程序演员标识不构成真人授权证明。新增计划需要 Owner 明确许可；以后 bind/激活新 Change 仍遵守 `owner 授权` 原始消息约定。
+
+- **追加而非替换：** 只对当前 Delivery `state=open` 的**当前轮 scope.plannedChanges** 追加新槽位，保留 `goal`、旧槽位、依赖、`changeBindings`、已归档 Change、旧轮及 Run；由现有 `rounds/currentRoundId` 权威模型生成顶层范围投影。不改 `openedOn`、不增加 `roundId`、不擅自 bind/激活、不预建 Change 批次或 Archive 序号。已有 active Change 可以在其授权范围内继续，追加的槽位排队等待正常 bind。
+- **一致性与范围：** 拒绝重复或历史轮次复用 slot、依赖不存在/成环、错误的基线 Close、目标已 closed、旧格式未授权迁移、写入锁冲突及作用范围不明。输入和受管实际文件在写入锁内重新核对；保存一份可追溯的范围追加理由/前后差异来源，不复制旧整树证据。重复提交不得再次追加；中断不能报告已成功或无声覆盖 manifest。
+- **曾经 Full Test、尚未 Close 的特殊情况：** D05-B **也必须支持当前轮正式测试已稳定结束（passed 或 failed）而尚未 Close 时追加**，不能将“先前跑过测试”变成必须 Close/Reopen 的理由。旧测试只覆盖旧集合；新的追加操作应原子地保存范围变更来历、使旧候选/正式 PASS 对新范围失去收口适用性、正确调整当前轮执行入口及 status/next，之后完成新 Change 并重新完整 Full Test。旧 Run/outcome 保留不变。若正式执行仍运行、结束/清理为 unknown、现有修复评审仍未解决或指针状态无法可靠确认，则明确阻断本次追加并指出需先解决的现场，不能悄悄沿用旧 PASS、重写旧 Run 或暗中 Reopen。
+- **绑定与验收：** 追加操作只调整计划，`change bind` 仍要求无冲突活动项、槽位已存在及单独激活授权；所有计划槽位按本轮约定完成、实际归档及独立审核后才进入新的完整 Full Test。Close 必须核对追加后的**完整当前范围**，而非首次 Open 时的旧快照。必要的身份、scope、操作状态与下一步反馈使用既有查询模式，不增加通用版本管理器。
+
+**B 的重点验收：** open 且尚无 Full Test 时追加一个或多个槽位（包括当前有正在执行的合法 Change），旧 binding/轮次/序号不变；后续有授权才可 bind；相同 slot 重试不重复追加；closed/未知写入/非法依赖拒绝；**已有正式 PASS 或已完成 failed 但尚未 Close 时允许安全追加，旧测试保留、失去新范围适用性且不能用于新 Close**；执行中/unknown 和未解决的修复评审明确阻断；实际 Close 后仍须 Reopen，而非调用此命令。
+
+#### MVP-D05-C：减少 proof / inputs / artifacts 的无价值产物
+
+**真实观察（2026-10-20 工作区快照，非门槛）：** 四个 Delivery 的 `.mendi/runs` 共 5,410 个文件、353 个零字节文件；D04-B 的 `014-apply` 单 Run 有 1,015 个文件（含 77 个零字节），其中多次临时组执行重复形成 `group-request.json`、`result.json`、`run.md`、`stdout.log`、`stderr.log` 等。真正以 `inputs/` 命名的目录很少，不能简单归因于 inputs 或把所有文件都认定为冗余；D03 复现 proof 中必要的项目输入应继续保留。
+
+- Explore proof 只证明关键疑点；必要可复现输入优先留在 `scripts/`、`tests/fixtures/` 或其他受控来源，Run 记录直接路径与真实结果。唯一输入才在当前 `artifacts/inputs/` 留副本，避免把完整临时工程、旧 Run 树、多轮成功输出递归复制进每个新 Run。
+- 目标项目测试产生的临时服务/组目录与 MenDi 正式证据分离；保留完整失败、阻断/取消/未知、清理结果、原始必要日志与可重现标识。多份摘要引用同一原件，正常通过组不用无条件搬运所有中间 JSON、相同 stdout、成功截图或临时生成树。正式测试的必要 group request/report 和失败原件不能为了减量而省略。
+- 检查 `src/application/test-execution.ts` 及对应读回、文件身份、锁/中断恢复：当前每次执行预创建 stdout/stderr，导致大量零字节文件。只有在协议允许以明确 empty 状态表示无输出、消费者/诊断/恢复均验证兼容之后，才可选择不生成空日志；不直接批量删除 0.2.0 或已 submitted 的历史文件。
+- 优化的是未来证据留存与测试 fixture 结构，不追改 D01～D04 已提交的 proof、Run 与 verdict；采用场景级测试验证完整审计和定位能力未下降，不增加文件数量/容量限制、全量 Hash 链、证据数据库或自动清理 submitted 历史的后台任务。
+
+**C 的重点验收：** 新 Run 的最小 proof 可复现，失败与取消日志可追溯；相同原始输出只保存一份；空日志的省略不会破坏读回与未知状态；正式测试必需组覆盖和 Reviewer 审核依据没有减少；旧文件全部仍可正常读取。文件数降低只作效果观察，不作为通过门槛。
+
+#### MVP-D05-D：当前最新 Run 的 supplement 与有限 amend
+
+**直接案例：** DreMo `035-review-delivery-repair` 已 submitted/approved，但未进入下一条实际 Run 时希望补入 Reviewer 真正保存的独立 proof，避免仅为补附件生成 036。此能力来自 Owner 提供的 `mendi-run-amend-supplement-design.md`，不用于更改 DreMo 033 的失败、034 的 Author 证据或 035 原已批准结论。
+
+- 先提供 `mendi run supplement --project ... --run ... --role ... --actor ... --input ...`：只为当前活跃 Delivery、当前轮、当前**实际最新且尚未被下一 Run/Close 消费**的 submitted Run 增加真实附件与时间/来源/原因记录；不覆盖既有证明、不改原 Run 正文/verdict、Run 编号或交接指针。新增证据若是批准后重新执行，必须显示新的真实时间，不伪装成审批前就有的日志；可疑/相反证据提示冲突交 Owner，不静默变成批准依据。
+- 再提供 `mendi run amend --project ... --run ... --role ... --actor ... --body ... --reason ...`：首版仅允许排版、错字、普通链接、非实质引用及明确标注的事后附注等有限 Markdown 正文修改，保存旧正文、修改者/时间/原因/差异；不可修改 frontmatter 的 role、actor、author、result、verdict、status、关联、Full Test 或 Close。改变正文审核含义同样是实质变更，不能靠字段未变绕过修订与独立复审。
+- 写入校验必须同时检查真正的最新 Run、提交状态、当前轮权威指针、实际编号占位、下游 draft/正式 Run 是否已经产生、项目锁及受管路径；不能只凭最大编号或 `next` 文案。附件与索引/正文修改需避免半提交被报告成功，留下可诊断、可恢复的中断现场。旧 Run 没有 `amendments` 继续可读；不创建空目录、强制 proof 数量 gate、额外审核 Action 或新生命周期 Run。
+- 对 `supplement` 和 `amend` 使用同一受控最新 Run 小能力，不再额外拆两个 Change；`run save/submit` 旧含义不变，status/查询可看到补充来源，但不因此自动推进阶段、改 verdict 或批准 Full Test。DreMo 的具体补证只在该目标 Run 当时仍符合条件并得到对应授权后另行执行。
+
+**D 的重点验收：** 当前已批准但未被消费的最新 Run 可补实证而不占下一号；补证时间不倒灌原 Review；有限正文更正保留原文；已有下游 draft、Closed、锁冲突、路径越界、重复附件与实质改 verdict 全部拒绝；写入中断有明确可恢复现场；旧 Run 和原 next 不被错误改写。
+
+**D05 整体出口：** 四个独立 Change 分别完成 OpenSpec 方案、必要 proof、实现及独立审核和 Archive；当前轮追加能力、统一完整正式 Full Test、轻量证据和 Run 补证共同完成真实目标场景与异常回归。正式 Full Test、Close、Git、打包及稳定安装切换各自取得独立授权；不能仅凭本路线图、工程通过、历史 D04 PASS 或已存在的未提交实现宣布 D05 完成。变更复杂度以实际 Explore 为准，不为维持四个名额增加无意义动作。
+
 ## 8. 从干净工程开始
 
 项目名保持 MenDi，产品包名保持 mendi，路线图文件名保持不变。初始化时 Owner 选择重新开始，未承接旧源码、Flowkit 管理目录、旧规格与流程历史；该决定只描述初始背景。后续开发保留当前工程、Git 与正式材料，不据本节再次清理或重建。
@@ -642,12 +714,16 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 2026-10-16 新增的 Reopen、Full Test 和 UI 规格粒度三份真实使用反馈已吸收进 §5 的现行 / 规划边界及 §7 的 MVP-D04；原件保留作为问题来历，不作为第二份长期路线图。本次只修改本文，不改 D03 或 DreMo 的历史和生命周期状态。
 
+2026-10-18 补充的 Full Test 修复要求：测试预检及项目服务识别、端口与清理规则由各目标项目维护，MenDi 仅维护通用调用方法与结果合同。普通环境问题在既有授权内处理并简记，不再强制创建 repair/review Runs；实质代码或测试合同修复仍保留必要独立审核，历史失败与未知现场保持。自有 skill 的非实质性指引修正允许轻量直接维护；涉及程序准入或结果语义时同步修改实现并验证。问题来历、修复落点与验收例子见 `mendi-full-test-continuation-improvement.md` 的同日补充；本次仅记录，不激活后续工作或改变当前安装行为。
+
+2026-10-20 吸收与版本边界：根目录三份专项反馈中，Reopen 历轮范围与 UI 业务契约方法已由 D04-A/C 实际归档；Full Test 文档最新的“完整执行、修复后整轮重跑”方向与 D04-B 曾交付的跨尝试复验不同，已收敛为 §7 D05-A 的**待实施新规则**。Owner 附件 `mendi-run-amend-supplement-design.md` 的有限补证/修订要求已收敛为 D05-D；同日证据体积观察归 D05-C；未 Close 追加计划 Change CLI 归 D05-B。反馈原件仅为问题与决策来源，统一当前长期设计以本文为准，不再平行维护不同正式执行默认政策。D05 已于 2026-10-20 按 Owner 授权登记 Open，外部执行 WIP 已安全存入 Git stash；仍未激活 D05 Change。Open 的事实以 manifest 和 001-delivery-open 为准，不代表对后续实施、正式测试、Git 提交或发布的授权。
+
 - [OpenSpec 1.14.1 发布说明](https://github.com/Fission-AI/OpenSpec/releases/tag/v1.14.1)。
 - [OpenSpec 1.14.1 工作流](https://github.com/Fission-AI/OpenSpec/blob/v1.14.1/docs/workflows.md)：MENDI 的 Explore proof 与独立 Review 是本项目协作约定。
 - [OpenSpec 项目配置](https://github.com/Fission-AI/OpenSpec/blob/v1.14.1/docs/customization.md)。
 - [Storybook 交互测试](https://storybook.js.org/docs/writing-tests/interaction-testing)与[官方 MCP](https://storybook.js.org/docs/ai/mcp/overview/)。
 - [Impeccable 官方项目](https://github.com/pbakaus/impeccable)。
 
-首版采用 3 个 Delivery、10 个 Change 的开发估计；使用后新增 MVP-D04 的 3 个 Change 规划，累计 4 个 Delivery、13 个 Change。数量用于当前划分，不是固定配额或验收数量 gate；若 Explore 证明需要调整，在实际授权与当前方案中明确。原 7 个 Delivery、40 个基础规划槽位及追加修复不再构成实施义务。
+首版为 3 个 Delivery、10 个 Change；D04 的 3 项已交付；D05 目前另规划 4 项，因此累计 5 个 Delivery、17 个已交付/拟交付槽位。数量仅用于当前划分，不是固定配额或验收数量 gate；实际范围和拆分以 Owner 后续授权、Explore/Propose 与真实完成记录为准。原 7 个 Delivery、40 个基础规划槽位及追加修复不再构成实施义务。
 
 本文是开发目标，不是产品验收声明。工程初始化、工具准备与 Git 重建的实际状态以当前工程及 README 为准；尚未激活的 Delivery / Change 不写成已完成。

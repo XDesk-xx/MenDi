@@ -1,0 +1,66 @@
+{
+  "id": "20261020-05-formal-full-test-and-workflow-repairs",
+  "planningSlot": "MVP-D05",
+  "title": "正式验收与日常工作减负",
+  "state": "open",
+  "recordingMode": "manual-bootstrap",
+  "openedOn": "2026-10-20",
+  "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+  "goal": "统一 groups-v1 正式 Full Test 完整执行与统一报告、修复后全量重跑；支持未 Close Delivery 追加 Change；优化 proof/inputs/artifacts 证据，并支持最新 Run 的 supplement/amend。",
+  "plannedChanges": [
+    {
+      "slot": "MVP-D05-A",
+      "title": "统一正式 Full Test",
+      "dependsOn": [],
+      "roadmapSection": "MVP-D05-A：以 groups-v1 统一未来正式执行"
+    },
+    {
+      "slot": "MVP-D05-B",
+      "title": "未 Close 追加 Change CLI",
+      "dependsOn": [],
+      "roadmapSection": "MVP-D05-B：已 Open、未 Close 的 Delivery 直接追加计划 Change"
+    },
+    {
+      "slot": "MVP-D05-C",
+      "title": "proof / inputs / artifacts 轻量化",
+      "dependsOn": [
+        "MVP-D05-A"
+      ],
+      "roadmapSection": "MVP-D05-C：减少 proof / inputs / artifacts 的无价值产物"
+    },
+    {
+      "slot": "MVP-D05-D",
+      "title": "当前最新 Run supplement / amend",
+      "dependsOn": [
+        "MVP-D05-C"
+      ],
+      "roadmapSection": "MVP-D05-D：当前最新 Run 的 supplement 与有限 amend"
+    }
+  ],
+  "changeBindings": [],
+  "changeBatches": [],
+  "activeChangeId": null,
+  "exitCriteria": [
+    "D05-A/B/C/D 四项按各自授权完成 Explore proof、Propose、Apply、独立审核与 Archive。",
+    "未来正式 Full Test 统一 groups-v1，普通失败收集完整，修复后重新运行全部必需组；旧 command 仅历史查询。",
+    "未 Close Delivery 可明确授权新增计划槽位，不改变旧轮事实、不复用旧 PASS 收口。",
+    "减少无价值证据复制但保留失败和中断现场；补证与正文小修订不改变原 verdict。",
+    "D05 正式 Full Test、Close、Git、稳定安装分别按 Owner 独立授权执行。"
+  ],
+  "outOfScope": [
+    "旧 command 新执行、跨尝试拼接 PASS、普通外部 Full 直接追认为新正式 PASS。",
+    "修改 D01-D04 旧 Run、verdict、Close 以及批量删除已提交证据。",
+    "未经单独授权修改 DreMo 或推进其他 Delivery。",
+    "通用测试调度/缓存、全库 hash 证据链、自动审核及安装/部署发布。"
+  ],
+  "openRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
+  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
+  "stopBoundary": "delivery-checkpoint",
+  "next": {
+    "action": "delivery-checkpoint",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
+    "reason": "D05 已 Open 并登记四项 Change 计划；尚未激活任何 Change，等待 Owner 下一步指令。"
+  }
+}
