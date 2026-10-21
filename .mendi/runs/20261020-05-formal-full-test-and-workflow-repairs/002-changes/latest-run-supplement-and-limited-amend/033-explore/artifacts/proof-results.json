@@ -1,0 +1,83 @@
+{
+  "name": "D05-D/033 Author bounded proof",
+  "status": "passed",
+  "method": "Actual present-tense product v2 Action APIs and isolated target; mocked OpenSpec readiness only for fixture, no real independent Reviewer/Owner",
+  "date": "2026-10-21",
+  "cases": [
+    {
+      "id": "P01",
+      "name": "submitted latest Run remains selected",
+      "runRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+      "runNumber": 1,
+      "currentBeforeDownstream": true,
+      "bodyBytes": 321,
+      "next": {
+        "source": "local-state",
+        "executable": false,
+        "role": "reviewer",
+        "action": "review-explore",
+        "status": "awaiting-review",
+        "reason": "Author 已完成提交，等待独立 Reviewer。",
+        "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md"
+      }
+    },
+    {
+      "id": "P02",
+      "name": "ordinary save/submit reject current submitted Run",
+      "saveCode": "run-already-submitted",
+      "submitCode": "run-already-submitted",
+      "runByteUnchanged": true,
+      "savedMessage": "已提交 Run 不能保存或重新提交。",
+      "submittedMessage": "已提交 Run 不能保存或重新提交。"
+    },
+    {
+      "id": "P03",
+      "name": "unsafe evidence path rejected",
+      "code": "unsafe-reference",
+      "message": "受管引用必须是目标内的相对路径。"
+    },
+    {
+      "id": "P04",
+      "name": "downstream draft immediately replaces current Run",
+      "newDraftRef": ".mendi/runs/d01/001-changes/proof-entry/002-review-explore/run.md",
+      "priorRunRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+      "rejectedCode": "run-not-current",
+      "nextAvailableRunNumber": 3,
+      "message": "指定 Run 不是当前 draft。"
+    },
+    {
+      "id": "P05",
+      "name": "role identity and true lock collisions reject writes",
+      "actorCode": "action-role-mismatch",
+      "lockCode": "write-in-progress-or-interrupted",
+      "actorMessage": "当前 Run 的角色或操作者不匹配。",
+      "lockMessage": "目标存在写入锁，操作可能正在进行或已中断。",
+      "lockReleased": true
+    },
+    {
+      "id": "P06",
+      "name": "approved Review is immutable and fixed to original Author",
+      "reviewRef": ".mendi/runs/d01/001-changes/proof-entry/002-review-explore/run.md",
+      "verdict": "approved",
+      "authorRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+      "reviewResaveCode": "run-already-submitted",
+      "authorBytesUnchanged": true,
+      "reviewBytesUnchanged": true,
+      "next": {
+        "source": "local-state",
+        "executable": false,
+        "role": "author",
+        "action": "propose",
+        "status": "awaiting-instruction",
+        "reason": "Reviewer approved；下一步需显式触发。"
+      }
+    }
+  ],
+  "limits": [
+    "No run supplement or run amend product CLI exists yet; this proof checks baseline rejects and eligibility edges, not success of a new capability",
+    "The Reviewer verdict here is an isolated test fixture, not an approval for MenDi/DreMo history",
+    "A future supplement needs an independently specified append-only receipt after submitted Run, without mutating original verdict/body",
+    "A future limited amend needs an actual Markdown semantic boundary, before-body snapshot, attribution and downstream eligibility; none is implemented here",
+    "The test did not touch real Delivery Full Test/Close, previous submitted Runs or Git"
+  ]
+}

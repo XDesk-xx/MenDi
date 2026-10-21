@@ -1,0 +1,53 @@
+{
+  "review": "D05-D/044",
+  "recordedAt": "2026-10-21T06:07:11.430Z",
+  "method": "Direct 7 bounded historical Run byte checks against already recorded source hashes; archived 3 additionally compared with Git HEAD",
+  "entries": [
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": null,
+      "status": "explore"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/034-review-explore/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": null,
+      "status": "approved"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": null,
+      "status": "rejected"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": null,
+      "status": "approved"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": true,
+      "status": "archived"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": true,
+      "status": "archived"
+    },
+    {
+      "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
+      "priorDigestMatches": true,
+      "gitHEADMatches": true,
+      "status": "archived"
+    }
+  ],
+  "limits": [
+    "This is scoped direct source integrity, not global hashes or a new validation gate",
+    "No older Run was modified"
+  ]
+}

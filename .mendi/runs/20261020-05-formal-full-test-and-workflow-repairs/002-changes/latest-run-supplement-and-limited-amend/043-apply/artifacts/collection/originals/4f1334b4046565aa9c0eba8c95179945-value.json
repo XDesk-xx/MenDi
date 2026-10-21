@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"aftercare-unconfirmed\",\n    \"message\": \"提交后操作未完整确认；核对实际现场和锁。\",\n    \"details\": {\n      \"outcome\": \"unknown\",\n      \"directory\": \".mendi/runs/d01/001-changes/proof-entry/001-explore/aftercare/supplements/s1\",\n      \"message\": \"已有原件与本请求不符；不覆盖。\",\n      \"code\": \"aftercare-resume-conflict\",\n      \"retainedLock\": true\n    },\n    \"fix\": \"保留现场；Owner 核对停止写者并处置锁后，仅同请求可显式 --resume finish。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

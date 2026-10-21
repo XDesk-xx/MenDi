@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"delivery-not-open\",\n    \"message\": \"仅当前 open Delivery 可操作。\",\n    \"details\": {},\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

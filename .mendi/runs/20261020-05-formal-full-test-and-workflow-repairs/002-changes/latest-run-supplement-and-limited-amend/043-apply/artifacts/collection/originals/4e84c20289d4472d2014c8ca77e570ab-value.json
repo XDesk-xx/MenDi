@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"duplicate-evidence\",\n    \"message\": \"该原件已经补证；不能确认是不同真实证据。\",\n    \"details\": {},\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

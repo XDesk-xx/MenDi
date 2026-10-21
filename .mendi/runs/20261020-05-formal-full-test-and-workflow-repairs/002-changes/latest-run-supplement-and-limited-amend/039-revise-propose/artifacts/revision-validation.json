@@ -1,0 +1,57 @@
+{
+  "action": "revise-propose",
+  "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/039-revise-propose/run.md",
+  "revises": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/037-propose/run.md",
+  "reviewInput": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/038-review-propose/run.md",
+  "reviewVerdict": "changes-requested",
+  "findings": {
+    "F1": {
+      "fixed": true,
+      "result": "recordedAt != unverified sourceClaimedCollectedAt; missing approval timestamp cannot be invented"
+    },
+    "F2": {
+      "fixed": true,
+      "result": "explicit amend requestId, one confirmed per Run, same ID idempotent, other ID rejected"
+    },
+    "F3": {
+      "fixed": true,
+      "result": "unreviewed-comment authoritative=false; false approved/failed text never affects official result"
+    }
+  },
+  "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate latest-run-supplement-and-limited-amend --strict --json",
+  "exitCode": 0,
+  "validation": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "taskCount": 16,
+  "implementation": false
+}

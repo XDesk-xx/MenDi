@@ -29,6 +29,8 @@ export interface Arguments {
     | 'action-archive'
     | 'workspace-diagnose'
     | 'run-save'
+    | 'run-supplement'
+    | 'run-amend'
     | 'run-submit';
   json: boolean;
   values: Record<string, string>;
@@ -67,8 +69,8 @@ export function parseArguments(args: string[]): Arguments {
   ) {
     command = `action-${args[1]}` as Arguments['command'];
     consumed = 2;
-  } else if (args[0] === 'run' && (args[1] === 'save' || args[1] === 'submit')) {
-    command = args[1] === 'save' ? 'run-save' : 'run-submit';
+  } else if (args[0] === 'run' && ['save', 'submit', 'supplement', 'amend'].includes(args[1])) {
+    command = `run-${args[1]}` as Arguments['command'];
     consumed = 2;
   } else if (args[0] === 'status' || args[0] === 'next') {
     command = args[0];
@@ -76,6 +78,17 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(['run-supplement', 'run-amend'].includes(command)
+      ? [
+          'run',
+          'role',
+          'actor',
+          'resume',
+          ...(command === 'run-supplement'
+            ? ['input']
+            : ['request-id', 'kind', 'body', 'comment', 'reason']),
+        ]
+      : []),
     ...(command === 'delivery-change-add' ? ['input', 'role', 'actor', 'resume'] : []),
     ...(command === 'delivery-verification-create'
       ? ['input', 'role', 'actor']
@@ -158,6 +171,14 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(['run-supplement', 'run-amend'].includes(command)
+      ? [
+          'run',
+          'role',
+          'actor',
+          ...(command === 'run-supplement' ? ['input'] : ['request-id', 'kind', 'reason']),
+        ]
+      : []),
     ...(command === 'delivery-change-add'
       ? ['role', 'actor', ...(values.resume ? [] : ['input'])]
       : []),
@@ -216,6 +237,14 @@ export function parseArguments(args: string[]): Arguments {
   ];
   for (const key of required) if (!values[key]) throw usage(`缺少 --${key}。`);
   if (
+    command === 'run-amend' &&
+    (!['presentation-only', 'unreviewed-comment'].includes(values.kind) ||
+      (values.kind === 'presentation-only'
+        ? !values.body || Boolean(values.comment)
+        : !values.comment || Boolean(values.body)))
+  )
+    throw usage('--kind 必须显式匹配唯一 --body 或 --comment 输入。');
+  if (
     ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-change-add'].includes(
       command,
     ) &&
@@ -270,6 +299,9 @@ mendi action archive --project <项目根> --run <当前 Archive Run> --role aut
 mendi workspace diagnose --project <项目根> [--run <同 Change 占号 Run>]
 mendi run save --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --body <UTF-8 Markdown 文件>
 mendi run submit --project <项目根> --run <当前 draft 引用> --role <角色> --actor <标识> --outcome <continuing|complete> --result <摘要> [--verdict <approved|changes-requested|rejected>]
+mendi run supplement --project <项目根> --run <当前 submitted Run> --role <原角色> --actor <原标识> --input <项目内补证 JSON> [--resume finish]
+mendi run amend --project <项目根> --run <当前 submitted Run> --role <原角色> --actor <原标识> --request-id <ID> --kind presentation-only --body <项目内完整正文> --reason <原因> [--resume finish]
+mendi run amend --project <项目根> --run <当前 submitted Run> --role <原角色> --actor <原标识> --request-id <ID> --kind unreviewed-comment --comment <项目内评论> --reason <原因> [--resume finish]
 
 项目命令支持 --json；本地 diagnose / test / migrate / full-test / repair 不接受 --openspec-bin。其他命令可指定稳定 OpenSpec 1.14.1 绝对入口；save 忽略该兼容参数且不访问上游。
 --project 相对于调用目录；--scope / --body 相对于目标项目根，也支持绝对路径。
@@ -285,7 +317,8 @@ test 仅读取本地配置；list 不要求 Open，run 要求 open product / Win
 阶段：explore / propose / apply，review-<阶段>，revise-<阶段>；archive 仅 Author，准备与 execute / finish 分开。
 Review 须明确 --author-run；修订须明确 --revises；--tool 仅显式选择时读取 OpenSpec 或 Storybook 指导，不安装或运行工具。
 start / continue 返回实际读取的方法正文；Agent 完成工作后 save / submit，命令不自动执行下一阶段。
-submitted Run 不可修改；continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
+submitted Run 原字节不可修改；专用 aftercare 保留附属事实，不改变 next/verdict。amend 单 Run 一次；评论始终事后未审核、非权威。补证时间来源始终 unverified。恢复须 Owner 先核对停止写者并处置锁，同请求带全输入 --resume finish，不自动清锁。
+continuing 后用 continue 新建 Run；完整 Review 才填写 verdict。
 actor 是显式责任标识，独立性由 Owner / 会话承担。人工 bootstrap 仅查询，不通过产品 Open / Close / Reopen 迁移历史。
 新 Close JSON 唯一选择 testAttemptRunRef，并包含 applicability:{conclusion:"applicable",materials,changes,reason}；旧选择器仅历史读取。
 新正式 Full Test 唯一使用 mode:groups-v1、mendi-group-tests/1、planRef、candidate、purpose:initial、全部必需 selection；fromRunRef 固定当前进展，修复后重新全量。

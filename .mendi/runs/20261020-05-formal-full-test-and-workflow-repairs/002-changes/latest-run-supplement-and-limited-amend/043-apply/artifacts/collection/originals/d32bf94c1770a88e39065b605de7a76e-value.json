@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"operation-failed\",\n    \"message\": \"操作失败。\",\n    \"details\": {\n      \"message\": \"ENOENT: no such file or directory, lstat 'D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-tbMfqa\\\\minimal-project\\\\missing.txt'\",\n      \"code\": \"ENOENT\"\n    },\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

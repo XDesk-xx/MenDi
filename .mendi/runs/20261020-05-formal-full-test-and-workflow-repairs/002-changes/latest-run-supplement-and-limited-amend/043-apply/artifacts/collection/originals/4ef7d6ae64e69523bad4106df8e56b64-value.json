@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"write-conflict\",\n    \"message\": \"仍有写入锁；须 Owner 核对停止写者并显式处置，不自动清锁。\",\n    \"details\": {},\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-21T04:54:41.437Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "validate",
+    "latest-run-supplement-and-limited-amend",
+    "--strict",
+    "--json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"latest-run-supplement-and-limited-amend\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 80\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

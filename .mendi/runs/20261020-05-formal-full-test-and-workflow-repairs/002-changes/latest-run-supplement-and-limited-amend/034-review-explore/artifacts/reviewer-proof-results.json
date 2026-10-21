@@ -1,0 +1,112 @@
+{
+  "recordedAt": "2026-10-21T03:07:05.019Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+  "method": "actual product-v2 actionTarget, current Action APIs and real product Run save/submit behavior; readiness stub only for OpenSpec fixture",
+  "cases": [
+    {
+      "id": "current-submitted-author-before-downstream",
+      "observed": {
+        "author": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+        "latest": true,
+        "status": "submitted",
+        "next": "review-explore",
+        "runNumber": 1
+      },
+      "source": [
+        "src/adapters/runs.ts:42-48",
+        "src/application/project-query.ts:88-114"
+      ]
+    },
+    {
+      "id": "ordinary-save-submit-remain-immutable",
+      "observed": {
+        "oldSave": {
+          "code": "run-already-submitted",
+          "message": "已提交 Run 不能保存或重新提交。"
+        },
+        "oldSubmit": {
+          "code": "run-already-submitted",
+          "message": "已提交 Run 不能保存或重新提交。"
+        },
+        "runBytesUnchanged": true
+      },
+      "source": [
+        "src/application/action-context.ts:65-74"
+      ]
+    },
+    {
+      "id": "managed-path-rejection",
+      "observed": {
+        "code": "unsafe-reference",
+        "message": "受管引用必须是目标内的相对路径。"
+      },
+      "source": [
+        "src/adapters/paths.ts:23-56"
+      ]
+    },
+    {
+      "id": "downstream-draft-immediately-displaces-author",
+      "observed": {
+        "draft": ".mendi/runs/d01/001-changes/proof-entry/002-review-explore/run.md",
+        "nextNumber": 3,
+        "priorOldCurrent": "run-not-current"
+      },
+      "source": [
+        "src/adapters/action-store.ts:64-104",
+        "src/adapters/runs.ts:42-48"
+      ]
+    },
+    {
+      "id": "real-lock-and-wrong-actor",
+      "observed": {
+        "wrongActor": "action-role-mismatch",
+        "lock": "write-in-progress-or-interrupted",
+        "lockLeft": false
+      },
+      "source": [
+        "src/application/action-context.ts:38-41",
+        "src/adapters/workspace.ts:181-211"
+      ]
+    },
+    {
+      "id": "approved-review-is-current-but-verdict-immutable",
+      "observed": {
+        "reviewRef": ".mendi/runs/d01/001-changes/proof-entry/002-review-explore/run.md",
+        "authorRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+        "verdict": "approved",
+        "next": "propose",
+        "resave": "run-already-submitted",
+        "bytesUnchanged": true
+      },
+      "source": [
+        "src/core/actions.ts:202-279",
+        "src/application/actions.ts:174-231"
+      ]
+    },
+    {
+      "id": "approved-review-displaced-by-next-propose-draft",
+      "observed": {
+        "newDraftRef": ".mendi/runs/d01/001-changes/proof-entry/003-propose/run.md",
+        "priorReviewStale": "run-not-current",
+        "nextNumber": 4,
+        "priorReviewBytesUnchanged": true
+      },
+      "source": [
+        "src/core/actions.ts:281-322",
+        "src/adapters/action-store.ts:64-104"
+      ]
+    }
+  ],
+  "caseCount": 7,
+  "assessment": [
+    "Baseline facts do not show supplement/amend implemented, and do not authorize changing submitted Run",
+    "Current Change binding currentRun and shared delivery-wide reservation numbering are separate; Propose must check actual global next occupancy, round and current authority",
+    "A current approved Reviewer is latest before a new draft, but post-review evidence is later and cannot retroactively affect approved verdict",
+    "A Markdown edit to a submitted body with semantic effect must not be accepted as cosmetic simply because frontmatter remains unchanged"
+  ],
+  "limits": [
+    "No actual supplement/amend product write or old submitted modification",
+    "No D05 formal Full Test/Close/Archive/Git/stable installation or DreMo changes",
+    "One controlled product fixture, not generalized across arbitrary Delivery operation Run types"
+  ]
+}

@@ -145,6 +145,18 @@ status / next SHALL 只读解释当前轮和当前交接，或显式指定的已
 - **WHEN** 合法活动 Change 尚在同轮执行且 Owner 另行追加后续槽位
 - **THEN** next 保留活动 Change 当前 Run/角色与动作，同时能只读展示新完整计划，不让追加收据抢占活动阶段
 
+#### Scenario: Current Run shows confirmed post-submission material without changing next
+- **WHEN** 本轮合法当前 submitted Change/Delivery Run 已保存实际确认的 supplement 或有限 amend 附属材料
+- **THEN** status/query 保持原始 Run 身份、状态、审核 verdict、正式 Full Test 结果及 next 不变；对已确认收据仅展示系统记录的 recordedAt、标为 unverified 的来源自述时间及隔离的非审批补充/差异；缺失或未确认的附属提交不得被展示为完成
+
+#### Scenario: Free aftercare comment contains a false approval claim
+- **WHEN** 已确认的非权威事后评论自由文本自称“重新 approved”或“旧失败已通过”，而原 Run 没有新的独立审核
+- **THEN** status/query 只在明确标为 unreviewed-comment、authoritative=false 的隔离区域显示原文字节，正式摘要、原 verdict、结果、next 及证明适用性均不变化
+
+#### Scenario: Legacy/archived run retains normal read compatibility
+- **WHEN** 查询没有提交后附属证据的旧 Run，或者被下游新 Run 消费的历史 Run
+- **THEN** 历史查询可按原记录读取，无附属记录不算异常；仅显示已经确认且归属明确的后续事实，不能用旧附属材料准入历史编辑
+
 ### Requirement: Manual bootstrap read compatibility
 
 系统 SHALL 只读识别当前 `recordingMode=manual-bootstrap` 的项目入口和 manifest，保留其阶段、Run 与审核引用并标明来源。未版本化且不符合该格式的记录 MUST 报错；产品写命令 SHALL 拒绝修改人工记录，不将人工历史强制改写为产品格式。

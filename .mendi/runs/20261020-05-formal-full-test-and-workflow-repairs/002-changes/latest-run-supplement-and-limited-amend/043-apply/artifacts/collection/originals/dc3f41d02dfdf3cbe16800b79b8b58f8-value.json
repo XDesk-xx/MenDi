@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"unsafe-reference\",\n    \"message\": \"受管引用必须是目标内的相对路径。\",\n    \"details\": {\n      \"ref\": \"../external.txt\"\n    },\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

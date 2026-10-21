@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"legacy-product-read-only\",\n    \"message\": \"旧 product 仅可查询，写入须先预览并显式迁移。\",\n    \"details\": {},\n    \"fix\": \"旧操作的 pending / 中断必须先使用兼容旧版恢复完成，再由新版预览迁移；新版不恢复旧提交。本次新迁移中断则核对现场后显式 delivery migrate resume。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

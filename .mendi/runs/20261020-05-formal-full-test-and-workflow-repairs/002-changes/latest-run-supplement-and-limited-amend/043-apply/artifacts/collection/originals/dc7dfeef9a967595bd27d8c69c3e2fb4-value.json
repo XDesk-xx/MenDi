@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"invalid-arguments\",\n    \"message\": \"--kind 必须显式匹配唯一 --body 或 --comment 输入。\",\n    \"details\": {},\n    \"fix\": \"执行 mendi --help 查看用法。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

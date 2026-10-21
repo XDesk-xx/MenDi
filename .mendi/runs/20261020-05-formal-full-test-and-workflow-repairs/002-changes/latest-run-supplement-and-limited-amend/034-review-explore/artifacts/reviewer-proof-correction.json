@@ -1,0 +1,14 @@
+{
+  "scope": "Reviewer-only exploratory proof self-correction",
+  "firstRun": {
+    "exitCode": 1,
+    "reason": "Initial Reviewer assertion expected currentRun() null after all Changes archived; actual returns most recent archived Change Run, per src/core/associations.ts:22-35",
+    "productFailure": false,
+    "stage": "independent Reviewer proof, not Author implementation"
+  },
+  "fix": "Use currentDeliveryRun as authoritative delivery-scope selector; explicitly assert currentRun remains readable archived historical pointer; rerun separate product-v2 fixture",
+  "boundaries": [
+    "No source or historical Run changed",
+    "First failed fixture retained without global .tmp cleanup"
+  ]
+}

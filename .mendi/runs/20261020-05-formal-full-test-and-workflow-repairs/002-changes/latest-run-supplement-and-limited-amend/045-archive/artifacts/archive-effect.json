@@ -1,0 +1,33 @@
+{
+  "archiveRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+  "ordinal": 17,
+  "originalNativeRef": "openspec/changes/archive/2026-10-21-latest-run-supplement-and-limited-amend",
+  "nativeInvocationRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/artifacts/native-invocation.json",
+  "nativeTotals": {
+    "added": 5,
+    "modified": 3,
+    "removed": 0,
+    "renamed": 0
+  },
+  "specifications": [
+    {
+      "name": "run-post-submission",
+      "valid": true,
+      "exitCode": 0
+    },
+    {
+      "name": "action-runs",
+      "valid": true,
+      "exitCode": 0
+    },
+    {
+      "name": "delivery-workspace",
+      "valid": true,
+      "exitCode": 0
+    }
+  ],
+  "taskCount": 16,
+  "authorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/043-apply/run.md",
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/044-review-apply/run.md",
+  "sourceRemoved": true
+}

@@ -1,0 +1,64 @@
+{
+  "changeId": "latest-run-supplement-and-limited-amend",
+  "validatedAt": "2026-10-21T03:52:20.951Z",
+  "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate latest-run-supplement-and-limited-amend --strict --json",
+  "exitCode": 0,
+  "results": [
+    {
+      "id": "latest-run-supplement-and-limited-amend",
+      "valid": true,
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "tasks": {
+    "total": 16,
+    "done": 0
+  },
+  "capabilities": {
+    "new": [
+      "run-post-submission"
+    ],
+    "modified": [
+      "action-runs",
+      "delivery-workspace"
+    ]
+  },
+  "reviewRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+  "priorReviews": {
+    "technicalApproved": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/034-review-explore/run.md",
+    "oldAuthorizationRejected": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md"
+  },
+  "stage": "planning-only"
+}

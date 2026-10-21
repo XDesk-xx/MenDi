@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"aftercare-target-forbidden\",\n    \"message\": \"正式执行、验收和生命周期 Run 不接受提交后修改。\",\n    \"details\": {},\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

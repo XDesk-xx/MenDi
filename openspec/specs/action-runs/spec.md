@@ -89,6 +89,10 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 - **WHEN** 当前已为第二项，却请求对第一项的 Action / Run 保存、提交、继续或归档
 - **THEN** 按非当前 / 陈旧对象拒绝，不改旧 submitted Run、verdict 或当前指针
 
+#### Scenario: Current delivery run is not the archived change run
+- **WHEN** 当前 open Delivery 无活动 Change、其当前修复/Reviewer Run 由 deliveryRunRef 指向，同时最近归档 Change 仍保留 latestRunRef
+- **THEN** 本次 supplement/amend 资格以本轮实际 deliveryRunRef 与共享 Run 占号为准，不得误用 archived binding 或下一个 Run 的 draft 前驱
+
 ### Requirement: Draft save and immutable submission
 
 系统 SHALL 只允许当前 product draft 的同角色 / actor 保存正文，使用明确根、本地配置、当前必要对象及安全写入；保存不读上游、方法或固定 Author 正文。正式阶段提交校验非空结果 / outcome 与必要 Author / verdict，Change submit 保留上游。Full Test 与生命周期完成 MUST 由专用执行 / 提交产生，普通 submit / continue 禁止伪造。旧 submitted Run 不可保存 / 重提，失败保留现场。
@@ -128,6 +132,10 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 #### Scenario: Generic operations target a lifecycle run
 - **WHEN** 对 Open / Close / Reopen draft 或 terminal 使用普通 run submit / action continue 生成收口或重开
 - **THEN** 拒绝；当前同角色 / actor 的 draft 可本地保存故障笔记，不改生命周期输入、提交相位或宣称状态成功
+
+#### Scenario: Special post-submission commands do not weaken draft-only save
+- **WHEN** 当前有被单独授权的最新 submitted Run 需要 supplement 或有限 amend
+- **THEN** 只能走专用提交后受控入口、读取其已确认附属事实；普通 run save/submit/continue 仍拒绝重写已提交 Run，不能修改原 verdict、关联或编号
 
 ### Requirement: Same action continuation and explicit revision
 

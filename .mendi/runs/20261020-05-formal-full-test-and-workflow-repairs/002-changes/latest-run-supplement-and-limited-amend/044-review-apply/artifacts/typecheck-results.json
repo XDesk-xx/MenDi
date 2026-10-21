@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-21T06:08:05.993Z",
+  "files": [
+    "reviewer-test-runner.ts",
+    "reviewer-independent.ts",
+    "reviewer-engineering.ts",
+    "reviewer-history.ts"
+  ],
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/044-review-apply/artifacts/tsconfig.json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "",
+  "error": null
+}

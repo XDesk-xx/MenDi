@@ -6,6 +6,8 @@ role: author
 
 # Delivery 范围内修复
 
+本轮当前已完成提交的 Repair 可按对应 Owner 授权显式 run supplement/amend，资格取 deliveryRunRef，不取 archived Change，下游 draft/占号即停止。原文/结果/next 不改，来源自述日期 unverified。amend 单次、必填 requestId/kind，presentation-only/body 仅机械安全空白；unreviewed-comment/comment 只存非权威事后未审核评论。实质变化仍新 revise + 独立 Review；未知提交保留锁，Owner 核对停止写者并处置后，同请求显式 --resume finish，不通过补证生成正式 PASS。
+
 新正式失败按[组级协议](../../group-tests.md)固定本轮当前直接失败、完整计划及实际受测候选。通过 --input 给出真实影响与候选；影响分析不能缩减下一次正式 selection。源码、断言和入口/配置语义修复须记录实际差异、必要 focused / fast 和限制，完成后交独立审核。已存旧 command failed 同样可以实质修复 / 审核后首次转入新完整 v2 groups-v1，无须补造旧 attempt。
 
 已确认的纯环境准备失败/blocked，无业务或执行语义改变且本项目资源安全恢复时，按协议保留原失败与 environmentRecovery 证据，免空 Repair/Review；不凭 reason 字符串分类。外部资源、未知执行/清理/锁停 Owner，语义实变回本方法。

@@ -9,6 +9,7 @@ import { inspectAttempt, inspectCandidate } from '../adapters/group-store.ts';
 import { inspectFullTest } from '../adapters/delivery-verification.ts';
 import { deliveryNext } from '../core/delivery-next.ts';
 import { selected, state, type Selection, type OperationOptions } from './project.ts';
+import { readAftercare } from '../adapters/aftercare-reader.ts';
 
 export function query(input: Selection, options: OperationOptions = {}) {
   const { root, upstream } = selected(input, options);
@@ -67,6 +68,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
         local: state(workspace),
         upstream: null,
         run: { ref: delivery.ref, ...delivery.record },
+        aftercare: readAftercare(root, delivery.ref),
         ...(groupExecution ? { groupExecution } : {}),
         ...(candidateVerification ? { candidateVerification } : {}),
         next: deliveryNext(delivery.record, delivery.ref, stable ? undefined : 'unknown'),
@@ -81,6 +83,7 @@ export function query(input: Selection, options: OperationOptions = {}) {
       local: state(workspace),
       upstream: null,
       run: { ref: delivery.ref, ...delivery.record },
+      aftercare: readAftercare(root, delivery.ref),
       ...(verification ? { verification } : {}),
       next: deliveryNext(delivery.record, delivery.ref, verification?.outcome),
     };
@@ -129,7 +132,9 @@ export function query(input: Selection, options: OperationOptions = {}) {
     ...base,
     local: state(workspace),
     upstream: facts,
-    ...(run ? { run: { ref: run.ref, ...run.record } } : {}),
+    ...(run
+      ? { run: { ref: run.ref, ...run.record }, aftercare: readAftercare(root, run.ref) }
+      : {}),
     next,
   };
 }

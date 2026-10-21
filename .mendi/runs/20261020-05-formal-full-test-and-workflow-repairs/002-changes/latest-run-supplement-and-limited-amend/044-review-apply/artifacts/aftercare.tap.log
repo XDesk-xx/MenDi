@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: 真实 Delivery Repair / Review 的两条命令，采用 deliveryRunRef；旧 Archive/正式执行/后续 draft 拒绝
+ok 1 - 真实 Delivery Repair / Review 的两条命令，采用 deliveryRunRef；旧 Archive/正式执行/后续 draft 拒绝
+  ---
+  duration_ms: 76253.9651
+  type: 'test'
+  ...
+# Subtest: 实际 closed / 新轮生命周期均拒绝补证，旧 Run 只能只读
+ok 2 - 实际 closed / 新轮生命周期均拒绝补证，旧 Run 只能只读
+  ---
+  duration_ms: 49810.0361
+  type: 'test'
+  ...
+# Subtest: 下游 draft 与空占号立即阻断旧目标；已确认同请求仍只读，不授权新写
+ok 3 - 下游 draft 与空占号立即阻断旧目标；已确认同请求仍只读，不授权新写
+  ---
+  duration_ms: 5158.5984
+  type: 'test'
+  ...
+# Subtest: draft、错误 role/actor/run、旧 legacy/manual 不写 aftercare
+ok 4 - draft、错误 role/actor/run、旧 legacy/manual 不写 aftercare
+  ---
+  duration_ms: 4049.9517
+  type: 'test'
+  ...
+# Subtest: 历史轮的 archived Change 不能借当前新轮重新获得权限
+ok 5 - 历史轮的 archived Change 不能借当前新轮重新获得权限
+  ---
+  duration_ms: 740.7795
+  type: 'test'
+  ...
+# Subtest: 来源绝对/越界/缺失/目录/外部 junction/别名重复和坏时间声明均拒绝
+ok 6 - 来源绝对/越界/缺失/目录/外部 junction/别名重复和坏时间声明均拒绝
+  ---
+  duration_ms: 4285.1115
+  type: 'test'
+  ...
+# Subtest: 真实 CLI 双模式、显式输入拒绝与同文不同 kind；原 Review 和 next 永久保留
+ok 7 - 真实 CLI 双模式、显式输入拒绝与同文不同 kind；原 Review 和 next 永久保留
+  ---
+  duration_ms: 7534.0824
+  type: 'test'
+  ...
+# Subtest: 安全排版真实 CLI 单次确认、独立新进程读取；普通 submitted save/submit 仍拒绝
+ok 8 - 安全排版真实 CLI 单次确认、独立新进程读取；普通 submitted save/submit 仍拒绝
+  ---
+  duration_ms: 4621.7609
+  type: 'test'
+  ...
+# Subtest: 机械边界拒绝错字、URL/证明/权限/范围/结构与 Markdown 敏感空白
+ok 9 - 机械边界拒绝错字、URL/证明/权限/范围/结构与 Markdown 敏感空白
+  ---
+  duration_ms: 1106.8193
+  type: 'test'
+  ...
+# Subtest: 补证时间仅自述、冲突关系、单原件与真实 CLI 幂等；不改变旧审批
+ok 10 - 补证时间仅自述、冲突关系、单原件与真实 CLI 幂等；不改变旧审批
+  ---
+  duration_ms: 3763.0234
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 intent-written：保留现场、显式同请求恢复且不重复
+ok 11 - 真实子进程断点 intent-written：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 3831.4331
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 original-written：保留现场、显式同请求恢复且不重复
+ok 12 - 真实子进程断点 original-written：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 4602.2032
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 before-confirm：保留现场、显式同请求恢复且不重复
+ok 13 - 真实子进程断点 before-confirm：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 8691.9774
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 confirmed-written：保留现场、显式同请求恢复且不重复
+ok 14 - 真实子进程断点 confirmed-written：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 5340.3565
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 before-readback：保留现场、显式同请求恢复且不重复
+ok 15 - 真实子进程断点 before-readback：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 3231.0988
+  type: 'test'
+  ...
+# Subtest: 真实子进程断点 before-lock-release：保留现场、显式同请求恢复且不重复
+ok 16 - 真实子进程断点 before-lock-release：保留现场、显式同请求恢复且不重复
+  ---
+  duration_ms: 3149.012
+  type: 'test'
+  ...
+# Subtest: 真实并发请求由 write.lock 排斥；源在锁前/复制中漂移均 fail closed
+ok 17 - 真实并发请求由 write.lock 排斥；源在锁前/复制中漂移均 fail closed
+  ---
+  duration_ms: 4325.459
+  type: 'test'
+  ...
+# Subtest: 部分复制和坏/缺 confirmed 不冒充成功；唯一 amend 的 pending 不准换模式/ID
+ok 18 - 部分复制和坏/缺 confirmed 不冒充成功；唯一 amend 的 pending 不准换模式/ID
+  ---
+  duration_ms: 3659.0778
+  type: 'test'
+  ...
+# Subtest: 查询验证必要原件字节、0B 是真实文件；内部 junction 不得转存到其他目录
+ok 19 - 查询验证必要原件字节、0B 是真实文件；内部 junction 不得转存到其他目录
+  ---
+  duration_ms: 1941.8218
+  type: 'test'
+  ...
+# Subtest: 直接来源读取中真实字节变化被检测
+ok 20 - 直接来源读取中真实字节变化被检测
+  ---
+  duration_ms: 194.7914
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 126816.8114

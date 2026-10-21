@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"unsafe-aftercare-path\",\n    \"message\": \"附属记录不能经 symlink/junction 改写其他位置。\",\n    \"details\": {},\n    \"fix\": \"核对输入与相关路径后重试。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-21T03:23:00.627Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/artifacts/tsconfig.json"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "signal": null,
+  "error": null
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "new-owner-authorization-review",
+  "observedAt": "2026-10-21T03:38:13.918Z",
+  "ownerAuthorizationOriginal": "owner 授权 D05-D：补充确认 MenDi 当前最新 Run supplement / amend 的研发授权，认可保留已有 Explore 与技术审核证据，授权独立 Reviewer 复核授权后继续工作流。不授权修改 DreMo 或其他目标项目",
+  "checked": {
+    "exact": true,
+    "scope": true,
+    "retained": true,
+    "review": true,
+    "exclusion": true,
+    "policy": true,
+    "state": true,
+    "prior": true,
+    "scaffold": true,
+    "newAbsent": true,
+    "unlocked": true
+  },
+  "originalActivationStillInvalid": true,
+  "originalActivationTimeUnaffected": true,
+  "priorTechnicalReviewRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/034-review-explore/run.md",
+  "priorRejectedReviewRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md",
+  "fixedAuthorRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+  "finding": "F-AUTH-1 addressed prospectively by new Owner authorization",
+  "scope": "MenDi D05-D research workflow; excludes DreMo and other targets",
+  "independentVerdict": "approved",
+  "handoff": "propose / author / awaiting-instruction"
+}

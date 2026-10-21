@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "name": "run-post-submission",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": "",
+      "originalExisted": false,
+      "currentExists": true,
+      "changed": true
+    },
+    {
+      "name": "action-runs",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": "",
+      "originalExisted": true,
+      "currentExists": true,
+      "changed": true
+    },
+    {
+      "name": "delivery-workspace",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": "",
+      "originalExisted": true,
+      "currentExists": true,
+      "changed": true
+    }
+  ]
+}

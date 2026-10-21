@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-21T05:59:38.741Z",
+  "kind": "independent real product-v2 direct CLI reviewer scenarios",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/043-apply/run.md",
+  "cases": [
+    {
+      "id": "reviewer-approved-cli-double-kind-with-source-lifetime",
+      "passed": true,
+      "rejectPresentationExit": 1,
+      "acceptedCommentTag": "unreviewed-comment",
+      "sameIdReplay": true,
+      "supplementTimeTrust": "unverified",
+      "sourceStillInSidecarAfterSourceRemoved": true,
+      "immutableRun": true,
+      "unchangedNext": true
+    },
+    {
+      "id": "reviewer-new-Change-approved-presentation-then-downstream",
+      "passed": true,
+      "strictOneConfirmed": true,
+      "changedPayloadRejected": true,
+      "secondAmendRejected": true,
+      "laterDraftBlocksNewWrite": true,
+      "historicalConfirmedReadOnly": true,
+      "unchangedOriginal": true
+    }
+  ],
+  "limits": [
+    "Includes two fresh and independently marked disposable fixtures, not actual MenDi/DreMo submitted history",
+    "Formal groups-v1/root Full Test is NOT run",
+    "Evidence source is controlled and reproducible from tests/aftercare-support.ts + this .ts source; no unique unrecorded external input"
+  ]
+}

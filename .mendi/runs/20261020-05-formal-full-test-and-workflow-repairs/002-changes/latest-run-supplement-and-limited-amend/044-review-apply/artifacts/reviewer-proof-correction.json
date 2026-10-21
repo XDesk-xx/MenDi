@@ -1,0 +1,11 @@
+{
+  "stage": "Reviewer-only independent fixture self-correction",
+  "initialRun": {
+    "exitCode": 1,
+    "scope": "Reviewer second fixture only",
+    "cause": "The proof asserted entire .mendi manifest remained identical even after intentionally starting a legitimate downstream Review draft; manifest must update latestRunRef and therefore cannot stay byte-identical.",
+    "productFailure": false
+  },
+  "fix": "Verify baseline Run, project entry and manifest bytes before startAction; after starting downstream draft, require only prior run.md bytes remain unchanged and original confirmed aftercare still read-only. No product source altered.",
+  "cleanup": "Initial failed proof fixtures retained; no global cleanup, later successful proof cleans only own nonce-marked fixtures."
+}

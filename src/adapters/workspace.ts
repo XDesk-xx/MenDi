@@ -11,6 +11,7 @@ import { currentDeliveryRun } from './delivery-runs.ts';
 import { completionScope } from '../core/delivery-verification.ts';
 import { projectProgress, requireWritable } from '../core/rounds.ts';
 import { scopeAdditionReceipts } from './scope-additions.ts';
+import { assertAftercareSettled } from './aftercare-reader.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -226,6 +227,13 @@ export function guardProductWrite(root: string) {
     project: index.project,
     manifest: object(readJson(file), 'manifest'),
   });
+  const manifest = object(readJson(file), 'manifest');
+  const pointers = manifest.activeChangeId
+    ? (manifest.changeBindings as Record<string, unknown>[])
+        .filter((b) => b.changeId === manifest.activeChangeId)
+        .map((b) => b.latestRunRef)
+    : [manifest.deliveryRunRef];
+  for (const ref of pointers) if (typeof ref === 'string') assertAftercareSettled(root, ref);
 }
 
 export function lockedWrite<T>(

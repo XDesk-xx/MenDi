@@ -6,6 +6,8 @@ role: reviewer
 
 # review-apply 阶段方法
 
+Reviewer 仅为自己的当前 submitted Review 按对应 Owner 授权显式 run supplement/amend，不能切换 Author 或改旧 verdict。核真实当前指针及下游占号；原审核字节保留，来源自述日期 unverified。amend 单次、必填 requestId/kind，presentation-only/body 仅机械安全空白，unreviewed-comment/comment 是隔离的非权威“事后未审核评论”，自称 approved/PASS 也不进入正式事实。未知提交保留锁，由 Owner 核对停止写者并处置后，仅同请求显式 --resume finish。D05-D 研发不授权操作 DreMo。
+
 独立审核使用本自有方法；`methods.upstream` 无强制 Author 方法。按当前变化核对实际实现、来源及 operation instructions，不执行 Apply Author 写入流程代替审核；目标方法交接与语义完成分别以返回内容和实际结果判断。
 
 必要输入是固定 Author 提交、受审合同、实际实现与直接验证结果。核对变更行为、失败路径与既有兼容性，按风险重跑关键测试；工具通过只证明其覆盖范围。修订补审关注变化与受影响部分，保留旧 verdict。

@@ -10,7 +10,7 @@
 
 首版规模：**3 个 Delivery、10 个 Change，其中前 7 个 Change 完成核心手动交付链。**
 
-当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A/B/C 已经独立审核、原生归档 014/015/016，项目累计归档 16；D05-D 未激活，D05 整体尚未正式 Full Test、Close 或发布。
+当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A/B/C/D 均已独立审核、原生归档 014/015/016/017，项目累计归档 17；D05-D 由 043 Apply、044 独立 Review Apply approved、045 Archive 完成，当前无活动 Change，待独立 change-checkpoint；D05 整体尚未正式 Full Test、Close 或发布。
 
 本文是 MenDi 重新开始后的唯一产品总设计与开发规划。它描述产品目标，实际完成情况以项目记录和最近交接 Run 为准。清除旧工程并重新建立代码与历史是初始化时的决定，不是后续工作的重复清理授权。
 
@@ -614,11 +614,11 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 本次只完成上述规划吸收，保留三份反馈原件；不 Open / Reopen D04、不激活 Change、不创建 Run、不改实现 / Skills / 规格 / 稳定包，不执行测试、迁移或 Git 写操作。
 
-### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A/B/C 已 Archive）
+### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A/B/C/D 已 Archive）
 
 **范围与来源：** 本节吸收根目录 `mendi-full-test-continuation-improvement.md` 2026-10-18/20 的最新修订、`mendi-reopen-incremental-scope-improvement.md`、`mendi-ui-spec-granularity-improvement.md` 的已实现结论，以及 Owner 提供的 `mendi-run-amend-supplement-design.md` 和本仓库真实 artifacts 增长问题。D04 原有跨尝试续测/复验属于已交付历史；最新正式执行政策以本 D05 目标为准，反馈原件只作问题来历，不并列维护第二套现行总方案。
 
-**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A/B/C 已独立审核并原生归档 014/015/016；其中 C 为有限 opt-in 证据采集，正式零字节日志和 groups-v1 证据合同未变；D 尚未激活。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
+**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A/B/C/D 已独立审核并原生归档 014/015/016/017；其中 C 为有限 opt-in 证据采集，正式零字节日志和 groups-v1 证据合同未变；D 的有限 supplement/amend 已由 045 Archive 收口。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
 
 | Change | 独立闭环能力 | 依赖 / 优先级 |
 | --- | --- | --- |
@@ -667,8 +667,8 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 **直接案例：** DreMo `035-review-delivery-repair` 已 submitted/approved，但未进入下一条实际 Run 时希望补入 Reviewer 真正保存的独立 proof，避免仅为补附件生成 036。此能力来自 Owner 提供的 `mendi-run-amend-supplement-design.md`，不用于更改 DreMo 033 的失败、034 的 Author 证据或 035 原已批准结论。
 
-- 先提供 `mendi run supplement --project ... --run ... --role ... --actor ... --input ...`：只为当前活跃 Delivery、当前轮、当前**实际最新且尚未被下一 Run/Close 消费**的 submitted Run 增加真实附件与时间/来源/原因记录；不覆盖既有证明、不改原 Run 正文/verdict、Run 编号或交接指针。新增证据若是批准后重新执行，必须显示新的真实时间，不伪装成审批前就有的日志；可疑/相反证据提示冲突交 Owner，不静默变成批准依据。
-- 再提供 `mendi run amend --project ... --run ... --role ... --actor ... --body ... --reason ...`：首版仅允许排版、错字、普通链接、非实质引用及明确标注的事后附注等有限 Markdown 正文修改，保存旧正文、修改者/时间/原因/差异；不可修改 frontmatter 的 role、actor、author、result、verdict、status、关联、Full Test 或 Close。改变正文审核含义同样是实质变更，不能靠字段未变绕过修订与独立复审。
+- 先提供 `mendi run supplement --project ... --run ... --role ... --actor ... --input ...`：只为当前活跃 Delivery、当前轮、当前**实际最新且尚未被下一 Run/Close 消费**的 submitted Run 增加真实附件与时间/来源/原因记录；不覆盖既有证明、不改原 Run 正文/verdict、Run 编号或交接指针。系统仅记录本次 recordedAt，来源自述采集时间始终 unverified；没有可信旧批准锚点，不认证批准前后时序。可疑/相反证据提示 Owner 与正式独立 Review，不变成原批准依据。
+- 提供 `run amend ... --request-id ... --kind presentation-only --body ... --reason ...` 或互斥的 `--kind unreviewed-comment --comment ...`：首版每 Run 最多一个 confirmed amend，原 run.md 永不覆盖。前者仅允许普通段落可机械证明安全的空白表现，保存基线、候选和精确差异；后者只存 authoritative=false 的事后未审核评论，不进入被审核正文、正式摘要、证据来源、PASS 或 next。原设想的错字、链接、引用为类别上限，041/042 首版拒绝任意字符、URL 和引用替换，走正式 revise + 独立 Review。requestId、显式 kind 与直接输入决定幂等；缺失/混用输入、换模式/内容和第二 amend ID 均拒绝。
 - 写入校验必须同时检查真正的最新 Run、提交状态、当前轮权威指针、实际编号占位、下游 draft/正式 Run 是否已经产生、项目锁及受管路径；不能只凭最大编号或 `next` 文案。附件与索引/正文修改需避免半提交被报告成功，留下可诊断、可恢复的中断现场。旧 Run 没有 `amendments` 继续可读；不创建空目录、强制 proof 数量 gate、额外审核 Action 或新生命周期 Run。
 - 对 `supplement` 和 `amend` 使用同一受控最新 Run 小能力，不再额外拆两个 Change；`run save/submit` 旧含义不变，status/查询可看到补充来源，但不因此自动推进阶段、改 verdict 或批准 Full Test。DreMo 的具体补证只在该目标 Run 当时仍符合条件并得到对应授权后另行执行。
 

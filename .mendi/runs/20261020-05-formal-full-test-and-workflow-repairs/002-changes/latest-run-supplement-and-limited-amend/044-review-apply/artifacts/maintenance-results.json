@@ -1,0 +1,112 @@
+{
+  "recordedAt": "2026-10-21T06:03:50.911Z",
+  "method": "Current maintained physical TypeScript lines; use Git HEAD only for present baseline, no line-count gate.",
+  "regions": [
+    {
+      "area": "src",
+      "top": [
+        {
+          "path": "src/application/delivery-lifecycle.ts",
+          "lines": 368
+        },
+        {
+          "path": "src/application/group-attempt.ts",
+          "lines": 361
+        },
+        {
+          "path": "src/adapters/workspace.ts",
+          "lines": 354
+        }
+      ],
+      "total": 80
+    },
+    {
+      "area": "tests",
+      "top": [
+        {
+          "path": "tests/action-write.test.ts",
+          "lines": 467
+        },
+        {
+          "path": "tests/planning-cli.test.ts",
+          "lines": 444
+        },
+        {
+          "path": "tests/delivery-repair.test.ts",
+          "lines": 395
+        }
+      ],
+      "total": 146
+    },
+    {
+      "area": "scripts",
+      "top": [
+        {
+          "path": "scripts/proofs/mvp-d01-c-explore.ts",
+          "lines": 678
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-d-explore.ts",
+          "lines": 487
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-a-explore.ts",
+          "lines": 463
+        }
+      ],
+      "total": 23
+    }
+  ],
+  "growth": [
+    {
+      "file": "src/core/run-aftercare.ts",
+      "lines": 108,
+      "head": null
+    },
+    {
+      "file": "src/adapters/aftercare-target.ts",
+      "lines": 113,
+      "head": null
+    },
+    {
+      "file": "src/adapters/aftercare-reader.ts",
+      "lines": 143,
+      "head": null
+    },
+    {
+      "file": "src/adapters/aftercare-store.ts",
+      "lines": 214,
+      "head": null
+    },
+    {
+      "file": "src/application/run-aftercare.ts",
+      "lines": 152,
+      "head": null
+    },
+    {
+      "file": "src/drivers/arguments.ts",
+      "lines": 330,
+      "head": 297
+    },
+    {
+      "file": "src/application/project-query.ts",
+      "lines": 163,
+      "head": 158
+    },
+    {
+      "file": "src/adapters/workspace.ts",
+      "lines": 354,
+      "head": 346
+    },
+    {
+      "file": "tests/aftercare-recovery.test.ts",
+      "lines": 228,
+      "head": null
+    },
+    {
+      "file": "tests/aftercare-modes.test.ts",
+      "lines": 169,
+      "head": null
+    }
+  ]
+}

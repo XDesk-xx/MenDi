@@ -1,0 +1,40 @@
+{
+  "regression": {
+    "passed": 36,
+    "exitCode": 0,
+    "log": "regression-tests.log",
+    "command": "node --test --test-concurrency=2 tests/action-write.test.ts tests/query.test.ts tests/delivery-query.test.ts tests/workspace.test.ts",
+    "tests": 36
+  },
+  "build": {
+    "exitCode": 0,
+    "command": "pnpm build",
+    "log": "build.log"
+  },
+  "aftercare": {
+    "passed": 20,
+    "exitCode": 0,
+    "log": "aftercare-tests.log",
+    "command": "node --test --test-concurrency=2 tests/aftercare-modes.test.ts tests/aftercare-eligibility.test.ts tests/aftercare-delivery.test.ts tests/aftercare-recovery.test.ts",
+    "tests": 20
+  },
+  "limitations": "仅受影响验证；不是根 D05 正式 Full Test/Close。",
+  "check": {
+    "exitCode": 0,
+    "components": [
+      "Biome format",
+      "Biome lint",
+      "tsc --noEmit",
+      "tsc -p tsconfig.scripts.json",
+      "tsc -p tsconfig.tests.json"
+    ],
+    "command": "pnpm check"
+  },
+  "strict": {
+    "exitCode": 0,
+    "issues": 0,
+    "command": "openspec 1.14.1 validate latest-run-supplement-and-limited-amend --strict --json",
+    "log": "openspec-validation.json",
+    "valid": 1
+  }
+}

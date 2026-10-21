@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-21T03:21:01.137Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+  "priorReviewer": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/034-review-explore/run.md",
+  "authoritySource": "Original Owner D05-D activation wording from 2026-10-21 message; also quoted exactly in 033 Author Run",
+  "originalOwnerMessage": "Owner 授权激活 D05-D：当前最新 Run 的 supplement / amend，进入 Proof Explore",
+  "policyRef": "AGENTS.md:13",
+  "requiredContinuousLiteral": "owner 授权",
+  "caseSensitiveMatch": false,
+  "upperCaseVariantPresent": true,
+  "priority": "blocking-authorization-boundary",
+  "reason": "The active D05-D Change was activated on Owner original text lacking exact lowercase owner 授权; technical proof success is separate from new Change activation permission.",
+  "technicalProofPreserved": true,
+  "recommendedDisposition": "stop at Owner; require a fresh explicit scoped authorization containing exact owner 授权 before deciding whether to reuse current Explore proof and proceed; do not backdate or reword old Owner message or prior approved reviewer verdict",
+  "limitations": [
+    "Not a product-code regression or failure of 033/034 fixture proof",
+    "New authorization is a real Owner decision; this script cannot supply one",
+    "Do not automatically Propose, Apply, Archive, Full Test, Close, Git or install"
+  ]
+}

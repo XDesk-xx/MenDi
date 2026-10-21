@@ -6,6 +6,8 @@ role: author
 
 # apply 阶段方法
 
+最新 submitted Run 的真实补证/小修订须有该目标的对应 Owner 授权，显式用 run supplement/amend；研发授权不授权修改 DreMo。Change 用活动 binding.latestRunRef，完成的 Delivery Repair/Review 用 deliveryRunRef，下游 draft/占号立即阻断。原文/verdict/next 不改，来源自述日期始终 unverified。amend 单次且必填 requestId/kind：presentation-only/body 仅安全空白；unreviewed-comment/comment 始终事后未审核、authoritative=false，不进入正式事实。实质修订仍正式 revise + 独立 Review。未知提交保留锁/现场；Owner 核对停止写者并处置后，同 ID/模式/输入显式 --resume finish，不自动解锁或补齐旧 Full Test。
+
 未来本阶段的同一真实 stdout、报告、请求或结果只保留一个必要原件，重复摘要用可读受管来源引用。受控 scripts/tests/fixtures 输入写明复建入口、实际参数和结果；不可重建的唯一输入或失败/unknown 原件若只在临时 .tmp/runtime，先在本 Run 持久保存必要字节一次，否则明确 incomplete、保留现场。不复制整棵临时工程，不按文本相同合并不同执行，不修改旧 submitted Run/verdict。正式双物理日志（含 0B）、groups-v1 请求/回执/事件及清理事实不参与省略，缺失不推断 empty/PASS。单源软件仅作用于明确 opt-in 的有限测试/Proof 路径，不能据目录变小宣称实施或验收通过。
 
 使用 `methods.upstream` 中当前目标 openspec-apply-change 的真实正文及实际 Apply instructions，Apply / revise-apply 都遵守此入口。随包自有方法规定授权与交接；选择 Storybook 仅增加可选指导，不取消目标 Apply 方法。方法缺失、不可读或生成基线不符时新交接写前拒绝，先明确准备当前目标，不自动安装或借其他项目兜底。

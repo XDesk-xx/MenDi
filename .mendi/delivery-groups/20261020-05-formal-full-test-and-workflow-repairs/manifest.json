@@ -64,6 +64,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
       "archiveOrdinal": 16
+    },
+    {
+      "planningSlot": "MVP-D05-D",
+      "changeId": "latest-run-supplement-and-limited-amend",
+      "changeRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
+      "archiveOrdinal": 17
     }
   ],
   "changeBatches": [
@@ -74,7 +83,8 @@
       "changeIds": [
         "unified-groups-full-test-and-repair-flow",
         "append-planned-changes-to-open-delivery",
-        "reduce-redundant-proof-inputs-and-artifacts"
+        "reduce-redundant-proof-inputs-and-artifacts",
+        "latest-run-supplement-and-limited-amend"
       ]
     }
   ],
@@ -93,13 +103,13 @@
     "通用测试调度/缓存、全库 hash 证据链、自动审核及安装/部署发布。"
   ],
   "openRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
+  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
   "stopBoundary": "change-checkpoint",
   "next": {
     "action": "change-checkpoint",
-    "status": "awaiting-owner-instruction",
     "role": "author",
-    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
-    "reason": "D05-C 已经 032 原生 Archive 并同步 action-runs/test-execution 主规格，项目累计归档 016；D05 仍 open。等待 Owner 独立安排 Git/后续 D05-D/正式 Full Test/Close。"
+    "status": "awaiting-owner-instruction",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
+    "reason": "D05-D 045 已完成原生 Archive 017 及三份主规格同步，D05 A/B/C/D 全部归档；当前 D05 仍 open，等待 Owner 独立 Git checkpoint、正式 Full Test/Close、版本安装授权。"
   }
 }

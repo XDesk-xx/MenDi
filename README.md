@@ -51,7 +51,7 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --projec
 
 `--help` 列出 delivery open / change add / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
 
-稳定安装 0.2.0 的旧 command / 分组与多来源历史继续按旧合同可读。当前 D05-A 源码候选将新正式执行统一为 groups-v1 完整 initial，所有必需组本次真实执行并稳定读回才由该 Run 自身 passed；修复审核后重新全量，不再新建 continue/retest/verification。新 Close 唯一输入 testAttemptRunRef；方法、计划与恢复声明见[组级协议](skills/group-tests.md)。D05-A/B/C 已经独立审核并原生归档 014/015/016；D05-C 的有限 opt-in Proof 单源采集保持真实 0B 日志实体与正式 groups-v1 证据合同不变，两份新主规格已经同步。D05 整体尚未正式 Full Test、Close 或单独发布，稳定安装仍为 0.2.0，不能把代码审核和局部测试冒充发布验收。
+稳定安装 0.2.0 的旧 command / 分组与多来源历史继续按旧合同可读。当前 D05-A 源码候选将新正式执行统一为 groups-v1 完整 initial，所有必需组本次真实执行并稳定读回才由该 Run 自身 passed；修复审核后重新全量，不再新建 continue/retest/verification。新 Close 唯一输入 testAttemptRunRef；方法、计划与恢复声明见[组级协议](skills/group-tests.md)。D05-A/B/C/D 均已独立审核并原生归档 014/015/016/017；D05-C 的有限 opt-in Proof 单源采集保持真实 0B 日志实体与正式 groups-v1 证据合同不变，两份新主规格已经同步。D05 整体尚未正式 Full Test、Close 或单独发布，稳定安装仍为 0.2.0，不能把代码审核和局部测试冒充发布验收。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -118,6 +118,36 @@ Remove-Item Env:\MENDI_TEST_EVIDENCE_DIR
 
 未启用时没有额外采集写入。临时唯一原件必须先保存必要字节，缺失则明确 incomplete，写入/读取漂移或权限失败停止并保留现场；已提交 Run 目录不接受新采集。可复建输入记受控入口和参数，不能只留下临时目标死链，也不复制历史树。`captured` 只表示该次额外证据已保存，不代表业务测试通过；实际 failed/unknown/取消仍按原结果解释。生产 formatVersion=1、双物理日志（含 0B）及正式 groups-v1 文件保持，不将缺失日志解释为空。方法约定适用于未来阶段，软件仅接入上述 opt-in 路径，不自动清理历史或建立全库 hash/数量门槛。源码候选仍须独立审核及 D05 后续正式验收，稳定安装不由此切换。
 
+## 当前源码：提交后补证与有限修订
+
+D05-D 的两个本地命令已完成独立 Review Apply approved 并归档 017，尚未发布到稳定安装。仅接受当前 product-v2/open Delivery 的最新 submitted 对象，原 role/actor 必须匹配；活动 Change 使用 binding.latestRunRef，无活动 Change 的已完成 Repair/Review 使用 deliveryRunRef。后续 draft 或空占号立即阻断旧对象；正式 Full Test/Close、归档、旧轮、manual/legacy 不获得写权限。实际目标操作仍需 Owner 授权，研发授权不授权修改 DreMo。
+
+在已获授权的目标内准备 `supplement.json`，必要附件也必须在项目内：
+
+```json
+{
+  "requestId": "proof-1",
+  "source": "实际实验来源",
+  "reason": "补入本次必要事实",
+  "evidence": ["evidence/new-proof.log"],
+  "relation": "uncertain",
+  "sourceClaimedCollectedAt": "2026-10-21"
+}
+```
+
+```powershell
+node dist/drivers/cli.js run supplement --project $target --run $currentRun --role author --actor $originalActor --input supplement.json --json
+node dist/drivers/cli.js run amend --project $target --run $currentRun --role author --actor $originalActor --request-id layout-1 --kind presentation-only --body candidate-body.md --reason '普通段落排版' --json
+# 与上行二选一；一个 Run 最多一个 confirmed amend。
+node dist/drivers/cli.js run amend --project $target --run $currentRun --role author --actor $originalActor --request-id comment-1 --kind unreviewed-comment --comment comment.md --reason '事后未验证说明' --json
+```
+
+`presentation-only` 只接受完整原正文候选，机械校验普通段落的单个行尾空格和安全 LF/CRLF/文件末尾换行；代码、标题、链接、表格、引用、列表和 Markdown hard-break 等敏感行保持原字节。错字、URL、事实和结构替换须正式 revise + 独立 Review。`unreviewed-comment` 只接受 comment，自由文字始终在“事后未审核评论”区以 `authoritative=false` 展示，不进入正式正文、摘要、证据依据、verdict/PASS/next。缺 kind、缺对应输入或 body/comment 混用在写前拒绝，不猜文本意图。
+
+原 run.md 不覆盖。附属意图、必要原件、原文基线和最后确认收据位于该 Run 的 `aftercare/`；补证每 requestId 一处，amend 是唯一槽位。同 ID/模式/精确输入幂等；换模式、换内容、重复原件或第二个 amend ID 拒绝。`recordedAt` 是本次保存时间；来源自述始终 `unverified`，不推断旧批准前后时序。冲突/不确定关系提示 Owner 和正式独立 Review，不自动改变原结论。
+
+中断保留现场与 write.lock，不自动清锁。Owner 核对停止原写者并明确处置锁后，用原命令的全部输入加 `--resume finish` 处理同请求；无法确认原写者、源身份/字节或部分文件时停止，不覆盖残留。status 与 next 只读有效 confirmed，缺/坏收据拒绝冒充成功；当前必要附属提交未确认时也阻断普通新写。查询已保存原件无需临时来源仍存在；重新请求需提供相同直接输入。命令行 actor 记录责任，不认证现实身份或 Owner 授权。
+
 ## 显式安装验收
 
 准备入口可增加第三个参数：已冻结的本地tgz绝对路径；此时只核对并安装该包，跳过build / pack。包名及版本须匹配当前候选，session保存实际路径和包指纹。省略时只消费本次pack产生的唯一当前版本包，不回退旧目录。
@@ -154,10 +184,10 @@ pnpm test:ui
 
 - Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
 - 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
-- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05-A 正式 Full Test、D05-B 未 Close 追加 Change CLI 和 D05-C 有限 opt-in 证据去重均已实现、独立审核并归档；D05-D 尚未实现，D05 整体尚未正式验收或发布。
+- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05-A/B/C/D 均已实现、独立审核并归档 014–017，D05 整体尚未正式验收或发布。
 
 ## 开发交接
 
-当前活动 Delivery 与阶段读取 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json) 及其最近 Run；初始人工 Open 见 [001](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。D05-A 在 012 Archive 归档 014、D05-B 在 025 Archive 归档 015、D05-C 在 032 Archive 归档 016；当前 activeChangeId=null，下一步为 change-checkpoint；D05-D 尚未激活，须按 Owner 授权。长期规划统一查看根路线图 §7 D05。
+当前活动 Delivery 与阶段读取 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json) 及其最近 Run；初始人工 Open 见 [001](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。D05-A/B/C/D 已归档 014/015/016/017；当前无活动 Change，045 Author Archive 已完成，下一步 change-checkpoint。长期规划统一查看根路线图 §7 D05。
 
-[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，D04 归档截止为 013；D05-A/B/C 分别登记 014/015/016，项目累计归档 16；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05-A/B 已有本地 Git checkpoint，D05-C 尚未 commit/push，未执行 D05 整体正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。
+[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，D04 归档截止为 013；D05-A/B/C/D 分别登记 014/015/016/017，项目累计归档 17；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05-A/B/C 已有本地 Git checkpoint（当前 HEAD 为 9c818e6），D05-D 本轮未执行 Git 写操作，未执行 D05 整体正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。

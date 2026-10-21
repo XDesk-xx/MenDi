@@ -1,0 +1,69 @@
+{
+  "operation": "revise-propose",
+  "changeId": "latest-run-supplement-and-limited-amend",
+  "priorAuthorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/039-revise-propose/run.md",
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/040-review-propose/run.md",
+  "reviewVerdict": "changes-requested",
+  "finding": "F4 explicit amend kind and mutually exclusive input contract",
+  "checks": {
+    "F4CLI": true,
+    "F4Spec": true,
+    "F4Id": true,
+    "F4Negative": true,
+    "F1": true,
+    "F2": true,
+    "F3": true
+  },
+  "decision": "--kind presentation-only with --body OR --kind unreviewed-comment with --comment; neither omission nor mixed inputs allowed; same requestId changing kind/input rejected",
+  "outcomes": {
+    "presentationUnsafe": "rejected",
+    "commentSameText": "stored-unreviewed-authoritative-false"
+  },
+  "unchangedPreviousFindings": [
+    "F1",
+    "F2",
+    "F3"
+  ],
+  "validation": {
+    "cmd": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate latest-run-supplement-and-limited-amend --strict --json",
+    "exitCode": 0,
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "change": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "issues": []
+  },
+  "tasks": {
+    "total": 16,
+    "done": 0
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "productCodeChanged": false
+}
