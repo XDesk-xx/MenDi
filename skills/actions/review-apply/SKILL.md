@@ -6,9 +6,13 @@ role: reviewer
 
 # review-apply 阶段方法
 
+Reviewer 仅为自己的当前 submitted Review 按对应 Owner 授权显式 run supplement/amend，不能切换 Author 或改旧 verdict。核真实当前指针及下游占号；原审核字节保留，来源自述日期 unverified。amend 单次、必填 requestId/kind，presentation-only/body 仅机械安全空白，unreviewed-comment/comment 是隔离的非权威“事后未审核评论”，自称 approved/PASS 也不进入正式事实。未知提交保留锁，由 Owner 核对停止写者并处置后，仅同请求显式 --resume finish。D05-D 研发不授权操作 DreMo。
+
 独立审核使用本自有方法；`methods.upstream` 无强制 Author 方法。按当前变化核对实际实现、来源及 operation instructions，不执行 Apply Author 写入流程代替审核；目标方法交接与语义完成分别以返回内容和实际结果判断。
 
 必要输入是固定 Author 提交、受审合同、实际实现与直接验证结果。核对变更行为、失败路径与既有兼容性，按风险重跑关键测试；工具通过只证明其覆盖范围。修订补审关注变化与受影响部分，保留旧 verdict。
+
+未来审核摘要对同一次执行采用一个可读受管原件，可靠来源可直接引用，不强制重复拷贝成功日志、报告或 fixture 树。独立重放仍记录真实命令、参数、结果和限制；可复建输入保留 scripts/tests/fixtures 来源，唯一临时输入与失败/unknown 原件须在清理前保存到当前 Run 一次，否则标记 incomplete 并保留现场。不能按文本相同合并不同执行、修改旧 submitted/verdict，或用单源摘要替代正式双物理日志（含 0B）、groups-v1 request/report/events 与清理校验。缺失不推断 empty/PASS，有限 opt-in 采集软件不认证独立性或自动批准。
 
 UI 范围按需读取 Storybook 指导，核对目标 / 版本、预览归属与有限测试退出、修改后的新浏览器观察及结果。根工程与独立 UI 目标各自 typecheck 不可漏验；MCP 只认证宿主实际发现 / 调用能力，未启用时核对无 MCP 主路径，Storybook review URL 不代替本次独立审核。
 

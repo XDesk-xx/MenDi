@@ -69,6 +69,10 @@
 - **WHEN** 执行引用、日志位置或写入目录越界、经链接指向外部、与当前 Delivery / 集合 / 执行身份矛盾或存在重复占号
 - **THEN** 拒绝相关读写并报告实际位置，不覆盖旧结果、回退其他 Delivery 或读取说明 Ref 目标
 
+#### Scenario: Existing test execution continues to allocate physical zero-byte logs
+- **WHEN** 新普通测试准备启动时实际无任何 stdout/stderr 输出
+- **THEN** 仍按现行结构创建并保存物理 stdout.log 和 stderr.log，读回不能将缺失文件默认为合法空输出
+
 ### Requirement: Honest test outcomes
 
 结果 SHALL 区分 `not-run`、`passed`、`failed`、`interrupted`、`unknown`。只有选定命令实际正常退出 0、必要日志和终态完整保存并读回时 MUST 报告 passed；选定命令正常非零为 failed，确认本次支持的前台进程树停止的中断为 interrupted。工具或依赖预检拒绝、选定命令未启动为 not-run；执行 / 停止 / 保存无法确认为 unknown，不以日志文字、信号空值或预检出口推导测试结果。
@@ -155,19 +159,19 @@
 
 ### Requirement: Optional structured group execution contract
 
-系统 SHALL 对显式接入的目标支持有版本的组级计划、执行请求与最终回执，固定项目、Delivery、轮次、尝试、候选、完整计划及实际选择。目标负责真实执行、业务依赖与资源；普通 command 入口保持命令粒度，不从 stdout、事件文本或旧 PASS 猜组事实。未知版本或无法支持的协议 MUST 在实际启动前拒绝，不静默降级。
+系统 SHALL 对普通工具调用支持显式接入的组协议；**新的正式 Delivery Full Test MUST 要求 `groups-v1` 协议**，固定项目、Delivery、轮次、候选、完整计划及本次全部必需组选择。目标负责真实执行、业务依赖与资源；普通命令不得自动转成组事实。未知版本或协议不支持 MUST 在启动前拒绝，不静默降级到旧 command。
 
 #### Scenario: Opt into a declared group plan
-- **WHEN** 目标已有 full 入口，调用者在授权范围显式选择有效协议、项目内计划与组选择
-- **THEN** 锁内固定请求及新执行身份，将受管请求 / 回执位置交给目标，沿既有真实工具、无自动安装与意图先于启动的规则执行
+- **WHEN** 目标已有 full 入口，Owner 授权的正式执行使用有效 `groups-v1`、项目内完整计划以及全部必需组选择
+- **THEN** 锁内固定请求及新执行身份，将受管请求和回执位置交给目标，沿既有真实工具、不自动安装及意图先于启动的规则执行
 
 #### Scenario: Reject an ambiguous or unsafe plan
-- **WHEN** 组 ID 重复、依赖悬空 / 非前向、自环、选择越界、计划或回执路径离开目标，或请求期间直接输入变化
-- **THEN** 明确拒绝对应问题，不猜映射、不覆盖旧结果；写后不确定保留实际现场
+- **WHEN** 组 ID 重复、依赖悬空 / 非前向、自环、选择越界或少必需组、计划或回执路径越界，或请求期间直接输入变化
+- **THEN** 拒绝、不产生正式通过；写后不确定保留现场，不能回退到旧 command
 
 #### Scenario: Keep an opaque command opaque
-- **WHEN** 未显式接入协议，命令输出含 pass / fail 事件或生成类似结果的文件
-- **THEN** 仍只按真实命令合同解释，不自动产生组覆盖或正式汇总结论
+- **WHEN** 普通命令未显式接入分组协议，stdout 含 pass / fail 字样或生成看似组报告的文件
+- **THEN** 只按实际普通命令解释，不自动形成组覆盖或正式 PASS
 
 ### Requirement: Nonvacuous required group coverage
 
@@ -207,15 +211,19 @@ tests 组 SHALL 核对实际选择、完整结束、必需执行计数及执行�
 
 ### Requirement: Agreement of receipts and raw execution
 
-结构化尝试 SHALL 保留实际命令的原 outcome，并独立核对选中范围、组最终回执、整体结束和退出事实的一致性。包装器退出 0 与组失败 / 必需缺口矛盾，或非零退出与未说明的全部成功矛盾时，协议观察 MUST 不可作为通过来源；正常非零与明确组失败可以保留已确认的部分事实，不能掩盖清理或持久化未知。
+新结构化正式执行 SHALL 保留真实子命令原 outcome，并独立核对本次全部必需组的最终回执、根结束、退出事实和清理的一致性。包装器 exit0 与组失败 / 必需缺口矛盾、非零却声称无原因的全部成功等 MUST 阻止本次正式 PASS；安全已结束的 known invalid 与 unknown 执行/清理分别处理。
 
 #### Scenario: The wrapper exits zero while events contain a failure
-- **WHEN** 实际执行正常退出 0，但显式协议最终回执含必需失败、缺口或尚未完成
-- **THEN** command 原事实仍为实际退出结果，新协议标为矛盾 / 未确认，不能形成通过结论；不解析 stdout 来修正旧 command 历史
+- **WHEN** 实际命令退出 0，但最终报告含必需失败、未执行或不一致
+- **THEN** 保留命令真实退出，组协议记录 invalid / failed，正式结果不得 passed；不根据 stdout 重写旧 command
 
 #### Scenario: A final receipt is missing or stale
-- **WHEN** 只有增量事件，或最终回执缺失 / 重复组 / 身份矛盾 / 使用另一尝试选择或候选
-- **THEN** 不确认本次完整组事实，不从另一输出通道、最后事件或旧报告推断成功
+- **WHEN** 仅有增量事件，或最终回执缺失、组重复、身份/候选/范围错配
+- **THEN** 不确认正式完整通过，不从最后事件、旧报告或另一个执行结果推断成功
+
+#### Scenario: Run summary references formal group evidence without replacing it
+- **WHEN** 新阶段额外的 proof/Review 摘要想复用同一次正式 groups-v1 request、report 和子日志
+- **THEN** 只能引用已保存的原始来源，不减少本次正式组所需的实际回执、失败记录或清理核验，旧 PASS 不被重复摘要授权用于新 Close
 
 ### Requirement: Bounded collection under dependencies and resources
 
@@ -252,3 +260,49 @@ tests 组 SHALL 核对实际选择、完整结束、必需执行计数及执行�
 #### Scenario: An optimization would weaken a timing assertion
 - **WHEN** 提速需要删场景、放宽原业务超时、盲重试或牺牲隔离
 - **THEN** 不据此宣称优化成立，先处理真实热点 / 资源规划，保留必要真实到期、取消与预算链路
+
+### Requirement: Whole-run required coverage controls formal PASS
+
+新 groups-v1 正式结果 MUST 核对真实完成与非空业务计数、全部必需组状态、计划排除、最终报告及资源清理；不接受旧组 PASS、必需 skip/TODO、取消、未知状态或瞬时包装器成功补齐。一次新完整执行最终汇总全部失败与阻断。
+
+#### Scenario: Full set passes
+- **WHEN** 本次全部必需组真实通过、无必需 skip/TODO/取消、最终报告有效且清理已确认
+- **THEN** 组执行材料具备直接形成本次正式 passed 的必要覆盖事实，仍须通过正式 Run 提交与读回
+
+#### Scenario: Independent errors are collected
+- **WHEN** 中段失败而尾部组独立且执行安全
+- **THEN** 尾部继续，统一记录所有错误，不隐藏未执行或阻断
+
+#### Scenario: Unknown cleanup or result
+- **WHEN** 子执行、资源清理、最终回执或持久提交存在 unknown
+- **THEN** 保留真实现场，阻止正式 PASS，不能简单重试或自动清锁
+
+### Requirement: Existing empty logs are retained as real files
+本 Change SHALL 继续要求每次新普通 TestExecution 预留并保存真实 stdout.log 和 stderr.log 文件，即使本次实际内容为零字节；旧 formatVersion=1 执行的日志路径、结果、读回及写失败处理保持有效。空文件与缺失文件必须保持区别，本 Change 不引入新的虚拟 empty 或推断通过的状态。
+
+#### Scenario: Successful run has a zero-byte stdout file
+- **WHEN** 实际子命令结束、stdout 确实没有产生任何字节而 stderr 存在，且记录/双日志安全写入读回
+- **THEN** 物理 stdout.log 为零字节仍真实存在，status 可以在其它必要条件满足时显示原 passed；单纯缺失该文件不得被解释为合法空输出
+
+#### Scenario: Empty required log is unexpectedly missing
+- **WHEN** 一个旧或新执行结果的 stdoutRef/stderrRef 指向实际缺失、越界、读取失败的文件，即使其上一终态保存为 passed
+- **THEN** 必要直接读回失败或显示 unknown/不稳定，不能因为该日志预计为空而恢复 passed，也不补建或删除其它受管日志
+
+#### Scenario: Log output is partial or lifecycle is uncertain
+- **WHEN** 本次执行 running、停止/资源清理未确认，或日志只有部分字节/发生写入失败
+- **THEN** 保留实际已写输出、未完成状态、相关锁和现场，不能将尚无更多字节的情况认作真实终态 empty；继续遵守既有失败/unknown 合同
+
+### Requirement: Formal group evidence is exempt from deduplication loss
+新 groups-v1 的每次正式完整执行 SHALL 保留直接核对必要组计划/请求、子结果与日志、最终报告/事件中确有语义的事实、资源清理和失败/unknown 的证据。阶段 proof 的重复摘要不得代替这些受管源，也不得按历史缺失的 sibling 文件推出未来可合法省略报告。
+
+#### Scenario: Historical request is missing its final report
+- **WHEN** 历史已提交某组 request 存在但它对应 not-run、interrupted 或 unknown 而没有 group-report
+- **THEN** 仍按实际执行和清理记录解释缺失，不能把它作为后续新正式执行可省略最终报告的许可证或拼接 PASS
+
+#### Scenario: Formal report and stdout are cited by review
+- **WHEN** 正式 groups-v1 结果有必要的 request、report、真实子日志、失败或 cleanup 证据，Review 或 Explore 需要复用它们
+- **THEN** 审核可链接同一实际受管原件，但原件与必要直接校验继续存在，不能靠在摘要中复写通过文字取代正式报告
+
+#### Scenario: Failed and unknown evidence is not coalesced into success
+- **WHEN** 某项真实 failed、blocked、not-run、interrupted、unknown 或清理未确认
+- **THEN** 保留原 outcome 与可定位错误及必要文件，轻量化只影响额外重复副本，仍按本次完整必需组核正式结论，不允许利用旧通过填补缺口

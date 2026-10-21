@@ -12,7 +12,7 @@ import {
   prepareLifecycleChange,
 } from './lifecycle-support.ts';
 import { formal } from './delivery-support.ts';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { migrateDelivery } from '../src/application/delivery-migration.ts';
 import { openDelivery, bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';

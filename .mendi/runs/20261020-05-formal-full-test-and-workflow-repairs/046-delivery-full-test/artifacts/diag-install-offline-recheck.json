@@ -1,0 +1,18 @@
+{
+  "kind": "existing offline F04 preparation recheck only; does not rewrite 046 result",
+  "started": "2026-10-21T07:41:06.674Z",
+  "ended": "2026-10-21T07:41:19.062Z",
+  "cmd": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "scripts/prepare-installation-tests.ts",
+    "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation-offline-recheck",
+    "D:/tools/mendi/acceptance/d05-full-test-046-offline-recheck",
+    "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation\\mendi-0.2.0.tgz"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "{\n  \"installation\": \"D:\\\\tools\\\\mendi\\\\acceptance\\\\d05-full-test-046-offline-recheck\",\n  \"installedRoot\": \"D:\\\\tools\\\\mendi\\\\acceptance\\\\d05-full-test-046-offline-recheck\\\\node_modules\\\\.pnpm\\\\mendi@file+..+..+..+..+Proj_149705fc2616c06fe5c7b4fd4f06abc9\\\\node_modules\\\\mendi\",\n  \"installedCLI\": \"D:\\\\tools\\\\mendi\\\\acceptance\\\\d05-full-test-046-offline-recheck\\\\node_modules\\\\.pnpm\\\\mendi@file+..+..+..+..+Proj_149705fc2616c06fe5c7b4fd4f06abc9\\\\node_modules\\\\mendi\\\\dist\\\\drivers\\\\cli.js\",\n  \"targets\": [\n    \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-installation-QTzcaj\\\\alpha\",\n    \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-installation-QTzcaj\\\\beta\"\n  ],\n  \"openspecEntry\": \"D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js\",\n  \"evidence\": \"D:\\\\Projects\\\\MenDi\\\\.mendi\\\\runs\\\\20261020-05-formal-full-test-and-workflow-repairs\\\\046-delivery-full-test\\\\artifacts\\\\installation-offline-recheck\",\n  \"packagePath\": \"D:\\\\Projects\\\\MenDi\\\\.mendi\\\\runs\\\\20261020-05-formal-full-test-and-workflow-repairs\\\\046-delivery-full-test\\\\artifacts\\\\installation\\\\mendi-0.2.0.tgz\",\n  \"packageVersion\": \"0.2.0\",\n  \"packageSha256\": \"cd68fff20f85ee29ac22d7e84b4dc027957d7d8cefa22586796fbc619cec8d6b\"\n}\n",
+  "stderr": "",
+  "sessionExists": true
+}

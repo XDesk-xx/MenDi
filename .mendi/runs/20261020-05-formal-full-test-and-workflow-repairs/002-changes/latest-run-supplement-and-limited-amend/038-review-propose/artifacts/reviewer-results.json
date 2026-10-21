@@ -1,0 +1,205 @@
+{
+  "recordedAt": "2026-10-21T04:04:42.833Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/037-propose/run.md",
+  "reauthorizedBy": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+  "originalRejectedPreserved": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md",
+  "scope": "Planning review; not implemented product",
+  "taskCount": 16,
+  "deltaSpecs": [
+    "run-post-submission",
+    "action-runs",
+    "delivery-workspace"
+  ],
+  "approvedCrosswalk": [
+    {
+      "id": "authorization",
+      "refs": [
+        {
+          "path": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+          "line": 31,
+          "excerpt": "> owner 授权 D05-D：补充确认 MenDi 当前最新 Run supplement / amend 的研发授权，认可保留已有 Explore 与技术审核证据，授权独立 Reviewer 复核授权后继续工作流。不授权修改 DreMo 或其他目标项目"
+        },
+        {
+          "path": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md",
+          "line": 14,
+          "excerpt": "verdict: rejected"
+        }
+      ]
+    },
+    {
+      "id": "current-two-pointers",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 15,
+          "excerpt": "### D1. 两类 Current Run 明确分派，同一份严格准入"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 16,
+          "excerpt": "#### Scenario: Delivery reviewer is current without active Change"
+        }
+      ]
+    },
+    {
+      "id": "immutable-run",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 33,
+          "excerpt": "### D3. Amend 第一版选择不可变原文 + 可核验展示修订，不在已审批正文上原地覆盖"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 69,
+          "excerpt": "### Requirement: Readable aftercare without rewriting submitted history"
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 45,
+          "excerpt": "### D4. 事务以受管 `intent`、唯一附件和最后的 confirmed receipt 为权威"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 24,
+          "excerpt": "- [ ] 4.2 对 intent、复制、提交、读回、锁释放各断点进行故障注入，确认 partial 不宣称完成、实际现场可诊断、幂等重试不重复；显式 resume 只处理同一请求，不能自动清理未知锁。"
+        }
+      ]
+    },
+    {
+      "id": "semantic-whitelist",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 54,
+          "excerpt": "#### Scenario: Unsafe typo or hyperlink rewrite"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 18,
+          "excerpt": "- [ ] 3.2 测试拒绝任意自由错字、URL 目的地、证据引用、passed/failed、测试范围、权限、审核论证及 Markdown 结构改变；不以 AI 判断或操作者自述绕过保护，拒绝时指向正式修订。"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/proposal.md",
+          "line": 14,
+          "excerpt": "- 不恢复或修改 D05-D 授权争议历史：033 Explore、034 技术 approved、035 授权 rejected、036 新授权 approved 分别保留。D05-D 研发授权**不授权触及 DreMo 035 或其他目标项目**，也不代表 D05 正式 Full Test/Close、Git 或发布授权。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 32,
+          "excerpt": "- [ ] 5.4 核对 033/034/035/036 原始历史和 D05-A/B/C Archive 014/015/016 均未更改，并将真实 Apply 结果交独立 review-apply，不自签批准。"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "high",
+      "finding": "Unverified collectedAt/provenance vs promised no backdating",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 27,
+          "excerpt": "命令采用 `run supplement --project --run --role --actor --input <JSON>`；明确内容为 `requestId`、来源/用途/理由、操作者和相对受控证据输入、证据真实采集时间（不得用本次时间冒充采集时刻）、关联原审核 `relation`（`additional | conflicting | uncertain`，默认 uncertain）。执行侧自动保存**本次实际时间**，不由调用者选择。附属记录在目标 Run 所在目录的 `aftercare/supplements/<requestId>` 中保存真正唯一必要附件与 typed receipt；只允许安全相对路径，禁止外部 symlink、越界与敏感伪引用。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 40,
+          "excerpt": "- **WHEN** 同一请求幂等重试，或另一个请求试图复用重复附件、失效/越界/symlink 源、缺失原始字节或将来源时间倒填成旧批准前"
+        },
+        {
+          "path": "src/core/actions.ts",
+          "line": 30,
+          "excerpt": "export interface RunRecord {"
+        },
+        {
+          "path": "src/core/delivery-runs.ts",
+          "line": 71,
+          "excerpt": "export interface DeliveryRunRecord {"
+        }
+      ],
+      "required": "Specify system-generated aftercare recordedAt, treat supplied collectedAt as claimed unless source independently proves it; existing Change and Delivery records lack submittedAt/approvedAt. Refuse impossible verified-before/after claims, add fake backdate/unavailable baseline tests. No global timestamp migration."
+    },
+    {
+      "id": "F2",
+      "severity": "medium",
+      "finding": "Amend CLI/requestId and multiple amendment identity unspecified",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "命令 `run amend --project --run --role --actor --body <markdown> --reason <text>`，目标 `run.md` **永远保留原始已提交字节**。本次更正写独立的 `aftercare/amend` 收据，包含原始正文的确认基线、完整候选 Markdown、逐处差异、真实修改时间/actor/原因与明确 `presentation-only` 标记；`status/query` 仅展示有明确区分的**原文与当前展示更正版**及可定位差异。直接原 Run、verdict 及下游审核读取仍把原文当原始审批事实，不静默替换。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 49,
+          "excerpt": "1. 校验 requestId 和输入后以独占方式写本次 `intent.json`（记录唯一对象、用户输入与初态、可解释的前置版本）；此时**不能**返回成功。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "命令 `run amend --project --run --role --actor --body <markdown> --reason <text>`，目标 `run.md` **永远保留原始已提交字节**。本次更正写独立的 `aftercare/amend` 收据，包含原始正文的确认基线、完整候选 Markdown、逐处差异、真实修改时间/actor/原因与明确 `presentation-only` 标记；`status/query` 仅展示有明确区分的**原文与当前展示更正版**及可定位差异。直接原 Run、verdict 及下游审核读取仍把原文当原始审批事实，不静默替换。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 5,
+          "excerpt": "- [ ] 1.1 实现两个专用 run 子命令和显式恢复参数；用实际 CLI 参数测试验证旧 run save/submit 保持原义，新命令拒绝缺项目、角色、操作者、目标或请求 ID。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 65,
+          "excerpt": "#### Scenario: Repeated confirmed operation"
+        }
+      ],
+      "required": "Give run amend an explicit requestId interface, decide reject second distinct amend or append immutable per-request entries, test exact replay, changed payload same ID, second distinct amend."
+    },
+    {
+      "id": "F3",
+      "severity": "medium",
+      "finding": "Post-submission free addendum cannot be mechanically certified non-material as claimed",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 39,
+          "excerpt": "2. **单独的事后附注**。保留原文不动，收据独立显示为“事后附注，未进入原审核”，带时间/actor/原因；附注只能阐明非审核事实，不能伪造复审通过或覆盖原失败。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 39,
+          "excerpt": "2. **单独的事后附注**。保留原文不动，收据独立显示为“事后附注，未进入原审核”，带时间/actor/原因；附注只能阐明非审核事实，不能伪造复审通过或覆盖原失败。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 50,
+          "excerpt": "#### Scenario: Explicit post-submission addendum"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 17,
+          "excerpt": "- [ ] 3.1 构造保守可机械验证的 presentation-only Markdown 修改规则，仅允许指定普通段落的安全空白规范化和独立事后附注；用 Markdown 正例确认 frontmatter、语义结构及审核事实不变。"
+        }
+      ],
+      "required": "Constrain note shape mechanically or always treat arbitrary note as untrusted post-decision author commentary, never as certified review/failure correction; test a false approved/failure-overriding note cannot affect certified readback/next."
+    }
+  ],
+  "openspec": {
+    "exitCode": 0,
+    "raw": "openspec-validation.json"
+  },
+  "limits": [
+    "No product supplement/amend writer exists; these are proposal gaps, not proven product exploits",
+    "No existing submitted Run/source was modified",
+    "Prior technical and authorization reviews remain independently valid as history"
+  ]
+}

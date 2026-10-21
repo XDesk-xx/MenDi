@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: 部分复制和坏/缺 confirmed 不冒充成功；唯一 amend 的 pending 不准换模式/ID
+ok 1 - 部分复制和坏/缺 confirmed 不冒充成功；唯一 amend 的 pending 不准换模式/ID
+  ---
+  duration_ms: 3080.0305
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3504.4266

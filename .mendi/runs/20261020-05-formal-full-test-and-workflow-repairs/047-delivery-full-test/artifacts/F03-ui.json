@@ -1,0 +1,85 @@
+{
+  "stage": "F03-ui",
+  "startedAt": "2026-10-21T07:46:19.943Z",
+  "finishedAt": "2026-10-21T07:47:30.246Z",
+  "expectedSteps": 2,
+  "steps": [
+    {
+      "label": "ui-prepare",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:ui-tests",
+        "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T07:46:19.947Z",
+      "endedAt": "2026-10-21T07:46:38.106Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\047-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\047-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stderr.log"
+      }
+    },
+    {
+      "label": "ui",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test:ui"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T07:46:38.108Z",
+      "endedAt": "2026-10-21T07:47:30.246Z",
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\047-delivery-full-test\\artifacts\\F03-ui-ui.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\047-delivery-full-test\\artifacts\\F03-ui-ui.stderr.log"
+      },
+      "counts": {
+        "tests": 5,
+        "suites": 0,
+        "pass": 4,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 41918.6925
+      }
+    }
+  ],
+  "counts": {
+    "tests": 5,
+    "suites": 0,
+    "pass": 4,
+    "fail": 1,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 41918.6925
+  },
+  "allStepsSucceeded": false,
+  "businessValid": false,
+  "stageOutcome": "failed",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ]
+  }
+}

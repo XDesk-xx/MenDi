@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-20T09:32:51.562Z",
+  "role": "independent Reviewer",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/006-propose/run.md",
+  "git": {
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "head": "5a7762bca3656fb99a9e29c55d0fdd5a411d2fab"
+  },
+  "snapshots": {
+    "verification": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+      "sha256": "a92f8382cfeb490a08dc395085d0f140559afb5ea296e3b4fbe837e9fa19ee8d"
+    },
+    "lifecycle": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-lifecycle/spec.md",
+      "sha256": "4788ff192f09840b299a343467c40cfd816e15e4619bb6fa81a00f79b2a0e23b"
+    },
+    "design": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/design.md",
+      "sha256": "688ae4b7acb22a1c00ba29c3f93b4df51860fd6c53cccfe7c48ce5537bc78bd4"
+    },
+    "tasks": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+      "sha256": "41b7481dd8a9948051da08f548440cdf48cd597969a4752f8e70275a554e5e4f"
+    },
+    "rounds": {
+      "path": "src/core/rounds.ts",
+      "sha256": "92d70f605fddffbec89a846d781ce130a98824e8158aeb344847d929b68a9424"
+    },
+    "deliveryRuns": {
+      "path": "src/adapters/delivery-runs.ts",
+      "sha256": "c2e6806d9d20de4c544483398c105443f8decfc9039035b95c5e8e19e17b57a9"
+    },
+    "closeParser": {
+      "path": "src/core/delivery-lifecycle.ts",
+      "sha256": "a62d33721d67233544a41376e83152349d52def549caacbe3ae124df6ee7856c"
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking",
+      "problem": "New command formal writes prohibited while modified test-admission scenario still requires actual legacy command execution result persistence",
+      "links": {
+        "spec": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+        "lines": {
+          "admissionRejectLine": 7,
+          "modifiedRequirementLine": 33,
+          "actuationLine": 35
+        }
+      },
+      "evidenceKind": "submitted spec semantic contradiction; not new runtime behavior"
+    },
+    {
+      "id": "F2",
+      "severity": "blocking",
+      "problem": "New Close only v2 while modified Close scenario says valid legacy command input follows old contract; Close selector, parser and pointer need explicit rule",
+      "links": {
+        "spec": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-lifecycle/spec.md",
+        "lines": {
+          "onlyV2Line": 7,
+          "staleInputLine": 18,
+          "legacyInputLine": 39
+        },
+        "design": "openspec/changes/unified-groups-full-test-and-repair-flow/design.md",
+        "designLines": {
+          "typedPointerLine": 74,
+          "legacyPointerLine": 74,
+          "selectorLine": 74
+        }
+      },
+      "productCodeConstraints": {
+        "files": [
+          "src/core/rounds.ts",
+          "src/adapters/delivery-runs.ts",
+          "src/core/delivery-lifecycle.ts"
+        ],
+        "lines": {
+          "roundPointerTypeLine": 164,
+          "attemptPointerTypeLine": 165,
+          "existingWriterLine": 76,
+          "existingCloseParserLine": 107
+        },
+        "oldCommandRef": ".mendi/runs/d01/015-delivery-full-test/run.md",
+        "typedV2Ref": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+        "separatePointersAccepted": true,
+        "typedV2InFullTestRunRefRejected": true,
+        "rejectionMessage": "轮次结果指针类型不符。"
+      },
+      "evidenceKind": "submitted spec contradiction plus direct execution of current pure round parser"
+    }
+  ],
+  "positive": {
+    "strictStructure": {
+      "exitCode": 0,
+      "raw": "openspec-validation.json"
+    },
+    "tasks": 13,
+    "ownerDecision": "new groups-v1 single-run passed; Close separately authorized; legacy only read",
+    "fourDeltasPresent": true,
+    "oldReadPreservationPresent": true,
+    "missingF1F2AreProposeSemanticContractIssues": true
+  },
+  "limits": [
+    "No D05-A product implementation existed during this review; this is a spec-level and current-parser proof only",
+    "Read-only pure parsing of fabricated v2 manifest, not a new actual Close operation",
+    "OpenSpec strict validate confirms structure only, not policy consistency",
+    "Do not modify submitted proposal/specs or historical verdict here"
+  ]
+}

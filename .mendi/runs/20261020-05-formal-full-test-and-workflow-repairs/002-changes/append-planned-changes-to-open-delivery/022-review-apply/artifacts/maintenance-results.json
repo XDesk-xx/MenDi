@@ -1,0 +1,103 @@
+{
+  "recordedAt": "2026-10-20T17:05:33.392Z",
+  "method": "Reviewer physical maintained .ts lines, trailing newline not an extra line; HEAD only where file exists",
+  "areas": [
+    {
+      "area": "src",
+      "top": [
+        {
+          "path": "src/application/delivery-lifecycle.ts",
+          "lines": 368
+        },
+        {
+          "path": "src/application/group-attempt.ts",
+          "lines": 361
+        },
+        {
+          "path": "src/adapters/openspec.ts",
+          "lines": 346
+        },
+        {
+          "path": "src/adapters/workspace.ts",
+          "lines": 346
+        }
+      ]
+    },
+    {
+      "area": "tests",
+      "top": [
+        {
+          "path": "tests/action-write.test.ts",
+          "lines": 467
+        },
+        {
+          "path": "tests/planning-cli.test.ts",
+          "lines": 444
+        },
+        {
+          "path": "tests/delivery-repair.test.ts",
+          "lines": 395
+        }
+      ]
+    },
+    {
+      "area": "scripts",
+      "top": [
+        {
+          "path": "scripts/proofs/mvp-d01-c-explore.ts",
+          "lines": 678
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-d-explore.ts",
+          "lines": 487
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-a-explore.ts",
+          "lines": 463
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "path": "src/application/project.ts",
+      "current": 233,
+      "head": 374
+    },
+    {
+      "path": "src/adapters/change-add-store.ts",
+      "current": 315,
+      "head": null
+    },
+    {
+      "path": "src/adapters/scope-additions.ts",
+      "current": 86,
+      "head": null
+    },
+    {
+      "path": "src/core/round-records.ts",
+      "current": 89,
+      "head": 70
+    },
+    {
+      "path": "src/core/rounds.ts",
+      "current": 283,
+      "head": 253
+    },
+    {
+      "path": "tests/change-add-review-repair.test.ts",
+      "current": 90,
+      "head": null
+    },
+    {
+      "path": "tests/change-add.test.ts",
+      "current": 247,
+      "head": null
+    },
+    {
+      "path": "tests/rounds.test.ts",
+      "current": 330,
+      "head": 268
+    }
+  ]
+}

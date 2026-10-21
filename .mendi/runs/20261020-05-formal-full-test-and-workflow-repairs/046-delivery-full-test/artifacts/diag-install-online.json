@@ -1,0 +1,19 @@
+{
+  "kind": "environment diagnostic only, not F04 pass",
+  "createdAt": "2026-10-21T07:40:33.050Z",
+  "endedAt": "2026-10-21T07:40:34.430Z",
+  "target": "D:/tools/mendi/acceptance/d05-046-diagnostic-online",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "add",
+    "--ignore-scripts",
+    "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation\\mendi-0.2.0.tgz"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "Progress: resolved 0, reused 1, downloaded 0, added 0\nPackages: +2\n++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 2, reused 2, downloaded 0, added 2, done\n\ndependencies:\n+ mendi 0.2.0\n\nDone in 1.1s using pnpm v11.22.0\n",
+  "stderr": "",
+  "noSecurityFlagsChanged": true
+}

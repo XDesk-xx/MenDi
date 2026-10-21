@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-oBV4XB\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "原准备失败 必须是对象。",
+    "code": "invalid-data",
+    "details": {}
+  },
+  "committedPaths": []
+}

@@ -13,12 +13,12 @@ import {
   closeInput,
   archiveNew,
 } from './lifecycle-support.ts';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { deliveredBaselines } from '../src/adapters/baselines.ts';
 import { formal, fullInput } from './delivery-support.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from './fixtures/legacy-command.ts';
 import { readRunSource, renderRun, scanRunNumbers } from '../src/adapters/runs.ts';
 
 test('真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对', async () => {

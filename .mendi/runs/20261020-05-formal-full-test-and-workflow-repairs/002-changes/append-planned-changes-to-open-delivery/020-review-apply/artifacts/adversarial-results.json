@@ -1,0 +1,103 @@
+{
+  "recordedAt": "2026-10-20T15:44:36.329Z",
+  "fixedAuthor": "019-apply",
+  "operation": "actual addDeliveryChanges repeated seven times on single isolated product-v2 fixture",
+  "counts": [
+    {
+      "i": 1,
+      "ref": ".mendi/runs/d01/015-delivery-change-add/run.md",
+      "intentBytes": 4087,
+      "embeddedPreviousIntents": 0,
+      "directItems": 2,
+      "directTotalBase64Chars": 1268,
+      "requestId": "review-append-1"
+    },
+    {
+      "i": 2,
+      "ref": ".mendi/runs/d01/016-delivery-change-add/run.md",
+      "intentBytes": 13936,
+      "embeddedPreviousIntents": 1,
+      "directItems": 4,
+      "directTotalBase64Chars": 9020,
+      "requestId": "review-append-2"
+    },
+    {
+      "i": 3,
+      "ref": ".mendi/runs/d01/017-delivery-change-add/run.md",
+      "intentBytes": 37355,
+      "embeddedPreviousIntents": 2,
+      "directItems": 6,
+      "directTotalBase64Chars": 30156,
+      "requestId": "review-append-3"
+    },
+    {
+      "i": 4,
+      "ref": ".mendi/runs/d01/018-delivery-change-add/run.md",
+      "intentBytes": 92568,
+      "embeddedPreviousIntents": 3,
+      "directItems": 8,
+      "directTotalBase64Chars": 82708,
+      "requestId": "review-append-4"
+    },
+    {
+      "i": 5,
+      "ref": ".mendi/runs/d01/019-delivery-change-add/run.md",
+      "intentBytes": 221971,
+      "embeddedPreviousIntents": 4,
+      "directItems": 10,
+      "directTotalBase64Chars": 209072,
+      "requestId": "review-append-5"
+    },
+    {
+      "i": 6,
+      "ref": ".mendi/runs/d01/020-delivery-change-add/run.md",
+      "intentBytes": 524488,
+      "embeddedPreviousIntents": 5,
+      "directItems": 12,
+      "directTotalBase64Chars": 508172,
+      "requestId": "review-append-6"
+    },
+    {
+      "i": 7,
+      "ref": ".mendi/runs/d01/021-delivery-change-add/run.md",
+      "intentBytes": 1230931,
+      "embeddedPreviousIntents": 6,
+      "directItems": 14,
+      "directTotalBase64Chars": 1210820,
+      "requestId": "review-append-7"
+    }
+  ],
+  "firstToLastRatio": 301.18,
+  "laterRunWithPreAddScopeAccepted": true,
+  "chronologicalNegativeControl": {
+    "claimedRunNumber": 16,
+    "firstAppendRunNumber": 15,
+    "oldScope": [
+      "A",
+      "B"
+    ],
+    "currentScope": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+    ],
+    "observedRecordRound": "accepted original scope despite later number"
+  },
+  "sourceRefs": [
+    "src/adapters/scope-additions.ts:10-60",
+    "src/application/delivery-change-add.ts:57-61",
+    "src/adapters/change-add-store.ts:144-149",
+    "src/core/round-records.ts:30-48"
+  ],
+  "limits": [
+    "Isolated fixture repeat writes, not root Delivery scope or a user-approved product append",
+    "Physical bytes of nested append intents are measured for a bounded seven-run workload, not extrapolated performance claims",
+    "The historical old-scope chronology case is fabricated in memory; tests whether recordRound itself enforces temporal scope attribution, not proof any current writer emits such Run"
+  ]
+}

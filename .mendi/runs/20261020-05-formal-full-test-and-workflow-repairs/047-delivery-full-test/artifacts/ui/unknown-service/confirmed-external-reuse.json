@@ -1,0 +1,9 @@
+{
+  "target": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui\\unknown-service",
+  "config": ".storybook/main.ts",
+  "script": "preview:components",
+  "ownerChildPid": 37428,
+  "clientTarget": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui\\preview",
+  "clientStoppedService": false,
+  "stillAvailableAfterClientBrowserClosed": true
+}

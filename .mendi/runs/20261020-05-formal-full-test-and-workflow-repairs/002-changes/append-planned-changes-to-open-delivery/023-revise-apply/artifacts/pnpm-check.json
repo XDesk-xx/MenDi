@@ -1,0 +1,9 @@
+{
+  "name": "pnpm-check",
+  "command": "node C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js check",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "Checked 209 files in 86ms. No fixes applied.\nChecked 209 files in 87ms. No fixes applied.\n",
+  "stderr": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+}

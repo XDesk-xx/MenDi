@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 import { prepareTargetMethods } from './target-method-support.ts';
+import { evidenceSession } from './evidence-support.ts';
 
 export const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const openspecEntry =
@@ -25,7 +26,6 @@ export function command(entry: string, args: string[], cwd: string, env: NodeJS.
     windowsHide: true,
     timeout: 30_000,
   });
-  assert.equal(result.error, undefined, result.error?.message);
   const record = {
     executable: process.execPath,
     entry,
@@ -33,16 +33,23 @@ export function command(entry: string, args: string[], cwd: string, env: NodeJS.
     cwd,
     exitCode: result.status,
     signal: result.signal,
-    stdout: result.stdout,
-    stderr: result.stderr,
   };
   if (process.env.MENDI_TEST_EVIDENCE_DIR) {
-    fs.mkdirSync(process.env.MENDI_TEST_EVIDENCE_DIR, { recursive: true });
-    fs.appendFileSync(
-      path.join(process.env.MENDI_TEST_EVIDENCE_DIR, `commands-${process.pid}.jsonl`),
-      JSON.stringify(record) + '\n',
-    );
+    const session = evidenceSession(process.env.MENDI_TEST_EVIDENCE_DIR),
+      id = randomUUID();
+    const output = session.value(`command:${id}`, {
+      stdout: result.stdout,
+      stderr: result.stderr,
+      error: result.error
+        ? {
+            message: result.error.message,
+            ...('code' in result.error ? { code: result.error.code } : {}),
+          }
+        : null,
+    });
+    session.record(`commands-${process.pid}.jsonl`, { id, ...record, output });
   }
+  assert.equal(result.error, undefined, result.error?.message);
   return result;
 }
 export function cli(args: string[], cwd: string, env: NodeJS.ProcessEnv) {

@@ -1,0 +1,103 @@
+{
+  "source": "independent Reviewer physical maintained TypeScript line count; HEAD base where file existed",
+  "areas": [
+    {
+      "area": "src",
+      "top3": [
+        {
+          "path": "src/application/delivery-lifecycle.ts",
+          "lines": 368
+        },
+        {
+          "path": "src/application/group-attempt.ts",
+          "lines": 361
+        },
+        {
+          "path": "src/adapters/openspec.ts",
+          "lines": 346
+        }
+      ]
+    },
+    {
+      "area": "tests",
+      "top3": [
+        {
+          "path": "tests/action-write.test.ts",
+          "lines": 467
+        },
+        {
+          "path": "tests/planning-cli.test.ts",
+          "lines": 444
+        },
+        {
+          "path": "tests/delivery-repair.test.ts",
+          "lines": 395
+        }
+      ]
+    },
+    {
+      "area": "scripts",
+      "top3": [
+        {
+          "path": "scripts/proofs/mvp-d01-c-explore.ts",
+          "lines": 678
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-d-explore.ts",
+          "lines": 487
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-a-explore.ts",
+          "lines": 463
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "file": "src/application/project.ts",
+      "current": 233,
+      "base": 374
+    },
+    {
+      "file": "src/adapters/workspace.ts",
+      "current": 346,
+      "base": 344
+    },
+    {
+      "file": "src/core/rounds.ts",
+      "current": 283,
+      "base": 253
+    },
+    {
+      "file": "src/core/round-records.ts",
+      "current": 72,
+      "base": 70
+    },
+    {
+      "file": "src/core/delivery-runs.ts",
+      "current": 292,
+      "base": 257
+    },
+    {
+      "file": "src/application/delivery-change-add.ts",
+      "current": 220,
+      "base": null
+    },
+    {
+      "file": "src/adapters/change-add-store.ts",
+      "current": 268,
+      "base": null
+    },
+    {
+      "file": "src/adapters/scope-additions.ts",
+      "current": 61,
+      "base": null
+    },
+    {
+      "file": "src/core/scope-addition.ts",
+      "current": 137,
+      "base": null
+    }
+  ]
+}

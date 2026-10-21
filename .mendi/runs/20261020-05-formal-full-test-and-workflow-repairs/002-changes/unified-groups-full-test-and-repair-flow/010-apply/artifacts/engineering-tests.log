@@ -1,0 +1,664 @@
+TAP version 13
+# Subtest: 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+not ok 1 - 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+  ---
+  duration_ms: 63744.6982
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\baseline-integration.test.ts:24:1'
+  failureType: 'testCodeFailure'
+  error: '新 Close 唯一选择 testAttemptRunRef；旧 fullTestRunRef / verificationRunRef 仅供历史读取。'
+  code: 'invalid-declaration'
+  name: 'MendiError'
+  stack: |-
+    deliveryLifecycle (file:///D:/Projects/MenDi/src/application/delivery-lifecycle.ts:223:13)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/baseline-integration.test.ts:146:16)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 本轮 DAG 与基线分开，省略 / 空声明一致，非法 / 重复基线明确拒绝
+ok 2 - 本轮 DAG 与基线分开，省略 / 空声明一致，非法 / 重复基线明确拒绝
+  ---
+  duration_ms: 3.2333
+  type: 'test'
+  ...
+# Subtest: 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+ok 3 - 声明拒绝空集合、重复、缺材料 / 差异及短 commit，忽略未知 Ref
+  ---
+  duration_ms: 2.6495
+  type: 'test'
+  ...
+# Subtest: 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+ok 4 - 首次 admission 只读本轮直接 Archive / Review / Apply，错误身份和缺输入拒绝
+  ---
+  duration_ms: 31253.1261
+  type: 'test'
+  ...
+# Subtest: 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+ok 5 - 越界、漏槽位、活动 Change、错误角色 / 方法均在占号前拒绝
+  ---
+  duration_ms: 226.4357
+  type: 'test'
+  ...
+# Subtest: 尚有实际活动 / 未归档 Change 时不分配正式 Run
+ok 6 - 尚有实际活动 / 未归档 Change 时不分配正式 Run
+  ---
+  duration_ms: 17249.9271
+  type: 'test'
+  ...
+# Subtest: 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+ok 7 - 头部 scope / role / 方法 / actionId / 指针矛盾拒绝，旧 Change 仍读取
+  ---
+  duration_ms: 4405.6197
+  type: 'test'
+  ...
+# Subtest: RA-B-001：首次修复后执行需要完整当前 Review，查询不倒查正文
+ok 8 - RA-B-001：首次修复后执行需要完整当前 Review，查询不倒查正文
+  ---
+  duration_ms: 43023.2505
+  type: 'test'
+  ...
+# Subtest: RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志不稳定观察
+ok 9 - RA-B-002：当前 query 与指定 status 的 next 使用本次锁 / 日志不稳定观察
+  ---
+  duration_ms: 5501.3796
+  type: 'test'
+  ...
+# Subtest: 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+ok 10 - 四个 Delivery 入口精确解析必要参数，未知 / 缺参 / 重复不接受
+  ---
+  duration_ms: 3.3304
+  type: 'test'
+  ...
+# Subtest: 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+ok 11 - 独立目标测试去除宿主 node:test 上下文，不改宿主环境
+  ---
+  duration_ms: 1.278
+  type: 'test'
+  ...
+# Subtest: 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+ok 12 - 正式运行新子执行；启动前同一 lease 内父子意图持久，普通旧 PASS 不认领
+  ---
+  duration_ms: 42577.875
+  type: 'test'
+  ...
+# Subtest: 真正非零为 failed，历史 status 读取成功不等于 passed
+ok 13 - 真正非零为 failed，历史 status 读取成功不等于 passed
+  ---
+  duration_ms: 4248.9238
+  type: 'test'
+  ...
+# Subtest: 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+ok 14 - 声明固定后工具 / 依赖拒绝 not-run，原始输出留存且不安装、不占子执行
+  ---
+  duration_ms: 2818.0366
+  type: 'test'
+  ...
+# Subtest: 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+ok 15 - 选定启动失败保存有子 ID 的 not-run；启动即取消有界、真实关闭或诚实 unknown
+  ---
+  duration_ms: 16078.7182
+  type: 'test'
+  ...
+# Subtest: 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+ok 16 - 正式持锁 / 声明 / 入口冲突不生成通过，当前 query 拒绝锁现场
+  ---
+  duration_ms: 4332.5901
+  type: 'test'
+  ...
+# Subtest: 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+ok 17 - 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+  ---
+  duration_ms: 54473.8631
+  type: 'test'
+  ...
+# Subtest: 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+ok 18 - 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+  ---
+  duration_ms: 6444.3811
+  type: 'test'
+  ...
+# Subtest: 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+ok 19 - 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+  ---
+  duration_ms: 7952.7832
+  type: 'test'
+  ...
+# Subtest: diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+ok 20 - diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+  ---
+  duration_ms: 6476.5718
+  type: 'test'
+  ...
+# Subtest: 顶层计划改写不是 Reopen，写前拒绝并保留正式历史；活动项与指针并存拒绝
+ok 21 - 顶层计划改写不是 Reopen，写前拒绝并保留正式历史；活动项与指针并存拒绝
+  ---
+  duration_ms: 7050.0869
+  type: 'test'
+  ...
+# Subtest: 后续关联不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+ok 22 - 后续关联不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+  ---
+  duration_ms: 59578.0601
+  type: 'test'
+  ...
+# Subtest: 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+ok 23 - 修复 / Review continuing 保持 Action 与 Author；草稿只读本地、提交需要真实对象
+  ---
+  duration_ms: 60335.1311
+  type: 'test'
+  ...
+# Subtest: changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+ok 24 - changes-requested / 主动修订替换旧批准；rejected 停 Owner，不能普通继续
+  ---
+  duration_ms: 8546.4707
+  type: 'test'
+  ...
+# Subtest: 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+ok 25 - 修复拒绝普通 / 旧失败，普通 submit / continue 不认证正式 full
+  ---
+  duration_ms: 19180.5042
+  type: 'test'
+  ...
+# Subtest: 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+not ok 26 - 两项真实归档 → 正式接线失败 → focused → 定向审核夹具 → 新整次执行及异目录新进程
+  ---
+  duration_ms: 59915.0795
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\delivery-repair.test.ts:203:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'outcome')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/delivery-repair.test.ts:232:42)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+ok 27 - 已审核的范围内 full 配置修复允许新整次运行，不追读原失败父链
+  ---
+  duration_ms: 21362.7018
+  type: 'test'
+  ...
+# Subtest: 同级连续编号、空占号不复用、重复号拒绝
+ok 28 - 同级连续编号、空占号不复用、重复号拒绝
+  ---
+  duration_ms: 70389.8014
+  type: 'test'
+  ...
+# Subtest: 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+ok 29 - 父 Run、manifest、读回和锁释放故障保留实际现场，不重试
+  ---
+  duration_ms: 12191.278
+  type: 'test'
+  ...
+# Subtest: 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+ok 30 - 日志、子终态 / 读回与父终态失败均非零并保留 unknown / 锁
+  ---
+  duration_ms: 26951.3043
+  type: 'test'
+  ...
+# Subtest: 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+ok 31 - 持锁复核变更不占号；执行期间必要批准和 full 入口变化保留现场
+  ---
+  duration_ms: 10133.541
+  type: 'test'
+  ...
+# Subtest: 真实 pnpm 接收本次请求，完整组通过直接正式 passed，Close 仍等 Owner 授权
+ok 32 - 真实 pnpm 接收本次请求，完整组通过直接正式 passed，Close 仍等 Owner 授权
+  ---
+  duration_ms: 69585.492
+  type: 'test'
+  ...
+# Subtest: 真实失败保留，禁止 continue 和无审核 initial 绕行
+ok 33 - 真实失败保留，禁止 continue 和无审核 initial 绕行
+  ---
+  duration_ms: 5628.2587
+  type: 'test'
+  ...
+# Subtest: 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+ok 34 - 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+  ---
+  duration_ms: 16902.7078
+  type: 'test'
+  ...
+# Subtest: 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+ok 35 - 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+  ---
+  duration_ms: 5542.7543
+  type: 'test'
+  ...
+# Subtest: 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+ok 36 - 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+  ---
+  duration_ms: 43546.64
+  type: 'test'
+  ...
+# Subtest: 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+ok 37 - 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+  ---
+  duration_ms: 3523.2811
+  type: 'test'
+  ...
+# Subtest: E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+ok 38 - E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+  ---
+  duration_ms: 19508.544
+  type: 'test'
+  ...
+# Subtest: 清理未知阻断共享后项，陌生端口实际占用不抢占
+ok 39 - 清理未知阻断共享后项，陌生端口实际占用不抢占
+  ---
+  duration_ms: 10052.5399
+  type: 'test'
+  ...
+# Subtest: 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+ok 40 - 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+  ---
+  duration_ms: 5179.3332
+  type: 'test'
+  ...
+# Subtest: 真实取消停止本次树，不从取消中的 prefix 认领通过
+ok 41 - 真实取消停止本次树，不从取消中的 prefix 认领通过
+  ---
+  duration_ms: 5081.9338
+  type: 'test'
+  ...
+# Subtest: 新 verification 写入提前拒绝，不占号或保留不必要锁
+ok 42 - 新 verification 写入提前拒绝，不占号或保留不必要锁
+  ---
+  duration_ms: 6587.1823
+  type: 'test'
+  ...
+# Subtest: 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+ok 43 - 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+  ---
+  duration_ms: 6102.5552
+  type: 'test'
+  ...
+# Subtest: 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+ok 44 - 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+  ---
+  duration_ms: 3509.4404
+  type: 'test'
+  ...
+# Subtest: 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+ok 45 - 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+  ---
+  duration_ms: 6069.4991
+  type: 'test'
+  ...
+# Subtest: 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+ok 46 - 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+  ---
+  duration_ms: 69988.789
+  type: 'test'
+  ...
+# Subtest: 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+ok 47 - 执行前排除单列并观察，必需通过非空；增量事件只消费新行
+  ---
+  duration_ms: 53795.027
+  type: 'test'
+  ...
+# Subtest: 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+not ok 48 - 非测试真实构建 / 只读同次复用 / 独立并发消费者，输入变化重新构建
+  ---
+  duration_ms: 7254.4525
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\group-completion.test.ts:34:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"ok":false,"operation":"delivery-full-test-run","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-31OrIn\\project","openspec":null,"local":{"source":"product","deliveryId":"d01","title":"顺序验证","state":"open","goal":"验证目标项目的最小 Delivery Open 与首个 Change 关联","plannedChanges":[{"slot":"A","title":"项目入口","dependsOn":[]},{"slot":"B","title":"后续工作","dependsOn":["A"]}],"activeChangeId":null,"changeBindings":[{"changeId":"proof-entry","changeRef":"openspec/changes/archive/2026-10-20-001-proof-entry","planningSlot":"A","state":"archived","archiveOrdinal":1,"batchId":"001-changes","latestRunRef":".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md"},{"changeId":"second-entry","changeRef":"openspec/changes/archive/2026-10-20-002-second-entry","planningSlot":"B","state":"archived","archiveOrdinal":2,"batchId":"001-changes","latestRunRef":".mendi/runs/d01/001-changes/second-entry/014-archive/run.md"}],"currentRoundId":"r001","rounds":[{"id":"r001","state":"open","openedOn":"2026-10-20"}]},"run":{"ref":".mendi/runs/d01/015-delivery-test-attempt/run.md","formatVersion":1,"recordingMode":"product","scope":"delivery","deliveryId":"d01","changeId":null,"actionType":"delivery-test-attempt","role":"author","actorId":"delivery-author","status":"submitted","stageSkill":"delivery-full-test","toolGuidance":[],"attempt":{"version":2,"roundId":"r001","scope":{"goal":"验证目标项目的最小 Delivery Open 与首个 Change 关联","plannedChanges":[{"slot":"A","title":"项目入口","dependsOn":[]},{"slot":"B","title":"后续工作","dependsOn":["A"]}],"completed":[{"slot":"A","changeId":"proof-entry","archiveOrdinal":1},{"slot":"B","changeId":"second-entry","archiveOrdinal":2}]},"approvals":[{"changeId":"proof-entry","archiveRunRef":".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md","reviewRunRef":".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md","authorRunRef":".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md","authorActor":"author-one","reviewerActor":"reviewer-one"},{"changeId":"second-entry","archiveRunRef":".mendi/runs/d01/001-changes/second-entry/014-archive/run.md","reviewRunRef":".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md","authorRunRef":".mendi/runs/d01/001-changes/second-entry/012-apply/run.md","authorActor":"author-one","reviewerActor":"reviewer-one"}],"baselineFacts":[],"entry":{"scriptName":"test:full","scriptText":"node group-runner.ts","packageManager":"pnpm@11.22.0","pnpmBin":"C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"},"plan":{"protocol":"mendi-group-tests/1","groups":[{"id":"prefix","title":"prefix","kind":"command","required":true,"dependsOn":[],"resources":[],"selection":["reuse.ts"],"completion":"实际构建、两独立消费者与输入变化检查均通过","preparation":"隔离本次目标，无共享服务","exclusions":[],"command":"node reuse.ts","artifacts":["reuse-result.json"]},{"id":"middle","title":"middle","kind":"tests","required":true,"dependsOn":["prefix"],"resources":[],"selection":["middle.test.ts"],"completion":"业务断言、Node容器及根汇总均完成","preparation":"隔离本次目标，无共享服务","exclusions":[]},{"id":"tail","title":"tail","kind":"tests","required":true,"dependsOn":[],"resources":[],"selection":["tail.test.ts"],"completion":"业务断言、Node容器及根汇总均完成","preparation":"隔离本次目标，无共享服务","exclusions":[]}]},"candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}},"purpose":"initial","selection":["prefix","middle","tail"],"progress":[{"id":"prefix","state":"failed","reason":"实际退出或晚期错误；命令或产物条件未满足","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}},{"id":"middle","state":"blocked","reason":"必要前置 / 共享资源未确认","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}},{"id":"tail","state":"passed","reason":"","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}}],"phase":"finished","executionId":"001-full","timing":[{"id":"mendi","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":0,"durationMs":6987.132799999999,"phase":"保存前包络"},{"id":"mendi-1","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":0,"durationMs":52.899399999994785,"phase":"准入 / 直接事实与方法","parent":"mendi"},{"id":"mendi-2","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":52.899399999994785,"durationMs":61.790899999999965,"phase":"锁内复核","parent":"mendi"},{"id":"mendi-3","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":114.69029999999475,"durationMs":1586.2603000000017,"phase":"真实工具 / 依赖准备前","parent":"mendi"},{"id":"mendi-4","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":1700.9505999999965,"durationMs":5255.5889000000025,"phase":"真实 pnpm / 目标准备执行等待清理与子日志保存","parent":"mendi"},{"id":"mendi-5","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":6956.539499999999,"durationMs":30.563099999999395,"phase":"最终报告 / 协议解释","parent":"mendi"}],"request":{"protocol":"mendi-group-tests/1","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-31OrIn\\project","deliveryId":"d01","roundId":"r001","runRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","executionId":"001-full","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}},"plan":{"protocol":"mendi-group-tests/1","groups":[{"id":"prefix","title":"prefix","kind":"command","required":true,"dependsOn":[],"resources":[],"selection":["reuse.ts"],"completion":"实际构建、两独立消费者与输入变化检查均通过","preparation":"隔离本次目标，无共享服务","exclusions":[],"command":"node reuse.ts","artifacts":["reuse-result.json"]},{"id":"middle","title":"middle","kind":"tests","required":true,"dependsOn":["prefix"],"resources":[],"selection":["middle.test.ts"],"completion":"业务断言、Node容器及根汇总均完成","preparation":"隔离本次目标，无共享服务","exclusions":[]},{"id":"tail","title":"tail","kind":"tests","required":true,"dependsOn":[],"resources":[],"selection":["tail.test.ts"],"completion":"业务断言、Node容器及根汇总均完成","preparation":"隔离本次目标，无共享服务","exclusions":[]}]},"selection":["prefix","middle","tail"],"prerequisites":[],"reportRef":".mendi/delivery-groups/d01/tests/001-full/group-report.json","eventsRef":".mendi/delivery-groups/d01/tests/001-full/group-events.jsonl"},"observation":{"protocolState":"valid","groups":[{"id":"prefix","state":"failed","reason":"实际退出或晚期错误；命令或产物条件未满足"},{"id":"middle","state":"blocked","reason":"必要前置 / 共享资源未确认"},{"id":"tail","state":"passed","reason":""}],"reasons":[],"timing":[{"id":"target","clock":"target","utc":"2026-10-20T10:48:44.851Z","startMs":0,"durationMs":1165.7419,"phase":"目标执行 / 清理"}]},"formalOutcome":"failed"},"runNumber":15,"actionId":"d01-015-delivery-test-attempt","outcome":"complete","result":"failed"},"groupExecution":{"stable":true,"formalOutcome":"failed","commandMatch":"match","protocolState":"valid","observation":{"protocolState":"valid","groups":[{"id":"prefix","state":"failed","reason":"实际退出或晚期错误；命令或产物条件未满足"},{"id":"middle","state":"blocked","reason":"必要前置 / 共享资源未确认"},{"id":"tail","state":"passed","reason":""}],"reasons":[],"timing":[{"id":"target","clock":"target","utc":"2026-10-20T10:48:44.851Z","startMs":0,"durationMs":1165.7419,"phase":"目标执行 / 清理"}]},"child":{"formatVersion":1,"executionId":"001-full","kind":"full","projectRoot":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-31OrIn\\project","cwd":"D:\\Projects\\MenDi\\.tmp\\mendi-apply-31OrIn\\project","deliveryId":"d01","changeId":null,"actorId":"delivery-author","scope":"command","formalDeliveryTest":false,"command":{"executable":"C:\\nvm4w\\nodejs\\node.exe","args":["C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js","run","test:full"],"dependencyPolicy":"warn"},"dependencyCheck":{"executable":"C:\\nvm4w\\nodejs\\node.exe","args":["C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js","run"],"dependencyPolicy":"error","exitCode":0},"scriptName":"test:full","scriptText":"node group-runner.ts","startedAt":"2026-10-20T10:48:42.593Z","finishedAt":"2026-10-20T10:48:46.159Z","executionState":"finished","outcome":"failed","exitCode":1,"signal":null,"pid":72212,"stdoutRef":".mendi/delivery-groups/d01/tests/001-full/stdout.log","stderrRef":".mendi/delivery-groups/d01/tests/001-full/stderr.log"},"progress":[{"id":"prefix","state":"failed","reason":"实际退出或晚期错误；命令或产物条件未满足","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}},{"id":"middle","state":"blocked","reason":"必要前置 / 共享资源未确认","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}},{"id":"tail","state":"passed","reason":"","sourceRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}}}],"candidate":{"id":"c1","basis":{"materials":"隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具","changes":""}},"roundId":"r001","current":true,"materialApplicability":"requires-semantic-check","timing":[{"id":"mendi","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":0,"durationMs":6987.132799999999,"phase":"保存前包络"},{"id":"mendi-1","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":0,"durationMs":52.899399999994785,"phase":"准入 / 直接事实与方法","parent":"mendi"},{"id":"mendi-2","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":52.899399999994785,"durationMs":61.790899999999965,"phase":"锁内复核","parent":"mendi"},{"id":"mendi-3","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":114.69029999999475,"durationMs":1586.2603000000017,"phase":"真实工具 / 依赖准备前","parent":"mendi"},{"id":"mendi-4","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":1700.9505999999965,"durationMs":5255.5889000000025,"phase":"真实 pnpm / 目标准备执行等待清理与子日志保存","parent":"mendi"},{"id":"mendi-5","clock":"mendi","utc":"2026-10-20T10:48:39.222Z","startMs":6956.539499999999,"durationMs":30.563099999999395,"phase":"最终报告 / 协议解释","parent":"mendi"}],"targetTiming":[{"id":"target","clock":"target","utc":"2026-10-20T10:48:44.851Z","startMs":0,"durationMs":1165.7419,"phase":"目标执行 / 清理"}],"unmeasured":["目标未报告的内部阶段","跨进程时钟的相对绝对值","关键路径"],"scopeMatch":"match"},"methods":{"stage":{"ref":"skills/actions/delivery-full-test/SKILL.md","file":"D:\\Projects\\MenDi\\skills\\actions\\delivery-full-test\\SKILL.md","content":"---\nname: mendi-delivery-full-test\nphase: delivery-full-test\nrole: author\n---\n\n# 正式 Delivery Full Test\n\n新正式写入唯一使用[组级协议](../../group-tests.md)的 groups-v1 完整 initial；旧 command、v1 continue/retest/verification 仅供历史读取。先核对实际 Owner 授权、本轮全部完成槽位及直接 Apply / Review 批准。项目内声明 JSON 包含 mode、planRef、candidate（id 与 basis.materials/changes，可选完整 commit）、purpose:initial 和全部必需 selection。新父 Run 保存 attempt.version:2、当前轮、完整计划/候选/批准/基线、真实执行、协议及正式终态。\n\n正式启动前，先查看目标已有 full 入口、配置及准备检查，核对本次实际需要的依赖、构建输出、服务、端口与绑定地址、测试数据和并行共享资源。优先沿用目标已有准备入口；无服务或端口需求的集合不强加检查，不扫描全机或扩成通用资源平台。由目标项目执行实际准备和资源检查，MenDi 的 skill 提醒不代表 CLI 已自动完成这些检查。\n\n固定端口被占用时，在启动受影响测试前核对占用者及服务身份；不能仅凭 PID、URL 可达或旧记录认领复用，更不能自动杀掉无关进程。支持动态端口时，由服务实际绑定取得端口并传给测试及相关配置，不先探空闲、关闭探针后假定稍后仍可用。提前检查不代替启动时的真实绑定、就绪与本次资源归属确认；只清理本次取得且归属明确的资源。\n\n环境冲突或必要资源未准备好，说明具体资源、观察和受影响范围，先处理或暂停依赖项，不把未启动业务记成断言失败、PASS 或覆盖完成；安全且资源独立的检查可继续。若正式执行尚未启动，保存准备诊断，不伪造 child、测试计数或正式失败终态；若已启动，保留实际命令结果及组协议下的 blocked / not-run 等事实，不用环境说明覆盖原失败。检查与准备本身不代替完整验收，不因冲突临时删减必需范围。\n\n使用目标已有 full 入口一次执行全部声明集合。调用者正常准备依赖，工具不自动安装。父 Run 保存 `scope:delivery`、完整范围与已核对批准快照、声明、实际入口和 prepared / running / finished 状态；子结果保持 `scope:command / formalDeliveryTest:false`。父 Run 保存 `executionId` 和实际 outcome，依赖 / 工具拒绝时为 not-run、子 ID 可为空，原始预检输出放当前 artifacts。普通 submit / continue 不能产生正式终态。\n\npassed 要求本次全部必需组真实通过、计数与根结束完整、无必需 skip/TODO/取消、报告/退出一致、清理及父子持久读回稳定；wrapper exit0 不足以通过。执行前后核对实际材料及影响；CLI 显示 `scopeMatch / commandMatch` 和 `materialApplicability:requires-semantic-check`，不自动认证任意源码。发现并发变化或不能确认时，保留原执行事实，在阶段摘要说明并按影响补验；不能宣称当前材料已通过或据此 Close。\n\nfailed 转范围内 Author 修复及独立定向 Review，approved 后显式重新 initial 全部必需组，不能拼接旧组或 focused。纯环境准备 failed/blocked 仅在原报告或预检、资源归属/恢复/清理及未变直接材料均可核实后按组协议 environmentRecovery 免空修复记录。已核对且仍适用的本轮批准快照可以沿用，不追读历史失败父链。known not-run / interrupted 也须确认当前安全与材料，不能直接绕过准备证据或实质修复审核；unknown / 未完成 / 写入失败保留现场停 Owner，不重试、不自动 finish 或清锁。\n\n修复后首次执行和后续重跑都需要当前必要 Review 的完整头部与非空正文，查询不因此倒查正文。取消时停止命令返回成功仍需本次 child / 日志管道关闭确认；无法确认则有界返回 unknown，可能仍有存活后代，须核对现场，不能据入口退出宣称整树停止。查询遇到本次不稳定观察时 next 同样停 Owner，不以旧 passed 提示收口。\n\n结果与最新正式入口只供后续 Close 直接核对本轮范围、必要审核和实际候选影响，不构成 Close / Archive / Git / 下一 Change 授权。\n\n新正式记录固定当前 version 2 轮次 roundId 和本轮完成范围，并直接核对 baselineDependencies，保存 baselineFacts（当前槽位、来源 Delivery / 槽位 / Close / Change / ordinal）。只读直接来源，不读取来源活动 status、旧审核正文或旧日志，不迁移旧来源。Close 消费本次保存快照与本轮声明；基线不替代当前轮执行。旧结果保留原 outcome，只在明确迁移收据的旧编号边界内解释缺 roundId；新记录缺归属或跨轮批准拒绝。旧 product status 可读，run 必须先显式迁移，旧未确认执行先兼容旧版恢复。\n"},"guidance":[]},"next":{"source":"local-state","executable":false,"currentRunRef":".mendi/runs/d01/015-delivery-test-attempt/run.md","role":"author","action":"delivery-repair","status":"awaiting-owner-instruction","reason":"保留真实失败；实质修复须独立 Review，安全确认的纯环境准备处置可申请完整重跑。"}}
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/group-completion.test.ts:51:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+ok 49 - 构建失败只阻断依赖，独立后项仍实际执行并收集多个问题
+  ---
+  duration_ms: 9773.7098
+  type: 'test'
+  ...
+# Subtest: v2 直接读回中报告变化不能覆盖首次快照或发布 passed
+ok 50 - v2 直接读回中报告变化不能覆盖首次快照或发布 passed
+  ---
+  duration_ms: 54348.5759
+  type: 'test'
+  ...
+# Subtest: 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+ok 51 - 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+  ---
+  duration_ms: 7606.2355
+  type: 'test'
+  ...
+# Subtest: 计划版本、前向依赖、非必需排除与选择均明确
+ok 52 - 计划版本、前向依赖、非必需排除与选择均明确
+  ---
+  duration_ms: 7.2687
+  type: 'test'
+  ...
+# Subtest: 覆盖、退出、协议矛盾与资源未知分别解释
+ok 53 - 覆盖、退出、协议矛盾与资源未知分别解释
+  ---
+  duration_ms: 2.9016
+  type: 'test'
+  ...
+# Subtest: 阶段包含关系不跨时钟相减
+ok 54 - 阶段包含关系不跨时钟相减
+  ---
+  duration_ms: 2.2346
+  type: 'test'
+  ...
+# Subtest: P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 55 - P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 84750.9612
+  type: 'test'
+  ...
+# Subtest: P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 56 - P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 18271.4141
+  type: 'test'
+  ...
+# Subtest: 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+ok 57 - 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+  ---
+  duration_ms: 9953.4451
+  type: 'test'
+  ...
+# Subtest: 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+ok 58 - 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+  ---
+  duration_ms: 9231.5404
+  type: 'test'
+  ...
+# Subtest: 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+ok 59 - 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+  ---
+  duration_ms: 75365.1839
+  type: 'test'
+  ...
+# Subtest: 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+ok 60 - 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+  ---
+  duration_ms: 12137.7478
+  type: 'test'
+  ...
+# Subtest: v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+ok 61 - v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+  ---
+  duration_ms: 72231.1498
+  type: 'test'
+  ...
+# Subtest: P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 62 - P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 21710.7927
+  type: 'test'
+  ...
+# Subtest: P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 63 - P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 20341.4798
+  type: 'test'
+  ...
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 64 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 70590.9009
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 65 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 9500.1345
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 66 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 10605.5478
+  type: 'test'
+  ...
+# Subtest: 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+ok 67 - 首次 Open 两种入口均拒绝未归档依赖，合法首次关联保持原记录语义
+  ---
+  duration_ms: 16194.1363
+  type: 'test'
+  ...
+# Subtest: 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+ok 68 - 首次 Open 两种入口均在写前拒绝错误槽位，修正后可直接成功
+  ---
+  duration_ms: 12704.7317
+  type: 'test'
+  ...
+# Subtest: 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+ok 69 - 记录化首次 Open 在持锁后复核直接 Change，真实中断保留现场
+  ---
+  duration_ms: 10147.0537
+  type: 'test'
+  ...
+# Subtest: closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+ok 70 - closed 后新 Delivery 追加选择，原生归档累计增长，同名 execution 按显式 ID 读取
+  ---
+  duration_ms: 157984.7206
+  type: 'test'
+  ...
+# Subtest: 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+ok 71 - 显式首次 Open 记录 001；可选首次绑定退出 Open 指针，旧入口不补 Run
+  ---
+  duration_ms: 3541.9659
+  type: 'test'
+  ...
+# Subtest: 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+ok 72 - 新 Open 在写前拒绝 still open、人工历史、重复 / 占用 ID、缺身份与混合 bind
+  ---
+  duration_ms: 20629.1512
+  type: 'test'
+  ...
+# Subtest: 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+ok 73 - 多索引和多批次显式选择，旧 ordinal 小于总数可解释，执行准入另核对
+  ---
+  duration_ms: 37.9474
+  type: 'test'
+  ...
+# Subtest: 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+ok 74 - 生命周期独立头部拒绝错身份、类型、角色、路径及多余执行字段
+  ---
+  duration_ms: 2.7699
+  type: 'test'
+  ...
+# Subtest: CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+ok 75 - CLI lifecycle resume、记录化首次身份与历史选择参数互斥
+  ---
+  duration_ms: 2.1059
+  type: 'test'
+  ...
+# Subtest: Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+ok 76 - Close 快照的批准编号必须早于其固定正式入口，查询不读取快照来源正文
+  ---
+  duration_ms: 4.8195
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 77 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 147907.0051
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 78 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 11157.4436
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 79 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 49112.6383
+  type: 'test'
+  ...
+# Subtest: close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 80 - close 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 170375.7178
+  type: 'test'
+  ...
+# Subtest: reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 81 - reopen 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 102074.3267
+  type: 'test'
+  ...
+# Subtest: open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+ok 82 - open 各提交边界中断与显式 resume：终态 / manifest / index / 释放
+  ---
+  duration_ms: 95004.1352
+  type: 'test'
+  ...
+# Subtest: resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+ok 83 - resume 拒绝原输入改变、错误 actor / 类型、占用目标与后续工作后的陈旧入口
+  ---
+  duration_ms: 7762.3695
+  type: 'test'
+  ...
+# Subtest: 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+ok 84 - 首次记录化 Open：入口发布前不猜关联，pending 无 manifest 可诊断并继续
+  ---
+  duration_ms: 13771.9005
+  type: 'test'
+  ...
+# Subtest: 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+ok 85 - 旧 Reviewer draft 迁移不改固定 Author、原正文或 actor，可按原身份提交
+  ---
+  duration_ms: 1294.4062
+  type: 'test'
+  ...
+# Subtest: 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+ok 86 - 旧 repair Author draft 可迁移并交新 Review；新记录明确归属而不补改旧 Author
+  ---
+  duration_ms: 70400.9147
+  type: 'test'
+  ...
+# Subtest: 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+ok 87 - 旧 Archive prepared 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 19013.415
+  type: 'test'
+  ...
+# Subtest: 旧 Archive none 保留当前 Run，迁移后可显式 execute
+ok 88 - 旧 Archive none 保留当前 Run，迁移后可显式 execute
+  ---
+  duration_ms: 18721.8821
+  type: 'test'
+  ...
+# Subtest: 旧 Archive launch 后无退出见证不能迁移，新版 finish 不恢复旧格式
+ok 89 - 旧 Archive launch 后无退出见证不能迁移，新版 finish 不恢复旧格式
+  ---
+  duration_ms: 13422.0323
+  type: 'test'
+  ...
+# Subtest: 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+ok 90 - 旧 pending、新版恢复旧操作、运行 / 不完整测试均停止并保持现场
+  ---
+  duration_ms: 114.9717
+  type: 'test'
+  ...
+# Subtest: 旧普通测试结果继续可读；prepared / running 阻止迁移，迁移后新增执行使旧 resume 陈旧
+ok 91 - 旧普通测试结果继续可读；prepared / running 阻止迁移，迁移后新增执行使旧 resume 陈旧
+  ---
+  duration_ms: 16507.4267
+  type: 'test'
+  ...
+# Subtest: 旧 Action 已占号写 Run、未登记批次 / 指针的半提交不能迁移
+ok 92 - 旧 Action 已占号写 Run、未登记批次 / 指针的半提交不能迁移
+  ---
+  duration_ms: 115.1718
+  type: 'test'
+  ...
+# Subtest: 旧正式 prepared Run 未发布当前指针时不能绕过迁移完整性检查
+ok 93 - 旧正式 prepared Run 未发布当前指针时不能绕过迁移完整性检查
+  ---
+  duration_ms: 52015.5828
+  type: 'test'
+  ...
+# Subtest: 后续实际交接已成立时保留旧空占号，不把历史失败占号当当前半提交
+ok 94 - 后续实际交接已成立时保留旧空占号，不把历史失败占号当当前半提交
+  ---
+  duration_ms: 85.5529
+  type: 'test'
+  ...
+# Subtest: 未知历史说明目录只保留占号，不读取正文或增加迁移前置
+ok 95 - 未知历史说明目录只保留占号，不读取正文或增加迁移前置
+  ---
+  duration_ms: 69.9983
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 96 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 337.8622
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 97 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 86114.1049
+  type: 'test'
+  ...
+# Subtest: 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+ok 98 - 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+  ---
+  duration_ms: 8.9876
+  type: 'test'
+  ...
+# Subtest: v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+ok 99 - v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+  ---
+  duration_ms: 1.3582
+  type: 'test'
+  ...
+# Subtest: 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+ok 100 - 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+  ---
+  duration_ms: 2.2359
+  type: 'test'
+  ...
+# Subtest: 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+ok 101 - 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+  ---
+  duration_ms: 1.651
+  type: 'test'
+  ...
+# Subtest: legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+ok 102 - legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+  ---
+  duration_ms: 0.6283
+  type: 'test'
+  ...
+1..102
+# tests 102
+# suites 0
+# pass 99
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1327685.0059

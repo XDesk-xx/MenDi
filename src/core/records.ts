@@ -81,9 +81,13 @@ export function parseProject(
     if (
       (owner !== selectedId &&
         (location.type !== 'delivery-open' || deliveries.some((item) => item.id === owner))) ||
-      !['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(
-        location.type,
-      )
+      ![
+        'delivery-open',
+        'delivery-close',
+        'delivery-reopen',
+        'delivery-migrate',
+        'delivery-change-add',
+      ].includes(location.type)
     )
       throw new MendiError('invalid-record', 'pending 生命周期身份未登记。');
   }
@@ -144,6 +148,8 @@ export function parseWorkspace(index: ReturnType<typeof parseProject>, value: un
       manifest.deliveryRunRef === undefined
         ? undefined
         : deliveryLocation(String(manifest.deliveryRunRef), index.id).type;
+    if (currentType === 'delivery-change-add')
+      throw new MendiError('invalid-record', '追加收据不能担任当前 Delivery 进展。');
     if (manifest.deliveryRunRef !== undefined && activeChangeId)
       throw new MendiError('invalid-record', '当前 Delivery 操作与活动 Change / 状态冲突。');
     if (

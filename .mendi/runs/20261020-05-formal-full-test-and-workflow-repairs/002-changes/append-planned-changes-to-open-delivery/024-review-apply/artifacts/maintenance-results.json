@@ -1,0 +1,92 @@
+{
+  "method": "current physical maintained .ts lines incl blank, HEAD only where exists",
+  "areas": [
+    {
+      "dir": "src",
+      "top": [
+        {
+          "file": "src/application/delivery-lifecycle.ts",
+          "lines": 368
+        },
+        {
+          "file": "src/application/group-attempt.ts",
+          "lines": 361
+        },
+        {
+          "file": "src/adapters/openspec.ts",
+          "lines": 346
+        },
+        {
+          "file": "src/adapters/workspace.ts",
+          "lines": 346
+        }
+      ]
+    },
+    {
+      "dir": "tests",
+      "top": [
+        {
+          "file": "tests/action-write.test.ts",
+          "lines": 467
+        },
+        {
+          "file": "tests/planning-cli.test.ts",
+          "lines": 444
+        },
+        {
+          "file": "tests/delivery-repair.test.ts",
+          "lines": 395
+        }
+      ]
+    },
+    {
+      "dir": "scripts",
+      "top": [
+        {
+          "file": "scripts/proofs/mvp-d01-c-explore.ts",
+          "lines": 678
+        },
+        {
+          "file": "scripts/proofs/mvp-d01-d-explore.ts",
+          "lines": 487
+        },
+        {
+          "file": "scripts/proofs/mvp-d01-a-explore.ts",
+          "lines": 463
+        }
+      ]
+    }
+  ],
+  "growth": [
+    {
+      "file": "src/core/scope-addition.ts",
+      "now": 173,
+      "base": null
+    },
+    {
+      "file": "src/adapters/scope-additions.ts",
+      "now": 115,
+      "base": null
+    },
+    {
+      "file": "src/adapters/change-add-store.ts",
+      "now": 320,
+      "base": null
+    },
+    {
+      "file": "src/core/round-records.ts",
+      "now": 89,
+      "base": 70
+    },
+    {
+      "file": "src/application/project.ts",
+      "now": 233,
+      "base": 374
+    },
+    {
+      "file": "tests/change-add-review-repair.test.ts",
+      "now": 180,
+      "base": null
+    }
+  ]
+}

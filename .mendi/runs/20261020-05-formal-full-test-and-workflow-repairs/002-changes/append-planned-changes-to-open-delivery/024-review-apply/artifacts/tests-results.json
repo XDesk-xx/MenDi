@@ -1,0 +1,72 @@
+{
+  "recordedAt": "2026-10-20T17:46:42.540Z",
+  "fixedAuthor": "023-revise-apply",
+  "suites": [
+    {
+      "id": "f3-and-recovery",
+      "files": [
+        "tests/change-add-review-repair.test.ts",
+        "tests/change-add-recovery.test.ts",
+        "tests/rounds.test.ts"
+      ],
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "--test",
+        "--test-concurrency=2",
+        "tests/change-add-review-repair.test.ts",
+        "tests/change-add-recovery.test.ts",
+        "tests/rounds.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "counts": {
+        "tests": 10,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "stdout": "tests-f3-and-recovery.tap.log",
+      "stderr": null
+    },
+    {
+      "id": "append-and-compat",
+      "files": [
+        "tests/change-add.test.ts",
+        "tests/change-add-lifecycle.test.ts",
+        "tests/group-history.test.ts",
+        "tests/delivery-query.test.ts"
+      ],
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "--test",
+        "--test-concurrency=2",
+        "tests/change-add.test.ts",
+        "tests/change-add-lifecycle.test.ts",
+        "tests/group-history.test.ts",
+        "tests/delivery-query.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "counts": {
+        "tests": 17,
+        "passed": 17,
+        "failed": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "stdout": "tests-append-and-compat.tap.log",
+      "stderr": null
+    }
+  ],
+  "totalTests": 27,
+  "totalPassed": 27,
+  "allPassed": true,
+  "limits": [
+    "Scoped regression, not root D05 Full Test",
+    "Raw TAP output stored once per batch",
+    "Other unchanged historical regression from 022 remains valid"
+  ]
+}

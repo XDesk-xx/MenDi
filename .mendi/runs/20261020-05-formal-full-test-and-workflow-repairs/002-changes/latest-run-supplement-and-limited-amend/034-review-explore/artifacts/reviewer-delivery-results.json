@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-21T03:13:01.338Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+  "scope": "Actual product-v2 Delivery repair and delivery-scope Reviewer, as a fixture for direct requirement similar to DreMo 035; uses test legacy command to establish failed source, not new formal D05 Full Test",
+  "failedSource": ".mendi/runs/d01/015-delivery-full-test/run.md",
+  "author": {
+    "ref": ".mendi/runs/d01/016-delivery-repair/run.md",
+    "status": "submitted",
+    "unchanged": true
+  },
+  "review": {
+    "ref": ".mendi/runs/d01/017-review-delivery-repair/run.md",
+    "status": "submitted",
+    "verdict": "approved",
+    "authorRunRef": ".mendi/runs/d01/016-delivery-repair/run.md",
+    "activeChange": null,
+    "currentDeliveryRun": ".mendi/runs/d01/017-review-delivery-repair/run.md",
+    "oldArchivedChangeRun": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+    "next": "delivery-full-test",
+    "oldSaveBlocked": "已提交 Run 不可重写。"
+  },
+  "nextDraft": {
+    "ref": ".mendi/runs/d01/018-revise-delivery-repair/run.md",
+    "status": "draft",
+    "prevReviewStale": "指定 Delivery Run 不是当前对象。",
+    "currentDeliveryRun": ".mendi/runs/d01/018-revise-delivery-repair/run.md",
+    "number": 18
+  },
+  "sourceRefs": [
+    "src/adapters/delivery-runs.ts:37-66",
+    "src/application/delivery-repair.ts:160-223",
+    "src/application/delivery-repair.ts:43-55",
+    "src/adapters/runs.ts:42-48",
+    "src/core/associations.ts:22-36",
+    "src/application/project-query.ts:54-88"
+  ],
+  "limits": [
+    "No real DreMo target touched, Reviewer labels in fixture do not certify real identity",
+    "No supplement/amend implemented or exercised",
+    "Proactive next repair draft is a controlled product-v2 transition to prove latest-window closure",
+    "Delivery-scope and Change-scope pointer eligibility differ: archived Change pointer can remain readable while deliveryRunRef is authoritative; Propose must handle both explicitly"
+  ]
+}

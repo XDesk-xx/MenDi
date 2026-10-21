@@ -1,0 +1,137 @@
+{
+  "changeName": "reduce-redundant-proof-inputs-and-artifacts",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\specs\\test-execution\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 14,
+    "complete": 14,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 在 tests/helpers.ts、tests/test-support.ts、tests/group-support.ts 中核对实际 opt-in 场景采集路径、直接原件与可重建输入，基于 tests/fixtures 的确定性数据记录一项同源多次引用和一项临时唯一原件的对照；以可重复 TypeScript 场景测试确认观察，不创建全量历史文件计数 gate。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 5
+    },
+    {
+      "id": "2",
+      "description": "1.2 建立受限于当前测试/Proof 采集会话的 TypeScript 单源证据辅助，明确来源身份、当前 Run/可重建源/临时源、真实命令、原件和引用状态；测试相同真实原件只留一个直接副本、不同执行即使输出一致也分别保留，不新增全库 hash/数据库。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 6
+    },
+    {
+      "id": "3",
+      "description": "1.3 验证来源不可持久读取时只保存受管唯一原件一次或明确标记 incomplete，禁止把即将清理的 .tmp/runtime 当成唯一长期来源；测试路径越界、缺失、无写入权限、源文件读中变化/中断均 fail-closed 并保留当前实际现场。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "4",
+      "description": "2.1 在 tests/helpers.ts 的可选命令证据采集接入单源辅助，保存真实 args/cwd/exit、stdout/stderr 的必要原始来源而非每条命令无条件再复制；完成开启/关闭证据模式与相同命令真实不同执行的测试，并确保失败可定位。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 11
+    },
+    {
+      "id": "5",
+      "description": "2.2 在 tests/test-support.ts 的 execute 场景记录复用真实执行的受管 result 与双日志（包含零字节实体），避免二次完整嵌入相同 stdout/stderr；真实 passed、failed、unknown 场景及跨进程 test status 仍与直接记录一致，运行相应 tests。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 12
+    },
+    {
+      "id": "6",
+      "description": "2.3 在 tests/group-support.ts 的 groupRun / recordApplyScene 的可选保存路径统一受控原件与复用引用，不降低真实 request、report、events/cleanup、stdout/stderr 以及失败/unknown 的定位能力；用隔离 groups-v1 中段失败/缺报告场景测试，同时保证未启用 opt-in 无多余写入。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "7",
+      "description": "2.4 更新实际 Explore/Apply/Review 用到的 Skills 指引，准确区分稳定可复建输入、唯一必要输入、临时派生物和受管必要失败原件；README 仅记录现有证据模式入口与边界。检查文档示例命令在本仓库的现行 CLI 下可用，不自动安装工具或修改旧 Run。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "8",
+      "description": "3.1 保持现有 TestExecution formatVersion=1、stdoutRef/stderrRef 两个物理文件的真正生成与读取合同（包括真实 0B）；针对已完成的安静 passed 测试，验证缺失零字节 stdout 仍 unknown/ENOENT、恢复原件后 passed，且不新增推断 empty 的兼容分支。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "9",
+      "description": "3.2 运行并根据实际影响补充 test-log-integrity 的短写/零进展/异常回归，以及 test-execution 的 prepared/running/finished/取消/unknown 与锁边界；明确记录必要 stdout/stderr/result 永不由去重辅助改写，写失败不被假报 complete。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "10",
+      "description": "3.3 验证 groups-v1 必需组的真实 request、child result、protocol report、日志和资源清理、failed/blocked/not-run/interrupted/unknown 不因 opt-in 证据减少而缺失；对 026/027 的历史 114/107 样本只作只读事实引用，新场景真实失败不被“没有报告文件”冒充正常 PASS。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "11",
+      "description": "3.4 定向只读校验旧 D01-D04 已提交 Run/日志与新代码加载兼容，D05-A/B archive/verdict/正式结果无字节改写；新 Run 的证据采集不可扫描删除其它目标、清理根历史或引用权限外文件。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "12",
+      "description": "4.1 以明确可复现 fixture 对比当前 opt-in 证据采集开启/关闭与新单源方式，列出实际文件、副本/来源引用和失败覆盖；减量量化仅为观察，不设文件/字节硬阈值，不将初始状态虚称为新功能完成。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "13",
+      "description": "4.2 对受影响的 tests 及 pnpm check / pnpm build / OpenSpec strict 执行真实验证，保存必要原始输出一份与 Run 直接证据；失败修复后只重跑受影响集合，未知中断保留现场。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "14",
+      "description": "4.3 对照 proposal.md、两份 delta specs、design.md、代码及 Skills 的最终一致性；当次 Author Apply 摘要列 src/tests/scripts 各物理行数前三名并说明增长/责任划分后，记录真实结果并移交独立 review-apply，不自签 verdict。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\reduce-redundant-proof-inputs-and-artifacts\\tasks.md",
+      "line": 27
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前为 MVP-D05，Owner 已授权以 manual-bootstrap Open：20261020-05-formal-full-test-and-workflow-repairs；D05-A/B 已归档 014/015，D05-C 已激活并由 030 Author Apply 实施。状态与交接以 manifest / 最近 Run 为准，D05-D 尚未激活。\nD05-A：统一未来 groups-v1 正式 Full Test 与完整重跑；D05-B：未 Close 追加 Change CLI，可独立于 A；D05-C：proof / inputs / artifacts 轻量化，依赖 A；D05-D：最新 Run supplement / amend，依赖 C。总设计见根路线图 §7。\nD04 已在 026 正式 Full Test 通过、027 Close，A/B/C 归档 011/012/013，028 已切换稳定 0.2.0。历史结果不冒充 D05 新轮验收；D05-A/B 原生归档后累计成功归档 15。\nMenDi 根目录仍为 manual-bootstrap：产品 CLI 对其只读，人工 Open 事实见本轮 001 Run。旧 product 支持只读查询，写入须按规则显式迁移；未知中断必须保留现场。\n外部 Full Test 的旧 WIP 已单独存入 Git stash，不视为 D05-A 实现；当前 D05 分支已有 D05-A 本地 Git checkpoint，D05-B 尚无 Git commit/push 或 D05 正式测试；D05-A/B 已归档，但未切换稳定安装。\n按现行安装版运行当前功能；D05-A/B 已在当前源码实现、独立审核并归档，D05-C 为未独立审核的有限 opt-in 采集候选，D05-D 待实施；稳定安装版 0.2.0 尚未切换，不得仅凭源码/规划绕过目标运行时实际准入。\n提问先查已确定的 Owner 范围，稳定业务契约与 UI 选择分开；Explore proof 只验证关键疑点，真实结果、旧 verdict、Run 和必要日志保留。\n状态与详细过程读取当前 manifest 和最近 Run；Git、Change 激活、Archive、正式 Full Test / Close、安装发布及 DreMo 等外部目标写入均保持独立授权。\n必要输入依操作决定，旧 Ref 和说明不成为普通查询的全量前置；项目 check 覆盖真实类型检查，行为验证按影响，错误现场不自动清理。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

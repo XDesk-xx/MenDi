@@ -1,0 +1,2 @@
+$ node foreground.ts pass
+actual stderr

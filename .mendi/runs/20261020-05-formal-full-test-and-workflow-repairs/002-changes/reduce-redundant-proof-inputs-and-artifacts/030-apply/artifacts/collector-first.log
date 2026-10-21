@@ -1,0 +1,56 @@
+TAP version 13
+# {"scene":"same-command-distinct-invocations","originalFiles":3,"references":4,"originalBytes":4020,"legacyTwoSummaryBytes":8012}
+# Subtest: 真实命令 opt-in 开关、同命令不同执行身份与失败定位；摘要复用已有唯一原件
+ok 1 - 真实命令 opt-in 开关、同命令不同执行身份与失败定位；摘要复用已有唯一原件
+  ---
+  duration_ms: 605.5674
+  type: 'test'
+  ...
+# {"scene":"execute","outcome":"passed","canonicalOriginals":3,"repeatedReferences":3,"state":"captured"}
+# {"scene":"execute","outcome":"failed","canonicalOriginals":3,"repeatedReferences":3,"state":"captured"}
+# {"scene":"execute","outcome":"unknown","canonicalOriginals":4,"repeatedReferences":4,"state":"captured"}
+# Subtest: 实际 passed / failed / unknown 执行复用唯一 result 和双日志，跨进程 status 不变
+ok 2 - 实际 passed / failed / unknown 执行复用唯一 result 和双日志，跨进程 status 不变
+  ---
+  duration_ms: 14152.8082
+  type: 'test'
+  ...
+# Subtest: 真实 0B stdout 保留物理文件；删除仍 unknown，恢复原件后 passed，collector 不补日志
+ok 3 - 真实 0B stdout 保留物理文件；删除仍 unknown，恢复原件后 passed，collector 不补日志
+  ---
+  duration_ms: 5668.2531
+  type: 'test'
+  ...
+# Subtest: 同一临时原件仅存一份，源清理后两个摘要仍可读取；相同文本的不同执行各保留
+ok 4 - 同一临时原件仅存一份，源清理后两个摘要仍可读取；相同文本的不同执行各保留
+  ---
+  duration_ms: 17.511
+  type: 'test'
+  ...
+# Subtest: 受控可复建输入直接引用并记入口，不复制临时工程；临时源不能冒充持久输入
+ok 5 - 受控可复建输入直接引用并记入口，不复制临时工程；临时源不能冒充持久输入
+  ---
+  duration_ms: 4.2717
+  type: 'test'
+  ...
+# Subtest: 越界、缺失及已提交 Run 目标拒绝，不修改来源或旧 Run
+ok 6 - 越界、缺失及已提交 Run 目标拒绝，不修改来源或旧 Run
+  ---
+  duration_ms: 11.9424
+  type: 'test'
+  ...
+# Subtest: 读中变化、无权限和发布中断均 incomplete，保留源与已写临时现场
+ok 7 - 读中变化、无权限和发布中断均 incomplete，保留源与已写临时现场
+  ---
+  duration_ms: 16.4792
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 20754.3494

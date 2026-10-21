@@ -18,6 +18,7 @@ import { deliveryLocation } from './delivery-runs.ts';
 import { runLocation } from './actions.ts';
 import { executionLocation } from './test-execution.ts';
 import { parseImpact } from './repair-record.ts';
+import { formalOutcome, type FormalOutcome } from './formal-attempt.ts';
 
 export interface GroupImpact {
   candidate: Candidate;
@@ -27,7 +28,7 @@ export interface GroupImpact {
   reason: string;
 }
 export interface GroupAttempt {
-  version: 1;
+  version: 1 | 2;
   roundId: string;
   scope: FullTest['scope'];
   approvals: FullTest['approvals'];
@@ -46,6 +47,14 @@ export interface GroupAttempt {
   progress: Progress[];
   timing: ReturnType<typeof stageTimings>;
   reason?: string;
+  formalOutcome?: FormalOutcome;
+  materialSnapshot?: { ref: string; sha256: string }[];
+  environmentRecovery?: {
+    failedRunRef: string;
+    evidenceRef: string;
+    reason: string;
+    evidence: Record<string, unknown>;
+  };
 }
 export interface CandidateVerification {
   version: 1;
@@ -72,11 +81,11 @@ export interface CandidateVerification {
   conclusion: 'verified' | 'incomplete';
   gaps: string[];
 }
-function shared(raw: Record<string, unknown>, id: string, number: number) {
+function shared(raw: Record<string, unknown>, id: string, number: number, attempt = false) {
   const scope = parseVerificationScope(raw.scope);
   checkBaselineSnapshot(scope, raw.baselineFacts as FullTest['baselineFacts']);
   if (
-    raw.version !== 1 ||
+    !(raw.version === 1 || (attempt && raw.version === 2)) ||
     !/^r\d{3,}$/.test(text(raw.roundId, 'roundId')) ||
     !Array.isArray(raw.approvals) ||
     raw.approvals.length !== scope.completed.length
@@ -140,7 +149,7 @@ function progress(value: unknown, plan: GroupPlan): Progress[] {
 }
 export function parseAttempt(value: unknown, id: string, number: number): GroupAttempt {
   const raw = object(value, '结构化尝试');
-  const facts = shared(raw, id, number);
+  const facts = shared(raw, id, number, true);
   const selection = selectGroups(facts.plan, raw.selection);
   if (
     !['initial', 'continue', 'retest'].includes(String(raw.purpose)) ||
@@ -169,6 +178,65 @@ export function parseAttempt(value: unknown, id: string, number: number): GroupA
     )
       throw new MendiError('invalid-run', '协议状态无效。');
   }
+  if (raw.version === 2) {
+    if (
+      raw.purpose !== 'initial' ||
+      facts.plan.groups.some((g) => g.required && !selection.includes(g.id)) ||
+      (raw.phase === 'finished'
+        ? raw.formalOutcome !== formalOutcome(facts.plan, raw.observation as ProtocolObservation)
+        : raw.formalOutcome !== undefined)
+    )
+      throw new MendiError('invalid-run', 'v2 需要本次完整 initial 和一致正式终态。');
+    if (
+      (raw.phase === 'running' && raw.executionId === null) ||
+      (raw.phase === 'finished' &&
+        raw.executionId === null &&
+        !(raw.observation as ProtocolObservation).notRun)
+    )
+      throw new MendiError('invalid-run', 'v2 实际执行终态缺少 child 身份，不能由元数据制造通过。');
+    if (
+      raw.request !== undefined &&
+      (!Array.isArray(object(raw.request, '请求').prerequisites) ||
+        (object(raw.request, '请求').prerequisites as unknown[]).length)
+    )
+      throw new MendiError('invalid-run', 'v2 不沿用旧通过前置。');
+    if (raw.materialSnapshot !== undefined) {
+      if (!Array.isArray(raw.materialSnapshot) || !raw.materialSnapshot.length)
+        throw new MendiError('invalid-run', '材料快照为空。');
+      const seen = new Set<string>();
+      for (const v of raw.materialSnapshot) {
+        const m = object(v, '直接材料');
+        const ref = text(m.ref, '材料路径');
+        if (seen.has(ref) || !/^[a-f0-9]{64}$/.test(String(m.sha256)))
+          throw new MendiError('invalid-run', '直接材料快照无效。');
+        seen.add(ref);
+      }
+    }
+    if (raw.environmentRecovery !== undefined) {
+      const r = object(raw.environmentRecovery, '环境恢复');
+      const loc = deliveryLocation(text(r.failedRunRef, '失败来源'), id);
+      if (
+        loc.type !== 'delivery-test-attempt' ||
+        loc.number >= number ||
+        r.failedRunRef !== raw.fromRunRef
+      )
+        throw new MendiError('invalid-run', '环境恢复来源不一致。');
+      text(r.evidenceRef, '恢复证据');
+      text(r.reason, '恢复原因');
+      const evidence = object(r.evidence, '恢复事实快照');
+      if (
+        evidence.failedRunRef !== r.failedRunRef ||
+        evidence.cleanup !== 'confirmed' ||
+        evidence.contractUnchanged !== true
+      )
+        throw new MendiError('invalid-run', '环境恢复事实快照不完整。');
+    }
+  } else if (
+    raw.formalOutcome !== undefined ||
+    raw.environmentRecovery !== undefined ||
+    raw.materialSnapshot !== undefined
+  )
+    throw new MendiError('invalid-run', 'v1 不携带新版正式字段。');
   return {
     ...raw,
     ...facts,

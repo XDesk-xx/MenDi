@@ -1,0 +1,11 @@
+{
+  "ports": [
+    6113,
+    64115
+  ],
+  "uiCleanupReceipt": "ui/preview/preview-stop.json",
+  "listeners": [],
+  "rootWriteLockExists": false,
+  "recordedAt": "2026-10-21T10:47:15.9017425Z",
+  "temporaryTargets": "本次新 UI 沙箱与隔离安装保留；没有清理未知目录"
+}

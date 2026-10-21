@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+ok 1 - 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+  ---
+  duration_ms: 43129.7003
+  type: 'test'
+  ...
+# Subtest: 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+ok 2 - 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+  ---
+  duration_ms: 3294.5514
+  type: 'test'
+  ...
+# Subtest: E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+ok 3 - E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+  ---
+  duration_ms: 20522.8615
+  type: 'test'
+  ...
+# Subtest: 清理未知阻断共享后项，陌生端口实际占用不抢占
+ok 4 - 清理未知阻断共享后项，陌生端口实际占用不抢占
+  ---
+  duration_ms: 11217.7618
+  type: 'test'
+  ...
+# Subtest: 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+ok 5 - 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+  ---
+  duration_ms: 5459.7647
+  type: 'test'
+  ...
+# Subtest: 真实取消停止本次树，不从取消中的 prefix 认领通过
+ok 6 - 真实取消停止本次树，不从取消中的 prefix 认领通过
+  ---
+  duration_ms: 5290.2801
+  type: 'test'
+  ...
+# Subtest: 新 verification 写入提前拒绝，不占号或保留不必要锁
+ok 7 - 新 verification 写入提前拒绝，不占号或保留不必要锁
+  ---
+  duration_ms: 7025.4788
+  type: 'test'
+  ...
+# Subtest: 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+ok 8 - 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+  ---
+  duration_ms: 6558.3613
+  type: 'test'
+  ...
+# Subtest: 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+ok 9 - 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+  ---
+  duration_ms: 3690.0618
+  type: 'test'
+  ...
+# Subtest: 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+ok 10 - 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+  ---
+  duration_ms: 5671.2692
+  type: 'test'
+  ...
+# Subtest: P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 11 - P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 54188.907
+  type: 'test'
+  ...
+# Subtest: P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 12 - P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 13559.2177
+  type: 'test'
+  ...
+# Subtest: 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+ok 13 - 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+  ---
+  duration_ms: 5996.1098
+  type: 'test'
+  ...
+# Subtest: 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 14 - 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 12424.2063
+  type: 'test'
+  ...
+# Subtest: 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 15 - 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 7364.5371
+  type: 'test'
+  ...
+# Subtest: 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+ok 16 - 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+  ---
+  duration_ms: 5427.9131
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 112407.5844

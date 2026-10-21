@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "authoritative": false,
+  "targetRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+  "deliveryId": "d01",
+  "roundId": "r001",
+  "role": "author",
+  "actorId": "author-one",
+  "recordedAt": "2026-10-21T05:23:47.919Z",
+  "request": {
+    "operation": "amend",
+    "requestId": "a1",
+    "reason": "普通段落安全空白",
+    "kind": "presentation-only"
+  },
+  "basis": {
+    "project": "c259f637c648b49c458010583dcd7f4ab1c9217f7bf15c8b1878a8e14974f0d2",
+    "manifestRef": ".mendi/delivery-groups/d01/manifest.json",
+    "manifest": "cc5bff447cd4509da234696802de3b7d26e1e938aa764e76b81728884b312349",
+    "run": "c97fd2f54e6d90c817b24575ccf852bbdba133853b84ab7e37f1783db83c5924"
+  },
+  "files": [
+    {
+      "name": "baseline.md",
+      "digest": "c97fd2f54e6d90c817b24575ccf852bbdba133853b84ab7e37f1783db83c5924"
+    },
+    {
+      "name": "input.md",
+      "sourceRef": "candidate.md",
+      "identity": "2498285797:1407374886977445:1792560227160637000",
+      "digest": "ae1b2a29e591edcf0cbd4084f31367418f864758af4ebcf5dd47159fc193ad9f"
+    },
+    {
+      "name": "diff.json",
+      "digest": "253ad5824f879005f1d10fc8a0332f178e18e941b3546d81613c860e22cb87c1"
+    }
+  ],
+  "lockOwner": "{\"token\":\"9146287a-64c2-4853-ba63-7bb507d554b9\",\"pid\":56740,\"operation\":\"run-amend\"}"
+}

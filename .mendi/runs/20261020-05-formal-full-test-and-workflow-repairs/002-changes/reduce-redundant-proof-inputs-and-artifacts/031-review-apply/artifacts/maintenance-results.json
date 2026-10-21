@@ -1,0 +1,89 @@
+{
+  "recordedAt": "2026-10-21T02:18:09.537Z",
+  "method": "current physical maintained .ts lines; Git HEAD baseline where same file existed; not a hard gate",
+  "areas": [
+    {
+      "dir": "src",
+      "top": [
+        {
+          "file": "src/application/delivery-lifecycle.ts",
+          "lines": 368
+        },
+        {
+          "file": "src/application/group-attempt.ts",
+          "lines": 361
+        },
+        {
+          "file": "src/adapters/openspec.ts",
+          "lines": 346
+        },
+        {
+          "file": "src/adapters/workspace.ts",
+          "lines": 346
+        }
+      ]
+    },
+    {
+      "dir": "tests",
+      "top": [
+        {
+          "file": "tests/action-write.test.ts",
+          "lines": 467
+        },
+        {
+          "file": "tests/planning-cli.test.ts",
+          "lines": 444
+        },
+        {
+          "file": "tests/delivery-repair.test.ts",
+          "lines": 395
+        }
+      ]
+    },
+    {
+      "dir": "scripts",
+      "top": [
+        {
+          "file": "scripts/proofs/mvp-d01-c-explore.ts",
+          "lines": 678
+        },
+        {
+          "file": "scripts/proofs/mvp-d01-d-explore.ts",
+          "lines": 487
+        },
+        {
+          "file": "scripts/proofs/mvp-d01-a-explore.ts",
+          "lines": 463
+        }
+      ]
+    }
+  ],
+  "growth": [
+    {
+      "file": "tests/helpers.ts",
+      "now": 93,
+      "head": 86
+    },
+    {
+      "file": "tests/test-support.ts",
+      "now": 128,
+      "head": 137
+    },
+    {
+      "file": "tests/group-support.ts",
+      "now": 104,
+      "head": 143
+    },
+    {
+      "file": "tests/evidence-support.ts",
+      "now": 199,
+      "head": null
+    },
+    {
+      "file": "tests/evidence-scenes.ts",
+      "now": 109,
+      "head": null
+    }
+  ],
+  "srcChanged": []
+}

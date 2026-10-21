@@ -10,6 +10,8 @@ import { archivedCount } from '../core/archive.ts';
 import { currentDeliveryRun } from './delivery-runs.ts';
 import { completionScope } from '../core/delivery-verification.ts';
 import { projectProgress, requireWritable } from '../core/rounds.ts';
+import { scopeAdditionReceipts } from './scope-additions.ts';
+import { assertAftercareSettled } from './aftercare-reader.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -79,6 +81,7 @@ export function readWorkspace(
         : '核对现场后显式 resume；不自动清锁。',
     );
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
+  scopeAdditionReceipts(root, workspace);
   if (summaryOnly) return workspace;
   const selected = currentBinding(workspace);
   const delivery = currentDeliveryRun(root, workspace);
@@ -88,9 +91,11 @@ export function readWorkspace(
       delivery.record.status !== 'submitted' ||
       JSON.stringify(lifecycle.scope) !== JSON.stringify(workspace.scope) ||
       (lifecycle.operation === 'delivery-close' &&
-        ((lifecycle.verificationRunRef !== undefined
-          ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
-          : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
+        ((lifecycle.testAttemptRunRef !== undefined
+          ? lifecycle.testAttemptRunRef !== workspace.manifest.testAttemptRunRef
+          : lifecycle.verificationRunRef !== undefined
+            ? lifecycle.verificationRunRef !== workspace.manifest.verificationRunRef
+            : lifecycle.fullTestRunRef !== workspace.manifest.fullTestRunRef) ||
           JSON.stringify(lifecycle.acceptance?.scope) !==
             JSON.stringify(completionScope(workspace)))) ||
       (workspace.manifest.formatVersion === 1 &&
@@ -222,6 +227,13 @@ export function guardProductWrite(root: string) {
     project: index.project,
     manifest: object(readJson(file), 'manifest'),
   });
+  const manifest = object(readJson(file), 'manifest');
+  const pointers = manifest.activeChangeId
+    ? (manifest.changeBindings as Record<string, unknown>[])
+        .filter((b) => b.changeId === manifest.activeChangeId)
+        .map((b) => b.latestRunRef)
+    : [manifest.deliveryRunRef];
+  for (const ref of pointers) if (typeof ref === 'string') assertAftercareSettled(root, ref);
 }
 
 export function lockedWrite<T>(

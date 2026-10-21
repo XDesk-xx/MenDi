@@ -1,0 +1,26 @@
+{
+  "openspec": null,
+  "local": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+  "executionId": "003-full",
+  "outcome": "unknown",
+  "observed": {
+    "state": "saved",
+    "root": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\002-changes\\reduce-redundant-proof-inputs-and-artifacts\\030-apply\\artifacts\\final-collection\\execution-26292",
+    "ref": "originals/47dfff975d75a166775acf64655a1493-result.json",
+    "source": {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+      "ref": ".mendi/delivery-groups/d01/tests/003-full/result.json",
+      "lifetime": "temporary",
+      "fileIdentity": "2498285797/562949956820398/1792547700806060700"
+    }
+  },
+  "error": {
+    "message": "controlled cleanup unknown"
+  },
+  "retainedLock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project\\.mendi\\write.lock"
+}

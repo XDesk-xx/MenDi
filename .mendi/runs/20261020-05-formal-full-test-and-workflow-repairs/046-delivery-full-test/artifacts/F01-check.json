@@ -1,0 +1,46 @@
+{
+  "stage": "F01-check",
+  "startedAt": "2026-10-21T06:55:36.182Z",
+  "finishedAt": "2026-10-21T06:55:49.751Z",
+  "expectedSteps": 1,
+  "steps": [
+    {
+      "label": "check",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "check"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T06:55:36.186Z",
+      "endedAt": "2026-10-21T06:55:49.750Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F01-check-check.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F01-check-check.stderr.log"
+      }
+    }
+  ],
+  "counts": null,
+  "allStepsSucceeded": true,
+  "businessValid": true,
+  "stageOutcome": "passed",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ]
+  }
+}

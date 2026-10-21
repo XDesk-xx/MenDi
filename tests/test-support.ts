@@ -6,6 +6,7 @@ import { initialRound } from '../src/core/rounds.ts';
 import { runTest } from '../src/application/tests.ts';
 import type { ExecutionProcessOptions } from '../src/adapters/test-process.ts';
 import assert from 'node:assert/strict';
+import { recordTestEvidence } from './evidence-scenes.ts';
 
 export const pnpmEntry = 'C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js';
 let emptyDependencySeed: string | undefined;
@@ -105,17 +106,7 @@ export async function execute(
 ) {
   const result = await runTest(testInput(root, kind), options);
   if (process.env.MENDI_TEST_EVIDENCE_DIR) {
-    const record = 'record' in result ? result.record : result.observed;
-    const logs: Record<string, string> = {};
-    if (record)
-      for (const ref of [record.stdoutRef, record.stderrRef])
-        if (fs.existsSync(path.join(root, ref)))
-          logs[ref] = fs.readFileSync(path.join(root, ref), 'utf8');
-    fs.mkdirSync(process.env.MENDI_TEST_EVIDENCE_DIR, { recursive: true });
-    fs.appendFileSync(
-      path.join(process.env.MENDI_TEST_EVIDENCE_DIR, `test-scenes-${process.pid}.jsonl`),
-      JSON.stringify({ result, logs }) + '\n',
-    );
+    recordTestEvidence(process.env.MENDI_TEST_EVIDENCE_DIR, root, result);
   }
   return result;
 }

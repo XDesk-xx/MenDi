@@ -1,0 +1,54 @@
+{
+  "kind": "D05 048 repair focused UI acceptance, NOT full F01-F05",
+  "candidateParent": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "scopedConfig": "tests/fixtures/storybook-project/vitest.config.ts",
+  "expectedGroups": 5,
+  "status": "passed",
+  "results": [
+    {
+      "label": "prepare",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:ui-tests",
+        "D:\\Projects\\MenDi\\.tmp\\d05-048-repair-ui"
+      ],
+      "startedAt": "2026-10-21T08:40:24.213Z",
+      "endedAt": "2026-10-21T08:40:43.609Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\048-delivery-repair\\artifacts\\focused-prepare.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\048-delivery-repair\\artifacts\\focused-prepare.stderr.log"
+      },
+      "counts": null
+    },
+    {
+      "label": "ui",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test:ui"
+      ],
+      "startedAt": "2026-10-21T08:40:43.612Z",
+      "endedAt": "2026-10-21T08:42:03.191Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\048-delivery-repair\\artifacts\\focused-ui.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\048-delivery-repair\\artifacts\\focused-ui.stderr.log"
+      },
+      "counts": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 69386.7408
+      }
+    }
+  ]
+}

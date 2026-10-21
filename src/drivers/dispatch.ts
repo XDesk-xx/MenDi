@@ -7,6 +7,8 @@ import { resolveAction } from '../application/action-resolution.ts';
 import { archiveAction } from '../application/archive.ts';
 import { deliveryLifecycle } from '../application/delivery-lifecycle.ts';
 import { migrateDelivery } from '../application/delivery-migration.ts';
+import { addDeliveryChanges } from '../application/delivery-change-add.ts';
+import { runAftercare } from '../application/run-aftercare.ts';
 
 import { bindChange, openDelivery, query, queryRound } from '../application/project.ts';
 import { startAction, continueAction, saveRun, submitRun } from '../application/actions.ts';
@@ -34,6 +36,25 @@ export async function dispatch(parsed: Arguments) {
   const input = { project: parsed.values.project, openspecBin: parsed.values['openspec-bin'] };
   const actor = { ...input, role: parsed.values.role, actor: parsed.values.actor };
   switch (parsed.command) {
+    case 'run-supplement':
+    case 'run-amend':
+      return runAftercare(parsed.command === 'run-supplement' ? 'supplement' : 'amend', {
+        ...actor,
+        runRef: parsed.values.run,
+        inputFile: parsed.values.input,
+        requestId: parsed.values['request-id'],
+        kind: parsed.values.kind,
+        bodyFile: parsed.values.body,
+        commentFile: parsed.values.comment,
+        reason: parsed.values.reason,
+        resume: parsed.values.resume,
+      });
+    case 'delivery-change-add':
+      return addDeliveryChanges({
+        ...actor,
+        inputFile: parsed.values.input,
+        resumeRef: parsed.values.resume,
+      });
     case 'delivery-verification-create':
       return createVerification({ ...actor, inputFile: parsed.values.input });
     case 'delivery-verification-status':

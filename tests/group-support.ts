@@ -6,6 +6,8 @@ import { writePackage } from './test-support.ts';
 import { repository } from './helpers.ts';
 import { runFullTest, type FullTestOptions } from '../src/application/delivery-full-test.ts';
 import { groupPlan } from '../src/core/group-plan.ts';
+import { groupEvidence } from './evidence-scenes.ts';
+import { evidenceSession } from './evidence-support.ts';
 
 export const groupCandidate = {
   id: 'c1',
@@ -57,45 +59,39 @@ export function groupTarget() {
 export function writeGroupInput(root: string, value: unknown) {
   fs.writeFileSync(path.join(root, 'group-input.json'), JSON.stringify(value, null, 2));
 }
+/** Apply 的少量指定场景快照；输入仍由受控 tests 重建，不复制历史树。 */
+export function recordApplyScene(
+  label: string,
+  root: string,
+  result: Awaited<ReturnType<typeof groupRun>>,
+  extra: unknown = null,
+) {
+  const evidence = process.env.MENDI_APPLY_EVIDENCE;
+  if (!evidence || !result.run) return;
+  const { scene, compact } = groupEvidence(
+    process.env.MENDI_TEST_EVIDENCE_DIR ?? evidence,
+    root,
+    result,
+  );
+  evidenceSession(evidence).record(
+    `${label}-${process.pid}.json`,
+    {
+      label,
+      authority: '隔离产品场景；actor / verdict 为夹具，不认证 MenDi 根审核',
+      ...scene,
+      extra: compact(extra),
+    },
+    false,
+  );
+}
 export async function groupRun(root: string, options: FullTestOptions = {}) {
   const result = await runFullTest({ ...fullInput(root), inputFile: 'group-input.json' }, options);
-  const dir = process.env.MENDI_TEST_EVIDENCE_DIR;
+  const dir = process.env.MENDI_TEST_EVIDENCE_DIR ?? process.env.MENDI_APPLY_EVIDENCE;
   if (dir) {
-    fs.appendFileSync(
-      path.join(dir, `group-scenes-${process.pid}.jsonl`),
-      JSON.stringify({ root, result }) + '\n',
+    evidenceSession(dir).record(
+      `group-scenes-${process.pid}.jsonl`,
+      groupEvidence(dir, root, result).scene,
     );
-    if (result.run) {
-      const id = result.run.attempt?.executionId;
-      const folder = path.join(
-        dir,
-        'groups',
-        `${process.pid}-${path.basename(path.dirname(root))}`,
-        id ?? 'not-run',
-      );
-      fs.mkdirSync(folder, { recursive: true });
-      const parent = path.join(root, result.run.ref);
-      if (fs.existsSync(parent) && !fs.existsSync(path.join(folder, 'run.md')))
-        fs.copyFileSync(parent, path.join(folder, 'run.md'));
-      if (id) {
-        const base = path.join(root, `.mendi/delivery-groups/d01/tests/${id}`);
-        for (const name of fs.readdirSync(base))
-          if (
-            [
-              'result.json',
-              'stdout.log',
-              'stderr.log',
-              'group-request.json',
-              'group-report.json',
-              'group-events.jsonl',
-            ].includes(name) ||
-            name.endsWith('.tmp')
-          ) {
-            const output = path.join(folder, name);
-            if (!fs.existsSync(output)) fs.copyFileSync(path.join(base, name), output);
-          }
-      }
-    }
   }
   return result;
 }

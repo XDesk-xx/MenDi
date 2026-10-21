@@ -1,0 +1,15 @@
+{
+  "review": "040-review-propose",
+  "recordedAt": "2026-10-21T04:25:43.155Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/040-review-propose/artifacts/tsconfig.json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "",
+  "error": null
+}

@@ -1,0 +1,30 @@
+{
+  "name": "collector",
+  "files": [
+    "tests/evidence-support.test.ts",
+    "tests/evidence-recorder.test.ts",
+    "tests/evidence-groups.test.ts",
+    "tests/evidence-history.test.ts"
+  ],
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/evidence-support.test.ts",
+    "tests/evidence-recorder.test.ts",
+    "tests/evidence-groups.test.ts",
+    "tests/evidence-history.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 16,
+    "pass": 16,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "stdout": "collector-tests.tap.log",
+  "stderr": null
+}

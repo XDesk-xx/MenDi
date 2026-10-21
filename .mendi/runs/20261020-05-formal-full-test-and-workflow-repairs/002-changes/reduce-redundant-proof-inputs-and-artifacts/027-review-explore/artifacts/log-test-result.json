@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-21T01:02:23.337Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/test-log-integrity.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "testCounts": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0
+  },
+  "rawOutput": "test-log-integrity.tap.log",
+  "rawStderr": null,
+  "limitations": [
+    "This regression uses existing isolated fixtures, not a new empty-log protocol",
+    "No root Delivery Formal Full Test/Close"
+  ]
+}

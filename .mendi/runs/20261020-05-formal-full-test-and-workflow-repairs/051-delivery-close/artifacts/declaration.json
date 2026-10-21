@@ -1,0 +1,77 @@
+{
+  "deliveryId": "20261020-05-formal-full-test-and-workflow-repairs",
+  "scope": "delivery",
+  "recordingMode": "manual-bootstrap",
+  "action": "delivery-close",
+  "role": "author",
+  "ownerAuthorization": "delivery close",
+  "fullTestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/run.md",
+  "applicability": {
+    "conclusion": "applicable",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ],
+    "changes": "相较050，受测实现、测试、依赖、方法、主规格、README及已批准Storybook配置均未变；只新增051收口、manifest和当前context/路线图状态说明。",
+    "reason": "050 本次完整F01–F05 passed；五组和全部直接命令、双日志、业务计数与当前四项归档范围一致；固定HEAD及受审一行配置保持，说明性收尾不改变材料适用性。"
+  },
+  "completedScope": [
+    {
+      "slot": "MVP-D05-A",
+      "changeId": "unified-groups-full-test-and-repair-flow",
+      "archiveRef": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+      "archiveOrdinal": 14
+    },
+    {
+      "slot": "MVP-D05-B",
+      "changeId": "append-planned-changes-to-open-delivery",
+      "archiveRef": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+      "archiveOrdinal": 15
+    },
+    {
+      "slot": "MVP-D05-C",
+      "changeId": "reduce-redundant-proof-inputs-and-artifacts",
+      "archiveRef": "openspec/changes/archive/2026-10-21-016-reduce-redundant-proof-inputs-and-artifacts",
+      "archiveOrdinal": 16
+    },
+    {
+      "slot": "MVP-D05-D",
+      "changeId": "latest-run-supplement-and-limited-amend",
+      "archiveRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+      "archiveOrdinal": 17
+    }
+  ],
+  "candidate": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ],
+    "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+    "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+  },
+  "package": {
+    "path": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\installation\\mendi-0.2.0.tgz",
+    "version": "0.2.0",
+    "sha256": "cd68fff20f85ee29ac22d7e84b4dc027957d7d8cefa22586796fbc619cec8d6b"
+  },
+  "limitations": [
+    "根人工正式执行及人工Close，不伪造product-v2/groups-v1 typed acceptance。",
+    "仅本机已准备Windows/Node22/pnpm11.22.0；不认证冷安装/其他平台。",
+    "不执行Git、版本发布、稳定安装、清理或DreMo写入。"
+  ]
+}

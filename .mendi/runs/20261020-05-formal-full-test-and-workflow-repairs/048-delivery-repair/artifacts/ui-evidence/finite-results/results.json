@@ -1,0 +1,7 @@
+{
+  "baseline": "001-focused",
+  "failed": "002-focused",
+  "fresh": "003-focused",
+  "baselineRecordUnchanged": true,
+  "mcp": "not-enabled-not-certified"
+}

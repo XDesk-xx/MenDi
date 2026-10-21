@@ -89,6 +89,10 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 - **WHEN** 当前已为第二项，却请求对第一项的 Action / Run 保存、提交、继续或归档
 - **THEN** 按非当前 / 陈旧对象拒绝，不改旧 submitted Run、verdict 或当前指针
 
+#### Scenario: Current delivery run is not the archived change run
+- **WHEN** 当前 open Delivery 无活动 Change、其当前修复/Reviewer Run 由 deliveryRunRef 指向，同时最近归档 Change 仍保留 latestRunRef
+- **THEN** 本次 supplement/amend 资格以本轮实际 deliveryRunRef 与共享 Run 占号为准，不得误用 archived binding 或下一个 Run 的 draft 前驱
+
 ### Requirement: Draft save and immutable submission
 
 系统 SHALL 只允许当前 product draft 的同角色 / actor 保存正文，使用明确根、本地配置、当前必要对象及安全写入；保存不读上游、方法或固定 Author 正文。正式阶段提交校验非空结果 / outcome 与必要 Author / verdict，Change submit 保留上游。Full Test 与生命周期完成 MUST 由专用执行 / 提交产生，普通 submit / continue 禁止伪造。旧 submitted Run 不可保存 / 重提，失败保留现场。
@@ -128,6 +132,10 @@ Change scope 进展 SHALL 使用唯一当前 binding 的 latestRunRef（活动�
 #### Scenario: Generic operations target a lifecycle run
 - **WHEN** 对 Open / Close / Reopen draft 或 terminal 使用普通 run submit / action continue 生成收口或重开
 - **THEN** 拒绝；当前同角色 / actor 的 draft 可本地保存故障笔记，不改生命周期输入、提交相位或宣称状态成功
+
+#### Scenario: Special post-submission commands do not weaken draft-only save
+- **WHEN** 当前有被单独授权的最新 submitted Run 需要 supplement 或有限 amend
+- **THEN** 只能走专用提交后受控入口、读取其已确认附属事实；普通 run save/submit/continue 仍拒绝重写已提交 Run，不能修改原 verdict、关联或编号
 
 ### Requirement: Same action continuation and explicit revision
 
@@ -385,13 +393,17 @@ Review Apply 方法 SHALL 报告 src / tests / scripts 中维护代码物理行�
 - **WHEN** 已受审旧 proof 不再扩展，新产品验收进入独立测试，当前仍有较长完整流程
 - **THEN** 保留旧材料与结果，并说明适用范围及下次整理触发条件，不仅因行数要求重写历史或重跑全部旧实验
 
+#### Scenario: Current review cites one canonical proof source
+- **WHEN** 独立 Reviewer 核对某实际受控 Proof，其原日志或唯一必要输入已保存在可定位的当前 Run，且同一结果被多份摘要使用
+- **THEN** 审核摘要保留真实来源与可验证结果而不强制为同一事实再复制整套成功日志或 fixture；仍必须说明代码增长和本次失败事实
+
 ### Requirement: Delivery operation runs beside change batches
 
 Delivery 操作 SHALL 在 runs/<delivery-id>/<序号>-<操作名称>/run.md 与 Changes 批次同级，共享连续编号，明确 delivery scope、类型 / 方法、Author / actor 和 draft / submitted。新增记录化 Open 保存 001-delivery-open，Close / Reopen 继续原号；旧首次 Open 未记录 Run 的格式保持可读，不补历史。当前进展与最近正式结果指针 MUST 各按实际用途选择，生命周期提交只更新本次直接对象。
 
 #### Scenario: Full test follows multiple archived changes
-- **WHEN** 同 Delivery 两项已归档、已有 Run 最大占号为 014，Author 显式正式执行
-- **THEN** 本次 Run 为 015-delivery-full-test，与既有 Changes 批次同级；Change、批次、Archive 编号和旧文件保持
+- **WHEN** 同 Delivery 两项已归档、已有 Run 最大占号为 014，Author 显式执行新的完整 `groups-v1` 正式 Full Test
+- **THEN** 本次 Run 为 `015-delivery-test-attempt`（015 仅为该占号示例，实际编号取当前 Delivery 的下一可用序号），与 Changes 批次同级；Change、批次、Archive 编号和旧文件保持；`delivery-full-test` 仅作为已提交旧 command Run 类型只读兼容，不再由新正式执行创建
 
 #### Scenario: Continue a targeted delivery review
 - **WHEN** 定向 Review 已 submitted / continuing，原 Reviewer 显式继续
@@ -405,9 +417,13 @@ Delivery 操作 SHALL 在 runs/<delivery-id>/<序号>-<操作名称>/run.md 与 
 - **WHEN** 正式结果为 015，随后显式 Close、Reopen 和新 Change 开始
 - **THEN** 在无其他占号时保存 016-delivery-close、017-delivery-reopen 和 018-changes 中的新 Run；旧正式 / Close 不改，新 Open 在独立 Delivery 使用 001
 
+#### Scenario: Append plan uses an independent typed delivery operation
+- **WHEN** Owner 已授权当前轮范围追加，Author 真实提交计划新增
+- **THEN** 分配一个实际的 Delivery 编号并保存独立 typed receipt，不占用批次编号、不改变既有 Change 的 Run 编号或提交结果
+
 ### Requirement: Current delivery progress and minimal handoff
 
-Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链。修复与 Review 保持既有交接；passed 仅待 Owner。closed 当前选择 Close；Reopen / Open 完成后提示范围内显式 bind，退出旧 PASS 的当前适用选择但保留最近正式入口。待提交生命周期写入与 unknown MUST 停 Owner 核对 / 显式有限继续。next 只包含当前必要入口，不自动执行或累积旧 Close / 审核链。
+Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链。实质修复与独立 Review 沿用原交接；新 groups-v1 完整正式 Run 自身 passed 即待 Owner 另行授权收口，不增加例行 verification 或 owner-decision。已知普通环境问题按核实事实进行新完整执行，不生成空 Repair/Review Runs。closed 当前选择 Close；Reopen / Open 完成后提示范围内显式 bind，退出旧 PASS 的当前适用选择但保留最近正式入口。待提交生命周期写入与 unknown MUST 停 Owner 核对 / 显式有限继续。next 只包含当前必要入口，不自动执行或累积旧 Close / 审核链。
 
 #### Scenario: Repair completes and reviewer continues
 - **WHEN** Author 修复 complete，随后独立 Review 开始并提交 continuing
@@ -432,6 +448,18 @@ Delivery 进展 SHALL 由显式当前指针读取，不倒查失败 / 修订链�
 #### Scenario: Current close is retained without execution revalidation
 - **WHEN** 当前 Delivery 为完整 closed，Close 头部 / 摘要与 manifest 一致
 - **THEN** query 展示持久收口事实与等待 Owner 提示，只引用其正式入口供显式查询；不递归检查旧测试 / 审核正文，也不重新认证受测材料
+
+#### Scenario: New complete formal pass needs no aggregation
+- **WHEN** 当前新正式 Full Test Run 自身稳定 passed 且当前范围有效
+- **THEN** next 提示 Owner 决定是否单独授权 Close，不要求创建 verification Run、也不要求对 PASS 作额外 owner-decision
+
+#### Scenario: Failure repair versus confirmed environment retry
+- **WHEN** 当前必需组明确业务失败或测试合同需实变，或仅有已确认环境准备阻断且现场已安全恢复
+- **THEN** 前者 next 指向 delivery-repair 并等待独立 review-delivery-repair，后者可直接提示新完整正式执行，保留旧失败记录
+
+#### Scenario: Unknown runtime must not appear passed
+- **WHEN** 实际执行、清理或持久提交未确认，或新读回与本次保存不一致
+- **THEN** next 停 Owner 核查本次现场，不回退历史 verified 或自动解锁、重试
 
 ### Requirement: Delivery methods and direct review input
 
@@ -540,3 +568,70 @@ Explore / Propose 方法 SHALL 先查项目事实和已确认决定，再对会�
 #### Scenario: Proposal hides a material assumption
 - **WHEN** Author 未确认的重要假设被写成确定规格，或问答与实际范围 / 设计 / 验收不一致
 - **THEN** Reviewer 指出对应缺口，依现有独立审核给出结论，不由工具加载成功、结构检查或材料数量自动批准
+
+### Requirement: Standalone delivery plan-append receipt
+每次合法新增范围 SHALL 保留有类型的独立 Author Delivery 收据，位于整个 Delivery 共享编号空间、与 Changes 批次同级，保存本轮、追加理由、Owner 范围来源、唯一请求、追加前后 scope、有效终态与实际时间。提交本身不得创建或激活 OpenSpec Change，也不构造虚假的 Reviewer 结论。
+
+#### Scenario: Append receipts do not change current Change
+- **WHEN** 当前有真实活动 Change 而 Author 完成范围追加
+- **THEN** 收据占用 Delivery 下一个真实编号，但当前 active Change/latestRunRef、阶段/角色不被替换，旧绑定/批次/归档不改
+
+#### Scenario: Append after earlier Full Test
+- **WHEN** 当前 open Delivery 上一次 groups-v1 完整执行已稳定 passed 或 failed 且不存在不明写者或未决审核
+- **THEN** 保存本次追加收据及前后范围，原 Full Test Run/outcome/logs 保持只读，新范围不继承原正式通过或失败为当前验收
+
+#### Scenario: Invalid receipt or number
+- **WHEN** 受管 Run 类型、编号、Author 身份、轮次、前后 scope 或原当前指针不符
+- **THEN** 读取/提交拒绝，不把损坏的追加收据推断为授权或完成的范围变更
+
+### Requirement: Scope append and current progress remain distinct
+范围追加 SHALL 区分当前活动 Change、当前完整范围及旧 Delivery 正式结果的历史位置。操作完成后新增未关联项需明确显示待 bind，旧归档或旧 PASS 不能覆盖它；若已有合法活动 Change，则正常阶段进展仍是权威 next。
+
+#### Scenario: New plan item follows an old Archive
+- **WHEN** 当前没有活动 Change，追加后至少一个计划槽位尚未绑定
+- **THEN** status/next 指向显式 change-bind 且要求 Owner 单独授权，不因旧最后 Archive 或旧 Full Test 得出 delivery-next / Close
+
+#### Scenario: Existing active Change retains stage
+- **WHEN** 当前活动 Change 的 latest Run 是 Explore、Propose 或 Apply 交接，另有新的待 bind 槽位
+- **THEN** next 仍来自该活动 Change 的直接状态，新增范围单独可见；收据不能抢占最新 Action
+
+#### Scenario: Pending append does not appear complete
+- **WHEN** 追加收据或其所要求的 manifest 更新尚未完成 / 写入结果 unknown
+- **THEN** 查询指出本次未确认及必要现场，不回退旧 PASS、不扫描历史最大号冒充最新交接
+
+### Requirement: Single-source stage evidence in future runs
+新 Explore、Apply、Review 阶段 SHALL 以当前 Run 的必要结果和明确原件来源为准，避免在同一阶段重复嵌入同一 stdout、报告、请求和派生输出。相同原件的第二次使用 SHALL 使用可定位的受管引用；不存在、越界或预计被清理的来源不得充当唯一证据。
+
+#### Scenario: Two summaries reuse one original test result
+- **WHEN** 当前阶段多份摘要引用同一次已保存真实执行的 stdout 或最终报告，且原件可从本次受管 Run 或明确持久受控来源直接读取
+- **THEN** 保存必要唯一原件一份，其余使用有效的明确来源引用，不再保存第二份重复原始字节；不据摘要的 success 字样改变真实结果
+
+#### Scenario: Only source is disposable temporary target
+- **WHEN** 原始证据只在此次可能被删除的 .tmp/runtime 夹具、外部不可控目录或暂不可定位的来源
+- **THEN** 不能只留下看似可用的链接后宣称证据保存完毕；在结束前保存必要唯一原件于本次受管证据目录，或报告不完整并保留现场，不凭旧摘要制造 PASS
+
+#### Scenario: Real failure and unknown observations require source
+- **WHEN** 本次执行、清理或审核发现 failed、blocked、not-run、interrupted 或 unknown，包含部分日志、未确认的报告或锁
+- **THEN** 保留可直接核对的失败/未完成理由、实际必要日志与受管现场；不得用重复消除省略唯一原件、将 unknown 解释为空输出或以历史通过覆盖当前失败
+
+### Requirement: Reconstructible proof inputs and bounded references
+新阶段 Proof 输入 SHALL 优先使用当前项目中受控且可重建的脚本、测试夹具与明确参数。只在需要保存不可重建的唯一输入时将副本置于当前 Run 的受管证据；引用 SHALL 记录可判断的来源及用于复现的必要调用，不要求扫描全部历史 Run 或保存无关的临时工程树。
+
+#### Scenario: Repeatable proof uses controlled fixture
+- **WHEN** 本次调查输入可由已有维护脚本、fixture 与明确的选定命令重新建立
+- **THEN** Run 保存真实方法、源位置、命令/参数与实测结果，额外临时工程不作为唯一长期输入，也不复制其全部派生目录
+
+#### Scenario: Unique input cannot be reconstructed
+- **WHEN** 源头不可稳定取得且该输入实际参与独立 Reviewer 结论
+- **THEN** 在当前受管 Run 内保留必要原件与来源，不能只保存一个指向已清理路径的 Ref；实际无权取得原件时报告限制，不伪造取证完成
+
+### Requirement: Submitted evidence remains immutable across optimization
+历史 submitted Run 的原始正文、verdict、执行日志、失败与 unknown 现场及归档原件 SHALL 保持只读。新证据轻量化只能作用于尚未产生的受控采集路径，不能遍历清理旧 Run、替换既有审核证明或以文件数量自动决定删除。
+
+#### Scenario: Old approved run contains duplicate proof copies
+- **WHEN** 历史 D01–D05-B 已经提交且其 artifacts 中存在相同 stdout、空文件或可由旧脚本重建的目录
+- **THEN** 旧原始材料与来源仍可读取，不修改其原文、verdict 和身份、不自动迁移/删除、不分配补证 Run
+
+#### Scenario: Compact future collection faces unknown write
+- **WHEN** 新阶段采集原件或其受管引用的写入中断、锁状态未知或最终读回不一致
+- **THEN** 保留实际必要现场并报告不完整，不以文件数量减少视为提交成功，不清理属于其他写者的锁或临时文件

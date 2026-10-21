@@ -6,7 +6,9 @@ role: reviewer
 
 # 独立定向修复审核
 
-组模式另核对[组级协议](../../group-tests.md)中的当前候选、每组影响 / 沿用及公共变化；读取真实差异与断言，不只批准 metadata。必须固定当前 Author；旧批准、空正文或自签均不能授权 retest。批准不产生候选 verified。
+本轮当前已完成提交的 Delivery Review 仅原 Reviewer/actor 按对应 Owner 授权可显式补证/有限 amend，资格取 deliveryRunRef 与下游占号，不取 archived Change。原文/verdict/next 不改，来源自述时间 unverified，冲突需 Owner 和正式独立 Review。amend 单次、必填 requestId/kind；presentation-only/body 仅安全空白，unreviewed-comment/comment 是 authoritative=false 的事后未审核评论，不进入正式摘要/PASS。未知锁和现场保留，Owner 核对停止写者并处置后，同请求显式 --resume finish，不自动转 Author 或执行新正式 Full Test。
+
+组模式另核对[组级协议](../../group-tests.md)中的当前候选、每组影响 / 沿用及公共变化；读取真实差异与断言，不只批准 metadata。必须固定当前 Author；旧批准、空正文或自签均不能授权新执行。批准后重新 initial 执行全部必需组，不沿用旧 PASS 或创建 verification；批准自身不产生正式 passed。
 
 实际独立 Reviewer 固定当前完整且完成的新 Author，读取其直接正式失败、范围、原整个集合、实际差异及定向验证。actor 与 Author 不同是明显冲突检查，不能认证真人独立性；自动化 approved 只能是记录夹具，不能批准真实仓库 Change。
 

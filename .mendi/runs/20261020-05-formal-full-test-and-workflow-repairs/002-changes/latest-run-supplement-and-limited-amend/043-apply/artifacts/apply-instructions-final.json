@@ -1,0 +1,152 @@
+{
+  "changeName": "latest-run-supplement-and-limited-amend",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\specs\\delivery-workspace\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\specs\\run-post-submission\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 16,
+    "complete": 16,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 实现两个专用 run 子命令（supplement/amend 均需 requestId），amend 还必须有 `--kind presentation-only|unreviewed-comment` 和互斥的 `--body` / `--comment`；CLI 测试缺/未知 kind、输入缺失或混用拒绝，旧 save/submit 不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 5
+    },
+    {
+      "id": "2",
+      "description": "1.2 对当前 selected product-v2/open Delivery 建立统一资格检查；分别以 Change 的活动 binding.latestRunRef 和 Delivery 的 deliveryRunRef 做真实正例，并核 shared Run number、当前轮、actor/role 与 submitted。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 6
+    },
+    {
+      "id": "3",
+      "description": "1.3 对下游 draft 或编号保留、历史轮、closed、archived Change、正式 Full Test/Close、旧 manual/legacy 及错误对象执行隔离拒绝测试；确认当前 Delivery Review 不误用 archived Change 的 Run。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "4",
+      "description": "2.1 实现补证 typed receipt，分别保存系统 recordedAt 和可空来源自述 sourceClaimedCollectedAt（始终 unverified）、actor/role/来源/原因/冲突关系；测试无可信旧审批时间锚点时不判断采集先后，不能倒造已认证时序，且原 Run/verdict/next 不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 11
+    },
+    {
+      "id": "5",
+      "description": "2.2 受管保存唯一附件，测试越界/symlink/缺失/读中变化/重复及同 requestId 不同输入拒绝；额外验证虚假过去日期的 verified 声明被拒、普通无锚点旧日期只能标记 unverified，不能宣称批准前取得。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 12
+    },
+    {
+      "id": "6",
+      "description": "2.3 针对追加材料与旧 approved 结论相反或关系不确定的场景，测试显式冲突提示和 Owner/独立复审引导，绝不产生新 PASS 或暗改旧结果。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "7",
+      "description": "3.1 对明确 kind=presentation-only 且仅有完整 body 的请求机械验证安全空白差异；对明确 kind=unreviewed-comment 且仅有 comment 的请求保留 typed `authoritative=false` 的非权威评论。使用同一“审核已批准”文本验证前者对原“审核未批准”的实质替换拒绝、后者隔离保存，另测安全排版正例和原正文/verdict/next 不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 17
+    },
+    {
+      "id": "8",
+      "description": "3.2 拒绝 presentation-only 的错字/URL 目标/证据引用/测试范围/权限/审核论证/结构修改，以及缺 kind、kind 与输入不符、body/comment 同时提供；即使 comment 自称重新 approved 或旧失败通过，也只能作为未审核评论显示，不进机器 summary/PASS/next。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 18
+    },
+    {
+      "id": "9",
+      "description": "3.3 amend 必须显式 requestId，单 Run 只有一个 confirmed amend；受管保存原正文基线、候选展示/非权威评论、精确差异、recordedAt、actor/原因；测试同 ID 同 kind 同输入幂等、同 ID 换 kind/内容与第二不同 ID 拒绝；跨进程读回原 run.md 字节和 next/verdict 不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "10",
+      "description": "4.1 在真实写锁下二次核当前指针、轮次、Run 占号及直接输入，按 intent、必要原件、最后 confirmed 顺序保存；写锁内核 amend 唯一槽位为空或完全匹配 requestId/kind/原始输入，测试并发、同 ID 改 kind、改内容、第二 ID、来源漂移及未知状态。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 23
+    },
+    {
+      "id": "11",
+      "description": "4.2 对 intent、复制、提交、读回、锁释放各断点进行故障注入，确认 partial 不宣称完成、实际现场可诊断、幂等重试不重复；显式 resume 只处理同一请求，不能自动清理未知锁。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 24
+    },
+    {
+      "id": "12",
+      "description": "4.3 status/query 仅展示 confirmed，保留旧结果/verdict/next；将 recordedAt 与 unverified 来源时间分开，unreviewed-comment 永远不进入正式摘要；旧 Run 无 aftercare 照旧可读，缺/坏收据不伪造成功。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 25
+    },
+    {
+      "id": "13",
+      "description": "5.1 在隔离 product-v2 Change Author/Reviewer 与 Delivery Repair/Review 上完成真实命令的补证和展示修订正例，对照 033/034 的权威指针和下游 draft 负例；不得触碰真实 DreMo。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 29
+    },
+    {
+      "id": "14",
+      "description": "5.2 更新需要的 Skills、CLI 帮助和 README，验证命令示例在当前构建实际可运行；保留 Owner 授权范围、历史只读和正式 Full Test/Close 独立授权。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 30
+    },
+    {
+      "id": "15",
+      "description": "5.3 运行受影响测试、pnpm check、pnpm build、OpenSpec strict，保留有限原始证据；Author Apply 摘要列 src/tests/scripts 物理行数前三名及可靠增长依据。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 31
+    },
+    {
+      "id": "16",
+      "description": "5.4 核对 033/034/035/036 原始历史和 D05-A/B/C Archive 014/015/016 均未更改，并将真实 Apply 结果交独立 review-apply，不自签批准。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\latest-run-supplement-and-limited-amend\\tasks.md",
+      "line": 32
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前为 MVP-D05，Owner 已授权以 manual-bootstrap Open：20261020-05-formal-full-test-and-workflow-repairs；D05-A/B/C 已独立审核并分别归档 014/015/016；D05-D 为当前 Change，042 Propose approved 后由 043 Author Apply 实施，停止边界为独立 review-apply；状态以 manifest / 最近 Run 为准。\nD05-A：统一未来 groups-v1 正式 Full Test 与完整重跑；D05-B：未 Close 追加 Change CLI，可独立于 A；D05-C：proof / inputs / artifacts 轻量化，依赖 A；D05-D：最新 Run supplement / amend，依赖 C。总设计见根路线图 §7。\nD04 已在 026 正式 Full Test 通过、027 Close，A/B/C 归档 011/012/013，028 已切换稳定 0.2.0。历史结果不冒充 D05 新轮验收；D05-A/B/C 原生归档后累计成功归档 16。\nMenDi 根目录仍为 manual-bootstrap：产品 CLI 对其只读，人工 Open 事实见本轮 001 Run。旧 product 支持只读查询，写入须按规则显式迁移；未知中断必须保留现场。\n外部 Full Test 的旧 WIP 已单独存入 Git stash，不视为 D05-A 实现；当前 D05 分支已有 D05-A/B/C 本地 Git checkpoint（HEAD 9c818e6），D05-D 本轮未执行 Git 写操作，D05 正式测试未执行；A/B/C 已归档，但未切换稳定安装。\n按现行安装版运行当前功能；D05-A/B/C 已在当前源码实现、独立审核并原生归档，其中 C 仅含有限 opt-in 采集，不改变正式双物理日志协议；D05-D 源码由 043 Apply 实施，尚待独立审核；稳定安装版 0.2.0 尚未切换，不得仅凭源码/规划绕过目标运行时实际准入。\n提问先查已确定的 Owner 范围，稳定业务契约与 UI 选择分开；Explore proof 只验证关键疑点，真实结果、旧 verdict、Run 和必要日志保留。\n状态与详细过程读取当前 manifest 和最近 Run；Git、Change 激活、Archive、正式 Full Test / Close、安装发布及 DreMo 等外部目标写入均保持独立授权。\n必要输入依操作决定，旧 Ref 和说明不成为普通查询的全量前置；项目 check 覆盖真实类型检查，行为验证按影响，错误现场不自动清理。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

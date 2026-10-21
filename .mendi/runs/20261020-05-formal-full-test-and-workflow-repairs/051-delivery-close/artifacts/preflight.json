@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-10-21T10:55:16.870Z",
+  "commands": 16,
+  "groups": [
+    {
+      "id": "F01-check",
+      "counts": null
+    },
+    {
+      "id": "F02-root",
+      "counts": {
+        "tests": 336,
+        "suites": 0,
+        "pass": 336,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1941423.6094
+      }
+    },
+    {
+      "id": "F03-ui",
+      "counts": {
+        "tests": 5,
+        "suites": 0,
+        "pass": 5,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 88125.0498
+      }
+    },
+    {
+      "id": "F04-installation",
+      "counts": {
+        "tests": 4,
+        "suites": 0,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 51974.2009
+      }
+    },
+    {
+      "id": "F05-spec-status",
+      "counts": null
+    }
+  ],
+  "sourceBasisUnchanged": true,
+  "packageIntact": true,
+  "logsReadable": true,
+  "completed": [
+    {
+      "slot": "MVP-D05-A",
+      "changeId": "unified-groups-full-test-and-repair-flow",
+      "archiveRef": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+      "archiveOrdinal": 14
+    },
+    {
+      "slot": "MVP-D05-B",
+      "changeId": "append-planned-changes-to-open-delivery",
+      "archiveRef": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+      "archiveOrdinal": 15
+    },
+    {
+      "slot": "MVP-D05-C",
+      "changeId": "reduce-redundant-proof-inputs-and-artifacts",
+      "archiveRef": "openspec/changes/archive/2026-10-21-016-reduce-redundant-proof-inputs-and-artifacts",
+      "archiveOrdinal": 16
+    },
+    {
+      "slot": "MVP-D05-D",
+      "changeId": "latest-run-supplement-and-limited-amend",
+      "archiveRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+      "archiveOrdinal": 17
+    }
+  ],
+  "originalApprovalSnapshotReused": true,
+  "fullTestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/run.md"
+}

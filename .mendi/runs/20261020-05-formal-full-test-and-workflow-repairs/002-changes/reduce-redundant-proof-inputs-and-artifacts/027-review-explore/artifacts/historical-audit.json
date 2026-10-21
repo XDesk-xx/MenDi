@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-21T01:01:49.521Z",
+  "kind": "independent read-only historical D04-B group report sibling census",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/026-explore/run.md",
+  "counts": {
+    "requests": 114,
+    "reports": 107,
+    "events": 111,
+    "results": 114,
+    "missingReportResults": {
+      "not-run": 3,
+      "interrupted": 2,
+      "unknown": 2
+    },
+    "allOutcomes": {
+      "passed": 63,
+      "failed": 40,
+      "not-run": 3,
+      "unknown": 6,
+      "interrupted": 2
+    },
+    "cleanup": {
+      "confirmed": 103,
+      "unknown": 4
+    },
+    "zeroStdout": 74,
+    "zeroStderr": 3
+  },
+  "limitations": [
+    "This census covers the D04-B 014-apply historical fixture only, not all future group protocols",
+    "Absence of a report or event is NOT justification to delete or suppress any required output",
+    "No existing Run/artifact was written; this proof does not perform Formal Full Test",
+    "The list of historical run artifacts is a different population from product .mendi/delivery-groups/*/tests logs"
+  ]
+}

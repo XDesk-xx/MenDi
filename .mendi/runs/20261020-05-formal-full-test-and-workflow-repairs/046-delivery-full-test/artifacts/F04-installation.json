@@ -1,0 +1,48 @@
+{
+  "stage": "F04-installation",
+  "startedAt": "2026-10-21T07:28:18.507Z",
+  "finishedAt": "2026-10-21T07:28:27.273Z",
+  "expectedSteps": 2,
+  "steps": [
+    {
+      "label": "installation-prepare",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:installation-tests",
+        "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation",
+        "D:/tools/mendi/acceptance/d05-full-test-046"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T07:28:18.513Z",
+      "endedAt": "2026-10-21T07:28:27.273Z",
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F04-installation-installation-prepare.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F04-installation-installation-prepare.stderr.log"
+      }
+    }
+  ],
+  "counts": null,
+  "allStepsSucceeded": false,
+  "businessValid": false,
+  "stageOutcome": "failed",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ]
+  }
+}

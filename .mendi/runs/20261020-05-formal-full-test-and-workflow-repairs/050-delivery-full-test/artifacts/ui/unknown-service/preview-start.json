@@ -1,0 +1,10 @@
+{
+  "target": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-050-ui\\unknown-service",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-050-ui\\unknown-service",
+  "script": "preview:components",
+  "config": ".storybook/main.ts",
+  "pid": 70556,
+  "address": "http://127.0.0.1:6113",
+  "stdout": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\ui\\unknown-service\\preview.stdout.log",
+  "stderr": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\ui\\unknown-service\\preview.stderr.log"
+}

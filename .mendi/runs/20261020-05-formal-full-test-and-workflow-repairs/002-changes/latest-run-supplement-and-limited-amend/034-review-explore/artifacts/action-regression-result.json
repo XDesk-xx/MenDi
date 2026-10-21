@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-10-21T03:07:14.196Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/actions.test.ts",
+    "tests/action-write.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 23,
+    "pass": 23,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "raw": "action-regression.tap.log",
+  "stderr": null
+}

@@ -1,0 +1,46 @@
+{
+  "capturedAt": "2026-10-20T11:16:29.013Z",
+  "purpose": "D05-A Reviewer independently re-runs current impacted group/lifecycle tests on isolated fixtures",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/group-attempt.test.ts",
+    "tests/group-boundaries.test.ts",
+    "tests/group-consistency.test.ts",
+    "tests/group-environment.test.ts",
+    "tests/group-history.test.ts",
+    "tests/group-verification.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/group-cli.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "files": [
+    "tests/group-attempt.test.ts",
+    "tests/group-boundaries.test.ts",
+    "tests/group-consistency.test.ts",
+    "tests/group-environment.test.ts",
+    "tests/group-history.test.ts",
+    "tests/group-verification.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/group-cli.test.ts"
+  ],
+  "summary": {
+    "tests": 31,
+    "pass": 31,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "artifacts": {
+    "stdout": "focused-tests.tap.log",
+    "stderr": null
+  },
+  "limits": [
+    "Not root delivery formal full test",
+    "Selected tests only; other Author tests retain their own provenance",
+    "No source edits, no real DreMo writes"
+  ]
+}

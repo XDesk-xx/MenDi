@@ -1,0 +1,5 @@
+{
+  "stdout": "{\"message\":\"提交后操作未完整确认；核对实际现场和锁。\",\"code\":\"aftercare-unconfirmed\"}",
+  "stderr": "",
+  "error": null
+}

@@ -1,0 +1,52 @@
+{
+  "entry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "args": [
+    "validate",
+    "unified-groups-full-test-and-repair-flow",
+    "--strict",
+    "--json"
+  ],
+  "exitCode": 0,
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "unified-groups-full-test-and-repair-flow",
+      "type": "change",
+      "valid": true,
+      "issues": [],
+      "durationMs": 78
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "tasks": 13
+}

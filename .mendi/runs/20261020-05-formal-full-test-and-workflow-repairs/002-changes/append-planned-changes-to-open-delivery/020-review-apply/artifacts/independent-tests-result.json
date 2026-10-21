@@ -1,0 +1,51 @@
+{
+  "recordedAt": "2026-10-20T15:44:39.554Z",
+  "startedAt": "2026-10-20T15:38:08.141Z",
+  "scope": "independent Reviewer: D05-B new feature, scope lineage, historical command/attempt, Close/Reopen, baseline/migration regression",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "--test",
+    "--test-concurrency=2",
+    "tests/change-add.test.ts",
+    "tests/change-add-recovery.test.ts",
+    "tests/change-add-lifecycle.test.ts",
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ],
+  "files": [
+    "tests/change-add.test.ts",
+    "tests/change-add-recovery.test.ts",
+    "tests/change-add-lifecycle.test.ts",
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 34,
+    "passed": 34,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "artifacts": {
+    "stdout": "independent-tests.tap.log",
+    "stderr": null
+  },
+  "limits": [
+    "Only isolated product fixtures; NOT root MenDi formal Delivery Full Test/Close",
+    "No Source/Author/previous Run edits; no stable install or Git action",
+    "Do not reinterpret a test pass as Reviewer verdict without source inspection"
+  ]
+}

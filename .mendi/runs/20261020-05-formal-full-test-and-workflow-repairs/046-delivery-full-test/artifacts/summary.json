@@ -1,0 +1,162 @@
+{
+  "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/046-delivery-full-test/run.md",
+  "executionId": "d05-full-test-046",
+  "formalDeliveryTest": true,
+  "mode": "owner-authorized-manual-full-test",
+  "outcome": "failed",
+  "cause": "F03 and F04 environment preparation failure, no UI or installation business test started",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ]
+  },
+  "groups": [
+    {
+      "stage": "F01-check",
+      "stageOutcome": "passed",
+      "steps": [
+        {
+          "label": "check",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        }
+      ],
+      "counts": null
+    },
+    {
+      "stage": "F02-root",
+      "stageOutcome": "passed",
+      "steps": [
+        {
+          "label": "root",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        }
+      ],
+      "counts": {
+        "tests": 336,
+        "suites": 0,
+        "pass": 336,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1826363.8641
+      }
+    },
+    {
+      "stage": "F03-ui",
+      "stageOutcome": "failed",
+      "steps": [
+        {
+          "label": "ui-prepare",
+          "exitCode": 1,
+          "signal": null,
+          "timedOut": false
+        }
+      ],
+      "counts": null
+    },
+    {
+      "stage": "F04-installation",
+      "stageOutcome": "failed",
+      "steps": [
+        {
+          "label": "installation-prepare",
+          "exitCode": 1,
+          "signal": null,
+          "timedOut": false
+        }
+      ],
+      "counts": null
+    },
+    {
+      "stage": "F05-spec-status",
+      "stageOutcome": "passed",
+      "steps": [
+        {
+          "label": "spec-action-runs",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-delivery-lifecycle",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-delivery-verification",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-delivery-workspace",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-project-entry",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-run-post-submission",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-storybook-integration",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "spec-test-execution",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "source-status",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        },
+        {
+          "label": "source-next",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false
+        }
+      ],
+      "counts": null
+    }
+  ],
+  "continuation": "Additional diagnostic-only preparations in distinct locations verified offline cache recovery; neither counts as original F03/F04 PASS. Require separate new full F01-F05 attempt.",
+  "diagnostics": [
+    "diag-ui-online.json",
+    "diag-install-online.json",
+    "diag-install-offline-recheck.json"
+  ],
+  "completedAt": "2026-10-21T07:43:55.508Z",
+  "nextAction": "delivery-full-test",
+  "noCodeModified": true
+}

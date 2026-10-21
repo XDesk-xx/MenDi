@@ -16,7 +16,7 @@ import { scanRunNumbers } from '../src/adapters/runs.ts';
 import { readDeliveryRun } from '../src/adapters/delivery-runs.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { diagnoseWorkspace } from '../src/application/diagnosis.ts';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { saveRun, submitRun, continueAction } from '../src/application/actions.ts';
 import { MendiError } from '../src/core/errors.ts';
 import { testTarget } from './test-support.ts';

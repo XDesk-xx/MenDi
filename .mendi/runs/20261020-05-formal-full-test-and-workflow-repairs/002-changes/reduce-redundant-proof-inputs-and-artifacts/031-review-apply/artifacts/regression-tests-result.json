@@ -1,0 +1,58 @@
+{
+  "review": "D05-C independent 031",
+  "recordedAt": "2026-10-21T02:16:52.891Z",
+  "report": [
+    {
+      "name": "execution",
+      "files": [
+        "tests/test-execution.test.ts",
+        "tests/test-log-integrity.test.ts"
+      ],
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "--test",
+        "--test-concurrency=2",
+        "tests/test-execution.test.ts",
+        "tests/test-log-integrity.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "counts": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 0
+      },
+      "stdout": "execution.tap.log",
+      "stderr": null
+    },
+    {
+      "name": "formal-groups",
+      "files": [
+        "tests/group-boundaries.test.ts",
+        "tests/group-environment.test.ts"
+      ],
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "--test",
+        "--test-concurrency=2",
+        "tests/group-boundaries.test.ts",
+        "tests/group-environment.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "counts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "skipped": 0
+      },
+      "stdout": "formal-groups.tap.log",
+      "stderr": null
+    }
+  ],
+  "allPassed": true,
+  "note": "The existing product regression, not the root Delivery formal Full Test"
+}

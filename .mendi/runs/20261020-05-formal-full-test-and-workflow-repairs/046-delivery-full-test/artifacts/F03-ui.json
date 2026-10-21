@@ -1,0 +1,47 @@
+{
+  "stage": "F03-ui",
+  "startedAt": "2026-10-21T07:27:00.941Z",
+  "finishedAt": "2026-10-21T07:27:20.049Z",
+  "expectedSteps": 2,
+  "steps": [
+    {
+      "label": "ui-prepare",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:ui-tests",
+        "D:\\Projects\\MenDi\\.tmp\\d05-full-test-046-ui"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T07:27:00.948Z",
+      "endedAt": "2026-10-21T07:27:20.048Z",
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stderr.log"
+      }
+    }
+  ],
+  "counts": null,
+  "allStepsSucceeded": false,
+  "businessValid": false,
+  "stageOutcome": "failed",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ]
+  }
+}

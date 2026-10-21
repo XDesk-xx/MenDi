@@ -1,0 +1,25 @@
+{
+  "phase": "prepared",
+  "token": "a10a936e-7cb9-48b3-940c-69dde144d478",
+  "source": "openspec/changes/unified-groups-full-test-and-repair-flow",
+  "ownerInstruction": "archive",
+  "ordinal": 14,
+  "authorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/010-apply/run.md",
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/011-review-apply/run.md",
+  "sourceNames": [
+    ".openspec.yaml",
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/action-runs/spec.md",
+    "specs/delivery-lifecycle/spec.md",
+    "specs/delivery-verification/spec.md",
+    "specs/test-execution/spec.md"
+  ],
+  "mainSpecs": [
+    "action-runs",
+    "delivery-lifecycle",
+    "delivery-verification",
+    "test-execution"
+  ]
+}

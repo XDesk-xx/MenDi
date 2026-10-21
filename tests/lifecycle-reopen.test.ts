@@ -14,11 +14,11 @@ import {
   recordLifecycleScene,
   lifecycleCli,
 } from './lifecycle-support.ts';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { bindChange } from '../src/application/project.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { scanRunNumbers, readRunSource, renderRun } from '../src/adapters/runs.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from './fixtures/legacy-command.ts';
 import { fullInput, declarationFile } from './delivery-support.ts';
 import { MendiError } from '../src/core/errors.ts';
 import { approvedArchive } from './sequential-support.ts';

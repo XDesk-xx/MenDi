@@ -1,0 +1,30 @@
+[
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/run.md",
+    "sha256": "3A2798AEE331FF624A0220D57C0809A2F634EE675BD470D3EDE92C20324C9BB2"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/034-review-explore/run.md",
+    "sha256": "22ED4800C7F1B2D6A8881A168209138D302C876FFCB10C12A3F44C58FE903C45"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/035-review-explore/run.md",
+    "sha256": "71B59A862B649D06B4EA94AF40E4DD27DAE7F8A3E4D46F621D2607F96C97C2ED"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+    "sha256": "EF5D563DBFD27EDE8DEDDE8BED2D9023ABC9321338C667EC245B3C17A8A55AA5"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
+    "sha256": "D4CF128B7FA186033FBF1A28FF49BF65E46CB3D4CCAF9201C5AB858580D328AE"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
+    "sha256": "BBBBC7542F44B54CBF976828F0AF7900DA927487034AEC1D3C8DED1C7B2D0049"
+  },
+  {
+    "ref": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
+    "sha256": "F37C503DCF1DFC2B92C64946A82F961160AA1F3D53F61B6A9385DDB2ABED1066"
+  }
+]

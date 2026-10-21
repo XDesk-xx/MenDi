@@ -1,0 +1,34 @@
+{
+  "scope": "Read-only historical D04-B 014-apply group-request sibling survey",
+  "counts": {
+    "requests": 114,
+    "reports": 107,
+    "eventFiles": 111,
+    "missingReports": 7,
+    "missingEvents": 3,
+    "zeroStdout": 74,
+    "zeroStderr": 3
+  },
+  "missingReportChildOutcomes": {
+    "not-run": 3,
+    "interrupted": 2,
+    "unknown": 2
+  },
+  "allObservedChildOutcomes": {
+    "passed": 63,
+    "failed": 40,
+    "not-run": 3,
+    "unknown": 6,
+    "interrupted": 2
+  },
+  "reportCleanup": {
+    "confirmed": 103,
+    "unknown": 4
+  },
+  "limitations": [
+    "Sibling absence is not proof that a report is safely disposable",
+    "All inspected records belong to historical approved Run and were not mutated",
+    "Historical report and log contracts differ from proposed new optimized contract",
+    "No inference about target business coverage from filenames alone"
+  ]
+}

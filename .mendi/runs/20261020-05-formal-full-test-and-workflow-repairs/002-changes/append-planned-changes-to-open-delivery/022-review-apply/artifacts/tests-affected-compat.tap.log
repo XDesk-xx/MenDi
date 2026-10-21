@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+ok 1 - 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+  ---
+  duration_ms: 97293.7152
+  type: 'test'
+  ...
+# Subtest: 旧 submitted command 保持历史只读，追加不新建旧执行或修改旧报告
+ok 2 - 旧 submitted command 保持历史只读，追加不新建旧执行或修改旧报告
+  ---
+  duration_ms: 5451.3244
+  type: 'test'
+  ...
+# Subtest: 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+ok 3 - 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+  ---
+  duration_ms: 20476.2254
+  type: 'test'
+  ...
+# Subtest: 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+ok 4 - 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+  ---
+  duration_ms: 5398.0583
+  type: 'test'
+  ...
+# Subtest: 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+ok 5 - 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+  ---
+  duration_ms: 48988.0473
+  type: 'test'
+  ...
+# Subtest: 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+ok 6 - 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+  ---
+  duration_ms: 10160.427
+  type: 'test'
+  ...
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 7 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 40802.6235
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 8 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 7986.1166
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 9 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 5364.7226
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 10 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 451.0096
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 11 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 66190.856
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 181650.2246

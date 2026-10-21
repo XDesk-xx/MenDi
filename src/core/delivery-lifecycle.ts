@@ -3,7 +3,12 @@ import { readScope, bindingFor, type Scope } from './records.ts';
 import { parseFullTest } from './full-test-record.ts';
 import { deliveryLocation } from './delivery-runs.ts';
 import type { FullTest } from './delivery-verification.ts';
-import { parseCandidateVerification, type CandidateVerification } from './group-records.ts';
+import {
+  parseAttempt,
+  parseCandidateVerification,
+  type GroupAttempt,
+  type CandidateVerification,
+} from './group-records.ts';
 import { comparableScope } from './round-records.ts';
 
 export type LifecycleType = 'delivery-open' | 'delivery-close' | 'delivery-reopen';
@@ -21,7 +26,8 @@ export interface Lifecycle {
   priorCloseRef?: string;
   fullTestRunRef?: string;
   verificationRunRef?: string;
-  acceptance?: FullTest | CandidateVerification;
+  testAttemptRunRef?: string;
+  acceptance?: FullTest | CandidateVerification | GroupAttempt;
   applicability?: Applicability;
   reason?: string;
   title?: string;
@@ -78,8 +84,38 @@ export function parseLifecycle(
   if (operation === 'delivery-reopen' || (operation === 'delivery-open' && source !== null))
     text(value.priorCloseRef, '直接 Close');
   if (operation === 'delivery-close') {
-    if ((value.fullTestRunRef === undefined) === (value.verificationRunRef === undefined))
+    if (
+      [value.fullTestRunRef, value.verificationRunRef, value.testAttemptRunRef].filter(
+        (v) => v !== undefined,
+      ).length !== 1
+    )
       throw new MendiError('invalid-run', 'Close 必须恰选一个验收入口。');
+    if (value.testAttemptRunRef !== undefined) {
+      const ref = text(value.testAttemptRunRef, '正式组入口');
+      const prior = deliveryLocation(ref, id);
+      const accepted = parseAttempt(value.acceptance, id, prior.number);
+      if (
+        prior.type !== 'delivery-test-attempt' ||
+        prior.number >= number ||
+        accepted.version !== 2 ||
+        accepted.phase !== 'finished' ||
+        accepted.formalOutcome !== 'passed' ||
+        accepted.roundId !== value.roundId ||
+        JSON.stringify(comparableScope(readScope(accepted.scope))) !==
+          JSON.stringify(comparableScope(scope))
+      )
+        throw new MendiError('invalid-run', 'v2 Close 快照、轮次、范围或正式终态不一致。');
+      return {
+        ...round,
+        operation,
+        sourceDeliveryId: source,
+        scope,
+        recordedOn,
+        testAttemptRunRef: ref,
+        acceptance: accepted,
+        applicability: applicability(value.applicability),
+      };
+    }
     if (value.verificationRunRef !== undefined) {
       const ref = text(value.verificationRunRef, '候选入口');
       const prior = deliveryLocation(ref, id);

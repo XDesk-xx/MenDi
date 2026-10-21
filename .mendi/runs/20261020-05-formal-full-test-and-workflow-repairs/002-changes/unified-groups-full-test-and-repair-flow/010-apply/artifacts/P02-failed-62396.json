@@ -1,0 +1,1148 @@
+{
+  "label": "P02-failed",
+  "authority": "隔离产品场景；actor / verdict 为夹具，不认证 MenDi 根审核",
+  "result": {
+    "ok": true,
+    "run": {
+      "ref": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+      "formatVersion": 1,
+      "recordingMode": "product",
+      "scope": "delivery",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actionType": "delivery-test-attempt",
+      "role": "author",
+      "actorId": "delivery-author",
+      "status": "submitted",
+      "stageSkill": "delivery-full-test",
+      "toolGuidance": [],
+      "attempt": {
+        "version": 2,
+        "roundId": "r001",
+        "scope": {
+          "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+          "plannedChanges": [
+            {
+              "slot": "A",
+              "title": "项目入口",
+              "dependsOn": []
+            },
+            {
+              "slot": "B",
+              "title": "后续工作",
+              "dependsOn": [
+                "A"
+              ]
+            }
+          ],
+          "completed": [
+            {
+              "slot": "A",
+              "changeId": "proof-entry",
+              "archiveOrdinal": 1
+            },
+            {
+              "slot": "B",
+              "changeId": "second-entry",
+              "archiveOrdinal": 2
+            }
+          ]
+        },
+        "approvals": [
+          {
+            "changeId": "proof-entry",
+            "archiveRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+            "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+            "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+            "authorActor": "author-one",
+            "reviewerActor": "reviewer-one"
+          },
+          {
+            "changeId": "second-entry",
+            "archiveRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+            "reviewRunRef": ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+            "authorRunRef": ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md",
+            "authorActor": "author-one",
+            "reviewerActor": "reviewer-one"
+          }
+        ],
+        "baselineFacts": [],
+        "entry": {
+          "scriptName": "test:full",
+          "scriptText": "node group-runner.ts",
+          "packageManager": "pnpm@11.22.0",
+          "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+        },
+        "plan": {
+          "protocol": "mendi-group-tests/1",
+          "groups": [
+            {
+              "id": "prefix",
+              "title": "prefix",
+              "kind": "tests",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "prefix.test.ts"
+              ],
+              "completion": "业务断言、Node容器及根汇总均完成",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": []
+            },
+            {
+              "id": "middle",
+              "title": "middle",
+              "kind": "command",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "prepare.ts"
+              ],
+              "completion": "真实准备命令确认 ready.txt 存在",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": [],
+              "command": "node prepare.ts",
+              "artifacts": []
+            },
+            {
+              "id": "tail",
+              "title": "tail",
+              "kind": "tests",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "tail.test.ts"
+              ],
+              "completion": "业务断言、Node容器及根汇总均完成",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": []
+            }
+          ]
+        },
+        "candidate": {
+          "id": "c1",
+          "basis": {
+            "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+            "changes": ""
+          }
+        },
+        "purpose": "initial",
+        "selection": [
+          "prefix",
+          "middle",
+          "tail"
+        ],
+        "progress": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "reason": "",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          },
+          {
+            "id": "middle",
+            "state": "passed",
+            "reason": "",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "reason": "",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          }
+        ],
+        "phase": "finished",
+        "executionId": "002-full",
+        "timing": [
+          {
+            "id": "mendi",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 0,
+            "durationMs": 8341.24470000001,
+            "phase": "保存前包络"
+          },
+          {
+            "id": "mendi-1",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 0,
+            "durationMs": 120.6139000000112,
+            "phase": "准入 / 直接事实与方法",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-2",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 120.6139000000112,
+            "durationMs": 81.95279999999912,
+            "phase": "锁内复核",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-3",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 202.56670000001031,
+            "durationMs": 1629.6065999999992,
+            "phase": "真实工具 / 依赖准备前",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-4",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 1832.1733000000095,
+            "durationMs": 6453.214500000002,
+            "phase": "真实 pnpm / 目标准备执行等待清理与子日志保存",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-5",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:25.751Z",
+            "startMs": 8285.387800000011,
+            "durationMs": 55.825399999986985,
+            "phase": "最终报告 / 协议解释",
+            "parent": "mendi"
+          }
+        ],
+        "materialSnapshot": [
+          {
+            "ref": "package.json",
+            "sha256": "e976397943331df11f17420b40a56ab0d1f2bc101255679fa0fbe81b7e5052bd"
+          },
+          {
+            "ref": "prefix.test.ts",
+            "sha256": "d4dee4320079006a8919d2e9fee2b857e84ece7a64ad25ffc5af56f3f9ee8a1a"
+          },
+          {
+            "ref": "middle.test.ts",
+            "sha256": "14efab3860daaf39315c705aba99a962f8edcd7a0f7e094315906eea8efefa8e"
+          },
+          {
+            "ref": "tail.test.ts",
+            "sha256": "c60889fff189415957fb822efed053c0c7f9c016c5abd5256c90fd9ee6b7c0e1"
+          },
+          {
+            "ref": "group-runner.ts",
+            "sha256": "8fb625b3a7e2e2c7ec5b24d5fa9bbede7af006830689a44c12c1aef1ae25dd73"
+          },
+          {
+            "ref": "group-control.json",
+            "sha256": "a55251e99d64b29b12a5037ea234d8b9f40ae31904bae0ad11dc4b8f6fb22e0a"
+          },
+          {
+            "ref": "prepare.ts",
+            "sha256": "b30a08efd7d258ffc259e2971af3efa709efa98086b2369fbe7efb313a0598b5"
+          }
+        ],
+        "fromRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+        "environmentRecovery": {
+          "failedRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+          "evidenceRef": "recovery.json",
+          "reason": "本项目准备文件恢复，无业务或执行语义变化",
+          "evidence": {
+            "failedRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+            "phase": "preparation",
+            "cleanup": "confirmed",
+            "contractUnchanged": true,
+            "resources": [
+              {
+                "id": "ready-file",
+                "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+                "identity": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project\\ready.txt",
+                "ownership": "project",
+                "state": "recovered",
+                "cleanup": "confirmed",
+                "preflight": "实际写入后 existsSync 确认，随后完整重跑"
+              }
+            ]
+          }
+        },
+        "request": {
+          "protocol": "mendi-group-tests/1",
+          "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+          "deliveryId": "d01",
+          "roundId": "r001",
+          "runRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+          "executionId": "002-full",
+          "candidate": {
+            "id": "c1",
+            "basis": {
+              "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+              "changes": ""
+            }
+          },
+          "plan": {
+            "protocol": "mendi-group-tests/1",
+            "groups": [
+              {
+                "id": "prefix",
+                "title": "prefix",
+                "kind": "tests",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "prefix.test.ts"
+                ],
+                "completion": "业务断言、Node容器及根汇总均完成",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": []
+              },
+              {
+                "id": "middle",
+                "title": "middle",
+                "kind": "command",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "prepare.ts"
+                ],
+                "completion": "真实准备命令确认 ready.txt 存在",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": [],
+                "command": "node prepare.ts",
+                "artifacts": []
+              },
+              {
+                "id": "tail",
+                "title": "tail",
+                "kind": "tests",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "tail.test.ts"
+                ],
+                "completion": "业务断言、Node容器及根汇总均完成",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": []
+              }
+            ]
+          },
+          "selection": [
+            "prefix",
+            "middle",
+            "tail"
+          ],
+          "prerequisites": [],
+          "reportRef": ".mendi/delivery-groups/d01/tests/002-full/group-report.json",
+          "eventsRef": ".mendi/delivery-groups/d01/tests/002-full/group-events.jsonl"
+        },
+        "observation": {
+          "protocolState": "valid",
+          "groups": [
+            {
+              "id": "prefix",
+              "state": "passed",
+              "reason": ""
+            },
+            {
+              "id": "middle",
+              "state": "passed",
+              "reason": ""
+            },
+            {
+              "id": "tail",
+              "state": "passed",
+              "reason": ""
+            }
+          ],
+          "reasons": [],
+          "timing": [
+            {
+              "id": "target",
+              "clock": "target",
+              "utc": "2026-10-20T10:50:32.368Z",
+              "startMs": 0,
+              "durationMs": 1523.8191,
+              "phase": "目标执行 / 清理"
+            }
+          ]
+        },
+        "formalOutcome": "passed"
+      },
+      "runNumber": 16,
+      "actionId": "d01-016-delivery-test-attempt",
+      "outcome": "complete",
+      "result": "passed"
+    },
+    "groupExecution": {
+      "stable": true,
+      "formalOutcome": "passed",
+      "commandMatch": "match",
+      "protocolState": "valid",
+      "observation": {
+        "protocolState": "valid",
+        "groups": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "reason": ""
+          },
+          {
+            "id": "middle",
+            "state": "passed",
+            "reason": ""
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "reason": ""
+          }
+        ],
+        "reasons": [],
+        "timing": [
+          {
+            "id": "target",
+            "clock": "target",
+            "utc": "2026-10-20T10:50:32.368Z",
+            "startMs": 0,
+            "durationMs": 1523.8191,
+            "phase": "目标执行 / 清理"
+          }
+        ]
+      },
+      "child": {
+        "formatVersion": 1,
+        "executionId": "002-full",
+        "kind": "full",
+        "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+        "deliveryId": "d01",
+        "changeId": null,
+        "actorId": "delivery-author",
+        "scope": "command",
+        "formalDeliveryTest": false,
+        "command": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+            "run",
+            "test:full"
+          ],
+          "dependencyPolicy": "warn"
+        },
+        "dependencyCheck": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+            "run"
+          ],
+          "dependencyPolicy": "error",
+          "exitCode": 0
+        },
+        "scriptName": "test:full",
+        "scriptText": "node group-runner.ts",
+        "startedAt": "2026-10-20T10:50:29.889Z",
+        "finishedAt": "2026-10-20T10:50:34.019Z",
+        "executionState": "finished",
+        "outcome": "passed",
+        "exitCode": 0,
+        "signal": null,
+        "pid": 52992,
+        "stdoutRef": ".mendi/delivery-groups/d01/tests/002-full/stdout.log",
+        "stderrRef": ".mendi/delivery-groups/d01/tests/002-full/stderr.log"
+      },
+      "progress": [
+        {
+          "id": "prefix",
+          "state": "passed",
+          "reason": "",
+          "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+          "candidate": {
+            "id": "c1",
+            "basis": {
+              "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+              "changes": ""
+            }
+          }
+        },
+        {
+          "id": "middle",
+          "state": "passed",
+          "reason": "",
+          "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+          "candidate": {
+            "id": "c1",
+            "basis": {
+              "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+              "changes": ""
+            }
+          }
+        },
+        {
+          "id": "tail",
+          "state": "passed",
+          "reason": "",
+          "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+          "candidate": {
+            "id": "c1",
+            "basis": {
+              "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+              "changes": ""
+            }
+          }
+        }
+      ],
+      "candidate": {
+        "id": "c1",
+        "basis": {
+          "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+          "changes": ""
+        }
+      },
+      "roundId": "r001",
+      "current": true,
+      "materialApplicability": "requires-semantic-check",
+      "timing": [
+        {
+          "id": "mendi",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 0,
+          "durationMs": 8341.24470000001,
+          "phase": "保存前包络"
+        },
+        {
+          "id": "mendi-1",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 0,
+          "durationMs": 120.6139000000112,
+          "phase": "准入 / 直接事实与方法",
+          "parent": "mendi"
+        },
+        {
+          "id": "mendi-2",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 120.6139000000112,
+          "durationMs": 81.95279999999912,
+          "phase": "锁内复核",
+          "parent": "mendi"
+        },
+        {
+          "id": "mendi-3",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 202.56670000001031,
+          "durationMs": 1629.6065999999992,
+          "phase": "真实工具 / 依赖准备前",
+          "parent": "mendi"
+        },
+        {
+          "id": "mendi-4",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 1832.1733000000095,
+          "durationMs": 6453.214500000002,
+          "phase": "真实 pnpm / 目标准备执行等待清理与子日志保存",
+          "parent": "mendi"
+        },
+        {
+          "id": "mendi-5",
+          "clock": "mendi",
+          "utc": "2026-10-20T10:50:25.751Z",
+          "startMs": 8285.387800000011,
+          "durationMs": 55.825399999986985,
+          "phase": "最终报告 / 协议解释",
+          "parent": "mendi"
+        }
+      ],
+      "targetTiming": [
+        {
+          "id": "target",
+          "clock": "target",
+          "utc": "2026-10-20T10:50:32.368Z",
+          "startMs": 0,
+          "durationMs": 1523.8191,
+          "phase": "目标执行 / 清理"
+        }
+      ],
+      "unmeasured": [
+        "目标未报告的内部阶段",
+        "跨进程时钟的相对绝对值",
+        "关键路径"
+      ],
+      "scopeMatch": "match"
+    },
+    "next": {
+      "source": "local-state",
+      "executable": false,
+      "currentRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+      "role": "owner",
+      "action": "delivery-close",
+      "status": "awaiting-owner-instruction",
+      "reason": "本次完整正式 Full Test passed；核对材料适用性并等待 Owner 另行授权 Close。"
+    }
+  },
+  "extra": {
+    "failed": {
+      "ref": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+      "formatVersion": 1,
+      "recordingMode": "product",
+      "scope": "delivery",
+      "deliveryId": "d01",
+      "changeId": null,
+      "actionType": "delivery-test-attempt",
+      "role": "author",
+      "actorId": "delivery-author",
+      "status": "submitted",
+      "stageSkill": "delivery-full-test",
+      "toolGuidance": [],
+      "attempt": {
+        "version": 2,
+        "roundId": "r001",
+        "scope": {
+          "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+          "plannedChanges": [
+            {
+              "slot": "A",
+              "title": "项目入口",
+              "dependsOn": []
+            },
+            {
+              "slot": "B",
+              "title": "后续工作",
+              "dependsOn": [
+                "A"
+              ]
+            }
+          ],
+          "completed": [
+            {
+              "slot": "A",
+              "changeId": "proof-entry",
+              "archiveOrdinal": 1
+            },
+            {
+              "slot": "B",
+              "changeId": "second-entry",
+              "archiveOrdinal": 2
+            }
+          ]
+        },
+        "approvals": [
+          {
+            "changeId": "proof-entry",
+            "archiveRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md",
+            "reviewRunRef": ".mendi/runs/d01/001-changes/proof-entry/006-review-apply/run.md",
+            "authorRunRef": ".mendi/runs/d01/001-changes/proof-entry/005-apply/run.md",
+            "authorActor": "author-one",
+            "reviewerActor": "reviewer-one"
+          },
+          {
+            "changeId": "second-entry",
+            "archiveRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md",
+            "reviewRunRef": ".mendi/runs/d01/001-changes/second-entry/013-review-apply/run.md",
+            "authorRunRef": ".mendi/runs/d01/001-changes/second-entry/012-apply/run.md",
+            "authorActor": "author-one",
+            "reviewerActor": "reviewer-one"
+          }
+        ],
+        "baselineFacts": [],
+        "entry": {
+          "scriptName": "test:full",
+          "scriptText": "node group-runner.ts",
+          "packageManager": "pnpm@11.22.0",
+          "pnpmBin": "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js"
+        },
+        "plan": {
+          "protocol": "mendi-group-tests/1",
+          "groups": [
+            {
+              "id": "prefix",
+              "title": "prefix",
+              "kind": "tests",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "prefix.test.ts"
+              ],
+              "completion": "业务断言、Node容器及根汇总均完成",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": []
+            },
+            {
+              "id": "middle",
+              "title": "middle",
+              "kind": "command",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "prepare.ts"
+              ],
+              "completion": "真实准备命令确认 ready.txt 存在",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": [],
+              "command": "node prepare.ts",
+              "artifacts": []
+            },
+            {
+              "id": "tail",
+              "title": "tail",
+              "kind": "tests",
+              "required": true,
+              "dependsOn": [],
+              "resources": [],
+              "selection": [
+                "tail.test.ts"
+              ],
+              "completion": "业务断言、Node容器及根汇总均完成",
+              "preparation": "隔离本次目标，无共享服务",
+              "exclusions": []
+            }
+          ]
+        },
+        "candidate": {
+          "id": "c1",
+          "basis": {
+            "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+            "changes": ""
+          }
+        },
+        "purpose": "initial",
+        "selection": [
+          "prefix",
+          "middle",
+          "tail"
+        ],
+        "progress": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "reason": "",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          },
+          {
+            "id": "middle",
+            "state": "failed",
+            "reason": "实际退出或晚期错误",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "reason": "",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+            "candidate": {
+              "id": "c1",
+              "basis": {
+                "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+                "changes": ""
+              }
+            }
+          }
+        ],
+        "phase": "finished",
+        "executionId": "001-full",
+        "timing": [
+          {
+            "id": "mendi",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 0,
+            "durationMs": 8428.67379999999,
+            "phase": "保存前包络"
+          },
+          {
+            "id": "mendi-1",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 0,
+            "durationMs": 51.587899999998626,
+            "phase": "准入 / 直接事实与方法",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-2",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 51.587899999998626,
+            "durationMs": 53.02169999999751,
+            "phase": "锁内复核",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-3",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 104.60959999999614,
+            "durationMs": 2166.406799999997,
+            "phase": "真实工具 / 依赖准备前",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-4",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 2271.016399999993,
+            "durationMs": 6134.985100000005,
+            "phase": "真实 pnpm / 目标准备执行等待清理与子日志保存",
+            "parent": "mendi"
+          },
+          {
+            "id": "mendi-5",
+            "clock": "mendi",
+            "utc": "2026-10-20T10:50:16.333Z",
+            "startMs": 8406.001499999998,
+            "durationMs": 22.639100000000326,
+            "phase": "最终报告 / 协议解释",
+            "parent": "mendi"
+          }
+        ],
+        "materialSnapshot": [
+          {
+            "ref": "package.json",
+            "sha256": "e976397943331df11f17420b40a56ab0d1f2bc101255679fa0fbe81b7e5052bd"
+          },
+          {
+            "ref": "prefix.test.ts",
+            "sha256": "d4dee4320079006a8919d2e9fee2b857e84ece7a64ad25ffc5af56f3f9ee8a1a"
+          },
+          {
+            "ref": "middle.test.ts",
+            "sha256": "14efab3860daaf39315c705aba99a962f8edcd7a0f7e094315906eea8efefa8e"
+          },
+          {
+            "ref": "tail.test.ts",
+            "sha256": "c60889fff189415957fb822efed053c0c7f9c016c5abd5256c90fd9ee6b7c0e1"
+          },
+          {
+            "ref": "group-runner.ts",
+            "sha256": "8fb625b3a7e2e2c7ec5b24d5fa9bbede7af006830689a44c12c1aef1ae25dd73"
+          },
+          {
+            "ref": "group-control.json",
+            "sha256": "a55251e99d64b29b12a5037ea234d8b9f40ae31904bae0ad11dc4b8f6fb22e0a"
+          },
+          {
+            "ref": "prepare.ts",
+            "sha256": "b30a08efd7d258ffc259e2971af3efa709efa98086b2369fbe7efb313a0598b5"
+          }
+        ],
+        "request": {
+          "protocol": "mendi-group-tests/1",
+          "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+          "deliveryId": "d01",
+          "roundId": "r001",
+          "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+          "executionId": "001-full",
+          "candidate": {
+            "id": "c1",
+            "basis": {
+              "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+              "changes": ""
+            }
+          },
+          "plan": {
+            "protocol": "mendi-group-tests/1",
+            "groups": [
+              {
+                "id": "prefix",
+                "title": "prefix",
+                "kind": "tests",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "prefix.test.ts"
+                ],
+                "completion": "业务断言、Node容器及根汇总均完成",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": []
+              },
+              {
+                "id": "middle",
+                "title": "middle",
+                "kind": "command",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "prepare.ts"
+                ],
+                "completion": "真实准备命令确认 ready.txt 存在",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": [],
+                "command": "node prepare.ts",
+                "artifacts": []
+              },
+              {
+                "id": "tail",
+                "title": "tail",
+                "kind": "tests",
+                "required": true,
+                "dependsOn": [],
+                "resources": [],
+                "selection": [
+                  "tail.test.ts"
+                ],
+                "completion": "业务断言、Node容器及根汇总均完成",
+                "preparation": "隔离本次目标，无共享服务",
+                "exclusions": []
+              }
+            ]
+          },
+          "selection": [
+            "prefix",
+            "middle",
+            "tail"
+          ],
+          "prerequisites": [],
+          "reportRef": ".mendi/delivery-groups/d01/tests/001-full/group-report.json",
+          "eventsRef": ".mendi/delivery-groups/d01/tests/001-full/group-events.jsonl"
+        },
+        "observation": {
+          "protocolState": "valid",
+          "groups": [
+            {
+              "id": "prefix",
+              "state": "passed",
+              "reason": ""
+            },
+            {
+              "id": "middle",
+              "state": "failed",
+              "reason": "实际退出或晚期错误"
+            },
+            {
+              "id": "tail",
+              "state": "passed",
+              "reason": ""
+            }
+          ],
+          "reasons": [],
+          "timing": [
+            {
+              "id": "target",
+              "clock": "target",
+              "utc": "2026-10-20T10:50:23.570Z",
+              "startMs": 0,
+              "durationMs": 1055.9732,
+              "phase": "目标执行 / 清理"
+            }
+          ],
+          "environmentFailure": {
+            "phase": "preparation",
+            "groupIds": [
+              "middle"
+            ],
+            "resources": [
+              {
+                "id": "ready-file",
+                "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+                "identity": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project\\ready.txt"
+              }
+            ]
+          }
+        },
+        "formalOutcome": "failed"
+      },
+      "runNumber": 15,
+      "actionId": "d01-015-delivery-test-attempt",
+      "outcome": "complete",
+      "result": "failed"
+    }
+  },
+  "report": {
+    "protocol": "mendi-group-tests/1",
+    "request": {
+      "protocol": "mendi-group-tests/1",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ueYsab\\project",
+      "deliveryId": "d01",
+      "roundId": "r001",
+      "runRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+      "executionId": "002-full",
+      "candidate": {
+        "id": "c1",
+        "basis": {
+          "materials": "隔离目标实际 Node 断言、目标 runner 与执行配置；阶段记录为受控夹具",
+          "changes": ""
+        }
+      },
+      "plan": {
+        "protocol": "mendi-group-tests/1",
+        "groups": [
+          {
+            "id": "prefix",
+            "title": "prefix",
+            "kind": "tests",
+            "required": true,
+            "dependsOn": [],
+            "resources": [],
+            "selection": [
+              "prefix.test.ts"
+            ],
+            "completion": "业务断言、Node容器及根汇总均完成",
+            "preparation": "隔离本次目标，无共享服务",
+            "exclusions": []
+          },
+          {
+            "id": "middle",
+            "title": "middle",
+            "kind": "command",
+            "required": true,
+            "dependsOn": [],
+            "resources": [],
+            "selection": [
+              "prepare.ts"
+            ],
+            "completion": "真实准备命令确认 ready.txt 存在",
+            "preparation": "隔离本次目标，无共享服务",
+            "exclusions": [],
+            "command": "node prepare.ts",
+            "artifacts": []
+          },
+          {
+            "id": "tail",
+            "title": "tail",
+            "kind": "tests",
+            "required": true,
+            "dependsOn": [],
+            "resources": [],
+            "selection": [
+              "tail.test.ts"
+            ],
+            "completion": "业务断言、Node容器及根汇总均完成",
+            "preparation": "隔离本次目标，无共享服务",
+            "exclusions": []
+          }
+        ]
+      },
+      "selection": [
+        "prefix",
+        "middle",
+        "tail"
+      ],
+      "prerequisites": [],
+      "reportRef": ".mendi/delivery-groups/d01/tests/002-full/group-report.json",
+      "eventsRef": ".mendi/delivery-groups/d01/tests/002-full/group-events.jsonl"
+    },
+    "complete": true,
+    "cleanup": "confirmed",
+    "groups": [
+      {
+        "id": "prefix",
+        "selection": [
+          "prefix.test.ts"
+        ],
+        "exclusions": [],
+        "cleanup": "confirmed",
+        "enumerated": true,
+        "finished": true,
+        "state": "passed",
+        "reason": "",
+        "exitCode": 0,
+        "counts": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "pending": 0
+        },
+        "durationMs": 367.1375
+      },
+      {
+        "id": "middle",
+        "selection": [
+          "prepare.ts"
+        ],
+        "exclusions": [],
+        "cleanup": "confirmed",
+        "enumerated": true,
+        "finished": true,
+        "state": "passed",
+        "reason": "",
+        "exitCode": 0,
+        "command": "node prepare.ts",
+        "artifacts": [],
+        "durationMs": 486.3181000000001
+      },
+      {
+        "id": "tail",
+        "selection": [
+          "tail.test.ts"
+        ],
+        "exclusions": [],
+        "cleanup": "confirmed",
+        "enumerated": true,
+        "finished": true,
+        "state": "passed",
+        "reason": "",
+        "exitCode": 0,
+        "counts": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "pending": 0
+        },
+        "durationMs": 666.4845
+      }
+    ],
+    "timing": [
+      {
+        "id": "target",
+        "clock": "target",
+        "utc": "2026-10-20T10:50:32.368Z",
+        "startMs": 0,
+        "durationMs": 1523.8191,
+        "phase": "目标执行 / 清理"
+      }
+    ]
+  },
+  "stdout": "",
+  "stderr": "$ node group-runner.ts\n"
+}

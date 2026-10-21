@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "001-focused",
+  "kind": "focused",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "test-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:focused"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:focused",
+  "scriptText": "node foreground.ts pass",
+  "startedAt": "2026-10-21T01:54:50.737Z",
+  "finishedAt": "2026-10-21T01:54:52.193Z",
+  "executionState": "finished",
+  "outcome": "passed",
+  "exitCode": 0,
+  "signal": null,
+  "pid": 39136,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+}

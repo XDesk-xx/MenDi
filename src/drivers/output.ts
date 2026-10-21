@@ -138,6 +138,10 @@ export function display(result: Awaited<ReturnType<typeof dispatch>>, parsed: Ar
       );
   }
   if ('instructions' in result) console.log(JSON.stringify(result.instructions, null, 2));
+  if ('aftercare' in result)
+    console.log(
+      `提交后附属记录（不改变原结论/next）：${JSON.stringify(result.aftercare, null, 2)}`,
+    );
   if ('classification' in result)
     console.log(
       JSON.stringify(

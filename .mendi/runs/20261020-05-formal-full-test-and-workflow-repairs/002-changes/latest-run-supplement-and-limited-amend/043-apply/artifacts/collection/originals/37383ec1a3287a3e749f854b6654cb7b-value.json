@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"invalid-arguments\",\n    \"message\": \"缺少 --request-id。\",\n    \"details\": {},\n    \"fix\": \"执行 mendi --help 查看用法。\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

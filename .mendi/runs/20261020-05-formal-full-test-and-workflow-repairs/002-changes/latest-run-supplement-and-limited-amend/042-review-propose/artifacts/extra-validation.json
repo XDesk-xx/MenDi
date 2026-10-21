@@ -1,0 +1,58 @@
+{
+  "recordedAt": "2026-10-21T04:55:57.339Z",
+  "checks": [
+    {
+      "label": "reviewer-strict",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/042-review-propose/artifacts/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "signal": null,
+      "error": null
+    },
+    {
+      "label": "author-strict",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--strict",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--target",
+        "ES2022",
+        "--skipLibCheck",
+        "--allowImportingTsExtensions",
+        ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/041-revise-propose/artifacts/finalize.ts"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "signal": null,
+      "error": null
+    },
+    {
+      "label": "openspec-status",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "status",
+        "--change",
+        "latest-run-supplement-and-limited-amend",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"changeName\": \"latest-run-supplement-and-limited-amend\",\n  \"schemaName\": \"spec-driven\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"D:\\\\Projects\\\\MenDi\",\n    \"changesDir\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\",\n  \"artifactPaths\": {\n    \"proposal\": {\n      \"outputPath\": \"proposal.md\",\n      \"resolvedOutputPath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\proposal.md\",\n      \"existingOutputPaths\": [\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\proposal.md\"\n      ]\n    },\n    \"specs\": {\n      \"outputPath\": \"specs/**/*.md\",\n      \"resolvedOutputPath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\specs\\\\**\\\\*.md\",\n      \"existingOutputPaths\": [\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\specs\\\\action-runs\\\\spec.md\",\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\specs\\\\delivery-workspace\\\\spec.md\",\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\specs\\\\run-post-submission\\\\spec.md\"\n      ]\n    },\n    \"design\": {\n      \"outputPath\": \"design.md\",\n      \"resolvedOutputPath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\design.md\",\n      \"existingOutputPaths\": [\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\design.md\"\n      ]\n    },\n    \"tasks\": {\n      \"outputPath\": \"tasks.md\",\n      \"resolvedOutputPath\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\tasks.md\",\n      \"existingOutputPaths\": [\n        \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\latest-run-supplement-and-limited-amend\\\\tasks.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"tasks\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run openspec instructions apply --change \\\"latest-run-supplement-and-limited-amend\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"proposal\",\n      \"specs\",\n      \"design\",\n      \"tasks\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"D:\\\\Projects\\\\MenDi\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"proposal\",\n      \"outputPath\": \"proposal.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"specs\",\n      \"outputPath\": \"specs/**/*.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"proposal\"\n      ]\n    },\n    {\n      \"id\": \"design\",\n      \"outputPath\": \"design.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"proposal\"\n      ]\n    },\n    {\n      \"id\": \"tasks\",\n      \"outputPath\": \"tasks.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"specs\",\n        \"design\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "signal": null,
+      "error": null
+    }
+  ]
+}

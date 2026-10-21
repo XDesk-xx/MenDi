@@ -162,17 +162,21 @@ export function currentFailure(root: string, workspace: Workspace, ref: string, 
     const source = readDeliveryRun(root, ref, workspace.id);
     requireCurrentRound(workspace, source.record);
     const observed = inspectAttempt(root, workspace, source, ownLock);
+    const safePreparationGap =
+      source.record.attempt?.version === 2 &&
+      ['blocked', 'not-run'].includes(String(source.record.attempt.formalOutcome));
     if (
       !source.record.attempt ||
       !observed.stable ||
-      observed.protocolState === 'unconfirmed' ||
+      (observed.protocolState === 'unconfirmed' &&
+        !(safePreparationGap && source.record.attempt?.observation?.notRun)) ||
       !same(source.record.attempt.plan, latest.record.attempt!.plan) ||
       !same(source.record.attempt.scope, latest.record.attempt!.scope) ||
       !(
         latest.record.attempt!.progress.some(
           (p) => p.sourceRunRef === ref && p.state === 'failed',
         ) ||
-        (latest.ref === ref && facts.protocolState === 'invalid')
+        (latest.ref === ref && (facts.protocolState === 'invalid' || safePreparationGap))
       )
     )
       throw new MendiError('delivery-state-conflict', '来源不是当前未解决的直接组失败。');

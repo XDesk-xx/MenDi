@@ -1,0 +1,6 @@
+$ powershell.exe -NoProfile -NonInteractive -Command pnpm build
+# stdout
+
+# stderr
+$ tsc
+

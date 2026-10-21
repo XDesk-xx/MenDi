@@ -1,51 +1,60 @@
-import { managedPath } from '../adapters/paths.ts';
 import { readWorkspace } from '../adapters/workspace.ts';
+import { managedPath } from '../adapters/paths.ts';
 import { currentDeliveryRun, readDeliveryRun } from '../adapters/delivery-runs.ts';
 import {
+  capturedJson,
   captureBytes,
   rememberBytes,
-  capturedJson,
+  confirmBytes,
   inspectAttempt,
   equal,
-  confirmBytes,
 } from '../adapters/group-store.ts';
-import { firstApprovals, reviewRepairInputs } from '../adapters/delivery-verification.ts';
+import {
+  firstApprovals,
+  reviewRepairInputs,
+  repairAuthor,
+} from '../adapters/delivery-verification.ts';
 import { deliveredBaselines } from '../adapters/baselines.ts';
 import { selectedTest } from '../adapters/test-entries.ts';
+import { materialSnapshot, environmentRecovery } from '../adapters/group-environment.ts';
 import { candidate, groupPlan, selectGroups } from '../core/group-plan.ts';
 import { verificationScope, type FullTest } from '../core/delivery-verification.ts';
 import { requireWritable, projectProgress } from '../core/rounds.ts';
+import { requireCurrentRound, comparableRepair } from '../core/round-records.ts';
 import { MendiError, object, text } from '../core/errors.ts';
 import type { GroupAttempt } from '../core/group-records.ts';
-import type { Progress } from '../core/group-report.ts';
 import { formalWorkspace, type FullTestInput } from './full-test-admission.ts';
 
 export function groupAdmission(root: string, input: FullTestInput, ownLock = false) {
   const { workspace, scope } = formalWorkspace(root, input, ownLock);
   const bytes = new Map<string, Buffer>();
   const raw = object(capturedJson(root, input.inputFile, bytes), '组声明');
-  if (raw.mode !== 'groups-v1' || !['initial', 'continue', 'retest'].includes(String(raw.purpose)))
-    throw new MendiError('invalid-group-input', '显式 mode / purpose 无效。');
+  if (raw.mode !== 'groups-v1' || raw.purpose !== 'initial')
+    throw new MendiError(
+      'invalid-group-input',
+      '新正式执行只支持 groups-v1 完整 initial；continue / retest 仅历史可读。',
+    );
   const plan = groupPlan(capturedJson(root, text(raw.planRef, 'planRef'), bytes));
   for (const g of plan.groups) for (const ref of g.artifacts ?? []) managedPath(root, ref);
   const c = candidate(raw.candidate);
   const selection = selectGroups(plan, raw.selection);
+  if (plan.groups.some((g) => g.required && !selection.includes(g.id)))
+    throw new MendiError('invalid-group-input', 'initial 须选择全部必需组。');
+  for (const id of selection)
+    if (plan.groups.find((g) => g.id === id)!.dependsOn.some((dep) => !selection.includes(dep)))
+      throw new MendiError('group-prerequisite-unavailable', '本次必要前置必须实际执行。');
   const script = selectedTest(root, 'full');
   captureBytes(root, 'package.json', bytes);
   const baseline = deliveredBaselines(root, workspace, workspace.scope);
   for (const [ref, content] of baseline.bytes)
     if (ref !== workspace.manifestRef) rememberBytes(ref, content, bytes);
-  const current = currentDeliveryRun(root, workspace);
   let approvals: FullTest['approvals'];
+  const snapshot = materialSnapshot(root, raw.materialRefs, bytes);
   let repairApproval: FullTest['repairApproval'];
-  let progress: Progress[] = plan.groups.map((g) => ({
-    id: g.id,
-    state: 'not-run',
-    reason: '尚未执行',
-    sourceRunRef: null,
-    candidate: c,
-  }));
+  let recovery: GroupAttempt['environmentRecovery'];
+  const current = currentDeliveryRun(root, workspace);
   if (current && !current.record.lifecycle) {
+    requireCurrentRound(workspace, current.record);
     if (
       current.record.status !== 'submitted' ||
       current.record.outcome !== 'complete' ||
@@ -53,123 +62,118 @@ export function groupAdmission(root: string, input: FullTestInput, ownLock = fal
     )
       throw new MendiError('run-not-current', '须固定当前完整进展 fromRunRef。');
     captureBytes(root, current.ref, bytes);
-    const priorRun = readDeliveryRun(
-      root,
-      text(workspace.manifest.testAttemptRunRef, '当前 attempt'),
-      workspace.id,
-    );
-    const prior = {
-      run: priorRun,
-      facts: inspectAttempt(root, workspace, priorRun, ownLock, bytes),
-    };
-    const a = prior.run.record.attempt!;
-    const safelyInterrupted =
-      (prior.facts.child?.outcome === 'interrupted' || a.observation?.cancelled === true) &&
-      prior.facts.stable;
-    const safelyNotRun =
-      (a.executionId === null || prior.facts.child?.outcome === 'not-run') &&
-      a.phase === 'finished' &&
-      prior.facts.stable;
-    if (
-      !prior.facts.stable ||
-      (prior.facts.protocolState === 'unconfirmed' &&
-        !(raw.purpose === 'initial' && (safelyInterrupted || safelyNotRun)))
-    )
-      throw new MendiError('delivery-state-conflict', '原执行 / 清理未确认，不可复用。');
-    captureBytes(root, prior.run.ref, bytes);
-    if (!equal(a.scope, scope) || (!equal(a.plan, plan) && raw.purpose !== 'initial'))
-      throw new MendiError('delivery-state-conflict', '完整计划变化需要显式重新规划，不沿用旧组。');
-    approvals = a.approvals;
-    repairApproval = a.repairApproval;
-    progress = structuredClone(a.progress);
-    if (c.id === a.candidate.id && !equal(c, a.candidate))
-      throw new MendiError('candidate-conflict', '同候选 ID 的材料矛盾。');
-    if (raw.purpose === 'continue') {
-      if (
-        (!current.record.attempt && !current.record.verification) ||
-        prior.facts.protocolState !== 'valid' ||
-        !equal(c, a.candidate) ||
-        a.progress.some((p) => p.state === 'interrupted' || p.state === 'unknown') ||
-        selection.some(
-          (id) => !['not-run', 'blocked'].includes(progress.find((p) => p.id === id)!.state),
-        )
-      )
-        throw new MendiError(
-          'delivery-state-conflict',
-          'continue 只能运行相同候选的已知未执行组。',
-        );
-    } else if (raw.purpose === 'retest') {
+    if (current.record.repair) {
       if (
         current.record.role !== 'reviewer' ||
         current.record.verdict !== 'approved' ||
         !current.body.trim() ||
-        !current.record.repair?.groups
+        raw.environmentRecovery !== undefined
       )
-        throw new MendiError('review-input-invalid', 'retest 要求当前独立修复批准。');
-      const { author } = reviewRepairInputs(root, workspace, current, ownLock);
-      const impact = current.record.repair.groups.impact;
-      if (
-        !equal(c, impact.candidate) ||
-        impact.affectedGroupIds.some((id) => !selection.includes(id))
-      )
-        throw new MendiError('invalid-impact', '复验未覆盖批准影响 / 候选。');
-      captureBytes(root, author.ref, bytes);
+        throw new MendiError('review-input-invalid', '实质修复要求当前独立 Review approved。');
+      const { author, failure } = reviewRepairInputs(root, workspace, current, ownLock);
+      for (const ref of [author.ref, failure.ref]) captureBytes(root, ref, bytes);
+      const previous = failure.record.attempt ?? failure.record.fullTest!;
+      if (!equal(previous.scope, scope))
+        throw new MendiError('delivery-state-conflict', '原失败与当前完整范围 / 批准矛盾。');
+      approvals = previous.approvals;
+      if (failure.record.attempt) {
+        if (
+          failure.record.attempt.candidate.id === c.id &&
+          !equal(failure.record.attempt.candidate, c)
+        )
+          throw new MendiError(
+            'candidate-conflict',
+            '同候选 ID 的材料声明矛盾，实质修复须明确新候选。',
+          );
+        const facts = inspectAttempt(root, workspace, failure, ownLock, bytes);
+        const impact = author.record.repair?.groups?.impact;
+        if (
+          !facts.stable ||
+          (facts.protocolState === 'unconfirmed' && !failure.record.attempt.observation?.notRun) ||
+          !equal(failure.record.attempt.plan, plan) ||
+          !equal(impact?.candidate, c)
+        )
+          throw new MendiError('review-input-invalid', '当前修复批准的完整计划 / 候选不一致。');
+      }
       repairApproval = {
         reviewRunRef: current.ref,
         authorRunRef: author.ref,
         authorActor: author.record.actorId,
         reviewerActor: current.record.actorId,
       };
-      progress = progress.map((p) =>
-        selection.includes(p.id)
-          ? { ...p, state: 'not-run', reason: '受影响须复验', candidate: c }
-          : impact.retained.some((r) => r.id === p.id)
-            ? { ...p, candidate: c }
-            : { ...p, state: 'unknown', reason: '缺沿用依据', candidate: c },
-      );
     } else {
+      if (!current.record.attempt)
+        throw new MendiError(
+          'delivery-state-conflict',
+          '旧 command / verification 只能历史读；旧 failed 先完成修复审核。',
+        );
+      const a = current.record.attempt;
+      approvals = a.approvals;
+      const facts = inspectAttempt(root, workspace, current, ownLock, bytes);
       if (
-        progress.some((p) => p.state === 'failed') ||
-        prior.facts.protocolState === 'invalid' ||
-        current.record.repair
+        !facts.stable ||
+        !equal(a.scope, scope) ||
+        !equal(a.plan, plan) ||
+        !equal(a.candidate, c) ||
+        facts.commandMatch !== 'match'
       )
-        throw new MendiError('delivery-state-conflict', 'initial 不能绕过失败修复审核。');
-      if (a.phase !== 'finished') throw new MendiError('delivery-state-conflict', '原现场未完成。');
-      progress = plan.groups.map((g) => ({
-        id: g.id,
-        state: 'not-run',
-        reason: '显式重新首次执行',
-        sourceRunRef: null,
-        candidate: c,
-      }));
-      repairApproval = undefined;
+        throw new MendiError(
+          'delivery-state-conflict',
+          '原执行不稳定或材料 / 完整计划 / 入口变化，须修复审核。',
+        );
+      if (a.version !== 2 || a.formalOutcome !== 'passed') {
+        if (facts.protocolState === 'unconfirmed' && !a.observation?.notRun)
+          throw new MendiError('delivery-state-conflict', '原执行 / 清理未知，停 Owner。');
+        recovery = environmentRecovery(
+          root,
+          raw.environmentRecovery,
+          a,
+          current.ref,
+          snapshot,
+          bytes,
+        );
+      } else if (raw.environmentRecovery !== undefined)
+        throw new MendiError('environment-recovery-invalid', 'passed 没有环境失败可处置。');
+      repairApproval = a.repairApproval;
+      if (repairApproval) {
+        const approval = repairApproval;
+        const review = readDeliveryRun(root, approval.reviewRunRef, workspace.id);
+        const author = repairAuthor(root, workspace, approval.authorRunRef, approval.reviewerActor);
+        requireCurrentRound(workspace, review.record);
+        if (
+          review.record.status !== 'submitted' ||
+          review.record.outcome !== 'complete' ||
+          review.record.verdict !== 'approved' ||
+          !review.body.trim() ||
+          review.record.authorRunRef !== author.ref ||
+          review.record.actorId !== approval.reviewerActor ||
+          author.record.actorId !== approval.authorActor ||
+          !equal(comparableRepair(review.record.repair), comparableRepair(author.record.repair)) ||
+          !equal(author.record.repair?.scope, scope) ||
+          (author.record.repair?.groups &&
+            (!equal(author.record.repair.groups.plan, plan) ||
+              !equal(author.record.repair.groups.impact.candidate, c)))
+        )
+          throw new MendiError('review-input-invalid', '当前必要修复批准已不可用。');
+        for (const ref of [review.ref, author.ref]) captureBytes(root, ref, bytes);
+      }
     }
-    if (
-      raw.purpose !== 'initial' &&
-      !equal(a.entry, { ...script, pnpmBin: a.entry.pnpmBin }) &&
-      raw.purpose !== 'retest'
-    )
-      throw new MendiError('delivery-state-conflict', '实际入口变化必须经影响审核。');
   } else {
-    if (raw.purpose !== 'initial' || raw.fromRunRef !== undefined)
-      throw new MendiError('delivery-state-conflict', '本轮没有可续测来源。');
+    if (raw.fromRunRef !== undefined || raw.environmentRecovery !== undefined)
+      throw new MendiError('delivery-state-conflict', '本轮没有可重跑来源。');
     const first = firstApprovals(root, workspace);
     approvals = first.approvals;
     for (const ref of first.refs) captureBytes(root, ref, bytes);
   }
-  if (raw.purpose === 'initial' && plan.groups.some((g) => g.required && !selection.includes(g.id)))
-    throw new MendiError('invalid-group-input', 'initial 须选择全部必需组。');
-  for (const id of selection) {
-    const g = plan.groups.find((g) => g.id === id)!;
-    if (
-      g.dependsOn.some(
-        (dep) => !selection.includes(dep) && progress.find((p) => p.id === dep)?.state !== 'passed',
-      )
+  if (
+    approvals.some(
+      (f) =>
+        workspace.bindings.find((b) => b.changeId === f.changeId)?.latestRunRef !== f.archiveRunRef,
     )
-      throw new MendiError('group-prerequisite-unavailable', '本次必要前置没有有效来源。');
-  }
+  )
+    throw new MendiError('review-input-invalid', '本轮已核对批准快照与当前归档绑定不一致。');
   const attempt: GroupAttempt = {
-    version: 1,
+    version: 2,
     roundId: workspace.currentRoundId!,
     scope,
     approvals,
@@ -184,14 +188,22 @@ export function groupAdmission(root: string, input: FullTestInput, ownLock = fal
     },
     plan,
     candidate: c,
-    purpose: raw.purpose as GroupAttempt['purpose'],
+    purpose: 'initial',
     selection,
-    progress,
+    progress: plan.groups.map((g) => ({
+      id: g.id,
+      state: 'not-run',
+      reason: '本次完整执行尚未开始',
+      sourceRunRef: null,
+      candidate: c,
+    })),
     phase: 'prepared',
     executionId: null,
     timing: [],
+    ...(snapshot?.length ? { materialSnapshot: snapshot } : {}),
     ...(raw.fromRunRef === undefined ? {} : { fromRunRef: String(raw.fromRunRef) }),
     ...(repairApproval ? { repairApproval } : {}),
+    ...(recovery ? { environmentRecovery: recovery } : {}),
   };
   return { workspace, attempt, bytes };
 }

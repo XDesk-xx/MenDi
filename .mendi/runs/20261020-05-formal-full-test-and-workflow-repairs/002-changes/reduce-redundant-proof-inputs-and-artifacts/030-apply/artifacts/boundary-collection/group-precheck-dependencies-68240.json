@@ -1,0 +1,17 @@
+{
+  "message": "依赖预检拒绝，选定脚本未运行。",
+  "code": "test-dependencies-unavailable",
+  "details": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 1,
+    "signal": null,
+    "stdout": "[ERR_PNPM_VERIFY_DEPS_BEFORE_RUN] The lockfile in D:\\Projects\\MenDi\\.tmp\\mendi-apply-wbbz65\\project does not satisfy project of id .\n\nRun \"pnpm install\"\n",
+    "stderr": "",
+    "error": null
+  }
+}

@@ -1,0 +1,17 @@
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(9,21): error TS7006: Parameter 'rel' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(19,17): error TS7006: Parameter 'x' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(24,65): error TS7006: Parameter 'z' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(25,32): error TS7006: Parameter 'v' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(38,36): error TS7006: Parameter 'v' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(47,76): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(55,69): error TS2794: Expected 1 arguments, but got 0. Did you forget to include 'void' in your type argument to 'Promise'?
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(65,37): error TS7006: Parameter 'v' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(76,31): error TS7006: Parameter 'p' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(87,31): error TS7006: Parameter 'p' implicitly has an 'any' type.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(89,29): error TS2345: Argument of type 'NonSharedBuffer' is not assignable to parameter of type 'string'.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(93,25): error TS18046: 'e' is of type 'unknown'.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(93,37): error TS18046: 'e' is of type 'unknown'.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(93,58): error TS18046: 'e' is of type 'unknown'.
+.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/002-explore/artifacts/proof.ts(109,37): error TS7006: Parameter 'x' implicitly has an 'any' type.

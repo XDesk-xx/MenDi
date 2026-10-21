@@ -1,0 +1,75 @@
+{
+  "recordedAt": "2026-10-20T08:57:48.659Z",
+  "reviewer": "D05-A/005 independent Reviewer",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/004-revise-explore/run.md",
+  "source": {
+    "path": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/004-revise-explore/artifacts/proof.ts",
+    "sha256": "442a249d30fbbc7d847edd1a2e2356c515b8e39cb153206d4433025d966f1a25"
+  },
+  "method": "extract actual Author 004 cleanup function; Node stripTypeScriptTypes; run source inside vm on memory-only filesystem; no physical fixture dirs or real deletion",
+  "assertions": [
+    {
+      "id": "F1-normal-plus-foreign",
+      "passed": true,
+      "details": "actual extracted cleanup removes listed owned parent, preserves same-prefix foreign directory"
+    },
+    {
+      "id": "F1-locked",
+      "passed": true,
+      "details": "locked owned fixture not removed; foreign unchanged"
+    },
+    {
+      "id": "F1-marker-conflict",
+      "passed": true,
+      "details": "altered ownership marker refuses deletion"
+    },
+    {
+      "id": "F1-realpath-conflict",
+      "passed": true,
+      "details": "changed canonical parent refuses deletion"
+    }
+  ],
+  "f1": {
+    "status": "supported-for-explore",
+    "simulatedTests": 4,
+    "allPassed": true,
+    "limit": "Virtual filesystem proves control-flow under tested attacks, not all possible OS races, symlink replacement, or full product cleanup"
+  },
+  "f2": {
+    "status": "passed",
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--strict",
+      "--module",
+      "NodeNext",
+      "--moduleResolution",
+      "NodeNext",
+      "--target",
+      "ES2022",
+      "--skipLibCheck",
+      "--allowImportingTsExtensions",
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/004-revise-explore/artifacts/proof.ts"
+    ],
+    "exitCode": 0,
+    "output": "",
+    "stderr": "",
+    "log": null
+  },
+  "previous": {
+    "p01toP04": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "provenance": "Author 004 isolated real group target results, independently read; not rerun by Reviewer 005"
+  },
+  "boundaries": [
+    "No root D05 formal Full Test, implementation, Git, installation, or DreMo changes",
+    "No real deletion or cleanup; mocked filesystem only for independent negative controls",
+    "Fixture actors and approvals do not authenticate the real independent Reviewer",
+    "D05 groups-v1 policy remains a future Propose/Apply obligation"
+  ]
+}

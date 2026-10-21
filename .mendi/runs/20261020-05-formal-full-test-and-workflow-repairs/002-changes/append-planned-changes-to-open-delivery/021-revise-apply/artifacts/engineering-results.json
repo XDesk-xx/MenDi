@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "name": "check",
+      "exitCode": 0,
+      "error": null,
+      "stdoutEnd": "Checked 209 files in 85ms. No fixes applied.\nChecked 209 files in 91ms. No fixes applied.\n",
+      "stderrEnd": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+    },
+    {
+      "name": "build",
+      "exitCode": 0,
+      "error": null,
+      "stdoutEnd": "",
+      "stderrEnd": "$ tsc\n"
+    }
+  ]
+}

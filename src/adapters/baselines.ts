@@ -5,6 +5,7 @@ import type { BaselineFact } from '../core/delivery-verification.ts';
 import { recordRound } from '../core/round-records.ts';
 import { readDeliveryRun } from './delivery-runs.ts';
 import { managedPath } from './paths.ts';
+import { scopeAdditionReceipts } from './scope-additions.ts';
 
 /** A bounded readset of the explicitly declared sources; never query a source's active work. */
 export function deliveredBaselines(
@@ -27,6 +28,7 @@ export function deliveredBaselines(
     for (const dependency of planned.baselineDependencies ?? []) {
       const index = parseProject(workspace.project, dependency.deliveryId);
       const source = parseWorkspace(index, read(index.manifestRef));
+      for (const [ref, content] of scopeAdditionReceipts(root, source)) bytes.set(ref, content);
       if (source.mode !== 'product')
         throw new MendiError(
           'baseline-source-unavailable',
@@ -50,7 +52,11 @@ export function deliveredBaselines(
         close.record.status !== 'submitted' ||
         close.record.outcome !== 'complete' ||
         !accepted ||
-        ('kind' in accepted ? accepted.conclusion !== 'verified' : accepted.outcome !== 'passed')
+        ('kind' in accepted
+          ? accepted.conclusion !== 'verified'
+          : 'version' in accepted
+            ? accepted.version !== 2 || accepted.formalOutcome !== 'passed'
+            : accepted.outcome !== 'passed')
       )
         throw new MendiError('baseline-source-unavailable', '指定来源不是完整 Close。', { ref });
       const completed = accepted.scope.completed.find((c) => c.slot === dependency.planningSlot);

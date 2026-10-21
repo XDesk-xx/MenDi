@@ -1,0 +1,100 @@
+{
+  "recordedAt": "2026-10-20T13:14:21.298Z",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/015-propose/run.md",
+  "projectCommit": "571c0b1b2f003e97c8cfa07118086f98abf36f52",
+  "evidenceKind": "independent static/semantic contract comparison plus executable pure core negative controls",
+  "strictValidation": {
+    "exitCode": 0,
+    "raw": "openspec-validation.json",
+    "note": "Structural checks do not validate current D05-A write contract compatibility"
+  },
+  "taskCount": 15,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking",
+      "file": "openspec/changes/append-planned-changes-to-open-delivery/specs/action-runs/spec.md",
+      "sourceLines": {
+        "scenario": 9,
+        "incorrectExpectation": 11
+      },
+      "observedExpectedNewFormalRunType": "delivery-test-attempt",
+      "observedActualImplementation": {
+        "newModeFile": "src/application/delivery-full-test.ts",
+        "newModeLine": 33,
+        "newRunFile": "src/application/group-attempt.ts",
+        "newRunLine": 89
+      },
+      "problem": "Modified action-runs scenario promises fresh 015-delivery-full-test, while D05-A now writes only new 015-delivery-test-attempt. Legacy delivery-full-test parser is historical read compatibility, not new execution.",
+      "required": "Revise this active MODIFIED scenario to name a fresh v2 delivery-test-attempt; preserve historical command as read-only and clarify sequence number is shared, not a frozen name."
+    }
+  ],
+  "positive": {
+    "legitimateProposeScope": "separate typed append receipt, no bind/activate/reopen/auto-Close, append allowed on settled passed/failed",
+    "docs": [
+      {
+        "key": "proposal",
+        "contains": "旧 Open、正式",
+        "line": 11
+      },
+      {
+        "key": "design",
+        "contains": "scopeAdditions",
+        "line": 46
+      },
+      {
+        "key": "design",
+        "contains": "scopeAddRunRef",
+        "line": 56
+      },
+      {
+        "key": "design",
+        "contains": "roundId",
+        "line": 48
+      },
+      {
+        "key": "design",
+        "contains": "原子",
+        "line": 58
+      },
+      {
+        "key": "workspace",
+        "contains": "Historical scopes survive same-round plan extension",
+        "line": 133
+      },
+      {
+        "key": "actionSpec",
+        "contains": "Append receipts do not change current Change",
+        "line": 34
+      },
+      {
+        "key": "verification",
+        "contains": "Settled failed gains new pending work",
+        "line": 12
+      },
+      {
+        "key": "lifecycle",
+        "contains": "Old passed result is supplied after appending scope",
+        "line": 8
+      }
+    ],
+    "authorizationAndIdempotency": {
+      "ownerRef": 31,
+      "oldNextGuard": 66,
+      "noImplicitBind": 10
+    },
+    "oldRunCheck": {
+      "roundBefore": "r001",
+      "roundAfter": "r001",
+      "oldAttemptAfter": "范围不能唯一归属已保存轮次。",
+      "oldOpenAfter": "范围不能唯一归属已保存轮次。"
+    },
+    "requirement": "Author plan specifically addresses this with finite historical scope lineage; no add writer implemented yet"
+  },
+  "limitations": [
+    "No delivery change add CLI implemented yet; reviewer has not tested any new writer",
+    "No real Full Test or Close executed; pure core negative controls only",
+    "The scenario mismatch is a documentation/spec contradiction in a MODIFIED requirement, not evidence product currently creates an unsafe new legacy Run",
+    "Propose may fix F1 locally without adding new Change or changing already-approved Owner intent"
+  ]
+}

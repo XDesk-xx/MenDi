@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: 真实 pnpm 接收本次请求，完整组通过直接正式 passed，Close 仍等 Owner 授权
+ok 1 - 真实 pnpm 接收本次请求，完整组通过直接正式 passed，Close 仍等 Owner 授权
+  ---
+  duration_ms: 41087.9962
+  type: 'test'
+  ...
+# Subtest: 真实失败保留，禁止 continue 和无审核 initial 绕行
+ok 2 - 真实失败保留，禁止 continue 和无审核 initial 绕行
+  ---
+  duration_ms: 5828.1155
+  type: 'test'
+  ...
+# Subtest: 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+ok 3 - 真实全 skip / TODO、零业务执行与晚退出不可被 exit0 或 pass 事件覆盖
+  ---
+  duration_ms: 18576.3539
+  type: 'test'
+  ...
+# Subtest: 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+ok 4 - 真实回执失败但包装器 exit0 为 invalid，安全完成释放自己的锁
+  ---
+  duration_ms: 5617.5984
+  type: 'test'
+  ...
+# Subtest: 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+ok 5 - 角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝
+  ---
+  duration_ms: 36369.5577
+  type: 'test'
+  ...
+# Subtest: 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+ok 6 - 工具或真实依赖拒绝保留预检原输出，not-run 不分配 child
+  ---
+  duration_ms: 3631.7411
+  type: 'test'
+  ...
+# Subtest: E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+ok 7 - E6 真实子 close 后终态替换 / 读回 / 释放故障保留 unknown，不再占后号
+  ---
+  duration_ms: 20211.4218
+  type: 'test'
+  ...
+# Subtest: 清理未知阻断共享后项，陌生端口实际占用不抢占
+ok 8 - 清理未知阻断共享后项，陌生端口实际占用不抢占
+  ---
+  duration_ms: 11351.0925
+  type: 'test'
+  ...
+# Subtest: 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+ok 9 - 缺失 / 陈旧报告不可复用，安全结束的协议错误和真实未知分开
+  ---
+  duration_ms: 7896.6783
+  type: 'test'
+  ...
+# Subtest: 真实取消停止本次树，不从取消中的 prefix 认领通过
+ok 10 - 真实取消停止本次树，不从取消中的 prefix 认领通过
+  ---
+  duration_ms: 5670.3424
+  type: 'test'
+  ...
+# Subtest: 新 verification 写入提前拒绝，不占号或保留不必要锁
+ok 11 - 新 verification 写入提前拒绝，不占号或保留不必要锁
+  ---
+  duration_ms: 8477.2424
+  type: 'test'
+  ...
+# Subtest: 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+ok 12 - 目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核
+  ---
+  duration_ms: 7237.5212
+  type: 'test'
+  ...
+# Subtest: 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+ok 13 - 真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑
+  ---
+  duration_ms: 5369.3424
+  type: 'test'
+  ...
+# Subtest: 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+ok 14 - 真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁
+  ---
+  duration_ms: 7305.6325
+  type: 'test'
+  ...
+# Subtest: 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+ok 15 - 真实 CLI v2 正式 passed / typed Close 恢复 / Reopen 与历史读回
+  ---
+  duration_ms: 93067.6495
+  type: 'test'
+  ...
+# Subtest: v2 直接读回中报告变化不能覆盖首次快照或发布 passed
+ok 16 - v2 直接读回中报告变化不能覆盖首次快照或发布 passed
+  ---
+  duration_ms: 62383.0578
+  type: 'test'
+  ...
+# Subtest: 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+ok 17 - 真实 typed Author 记录拒绝自签 verdict 与不支持的 Owner / archive 字段
+  ---
+  duration_ms: 6537.937
+  type: 'test'
+  ...
+# Subtest: P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 18 - P02 真实 blocked 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 58012.9681
+  type: 'test'
+  ...
+# Subtest: P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+ok 19 - P02 真实 failed 准备失败，安全恢复后新全量，无空 Repair / Review
+  ---
+  duration_ms: 17101.5796
+  type: 'test'
+  ...
+# Subtest: 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+ok 20 - 普通业务失败不能只靠 environment 原因和自报资源身份绕过修复审核
+  ---
+  duration_ms: 8392.6734
+  type: 'test'
+  ...
+# Subtest: 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 21 - 准备 blocked 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 14826.524
+  type: 'test'
+  ...
+# Subtest: 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+ok 22 - 准备 not-run 后执行语义实变须走实际 Repair / 独立 Review，再完整重跑
+  ---
+  duration_ms: 7730.3225
+  type: 'test'
+  ...
+# Subtest: 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+ok 23 - 准备失败与 wrapper 零退出矛盾仍须修复，不因环境标签提示直接重跑
+  ---
+  duration_ms: 5789.4546
+  type: 'test'
+  ...
+# Subtest: 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+ok 24 - 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+  ---
+  duration_ms: 51416.4037
+  type: 'test'
+  ...
+# Subtest: 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+ok 25 - 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+  ---
+  duration_ms: 11200.4217
+  type: 'test'
+  ...
+# Subtest: v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+ok 26 - v2 正式重跑拒绝修订后的陈旧 approved、changes-requested 与 rejected
+  ---
+  duration_ms: 56457.8917
+  type: 'test'
+  ...
+# Subtest: P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 27 - P03 v2 group failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 11837.6424
+  type: 'test'
+  ...
+# Subtest: P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+ok 28 - P03 旧 command failed → 当前修复 / 独立审核 → 新全量，原失败不变
+  ---
+  duration_ms: 14584.2348
+  type: 'test'
+  ...
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 29 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 51883.5379
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 30 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 6894.2536
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 31 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 5504.0964
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 342286.7575

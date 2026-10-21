@@ -1,0 +1,370 @@
+{
+  "status": "passed",
+  "capturedAt": "2026-10-20T07:53:05.343Z",
+  "baseline": "current workspace code; no MenDi implementation changes",
+  "methods": "native product calls on freshly isolated product-v2 target fixtures, executed real group-node-runner and full command",
+  "cases": [
+    {
+      "case": "P01: actual independent failure collection",
+      "expected": "passed/failed/failed",
+      "observed": {
+        "ok": false,
+        "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+        "actionType": "delivery-test-attempt",
+        "rawOutcome": "failed",
+        "protocolState": "valid",
+        "nextAction": "delivery-repair",
+        "states": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "middle",
+            "state": "failed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "tail",
+            "state": "failed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          }
+        ],
+        "executed": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "middle",
+            "state": "failed",
+            "exitCode": 1,
+            "counts": {
+              "total": 1,
+              "passed": 0,
+              "failed": 1,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "tail",
+            "state": "failed",
+            "exitCode": 1,
+            "counts": {
+              "total": 1,
+              "passed": 0,
+              "failed": 1,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "P02: safely confirmed environment-only blocked attempt",
+      "portHeldByFixture": true,
+      "first": {
+        "ok": false,
+        "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+        "actionType": "delivery-test-attempt",
+        "rawOutcome": "failed",
+        "protocolState": "valid",
+        "nextAction": "delivery-full-test",
+        "states": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "middle",
+            "state": "blocked",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          }
+        ],
+        "executed": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "middle",
+            "state": "blocked",
+            "counts": null
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          }
+        ]
+      },
+      "retry": {
+        "ok": true,
+        "runRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md",
+        "actionType": "delivery-test-attempt",
+        "rawOutcome": "passed",
+        "protocolState": "valid",
+        "nextAction": "delivery-verification",
+        "states": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "middle",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/016-delivery-test-attempt/run.md"
+          }
+        ],
+        "executed": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "middle",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          }
+        ]
+      },
+      "repairRunsCreated": false
+    },
+    {
+      "case": "P03: reviewed legacy command failed -> new groups-v1 first execution",
+      "oldCommand": {
+        "outcome": "failed",
+        "runRef": ".mendi/runs/d01/015-delivery-full-test/run.md"
+      },
+      "repairRunRef": ".mendi/runs/d01/016-delivery-repair/run.md",
+      "reviewRunRef": ".mendi/runs/d01/017-review-delivery-repair/run.md",
+      "reviewVerdict": "approved fixture only",
+      "missingTestAttemptRunRef": true,
+      "groupAdmissionError": {
+        "name": "MendiError",
+        "code": "invalid-data",
+        "message": "当前 attempt 必须是非空字符串。"
+      },
+      "oldFailureUnchanged": true
+    },
+    {
+      "case": "P04: existing partial retest + multi-run candidate verification",
+      "first": {
+        "ok": false,
+        "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+        "actionType": "delivery-test-attempt",
+        "rawOutcome": "failed",
+        "protocolState": "valid",
+        "nextAction": "delivery-repair",
+        "states": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "middle",
+            "state": "failed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          }
+        ],
+        "executed": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "middle",
+            "state": "failed",
+            "exitCode": 1,
+            "counts": {
+              "total": 1,
+              "passed": 0,
+              "failed": 1,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          }
+        ]
+      },
+      "retest": {
+        "ok": true,
+        "runRef": ".mendi/runs/d01/018-delivery-test-attempt/run.md",
+        "actionType": "delivery-test-attempt",
+        "rawOutcome": "passed",
+        "protocolState": "valid",
+        "nextAction": "delivery-verification",
+        "states": [
+          {
+            "id": "prefix",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "middle",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/018-delivery-test-attempt/run.md"
+          },
+          {
+            "id": "tail",
+            "state": "passed",
+            "sourceRunRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+          }
+        ],
+        "executed": [
+          {
+            "id": "middle",
+            "state": "passed",
+            "exitCode": 0,
+            "counts": {
+              "total": 1,
+              "passed": 1,
+              "failed": 0,
+              "cancelled": 0,
+              "skipped": 0,
+              "todo": 0,
+              "pending": 0
+            }
+          }
+        ]
+      },
+      "selectedSubset": [
+        "middle"
+      ],
+      "verification": "verified",
+      "verificationSourceRuns": [
+        {
+          "id": "prefix",
+          "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+        },
+        {
+          "id": "middle",
+          "runRef": ".mendi/runs/d01/018-delivery-test-attempt/run.md"
+        },
+        {
+          "id": "tail",
+          "runRef": ".mendi/runs/d01/015-delivery-test-attempt/run.md"
+        }
+      ],
+      "note": "Fixture review is recorded test setup, NOT actual MenDi Change Reviewer approval"
+    }
+  ],
+  "limitations": [
+    "stage review identity labels in fixture do not prove a real independent Reviewer",
+    "fixtures are not the actual DreMo target",
+    "D05 requirements not yet implemented",
+    "P02 blocked is not a generic failed environmental classification"
+  ]
+}

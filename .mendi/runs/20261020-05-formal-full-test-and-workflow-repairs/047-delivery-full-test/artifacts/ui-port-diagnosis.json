@@ -1,0 +1,19 @@
+{
+  "candidate": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "failedRun": "047-delivery-full-test",
+  "stage": "F03-ui",
+  "uiStep": "ui",
+  "child": "001-focused",
+  "childError": "listen EACCES: permission denied ::1:63315",
+  "behavior": "vitest browser API server failed at listen before any Storybook tests were enumerated",
+  "originalRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/artifacts/ui-port-failure-original.log",
+  "platform": "win32",
+  "node": "v22.23.2",
+  "defaultVitestBrowserApiPort": 63315,
+  "defaultPortSource": "installed vitest/dist/chunks/constants.CPYnjOGj.js; defaultBrowserPort = 63315",
+  "cliOption": "vitest --browser.api.port <port> --browser.api.host 127.0.0.1 --browser.api.strictPort",
+  "windowsExcludedIPv4": "Protocol tcp Port Exclusion Ranges\r\n\r\nStart Port    End Port      \r\n----------    --------      \r\n      5357        5357      \r\n     49674       49773      \r\n     49777       49876      \r\n     50000       50059     *\r\n     50060       50159      \r\n     60052       60151      \r\n     61903       62002      \r\n     63290       63389      \r\n     63390       63489      \r\n     64670       64769      \r\n\r\n* - Administered port exclusions.",
+  "windowsExcludedIPv6": "Protocol tcp Port Exclusion Ranges\r\n\r\nStart Port    End Port      \r\n----------    --------      \r\n      5357        5357      \r\n     49674       49773      \r\n     49777       49876      \r\n     50000       50059     *\r\n     50060       50159      \r\n     60052       60151      \r\n     61903       62002      \r\n     63290       63389      \r\n     63390       63489      \r\n     64670       64769      \r\n\r\n* - Administered port exclusions.",
+  "suggestion": "diagnose isolated safe port; do not modify candidate or claim F03 PASS; any tracked fixture change requires separate Author repair and independent review",
+  "observedAt": "2026-10-21T08:00:40.070Z"
+}

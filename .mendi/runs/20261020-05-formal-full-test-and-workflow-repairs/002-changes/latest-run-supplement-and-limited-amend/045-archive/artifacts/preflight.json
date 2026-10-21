@@ -1,0 +1,31 @@
+{
+  "operation": "D05-D-045-archive",
+  "phase": "prepared",
+  "ordinal": 17,
+  "owner": "{\"op\":\"d05d-archive-045\",\"nonce\":\"3393498d-c14a-4450-acbe-e46a7ea95ecc\",\"pid\":64480}",
+  "change": "latest-run-supplement-and-limited-amend",
+  "source": "openspec/changes/latest-run-supplement-and-limited-amend",
+  "authorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/043-apply/run.md",
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/044-review-apply/run.md",
+  "caps": [
+    "run-post-submission",
+    "action-runs",
+    "delivery-workspace"
+  ],
+  "files": [
+    ".openspec.yaml",
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/run-post-submission/spec.md",
+    "specs/action-runs/spec.md",
+    "specs/delivery-workspace/spec.md"
+  ],
+  "taskCount": 16,
+  "mainSpecExisted": [
+    false,
+    true,
+    true
+  ],
+  "nativeCalls": 0
+}

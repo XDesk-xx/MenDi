@@ -1,0 +1,65 @@
+[
+  {
+    "area": "src",
+    "ref": "src/application/delivery-lifecycle.ts",
+    "lines": 368,
+    "headLines": 368,
+    "growth": 0
+  },
+  {
+    "area": "src",
+    "ref": "src/application/group-attempt.ts",
+    "lines": 361,
+    "headLines": 361,
+    "growth": 0
+  },
+  {
+    "area": "src",
+    "ref": "src/adapters/workspace.ts",
+    "lines": 354,
+    "headLines": 346,
+    "growth": 8
+  },
+  {
+    "area": "tests",
+    "ref": "tests/action-write.test.ts",
+    "lines": 467,
+    "headLines": 467,
+    "growth": 0
+  },
+  {
+    "area": "tests",
+    "ref": "tests/planning-cli.test.ts",
+    "lines": 444,
+    "headLines": 444,
+    "growth": 0
+  },
+  {
+    "area": "tests",
+    "ref": "tests/delivery-repair.test.ts",
+    "lines": 395,
+    "headLines": 395,
+    "growth": 0
+  },
+  {
+    "area": "scripts",
+    "ref": "scripts/proofs/mvp-d01-c-explore.ts",
+    "lines": 678,
+    "headLines": 678,
+    "growth": 0
+  },
+  {
+    "area": "scripts",
+    "ref": "scripts/proofs/mvp-d01-d-explore.ts",
+    "lines": 487,
+    "headLines": 487,
+    "growth": 0
+  },
+  {
+    "area": "scripts",
+    "ref": "scripts/proofs/mvp-d01-a-explore.ts",
+    "lines": 463,
+    "headLines": 463,
+    "growth": 0
+  }
+]

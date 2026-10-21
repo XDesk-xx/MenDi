@@ -1,0 +1,133 @@
+{
+  "executedAt": "2026-10-20T10:14:54.092Z",
+  "subject": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/008-revise-propose/run.md",
+  "previousVerdict": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/007-review-propose/run.md",
+  "method": "read-only direct text cross-check plus current round parser positive/negative and fresh OpenSpec strict validation",
+  "sourceRefs": {
+    "proposal": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/proposal.md",
+      "sha256": "cdac40cc7b6c4316c03648244afb43353a2ac6935db0b6d604b03fe14026d4fa"
+    },
+    "design": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/design.md",
+      "sha256": "28a5d59d959df400d7e08c4644b34131b74497f58edb4c7e54b7cb812902a391"
+    },
+    "tasks": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+      "sha256": "d0a4fd277fc5f92199010cf2643caf67923f39a0707729bc97f0f81d7733eb6d"
+    },
+    "verification": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+      "sha256": "c892f49c00cbcfae48795adfdd181a26b2e0b30ceefecea606092e30abc305bd"
+    },
+    "lifecycle": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-lifecycle/spec.md",
+      "sha256": "d1cfd1ce4aa1b9c9da26ebc260ee97a469d694567dadab3a4aa9ce9cb7784315"
+    },
+    "actions": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/action-runs/spec.md",
+      "sha256": "a71b2ed7235ae8a824871b0656db911e125cf5978c0bb5f6e0cc9c3ce1fc3f1d"
+    },
+    "execution": {
+      "path": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/test-execution/spec.md",
+      "sha256": "8f8b6d9fb50d7ddff9f1d84d35a80c5a266ca4d10a97d72423228ceadc1ac413"
+    }
+  },
+  "checks": [
+    {
+      "id": "F1-legacy-command-read-only",
+      "passed": true,
+      "observed": "Old command scenario is a historical query, not an execution/write permission",
+      "locations": [
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+          "line": 7
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+          "line": 34
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-verification/spec.md",
+          "line": 35
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "id": "F2-selector-and-close-contract",
+      "passed": true,
+      "observed": "V2 Close only accepts typed testAttemptRunRef; legacy selectors read-only; task covers parser/rounds",
+      "locations": [
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/design.md",
+          "line": 74
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-lifecycle/spec.md",
+          "line": 23
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/specs/delivery-lifecycle/spec.md",
+          "line": 39
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+          "line": 19
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "id": "F2-current-parser-compatibility-proof",
+      "passed": true,
+      "observed": "Existing parser accepts separately typed pointers, rejects assigning a typed attempt to fullTestRunRef, and currently rejects new typed-only closed round (expected Apply task)",
+      "locations": [
+        {
+          "file": "src/core/rounds.ts",
+          "line": 159
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/design.md",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "id": "unchanged-scope-and-test-matrix",
+      "passed": true,
+      "observed": "Four delta capability areas aligned with Owner direct-pass decision and 13 outstanding tasks",
+      "locations": [
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/proposal.md",
+          "line": 5
+        },
+        {
+          "file": "openspec/changes/unified-groups-full-test-and-repair-flow/tasks.md",
+          "line": 18
+        }
+      ]
+    }
+  ],
+  "runtimeFacts": {
+    "openWithLegacyAndNewPointersAccepted": true,
+    "newTypedAttemptAsLegacyFullTestRejected": "轮次结果指针类型不符。",
+    "newTypedClosedRoundNotYetImplemented": "closed 轮次缺少一致收口。"
+  },
+  "strictValidation": {
+    "exitCode": 0,
+    "raw": "openspec-validation.json"
+  },
+  "boundaries": [
+    "Propose review only. New typed Close is NOT implemented; existing parser rejection is expected prior to Apply",
+    "Synthetic in-memory version-2 scope and typed Run identities, not an actual Delivery Close",
+    "No application, test, project history, Git, installation, or DreMo mutation",
+    "A formal product acceptance must be independently tested in Apply; structural validation alone cannot approve semantics"
+  ]
+}

@@ -1,0 +1,11 @@
+$ powershell.exe -NoProfile -NonInteractive -Command pnpm check
+# stdout
+Checked 198 files in 90ms. No fixes applied.
+Checked 198 files in 88ms. No fixes applied.
+
+# stderr
+$ pnpm format:check && pnpm lint && pnpm typecheck
+$ biome format src scripts tests
+$ biome lint src scripts tests
+$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json
+

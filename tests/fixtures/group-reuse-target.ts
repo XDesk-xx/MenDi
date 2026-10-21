@@ -43,7 +43,9 @@ if (!isMainThread) {
     const worker = new Worker(new URL(import.meta.url), {
       workerData: { artifact: first, directory, expected: 'candidate-one' },
     });
-    return { worker, directory };
+    // 在取得业务结果前登记退出，避免 worker 已结束后才附加监听而永久等待。
+    const exited = new Promise<number>((resolve) => worker.once('exit', resolve));
+    return { worker, directory, exited };
   });
   await Promise.all(
     workers.map(
@@ -68,15 +70,7 @@ if (!isMainThread) {
     ),
   );
   await Promise.all(
-    workers.map(
-      ({ worker }) =>
-        new Promise<void>((resolve, reject) => {
-          worker.once('error', reject);
-          worker.once('exit', (code) =>
-            code === 0 ? resolve() : reject(Error(`worker exit ${code}`)),
-          );
-        }),
-    ),
+    workers.map(async ({ exited }) => assert.equal(await exited, 0, '实际 worker 须正常退出')),
   );
   assert.notEqual(workers[0].directory, workers[1].directory);
   assert.equal(fs.readFileSync(first, 'utf8'), 'candidate-one');

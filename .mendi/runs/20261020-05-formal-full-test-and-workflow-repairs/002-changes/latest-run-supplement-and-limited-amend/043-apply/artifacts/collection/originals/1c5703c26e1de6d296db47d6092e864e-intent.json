@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "authoritative": false,
+  "targetRef": ".mendi/runs/d01/001-changes/proof-entry/001-explore/run.md",
+  "deliveryId": "d01",
+  "roundId": "r001",
+  "role": "author",
+  "actorId": "author-one",
+  "recordedAt": "2026-10-21T05:23:36.423Z",
+  "request": {
+    "operation": "supplement",
+    "requestId": "s1",
+    "reason": "补入必要事实",
+    "supplement": {
+      "requestId": "s1",
+      "source": "独立实测来源",
+      "reason": "补入必要事实",
+      "evidence": [
+        "proof.txt"
+      ],
+      "relation": "uncertain",
+      "sourceClaimedCollectedAt": null,
+      "sourceTimeTrust": "unverified"
+    }
+  },
+  "basis": {
+    "project": "c259f637c648b49c458010583dcd7f4ab1c9217f7bf15c8b1878a8e14974f0d2",
+    "manifestRef": ".mendi/delivery-groups/d01/manifest.json",
+    "manifest": "cc5bff447cd4509da234696802de3b7d26e1e938aa764e76b81728884b312349",
+    "run": "c97fd2f54e6d90c817b24575ccf852bbdba133853b84ab7e37f1783db83c5924"
+  },
+  "files": [
+    {
+      "name": "baseline.md",
+      "digest": "c97fd2f54e6d90c817b24575ccf852bbdba133853b84ab7e37f1783db83c5924"
+    },
+    {
+      "name": "input.md",
+      "sourceRef": "s1.json",
+      "identity": "2498285797:844424933555821:1792560215559380100",
+      "digest": "dc9dd2888527b26abcde656d8b66b855b8188253c25be2b4e1dfb2f99695377f"
+    },
+    {
+      "name": "evidence-0.bin",
+      "sourceRef": "proof.txt",
+      "identity": "2498285797:1407374886977124:1792560215558390900",
+      "digest": "5a0f834cc665e5be8f8c07cab2f21799835a188ae5c7f6cf69f5888abd7217fd"
+    }
+  ],
+  "lockOwner": "{\"token\":\"986c7dbe-054b-429e-9fd3-d2468cc46702\",\"pid\":67556,\"operation\":\"run-supplement\"}"
+}

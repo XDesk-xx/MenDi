@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "name": "action-runs",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    },
+    {
+      "name": "delivery-lifecycle",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    },
+    {
+      "name": "delivery-verification",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    },
+    {
+      "name": "delivery-workspace",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    }
+  ]
+}

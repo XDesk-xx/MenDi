@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-2ftBus\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "持锁复核组输入变化。",
+    "code": "delivery-input-changed",
+    "details": {}
+  },
+  "committedPaths": []
+}

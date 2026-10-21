@@ -1,0 +1,10 @@
+{
+  "confirmed": true,
+  "exitCode": 0,
+  "stdout": "�ɹ�: ����ֹ PID 60544 (���� PID 56432 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 42608 (���� PID 56432 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 56432 (���� PID 27024 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 40212 (���� PID 62456 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 27024 (���� PID 62456 �ӽ���)�Ľ��̡�\r\n�ɹ�: ����ֹ PID 62456 (���� PID 34292 �ӽ���)�Ľ��̡�\r\n",
+  "stderr": "",
+  "childExitCode": 1,
+  "childSignal": null,
+  "childAndPipesClosed": true,
+  "listenerUnavailable": true
+}

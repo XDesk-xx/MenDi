@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "proof": "D05-B 013 Author Explore",
+  "date": "2026-10-20T12:17:37.500Z",
+  "baseline": "current source commit; no MenDi source or real Delivery mutation",
+  "methods": "Actual product bind and real groups-v1 Full Test on isolated product v2 fixture; model/parser checks; counterfactual fixture-only scope append",
+  "cases": [
+    {
+      "id": "P01",
+      "description": "current bind refuses unplanned slot without altering manifest",
+      "rejected": {
+        "code": "planning-slot-not-found",
+        "message": "计划槽位不在 Delivery 范围内。"
+      },
+      "manifestByteUnchanged": true
+    },
+    {
+      "id": "P02",
+      "description": "round projection parses an append without reopening/binding",
+      "roundId": "r001",
+      "rounds": 1,
+      "bindingsPreserved": true,
+      "plannedBefore": [
+        "A",
+        "B"
+      ],
+      "plannedAfter": [
+        "A",
+        "B",
+        "C"
+      ],
+      "noAutoBind": true
+    },
+    {
+      "id": "P03",
+      "description": "existing scope parser rejects duplicate slot / dangling dependency / cycle",
+      "duplicates": {
+        "code": "invalid-scope",
+        "message": "范围必须包含至少一个且互不重复的槽位。"
+      },
+      "missing": {
+        "code": "invalid-scope",
+        "message": "依赖指向范围外槽位。"
+      },
+      "cycle": {
+        "code": "invalid-scope",
+        "message": "计划依赖存在循环。"
+      }
+    },
+    {
+      "id": "P04",
+      "description": "real v2 formal PASS cannot remain selected after in-place scope append",
+      "originalOutcome": "passed",
+      "priorScopeMatched": true,
+      "scopeOnlyAppendReadback": {
+        "code": "invalid-round-record",
+        "message": "范围不能唯一归属已保存轮次。"
+      },
+      "runUnchanged": true
+    },
+    {
+      "id": "P05",
+      "description": "clearing current result permits scope projection but old attempt explicit read is incompatible",
+      "roundUnchanged": true,
+      "bindingsUnchanged": true,
+      "priorFormalPointerKept": true,
+      "currentDeliveryPointerCleared": true,
+      "currentNextAction": "delivery-next",
+      "oldAttemptExplicitRead": {
+        "code": "invalid-round-record",
+        "message": "范围不能唯一归属已保存轮次。"
+      }
+    },
+    {
+      "id": "P06",
+      "description": "expanded scope refuses Close using previous passed attempt",
+      "closeRejected": {
+        "code": "invalid-round-record",
+        "message": "范围不能唯一归属已保存轮次。"
+      },
+      "runUnchanged": true,
+      "deliveryOpen": true
+    }
+  ],
+  "limits": [
+    "No real change-add CLI implemented",
+    "The v2 append write in P04 is simulated on a product fixture, not evidence of an existing command",
+    "The successful prior Full Test is an isolated fixture fact, not D05 Delivery acceptance",
+    "No real Reviewer verdict is produced",
+    "A separate legacy/closed/in-flight recovery matrix remains for Propose/Apply"
+  ]
+}

@@ -1,0 +1,2 @@
+$ node quiet.ts quiet
+actual stderr

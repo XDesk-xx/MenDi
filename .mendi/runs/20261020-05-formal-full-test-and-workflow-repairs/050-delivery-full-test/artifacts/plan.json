@@ -1,0 +1,121 @@
+{
+  "deliveryId": "20261020-05-formal-full-test-and-workflow-repairs",
+  "executionId": "d05-full-test-050",
+  "mode": "owner-authorized-manual-full-test",
+  "protocolClaim": "manual F01-F05, NOT product-v2 groups-v1",
+  "candidate": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ],
+    "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+    "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+  },
+  "ownerAuthorization": "owner 授权 full test",
+  "scope": [
+    {
+      "id": "F01-check",
+      "kind": "engineering",
+      "required": true
+    },
+    {
+      "id": "F02-root",
+      "kind": "business-tests",
+      "required": true
+    },
+    {
+      "id": "F03-ui",
+      "kind": "browser-ui",
+      "required": true
+    },
+    {
+      "id": "F04-installation",
+      "kind": "isolated-package-tests",
+      "required": true
+    },
+    {
+      "id": "F05-spec-status",
+      "kind": "strict-spec-and-current-readback",
+      "required": true
+    }
+  ],
+  "requiredGroups": [
+    "F01-check",
+    "F02-root",
+    "F03-ui",
+    "F04-installation",
+    "F05-spec-status"
+  ],
+  "testEntry": {
+    "root": "pnpm test",
+    "uiPrepare": "pnpm prepare:ui-tests",
+    "ui": "pnpm test:ui",
+    "installationPrepare": "pnpm prepare:installation-tests",
+    "installation": "pnpm test:installation"
+  },
+  "runRefs": [
+    {
+      "change": "unified-groups-full-test-and-repair-flow",
+      "archive": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+      "authorNumber": "010",
+      "reviewNumber": "011",
+      "verdict": "approved"
+    },
+    {
+      "change": "append-planned-changes-to-open-delivery",
+      "archive": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+      "authorNumber": "023",
+      "reviewNumber": "024",
+      "verdict": "approved"
+    },
+    {
+      "change": "reduce-redundant-proof-inputs-and-artifacts",
+      "archive": "openspec/changes/archive/2026-10-21-016-reduce-redundant-proof-inputs-and-artifacts",
+      "authorNumber": "030",
+      "reviewNumber": "031",
+      "verdict": "approved"
+    },
+    {
+      "change": "latest-run-supplement-and-limited-amend",
+      "archive": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+      "authorNumber": "043",
+      "reviewNumber": "044",
+      "verdict": "approved"
+    }
+  ],
+  "environment": {
+    "node": "v22.23.2",
+    "platform": "win32",
+    "checkPackageManager": "pnpm@11.22.0"
+  },
+  "restrictions": [
+    "No product-v2 formal delivery full-test on manual-bootstrap",
+    "No previous PASS reuse",
+    "No automatic Close/commit/push/stable install/DreMo"
+  ],
+  "acceptance": {
+    "allFiveRequired": true,
+    "zeroFailedSkippedTodo": true,
+    "allCommandsExit0": true,
+    "allRecordsReadable": true,
+    "sourceBasisUnchanged": true
+  },
+  "priorFormalRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/run.md",
+  "executionOrder": [
+    "F01-check",
+    "F03-ui",
+    "F04-installation",
+    "F05-spec-status",
+    "F02-root"
+  ],
+  "repairReviewRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/049-review-delivery-repair/run.md"
+}

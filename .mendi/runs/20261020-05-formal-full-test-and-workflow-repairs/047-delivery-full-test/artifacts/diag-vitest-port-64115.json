@@ -1,0 +1,54 @@
+{
+  "kind": "diagnostic-only",
+  "candidateUnchanged": true,
+  "port": 64115,
+  "host": "127.0.0.1",
+  "security": {
+    "frozenLockfile": true,
+    "offline": true,
+    "noScripts": true,
+    "listenerLoopback": true,
+    "strictPort": true
+  },
+  "repositoryCodeUnchanged": true,
+  "results": [
+    {
+      "label": "frozen-offline-preparation",
+      "startedAt": "2026-10-21T08:28:55.588Z",
+      "endedAt": "2026-10-21T08:28:58.312Z",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "install",
+        "--frozen-lockfile",
+        "--offline",
+        "--ignore-scripts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "✓ Lockfile passes supply-chain policies (verified 49m ago)\nLockfile is up to date, resolution step is skipped\nProgress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +141\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 141, reused 141, downloaded 0, added 47\nProgress: resolved 141, reused 141, downloaded 0, added 141, done\n\ndevDependencies:\n+ @storybook/addon-vitest 10.6.1\n+ @storybook/html-vite 10.6.1\n+ @types/node 22.20.5\n+ @vitest/browser 4.1.11\n+ @vitest/browser-playwright 4.1.11\n+ @vitest/runner 4.1.11\n+ playwright 1.60.0\n+ storybook 10.6.1\n+ typescript 5.9.3\n+ vite 8.3.0\n+ vitest 4.1.11\n\nDone in 2.5s using pnpm v11.22.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "vitest-explicit-ipv4-port",
+      "startedAt": "2026-10-21T08:28:58.312Z",
+      "endedAt": "2026-10-21T08:29:01.677Z",
+      "args": [
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "run",
+        "verify:stories",
+        "--",
+        "--browser.api.port",
+        "64115",
+        "--browser.api.host",
+        "127.0.0.1",
+        "--browser.api.strictPort"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "error": null,
+      "stdout": "\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv4.1.11 \u001b[39m\u001b[90mD:/Projects/MenDi/.tmp/d05-047-vitest-port-diagnostic\u001b[39m\n\n\n\u001b[2m Test Files \u001b[22m \u001b[2mno tests\u001b[22m\n\u001b[2m      Tests \u001b[22m \u001b[2mno tests\u001b[22m\n\u001b[2m     Errors \u001b[22m \u001b[1m\u001b[31m1 error\u001b[39m\u001b[22m\n\u001b[2m   Start at \u001b[22m 16:29:00\n\u001b[2m   Duration \u001b[22m 206ms\u001b[2m (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)\u001b[22m\n\n[ELIFECYCLE] Command failed with exit code 1.\n",
+      "stderr": "$ vitest run --project storybook \"--\" \"--browser.api.port\" \"64115\" \"--browser.api.host\" \"127.0.0.1\" \"--browser.api.strictPort\"\n\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\u001b[1m\u001b[41m Unhandled Errors \u001b[49m\u001b[22m\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\n\u001b[31m\u001b[1m\nVitest caught 1 unhandled error during the test run.\nThis might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.\u001b[22m\u001b[39m\n\n\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\u001b[1m\u001b[41m Unhandled Error \u001b[49m\u001b[22m\u001b[31m⎯⎯⎯⎯⎯⎯⎯\u001b[39m\n\u001b[31m\u001b[1mError\u001b[22m: listen EACCES: permission denied ::1:63315\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m Server.setupListenHandle [as _listen2] node:net:\u001b[2m1919:21\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m listenInCluster node:net:\u001b[2m1998:12\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m GetAddrInfoReqWrap.callback node:net:\u001b[2m2207:7\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m GetAddrInfoReqWrap.onlookupall [as oncomplete] node:dns:\u001b[2m134:8\u001b[22m\u001b[39m\n\n\u001b[31m\u001b[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\u001b[22m\u001b[39m\n\u001b[31m\u001b[1mSerialized Error:\u001b[22m\u001b[39m \u001b[90m{ code: 'EACCES', errno: -4092, syscall: 'listen', address: '::1', port: 63315 }\u001b[39m\n\u001b[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\u001b[39m\n\n"
+    }
+  ]
+}

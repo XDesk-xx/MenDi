@@ -1,0 +1,63 @@
+{
+  "recordedAt": "2026-10-20T14:47:09.094Z",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/017-revise-propose/run.md",
+  "priorReviewerRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/016-review-propose/run.md",
+  "currentCommit": "571c0b1b2f003e97c8cfa07118086f98abf36f52",
+  "verdictEvidence": "F1 corrected; no new Review Propose blocker found",
+  "cases": [
+    {
+      "id": "F1-fixed-new-formal-writer",
+      "passed": true,
+      "doc": "openspec/changes/append-planned-changes-to-open-delivery/specs/action-runs/spec.md",
+      "where": {
+        "when": 10,
+        "then": 11,
+        "sourceWriter": 89,
+        "modeGuard": 33
+      },
+      "evidence": "New groups-v1 official Full Test is explicitly 015-delivery-test-attempt, 015 only an example; old delivery-full-test remains read-only"
+    },
+    {
+      "id": "typed-parser-and-shared-sequence",
+      "passed": true,
+      "evidence": "Real current deliveryLocation recognizes each distinct type; new Run writer chooses delivery-test-attempt, action-runs delta retains shared Delivery numbering"
+    },
+    {
+      "id": "prior-explore-scope-compatibility",
+      "passed": true,
+      "where": {
+        "historical": 46,
+        "owner": 104
+      },
+      "evidence": "Current design and spec still require finite scope additions and historical same-round Run reads; not a claim that implementation is done"
+    },
+    {
+      "id": "append-handoff-and-recovery",
+      "passed": true,
+      "where": {
+        "separate": 56,
+        "stability": 144
+      },
+      "evidence": "Separate scope-add receipt from deliveryRunRef and active Change, typed old Full Test pointer remains historical, unsafe/pending/unknown are denied"
+    }
+  ],
+  "planning": {
+    "taskCount": 15,
+    "deltaSpecs": [
+      "action-runs",
+      "delivery-workspace",
+      "delivery-verification",
+      "delivery-lifecycle"
+    ],
+    "allFourSpecsAccessible": true
+  },
+  "validation": {
+    "exitCode": 0,
+    "raw": "openspec-validation.json"
+  },
+  "boundaries": [
+    "Only Propose semantic and current source-code consistency checked; no new delivery change add writer is implemented yet",
+    "The 016 independent proof is retained as the original scope compatibility finding, not rerun in this narrowly revised Propose",
+    "No new product acceptance, real Full Test, Close, Git, deployment, or DreMo changes"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-10-20T17:02:59.477Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/021-revise-apply/run.md",
+  "method": "real addDeliveryChanges of seven distinct requests on a single isolated product-v2 fixture, plus same-round timeline API controls and old intent tamper",
+  "results": [
+    {
+      "step": 1,
+      "runRef": ".mendi/runs/d01/015-delivery-change-add/run.md",
+      "intentBytes": 4115,
+      "priorDigests": 0,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 0,
+      "scopeCount": 3
+    },
+    {
+      "step": 2,
+      "runRef": ".mendi/runs/d01/016-delivery-change-add/run.md",
+      "intentBytes": 6361,
+      "priorDigests": 2,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 2,
+      "scopeCount": 4
+    },
+    {
+      "step": 3,
+      "runRef": ".mendi/runs/d01/017-delivery-change-add/run.md",
+      "intentBytes": 8766,
+      "priorDigests": 4,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 4,
+      "scopeCount": 5
+    },
+    {
+      "step": 4,
+      "runRef": ".mendi/runs/d01/018-delivery-change-add/run.md",
+      "intentBytes": 11547,
+      "priorDigests": 6,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 6,
+      "scopeCount": 6
+    },
+    {
+      "step": 5,
+      "runRef": ".mendi/runs/d01/019-delivery-change-add/run.md",
+      "intentBytes": 14704,
+      "priorDigests": 8,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 8,
+      "scopeCount": 7
+    },
+    {
+      "step": 6,
+      "runRef": ".mendi/runs/d01/020-delivery-change-add/run.md",
+      "intentBytes": 18237,
+      "priorDigests": 10,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 10,
+      "scopeCount": 8
+    },
+    {
+      "step": 7,
+      "runRef": ".mendi/runs/d01/021-delivery-change-add/run.md",
+      "intentBytes": 22146,
+      "priorDigests": 12,
+      "embeddedPriorIntents": 0,
+      "actualDigestMatches": 12,
+      "scopeCount": 9
+    }
+  ],
+  "firstSize": 4115,
+  "lastSize": 22146,
+  "ratio": 5.38,
+  "totalDigestRefs": 12,
+  "chronology": {
+    "firstAppendRunNumber": 15,
+    "lastAppendRunNumber": 21,
+    "oldScopeBeforeFirstAccepted": true,
+    "afterAppendOriginalScopeNumbersRejected": [
+      15,
+      16,
+      21,
+      22
+    ],
+    "currentScopeAfterLastAccepted": true
+  },
+  "tamperedOldIntentRejected": "历史追加直接输入与已提交摘要不同。",
+  "limits": [
+    "Seven finite additions are a measured demonstration, not a universal runtime/size bound",
+    "The wrong-timeline records are in-memory synthetic Run objects only; no invalid actual Run was persisted",
+    "This is a product-v2 isolated fixture; not the MenDi root or a real Owner approval",
+    "No direct interruption/recovery cycle in this proof; existing dedicated tests cover controlled fault points"
+  ]
+}

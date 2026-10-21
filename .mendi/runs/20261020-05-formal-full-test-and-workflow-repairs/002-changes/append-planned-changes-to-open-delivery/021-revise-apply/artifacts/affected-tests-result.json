@@ -1,0 +1,35 @@
+{
+  "entry": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "--test",
+    "--test-concurrency=2",
+    "tests/change-add-review-repair.test.ts",
+    "tests/change-add.test.ts",
+    "tests/change-add-recovery.test.ts",
+    "tests/change-add-lifecycle.test.ts",
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ],
+  "exitCode": null,
+  "signal": "SIGTERM",
+  "error": "spawnSync C:\\nvm4w\\nodejs\\node.exe ETIMEDOUT",
+  "counts": {},
+  "tests": [
+    "tests/change-add-review-repair.test.ts",
+    "tests/change-add.test.ts",
+    "tests/change-add-recovery.test.ts",
+    "tests/change-add-lifecycle.test.ts",
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/delivery-query.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/baseline-integration.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ]
+}

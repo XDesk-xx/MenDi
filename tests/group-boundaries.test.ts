@@ -11,11 +11,16 @@ import { query } from '../src/application/project.ts';
 import { parseDeliveryRun } from '../src/core/delivery-runs.ts';
 import { createVerification } from '../src/application/candidate-verification.ts';
 import { writePackage } from './test-support.ts';
+import { scanRunNumbers } from '../src/adapters/runs.ts';
 
 test('角色、非法计划 / 路径、持锁输入漂移均在分配副作用前拒绝', async () => {
   const { root, declaration, plan } = groupTarget();
   const input = { ...fullInput(root), inputFile: 'group-input.json' };
+  const number = scanRunNumbers(root, 'd01').number;
   for (const raw of [
+    { ...declaration, mode: undefined },
+    { ...declaration, purpose: 'continue' },
+    { ...declaration, purpose: 'retest' },
     { ...declaration, planRef: '../escape.json' },
     { ...declaration, mode: 'groups-v2' },
     { ...declaration, selection: ['absent'] },
@@ -26,6 +31,7 @@ test('角色、非法计划 / 路径、持锁输入漂移均在分配副作用�
       const result = await runFullTest(input);
       assert.equal(result.ok, false);
       assert.equal('run' in result, false);
+      assert.equal(scanRunNumbers(root, 'd01').number, number);
     } catch (error) {
       assert.match(String(error), /协议|mode|引用|组选择/);
     }
@@ -175,7 +181,7 @@ test('缺失 / 陈旧报告不可复用，安全结束的协议错误和真实�
   );
   assert.equal(result.groupExecution.protocolState, 'invalid');
   const unknown = structuredClone(result.run);
-  unknown.attempt!.version = 2 as 1;
+  unknown.attempt!.version = 3 as 1;
   assert.throws(() => parseDeliveryRun(unknown, unknown.ref, 'd01'), /版本/);
   assert.equal(result.groupExecution.child!.outcome, 'passed');
   assert.equal(fs.existsSync(path.join(root, '.mendi/write.lock')), false);
@@ -215,7 +221,7 @@ test('真实取消停止本次树，不从取消中的 prefix 认领通过', asy
     assert.equal(result.groupExecution.child?.outcome, 'interrupted');
   else assert.ok('retainedLock' in result);
 });
-test('候选终态持久失败保留现场，不发布或回退旧 verified', async () => {
+test('新 verification 写入提前拒绝，不占号或保留不必要锁', async () => {
   const { root } = groupTarget();
   const attempt = attemptResult(await groupRun(root));
   fs.writeFileSync(
@@ -241,13 +247,13 @@ test('候选终态持久失败保留现场，不发布或回退旧 verified', as
           },
         },
       ),
-    /写入/,
+    /不再新建/,
   );
-  assert.equal(fs.existsSync(path.join(root, '.mendi/write.lock')), true);
-  assert.throws(() => query({ project: root }), /锁/);
+  assert.equal(fs.existsSync(path.join(root, '.mendi/write.lock')), false);
+  assert.equal(query({ project: root }).ok, true);
 });
 
-test('目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认领局部成功；可显式 initial 重跑', async () => {
+test('目标真实 Node aborted 仍为取消；改测试语义不能直接 initial 绕过审核', async () => {
   const { root, declaration } = groupTarget();
   fs.writeFileSync(
     path.join(root, 'middle.test.ts'),
@@ -282,9 +288,7 @@ test('目标真实 Node aborted 在正常 wrapper 结束后仍为取消，不认
     },
     fromRunRef: cancelled.run.ref,
   });
-  const restarted = attemptResult(await groupRun(root));
-  assert.equal(restarted.ok, true, JSON.stringify(restarted));
-  assert.deepEqual(restarted.run.attempt!.selection, ['prefix', 'middle', 'tail']);
+  assert.equal((await groupRun(root)).ok, false);
 });
 
 test('真实启动失败为有 child ID 的 not-run，不假造协议失败；显式 initial 使用新身份重跑', async () => {
@@ -303,9 +307,7 @@ test('真实启动失败为有 child ID 的 not-run，不假造协议失败；�
   assert.equal(fs.existsSync(path.join(root, '.mendi/write.lock')), false);
   assert.equal(notRun.next.action, 'delivery-full-test');
   writeGroupInput(root, { ...declaration, fromRunRef: notRun.run.ref });
-  const retried = attemptResult(await groupRun(root));
-  assert.equal(retried.ok, true, JSON.stringify(retried));
-  assert.equal(retried.run.attempt!.executionId, '002-full');
+  assert.equal((await groupRun(root)).ok, false); // 缺少直接准备恢复证据。
 });
 
 test('真实取消与 wrapper 零退出矛盾持久为 invalid，并释放已安全结束的锁', async () => {

@@ -1,0 +1,30 @@
+TAP version 13
+# {"scene":"one-group-source-three-summaries","directOriginalFiles":7,"newOriginalFiles":8,"oldLayoutTwoApplyBytes":26810,"newTwoApplySummaryBytes":10464,"comparison":"同一真实执行的旧摘要布局序列化对照；不是重新运行旧 writer，也不是体积 gate"}
+# Subtest: groups-v1 关闭 opt-in 无额外证据；开启后 groupRun / 两份 Apply 摘要复用失败原件
+ok 1 - groups-v1 关闭 opt-in 无额外证据；开启后 groupRun / 两份 Apply 摘要复用失败原件
+  ---
+  duration_ms: 45181.8752
+  type: 'test'
+  ...
+# Subtest: 缺最终报告保存缺失事实，真实 invalid 不变；Apply 只启用时同样保留一次可读原件
+ok 2 - 缺最终报告保存缺失事实，真实 invalid 不变；Apply 只启用时同样保留一次可读原件
+  ---
+  duration_ms: 5723.3505
+  type: 'test'
+  ...
+# {"scene":"unknown-collector","state":"captured","productOutcome":"unknown","files":8,"retainedLock":".mendi/write.lock"}
+# Subtest: cleanup unknown 保留真实 Run、request/report/events、部分结果与锁，不追认为 finished PASS
+ok 3 - cleanup unknown 保留真实 Run、request/report/events、部分结果与锁，不追认为 finished PASS
+  ---
+  duration_ms: 6918.6858
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 58289.6941

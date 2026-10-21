@@ -1,0 +1,24 @@
+{
+  "kind": "independent direct Vitest port diagnostic, NOT F03 pass",
+  "started": "2026-10-21T08:29:32.115Z",
+  "ended": "2026-10-21T08:29:33.663Z",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\d05-047-vitest-port-diagnostic",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:\\Projects\\MenDi\\.tmp\\d05-047-vitest-port-diagnostic\\node_modules\\vitest\\vitest.mjs",
+    "run",
+    "--project",
+    "storybook",
+    "--browser.api.port",
+    "64115",
+    "--browser.api.host",
+    "127.0.0.1",
+    "--browser.api.strictPort"
+  ],
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "stdout": "\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv4.1.11 \u001b[39m\u001b[90mD:/Projects/MenDi/.tmp/d05-047-vitest-port-diagnostic\u001b[39m\n\n\n\u001b[2m Test Files \u001b[22m \u001b[2mno tests\u001b[22m\n\u001b[2m      Tests \u001b[22m \u001b[2mno tests\u001b[22m\n\u001b[2m     Errors \u001b[22m \u001b[1m\u001b[31m1 error\u001b[39m\u001b[22m\n\u001b[2m   Start at \u001b[22m 16:29:33\n\u001b[2m   Duration \u001b[22m 83ms\u001b[2m (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)\u001b[22m\n\n",
+  "stderr": "\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\u001b[1m\u001b[41m Unhandled Errors \u001b[49m\u001b[22m\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\n\u001b[31m\u001b[1m\nVitest caught 1 unhandled error during the test run.\nThis might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.\u001b[22m\u001b[39m\n\n\u001b[31m⎯⎯⎯⎯⎯⎯\u001b[39m\u001b[1m\u001b[41m Unhandled Error \u001b[49m\u001b[22m\u001b[31m⎯⎯⎯⎯⎯⎯⎯\u001b[39m\n\u001b[31m\u001b[1mError\u001b[22m: listen EACCES: permission denied ::1:63315\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m Server.setupListenHandle [as _listen2] node:net:\u001b[2m1919:21\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m listenInCluster node:net:\u001b[2m1998:12\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m GetAddrInfoReqWrap.callback node:net:\u001b[2m2207:7\u001b[22m\u001b[39m\n\u001b[90m \u001b[2m❯\u001b[22m GetAddrInfoReqWrap.onlookupall [as oncomplete] node:dns:\u001b[2m134:8\u001b[22m\u001b[39m\n\n\u001b[31m\u001b[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\u001b[22m\u001b[39m\n\u001b[31m\u001b[1mSerialized Error:\u001b[22m\u001b[39m \u001b[90m{ code: 'EACCES', errno: -4092, syscall: 'listen', address: '::1', port: 63315 }\u001b[39m\n\u001b[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\u001b[39m\n\n",
+  "noRepoChange": true
+}

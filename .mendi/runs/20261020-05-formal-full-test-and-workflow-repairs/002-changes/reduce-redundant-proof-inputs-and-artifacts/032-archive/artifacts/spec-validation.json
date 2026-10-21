@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "name": "action-runs",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    },
+    {
+      "name": "test-execution",
+      "exitCode": 0,
+      "valid": true,
+      "issues": [],
+      "error": null,
+      "stderr": ""
+    }
+  ]
+}

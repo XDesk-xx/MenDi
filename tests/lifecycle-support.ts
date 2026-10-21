@@ -4,13 +4,14 @@ import assert from 'node:assert/strict';
 import { completedTarget, formal, authorActor } from './delivery-support.ts';
 import { sandbox, isolatedEnv, cli, prepareChange } from './helpers.ts';
 import { prepareEmptyDependencies } from './test-support.ts';
-import { deliveryLifecycle } from '../src/application/delivery-lifecycle.ts';
+import { deliveryLifecycle } from './fixtures/legacy-lifecycle.ts';
 import { readWorkspace } from '../src/adapters/workspace.ts';
 import { bindChange } from '../src/application/project.ts';
 import { approvedArchive } from './sequential-support.ts';
 import { archiveAction } from '../src/application/archive.ts';
 import { archiveInput } from './archive-support.ts';
 import type { TestExecution } from '../src/core/test-execution.ts';
+import { errorInfo, MendiError } from '../src/core/errors.ts';
 
 let seed: string | undefined;
 export function lifecycleTarget() {
@@ -125,6 +126,31 @@ export function queryCli(root: string, args: string[] = [], exit = 0) {
   return JSON.parse(result.stdout);
 }
 export function lifecycleCli(root: string, operation: string, args: string[], exit = 0) {
+  // 这些旧测试的 command Close 只构造历史；新版真实 CLI 的 typed Close 在 group-cli 测试。
+  if (operation === 'close') {
+    const flag = (key: string) => (args.includes(key) ? args[args.indexOf(key) + 1] : undefined);
+    let result;
+    try {
+      result = deliveryLifecycle('delivery-close', {
+        project: root,
+        role: 'author',
+        actor: authorActor,
+        inputFile: flag('--input'),
+        resumeRef: flag('--resume'),
+      });
+    } catch (error) {
+      if (exit === 0) throw error;
+      return {
+        ok: false,
+        error: {
+          ...errorInfo(error),
+          ...(error instanceof MendiError ? { details: error.details } : {}),
+        },
+      };
+    }
+    assert.equal(exit, 0, '历史夹具操作意外成功，不得将成功伪装为预期失败');
+    return result;
+  }
   const result = cli(
     [
       'delivery',

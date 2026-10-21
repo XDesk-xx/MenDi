@@ -50,7 +50,7 @@ test('安装后CLI：旧活动draft只读 / 预览 / 显式迁移，pending拒�
   assert.equal(fs.existsSync(path.join(pending.root, '.mendi/write.lock')), false);
 });
 
-test('安装后CLI：失败 / 尾项续测 / 原失败修复与审核夹具 / 局部复验 / 多来源 / Close及Reopen', () => {
+test('安装后CLI：失败 / 独立修复审核夹具 / 新完整 v2 Full Test / typed Close及Reopen', () => {
   const session = installedSession(),
     invoke = installedCommand(session, 'd04-groups');
   const { root, declaration } = groupTarget();
@@ -88,11 +88,7 @@ test('安装后CLI：失败 / 尾项续测 / 原失败修复与审核夹具 / �
     selection: ['tail'],
     fromRunRef: first.run.ref,
   });
-  const tail = run();
-  assert.deepEqual(
-    tail.run.attempt.progress.map((p: { state: string }) => p.state),
-    ['passed', 'failed', 'passed'],
-  );
+  assert.equal(run(1).ok, false); // continue 不再新写。
   const candidate = {
     ...declaration.candidate,
     id: 'c2',
@@ -163,35 +159,25 @@ test('安装后CLI：失败 / 尾项续测 / 原失败修复与审核夹具 / �
     selection: ['middle'],
     fromRunRef: review.run.ref,
   });
-  const retest = run();
-  assert.deepEqual(retest.run.attempt.selection, ['middle']);
-  write('verify.json', {
-    fromRunRef: retest.run.ref,
-    planRef: 'group-plan.json',
-    candidate,
-    sources: [
-      { id: 'prefix', runRef: first.run.ref, applicability: '当前修复审核认可原prefix材料仍适用' },
-      { id: 'middle', runRef: retest.run.ref, applicability: '当前候选真实局部复验' },
-      { id: 'tail', runRef: tail.run.ref, applicability: '当前修复审核认可tail材料仍适用' },
-    ],
-  });
-  const verified = invoke(root, [
-    'delivery',
-    'verification',
-    'create',
-    '--input',
-    'verify.json',
-    ...author,
-  ]);
-  assert.equal(verified.candidateVerification.conclusion, 'verified');
+  assert.equal(run(1).ok, false); // 局部 retest 不再新写。
+  writeGroupInput(root, { ...declaration, candidate, fromRunRef: review.run.ref });
+  const complete = run();
+  assert.equal(complete.run.attempt.version, 2);
+  assert.equal(complete.run.attempt.formalOutcome, 'passed');
+  assert.deepEqual(complete.run.attempt.selection, declaration.selection);
+  write('verify.json', { fromRunRef: complete.run.ref });
+  assert.equal(
+    invoke(root, ['delivery', 'verification', 'create', '--input', 'verify.json', ...author], 1).ok,
+    false,
+  );
   assert.ok(fs.readFileSync(path.join(root, first.run.ref)).equals(original));
   write('close.json', {
-    verificationRunRef: verified.run.ref,
+    testAttemptRunRef: complete.run.ref,
     applicability: {
       conclusion: 'applicable',
       materials: candidate.basis.materials,
       changes: candidate.basis.changes,
-      reason: '实际安装候选由本轮多来源覆盖',
+      reason: '实际安装候选由本次全部必需组真实覆盖',
     },
   });
   const closed = invoke(root, ['delivery', 'close', '--input', 'close.json', ...author]);

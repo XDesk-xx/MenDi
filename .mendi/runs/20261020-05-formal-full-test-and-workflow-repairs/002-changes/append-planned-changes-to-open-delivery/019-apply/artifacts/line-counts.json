@@ -1,0 +1,112 @@
+{
+  "basis": "当前工作文件物理行数与真实 HEAD 对照；只说明增长，不作准入门槛",
+  "areas": [
+    {
+      "area": "src",
+      "top3": [
+        {
+          "path": "src/application/delivery-lifecycle.ts",
+          "physicalLines": 368,
+          "headPhysicalLines": 368
+        },
+        {
+          "path": "src/application/group-attempt.ts",
+          "physicalLines": 361,
+          "headPhysicalLines": 361
+        },
+        {
+          "path": "src/adapters/workspace.ts",
+          "physicalLines": 346,
+          "headPhysicalLines": 344
+        }
+      ]
+    },
+    {
+      "area": "tests",
+      "top3": [
+        {
+          "path": "tests/action-write.test.ts",
+          "physicalLines": 467,
+          "headPhysicalLines": 467
+        },
+        {
+          "path": "tests/planning-cli.test.ts",
+          "physicalLines": 444,
+          "headPhysicalLines": 444
+        },
+        {
+          "path": "tests/delivery-repair.test.ts",
+          "physicalLines": 395,
+          "headPhysicalLines": 395
+        }
+      ]
+    },
+    {
+      "area": "scripts",
+      "top3": [
+        {
+          "path": "scripts/proofs/mvp-d01-c-explore.ts",
+          "physicalLines": 678,
+          "headPhysicalLines": 678
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-d-explore.ts",
+          "physicalLines": 487,
+          "headPhysicalLines": 487
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-a-explore.ts",
+          "physicalLines": 463,
+          "headPhysicalLines": 463
+        }
+      ]
+    }
+  ],
+  "changed": [
+    {
+      "path": "src/application/project.ts",
+      "physicalLines": 233,
+      "headPhysicalLines": 374
+    },
+    {
+      "path": "src/application/project-query.ts",
+      "physicalLines": 158,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "src/application/delivery-change-add.ts",
+      "physicalLines": 220,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "src/adapters/change-add-store.ts",
+      "physicalLines": 268,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "src/core/scope-addition.ts",
+      "physicalLines": 137,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "src/core/rounds.ts",
+      "physicalLines": 283,
+      "headPhysicalLines": 253
+    },
+    {
+      "path": "tests/change-add.test.ts",
+      "physicalLines": 239,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/change-add-lifecycle.test.ts",
+      "physicalLines": 232,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/change-add-recovery.test.ts",
+      "physicalLines": 107,
+      "headPhysicalLines": null
+    }
+  ]
+}

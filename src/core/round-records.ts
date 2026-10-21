@@ -3,6 +3,7 @@ import { MendiError } from './errors.ts';
 import { readScope, type Scope, type Workspace } from './records.ts';
 import type { DeliveryRunRecord } from './delivery-runs.ts';
 import type { DeliveryRound } from './rounds.ts';
+import { deliveryLocation } from './delivery-runs.ts';
 import type { Repair } from './delivery-verification.ts';
 
 export function comparableRepair(value: Repair | undefined) {
@@ -27,9 +28,27 @@ export function recordRound(
   const summary =
     record.lifecycle ?? record.fullTest ?? record.attempt ?? record.verification ?? record.repair;
   if (!summary) throw new MendiError('invalid-round-record', '记录没有可解释的轮次摘要。');
-  const matching = workspace.rounds.filter((r) =>
-    isDeepStrictEqual(comparableScope(r.scope), comparableScope(readScope(summary.scope))),
-  );
+  const recordedScope = comparableScope(readScope(summary.scope));
+  const matching = workspace.rounds.filter((round) => {
+    // The Run must have existed while its claimed scope was the effective
+    // scope. Append receipt numbers are exclusive boundaries, not valid
+    // historical work recorded under either side of that transition.
+    let previousAddition = 0;
+    for (const addition of round.scopeAdditions ?? []) {
+      const number = deliveryLocation(addition.runRef, workspace.id).number;
+      if (record.runNumber <= number)
+        return (
+          record.runNumber > previousAddition &&
+          record.runNumber < number &&
+          isDeepStrictEqual(recordedScope, comparableScope(addition.beforeScope))
+        );
+      previousAddition = number;
+    }
+    return (
+      record.runNumber > previousAddition &&
+      isDeepStrictEqual(recordedScope, comparableScope(round.scope))
+    );
+  });
   if (matching.length !== 1)
     throw new MendiError('invalid-round-record', '范围不能唯一归属已保存轮次。');
   const round = matching[0];
@@ -51,7 +70,7 @@ export function recordRound(
   )
     throw new MendiError('invalid-round-record', 'Close 正式快照属于另一轮。');
   if ('completed' in completedScope) {
-    const expected = round.scope.plannedChanges.map((p) => {
+    const expected = readScope(completedScope).plannedChanges.map((p) => {
       const binding = workspace.bindings.find((b) => b.planningSlot === p.slot);
       if (!binding || binding.state !== 'archived')
         throw new MendiError('invalid-round-record', '正式范围缺少所属轮次归档绑定。');

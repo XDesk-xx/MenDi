@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BqIjdf\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "恢复身份与原真实准备失败不一致。",
+    "code": "environment-recovery-invalid",
+    "details": {}
+  },
+  "committedPaths": []
+}

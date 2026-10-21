@@ -17,7 +17,8 @@ import {
   reviewRepairInputs,
   same,
 } from '../adapters/delivery-verification.ts';
-import { deliveryDefinition, deliveryNext, parseDeliveryRun } from '../core/delivery-runs.ts';
+import { deliveryDefinition, parseDeliveryRun } from '../core/delivery-runs.ts';
+import { deliveryNext } from '../core/delivery-next.ts';
 import { verificationScope } from '../core/delivery-verification.ts';
 import { MendiError, text } from '../core/errors.ts';
 import { parseImpact } from '../core/repair-record.ts';

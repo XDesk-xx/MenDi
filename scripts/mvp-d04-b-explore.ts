@@ -12,7 +12,7 @@ import {
 import { pnpmEntry, writePackage } from '../tests/test-support.ts';
 import { repository } from '../tests/helpers.ts';
 import { runTest } from '../src/application/tests.ts';
-import { runFullTest } from '../src/application/delivery-full-test.ts';
+import { writeLegacyCommand as runFullTest } from '../tests/fixtures/legacy-command.ts';
 import { startDeliveryRepair, startDeliveryReview } from '../src/application/delivery-repair.ts';
 import { scanRunNumbers } from '../src/adapters/runs.ts';
 import type { ExecutionProcessOptions } from '../src/adapters/test-process.ts';

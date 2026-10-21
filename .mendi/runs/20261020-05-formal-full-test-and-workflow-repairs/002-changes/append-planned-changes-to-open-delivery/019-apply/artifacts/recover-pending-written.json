@@ -1,0 +1,174 @@
+{
+  "label": "recover-pending-written",
+  "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-XOn3rF\\project",
+  "authority": "隔离 product-v2 实际操作；阶段批准为受控记录夹具，不认证仓库独立 Review",
+  "data": {
+    "ok": true,
+    "operation": "delivery-change-add",
+    "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-XOn3rF\\project",
+    "openspec": null,
+    "local": {
+      "source": "product",
+      "deliveryId": "d01",
+      "title": "顺序验证",
+      "state": "open",
+      "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+      "plannedChanges": [
+        {
+          "slot": "A",
+          "title": "项目入口",
+          "dependsOn": []
+        },
+        {
+          "slot": "B",
+          "title": "后续工作",
+          "dependsOn": [
+            "A"
+          ]
+        },
+        {
+          "slot": "C",
+          "title": "新增 C",
+          "dependsOn": [
+            "B"
+          ]
+        },
+        {
+          "slot": "D",
+          "title": "新增 D",
+          "dependsOn": [
+            "C"
+          ]
+        }
+      ],
+      "activeChangeId": null,
+      "changeBindings": [
+        {
+          "changeId": "proof-entry",
+          "changeRef": "openspec/changes/archive/2026-10-20-001-proof-entry",
+          "planningSlot": "A",
+          "state": "archived",
+          "archiveOrdinal": 1,
+          "batchId": "001-changes",
+          "latestRunRef": ".mendi/runs/d01/001-changes/proof-entry/007-archive/run.md"
+        },
+        {
+          "changeId": "second-entry",
+          "changeRef": "openspec/changes/archive/2026-10-20-002-second-entry",
+          "planningSlot": "B",
+          "state": "archived",
+          "archiveOrdinal": 2,
+          "batchId": "001-changes",
+          "latestRunRef": ".mendi/runs/d01/001-changes/second-entry/014-archive/run.md"
+        }
+      ],
+      "currentRoundId": "r001",
+      "rounds": [
+        {
+          "id": "r001",
+          "state": "open",
+          "openedOn": "2026-10-20"
+        }
+      ]
+    },
+    "executionMode": "local-only",
+    "upstreamAccess": "not-required",
+    "alreadyCompleted": false,
+    "run": {
+      "ref": ".mendi/runs/d01/015-delivery-change-add/run.md",
+      "formatVersion": 1,
+      "recordingMode": "product",
+      "scope": "delivery",
+      "deliveryId": "d01",
+      "changeId": null,
+      "runNumber": 15,
+      "actionId": "d01-015-delivery-change-add",
+      "actionType": "delivery-change-add",
+      "role": "author",
+      "actorId": "delivery-author",
+      "status": "submitted",
+      "stageSkill": "delivery-change-add",
+      "toolGuidance": [],
+      "changeAdd": {
+        "requestId": "owner-append-01",
+        "beforeScope": {
+          "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+          "plannedChanges": [
+            {
+              "slot": "A",
+              "title": "项目入口",
+              "dependsOn": []
+            },
+            {
+              "slot": "B",
+              "title": "后续工作",
+              "dependsOn": [
+                "A"
+              ]
+            }
+          ]
+        },
+        "addedSlots": [
+          "C",
+          "D"
+        ],
+        "afterScope": {
+          "goal": "验证目标项目的最小 Delivery Open 与首个 Change 关联",
+          "plannedChanges": [
+            {
+              "slot": "A",
+              "title": "项目入口",
+              "dependsOn": []
+            },
+            {
+              "slot": "B",
+              "title": "后续工作",
+              "dependsOn": [
+                "A"
+              ]
+            },
+            {
+              "slot": "C",
+              "title": "新增 C",
+              "dependsOn": [
+                "B"
+              ]
+            },
+            {
+              "slot": "D",
+              "title": "新增 D",
+              "dependsOn": [
+                "C"
+              ]
+            }
+          ]
+        },
+        "version": 1,
+        "roundId": "r001",
+        "ownerDecision": "Owner 场景夹具：明确授权 C/D 范围，非仓库授权",
+        "reason": "增加后续交付",
+        "inputRef": "append.json",
+        "inputContent": "{\n  \"requestId\": \"owner-append-01\",\n  \"ownerDecision\": \"Owner 场景夹具：明确授权 C/D 范围，非仓库授权\",\n  \"reason\": \"增加后续交付\",\n  \"additions\": [\n    {\n      \"slot\": \"C\",\n      \"title\": \"新增 C\",\n      \"dependsOn\": [\n        \"B\"\n      ]\n    },\n    {\n      \"slot\": \"D\",\n      \"title\": \"新增 D\",\n      \"dependsOn\": [\n        \"C\"\n      ]\n    }\n  ]\n}\n",
+        "priorPointers": {
+          "activeChangeId": null,
+          "latestRunRef": null,
+          "deliveryRunRef": null,
+          "fullTestRunRef": null,
+          "testAttemptRunRef": null,
+          "verificationRunRef": null,
+          "scopeAddRunRef": null
+        },
+        "createdAt": "2026-10-20T15:17:25.637Z"
+      },
+      "outcome": "complete",
+      "result": "scope-added"
+    },
+    "next": {
+      "action": "change-bind",
+      "role": "author",
+      "source": "local-state",
+      "executable": false,
+      "reason": "范围已追加；活动阶段或显式 bind 仍按各自授权继续。"
+    }
+  }
+}

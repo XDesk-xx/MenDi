@@ -1,0 +1,207 @@
+{
+  "ok": true,
+  "operation": "query",
+  "projectRoot": "D:\\Projects\\MenDi",
+  "openspec": {
+    "entry": "D:\\tools\\openspec\\1.14.1\\node_modules\\@fission-ai\\openspec\\bin\\openspec.js",
+    "version": "1.14.1",
+    "root": {
+      "path": "D:\\Projects\\MenDi",
+      "source": "nearest"
+    }
+  },
+  "local": {
+    "source": "manual-bootstrap",
+    "deliveryId": "20261020-05-formal-full-test-and-workflow-repairs",
+    "title": "正式验收与日常工作减负",
+    "state": "open",
+    "goal": "统一 groups-v1 正式 Full Test 完整执行与统一报告、修复后全量重跑；支持未 Close Delivery 追加 Change；优化 proof/inputs/artifacts 证据，并支持最新 Run 的 supplement/amend。",
+    "plannedChanges": [
+      {
+        "slot": "MVP-D05-A",
+        "title": "统一正式 Full Test",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D05-A：以 groups-v1 统一未来正式执行"
+      },
+      {
+        "slot": "MVP-D05-B",
+        "title": "未 Close 追加 Change CLI",
+        "dependsOn": [],
+        "roadmapSection": "MVP-D05-B：已 Open、未 Close 的 Delivery 直接追加计划 Change"
+      },
+      {
+        "slot": "MVP-D05-C",
+        "title": "proof / inputs / artifacts 轻量化",
+        "dependsOn": [
+          "MVP-D05-A"
+        ],
+        "roadmapSection": "MVP-D05-C：减少 proof / inputs / artifacts 的无价值产物"
+      },
+      {
+        "slot": "MVP-D05-D",
+        "title": "当前最新 Run supplement / amend",
+        "dependsOn": [
+          "MVP-D05-C"
+        ],
+        "roadmapSection": "MVP-D05-D：当前最新 Run 的 supplement 与有限 amend"
+      }
+    ],
+    "activeChangeId": null,
+    "changeBindings": [
+      {
+        "changeId": "unified-groups-full-test-and-repair-flow",
+        "changeRef": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+        "planningSlot": "MVP-D05-A",
+        "state": "archived",
+        "archiveOrdinal": 14
+      },
+      {
+        "changeId": "append-planned-changes-to-open-delivery",
+        "changeRef": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+        "planningSlot": "MVP-D05-B",
+        "state": "archived",
+        "archiveOrdinal": 15
+      },
+      {
+        "changeId": "reduce-redundant-proof-inputs-and-artifacts",
+        "changeRef": "openspec/changes/archive/2026-10-21-016-reduce-redundant-proof-inputs-and-artifacts",
+        "planningSlot": "MVP-D05-C",
+        "state": "archived",
+        "archiveOrdinal": 16
+      },
+      {
+        "changeId": "latest-run-supplement-and-limited-amend",
+        "changeRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+        "planningSlot": "MVP-D05-D",
+        "state": "archived",
+        "archiveOrdinal": 17
+      }
+    ],
+    "compatibility": "manual-bootstrap-read-only",
+    "recorded": {
+      "id": "20261020-05-formal-full-test-and-workflow-repairs",
+      "planningSlot": "MVP-D05",
+      "title": "正式验收与日常工作减负",
+      "state": "open",
+      "recordingMode": "manual-bootstrap",
+      "openedOn": "2026-10-20",
+      "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
+      "goal": "统一 groups-v1 正式 Full Test 完整执行与统一报告、修复后全量重跑；支持未 Close Delivery 追加 Change；优化 proof/inputs/artifacts 证据，并支持最新 Run 的 supplement/amend。",
+      "plannedChanges": [
+        {
+          "slot": "MVP-D05-A",
+          "title": "统一正式 Full Test",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D05-A：以 groups-v1 统一未来正式执行"
+        },
+        {
+          "slot": "MVP-D05-B",
+          "title": "未 Close 追加 Change CLI",
+          "dependsOn": [],
+          "roadmapSection": "MVP-D05-B：已 Open、未 Close 的 Delivery 直接追加计划 Change"
+        },
+        {
+          "slot": "MVP-D05-C",
+          "title": "proof / inputs / artifacts 轻量化",
+          "dependsOn": [
+            "MVP-D05-A"
+          ],
+          "roadmapSection": "MVP-D05-C：减少 proof / inputs / artifacts 的无价值产物"
+        },
+        {
+          "slot": "MVP-D05-D",
+          "title": "当前最新 Run supplement / amend",
+          "dependsOn": [
+            "MVP-D05-C"
+          ],
+          "roadmapSection": "MVP-D05-D：当前最新 Run 的 supplement 与有限 amend"
+        }
+      ],
+      "changeBindings": [
+        {
+          "planningSlot": "MVP-D05-A",
+          "changeId": "unified-groups-full-test-and-repair-flow",
+          "changeRef": "openspec/changes/archive/2026-10-20-014-unified-groups-full-test-and-repair-flow",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
+          "archiveOrdinal": 14
+        },
+        {
+          "planningSlot": "MVP-D05-B",
+          "changeId": "append-planned-changes-to-open-delivery",
+          "changeRef": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
+          "archiveOrdinal": 15
+        },
+        {
+          "planningSlot": "MVP-D05-C",
+          "changeId": "reduce-redundant-proof-inputs-and-artifacts",
+          "changeRef": "openspec/changes/archive/2026-10-21-016-reduce-redundant-proof-inputs-and-artifacts",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/032-archive/run.md",
+          "archiveOrdinal": 16
+        },
+        {
+          "planningSlot": "MVP-D05-D",
+          "changeId": "latest-run-supplement-and-limited-amend",
+          "changeRef": "openspec/changes/archive/2026-10-21-017-latest-run-supplement-and-limited-amend",
+          "batchId": "002-changes",
+          "state": "archived",
+          "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
+          "archiveOrdinal": 17
+        }
+      ],
+      "changeBatches": [
+        {
+          "id": "002-changes",
+          "firstRun": "002",
+          "runsRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes",
+          "changeIds": [
+            "unified-groups-full-test-and-repair-flow",
+            "append-planned-changes-to-open-delivery",
+            "reduce-redundant-proof-inputs-and-artifacts",
+            "latest-run-supplement-and-limited-amend"
+          ]
+        }
+      ],
+      "activeChangeId": null,
+      "exitCriteria": [
+        "D05-A/B/C/D 四项按各自授权完成 Explore proof、Propose、Apply、独立审核与 Archive。",
+        "未来正式 Full Test 统一 groups-v1，普通失败收集完整，修复后重新运行全部必需组；旧 command 仅历史查询。",
+        "未 Close Delivery 可明确授权新增计划槽位，不改变旧轮事实、不复用旧 PASS 收口。",
+        "减少无价值证据复制但保留失败和中断现场；补证与正文小修订不改变原 verdict。",
+        "D05 正式 Full Test、Close、Git、稳定安装分别按 Owner 独立授权执行。"
+      ],
+      "outOfScope": [
+        "旧 command 新执行、跨尝试拼接 PASS、普通外部 Full 直接追认为新正式 PASS。",
+        "修改 D01-D04 旧 Run、verdict、Close 以及批量删除已提交证据。",
+        "未经单独授权修改 DreMo 或推进其他 Delivery。",
+        "通用测试调度/缓存、全库 hash 证据链、自动审核及安装/部署发布。"
+      ],
+      "openRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
+      "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/046-delivery-full-test/run.md",
+      "stopBoundary": "delivery-full-test-execute",
+      "next": {
+        "action": "delivery-full-test-execute",
+        "status": "working",
+        "role": "author",
+        "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/046-delivery-full-test/run.md",
+        "reason": "D05 Owner 已授权，046 手工正式 F01–F05 整次验收准备完成，需真实执行并全部直接读回；本根 manual-bootstrap 不调用不适用的产品 v2 写 CLI。"
+      }
+    }
+  },
+  "upstream": null,
+  "next": {
+    "action": "delivery-full-test-execute",
+    "status": "working",
+    "role": "author",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/046-delivery-full-test/run.md",
+    "reason": "D05 Owner 已授权，046 手工正式 F01–F05 整次验收准备完成，需真实执行并全部直接读回；本根 manual-bootstrap 不调用不适用的产品 v2 写 CLI。",
+    "source": "manual-bootstrap",
+    "executable": false
+  }
+}

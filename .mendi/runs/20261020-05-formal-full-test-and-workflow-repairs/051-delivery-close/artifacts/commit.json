@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+  "result": "closed",
+  "closedAt": "2026-10-21T10:55:16.870Z",
+  "fullTestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/run.md",
+  "lockReleased": true,
+  "historyUnchanged": true,
+  "projectIdentityUnchanged": true,
+  "next": {
+    "action": "owner-decision",
+    "status": "awaiting-owner-instruction",
+    "role": "author",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+    "reason": "D05 051已Close，050完整正式验收passed，四项归档014–017保留；等待Owner下一指令，Git/发布/稳定安装与其他目标操作分别授权。"
+  }
+}

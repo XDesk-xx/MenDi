@@ -1,0 +1,324 @@
+{
+  "reviewedAt": "2026-10-21T04:54:41.440Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/041-revise-propose/run.md",
+  "previousReviewer": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/040-review-propose/run.md",
+  "preservedEarlierReview": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/038-review-propose/run.md",
+  "ownerReview": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/036-review-explore/run.md",
+  "scope": "D05-D Propose contract review only, no supplement/amend product executed",
+  "approvalBasis": "All 040 F4 mode routing and F1-F3 safeguards concretized in actual Proposal, Design, three delta Specs, and 16 Tasks; no remaining planning blocker found",
+  "taskCount": 16,
+  "allTasksPending": true,
+  "crosswalk": [
+    {
+      "id": "F4-mode-caller-explicit",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/proposal.md",
+          "line": 10,
+          "excerpt": "- 新增 `mendi run amend --project ... --run ... --role ... --actor ... --request-id ... --kind presentation-only --body <file> --reason ...` 或 `--kind unreviewed-comment --comment <file>`（其它身份与 reason 参数相同）：仅在可验证的**极窄非实质修改**范围内更正文稿。保留原始提交全文、前后正文、精确差异、原因、操作者和时间；修改不得触及 frontmatter、正式结果、审核论证、测试覆盖、授权、失败及来源事实。**首版每个 Run 最多一次已确认 amend（显式 requestId 与 kind 一并参与幂等身份）。必须明确选择互斥模式：`presentation-only` 只能用 `--body` 提交完整候选正文，安全的机械可验证排版差异才可更正；`unreviewed-comment` 只能用 `--comment` 提交自由文字并存入 `authoritative=false` 独立区块。缺 kind、缺对应输入或两种输入混用一律拒绝；同 requestId 改 kind/内容不得"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/proposal.md",
+          "line": 10,
+          "excerpt": "- 新增 `mendi run amend --project ... --run ... --role ... --actor ... --request-id ... --kind presentation-only --body <file> --reason ...` 或 `--kind unreviewed-comment --comment <file>`（其它身份与 reason 参数相同）：仅在可验证的**极窄非实质修改**范围内更正文稿。保留原始提交全文、前后正文、精确差异、原因、操作者和时间；修改不得触及 frontmatter、正式结果、审核论证、测试覆盖、授权、失败及来源事实。**首版每个 Run 最多一次已确认 amend（显式 requestId 与 kind 一并参与幂等身份）。必须明确选择互斥模式：`presentation-only` 只能用 `--body` 提交完整候选正文，安全的机械可验证排版差异才可更正；`unreviewed-comment` 只能用 `--comment` 提交自由文字并存入 `authoritative=false` 独立区块。缺 kind、缺对应输入或两种输入混用一律拒绝；同 requestId 改 kind/内容不得"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "`run amend` 必须由调用者指定 `--request-id <id>`、`--kind presentation-only|unreviewed-comment`、`--reason <text>` 及项目/Run/角色/actor。**输入模式由 CLI 字段确定，不通过文本、差异或 AI 猜测**：`presentation-only` **只接受** `--body <file>`（完整原正文候选），禁止 `--comment`；`unreviewed-comment` **只接受** `--comment <file>`（自由文本），禁止 `--body`。缺 kind、未知 kind、缺匹配输入、同时提供 body/comment 都在修改文件前拒绝。requestId 显式必填，不从时间、模式或正文推导。**首版每个 Run 至多一次 confirmed amend**：唯一 `aftercare/amend` 槽位保存请求 ID、不可变 kind、相应文件输入与其精确内容身份、原正文基线、候选展示正文或隔离评论、差异、recordedAt/actor/原因。同 ID、同 kind、同输入才可幂等读回；同 ID 换 kind/内容、第二不同 ID 均拒绝；pen"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 44,
+          "excerpt": "有限 amend SHALL 由调用者显式给出 `requestId` 和 `kind=presentation-only|unreviewed-comment`，且只接受该模式唯一对应输入：前者为完整候选正文 `body`，后者为自由评论 `comment`。缺/未知 kind、输入缺失或 body/comment 混用 MUST 拒绝；不得根据相同文本内容、diff 或 AI 猜意图。首版每 Run 至多一次已确认 amend；presentation-only 仅允许机械校验的非实质排版差异，unreviewed-comment 永远 `authoritative=false`。保存原正文、前后差异、actor、recordedAt、原因；frontmatter、结果、verdict、授权和审核语义不可改，模糊更改走正式独立 Review。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 5,
+          "excerpt": "- [ ] 1.1 实现两个专用 run 子命令（supplement/amend 均需 requestId），amend 还必须有 `--kind presentation-only|unreviewed-comment` 和互斥的 `--body` / `--comment`；CLI 测试缺/未知 kind、输入缺失或混用拒绝，旧 save/submit 不变。"
+        }
+      ]
+    },
+    {
+      "id": "F4-mutually-exclusive-input",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "`run amend` 必须由调用者指定 `--request-id <id>`、`--kind presentation-only|unreviewed-comment`、`--reason <text>` 及项目/Run/角色/actor。**输入模式由 CLI 字段确定，不通过文本、差异或 AI 猜测**：`presentation-only` **只接受** `--body <file>`（完整原正文候选），禁止 `--comment`；`unreviewed-comment` **只接受** `--comment <file>`（自由文本），禁止 `--body`。缺 kind、未知 kind、缺匹配输入、同时提供 body/comment 都在修改文件前拒绝。requestId 显式必填，不从时间、模式或正文推导。**首版每个 Run 至多一次 confirmed amend**：唯一 `aftercare/amend` 槽位保存请求 ID、不可变 kind、相应文件输入与其精确内容身份、原正文基线、候选展示正文或隔离评论、差异、recordedAt/actor/原因。同 ID、同 kind、同输入才可幂等读回；同 ID 换 kind/内容、第二不同 ID 均拒绝；pen"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 58,
+          "excerpt": "#### Scenario: Missing or conflicting mode input"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 5,
+          "excerpt": "- [ ] 1.1 实现两个专用 run 子命令（supplement/amend 均需 requestId），amend 还必须有 `--kind presentation-only|unreviewed-comment` 和互斥的 `--body` / `--comment`；CLI 测试缺/未知 kind、输入缺失或混用拒绝，旧 save/submit 不变。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 18,
+          "excerpt": "- [ ] 3.2 拒绝 presentation-only 的错字/URL 目标/证据引用/测试范围/权限/审核论证/结构修改，以及缺 kind、kind 与输入不符、body/comment 同时提供；即使 comment 自称重新 approved 或旧失败通过，也只能作为未审核评论显示，不进机器 summary/PASS/next。"
+        }
+      ]
+    },
+    {
+      "id": "F4-same-text-different-mode",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 54,
+          "excerpt": "#### Scenario: Same text has different explicit amendment modes"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 56,
+          "excerpt": "- **THEN** presentation-only 因实质正文替换被拒且不创建 confirmed；unreviewed-comment 可保存为未审核的非权威隔离评论，但原 Run 字节、verdict、机器正式摘要与 next 均不改变"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 70,
+          "excerpt": "- **[同一正文的 amend 意图歧义]** → 显式 `--kind` 和互斥 `--body`/`--comment`；同文本走 presentation-only 且变更事实就拒绝，走 unreviewed-comment 则仅旁路显示。缺/错组合拒绝，不猜语义。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 17,
+          "excerpt": "- [ ] 3.1 对明确 kind=presentation-only 且仅有完整 body 的请求机械验证安全空白差异；对明确 kind=unreviewed-comment 且仅有 comment 的请求保留 typed `authoritative=false` 的非权威评论。使用同一“审核已批准”文本验证前者对原“审核未批准”的实质替换拒绝、后者隔离保存，另测安全排版正例和原正文/verdict/next 不变。"
+        }
+      ]
+    },
+    {
+      "id": "F4-idempotency-includes-kind",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "`run amend` 必须由调用者指定 `--request-id <id>`、`--kind presentation-only|unreviewed-comment`、`--reason <text>` 及项目/Run/角色/actor。**输入模式由 CLI 字段确定，不通过文本、差异或 AI 猜测**：`presentation-only` **只接受** `--body <file>`（完整原正文候选），禁止 `--comment`；`unreviewed-comment` **只接受** `--comment <file>`（自由文本），禁止 `--body`。缺 kind、未知 kind、缺匹配输入、同时提供 body/comment 都在修改文件前拒绝。requestId 显式必填，不从时间、模式或正文推导。**首版每个 Run 至多一次 confirmed amend**：唯一 `aftercare/amend` 槽位保存请求 ID、不可变 kind、相应文件输入与其精确内容身份、原正文基线、候选展示正文或隔离评论、差异、recordedAt/actor/原因。同 ID、同 kind、同输入才可幂等读回；同 ID 换 kind/内容、第二不同 ID 均拒绝；pen"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 66,
+          "excerpt": "#### Scenario: One amend per Run with explicit request identity"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 68,
+          "excerpt": "- **THEN** 完全相同请求只读回原 confirmed；同 ID 改模式/输入及第二不同 ID 都拒绝，不覆盖唯一的 aftercare/amend，也不更换展示修订。原 ID pending 时任何新 ID 均被阻断，待显式恢复"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 19,
+          "excerpt": "- [ ] 3.3 amend 必须显式 requestId，单 Run 只有一个 confirmed amend；受管保存原正文基线、候选展示/非权威评论、精确差异、recordedAt、actor/原因；测试同 ID 同 kind 同输入幂等、同 ID 换 kind/内容与第二不同 ID 拒绝；跨进程读回原 run.md 字节和 next/verdict 不变。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 19,
+          "excerpt": "- [ ] 3.3 amend 必须显式 requestId，单 Run 只有一个 confirmed amend；受管保存原正文基线、候选展示/非权威评论、精确差异、recordedAt、actor/原因；测试同 ID 同 kind 同输入幂等、同 ID 换 kind/内容与第二不同 ID 拒绝；跨进程读回原 run.md 字节和 next/verdict 不变。"
+        }
+      ]
+    },
+    {
+      "id": "F1-time-provenance-maintained",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/proposal.md",
+          "line": 9,
+          "excerpt": "- 新增 `mendi run supplement --project ... --run ... --role ... --actor ... --input ...`：对**当前轮、实际最新、已提交、尚未被下游 draft/提交或 Close 消费**的 Change / 合法 Delivery Run 追加本次真实证据。受管收据区分系统当次生成的 `recordedAt` 与来源自述的可空 `sourceClaimedCollectedAt`（始终标记 `unverified`）。旧 Run 没有可信 submittedAt/approvedAt 锚点，不能根据声明或 mtime 推定证据采集与原批准的时序；无可信锚点时请求系统认证旧日期必须拒绝。相反/可疑证据不得获得自动认可；原 Run 正文、verdict、结果和 next 不变。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 27,
+          "excerpt": "命令 `run supplement --project --run --role --actor --input <JSON>` 包含 `requestId`、来源、理由、受管证据及 `relation`（additional/conflicting/uncertain，默认 uncertain）。系统仅赋予本次后续操作的 `recordedAt`；来源可选传入 `sourceClaimedCollectedAt`，保存时强制 `sourceTimeTrust=unverified`。旧 Change/Delivery Run 都没有可信 submittedAt/approvedAt，输入日期、文件 mtime、Run 编号及 recordedAt 均不能证明原证据采集早于/晚于原批准；没有独立可信锚点却要求 `verified` 或声称系统已证实时，必须拒绝认证（可保留明确未验证的来源自述）。追加时间表示本次保存，而非来源实际采集或原批准时间。真正唯一附件与 typed receipt 位于 `aftercare/supplements/<requestId>`；只允许安全受管路径。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 29,
+          "excerpt": "提交者 SHALL 保存真实必要证据、来源、角色/actor、理由/关系和系统赋予的本次保存时间 `recordedAt`；可空的来源自述 `sourceClaimedCollectedAt` MUST 标为 `unverified`。没有独立可信的来源或旧 approvedAt 锚点时，系统 MUST 拒绝声称来源时序已认证，不能由用户自述或文件 mtime 推断原批准时间。补证与旧 verdict/结果相互独立，冲突不自动变更旧结论。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 12,
+          "excerpt": "- [ ] 2.2 受管保存唯一附件，测试越界/symlink/缺失/读中变化/重复及同 requestId 不同输入拒绝；额外验证虚假过去日期的 verified 声明被拒、普通无锚点旧日期只能标记 unverified，不能宣称批准前取得。"
+        }
+      ]
+    },
+    {
+      "id": "F2-one-confirmed-amend",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 35,
+          "excerpt": "`run amend` 必须由调用者指定 `--request-id <id>`、`--kind presentation-only|unreviewed-comment`、`--reason <text>` 及项目/Run/角色/actor。**输入模式由 CLI 字段确定，不通过文本、差异或 AI 猜测**：`presentation-only` **只接受** `--body <file>`（完整原正文候选），禁止 `--comment`；`unreviewed-comment` **只接受** `--comment <file>`（自由文本），禁止 `--body`。缺 kind、未知 kind、缺匹配输入、同时提供 body/comment 都在修改文件前拒绝。requestId 显式必填，不从时间、模式或正文推导。**首版每个 Run 至多一次 confirmed amend**：唯一 `aftercare/amend` 槽位保存请求 ID、不可变 kind、相应文件输入与其精确内容身份、原正文基线、候选展示正文或隔离评论、差异、recordedAt/actor/原因。同 ID、同 kind、同输入才可幂等读回；同 ID 换 kind/内容、第二不同 ID 均拒绝；pen"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 44,
+          "excerpt": "有限 amend SHALL 由调用者显式给出 `requestId` 和 `kind=presentation-only|unreviewed-comment`，且只接受该模式唯一对应输入：前者为完整候选正文 `body`，后者为自由评论 `comment`。缺/未知 kind、输入缺失或 body/comment 混用 MUST 拒绝；不得根据相同文本内容、diff 或 AI 猜意图。首版每 Run 至多一次已确认 amend；presentation-only 仅允许机械校验的非实质排版差异，unreviewed-comment 永远 `authoritative=false`。保存原正文、前后差异、actor、recordedAt、原因；frontmatter、结果、verdict、授权和审核语义不可改，模糊更改走正式独立 Review。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 19,
+          "excerpt": "- [ ] 3.3 amend 必须显式 requestId，单 Run 只有一个 confirmed amend；受管保存原正文基线、候选展示/非权威评论、精确差异、recordedAt、actor/原因；测试同 ID 同 kind 同输入幂等、同 ID 换 kind/内容与第二不同 ID 拒绝；跨进程读回原 run.md 字节和 next/verdict 不变。"
+        }
+      ]
+    },
+    {
+      "id": "F3-nonauthoritative-comment",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 39,
+          "excerpt": "2. **`unreviewed-comment`：自由事后评论只作非权威隔离展示**。自由文本无法机械证明语义安全，也不能保证真实；只以 typed `kind=unreviewed-comment`、`authoritative=false` 保存原始内容、recordedAt/actor/原因，**不并入展示更正版的被审核正文、正式摘要、证据来源、verdict、PASS 或 next**。所有显示入口持续标注“事后未审核评论”；即使文本出现“重新 approved”“旧失败已通过”，也只能显示在该非权威隔离区。若要求这种文字具有正式事实效力，应拒绝此种使用并指向正式独立 Review，不以 AI/关键词黑名单推断文字非实质。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 88,
+          "excerpt": "#### Scenario: Unreviewed comment asserts a new approval"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/delivery-workspace/spec.md",
+          "line": 85,
+          "excerpt": "#### Scenario: Free aftercare comment contains a false approval claim"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 25,
+          "excerpt": "- [ ] 4.3 status/query 仅展示 confirmed，保留旧结果/verdict/next；将 recordedAt 与 unverified 来源时间分开，unreviewed-comment 永远不进入正式摘要；旧 Run 无 aftercare 照旧可读，缺/坏收据不伪造成功。"
+        }
+      ]
+    },
+    {
+      "id": "eligibility-Change-Delivery-and-failure",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 20,
+          "excerpt": "- **Delivery：**必须**无活动 Change**，`manifest.deliveryRunRef` 精确等于目标，`currentDeliveryRun` 与当前轮 scope 同属，类型首版只放开 `delivery-repair`、`revise-delivery-repair`、`review-delivery-repair` 的已经完成提交；拒绝 `delivery-test-attempt`、`delivery-full-test`、`delivery-close/open/reopen/migrate`、`delivery-verification`、`delivery-change-add` 等正式生命周期和验收事实。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 16,
+          "excerpt": "#### Scenario: Delivery reviewer is current without active Change"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/action-runs/spec.md",
+          "line": 73,
+          "excerpt": "#### Scenario: Current delivery run is not the archived change run"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/delivery-workspace/spec.md",
+          "line": 81,
+          "excerpt": "#### Scenario: Current Run shows confirmed post-submission material without changing next"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 49,
+          "excerpt": "1. 为 supplement/amend 均校验明确 requestId；amend 额外核对明确 kind 与互斥的 `--body`/`--comment`，锁内比较唯一槽位中的 requestId、kind 和直接输入身份（同 ID 换模式/内容拒绝），然后以独占方式写 `intent.json`（记录唯一对象、用户输入与初态、可解释的前置版本）；此时**不能**返回成功。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 73,
+          "excerpt": "#### Scenario: Interrupted between evidence and receipt"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 24,
+          "excerpt": "- [ ] 4.2 对 intent、复制、提交、读回、锁释放各断点进行故障注入，确认 partial 不宣称完成、实际现场可诊断、幂等重试不重复；显式 resume 只处理同一请求，不能自动清理未知锁。"
+        }
+      ]
+    },
+    {
+      "id": "no-external-write-old-Run-immutability",
+      "refs": [
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/proposal.md",
+          "line": 14,
+          "excerpt": "- 不恢复或修改 D05-D 授权争议历史：033 Explore、034 技术 approved、035 授权 rejected、036 新授权 approved 分别保留。D05-D 研发授权**不授权触及 DreMo 035 或其他目标项目**，也不代表 D05 正式 Full Test/Close、Git 或发布授权。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/design.md",
+          "line": 29,
+          "excerpt": "对同一 requestId 提交同一输入时从已确认收据读回既有结果；对相同请求 ID 的不同内容明确冲突，对相同原件的新请求检查重复引用/身份并拒绝或说明无法确认为不同证据（不通过全库内容 hash 猜同一真实执行）。若新事实和既有 approved 冲突，允许记录 `conflicting` 并明确风险/需要 Owner 和独立 Review；不自动改前 verdict 或 next、不将其解释为批准证据。旧 `run.md` 及 Review 原文任何字节不修改。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/specs/run-post-submission/spec.md",
+          "line": 56,
+          "excerpt": "- **THEN** presentation-only 因实质正文替换被拒且不创建 confirmed；unreviewed-comment 可保存为未审核的非权威隔离评论，但原 Run 字节、verdict、机器正式摘要与 next 均不改变"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 29,
+          "excerpt": "- [ ] 5.1 在隔离 product-v2 Change Author/Reviewer 与 Delivery Repair/Review 上完成真实命令的补证和展示修订正例，对照 033/034 的权威指针和下游 draft 负例；不得触碰真实 DreMo。"
+        },
+        {
+          "path": "openspec/changes/latest-run-supplement-and-limited-amend/tasks.md",
+          "line": 32,
+          "excerpt": "- [ ] 5.4 核对 033/034/035/036 原始历史和 D05-A/B/C Archive 014/015/016 均未更改，并将真实 Apply 结果交独立 review-apply，不自签批准。"
+        }
+      ]
+    }
+  ],
+  "explicitContractMatrix": [
+    {
+      "input": "kind=presentation-only; body contains changed审核 result",
+      "expected": "reject before confirmed; never fall back to comment",
+      "source": "run-post-submission/spec.md:54-56"
+    },
+    {
+      "input": "kind=unreviewed-comment; comment contains same words",
+      "expected": "accept only as authoritative=false; original result/next unchanged",
+      "source": "run-post-submission/spec.md:54-56"
+    },
+    {
+      "input": "no kind or kind=unknown",
+      "expected": "reject before writes",
+      "source": "run-post-submission/spec.md:58-60"
+    },
+    {
+      "input": "presentation-only with comment or both inputs",
+      "expected": "reject before writes",
+      "source": "run-post-submission/spec.md:58-60"
+    },
+    {
+      "input": "unreviewed-comment with body or both inputs",
+      "expected": "reject before writes",
+      "source": "run-post-submission/spec.md:58-60"
+    },
+    {
+      "input": "same request ID, same kind and bytes",
+      "expected": "only return confirmed receipt; no duplicate",
+      "source": "run-post-submission/spec.md:66-68"
+    },
+    {
+      "input": "same request ID, different kind/bytes",
+      "expected": "reject without overwriting confirmed slot",
+      "source": "run-post-submission/spec.md:66-68"
+    },
+    {
+      "input": "second request ID on already confirmed Run",
+      "expected": "reject; one confirmed amend per Run",
+      "source": "run-post-submission/spec.md:66-68"
+    },
+    {
+      "input": "body with safe single-space normalization",
+      "expected": "presentation-only may save display derivative but run.md unchanged",
+      "source": "run-post-submission/spec.md:46-48"
+    }
+  ],
+  "validation": {
+    "exitCode": 0,
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "raw": "openspec-validation.json"
+  },
+  "limitations": [
+    "Contract matrix is planning verification, NOT a runtime execution test of unimplemented CLI",
+    "Independent future Apply must actually exercise Change + Delivery cases, CLI negative routing, lock and resume/partial readbacks",
+    "Old submitted Runs, Owner decisions and earlier Reviewer verdicts are read-only; no global history/timestamp hash chain"
+  ]
+}

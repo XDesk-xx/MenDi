@@ -1,0 +1,112 @@
+{
+  "basis": "本次维护 TS 物理行数，真实 HEAD 对照；观察不是门槛或长期台账",
+  "areas": [
+    {
+      "area": "src",
+      "top3": [
+        {
+          "path": "src/application/delivery-lifecycle.ts",
+          "physicalLines": 368,
+          "headPhysicalLines": 368
+        },
+        {
+          "path": "src/application/group-attempt.ts",
+          "physicalLines": 361,
+          "headPhysicalLines": 361
+        },
+        {
+          "path": "src/adapters/workspace.ts",
+          "physicalLines": 346,
+          "headPhysicalLines": 346
+        }
+      ]
+    },
+    {
+      "area": "tests",
+      "top3": [
+        {
+          "path": "tests/action-write.test.ts",
+          "physicalLines": 467,
+          "headPhysicalLines": 467
+        },
+        {
+          "path": "tests/planning-cli.test.ts",
+          "physicalLines": 444,
+          "headPhysicalLines": 444
+        },
+        {
+          "path": "tests/delivery-repair.test.ts",
+          "physicalLines": 395,
+          "headPhysicalLines": 395
+        }
+      ]
+    },
+    {
+      "area": "scripts",
+      "top3": [
+        {
+          "path": "scripts/proofs/mvp-d01-c-explore.ts",
+          "physicalLines": 678,
+          "headPhysicalLines": 678
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-d-explore.ts",
+          "physicalLines": 487,
+          "headPhysicalLines": 487
+        },
+        {
+          "path": "scripts/proofs/mvp-d01-a-explore.ts",
+          "physicalLines": 463,
+          "headPhysicalLines": 463
+        }
+      ]
+    }
+  ],
+  "changed": [
+    {
+      "path": "tests/helpers.ts",
+      "physicalLines": 93,
+      "headPhysicalLines": 86
+    },
+    {
+      "path": "tests/test-support.ts",
+      "physicalLines": 128,
+      "headPhysicalLines": 137
+    },
+    {
+      "path": "tests/group-support.ts",
+      "physicalLines": 104,
+      "headPhysicalLines": 143
+    },
+    {
+      "path": "tests/evidence-support.ts",
+      "physicalLines": 199,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/evidence-scenes.ts",
+      "physicalLines": 109,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/evidence-support.test.ts",
+      "physicalLines": 155,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/evidence-recorder.test.ts",
+      "physicalLines": 136,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/evidence-groups.test.ts",
+      "physicalLines": 134,
+      "headPhysicalLines": null
+    },
+    {
+      "path": "tests/evidence-history.test.ts",
+      "physicalLines": 103,
+      "headPhysicalLines": null
+    }
+  ]
+}

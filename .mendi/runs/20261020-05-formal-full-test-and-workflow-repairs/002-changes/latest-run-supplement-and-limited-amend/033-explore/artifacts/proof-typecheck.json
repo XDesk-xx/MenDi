@@ -1,0 +1,9 @@
+{
+  "command": "node node_modules/typescript/bin/tsc --noEmit --strict --module NodeNext --moduleResolution NodeNext --target ES2022 --skipLibCheck --allowImportingTsExtensions .mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/033-explore/artifacts/proof.ts",
+  "exitCode": 0,
+  "error": null,
+  "stderr": "",
+  "stdout": "",
+  "actualProofCases": 6,
+  "actualProofStatus": "passed"
+}
