@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "name": "pnpm-check",
+      "exitCode": 0,
+      "error": null,
+      "stdoutTail": "Checked 209 files in 86ms. No fixes applied.\nChecked 209 files in 87ms. No fixes applied.\n",
+      "stderrTail": "$ pnpm format:check && pnpm lint && pnpm typecheck\n$ biome format src scripts tests\n$ biome lint src scripts tests\n$ tsc --noEmit && tsc -p tsconfig.scripts.json && tsc -p tsconfig.tests.json\n"
+    },
+    {
+      "name": "pnpm-build",
+      "exitCode": 0,
+      "error": null,
+      "stdoutTail": "",
+      "stderrTail": "$ tsc\n"
+    },
+    {
+      "name": "openspec-strict",
+      "exitCode": 0,
+      "error": null,
+      "stdoutTail": "{\n  \"items\": [\n    {\n      \"id\": \"append-planned-changes-to-open-delivery\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 62\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderrTail": ""
+    }
+  ]
+}

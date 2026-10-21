@@ -10,6 +10,7 @@ import { archivedCount } from '../core/archive.ts';
 import { currentDeliveryRun } from './delivery-runs.ts';
 import { completionScope } from '../core/delivery-verification.ts';
 import { projectProgress, requireWritable } from '../core/rounds.ts';
+import { scopeAdditionReceipts } from './scope-additions.ts';
 
 export type WritePhase =
   | 'lock-acquired'
@@ -79,6 +80,7 @@ export function readWorkspace(
         : '核对现场后显式 resume；不自动清锁。',
     );
   const workspace = parseWorkspace(index, readJson(managedPath(root, index.manifestRef)));
+  scopeAdditionReceipts(root, workspace);
   if (summaryOnly) return workspace;
   const selected = currentBinding(workspace);
   const delivery = currentDeliveryRun(root, workspace);

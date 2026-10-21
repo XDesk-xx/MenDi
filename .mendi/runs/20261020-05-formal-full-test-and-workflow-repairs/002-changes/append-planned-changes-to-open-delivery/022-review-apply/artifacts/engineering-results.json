@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-10-20T17:05:32.400Z",
+  "fixedAuthor": "021-revise-apply",
+  "allPassed": true,
+  "records": [
+    {
+      "name": "check",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-check.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm build"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-build.log"
+    },
+    {
+      "name": "openspec",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "validate",
+        "append-planned-changes-to-open-delivery",
+        "--strict",
+        "--json"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-openspec.log"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-diff-check.log"
+    }
+  ],
+  "limits": [
+    "Check and build are engineering checks, not a new formal Delivery Full Test or Review approval",
+    "Product change add tests and Review adversarial proof are separate"
+  ]
+}

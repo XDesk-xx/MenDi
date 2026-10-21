@@ -49,9 +49,9 @@ node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js status --proj
 node D:\tools\mendi\current\node_modules\mendi\dist\drivers\cli.js next --project D:\work\target --json
 ```
 
-`--help` 列出 delivery open / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
+`--help` 列出 delivery open / change add / full-test / verification / repair / close / reopen、change bind、action start / continue / instructions / resolve / archive、run save / submit、test list / run / status 和 workspace diagnose。Delivery 范围文件包含 goal、plannedChanges 和依赖；目标已有 Change 才能 bind，首次 Open 不创建 Change。新 Change 激活及 Git、正式 Full Test / Close 等操作仍各守 Owner 授权。
 
-稳定安装 0.2.0 的旧 command / 分组与多来源历史继续按旧合同可读。当前 D05-A 源码候选将新正式执行统一为 groups-v1 完整 initial，所有必需组本次真实执行并稳定读回才由该 Run 自身 passed；修复审核后重新全量，不再新建 continue/retest/verification。新 Close 唯一输入 testAttemptRunRef；方法、计划与恢复声明见[组级协议](skills/group-tests.md)。D05-A 已完成 Apply、独立 Review Apply approved 及 OpenSpec 原生 Archive 014，四份主规格已同步；源码尚未经过 D05 Delivery 正式 Full Test、Close 与单独发布，当前稳定安装仍为 0.2.0，不能把代码审核和局部测试冒充发布验收。
+稳定安装 0.2.0 的旧 command / 分组与多来源历史继续按旧合同可读。当前 D05-A 源码候选将新正式执行统一为 groups-v1 完整 initial，所有必需组本次真实执行并稳定读回才由该 Run 自身 passed；修复审核后重新全量，不再新建 continue/retest/verification。新 Close 唯一输入 testAttemptRunRef；方法、计划与恢复声明见[组级协议](skills/group-tests.md)。D05-A 已归档 014；D05-B 未 Close 当前轮追加 Change CLI 已经 Author Apply、独立 Review Apply approved，并于 025 完成 OpenSpec 原生归档 015；两者主规格均已同步。当前源码尚未经过 D05 Delivery 正式 Full Test、Close 与单独发布，稳定安装仍为 0.2.0，不能把代码审核和局部测试冒充正式发布验收。
 
 start / continue / Owner 接收交接 / Archive 准备返回自有 `methods.stage`、明确选择的 `methods.guidance` 及当前阶段必需的 `methods.upstream`：上游每项含 name / projectRoot / ref / file / generatedBy / content。即时正文供宿主实际读取，不新增旧 Run 必填字段；query / save / submit / diagnose 不因新增方法扩大前置。
 
@@ -80,6 +80,31 @@ node dist/drivers/cli.js delivery migrate apply --project D:\work\target --input
 迁移中断保存原 intent、编号及锁。Owner 另行核对写者与锁处置后，原 actor 显式 `delivery migrate resume --project <root> --run <同次 NNN-delivery-migrate/run.md> --role author --actor <原标识>`；只补原提交，不自动清锁、降级或改终态。重复 apply 返回 already-migrated，同次完整 resume 返回 already-completed；后续工作改变则拒绝旧恢复。详细边界见 `skills/actions/delivery-migrate/SKILL.md`。
 
 本轮 `dependsOn` 仍是本轮 DAG；已交付前置放 `baselineDependencies:[{deliveryId,planningSlot,closeRunRef}]`，示例见 `tests/fixtures/delivery-scope-baseline.json`，引用必须换成目标实际记录。仅核对同项目登记 product 的 archived binding 与指定 Close 完成快照；支持同 Delivery 更早关闭轮和跨 Delivery，来源可后来 Reopen、ordinal 可小于当前累计数、v1 来源无需迁移。manual 来源只能说明。准入只读直接来源，不递归其依赖、旧审核、日志或活动状态；普通 query 不展开来源。新正式结果固定 roundId 和 baselineFacts，Close 消费本轮实际结果及保存快照。现行失败 → 修复 → 独立审核 → 新整次执行规则保持。
+
+## 当前候选的计划追加
+
+Owner 明确授权当前 product-v2 open 轮新增范围后，Author 可使用源码构建后的命令：
+
+```powershell
+node dist/drivers/cli.js delivery change add --project D:\work\target --input change-add.json --role author --actor author-id --json
+```
+
+项目内 `change-add.json` 示例（槽位和授权来源须换成该目标实际值）：
+
+```json
+{
+  "requestId": "append-owner-approved-01",
+  "ownerDecision": "Owner 本次原始范围决定的实际位置及说明",
+  "reason": "增加后续用户场景",
+  "additions": [{"slot": "C", "title": "后续能力", "dependsOn": ["B"]}]
+}
+```
+
+追加只扩充本轮计划，不 bind、激活 Change 或 Reopen。独立 `delivery-change-add` 收据使用共享编号；`scopeAddRunRef` 与有限 `scopeAdditions` 保存前后范围，活动 Change 的最新 Run 与阶段保持。无活动项时，新增未绑定槽位使 `next=change-bind`；仍须独立授权。旧正式 passed/failed 必须已稳定结束并确认清理，未决 Repair/Review、pending、锁和 unknown 阻断。
+
+旧正式 Run 和日志按原范围可查，但不再提供扩大后范围的验收资格。新增项归档后须另行授权新的全量 groups-v1 和 Close。相同 requestId、原 Author、相同输入路径/字节只返回原收据，冲突输入拒绝。
+
+中断保留现场。Owner 核对原写者停止并处置锁后，原 Author 执行 `delivery change add --project <root> --resume <同次 receipt run.md> --role author --actor <原标识>`；只恢复本次已保存的确定前后提交，材料漂移或后续工作使旧恢复失效。方法见 [delivery-change-add](skills/actions/delivery-change-add/SKILL.md)。此候选尚未完成独立 Review Apply 或 D05 正式验收，稳定安装仍是 0.2.0。
 
 ## 显式安装验收
 
@@ -117,10 +142,10 @@ pnpm test:ui
 
 - Reopen保留历轮范围；新项目采用v2记录，旧product可只读查询，写入前须预览并显式迁移。充分旧来源保留真实旧格式基线，活动Change / draft保留；旧pending先使用旧版恢复，不由新版接管。
 - 可选groups-v1支持完整失败收集、同轮续测、独立修复审核后的影响复验及多来源候选；旧command合同继续保留，必需skip / TODO / 取消 / 零执行不能覆盖。
-- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05-A 新的 Full Test 规则已在源码实现、独立审核并归档，D05-B/C/D 尚未实现，D05 整体尚未正式验收或发布。
+- 六阶段方法统一业务契约、当前 UI 方案和主动澄清尺度；普通 UI 调整不新建 Change。D04 已按记录完成正式验收与安装；D05-A 正式 Full Test 与 D05-B 未 Close 追加 Change CLI 都已实现、独立审核并归档；D05-C/D 尚未实现，D05 整体尚未正式验收或发布。
 
 ## 开发交接
 
-当前活动 Delivery 与阶段读取 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json) 及其最近 Run；初始人工 Open 见 [001](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。D05-A 已在 012 Archive 确认归档（OpenSpec 归档序号 014），当前 activeChangeId=null、下一步为 change-checkpoint；D05-B/C/D 尚未激活，继续须按 Owner 授权。长期规划统一查看根路线图 §7 D05。
+当前活动 Delivery 与阶段读取 [D05 manifest](.mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json) 及其最近 Run；初始人工 Open 见 [001](.mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md)。D05-A 已在 012 Archive 归档 014，D05-B 已在 025 Archive 归档 015；当前 activeChangeId=null、下一步为 change-checkpoint；D05-C/D 尚未激活，继续须按 Owner 授权。长期规划统一查看根路线图 §7 D05。
 
-[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，D04 归档截止为 013；D05-A 现已登记 014，项目累计归档 14；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05 Git 分支已建立，但未 commit/push、未执行 D05 正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。
+[D04 记录](.mendi/delivery-groups/20261016-04-real-usage-repairs-and-release/manifest.json)已完成 026 正式 Full Test、027 Close、028 稳定安装，D04 归档截止为 013；D05-A/B 分别登记 014/015，项目累计归档 15；旧归档和 verdict 保留。外部 Full Test 实验代码单独存入 Git stash；D05-A 已有本地 Git checkpoint，D05-B 尚未 commit/push，未执行 D05 整体正式验收或发布。manual-bootstrap 产品写入限制不变；新的 Change 激活、Git、正式 Full Test/Close 与其他目标项目操作继续独立授权。

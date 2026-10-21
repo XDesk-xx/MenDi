@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-20T13:15:35.814Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--strict",
+    "--module",
+    "NodeNext",
+    "--moduleResolution",
+    "NodeNext",
+    "--target",
+    "ES2022",
+    "--skipLibCheck",
+    "--allowImportingTsExtensions",
+    ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/016-review-propose/artifacts/reviewer-proof.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "",
+  "error": null
+}

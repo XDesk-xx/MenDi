@@ -10,8 +10,10 @@ import {
   type CandidateVerification,
 } from './group-records.ts';
 import { parseLifecycle, type Lifecycle } from './delivery-lifecycle.ts';
+import { parseChangeAdd, type ChangeAddReceipt } from './scope-addition.ts';
 
 export const deliveryTypes = [
+  'delivery-change-add',
   'delivery-open',
   'delivery-close',
   'delivery-reopen',
@@ -31,7 +33,13 @@ export function deliveryDefinition(value: unknown) {
   const review = type === 'review-delivery-repair';
   const phase =
     ['delivery-full-test', 'delivery-test-attempt', 'delivery-verification'].includes(type) ||
-    ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-migrate'].includes(type)
+    [
+      'delivery-open',
+      'delivery-close',
+      'delivery-reopen',
+      'delivery-migrate',
+      'delivery-change-add',
+    ].includes(type)
       ? type
       : 'delivery-repair';
   return {
@@ -47,7 +55,7 @@ export function deliveryDefinition(value: unknown) {
 }
 export function deliveryLocation(ref: string, id: string) {
   const match =
-    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-migrate|delivery-full-test|delivery-test-attempt|delivery-verification|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
+    /^\.mendi\/runs\/([a-z0-9-]+)\/(\d{3,})-(delivery-open|delivery-close|delivery-reopen|delivery-migrate|delivery-change-add|delivery-full-test|delivery-test-attempt|delivery-verification|delivery-repair|revise-delivery-repair|review-delivery-repair)\/run\.md$/.exec(
       ref,
     );
   if (
@@ -85,6 +93,7 @@ export interface DeliveryRunRecord {
   lifecycle?: Lifecycle;
   repair?: Repair;
   migration?: { sourceVersion: 1; targetVersion: 2; manifestRef: string; planRef: string };
+  changeAdd?: ChangeAddReceipt;
   ownerDecision?: never;
 }
 export function parseDeliveryRun(value: unknown, ref: string, id: string): DeliveryRunRecord {
@@ -112,6 +121,32 @@ export function parseDeliveryRun(value: unknown, ref: string, id: string): Deliv
   )
     throw new MendiError('invalid-run', 'Delivery Run 头部、方法或 Action 身份不一致。');
   text(data.actorId, 'actor');
+  if (location.type === 'delivery-change-add') {
+    if (
+      Number(first![1]) !== location.number ||
+      [
+        'attempt',
+        'verification',
+        'fullTest',
+        'repair',
+        'lifecycle',
+        'migration',
+        'verdict',
+        'authorRunRef',
+        'revisesRunRef',
+        'ownerDecision',
+        'archive',
+      ].some((k) => data[k] !== undefined) ||
+      (data.status === 'draft'
+        ? data.outcome !== undefined || data.result !== undefined
+        : data.outcome !== 'complete' || data.result !== 'scope-added')
+    )
+      throw new MendiError('invalid-run', '追加收据类型或提交字段矛盾。');
+    record.changeAdd = parseChangeAdd(data.changeAdd, ref);
+    return record;
+  }
+  if (data.changeAdd !== undefined)
+    throw new MendiError('invalid-run', '非追加类型不能携带追加收据。');
   if (['delivery-test-attempt', 'delivery-verification'].includes(location.type)) {
     if (
       data.verdict !== undefined ||

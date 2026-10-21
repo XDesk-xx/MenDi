@@ -1,0 +1,8 @@
+{
+  "command": "pnpm build",
+  "exitCode": 0,
+  "error": null,
+  "signal": null,
+  "stdout": "",
+  "stderr": "$ tsc\n"
+}

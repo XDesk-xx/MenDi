@@ -1,0 +1,9 @@
+{
+  "name": "pnpm-build",
+  "command": "node C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js build",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "",
+  "stderr": "$ tsc\n"
+}

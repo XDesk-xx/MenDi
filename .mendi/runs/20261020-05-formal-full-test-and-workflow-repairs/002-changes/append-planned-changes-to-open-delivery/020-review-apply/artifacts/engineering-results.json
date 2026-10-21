@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-10-20T15:47:32.959Z",
+  "fixedAuthor": "019-apply",
+  "results": [
+    {
+      "id": "check",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-check.log"
+    },
+    {
+      "id": "build",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "pnpm build"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-build.log"
+    },
+    {
+      "id": "openspec",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+        "validate",
+        "append-planned-changes-to-open-delivery",
+        "--strict",
+        "--json"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-openspec.log"
+    },
+    {
+      "id": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "log": "engineering-diff.log"
+    }
+  ],
+  "allPassed": true,
+  "limits": [
+    "Engineering checks are not proof the 7-append growth hazard is solved",
+    "No root MenDi Full Test/Close/Archive, Git commit, stable installation or DreMo write"
+  ]
+}

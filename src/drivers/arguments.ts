@@ -3,6 +3,7 @@ import { MendiError, text } from '../core/errors.ts';
 export interface Arguments {
   command:
     | 'help'
+    | 'delivery-change-add'
     | 'delivery-open'
     | 'delivery-close'
     | 'delivery-reopen'
@@ -41,6 +42,7 @@ export function parseArguments(args: string[]): Arguments {
   if (
     args[0] === 'delivery' &&
     ((args[1] === 'full-test' && ['run', 'status'].includes(args[2])) ||
+      (args[1] === 'change' && args[2] === 'add') ||
       (args[1] === 'verification' && ['create', 'status'].includes(args[2])) ||
       (args[1] === 'migrate' && ['preview', 'apply', 'resume'].includes(args[2])) ||
       (args[1] === 'repair' && ['start', 'review'].includes(args[2])))
@@ -74,6 +76,7 @@ export function parseArguments(args: string[]): Arguments {
   } else throw usage('未知命令。');
   const allowed = new Set([
     'project',
+    ...(command === 'delivery-change-add' ? ['input', 'role', 'actor', 'resume'] : []),
     ...(command === 'delivery-verification-create'
       ? ['input', 'role', 'actor']
       : command === 'delivery-verification-status'
@@ -155,6 +158,9 @@ export function parseArguments(args: string[]): Arguments {
   }
   const required = [
     'project',
+    ...(command === 'delivery-change-add'
+      ? ['role', 'actor', ...(values.resume ? [] : ['input'])]
+      : []),
     ...(command === 'delivery-verification-create'
       ? ['input', 'role', 'actor']
       : command === 'delivery-verification-status'
@@ -210,7 +216,9 @@ export function parseArguments(args: string[]): Arguments {
   ];
   for (const key of required) if (!values[key]) throw usage(`缺少 --${key}。`);
   if (
-    ['delivery-open', 'delivery-close', 'delivery-reopen'].includes(command) &&
+    ['delivery-open', 'delivery-close', 'delivery-reopen', 'delivery-change-add'].includes(
+      command,
+    ) &&
     values.resume &&
     Object.keys(values).some(
       (key) => !['project', 'role', 'actor', 'resume', 'openspec-bin'].includes(key),
@@ -235,6 +243,8 @@ export const help = `MenDi：项目入口与最小 Delivery 协作
 
 mendi delivery open --project <项目根> --id <Delivery ID> --title <标题> --scope <JSON 路径> [--role author --actor <标识>] [--change <既有 Change> --slot <槽位>]
 mendi delivery close --project <项目根> --input <项目内 Close JSON> --role author --actor <标识>
+mendi delivery change add --project <项目根> --input <项目内追加 JSON> --role author --actor <标识>
+mendi delivery change add --project <项目根> --resume <本次追加 Run> --role author --actor <原标识>
 mendi delivery reopen --project <项目根> --scope <项目内新范围 JSON> --reason <原因> --role author --actor <标识>
 mendi delivery migrate preview --project <项目根> --json
 mendi delivery migrate apply --project <项目根> --input <项目内预览 JSON> --role author --actor <标识>

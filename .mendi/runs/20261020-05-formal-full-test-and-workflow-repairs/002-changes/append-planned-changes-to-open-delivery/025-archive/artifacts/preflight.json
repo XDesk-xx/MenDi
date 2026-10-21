@@ -1,0 +1,28 @@
+{
+  "phase": "prepared",
+  "token": "a5556953-593c-43b3-a264-8e746d0a5ec8",
+  "source": "openspec/changes/append-planned-changes-to-open-delivery",
+  "change": "append-planned-changes-to-open-delivery",
+  "ordinal": 15,
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/024-review-apply/run.md",
+  "authorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/023-revise-apply/run.md",
+  "specNames": [
+    "action-runs",
+    "delivery-lifecycle",
+    "delivery-verification",
+    "delivery-workspace"
+  ],
+  "sourceFiles": [
+    ".openspec.yaml",
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/action-runs/spec.md",
+    "specs/delivery-lifecycle/spec.md",
+    "specs/delivery-verification/spec.md",
+    "specs/delivery-workspace/spec.md"
+  ],
+  "taskCount": 15,
+  "nativeCommand": "openspec archive append-planned-changes-to-open-delivery --json --yes",
+  "result": "not-invoked"
+}

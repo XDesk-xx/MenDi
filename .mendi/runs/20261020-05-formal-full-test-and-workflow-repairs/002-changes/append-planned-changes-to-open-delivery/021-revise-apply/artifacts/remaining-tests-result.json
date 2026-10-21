@@ -1,0 +1,28 @@
+{
+  "args": [
+    "--test",
+    "--test-concurrency=2",
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 16,
+    "pass": 16,
+    "fail": 0,
+    "skipped": 0,
+    "duration_ms": 144166.6037
+  },
+  "tests": [
+    "tests/rounds.test.ts",
+    "tests/group-history.test.ts",
+    "tests/migration-rounds.test.ts",
+    "tests/lifecycle-close.test.ts",
+    "tests/lifecycle-reopen.test.ts"
+  ]
+}

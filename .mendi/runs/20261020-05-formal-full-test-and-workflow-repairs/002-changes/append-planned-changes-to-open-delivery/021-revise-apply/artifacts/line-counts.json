@@ -1,0 +1,96 @@
+{
+  "excluded": [
+    "node_modules",
+    ".pnpm",
+    "dist",
+    "runtime",
+    ".tmp"
+  ],
+  "note": "Physical source .ts counts exclude bundled dependency and generated vendor trees; includes blank lines.",
+  "src": [
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "lines": 369
+    },
+    {
+      "path": "src/application/group-attempt.ts",
+      "lines": 362
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "lines": 347
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "lines": 347
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/action-write.test.ts",
+      "lines": 468
+    },
+    {
+      "path": "tests/planning-cli.test.ts",
+      "lines": 445
+    },
+    {
+      "path": "tests/delivery-repair.test.ts",
+      "lines": 396
+    },
+    {
+      "path": "tests/fixtures/legacy-lifecycle.ts",
+      "lines": 386
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "lines": 679
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-d-explore.ts",
+      "lines": 488
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "lines": 464
+    },
+    {
+      "path": "scripts/proofs/mvp-d03-b-explore.ts",
+      "lines": 405
+    }
+  ],
+  "touched": [
+    {
+      "path": "src/adapters/change-add-store.ts",
+      "lines": 316,
+      "headExists": false
+    },
+    {
+      "path": "src/adapters/scope-additions.ts",
+      "lines": 87,
+      "headExists": false
+    },
+    {
+      "path": "src/core/round-records.ts",
+      "lines": 90,
+      "headExists": true
+    },
+    {
+      "path": "tests/change-add-review-repair.test.ts",
+      "lines": 91,
+      "headExists": false
+    },
+    {
+      "path": "tests/change-add.test.ts",
+      "lines": 248,
+      "headExists": false
+    },
+    {
+      "path": "tests/rounds.test.ts",
+      "lines": 331,
+      "headExists": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "src": [
+    {
+      "path": "src/application/delivery-lifecycle.ts",
+      "lines": 368
+    },
+    {
+      "path": "src/application/group-attempt.ts",
+      "lines": 361
+    },
+    {
+      "path": "src/adapters/openspec.ts",
+      "lines": 346
+    },
+    {
+      "path": "src/adapters/workspace.ts",
+      "lines": 346
+    },
+    {
+      "path": "src/application/delivery-repair.ts",
+      "lines": 345
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/action-write.test.ts",
+      "lines": 467
+    },
+    {
+      "path": "tests/planning-cli.test.ts",
+      "lines": 444
+    },
+    {
+      "path": "tests/delivery-repair.test.ts",
+      "lines": 395
+    },
+    {
+      "path": "tests/fixtures/legacy-lifecycle.ts",
+      "lines": 385
+    },
+    {
+      "path": "tests/query.test.ts",
+      "lines": 335
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/proofs/mvp-d01-c-explore.ts",
+      "lines": 678
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-d-explore.ts",
+      "lines": 487
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-a-explore.ts",
+      "lines": 463
+    },
+    {
+      "path": "scripts/proofs/mvp-d03-b-explore.ts",
+      "lines": 404
+    },
+    {
+      "path": "scripts/proofs/mvp-d01-b-explore.ts",
+      "lines": 375
+    }
+  ],
+  "affected": [
+    {
+      "path": "src/core/scope-addition.ts",
+      "lines": 173,
+      "headBaseline": false
+    },
+    {
+      "path": "src/adapters/scope-additions.ts",
+      "lines": 115,
+      "headBaseline": false
+    },
+    {
+      "path": "src/adapters/change-add-store.ts",
+      "lines": 320,
+      "headBaseline": false
+    },
+    {
+      "path": "tests/change-add-review-repair.test.ts",
+      "lines": 180,
+      "headBaseline": false
+    }
+  ]
+}

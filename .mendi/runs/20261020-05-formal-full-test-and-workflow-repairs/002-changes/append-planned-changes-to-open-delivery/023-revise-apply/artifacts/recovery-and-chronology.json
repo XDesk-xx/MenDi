@@ -1,0 +1,19 @@
+{
+  "args": [
+    "--test",
+    "--test-concurrency=2",
+    "tests/change-add-recovery.test.ts",
+    "tests/change-add.test.ts",
+    "tests/rounds.test.ts"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 13,
+    "pass": 13,
+    "fail": 0,
+    "skipped": 0,
+    "duration_ms": 82624.174
+  }
+}

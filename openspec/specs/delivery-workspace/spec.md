@@ -137,6 +137,14 @@ status / next SHALL 只读解释当前轮和当前交接，或显式指定的已
 - **WHEN** 指定未知轮次，或向没有轮次模型的旧 product / manual-bootstrap 请求结构化轮次查询
 - **THEN** 明确报告不存在或格式不支持；普通旧格式查询仍可用，不静默写入轮次或猜历史
 
+#### Scenario: Open scope append with pending binding
+- **WHEN** 当前轮已追加未绑定槽位，既有历史正式 PASS 或旧 Archive 不满足新的完整范围
+- **THEN** status/next 优先显示待 Owner 授权显式 bind 的新增槽位，不选择旧 delivery-next / Close，也不生成 Run
+
+#### Scenario: Scope append during a live Change
+- **WHEN** 合法活动 Change 尚在同轮执行且 Owner 另行追加后续槽位
+- **THEN** next 保留活动 Change 当前 Run/角色与动作，同时能只读展示新完整计划，不让追加收据抢占活动阶段
+
 ### Requirement: Manual bootstrap read compatibility
 
 系统 SHALL 只读识别当前 `recordingMode=manual-bootstrap` 的项目入口和 manifest，保留其阶段、Run 与审核引用并标明来源。未版本化且不符合该格式的记录 MUST 报错；产品写命令 SHALL 拒绝修改人工记录，不将人工历史强制改写为产品格式。
@@ -407,6 +415,10 @@ version 2 product SHALL 保存有序且身份稳定的历轮范围与明确当�
 - **WHEN** 顶层当前范围 / 状态 / 指针与已保存当前轮不一致，或同一槽位归属多轮
 - **THEN** 报告具体记录矛盾，不选任一来源继续写入或自动修复
 
+#### Scenario: Same round appends immutable historical scope
+- **WHEN** 当前 open 轮合法追加 plannedChanges
+- **THEN** roundId、openedOn、origin、前轮、已有绑定不变；当前轮 scope 与顶层投影同步，有限追加前后快照可用于原 Run 的历史归属
+
 ### Requirement: Legacy read compatibility and explicit write migration
 
 新版 SHALL 保留 version 1 product 的只读查询、指引与指定结果读取，manual-bootstrap 继续只读。普通产品写入 MUST 要求可写的新格式；新建空目标和明确迁移除外。旧格式的 bind、阶段 / Run、归档、普通测试、正式验收 / 修复、生命周期及旧操作 resume SHALL 写前拒绝并提示迁移 / 旧版恢复，不静默升级。已有旧 pending / 不完整操作须先用旧版恢复，不能作为新版迁移输入。
@@ -446,3 +458,55 @@ version 2 product SHALL 保存有序且身份稳定的历轮范围与明确当�
 #### Scenario: Ordinary query does not execute dependency admission
 - **WHEN** 当前必要记录完整，但它说明的基线来源后来不可用
 - **THEN** 普通 query 展示已保存声明，不额外遍历来源；需要消费该基线的写入 / 正式验收另按其直接输入拒绝
+
+### Requirement: Explicit append of planned slots to an open delivery
+系统 SHALL 提供 Author 显式调用的 delivery change add，在当前可写 version 2 product、未 Close 的当前轮追加一个或多个 plannedChanges。请求须包含非空槽位、标题、依赖、理由和 Owner 明确的范围授权来源；actor 字符串不能代替真人授权。追加不自动 bind/激活 Change、Reopen、Archive、Full Test 或 Close。
+
+#### Scenario: Add one or several planned slots
+- **WHEN** Owner 已明确授权，Author 给出当前 open 轮多个有效新槽位、依赖、原因与来源
+- **THEN** 一次性按声明顺序追加到当前轮，并由该轮投影当前顶层 scope；旧 goal、绑定、归档编号和 Run 不变
+
+#### Scenario: Existing active Change continues
+- **WHEN** 当前有合法 active Change，Owner 只授权扩展后续计划
+- **THEN** 追加后当前 Change 的阶段、Run 与角色保持，新增槽位只排队，不自动 bind 或切换活动项
+
+#### Scenario: OpenSpec readiness is not owner authorization
+- **WHEN** 仅有 CLI 的 author/actor、OpenSpec 就绪或历史归档事实，没有实际 Owner 范围许可
+- **THEN** 不将其视为激活或追加授权；后续 bind 仍须 Owner 单独授权
+
+### Requirement: Plan-append admission and duplicate-safe submission
+系统 SHALL 在写前与锁内分别复核当前 open 状态、身份、输入及轮次。新槽位不得重复、跨历史轮复用或形成悬空/循环依赖；baselineDependencies 只接受已登记且可核对的真实已交付 Close。相同请求不得重复追加，冲突请求不可覆盖已有计划。
+
+#### Scenario: Invalid or historical slot dependencies
+- **WHEN** 新槽位重复或历史轮已用，依赖悬空/成环、基线 Delivery/Close 不符或受管路径越界
+- **THEN** 拒绝整次添加、指出输入错误，原目标字节与已有 binding 保留
+
+#### Scenario: Closed or unwritable target
+- **WHEN** Delivery closed、人工 bootstrap、旧格式未授权迁移或当前项目/轮次身份不成立
+- **THEN** 拒绝 change add，closed 只能另行 Reopen；不自动迁移或覆盖旧历史
+
+#### Scenario: Retry a completed append
+- **WHEN** 同一唯一请求被重复提交，或同一请求 ID 的有效输入不同
+- **THEN** 已提交的相同请求返回原收据，不重复加槽位/占 Run；不同输入拒绝，且未确认的半提交不能伪装成幂等成功
+
+### Requirement: Historical scopes survive same-round plan extension
+当前轮追加 SHALL 保留前后范围和可核对的追加收据，使过去已记录的同轮旧范围能够唯一归属原 roundId。历史 Open、正式 passed/failed、Repair、Review 的原始 scope、result、verdict 与日志不得修改，历史读取不能追认旧 PASS 为当前验收。
+
+#### Scenario: Historical Open and attempts are readable
+- **WHEN** 同轮已记录 Open、完成正式测试或 Repair/Review 后追加范围
+- **THEN** 旧 Run 按提交时的明确范围、轮次及实际身份只读解释，不因当前 scope 变大而报 invalid-round-record
+
+#### Scenario: Unknown scope lineage remains invalid
+- **WHEN** 某 Run 的 scope/roundId 不属于唯一可核对的历史快照
+- **THEN** 继续拒绝错误归属，不按当前更大范围猜测曾经已获批准或补造 Run
+
+### Requirement: Atomic append receipt and bounded recovery
+新增计划 SHALL 同一次受管操作持久化独立 Author 收据、当前轮 scope、前后范围依据与必要的当前进展调整；所有必要提交及新进程读回确认才报告成功。未知/锁/并发/写入中断保持现场，禁止自动清锁、覆盖或重新占号。
+
+#### Scenario: Scope commit is interrupted
+- **WHEN** 新收据、当前轮范围或顶层投影尚未一致写入
+- **THEN** 不报告已成功，保留冲突与必要的实际写入现场；显式恢复必须先比对同一请求及实际效果
+
+#### Scenario: Concurrent writer changes current work
+- **WHEN** 本次锁竞争失败，或锁内当前 Change、scope、直接输入或正式执行状态变化
+- **THEN** fail-closed，不影响另一写者/已提交记录，不用新增空 Run 作为成功

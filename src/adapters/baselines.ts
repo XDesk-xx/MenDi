@@ -5,6 +5,7 @@ import type { BaselineFact } from '../core/delivery-verification.ts';
 import { recordRound } from '../core/round-records.ts';
 import { readDeliveryRun } from './delivery-runs.ts';
 import { managedPath } from './paths.ts';
+import { scopeAdditionReceipts } from './scope-additions.ts';
 
 /** A bounded readset of the explicitly declared sources; never query a source's active work. */
 export function deliveredBaselines(
@@ -27,6 +28,7 @@ export function deliveredBaselines(
     for (const dependency of planned.baselineDependencies ?? []) {
       const index = parseProject(workspace.project, dependency.deliveryId);
       const source = parseWorkspace(index, read(index.manifestRef));
+      for (const [ref, content] of scopeAdditionReceipts(root, source)) bytes.set(ref, content);
       if (source.mode !== 'product')
         throw new MendiError(
           'baseline-source-unavailable',

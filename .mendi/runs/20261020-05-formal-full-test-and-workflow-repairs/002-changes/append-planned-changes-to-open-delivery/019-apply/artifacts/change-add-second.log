@@ -1,0 +1,105 @@
+TAP version 13
+# Subtest: 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+ok 1 - 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+  ---
+  duration_ms: 33334.3037
+  type: 'test'
+  ...
+# Subtest: 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+not ok 2 - 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+  ---
+  duration_ms: 714.1595
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:130:1'
+  failureType: 'testCodeFailure'
+  error: '受管引用必须是目标内的相对路径。'
+  code: 'unsafe-reference'
+  name: 'MendiError'
+  stack: |-
+    managedPath (file:///D:/Projects/MenDi/src/adapters/paths.ts:30:11)
+    inputBasis (file:///D:/Projects/MenDi/src/application/delivery-lifecycle.ts:52:44)
+    recordedOpen (file:///D:/Projects/MenDi/src/application/delivery-lifecycle.ts:337:17)
+    openDelivery (file:///D:/Projects/MenDi/src/application/project.ts:219:40)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:132:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+  ...
+# Subtest: 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+ok 3 - 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+  ---
+  duration_ms: 453.4867
+  type: 'test'
+  ...
+# Subtest: 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+ok 4 - 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+  ---
+  duration_ms: 1695.687
+  type: 'test'
+  ...
+# Subtest: 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+ok 5 - 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+  ---
+  duration_ms: 23407.1248
+  type: 'test'
+  ...
+# Subtest: 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+ok 6 - 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+  ---
+  duration_ms: 15629.7868
+  type: 'test'
+  ...
+# Subtest: 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+ok 7 - 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+  ---
+  duration_ms: 1382.3846
+  type: 'test'
+  ...
+# Subtest: 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+ok 8 - 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+  ---
+  duration_ms: 50570.395
+  type: 'test'
+  ...
+# Subtest: 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+ok 9 - 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+  ---
+  duration_ms: 17415.9135
+  type: 'test'
+  ...
+# Subtest: 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+not ok 10 - 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+  ---
+  duration_ms: 4370.464
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:525:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'invalid'
+    - 'unknown'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'unknown'
+  actual: 'invalid'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:531:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 8
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 149393.3316

@@ -7,6 +7,7 @@ import { resolveAction } from '../application/action-resolution.ts';
 import { archiveAction } from '../application/archive.ts';
 import { deliveryLifecycle } from '../application/delivery-lifecycle.ts';
 import { migrateDelivery } from '../application/delivery-migration.ts';
+import { addDeliveryChanges } from '../application/delivery-change-add.ts';
 
 import { bindChange, openDelivery, query, queryRound } from '../application/project.ts';
 import { startAction, continueAction, saveRun, submitRun } from '../application/actions.ts';
@@ -34,6 +35,12 @@ export async function dispatch(parsed: Arguments) {
   const input = { project: parsed.values.project, openspecBin: parsed.values['openspec-bin'] };
   const actor = { ...input, role: parsed.values.role, actor: parsed.values.actor };
   switch (parsed.command) {
+    case 'delivery-change-add':
+      return addDeliveryChanges({
+        ...actor,
+        inputFile: parsed.values.input,
+        resumeRef: parsed.values.resume,
+      });
     case 'delivery-verification-create':
       return createVerification({ ...actor, inputFile: parsed.values.input });
     case 'delivery-verification-status':

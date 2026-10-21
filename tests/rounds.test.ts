@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parseProject, parseWorkspace } from '../src/core/records.ts';
 import { projectRound, requireWritable, type DeliveryRound } from '../src/core/rounds.ts';
+import { recordRound } from '../src/core/round-records.ts';
+import type { DeliveryRunRecord } from '../src/core/delivery-runs.ts';
 
 const project = {
   recordingMode: 'product',
@@ -79,6 +81,66 @@ function manifest() {
 function read(value: Record<string, unknown> = manifest()) {
   return parseWorkspace(parseProject(project), value);
 }
+
+test('同轮追加只认连续纯追加快照；原 Open 范围可归属但伪造/跨轮拒绝', () => {
+  const before = read(),
+    rounds = structuredClone(before.rounds!);
+  const current = rounds[1],
+    oldScope = structuredClone(current.scope);
+  const after = {
+    ...oldScope,
+    plannedChanges: [...oldScope.plannedChanges, { slot: 'P14', title: 'P14', dependsOn: ['P13'] }],
+  };
+  const ref = '.mendi/runs/d01/018-delivery-change-add/run.md';
+  current.scope = after;
+  delete current.deliveryRunRef;
+  current.scopeAddRunRef = ref;
+  current.scopeAdditions = [
+    {
+      runRef: ref,
+      requestId: 'append-1',
+      beforeScope: oldScope,
+      afterScope: after,
+      addedSlots: ['P14'],
+    },
+  ];
+  const extended = read(projectRound(before.manifest, rounds, 'r002'));
+  assert.deepEqual(extended.rounds![0], before.rounds![0]);
+  const oldRecord = {
+    runNumber: 11,
+    lifecycle: { scope: oldScope, roundId: 'r002' },
+  } as DeliveryRunRecord;
+  assert.equal(recordRound(extended, oldRecord)?.id, 'r002');
+  assert.throws(() => recordRound(extended, { ...oldRecord, runNumber: 19 } as DeliveryRunRecord));
+  assert.throws(() =>
+    recordRound(extended, {
+      ...oldRecord,
+      lifecycle: { scope: oldScope, roundId: 'r001' },
+    } as DeliveryRunRecord),
+  );
+  for (const mutate of [
+    (r: DeliveryRound) => {
+      r.scopeAdditions![0].addedSlots = ['P13'];
+    },
+    (r: DeliveryRound) => {
+      r.scopeAdditions![0].beforeScope.goal = '被改写';
+    },
+    (r: DeliveryRound) => {
+      r.scopeAdditions![0].runRef = '.mendi/runs/d01/018-delivery-full-test/run.md';
+    },
+    (r: DeliveryRound) => {
+      delete r.scopeAdditions;
+    },
+    (r: DeliveryRound) => {
+      r.scope = structuredClone(r.scope);
+      r.scope.plannedChanges[0].title = '改旧项';
+    },
+  ]) {
+    const broken = structuredClone(rounds);
+    mutate(broken[1]);
+    assert.throws(() => read(projectRound(before.manifest, broken, 'r002')));
+  }
+});
 
 test('两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入', () => {
   const input = manifest(),

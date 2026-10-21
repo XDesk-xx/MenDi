@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+ok 1 - 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+  ---
+  duration_ms: 58115.2241
+  type: 'test'
+  ...
+# Subtest: 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+ok 2 - 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+  ---
+  duration_ms: 4344.8837
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63006.9747

@@ -219,7 +219,11 @@ export function currentGroupProgress(root: string, workspace: Workspace, ownLock
     run.record.attempt?.version === 2 &&
     run.record.attempt.formalOutcome === 'not-run' &&
     run.record.attempt.observation?.notRun;
-  if (!facts.stable || (facts.protocolState === 'unconfirmed' && !knownNotRun))
+  if (
+    !facts.stable ||
+    facts.scopeMatch !== 'match' ||
+    (facts.protocolState === 'unconfirmed' && !knownNotRun)
+  )
     throw new MendiError('delivery-state-conflict', '当前执行 / 资源未确认。');
   return { run, facts };
 }

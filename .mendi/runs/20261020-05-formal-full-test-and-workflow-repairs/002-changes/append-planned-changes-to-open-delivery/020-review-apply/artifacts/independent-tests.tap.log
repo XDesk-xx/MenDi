@@ -1,0 +1,214 @@
+TAP version 13
+# Subtest: 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+ok 1 - 真实跨 Delivery 基线经新轮归档 / Full Test / Close；来源后续 Reopen、旧格式及缺说明仍可核对
+  ---
+  duration_ms: 75439.2121
+  type: 'test'
+  ...
+# Subtest: 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+ok 2 - 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+  ---
+  duration_ms: 90176.3561
+  type: 'test'
+  ...
+# Subtest: 旧 submitted command 保持历史只读，追加不新建旧执行或修改旧报告
+ok 3 - 旧 submitted command 保持历史只读，追加不新建旧执行或修改旧报告
+  ---
+  duration_ms: 6204.0883
+  type: 'test'
+  ...
+# Subtest: 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+ok 4 - 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+  ---
+  duration_ms: 17026.2536
+  type: 'test'
+  ...
+# Subtest: 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+ok 5 - 真实运行结束但协议/清理 unknown 不能被追加遮蔽
+  ---
+  duration_ms: 4832.9007
+  type: 'test'
+  ...
+# Subtest: 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+ok 6 - 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+  ---
+  duration_ms: 55015.4883
+  type: 'test'
+  ...
+# Subtest: 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+ok 7 - 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+  ---
+  duration_ms: 1579.1774
+  type: 'test'
+  ...
+# Subtest: 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+ok 8 - 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+  ---
+  duration_ms: 43793.2251
+  type: 'test'
+  ...
+# Subtest: 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+ok 9 - 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+  ---
+  duration_ms: 2442.0338
+  type: 'test'
+  ...
+# Subtest: 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+ok 10 - 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+  ---
+  duration_ms: 761.015
+  type: 'test'
+  ...
+# Subtest: 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+ok 11 - 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+  ---
+  duration_ms: 2303.7108
+  type: 'test'
+  ...
+# Subtest: 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+ok 12 - 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+  ---
+  duration_ms: 31876.8587
+  type: 'test'
+  ...
+# Subtest: 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+ok 13 - 当前 Delivery 查询不读取旧 Archive / Review / Author、原声明或未知 Ref，重复沿用快照
+  ---
+  duration_ms: 51815.8494
+  type: 'test'
+  ...
+# Subtest: 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+ok 14 - 结果与材料 / 当前配置匹配分开，缺当前 package 仍可解释历史事实
+  ---
+  duration_ms: 7574.981
+  type: 'test'
+  ...
+# Subtest: 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+ok 15 - 当前必要日志 / 子结果 / 父 Run 缺失、错身份与路径越界明确拒绝
+  ---
+  duration_ms: 6532.9012
+  type: 'test'
+  ...
+# Subtest: diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+ok 16 - diagnose 前后观察变化如实报告，方法缺失仅阻止实际开始；坏当前不回退
+  ---
+  duration_ms: 5687.8369
+  type: 'test'
+  ...
+# Subtest: 顶层计划改写不是 Reopen，写前拒绝并保留正式历史；活动项与指针并存拒绝
+ok 17 - 顶层计划改写不是 Reopen，写前拒绝并保留正式历史；活动项与指针并存拒绝
+  ---
+  duration_ms: 5906.2577
+  type: 'test'
+  ...
+# Subtest: 后续关联不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+ok 18 - 后续关联不能绕过 failed、未完成修复、未批准 / rejected 或 unknown 交接
+  ---
+  duration_ms: 45957.6027
+  type: 'test'
+  ...
+# Subtest: 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+ok 19 - 旧真实 command passed 保持只读；新 command / 旧选择器和冒用 typed 选择器拒绝且不占号
+  ---
+  duration_ms: 46131.922
+  type: 'test'
+  ...
+# Subtest: 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+ok 20 - 历史 v1 attempt / verification 只读；新 typed Close 可保留旧字段，缺直接日志或协议未知拒绝
+  ---
+  duration_ms: 8068.8727
+  type: 'test'
+  ...
+# Subtest: Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+ok 21 - Close 只消费当前事实与直接日志；历史正文、说明与未知 Ref 失效不阻断
+  ---
+  duration_ms: 42740.5433
+  type: 'test'
+  ...
+# Subtest: 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+ok 22 - 必要适用性输入、当前指针、快照、命令与日志错误都在占号前拒绝
+  ---
+  duration_ms: 6229.6798
+  type: 'test'
+  ...
+# Subtest: Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+ok 23 - Close 必要输入 junction 越界拒绝，锁内直接执行变化保留 pending 与锁
+  ---
+  duration_ms: 4854.0794
+  type: 'test'
+  ...
+# Subtest: 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+ok 24 - 真实 Close → Reopen → 新批次 / 原生 Archive → 新集合整次执行 → Close
+  ---
+  duration_ms: 68827.0935
+  type: 'test'
+  ...
+# Subtest: Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+ok 25 - Reopen 拒绝旧槽位、空范围、外部 / 循环依赖、非 closed 与错误角色，写前不占号
+  ---
+  duration_ms: 6840.4182
+  type: 'test'
+  ...
+# Subtest: Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+ok 26 - Reopen 后本轮首次失败不继承旧 PASS，当前修复仍须独立审核和新整次结果
+  ---
+  duration_ms: 36571.2521
+  type: 'test'
+  ...
+# Subtest: 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+ok 27 - 记录化旧首次 Open 尚未 Close 可迁移，不制造收口
+  ---
+  duration_ms: 324.9603
+  type: 'test'
+  ...
+# Subtest: 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+ok 28 - 真实同日多次 Reopen 转旧输入后只读重建三轮；保留全部旧 Run、历史 scope 与未知扩展
+  ---
+  duration_ms: 80630.8083
+  type: 'test'
+  ...
+# Subtest: 同轮追加只认连续纯追加快照；原 Open 范围可归属但伪造/跨轮拒绝
+ok 29 - 同轮追加只认连续纯追加快照；原 Open 范围可归属但伪造/跨轮拒绝
+  ---
+  duration_ms: 16.0473
+  type: 'test'
+  ...
+# Subtest: 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+ok 30 - 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+  ---
+  duration_ms: 0.9622
+  type: 'test'
+  ...
+# Subtest: v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+ok 31 - v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+  ---
+  duration_ms: 1.6086
+  type: 'test'
+  ...
+# Subtest: 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+ok 32 - 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+  ---
+  duration_ms: 3.4997
+  type: 'test'
+  ...
+# Subtest: 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+ok 33 - 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+  ---
+  duration_ms: 2.2923
+  type: 'test'
+  ...
+# Subtest: legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+ok 34 - legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+  ---
+  duration_ms: 0.7064
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 391262.9459

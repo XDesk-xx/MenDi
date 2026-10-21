@@ -1,0 +1,146 @@
+{
+  "changeName": "append-planned-changes-to-open-delivery",
+  "changeDir": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\proposal.md"
+    ],
+    "specs": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\specs\\action-runs\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\specs\\delivery-lifecycle\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\specs\\delivery-verification\\spec.md",
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\specs\\delivery-workspace\\spec.md"
+    ],
+    "design": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\design.md"
+    ],
+    "tasks": [
+      "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 15,
+    "complete": 15,
+    "remaining": 0
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 在现有 Delivery Run 类型/路径解析中增加明确 `delivery-change-add` typed 收据，包含同轮、Author/requestId、Owner 来源、reason、添加槽位、前后 scope 与状态；以真实 parser/拒绝错误类型与编号、旧 Run 只读单元测试验证，不引入新的 OpenSpec Change。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 5
+    },
+    {
+      "id": "2",
+      "description": "1.2 为 product-v2 当前轮增加有界 `scopeAdditions` 前后快照和 `scopeAddRunRef`，要求单向纯追加、逐条与真实 receipt 一致、已存所有轮原始范围不变；扩展 `readRounds/projectRound`、顶层投影检查并用初轮/多追加/历史轮/坏链测试验证，无该字段的旧轮仍可读。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 6
+    },
+    {
+      "id": "3",
+      "description": "1.3 更新 `recordRound` / 必要 scope 归属解析，只在真实同轮历史快照中解释旧 Open、finished `passed/failed`、Repair/Review 与提交时完成项，不更改旧 Run；用 013 P04/P05/P07、014 R03 的真实初始证据编写旧范围只读、伪造 roundId/缺失快照/跨轮来源拒绝的测试。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 7
+    },
+    {
+      "id": "4",
+      "description": "1.4 核对历史显式 query 与当前写入资格严格分离：旧范围可定位但不能再次满足新范围审批；在 `tests/rounds.test.ts` / `tests/group-history.test.ts` 验证旧 Open/Attempt/Repair 的读取与当前范围约束，不能靠删除校验掩盖失败。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 8
+    },
+    {
+      "id": "5",
+      "description": "2.1 增加 `delivery change add --input` 的 CLI 解析与 Author/actor 合同，读取 Owner 实际范围决定来源、requestId、reason 与一项/多项 additions；加入 help、专属 Skill/README 真实命令示例，测试未授权/非法 role、缺项、越界输入与误用 bind 不产生新计划或 Run。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 12
+    },
+    {
+      "id": "6",
+      "description": "2.2 在 product-v2 open current round 的写前与独占锁内校验完整新 `readScope`、历史轮/本轮 slot 唯一、依赖和真实 baseline Close、当前 Change/轮次/受管路径身份；测试追加 C 依赖 B、一次多项、重复、悬空、成环、closed、manual/legacy 和无效基线均给出可核对结果。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 13
+    },
+    {
+      "id": "7",
+      "description": "2.3 按明确有界意图执行收据/manifest scope/当前指针事务，确认所有直接输入、写回和新进程读回一致才返回成功；测试持锁第二写者、输入突变、收据/manifest/锁中断及失败后的 no-fake-success、保留现场，不清理其他任务的真实锁或 tmp。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 14
+    },
+    {
+      "id": "8",
+      "description": "2.4 对已提交请求 ID 做相同输入幂等返回 / 不同输入冲突，未知半提交只能按本次确定的 Run/请求作显式有限恢复，保持 Run 序号与旧记录；测试不同阶段断点、重放、重复槽位、单号唯一和没有副作用的查询。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 15
+    },
+    {
+      "id": "9",
+      "description": "3.1 扩展追加前的当前工作准入，允许普通 open、合法活动 Change、已真实 finished/cleanup confirmed 的正式 `passed` 和 `failed`；拒绝执行中/unknown、未决 Repair/Review、pending、被占用的锁与范围不明；在实际 product-v2 夹具中复现，严格保留旧失败报告。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 19
+    },
+    {
+      "id": "10",
+      "description": "3.2 在合法范围扩展的同一提交中让旧 `deliveryRunRef` 不再担任新范围当前正式验收，旧 `testAttemptRunRef/fullTestRunRef` 只作为原历史定位，新增收据不占用活动 Change 的最新 Run；按 013 P04～P07 执行真实 passed/failed → append，并测试恢复后当前 manifest/round/Archive/binding 原值不变。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 20
+    },
+    {
+      "id": "11",
+      "description": "3.3 更新 `status/next` 对新增未 bind 槽位优先选择 `change-bind`，合法活动 Change 保持自己的 Author/Reviewer 阶段；不因最后 Archive 或旧 PASS 误提示 `delivery-next`/Close，测试新进程 query/指定历史轮、无授权不会自动 bind 或新建 Change。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 21
+    },
+    {
+      "id": "12",
+      "description": "3.4 确保 `delivery-close` 仅核当前追加后所有槽位已归档和新完整 groups-v1 `passed`，禁止用旧 PASS、旧失败/Repair、追加收据或其它选择器直接 Close；同时兼容已完成旧轮 Close/Reopen 的显式只读查询，在 Close 与 Full Test / Repair 对应测试中覆盖。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 22
+    },
+    {
+      "id": "13",
+      "description": "4.1 使用真实隔离 product-v2 目标贯通“Open → Archive A/B → append C/D → 显式 bind/归档 → 新完整 Full Test → 另行授权 Close”的合法路径及并发/中断负例；存真实执行/收据必要证据，不能使用 013/014 的模拟 append 当作本次 Writer PASS。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 26
+    },
+    {
+      "id": "14",
+      "description": "4.2 对旧 Open、已 submitted passed/failed、Repair/Review、旧 closed/Reopen、旧格式只读以及跨进程重放建立兼容回归；执行涉及范围内的测试、`pnpm check` / `pnpm build`，保存真实结果与不可验证限制，修复后按影响复验。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 27
+    },
+    {
+      "id": "15",
+      "description": "4.3 检查 Proposal/四份 delta specs/Design 与已实施字段、CLI/help/Skills 一致，实际列出 src/tests/scripts 各前三个维护代码文件及真实职责增长/拆分依据，Author Apply Run 留证后交独立 `review-apply`，不自签。",
+      "done": true,
+      "sourcePath": "D:\\Projects\\MenDi\\openspec\\changes\\append-planned-changes-to-open-delivery\\tasks.md",
+      "line": 28
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "all_done",
+  "instruction": "All tracked tasks are complete.\nReview or verify the change as appropriate before archiving.",
+  "context": "Language: Chinese\n面向人阅读的正文使用中文；结构标题、SHALL/MUST、命令与机器字段保留原样。\nMenDi 为 TypeScript CLI；总设计只维护 mendi-foundation-and-delivery-roadmap.md，具体任务在当前 Change。\n角色与授权、真实 proof、Run 交接、按影响验证与文件约定遵循 AGENTS.md。\n使用稳定外部 OpenSpec 1.14.1，repo-local / spec-driven；目标方法来自当前目标 .agents/skills，自有方法来自安装包。\n当前为 MVP-D05，Owner 已授权以 manual-bootstrap Open：20261020-05-formal-full-test-and-workflow-repairs；D05-A 已归档 014，D05-B 已激活并由 019 Author Apply 实施。当前状态与交接只读 manifest / 最近 Run，D05-C/D 尚未激活。\nD05-A：统一未来 groups-v1 正式 Full Test 与完整重跑；D05-B：未 Close 追加 Change CLI，可独立于 A；D05-C：proof / inputs / artifacts 轻量化，依赖 A；D05-D：最新 Run supplement / amend，依赖 C。总设计见根路线图 §7。\nD04 已在 026 正式 Full Test 通过、027 Close，A/B/C 归档 011/012/013，028 已切换稳定 0.2.0。历史结果不冒充 D05 新轮验收；D05-A 原生归档后累计成功归档 14。\nMenDi 根目录仍为 manual-bootstrap：产品 CLI 对其只读，人工 Open 事实见本轮 001 Run。旧 product 支持只读查询，写入须按规则显式迁移；未知中断必须保留现场。\n外部 Full Test 的旧 WIP 已单独存入 Git stash，不视为 D05-A 实现；当前新分支已建立，没有 Git commit/push 或 D05 正式测试；D05-A 已归档，非稳定安装。\n按现行安装版运行当前功能；D05-A 已在当前源码实现并归档，D05-B 为未独立审核的源码候选，D05-C/D 仍待实施；稳定安装版 0.2.0 尚未切换，不得仅凭源码/规划绕过目标运行时实际准入。\n提问先查已确定的 Owner 范围，稳定业务契约与 UI 选择分开；Explore proof 只验证关键疑点，真实结果、旧 verdict、Run 和必要日志保留。\n状态与详细过程读取当前 manifest 和最近 Run；Git、Change 激活、Archive、正式 Full Test / Close、安装发布及 DreMo 等外部目标写入均保持独立授权。\n必要输入依操作决定，旧 Ref 和说明不成为普通查询的全量前置；项目 check 覆盖真实类型检查，行为验证按影响，错误现场不自动清理。\n",
+  "operationGuidance": [
+    "先执行当前修改需要的 focused 检查，验证结果简洁留痕。",
+    "独立 Reviewer 给出审核结论，工具成功或任务全勾不替代批准。"
+  ],
+  "root": {
+    "path": "D:\\Projects\\MenDi",
+    "source": "nearest"
+  }
+}

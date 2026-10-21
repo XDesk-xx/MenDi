@@ -1,0 +1,96 @@
+{
+  "recordedAt": "2026-10-20T12:43:33.630Z",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/013-explore/run.md",
+  "input": {
+    "authorSuccessful": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/013-explore/artifacts/proof-results.json",
+    "authorFailed": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/013-explore/artifacts/proof-failed-results.json"
+  },
+  "source": {
+    "ref": "src/core/round-records.ts",
+    "sha256": "942c8632883d3aef25f691746a404c2169a979966a88fa810a6a6c67d3dba58a"
+  },
+  "independentChecks": [
+    {
+      "id": "R01-same-round-append-schema",
+      "status": "passed",
+      "before": [
+        "A",
+        "B"
+      ],
+      "after": [
+        "A",
+        "B",
+        "C"
+      ],
+      "rounds": 1
+    },
+    {
+      "id": "R02-historical-full-record-unreadable-after-scope-append",
+      "status": "passed",
+      "before": "r001",
+      "after": {
+        "name": "MendiError",
+        "code": "invalid-round-record",
+        "message": "范围不能唯一归属已保存轮次。"
+      }
+    },
+    {
+      "id": "R03-historical-open-record-also-unreadable",
+      "status": "passed",
+      "before": "r001",
+      "after": {
+        "name": "MendiError",
+        "code": "invalid-round-record",
+        "message": "范围不能唯一归属已保存轮次。"
+      }
+    },
+    {
+      "id": "R04-invalid-scope-guard",
+      "status": "passed",
+      "duplicate": {
+        "name": "MendiError",
+        "code": "invalid-scope",
+        "message": "范围必须包含至少一个且互不重复的槽位。"
+      },
+      "unknownDep": {
+        "name": "MendiError",
+        "code": "invalid-scope",
+        "message": "依赖指向范围外槽位。"
+      },
+      "cycle": {
+        "name": "MendiError",
+        "code": "invalid-scope",
+        "message": "计划依赖存在循环。"
+      }
+    },
+    {
+      "id": "R05-author-P01-to-P07-fixed-proof-results-checked",
+      "status": "passed",
+      "authorCases": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "failedCase": "P07",
+      "failedRunUnchanged": true
+    }
+  ],
+  "strictTypecheck": {
+    "status": "passed",
+    "paths": [
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/014-review-explore/artifacts/reviewer-proof.ts",
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/013-explore/artifacts/proof.ts",
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/013-explore/artifacts/proof-failed.ts"
+    ],
+    "raw": "typecheck-results.json"
+  },
+  "limits": [
+    "Pure in-memory core model proof; no real Change-add CLI exists, no actual scope writer was exercised",
+    "No repeat of Author actual passed/failed groups-v1 child execution; relies on submitted direct 013 outputs for those scenarios",
+    "The old recordRound failure is a proven implementation constraint, not proof no safe future model can preserve history",
+    "No full execution-in-progress/locked/closed/pending case replayed: implementation tests remain for Propose/Apply"
+  ]
+}

@@ -10,7 +10,7 @@
 
 首版规模：**3 个 Delivery、10 个 Change，其中前 7 个 Change 完成核心手动交付链。**
 
-当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A 已实现、独立审核并原生归档为 014；D05-B/C/D 仍未激活，D05 整体尚未正式 Full Test、Close 或发布。
+当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A 已实现并归档为 014；D05-B 经 024 独立 Review Apply approved、025 OpenSpec 原生归档为 015，项目累计归档 15；D05-C/D 未激活，D05 整体尚未正式 Full Test、Close 或发布。
 
 本文是 MenDi 重新开始后的唯一产品总设计与开发规划。它描述产品目标，实际完成情况以项目记录和最近交接 Run 为准。清除旧工程并重新建立代码与历史是初始化时的决定，不是后续工作的重复清理授权。
 
@@ -220,7 +220,7 @@ Reviewer 按本次变更、直接合同和受影响依赖独立核对，重验�
 
 ## 5. 三类测试与 Delivery 收口
 
-本节包含首版与 D04 的历史基线。D04-B 已交付 `groups-v1` 分组执行、continue/retest 与跨尝试候选汇总；**2026-10-20 新确认的后续 D05-A 目标改为：今后正式 Full Test 统一新分组协议、默认一轮完整执行、修复审核后重新完整执行，不再提供新的旧 command 正式执行或跨尝试拼接 PASS 作为默认收口路径**。D05 尚未实施；升级前仍以实际安装版 CLI 合同为准，旧 Run 的事实和历史可读性必须保留。
+本节包含首版与 D04 的历史基线。D04-B 已交付 `groups-v1` 分组执行、continue/retest 与跨尝试候选汇总；**2026-10-20 新确认的后续 D05-A 目标改为：今后正式 Full Test 统一新分组协议、默认一轮完整执行、修复审核后重新完整执行，不再提供新的旧 command 正式执行或跨尝试拼接 PASS 作为默认收口路径**。D05-A/B 已在当前源码实现、独立审核并归档，C/D 尚待实施；升级前仍以实际安装版 CLI 合同为准，旧 Run 的事实和历史可读性必须保留。
 
 | 类型 | 用途 | 何时执行 |
 |---|---|---|
@@ -614,11 +614,11 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 本次只完成上述规划吸收，保留三份反馈原件；不 Open / Reopen D04、不激活 Change、不创建 Run、不改实现 / Skills / 规格 / 稳定包，不执行测试、迁移或 Git 写操作。
 
-### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A 已 Archive）
+### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A/B 已 Archive）
 
 **范围与来源：** 本节吸收根目录 `mendi-full-test-continuation-improvement.md` 2026-10-18/20 的最新修订、`mendi-reopen-incremental-scope-improvement.md`、`mendi-ui-spec-granularity-improvement.md` 的已实现结论，以及 Owner 提供的 `mendi-run-amend-supplement-design.md` 和本仓库真实 artifacts 增长问题。D04 原有跨尝试续测/复验属于已交付历史；最新正式执行政策以本 D05 目标为准，反馈原件只作问题来历，不并列维护第二套现行总方案。
 
-**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A 已按 Owner 授权完成 Explore/Propose/Apply 与独立审核，并经 OpenSpec 原生一次同步归档为 014；B/C/D 尚未激活。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
+**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A/B 均已按 Owner 授权完成 Explore/Propose/Apply、独立审核及原生一次同步归档，序号分别为 014/015；C/D 尚未激活。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
 
 | Change | 独立闭环能力 | 依赖 / 优先级 |
 | --- | --- | --- |

@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-20T17:09:28.811Z",
+  "operation": "two REAL append writer executions, then removal of the second intent directDigests and modification of earlier intent; all files restored within owned product-v2 fixture",
+  "baselineScopeSize": 4,
+  "tamper": {
+    "digestListRemoved": {
+      "accepted": true,
+      "scopeSize": 4
+    },
+    "priorIntentChangedAfterListRemoved": {
+      "accepted": true,
+      "scopeSize": 4
+    }
+  },
+  "files": {
+    "first": ".mendi/runs/d01/015-delivery-change-add/artifacts/intent.json",
+    "second": ".mendi/runs/d01/016-delivery-change-add/artifacts/intent.json"
+  },
+  "notes": [
+    "This proves parser behavior in a local editable fixture, not external attacker exploit or production write bypass",
+    "No scope-change or current eligibility mutation; only historical intent consistency check",
+    "The absence of a digest list may be a deliberately supported legacy receipt form; Review must decide whether new-form authenticity can be reliably distinguished"
+  ],
+  "finalStateRestored": true
+}

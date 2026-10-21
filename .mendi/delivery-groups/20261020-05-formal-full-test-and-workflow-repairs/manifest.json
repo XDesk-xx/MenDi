@@ -46,6 +46,15 @@
       "state": "archived",
       "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
       "archiveOrdinal": 14
+    },
+    {
+      "planningSlot": "MVP-D05-B",
+      "changeId": "append-planned-changes-to-open-delivery",
+      "changeRef": "openspec/changes/archive/2026-10-21-015-append-planned-changes-to-open-delivery",
+      "batchId": "002-changes",
+      "state": "archived",
+      "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
+      "archiveOrdinal": 15
     }
   ],
   "changeBatches": [
@@ -54,7 +63,8 @@
       "firstRun": "002",
       "runsRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes",
       "changeIds": [
-        "unified-groups-full-test-and-repair-flow"
+        "unified-groups-full-test-and-repair-flow",
+        "append-planned-changes-to-open-delivery"
       ]
     }
   ],
@@ -73,13 +83,13 @@
     "通用测试调度/缓存、全库 hash 证据链、自动审核及安装/部署发布。"
   ],
   "openRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
+  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
   "stopBoundary": "change-checkpoint",
   "next": {
     "action": "change-checkpoint",
     "status": "awaiting-owner-instruction",
     "role": "author",
-    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/unified-groups-full-test-and-repair-flow/012-archive/run.md",
-    "reason": "D05-A 已按 Owner 指令原生 Archive，项目累计归档 14；D05 仍 open，等待下一步。Git、下一 Change、正式 Full Test/Close、稳定安装另行授权。"
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/025-archive/run.md",
+    "reason": "D05-B 025 已原生归档并同步四份规格，累计归档 15；D05 仍 open。等待 Owner 下一步；不自动 Git、D05-C、正式 Full Test/Close、稳定安装。"
   }
 }

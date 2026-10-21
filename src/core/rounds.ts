@@ -3,6 +3,7 @@ import { MendiError, object, text } from './errors.ts';
 import { deliveryLocation } from './delivery-runs.ts';
 import { readScope, type Scope, type Workspace } from './records.ts';
 import type { Binding } from './associations.ts';
+import { pureAddition, type ScopeAddition } from './scope-addition.ts';
 
 export interface DeliveryRound {
   id: string;
@@ -18,9 +19,12 @@ export interface DeliveryRound {
   verificationRunRef?: string;
   closeRunRef?: string;
   closedOn?: string;
+  scopeAddRunRef?: string;
+  scopeAdditions?: ScopeAddition[];
 }
 
 const pointers = [
+  'scopeAddRunRef',
   'deliveryRunRef',
   'fullTestRunRef',
   'testAttemptRunRef',
@@ -156,11 +160,37 @@ export function readRounds(manifest: Record<string, unknown>, deliveryId: string
     };
     if (item.reason !== undefined) round.reason = text(item.reason, 'round.reason');
     if (source.kind === 'reopen' && !round.reason) invalid('Reopen 轮次缺少原因。');
+    if (item.scopeAdditions !== undefined) {
+      if (!Array.isArray(item.scopeAdditions) || !item.scopeAdditions.length)
+        invalid('追加历史必须非空。');
+      const additions = item.scopeAdditions.map(pureAddition);
+      const requests = new Set<string>();
+      let previousNumber = 0;
+      for (const [index, addition] of additions.entries()) {
+        const loc = deliveryLocation(addition.runRef, deliveryId);
+        if (
+          loc.type !== 'delivery-change-add' ||
+          loc.number <= previousNumber ||
+          requests.has(addition.requestId) ||
+          (index > 0 && !isDeepStrictEqual(additions[index - 1].afterScope, addition.beforeScope))
+        )
+          invalid('追加历史必须同轮按号纯追加且请求唯一。');
+        previousNumber = loc.number;
+        requests.add(addition.requestId);
+      }
+      if (
+        !isDeepStrictEqual(additions.at(-1)!.afterScope, scope) ||
+        item.scopeAddRunRef !== additions.at(-1)!.runRef
+      )
+        invalid('追加历史与当前范围/指针不一致。');
+      round.scopeAdditions = additions;
+    } else if (item.scopeAddRunRef !== undefined) invalid('追加指针缺少历史。');
     for (const key of pointers) {
       if (item[key] === undefined) continue;
       const ref = text(item[key], key),
         loc = deliveryLocation(ref, deliveryId);
       if (
+        (key === 'scopeAddRunRef' && loc.type !== 'delivery-change-add') ||
         (key === 'fullTestRunRef' && loc.type !== 'delivery-full-test') ||
         (key === 'testAttemptRunRef' && loc.type !== 'delivery-test-attempt') ||
         (key === 'verificationRunRef' && loc.type !== 'delivery-verification') ||

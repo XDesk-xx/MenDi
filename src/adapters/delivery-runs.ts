@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { isDeepStrictEqual } from 'node:util';
 import path from 'node:path';
 import { managedPath } from './paths.ts';
 import { readRunSource, renderRun, scanRunNumbers, currentRun } from './runs.ts';
@@ -7,9 +8,9 @@ import {
   deliveryLocation,
   type DeliveryRunRecord,
 } from '../core/delivery-runs.ts';
-import { parseProject, parseWorkspace, type Workspace } from '../core/records.ts';
+import { parseProject, parseWorkspace, readScope, type Workspace } from '../core/records.ts';
 import { projectProgress } from '../core/rounds.ts';
-import { requireCurrentRound } from '../core/round-records.ts';
+import { requireCurrentRound, comparableScope } from '../core/round-records.ts';
 import { errorInfo, MendiError } from '../core/errors.ts';
 import { readWorkspace, type WriteObserver } from './workspace.ts';
 import { replaceManagedFile } from './action-store.ts';
@@ -38,7 +39,26 @@ export function currentDeliveryRun(root: string, workspace: Workspace) {
     workspace.mode === 'product' && workspace.manifest.deliveryRunRef !== undefined
       ? readDeliveryRun(root, String(workspace.manifest.deliveryRunRef), workspace.id)
       : null;
-  if (current) requireCurrentRound(workspace, current.record);
+  if (current) {
+    requireCurrentRound(workspace, current.record);
+    const summary =
+      current.record.lifecycle ??
+      current.record.fullTest ??
+      current.record.attempt ??
+      current.record.verification ??
+      current.record.repair;
+    if (
+      !summary ||
+      !isDeepStrictEqual(
+        comparableScope(readScope(summary.scope)),
+        comparableScope(workspace.scope),
+      )
+    )
+      throw new MendiError(
+        'delivery-scope-conflict',
+        '当前 Delivery 指针不能消费同轮旧范围；历史 Run 仅可显式读取。',
+      );
+  }
   return current;
 }
 export function currentProgress(root: string, workspace: Workspace) {

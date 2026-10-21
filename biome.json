@@ -10,6 +10,7 @@
       "tests/fixtures/storybook-project/**/*.ts",
       "tests/fixtures/d03-b-project/**/*.ts",
       "tests/fixtures/group-*.ts",
+      "tests/fixtures/change-add-worker.ts",
       "tests/fixtures/legacy-*.ts"
     ]
   },

@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-20T17:41:35.990Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/append-planned-changes-to-open-delivery/023-revise-apply/run.md",
+  "methods": "real two-add isolated product-v2 writes; Reviewer mutations only to own two intent files; exact restoration",
+  "checks": [
+    {
+      "id": "valid-two-add-chain",
+      "status": "passed"
+    },
+    {
+      "id": "F3-remove-complete-digests",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据缺少必要的旧收据或 intent。"
+    },
+    {
+      "id": "F3-remove-list-and-tamper-previous",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据缺少必要的旧收据或 intent。"
+    },
+    {
+      "id": "F3-resume-missing-digests",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据缺少必要的旧收据或 intent。"
+    },
+    {
+      "id": "F3-remove-one-digest",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据缺少必要的旧收据或 intent。"
+    },
+    {
+      "id": "F3-duplicate-digest",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据存在重复或冲突的直接引用。"
+    },
+    {
+      "id": "F3-conflicting-direct-and-digest",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "追加依据存在重复或冲突的直接引用。"
+    },
+    {
+      "id": "F3-extra-historical-digest",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "摘要引用不是本轮已保存的旧追加依据。"
+    },
+    {
+      "id": "F3-out-of-bounds-digest",
+      "status": "passed",
+      "code": "invalid-scope-addition",
+      "message": "摘要引用不是本轮已保存的旧追加依据。"
+    },
+    {
+      "id": "legacy-all-prior-bytes-still-readable",
+      "status": "passed"
+    },
+    {
+      "id": "legacy-inline-refuses-changed-previous-intent",
+      "status": "passed",
+      "code": "delivery-input-changed",
+      "message": "历史追加直接原文与已保存依据不同。"
+    }
+  ],
+  "refs": [
+    ".mendi/runs/d01/015-delivery-change-add/run.md",
+    ".mendi/runs/d01/016-delivery-change-add/run.md"
+  ],
+  "sizes": [
+    4039,
+    6259
+  ],
+  "restored": true,
+  "limits": [
+    "Not a signed tamper-proof file system: consistent malicious rewriting of all references is not in scope",
+    "No actual Owner authorization or root D05 Full Test/Close",
+    "Two-add proof does not replace existing seven-add and interruption regression"
+  ]
+}

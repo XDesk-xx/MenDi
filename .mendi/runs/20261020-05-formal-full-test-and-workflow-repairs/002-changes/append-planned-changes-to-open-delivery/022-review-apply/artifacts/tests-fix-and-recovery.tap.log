@@ -1,0 +1,95 @@
+TAP version 13
+# Subtest: 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+ok 1 - 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+  ---
+  duration_ms: 67937.3947
+  type: 'test'
+  ...
+# Subtest: 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+ok 2 - 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+  ---
+  duration_ms: 1917.1545
+  type: 'test'
+  ...
+# {"name":"D05-B-seven-append-growth","sizes":[4075,6323,8732,11519,14684,18227,22148],"digestsInSeventh":12}
+# Subtest: 七次真实追加只以路径和摘要引用历史 intent；旧链可读，篡改拒绝
+ok 3 - 七次真实追加只以路径和摘要引用历史 intent；旧链可读，篡改拒绝
+  ---
+  duration_ms: 54211.6083
+  type: 'test'
+  ...
+# Subtest: 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+ok 4 - 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+  ---
+  duration_ms: 46145.7199
+  type: 'test'
+  ...
+# Subtest: 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+ok 5 - 实际记录 Open 在追加后仍按原范围归属，单项追加不 bind 或创建 Change
+  ---
+  duration_ms: 2602.9416
+  type: 'test'
+  ...
+# Subtest: 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+ok 6 - 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+  ---
+  duration_ms: 473.953
+  type: 'test'
+  ...
+# Subtest: 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+ok 7 - 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+  ---
+  duration_ms: 1846.278
+  type: 'test'
+  ...
+# Subtest: 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+ok 8 - 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+  ---
+  duration_ms: 24238.7765
+  type: 'test'
+  ...
+# Subtest: 同轮追加只认连续纯追加快照；原 Open 范围可归属但伪造/跨轮拒绝
+ok 9 - 同轮追加只认连续纯追加快照；原 Open 范围可归属但伪造/跨轮拒绝
+  ---
+  duration_ms: 14.4274
+  type: 'test'
+  ...
+# Subtest: 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+ok 10 - 两轮保存真实范围与旧指针，当前投影不继承旧 PASS / Close；解析无写入
+  ---
+  duration_ms: 0.9528
+  type: 'test'
+  ...
+# Subtest: v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+ok 11 - v2 索引可解释登记 v1；v1 单批次和 manual 不补轮次，不接受反向版本混合
+  ---
+  duration_ms: 1.9052
+  type: 'test'
+  ...
+# Subtest: 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+ok 12 - 拒绝重复轮次、跨轮槽位、错误当前选择和矛盾投影
+  ---
+  duration_ms: 13.5567
+  type: 'test'
+  ...
+# Subtest: 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+ok 13 - 关联和批次必须唯一归属，不给旧 binding / Run 补写 roundId
+  ---
+  duration_ms: 2.474
+  type: 'test'
+  ...
+# Subtest: legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+ok 14 - legacy-baseline 只保存实际来源，不伪造 Open；可保留合法未收口首轮
+  ---
+  duration_ms: 0.8943
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 130756.5516

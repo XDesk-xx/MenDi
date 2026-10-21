@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "case": "P07",
+  "originalFormalOutcome": "failed",
+  "actualRequiredGroupStates": [
+    {
+      "id": "prefix",
+      "state": "passed"
+    },
+    {
+      "id": "middle",
+      "state": "failed"
+    },
+    {
+      "id": "tail",
+      "state": "passed"
+    }
+  ],
+  "sameRound": true,
+  "originalScopeSize": 2,
+  "enlargedScopeSize": 3,
+  "withoutPointerInvalidation": {
+    "code": "invalid-round-record",
+    "message": "范围不能唯一归属已保存轮次。"
+  },
+  "afterPointerInvalidation": {
+    "workspaceReadable": true,
+    "currentDeliveryRef": null,
+    "oldAttemptHistoryRead": {
+      "code": "invalid-round-record",
+      "message": "范围不能唯一归属已保存轮次。"
+    }
+  },
+  "originalFailureRunByteUnchanged": true,
+  "limitations": [
+    "Only isolated product fixture",
+    "Scope add performed by fixture mutation because no CLI writer exists",
+    "Does not claim D05 Delivery Full Test or actual Owner Review"
+  ]
+}

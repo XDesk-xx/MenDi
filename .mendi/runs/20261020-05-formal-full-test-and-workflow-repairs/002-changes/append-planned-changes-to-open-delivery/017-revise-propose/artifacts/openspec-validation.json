@@ -1,0 +1,40 @@
+{
+  "kind": "d05-b-revise-propose-f1",
+  "validation": {
+    "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate append-planned-changes-to-open-delivery --strict --json",
+    "exitCode": 0,
+    "items": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "issues": []
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "semantic": {
+    "newForm": "015-delivery-test-attempt",
+    "oldForm": "delivery-full-test (historical read-only)",
+    "sourceWriter": "src/application/group-attempt.ts",
+    "taskCount": 15
+  },
+  "modifiedArtifacts": [
+    "openspec/changes/append-planned-changes-to-open-delivery/specs/action-runs/spec.md"
+  ]
+}

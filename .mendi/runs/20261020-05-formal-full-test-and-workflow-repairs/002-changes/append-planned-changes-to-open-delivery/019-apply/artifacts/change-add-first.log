@@ -1,0 +1,129 @@
+TAP version 13
+# Subtest: 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+ok 1 - 真实追加独立 typed 收据、同轮范围和共享编号；新进程 bind next、请求重放和冲突
+  ---
+  duration_ms: 34991.1872
+  type: 'test'
+  ...
+# Subtest: 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+ok 2 - 负输入、角色、越界、依赖、基线及伪 bind 整体拒绝，不占号；manual / legacy 只读
+  ---
+  duration_ms: 452.4083
+  type: 'test'
+  ...
+# Subtest: 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+ok 3 - 多次追加快照连续、实际收据缺失/伪造、坏链、跨轮与未知历史范围拒绝
+  ---
+  duration_ms: 1533.0387
+  type: 'test'
+  ...
+# Subtest: 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+ok 4 - 活动 Change 的最新 Run、角色和阶段不被追加收据抢占
+  ---
+  duration_ms: 22308.2918
+  type: 'test'
+  ...
+# Subtest: 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+not ok 5 - 追加事务每个确定断点保留锁/原号，原 actor 显式恢复；新进程 pending 不能伪完成
+  ---
+  duration_ms: 229.051
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:263:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'alive'
+    - 'not-found'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'not-found'
+  actual: 'alive'
+  operator: 'strictEqual'
+  stack: |-
+    disposeStoppedFixtureLock (file:///D:/Projects/MenDi/tests/archive-support.ts:72:10)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:288:5)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+not ok 6 - 持锁第二写者与直接输入漂移不占新号，unknown 不清理现场；陈旧恢复拒绝
+  ---
+  duration_ms: 145.9871
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:328:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'alive'
+    - 'not-found'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'not-found'
+  actual: 'alive'
+  operator: 'strictEqual'
+  stack: |-
+    disposeStoppedFixtureLock (file:///D:/Projects/MenDi/tests/archive-support.ts:72:10)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:348:3)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+not ok 7 - 真实 passed → append C/D → 显式 bind/原生归档 → 新全量 groups-v1 → typed Close；旧 PASS/Open 历史保留
+  ---
+  duration_ms: 43417.1976
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:357:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:402:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+not ok 8 - 真实 failed 可追加并历史读取；未决 Repair/Review 与执行未知阻断，旧失败不能修复新范围
+  ---
+  duration_ms: 10769.2227
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\change-add.test.ts:416:1'
+  failureType: 'testCodeFailure'
+  error: '组修复 input 必须是非空字符串。'
+  code: 'invalid-data'
+  name: 'MendiError'
+  stack: |-
+    text (file:///D:/Projects/MenDi/src/core/errors.ts:41:11)
+    check (file:///D:/Projects/MenDi/src/application/delivery-repair.ts:112:36)
+    startDeliveryRepair (file:///D:/Projects/MenDi/src/application/delivery-repair.ts:120:24)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/change-add.test.ts:444:18)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 4
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 114268.4079
