@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "002-fast",
+  "kind": "fast",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M8BOxg\\minimal-project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "test-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:fast"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:fast",
+  "scriptText": "node foreground.ts fail",
+  "startedAt": "2026-10-21T01:54:55.551Z",
+  "finishedAt": "2026-10-21T01:54:56.659Z",
+  "executionState": "finished",
+  "outcome": "failed",
+  "exitCode": 7,
+  "signal": null,
+  "pid": 69628,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/002-fast/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/002-fast/stderr.log"
+}

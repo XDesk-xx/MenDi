@@ -10,7 +10,7 @@
 
 首版规模：**3 个 Delivery、10 个 Change，其中前 7 个 Change 完成核心手动交付链。**
 
-当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A 已实现并归档为 014；D05-B 经 024 独立 Review Apply approved、025 OpenSpec 原生归档为 015，项目累计归档 15；D05-C/D 未激活，D05 整体尚未正式 Full Test、Close 或发布。
+当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A/B/C 已经独立审核、原生归档 014/015/016，项目累计归档 16；D05-D 未激活，D05 整体尚未正式 Full Test、Close 或发布。
 
 本文是 MenDi 重新开始后的唯一产品总设计与开发规划。它描述产品目标，实际完成情况以项目记录和最近交接 Run 为准。清除旧工程并重新建立代码与历史是初始化时的决定，不是后续工作的重复清理授权。
 
@@ -196,7 +196,7 @@ Run 最少包含：所属 Delivery / Change、Action 标识与类型、Role、�
 - 只记录本次关键工具的入口与版本，不要求把其全部安装文件重新登记到每个 Run。
 - 遇到实际路径过长或 Git 工具漏报，明确具体文件与保存限制，按原有文件 / Git 授权局部处理；保留历史原文和编号，不为补证重开已 Close 的 Delivery，也不增加通用路径长度 gate。
 
-**D05 后续材料轻量化目标（待实施）：** proof 只保存回答关键疑点的最小真实实验、必要输入和可核实结果；正式测试结果保留完整失败、取消、清理及必要原始日志，但不机械把每次临时目标工程、生成物、成功截图、相同日志整树复制进 Run。`inputs/` 只保存本次唯一必要且不能从受控 fixture/源码重建的输入；原始输出保存一份，其余记录使用直接引用。空 stdout/stderr 文件能否省略须先核对现有执行意图、读回与故障恢复合同，不直接删除既有零字节日志或 submitted 历史。具体数据和验收归入 §7 D05-C，不设文件数/字节数 gate。
+**D05 材料轻量化目标（D05-C 候选待独立审核）：** proof 只保存关键疑点的最小真实实验、必要输入和结果；正式测试保留完整失败、取消、清理与必要原始日志，不机械复制临时工程、成功截图或相同日志树。`inputs/` 只保存不能从受控 fixture/源码重建的本次唯一必要输入，原始输出保存一份，其余直接引用。028/029 已确定首版保留物理 stdout/stderr（包括 0B），只减未来有限 opt-in collector 的同源额外副本，不改 submitted 历史。具体验收归 §7 D05-C，不设文件数/字节数 gate。
 
 ### 4.3 极简验证结果
 
@@ -614,11 +614,11 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 本次只完成上述规划吸收，保留三份反馈原件；不 Open / Reopen D04、不激活 Change、不创建 Run、不改实现 / Skills / 规格 / 稳定包，不执行测试、迁移或 Git 写操作。
 
-### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A/B 已 Archive）
+### MVP-D05：正式 Full Test 统一、计划追加与记录减负（2026-10-20 已 Open；A/B/C 已 Archive）
 
 **范围与来源：** 本节吸收根目录 `mendi-full-test-continuation-improvement.md` 2026-10-18/20 的最新修订、`mendi-reopen-incremental-scope-improvement.md`、`mendi-ui-spec-granularity-improvement.md` 的已实现结论，以及 Owner 提供的 `mendi-run-amend-supplement-design.md` 和本仓库真实 artifacts 增长问题。D04 原有跨尝试续测/复验属于已交付历史；最新正式执行政策以本 D05 目标为准，反馈原件只作问题来历，不并列维护第二套现行总方案。
 
-**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A/B 均已按 Owner 授权完成 Explore/Propose/Apply、独立审核及原生一次同步归档，序号分别为 014/015；C/D 尚未激活。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
+**交付边界：** D04 已 Close，不把新能力挂在旧 D04 已批准 Change 后面；D05 已按 Owner 授权以 manual-bootstrap Open，四个槽位已登记，D05-A/B/C 已独立审核并原生归档 014/015/016；其中 C 为有限 opt-in 证据采集，正式零字节日志和 groups-v1 证据合同未变；D 尚未激活。原 Full Test/外部执行来源实验代码另存 Git stash，不是 D05-A 的批准实现，不自动恢复或发布。后续 Change 须再经 Owner 明确激活。
 
 | Change | 独立闭环能力 | 依赖 / 优先级 |
 | --- | --- | --- |
@@ -658,10 +658,10 @@ Propose 明确当前候选如何指认、结果适用性与失效、汇总记录
 
 - Explore proof 只证明关键疑点；必要可复现输入优先留在 `scripts/`、`tests/fixtures/` 或其他受控来源，Run 记录直接路径与真实结果。唯一输入才在当前 `artifacts/inputs/` 留副本，避免把完整临时工程、旧 Run 树、多轮成功输出递归复制进每个新 Run。
 - 目标项目测试产生的临时服务/组目录与 MenDi 正式证据分离；保留完整失败、阻断/取消/未知、清理结果、原始必要日志与可重现标识。多份摘要引用同一原件，正常通过组不用无条件搬运所有中间 JSON、相同 stdout、成功截图或临时生成树。正式测试的必要 group request/report 和失败原件不能为了减量而省略。
-- 检查 `src/application/test-execution.ts` 及对应读回、文件身份、锁/中断恢复：当前每次执行预创建 stdout/stderr，导致大量零字节文件。只有在协议允许以明确 empty 状态表示无输出、消费者/诊断/恢复均验证兼容之后，才可选择不生成空日志；不直接批量删除 0.2.0 或已 submitted 的历史文件。
+- 首版保留 `src/application/test-execution.ts` 的物理 stdout/stderr（包括 0B）及现行 formatVersion=1、文件身份、锁/中断和读取合同；不引入虚拟 empty 或把 ENOENT 推断为通过。027 的真实验证支持此选型，未来改变日志协议须另有明确范围，不潜入本次去重。
 - 优化的是未来证据留存与测试 fixture 结构，不追改 D01～D04 已提交的 proof、Run 与 verdict；采用场景级测试验证完整审计和定位能力未下降，不增加文件数量/容量限制、全量 Hash 链、证据数据库或自动清理 submitted 历史的后台任务。
 
-**C 的重点验收：** 新 Run 的最小 proof 可复现，失败与取消日志可追溯；相同原始输出只保存一份；空日志的省略不会破坏读回与未知状态；正式测试必需组覆盖和 Reviewer 审核依据没有减少；旧文件全部仍可正常读取。文件数降低只作效果观察，不作为通过门槛。
+**C 的重点验收：** 新 Run 的最小 proof 可复现，失败与取消可追溯；同一真实原件保存一次，不同执行不按内容合并；临时唯一源须先持久保留或标记 incomplete，空日志保留且缺失仍 unknown；正式必需组与 Reviewer 依据不减少，旧文件仍可读取。文件数/字节变化只作观察，不作门槛。自动软件只接入明确选择的 tests/Proof opt-in 路径，不是全部阶段强制引擎。
 
 #### MVP-D05-D：当前最新 Run 的 supplement 与有限 amend
 

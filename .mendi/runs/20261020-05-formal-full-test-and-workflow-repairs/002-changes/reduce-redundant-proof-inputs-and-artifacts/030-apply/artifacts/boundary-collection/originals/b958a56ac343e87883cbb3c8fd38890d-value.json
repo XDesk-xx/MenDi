@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-BqIjdf\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "外部 / 未知资源不得由环境豁免接管。",
+    "code": "environment-recovery-invalid",
+    "details": {}
+  },
+  "committedPaths": []
+}

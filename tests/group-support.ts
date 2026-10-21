@@ -6,6 +6,8 @@ import { writePackage } from './test-support.ts';
 import { repository } from './helpers.ts';
 import { runFullTest, type FullTestOptions } from '../src/application/delivery-full-test.ts';
 import { groupPlan } from '../src/core/group-plan.ts';
+import { groupEvidence } from './evidence-scenes.ts';
+import { evidenceSession } from './evidence-support.ts';
 
 export const groupCandidate = {
   id: 'c1',
@@ -66,71 +68,30 @@ export function recordApplyScene(
 ) {
   const evidence = process.env.MENDI_APPLY_EVIDENCE;
   if (!evidence || !result.run) return;
-  const a = result.run.attempt;
-  const group = 'groupExecution' in result ? result.groupExecution : undefined;
-  const read = (ref: string) => fs.readFileSync(path.join(root, ref), 'utf8');
-  fs.writeFileSync(
-    path.join(evidence, `${label}-${process.pid}.json`),
-    JSON.stringify(
-      {
-        label,
-        authority: '隔离产品场景；actor / verdict 为夹具，不认证 MenDi 根审核',
-        result: {
-          ok: result.ok,
-          run: result.run,
-          groupExecution: group,
-          next: 'next' in result ? result.next : null,
-        },
-        extra,
-        report: a?.request ? JSON.parse(read(a.request.reportRef)) : null,
-        stdout: group?.child ? read(group.child.stdoutRef) : null,
-        stderr: group?.child ? read(group.child.stderrRef) : null,
-      },
-      null,
-      2,
-    ) + '\n',
-    { flag: 'wx' },
+  const { scene, compact } = groupEvidence(
+    process.env.MENDI_TEST_EVIDENCE_DIR ?? evidence,
+    root,
+    result,
+  );
+  evidenceSession(evidence).record(
+    `${label}-${process.pid}.json`,
+    {
+      label,
+      authority: '隔离产品场景；actor / verdict 为夹具，不认证 MenDi 根审核',
+      ...scene,
+      extra: compact(extra),
+    },
+    false,
   );
 }
 export async function groupRun(root: string, options: FullTestOptions = {}) {
   const result = await runFullTest({ ...fullInput(root), inputFile: 'group-input.json' }, options);
-  const dir = process.env.MENDI_TEST_EVIDENCE_DIR;
+  const dir = process.env.MENDI_TEST_EVIDENCE_DIR ?? process.env.MENDI_APPLY_EVIDENCE;
   if (dir) {
-    fs.appendFileSync(
-      path.join(dir, `group-scenes-${process.pid}.jsonl`),
-      JSON.stringify({ root, result }) + '\n',
+    evidenceSession(dir).record(
+      `group-scenes-${process.pid}.jsonl`,
+      groupEvidence(dir, root, result).scene,
     );
-    if (result.run) {
-      const id = result.run.attempt?.executionId;
-      const folder = path.join(
-        dir,
-        'groups',
-        `${process.pid}-${path.basename(path.dirname(root))}`,
-        id ?? 'not-run',
-      );
-      fs.mkdirSync(folder, { recursive: true });
-      const parent = path.join(root, result.run.ref);
-      if (fs.existsSync(parent) && !fs.existsSync(path.join(folder, 'run.md')))
-        fs.copyFileSync(parent, path.join(folder, 'run.md'));
-      if (id) {
-        const base = path.join(root, `.mendi/delivery-groups/d01/tests/${id}`);
-        for (const name of fs.readdirSync(base))
-          if (
-            [
-              'result.json',
-              'stdout.log',
-              'stderr.log',
-              'group-request.json',
-              'group-report.json',
-              'group-events.jsonl',
-            ].includes(name) ||
-            name.endsWith('.tmp')
-          ) {
-            const output = path.join(folder, name);
-            if (!fs.existsSync(output)) fs.copyFileSync(path.join(base, name), output);
-          }
-      }
-    }
   }
   return result;
 }

@@ -1,0 +1,47 @@
+{
+  "kind": "D05-C-028-propose",
+  "reviewSource": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/027-review-explore/run.md",
+  "authorSource": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/026-explore/run.md",
+  "command": "node D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js validate reduce-redundant-proof-inputs-and-artifacts --strict --json",
+  "exitCode": 0,
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "issues": [],
+  "artifactStatus": [
+    {
+      "id": "proposal",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "status": "done"
+    }
+  ],
+  "taskCount": 14,
+  "modifiedCapabilities": [
+    "action-runs",
+    "test-execution"
+  ],
+  "implementationStarted": false,
+  "decision": "Keep physical stdout/stderr including 0B; optimize only future opt-in proof/test evidence duplication"
+}

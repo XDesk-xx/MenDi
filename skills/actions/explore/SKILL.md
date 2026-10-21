@@ -16,6 +16,8 @@ role: author
 
 问题、候选、分析和 proof 摘要写进 Run，原始输出进该 Run 的 artifacts 或受控文件；今后不新建 Change 级 explore.md。旧已受审探索文件保持原样，正式方案承接有效决策。
 
+未来阶段同一次真实执行的必要 stdout、报告或请求只保存一份原件，其它摘要使用可直接读取的受管引用。可复建输入记录受控 scripts/tests/fixtures 入口、实际参数及实测结果，不复制整棵临时工程；当前唯一输入或失败/unknown 原件只在 .tmp/runtime 时，须在清理前保存必要字节一次到本 Run，否则明确 incomplete 并保留现场。不要按内容相同合并不同执行，不回写旧 submitted 历史。正式双物理日志（含 0B）和 groups-v1 回执/清理合同保持；缺失不能推断 empty 或 PASS。自动单源辅助只用于明确启用的有限测试/Proof collector，不是全部阶段的强制引擎。
+
 必要输入是当前 Change、Owner 范围和实际项目事实。先找出会改变方案的关键疑点，用可重建输入做真实 proof，简记目的、方法、结果与限制；可靠且仍适用的结果可以沿用。没有实现授权时保持探索边界。
 
 作为 Owner 指定的 Author，在当前 Change 批准范围内完成 explore 工作。按当前阶段使用目标项目已安装的 OpenSpec 对应工作方法；编写产物前读取实际 instructions、context 与 rules。Explore 对关键疑点做真实 proof，Propose 形成连贯方案与任务，Apply 按受审方案实施并验证；记录操作本身不替代这些语义工作。

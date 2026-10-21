@@ -1,0 +1,146 @@
+{
+  "proof": "D05-C/026",
+  "baseline": {
+    "deliveries": {
+      "20261009-01-single-change-manual-collaboration": {
+        "files": 541,
+        "zero": 5,
+        "bytes": 9215118
+      },
+      "20261010-02-delivery-verification-and-close": {
+        "files": 775,
+        "zero": 16,
+        "bytes": 10725233
+      },
+      "20261010-03-storybook-and-real-usage": {
+        "files": 1827,
+        "zero": 192,
+        "bytes": 18852396
+      },
+      "20261016-04-real-usage-repairs-and-release": {
+        "files": 2267,
+        "zero": 140,
+        "bytes": 26212225
+      },
+      "20261020-05-formal-full-test-and-workflow-repairs": {
+        "files": 213,
+        "zero": 0,
+        "bytes": 1532138
+      }
+    },
+    "total": {
+      "files": 5623,
+      "zero": 353,
+      "bytes": 66537110
+    },
+    "zeroNames": [
+      [
+        "stdout.log",
+        109
+      ],
+      [
+        "dependencies.stderr.log",
+        10
+      ],
+      [
+        "target-open.stderr.log",
+        10
+      ],
+      [
+        "target-typecheck.stdout.log",
+        10
+      ],
+      [
+        "baseline-stories.stderr.log",
+        9
+      ],
+      [
+        "entries.stderr.log",
+        9
+      ],
+      [
+        "test-store.stderr.log",
+        5
+      ],
+      [
+        "probe-typecheck.log",
+        4
+      ],
+      [
+        ".gitkeep",
+        4
+      ],
+      [
+        "status.stderr.log",
+        4
+      ],
+      [
+        "diff-check.log",
+        4
+      ],
+      [
+        "stderr.log",
+        4
+      ],
+      [
+        "handoff-readback.stderr.log",
+        3
+      ],
+      [
+        "proposal-instructions.stderr.log",
+        3
+      ],
+      [
+        "next.stderr.log",
+        3
+      ]
+    ],
+    "d04Archive014": {
+      "files": 1015,
+      "zero": 77,
+      "requestCount": 114,
+      "resultCount": 114,
+      "stdoutCount": 114,
+      "stderrCount": 114,
+      "groupReportCount": 107
+    }
+  },
+  "isolatedQuietRun": {
+    "execution": "001-focused",
+    "outcome": "passed",
+    "logRefs": [
+      ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+    ],
+    "logBytes": [
+      0,
+      13
+    ],
+    "stableBefore": "passed",
+    "missingEmptyLog": {
+      "outcome": "unknown",
+      "code": "ENOENT"
+    },
+    "restoredStatus": "passed"
+  },
+  "isolatedRealFailure": {
+    "execution": "002-fast",
+    "outcome": "failed",
+    "logs": [
+      {
+        "ref": ".mendi/delivery-groups/d01/tests/002-fast/stdout.log",
+        "bytes": 62
+      },
+      {
+        "ref": ".mendi/delivery-groups/d01/tests/002-fast/stderr.log",
+        "bytes": 92
+      }
+    ]
+  },
+  "limits": [
+    "Historical files read only; no deletion or rewrite",
+    "Test log omission simulated exclusively by temporary rename of one zero-byte log in owned fixture, not product implementation",
+    "Formal groups-v1 report and request not modified",
+    "No root Delivery Full Test"
+  ]
+}

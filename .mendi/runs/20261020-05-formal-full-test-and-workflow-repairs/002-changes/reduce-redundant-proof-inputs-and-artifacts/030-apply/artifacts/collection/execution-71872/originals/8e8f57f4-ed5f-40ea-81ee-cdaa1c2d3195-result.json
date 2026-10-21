@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "executionId": "003-full",
+  "kind": "full",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ySWDjS\\minimal-project",
+  "cwd": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-ySWDjS\\minimal-project",
+  "deliveryId": "d01",
+  "changeId": null,
+  "actorId": "test-author",
+  "scope": "command",
+  "formalDeliveryTest": false,
+  "command": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run",
+      "test:full"
+    ],
+    "dependencyPolicy": "warn"
+  },
+  "dependencyCheck": {
+    "executable": "C:\\nvm4w\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+      "run"
+    ],
+    "dependencyPolicy": "error",
+    "exitCode": 0
+  },
+  "scriptName": "test:full",
+  "scriptText": "node foreground.ts pass",
+  "startedAt": "2026-10-21T01:43:08.422Z",
+  "finishedAt": "2026-10-21T01:43:09.394Z",
+  "executionState": "finished",
+  "outcome": "passed",
+  "exitCode": 0,
+  "signal": null,
+  "pid": 44708,
+  "stdoutRef": ".mendi/delivery-groups/d01/tests/003-full/stdout.log",
+  "stderrRef": ".mendi/delivery-groups/d01/tests/003-full/stderr.log"
+}

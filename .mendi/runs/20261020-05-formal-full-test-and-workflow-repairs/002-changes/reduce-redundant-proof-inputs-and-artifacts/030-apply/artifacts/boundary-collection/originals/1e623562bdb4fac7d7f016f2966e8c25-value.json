@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M9IMEk\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "原执行不稳定或材料 / 完整计划 / 入口变化，须修复审核。",
+    "code": "delivery-state-conflict",
+    "details": {}
+  },
+  "committedPaths": []
+}

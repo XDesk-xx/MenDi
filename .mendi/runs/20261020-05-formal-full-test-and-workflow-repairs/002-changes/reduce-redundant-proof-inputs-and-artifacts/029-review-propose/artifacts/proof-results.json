@@ -1,0 +1,249 @@
+{
+  "recordedAt": "2026-10-21T01:26:42.480Z",
+  "fixedAuthorRun": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/028-propose/run.md",
+  "priorIndependentReview": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/027-review-explore/run.md",
+  "purpose": "Propose-only independent static source/contract crosswalk plus current strict OpenSpec and preceding independent runtime proof readback",
+  "decisionEvidence": "First version keeps actual empty stdout/stderr physical files and changes only future opt-in test/proof evidence collectors",
+  "coverage": [
+    {
+      "id": "C01-first-version-physical-double-logs",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/proposal.md",
+          "line": 9,
+          "text": "- **定稿首版选型：保留物理 stdout/stderr 日志，包括 0B。** 不改变 `TestExecution` 的结果格式、双日志身份、读取/恢复、正式 groups-v1 报告合同；不把缺失文件解释为合法 empty。027 Reviewer 已给出这条可审的最小方案，当前没有足够数据证明重做空日志存储协议的收益大于风险。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 15,
+          "text": "### D1. 首版保留两个物理日志，零字节也不省"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/test-execution/spec.md",
+          "line": 44,
+          "text": "本 Change SHALL 继续要求每次新普通 TestExecution 预留并保存真实 stdout.log 和 stderr.log 文件，即使本次实际内容为零字节；旧 formatVersion=1 执行的日志路径、结果、读回及写失败处理保持有效。空文件与缺失文件必须保持区别，本 Change 不引入新的虚拟 empty 或推断通过的状态。"
+        },
+        {
+          "file": "src/application/test-execution.ts",
+          "line": 89,
+          "text": "for (const ref of [record.stdoutRef, record.stderrRef])"
+        },
+        {
+          "file": "src/adapters/test-store.ts",
+          "line": 121,
+          "text": "const logRefs = [record.stdoutRef, record.stderrRef];"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 18,
+          "text": "- [ ] 3.1 保持现有 TestExecution formatVersion=1、stdoutRef/stderrRef 两个物理文件的真正生成与读取合同（包括真实 0B）；针对已完成的安静 passed 测试，验证缺失零字节 stdout 仍 unknown/ENOENT、恢复原件后 passed，且不新增推断 empty 的兼容分支。"
+        }
+      ]
+    },
+    {
+      "id": "C02-opt-in-collectors-are-real-not-invented",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/proposal.md",
+          "line": 11,
+          "text": "- 定向整合当前测试/Proof 的可选证据采集工具：`tests/helpers.ts`、`tests/test-support.ts`、`tests/group-support.ts` 等既有 fixture 和 opt-in 环境入口不再无条件将相同的 `result/log/report/command` 正文多次嵌入各份场景 JSON/JSONL；保留确属唯一的失败/异常、直接请求与原始结果，并以运行可复现的测试验证证据仍可定位。仅修改新产出路径，不逆向压缩已提交 Run。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 33,
+          "text": "### D3. 对现有调用者定向适配，正式执行文件不参与去重"
+        },
+        {
+          "file": "tests/helpers.ts",
+          "line": 39,
+          "text": "if (process.env.MENDI_TEST_EVIDENCE_DIR) {"
+        },
+        {
+          "file": "tests/test-support.ts",
+          "line": 107,
+          "text": "if (process.env.MENDI_TEST_EVIDENCE_DIR) {"
+        },
+        {
+          "file": "tests/group-support.ts",
+          "line": 67,
+          "text": "const evidence = process.env.MENDI_APPLY_EVIDENCE;"
+        },
+        {
+          "file": "tests/group-support.ts",
+          "line": 97,
+          "text": "const dir = process.env.MENDI_TEST_EVIDENCE_DIR;"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 13,
+          "text": "- [ ] 2.3 在 tests/group-support.ts 的 groupRun / recordApplyScene 的可选保存路径统一受控原件与复用引用，不降低真实 request、report、events/cleanup、stdout/stderr 以及失败/unknown 的定位能力；用隔离 groups-v1 中段失败/缺报告场景测试，同时保证未启用 opt-in 无多余写入。"
+        }
+      ]
+    },
+    {
+      "id": "C03-source-stability-before-ephemeral-cleanup",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/action-runs/spec.md",
+          "line": 30,
+          "text": "#### Scenario: Only source is disposable temporary target"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 28,
+          "text": "- 如果唯一原件仍在运行后要删除的隔离夹具，必须**在目标被清理前**仅复制真正必要字节一次到当前受管 evidence，或者报告 incomplete、保留现场，不能只留下死链。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 7,
+          "text": "- [ ] 1.3 验证来源不可持久读取时只保存受管唯一原件一次或明确标记 incomplete，禁止把即将清理的 .tmp/runtime 当成唯一长期来源；测试路径越界、缺失、无写入权限、源文件读中变化/中断均 fail-closed 并保留当前实际现场。"
+        }
+      ]
+    },
+    {
+      "id": "C04-distinct-real-executions-not-text-deduplicated",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 23,
+          "text": "在 tests/ 中建立一个明确职责的 TypeScript 辅助（可命名 evidence-support.ts），供已存在的 MENDI_TEST_EVIDENCE_DIR / MENDI_APPLY_EVIDENCE 环境模式及指定 Apply/Review 真实场景选择使用。一次受控采集会话里的同一受管源保留**一个必要原件**，其它摘要保存可核对的相对来源与真实执行身份、命令、场景和 outcome。不同真实执行即使 stdout 文本相同，也不是同一来源，不跨执行内容去重；不生成全库 hash 清单、追溯 DB 或附加审批。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 6,
+          "text": "- [ ] 1.2 建立受限于当前测试/Proof 采集会话的 TypeScript 单源证据辅助，明确来源身份、当前 Run/可重建源/临时源、真实命令、原件和引用状态；测试相同真实原件只留一个直接副本、不同执行即使输出一致也分别保留，不新增全库 hash/数据库。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/action-runs/spec.md",
+          "line": 34,
+          "text": "#### Scenario: Real failure and unknown observations require source"
+        }
+      ]
+    },
+    {
+      "id": "C05-formal-groups-and-history-retained",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/proposal.md",
+          "line": 13,
+          "text": "- **保留全部正式 groups-v1 必需证据**（实际 group-request、child result、必要 report/events、logs、真实清理/资源/身份、失败/blocked/not-run/interrupted/unknown 的现场）。正式完整执行、Reviewer 直接验证、legacy 双日志读取及已提交历史均不得减损。无全局文件数量/字节门槛、无自动清理 submitted 历史、无新全量 hash 链或证据数据库。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/test-execution/spec.md",
+          "line": 58,
+          "text": "### Requirement: Formal group evidence is exempt from deduplication loss"
+        },
+        {
+          "file": "src/adapters/group-store.ts",
+          "line": 69,
+          "text": "for (const ref of [child.stdoutRef, child.stderrRef]) captureBytes(root, ref, bytes);"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 20,
+          "text": "- [ ] 3.3 验证 groups-v1 必需组的真实 request、child result、protocol report、日志和资源清理、failed/blocked/not-run/interrupted/unknown 不因 opt-in 证据减少而缺失；对 026/027 的历史 114/107 样本只作只读事实引用，新场景真实失败不被“没有报告文件”冒充正常 PASS。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/action-runs/spec.md",
+          "line": 49,
+          "text": "### Requirement: Submitted evidence remains immutable across optimization"
+        }
+      ]
+    },
+    {
+      "id": "C06-owner-scope-version-no-global-size-gate",
+      "passed": true,
+      "links": [
+        {
+          "file": "mendi-foundation-and-delivery-roadmap.md",
+          "line": 662,
+          "text": "- 优化的是未来证据留存与测试 fixture 结构，不追改 D01～D04 已提交的 proof、Run 与 verdict；采用场景级测试验证完整审计和定位能力未下降，不增加文件数量/容量限制、全量 Hash 链、证据数据库或自动清理 submitted 历史的后台任务。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/proposal.md",
+          "line": 13,
+          "text": "- **保留全部正式 groups-v1 必需证据**（实际 group-request、child result、必要 report/events、logs、真实清理/资源/身份、失败/blocked/not-run/interrupted/unknown 的现场）。正式完整执行、Reviewer 直接验证、legacy 双日志读取及已提交历史均不得减损。无全局文件数量/字节门槛、无自动清理 submitted 历史、无新全量 hash 链或证据数据库。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 11,
+          "text": "**Non-Goals:** 不修改 TestExecution formatVersion=1、双日志路径或正式 groups-v1 的请求/报告/清理语义；不回改 D01–D05-B 已提交历史；不建泛化证据数据库、全库 hash 链、自动清理后台任务或 D05-D supplement/amend。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 25,
+          "text": "- [ ] 4.1 以明确可复现 fixture 对比当前 opt-in 证据采集开启/关闭与新单源方式，列出实际文件、副本/来源引用和失败覆盖；减量量化仅为观察，不设文件/字节硬阈值，不将初始状态虚称为新功能完成。"
+        }
+      ]
+    },
+    {
+      "id": "C07-legacy-quiet-and-unknown-fail-closed",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/test-execution/spec.md",
+          "line": 50,
+          "text": "#### Scenario: Empty required log is unexpectedly missing"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/specs/test-execution/spec.md",
+          "line": 54,
+          "text": "#### Scenario: Log output is partial or lifecycle is uncertain"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 19,
+          "text": "- [ ] 3.2 运行并根据实际影响补充 test-log-integrity 的短写/零进展/异常回归，以及 test-execution 的 prepared/running/finished/取消/unknown 与锁边界；明确记录必要 stdout/stderr/result 永不由去重辅助改写，写失败不被假报 complete。"
+        }
+      ]
+    },
+    {
+      "id": "C08-independent-handoff-separates-approval",
+      "passed": true,
+      "links": [
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/tasks.md",
+          "line": 29,
+          "text": "## Workflow follow-up"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/proposal.md",
+          "line": 30,
+          "text": "- 产品/代码变化以可复用的有限证据采集辅助和场景测试为主；无 UI、D05-D amend/supplement、D01–D05-B 历史改写、根 D05 正式 Full Test/Close、自动 Git/发布/安装。"
+        },
+        {
+          "file": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts/design.md",
+          "line": 57,
+          "text": "4. 交独立 Review Apply 后再按 Owner 分别授权 Archive、Git、整个 D05 Full Test/Close 与版本安装。"
+        }
+      ]
+    }
+  ],
+  "taskCount": 14,
+  "deltaCapabilities": [
+    "action-runs",
+    "test-execution"
+  ],
+  "previousProof": {
+    "quietAfterMissing": "unknown/ENOENT",
+    "quietRestored": "passed",
+    "D04HistoricalRequests": 114,
+    "D04HistoricalReports": 107,
+    "logIntegrityTests": 3
+  },
+  "strictOpenSpec": {
+    "exitCode": 0,
+    "raw": "openspec-validation.json"
+  },
+  "implementationStarted": false,
+  "boundedOpenPoints": [
+    "Design is normative for stages, but executable automation is confined to selected opt-in collector seams plus method guidance; do not present it as a universal runtime-enforced mandatory evidence layer",
+    "Proof preservation must not rely only on a disposable target; exact late cleanup and interrupted write behavior require actual Apply scenario validation",
+    "Do not assert new compaction savings or seven-append product impact before implementation; this is a proposal review"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-QJuIpN\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "恢复缺少直接失败、归属、合同或清理确认。",
+    "code": "environment-recovery-invalid",
+    "details": {}
+  },
+  "committedPaths": []
+}

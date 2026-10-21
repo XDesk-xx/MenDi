@@ -1,0 +1,43 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "unknown",
+  "run": {
+    "state": "saved",
+    "root": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\002-changes\\reduce-redundant-proof-inputs-and-artifacts\\030-apply\\artifacts\\final-collection\\unknown-group-66888",
+    "ref": "originals/3b4f539da0931e255323dd4a28aade2f-run.md",
+    "source": {
+      "root": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project",
+      "ref": ".mendi/runs/d01/015-delivery-test-attempt/run.md",
+      "lifetime": "temporary",
+      "fileIdentity": "2498285797/562949956821030/1792547730416343500"
+    }
+  },
+  "error": {
+    "message": "组执行或资源清理未确认，保留现场。",
+    "code": "group-execution-unconfirmed",
+    "details": {
+      "observation": {
+        "protocolState": "unconfirmed",
+        "groups": [],
+        "reasons": [
+          "清理未确认。"
+        ],
+        "timing": []
+      }
+    }
+  },
+  "committedPaths": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\runs\\d01\\015-delivery-test-attempt",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\runs\\d01\\015-delivery-test-attempt\\run.md",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\delivery-groups\\d01\\manifest.json.fae10b93-5ef6-4a72-85e8-23256ca5c080.tmp",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\delivery-groups\\d01\\manifest.json",
+    ".mendi/delivery-groups/d01/tests/001-full/group-request.json",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\runs\\d01\\015-delivery-test-attempt\\run.md.7727c20f-aa95-4755-9cb4-c37f4b765c26.tmp",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\runs\\d01\\015-delivery-test-attempt\\run.md"
+  ],
+  "retainedLock": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-eVXB6Y\\project\\.mendi\\write.lock"
+}

@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-M9IMEk\\project",
+  "openspec": null,
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "新正式执行只支持 groups-v1 完整 initial；continue / retest 仅历史可读。",
+    "code": "invalid-group-input",
+    "details": {}
+  },
+  "committedPaths": []
+}

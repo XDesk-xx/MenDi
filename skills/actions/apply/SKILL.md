@@ -6,6 +6,8 @@ role: author
 
 # apply 阶段方法
 
+未来本阶段的同一真实 stdout、报告、请求或结果只保留一个必要原件，重复摘要用可读受管来源引用。受控 scripts/tests/fixtures 输入写明复建入口、实际参数和结果；不可重建的唯一输入或失败/unknown 原件若只在临时 .tmp/runtime，先在本 Run 持久保存必要字节一次，否则明确 incomplete、保留现场。不复制整棵临时工程，不按文本相同合并不同执行，不修改旧 submitted Run/verdict。正式双物理日志（含 0B）、groups-v1 请求/回执/事件及清理事实不参与省略，缺失不推断 empty/PASS。单源软件仅作用于明确 opt-in 的有限测试/Proof 路径，不能据目录变小宣称实施或验收通过。
+
 使用 `methods.upstream` 中当前目标 openspec-apply-change 的真实正文及实际 Apply instructions，Apply / revise-apply 都遵守此入口。随包自有方法规定授权与交接；选择 Storybook 仅增加可选指导，不取消目标 Apply 方法。方法缺失、不可读或生成基线不符时新交接写前拒绝，先明确准备当前目标，不自动安装或借其他项目兜底。
 
 必要输入是当前 Change、已批准方案、设计、规格和实际 tasks。按依赖实施，每项行为成立后更新任务；运行针对当前变化的必要检查并保留实际失败 / 修正结果。缺少当前关键输入时明确问题，不猜历史或扩大授权。

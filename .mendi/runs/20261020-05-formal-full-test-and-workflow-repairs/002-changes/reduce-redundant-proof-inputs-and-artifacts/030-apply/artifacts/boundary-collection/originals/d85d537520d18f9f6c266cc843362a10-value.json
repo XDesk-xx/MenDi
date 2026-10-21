@@ -1,0 +1,15 @@
+{
+  "openspec": null,
+  "executionMode": "local-only",
+  "upstreamAccess": "not-required",
+  "ok": false,
+  "operation": "delivery-full-test-run",
+  "projectRoot": "D:\\Projects\\MenDi\\.tmp\\mendi-apply-5HGsC5\\project",
+  "local": null,
+  "outcome": "not-run",
+  "error": {
+    "message": "目标存在写入锁，操作可能正在进行或已中断。",
+    "code": "write-in-progress-or-interrupted"
+  },
+  "committedPaths": []
+}

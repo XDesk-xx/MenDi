@@ -1,0 +1,5 @@
+{
+  "stdout": "{\n  \"change\": {\n    \"id\": \"second-entry\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-wDX3sq\\\\minimal-project\\\\openspec\\\\changes\\\\second-entry\",\n    \"metadataPath\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-wDX3sq\\\\minimal-project\\\\openspec\\\\changes\\\\second-entry\\\\.openspec.yaml\",\n    \"schema\": \"spec-driven\"\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\.tmp\\\\mendi-apply-wDX3sq\\\\minimal-project\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": "",
+  "error": null
+}

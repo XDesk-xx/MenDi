@@ -1,0 +1,22 @@
+{
+  "phase": "prepared",
+  "token": "b9432770-59ce-40e0-86b2-882083a01c2b",
+  "source": "openspec/changes/reduce-redundant-proof-inputs-and-artifacts",
+  "ordinal": 16,
+  "authorRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/030-apply/run.md",
+  "reviewRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/031-review-apply/run.md",
+  "components": [
+    "action-runs",
+    "test-execution"
+  ],
+  "files": [
+    ".openspec.yaml",
+    "proposal.md",
+    "design.md",
+    "tasks.md",
+    "specs/action-runs/spec.md",
+    "specs/test-execution/spec.md"
+  ],
+  "taskCount": 14,
+  "nativeCalled": false
+}

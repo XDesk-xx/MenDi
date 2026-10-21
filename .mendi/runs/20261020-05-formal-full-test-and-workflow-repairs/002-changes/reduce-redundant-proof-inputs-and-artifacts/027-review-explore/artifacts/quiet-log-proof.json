@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-21T01:02:02.365Z",
+  "kind": "independent isolated product-v2 foreground test executions",
+  "quiet": {
+    "status": "passed",
+    "executionId": "001-focused",
+    "refs": [
+      ".mendi/delivery-groups/d01/tests/001-focused/stdout.log",
+      ".mendi/delivery-groups/d01/tests/001-focused/stderr.log"
+    ],
+    "sizes": [
+      0,
+      13
+    ],
+    "afterZeroLogRemoval": {
+      "outcome": "unknown",
+      "code": "ENOENT"
+    },
+    "restoredStatus": "passed"
+  },
+  "failure": {
+    "status": "failed",
+    "executionId": "002-fast",
+    "refs": [
+      ".mendi/delivery-groups/d01/tests/002-fast/stdout.log",
+      ".mendi/delivery-groups/d01/tests/002-fast/stderr.log"
+    ],
+    "sizes": [
+      62,
+      92
+    ]
+  },
+  "limitation": [
+    "This deliberately RENAMES a zero-byte file only inside this new fixture; it is not a proposed product behavior",
+    "Test status is not a root Delivery formal full test or groups-v1 complete acceptance",
+    "Do not treat a missing or zero-byte file as evidence that execution output was safely omittable",
+    "Output volume and file count are observations only, not hard acceptance gates"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-21T01:03:19.180Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/reduce-redundant-proof-inputs-and-artifacts/027-review-explore/artifacts/tsconfig.json"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "",
+  "error": null
+}

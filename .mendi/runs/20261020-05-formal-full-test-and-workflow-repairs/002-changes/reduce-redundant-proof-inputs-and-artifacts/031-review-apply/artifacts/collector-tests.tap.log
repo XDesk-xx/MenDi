@@ -1,0 +1,113 @@
+TAP version 13
+# {"scene":"one-group-source-three-summaries","directOriginalFiles":7,"newOriginalFiles":8,"oldLayoutTwoApplyBytes":26898,"newTwoApplySummaryBytes":7818,"comparison":"同一真实执行的旧摘要布局序列化对照；不是重新运行旧 writer，也不是体积 gate"}
+# Subtest: groups-v1 关闭 opt-in 无额外证据；开启后 groupRun / 两份 Apply 摘要复用失败原件
+ok 1 - groups-v1 关闭 opt-in 无额外证据；开启后 groupRun / 两份 Apply 摘要复用失败原件
+  ---
+  duration_ms: 64703.36
+  type: 'test'
+  ...
+# Subtest: 缺最终报告保存缺失事实，真实 invalid 不变；Apply 只启用时同样保留一次可读原件
+ok 2 - 缺最终报告保存缺失事实，真实 invalid 不变；Apply 只启用时同样保留一次可读原件
+  ---
+  duration_ms: 4060.9842
+  type: 'test'
+  ...
+# {"scene":"unknown-collector","state":"captured","productOutcome":"unknown","files":8,"retainedLock":".mendi/write.lock"}
+# Subtest: cleanup unknown 保留真实 Run、request/report/events、部分结果与锁，不追认为 finished PASS
+ok 3 - cleanup unknown 保留真实 Run、request/report/events、部分结果与锁，不追认为 finished PASS
+  ---
+  duration_ms: 5773.501
+  type: 'test'
+  ...
+# {"scope":"一个明确旧原件及其双日志，只读 format parser；未重建已清理临时项目","path":".mendi/runs/20261016-04-real-usage-repairs-and-release/002-changes/full-test-orchestration-continuation-and-revalidation/014-apply/artifacts/repair-focused/groups/54816-mendi-apply-ILq6td/001-full","outcome":"passed","stdoutBytes":0,"historicalCountsSource":"027/artifacts/historical-audit.json"}
+# Subtest: 真实 D01–D04 当前入口与已提交 Run、D05-A/B archive/verdict 定向只读，不扫描历史树
+ok 4 - 真实 D01–D04 当前入口与已提交 Run、D05-A/B archive/verdict 定向只读，不扫描历史树
+  ---
+  duration_ms: 3163.2367
+  type: 'test'
+  ...
+# Subtest: D04 已保存的 formatVersion=1 原执行与 0B 双日志仍可读取；114/107 仅引用旧观察
+ok 5 - D04 已保存的 formatVersion=1 原执行与 0B 双日志仍可读取；114/107 仅引用旧观察
+  ---
+  duration_ms: 4.5639
+  type: 'test'
+  ...
+# {"scene":"same-command-distinct-invocations","originalFiles":3,"references":4,"originalBytes":4020,"legacyTwoSummaryBytes":8012}
+# Subtest: 真实命令 opt-in 开关、同命令不同执行身份与失败定位；摘要复用已有唯一原件
+ok 6 - 真实命令 opt-in 开关、同命令不同执行身份与失败定位；摘要复用已有唯一原件
+  ---
+  duration_ms: 1905.0507
+  type: 'test'
+  ...
+# {"scene":"execute","outcome":"passed","canonicalOriginals":3,"repeatedReferences":3,"state":"captured"}
+# {"scene":"execute","outcome":"failed","canonicalOriginals":3,"repeatedReferences":3,"state":"captured"}
+# {"scene":"execute","outcome":"unknown","canonicalOriginals":4,"repeatedReferences":4,"state":"captured"}
+# Subtest: 实际 passed / failed / unknown 执行复用唯一 result 和双日志，跨进程 status 不变
+ok 7 - 实际 passed / failed / unknown 执行复用唯一 result 和双日志，跨进程 status 不变
+  ---
+  duration_ms: 24023.6031
+  type: 'test'
+  ...
+# Subtest: 真实 0B stdout 保留物理文件；删除仍 unknown，恢复原件后 passed，collector 不补日志
+ok 8 - 真实 0B stdout 保留物理文件；删除仍 unknown，恢复原件后 passed，collector 不补日志
+  ---
+  duration_ms: 7100.7278
+  type: 'test'
+  ...
+# Subtest: 两个真实进程采集同一受管文件，独占发布同一原件且不覆盖
+ok 9 - 两个真实进程采集同一受管文件，独占发布同一原件且不覆盖
+  ---
+  duration_ms: 468.7835
+  type: 'test'
+  ...
+# Subtest: 同一临时原件仅存一份，源清理后两个摘要仍可读取；相同文本的不同执行各保留
+ok 10 - 同一临时原件仅存一份，源清理后两个摘要仍可读取；相同文本的不同执行各保留
+  ---
+  duration_ms: 23.8418
+  type: 'test'
+  ...
+# Subtest: 受控可复建输入直接引用并记入口，不复制临时工程；临时源不能冒充持久输入
+ok 11 - 受控可复建输入直接引用并记入口，不复制临时工程；临时源不能冒充持久输入
+  ---
+  duration_ms: 7.1614
+  type: 'test'
+  ...
+# Subtest: 越界、缺失及已提交 Run 目标拒绝，不修改来源或旧 Run
+ok 12 - 越界、缺失及已提交 Run 目标拒绝，不修改来源或旧 Run
+  ---
+  duration_ms: 21.4001
+  type: 'test'
+  ...
+# Subtest: 采集写入 short：完成全部字节或保留 incomplete，不循环零进展
+ok 13 - 采集写入 short：完成全部字节或保留 incomplete，不循环零进展
+  ---
+  duration_ms: 10.0722
+  type: 'test'
+  ...
+# Subtest: 采集写入 zero：完成全部字节或保留 incomplete，不循环零进展
+ok 14 - 采集写入 zero：完成全部字节或保留 incomplete，不循环零进展
+  ---
+  duration_ms: 9.1269
+  type: 'test'
+  ...
+# Subtest: 采集写入 throw：完成全部字节或保留 incomplete，不循环零进展
+ok 15 - 采集写入 throw：完成全部字节或保留 incomplete，不循环零进展
+  ---
+  duration_ms: 7.3551
+  type: 'test'
+  ...
+# Subtest: 读中变化、无权限和发布中断均 incomplete，保留源与已写临时现场
+ok 16 - 读中变化、无权限和发布中断均 incomplete，保留源与已写临时现场
+  ---
+  duration_ms: 24.8779
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 75031.7807

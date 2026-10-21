@@ -1,0 +1,17 @@
+{
+  "started": "2026-10-21T02:29:20.485Z",
+  "finished": "2026-10-21T02:29:22.258Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+    "archive",
+    "reduce-redundant-proof-inputs-and-artifacts",
+    "--json",
+    "--yes"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "{\n  \"archive\": {\n    \"change\": \"reduce-redundant-proof-inputs-and-artifacts\",\n    \"archivedAs\": \"2026-10-21-reduce-redundant-proof-inputs-and-artifacts\",\n    \"path\": \"D:\\\\Projects\\\\MenDi\\\\openspec\\\\changes\\\\archive\\\\2026-10-21-reduce-redundant-proof-inputs-and-artifacts\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 5,\n      \"modified\": 3,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"D:\\\\Projects\\\\MenDi\",\n    \"source\": \"nearest\"\n  }\n}\n",
+  "stderr": ""
+}
