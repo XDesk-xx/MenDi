@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-21T09:26:52.957Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "check"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "check.stdout.log",
+  "stderr": "check.stderr.log",
+  "scope": "Independent pnpm check only; no new D05 Full Test / Git commit / install"
+}

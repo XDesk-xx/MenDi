@@ -1,0 +1,22 @@
+{
+  "kind": "isolated temp-fixture configuration-level port diagnostic (not F03 acceptance)",
+  "started": "2026-10-21T08:30:13.048Z",
+  "ended": "2026-10-21T08:30:17.518Z",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Projects\\MenDi\\.tmp\\d05-047-vitest-port-diagnostic\\node_modules\\vitest\\vitest.mjs",
+    "run",
+    "--project",
+    "storybook"
+  ],
+  "port": 64115,
+  "bind": "127.0.0.1",
+  "fixedInProjectBrowserApi": true,
+  "previousConfig": "import path from 'node:path';\nimport { fileURLToPath } from 'node:url';\nimport { defineConfig } from 'vitest/config';\nimport { playwright } from '@vitest/browser-playwright';\nimport { storybookTest } from '@storybook/addon-vitest/vitest-plugin';\n\nconst targetRoot = path.dirname(fileURLToPath(import.meta.url));\nexport default defineConfig({\n  root: targetRoot,\n  test: {\n    projects: [\n      {\n        define: { global: 'globalThis' },\n        plugins: [storybookTest({ configDir: path.join(targetRoot, '.storybook') })],\n        test: {\n          name: 'storybook',\n          browser: {\n            enabled: true,\n            provider: playwright(),\n            headless: true,\n            instances: [{ browser: 'chromium' }],\n          },\n        },\n      },\n    ],\n  },\n});\n",
+  "diagnosticConfig": "import path from 'node:path';\nimport { fileURLToPath } from 'node:url';\nimport { defineConfig } from 'vitest/config';\nimport { playwright } from '@vitest/browser-playwright';\nimport { storybookTest } from '@storybook/addon-vitest/vitest-plugin';\n\nconst targetRoot = path.dirname(fileURLToPath(import.meta.url));\nexport default defineConfig({\n  root: targetRoot,\n  test: {\n    projects: [\n      {\n        define: { global: 'globalThis' },\n        plugins: [storybookTest({ configDir: path.join(targetRoot, '.storybook') })],\n        test: {\n          name: 'storybook',\n          browser: {\n            enabled: true,\n            provider: playwright(),\n            headless: true,\n            api: { port: 64115, host: \"127.0.0.1\", strictPort: true },\n            instances: [{ browser: 'chromium' }],\n          },\n        },\n      },\n    ],\n  },\n});\n",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv4.1.11 \u001b[39m\u001b[90mD:/Projects/MenDi/.tmp/d05-047-vitest-port-diagnostic\u001b[39m\n\n \u001b[32m✓\u001b[39m \u001b[30m\u001b[45m storybook (chromium) \u001b[49m\u001b[39m src/Counter.stories.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 62\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m2 passed\u001b[39m\u001b[22m\u001b[90m (2)\u001b[39m\n\u001b[2m   Start at \u001b[22m 16:30:14\n\u001b[2m   Duration \u001b[22m 2.70s\u001b[2m (transform 0ms, setup 1.02s, import 64ms, tests 62ms, environment 0ms)\u001b[22m\n\n",
+  "stderr": ""
+}

@@ -1,0 +1,14 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d05-full-test-050",
+  "installedRoot": "D:\\tools\\mendi\\acceptance\\d05-full-test-050\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_109ccf5b0f5dc3b486a457209217a1c7\\node_modules\\mendi",
+  "installedCLI": "D:\\tools\\mendi\\acceptance\\d05-full-test-050\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_109ccf5b0f5dc3b486a457209217a1c7\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-03iL1d\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-03iL1d\\beta"
+  ],
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "evidence": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\installation",
+  "packagePath": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\installation\\mendi-0.2.0.tgz",
+  "packageVersion": "0.2.0",
+  "packageSha256": "cd68fff20f85ee29ac22d7e84b4dc027957d7d8cefa22586796fbc619cec8d6b"
+}

@@ -2,7 +2,7 @@
   "id": "20261020-05-formal-full-test-and-workflow-repairs",
   "planningSlot": "MVP-D05",
   "title": "正式验收与日常工作减负",
-  "state": "open",
+  "state": "closed",
   "recordingMode": "manual-bootstrap",
   "openedOn": "2026-10-20",
   "roadmapRef": "mendi-foundation-and-delivery-roadmap.md",
@@ -103,13 +103,55 @@
     "通用测试调度/缓存、全库 hash 证据链、自动审核及安装/部署发布。"
   ],
   "openRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/001-delivery-open/run.md",
-  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
-  "stopBoundary": "change-checkpoint",
+  "latestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+  "stopBoundary": "owner-decision",
   "next": {
-    "action": "change-checkpoint",
-    "role": "author",
+    "action": "owner-decision",
     "status": "awaiting-owner-instruction",
-    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/002-changes/latest-run-supplement-and-limited-amend/045-archive/run.md",
-    "reason": "D05-D 045 已完成原生 Archive 017 及三份主规格同步，D05 A/B/C/D 全部归档；当前 D05 仍 open，等待 Owner 独立 Git checkpoint、正式 Full Test/Close、版本安装授权。"
+    "role": "author",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+    "reason": "D05 051已Close，050完整正式验收passed，四项归档014–017保留；等待Owner下一指令，Git/发布/稳定安装与其他目标操作分别授权。"
+  },
+  "closedOn": "2026-10-21",
+  "closedAt": "2026-10-21T10:55:16.870Z",
+  "closeRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+  "fullTest": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "formalDeliveryTest": true,
+    "phase": "finished",
+    "outcome": "passed",
+    "result": "passed",
+    "executionId": "d05-full-test-050",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/run.md",
+    "resultRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/artifacts/summary.json",
+    "declarationRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/artifacts/plan.json",
+    "testedCommit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "testedWorktree": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort"
+  },
+  "close": {
+    "recordingMode": "manual-bootstrap",
+    "scope": "delivery",
+    "status": "completed",
+    "result": "closed",
+    "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+    "fullTestRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/050-delivery-full-test/run.md",
+    "declarationRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/artifacts/declaration.json",
+    "applicability": {
+      "conclusion": "applicable",
+      "materials": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "src/",
+        "scripts/",
+        "tests/",
+        "skills/",
+        "openspec/specs/",
+        "README.md"
+      ],
+      "changes": "相较050，受测实现、测试、依赖、方法、主规格、README及已批准Storybook配置均未变；只新增051收口、manifest和当前context/路线图状态说明。",
+      "reason": "050 本次完整F01–F05 passed；五组和全部直接命令、双日志、业务计数与当前四项归档范围一致；固定HEAD及受审一行配置保持，说明性收尾不改变材料适用性。"
+    },
+    "closedAt": "2026-10-21T10:55:16.870Z"
   }
 }

@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "outcome": "complete",
+  "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/048-delivery-repair/run.md",
+  "priorFailedRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/run.md",
+  "fixedFile": "tests/fixtures/storybook-project/vitest.config.ts",
+  "change": "Single browser.api loopback port 64115 strictPort configuration line",
+  "baseCommit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "worktreeHasUncommittedFix": true,
+  "focused": {
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "check": "passed",
+  "logs": [
+    "focused-ui.stdout.log",
+    "focused-ui.stderr.log",
+    "check.stdout.log",
+    "check.stderr.log"
+  ],
+  "browser": [
+    "ui-evidence/finite-results/browser/counter.png",
+    "ui-evidence/finite-results/preview-stop.json"
+  ],
+  "limitations": [
+    "Not an entire new F01-F05 formal acceptance",
+    "Independent review pending",
+    "Port 64115 is local environment scoped",
+    "Previous Full Test failures remain failed"
+  ],
+  "next": "review-delivery-repair"
+}

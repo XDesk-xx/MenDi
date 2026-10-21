@@ -1,0 +1,19 @@
+{
+  "step": "d05-046-isolated-online-cache-diagnostic",
+  "started": "2026-10-21T07:38:58.735Z",
+  "ended": "2026-10-21T07:39:04.879Z",
+  "target": "D:\\Projects\\MenDi\\.tmp\\d05-046-diagnostics-ui-online\\fixture",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "install",
+    "--frozen-lockfile",
+    "--ignore-scripts"
+  ],
+  "mode": "normal registry; frozen lock; ignore scripts; no disabling supply chain checks; not formal F03",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "? Verifying lockfile against supply-chain policies (237 entries)...\nLockfile is up to date, resolution step is skipped\nProgress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +141\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nPackages are hard linked from the content-addressable store to the virtual store.\n  Content-addressable store is at: D:\\dev-cache\\pnpm-store\\v11\n  Virtual store is at:             node_modules/.pnpm\nProgress: resolved 141, reused 141, downloaded 0, added 43\nProgress: resolved 141, reused 141, downloaded 0, added 98\nProgress: resolved 141, reused 141, downloaded 0, added 141, done\n\ndevDependencies:\n+ @storybook/addon-vitest 10.6.1\n+ @storybook/html-vite 10.6.1\n+ @types/node 22.20.5\n+ @vitest/browser 4.1.11\n+ @vitest/browser-playwright 4.1.11\n+ @vitest/runner 4.1.11\n+ playwright 1.60.0\n+ storybook 10.6.1\n+ typescript 5.9.3\n+ vite 8.3.0\n+ vitest 4.1.11\n\n✓ Lockfile passes supply-chain policies (237 entries in 5.2s)\nDone in 5.9s using pnpm v11.22.0\n",
+  "stderr": ""
+}

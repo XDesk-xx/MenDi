@@ -1,0 +1,52 @@
+[
+  {
+    "stdoutRef": "status.stdout.json",
+    "exitCode": 0,
+    "finishedAt": "2026-10-21T10:55:44.5759420Z",
+    "next": {
+      "action": "owner-decision",
+      "status": "awaiting-owner-instruction",
+      "role": "author",
+      "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+      "reason": "D05 051已Close，050完整正式验收passed，四项归档014–017保留；等待Owner下一指令，Git/发布/稳定安装与其他目标操作分别授权。",
+      "source": "manual-bootstrap",
+      "executable": false
+    },
+    "stderrRef": "status.stderr.log",
+    "startedAt": "2026-10-21T10:55:43.6546720Z",
+    "command": [
+      "node",
+      "dist/drivers/cli.js",
+      "status",
+      "--project",
+      "D:/Projects/MenDi",
+      "--json"
+    ],
+    "state": "closed"
+  },
+  {
+    "stdoutRef": "next.stdout.json",
+    "exitCode": 0,
+    "finishedAt": "2026-10-21T10:55:45.4421274Z",
+    "next": {
+      "action": "owner-decision",
+      "status": "awaiting-owner-instruction",
+      "role": "author",
+      "runRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/051-delivery-close/run.md",
+      "reason": "D05 051已Close，050完整正式验收passed，四项归档014–017保留；等待Owner下一指令，Git/发布/稳定安装与其他目标操作分别授权。",
+      "source": "manual-bootstrap",
+      "executable": false
+    },
+    "stderrRef": "next.stderr.log",
+    "startedAt": "2026-10-21T10:55:44.5760620Z",
+    "command": [
+      "node",
+      "dist/drivers/cli.js",
+      "next",
+      "--project",
+      "D:/Projects/MenDi",
+      "--json"
+    ],
+    "state": "closed"
+  }
+]

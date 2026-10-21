@@ -1,0 +1,113 @@
+TAP version 13
+# Subtest: 目标官方 CLI 本地发现 / Skill 真实执行；缺配置与工具明确失败
+ok 1 - 目标官方 CLI 本地发现 / Skill 真实执行；缺配置与工具明确失败
+  ---
+  duration_ms: 5683.931
+  type: 'test'
+  ...
+# Subtest: 目标自身严格 typecheck；真实类型错误和缺浏览器不被运行成功替代
+ok 2 - 目标自身严格 typecheck；真实类型错误和缺浏览器不被运行成功替代
+  ---
+  duration_ms: 7695.7791
+  type: 'test'
+  ...
+# Subtest: 官方预览 URL、真实状态 / 交互、同 child 复用与自身停止
+ok 3 - 官方预览 URL、真实状态 / 交互、同 child 复用与自身停止
+  ---
+  duration_ms: 12925.2591
+  type: 'test'
+  ...
+# Subtest: 未知端口 / 空索引 / 同 ID 异目标不赋予复用和停止；外部服务仍存活
+ok 4 - 未知端口 / 空索引 / 同 ID 异目标不赋予复用和停止；外部服务仍存活
+  ---
+  duration_ms: 7771.903
+  type: 'test'
+  ...
+# Subtest: 无 dev server 的有限测试、真实缺陷失败与修复后新测试 / 浏览器结果
+not ok 5 - 无 dev server 的有限测试、真实缺陷失败与修复后新测试 / 浏览器结果
+  ---
+  duration_ms: 6868.326
+  type: 'test'
+  location: 'D:\\Projects\\MenDi\\tests\\ui\\results.test.ts:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {
+      "openspec": null,
+      "local": null,
+      "executionMode": "local-only",
+      "upstreamAccess": "not-required",
+      "ok": false,
+      "operation": "test-run",
+      "projectRoot": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui\\finite-results",
+      "executionId": "001-focused",
+      "outcome": "failed",
+      "record": {
+        "formatVersion": 1,
+        "executionId": "001-focused",
+        "kind": "focused",
+        "projectRoot": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui\\finite-results",
+        "cwd": "D:\\Projects\\MenDi\\.tmp\\d05-full-test-047-ui\\finite-results",
+        "deliveryId": "ui-results",
+        "changeId": null,
+        "actorId": "ui-test-author",
+        "scope": "command",
+        "formalDeliveryTest": false,
+        "command": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+            "run",
+            "verify:stories"
+          ],
+          "dependencyPolicy": "warn"
+        },
+        "dependencyCheck": {
+          "executable": "C:\\nvm4w\\nodejs\\node.exe",
+          "args": [
+            "C:\\Users\\xuser\\AppData\\Local\\nvm\\v22.23.2\\node_modules\\corepack\\dist\\pnpm.js",
+            "run"
+          ],
+          "dependencyPolicy": "error",
+          "exitCode": 0
+        },
+        "scriptName": "verify:stories",
+        "scriptText": "vitest run --project storybook",
+        "startedAt": "2026-10-21T07:47:26.802Z",
+        "finishedAt": "2026-10-21T07:47:30.104Z",
+        "executionState": "finished",
+        "outcome": "failed",
+        "exitCode": 1,
+        "signal": null,
+        "pid": 64724,
+        "stdoutRef": ".mendi/delivery-groups/ui-results/tests/001-focused/stdout.log",
+        "stderrRef": ".mendi/delivery-groups/ui-results/tests/001-focused/stderr.log"
+      }
+    }
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    checked (file:///D:/Projects/MenDi/tests/ui/support.ts:27:10)
+    product (file:///D:/Projects/MenDi/tests/ui/support.ts:41:18)
+    execute (file:///D:/Projects/MenDi/tests/ui/results.test.ts:27:5)
+    TestContext.<anonymous> (file:///D:/Projects/MenDi/tests/ui/results.test.ts:34:20)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 41918.6925
+[ELIFECYCLE] Command failed with exit code 1.

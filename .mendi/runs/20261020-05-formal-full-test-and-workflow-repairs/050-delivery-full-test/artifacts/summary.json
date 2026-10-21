@@ -1,0 +1,595 @@
+{
+  "deliveryId": "20261020-05-formal-full-test-and-workflow-repairs",
+  "executionId": "d05-full-test-050",
+  "recordingMode": "manual-bootstrap",
+  "mode": "owner-authorized-manual-full-test",
+  "formalDeliveryTest": true,
+  "protocolClaim": "NOT product-v2 groups-v1",
+  "outcome": "passed",
+  "candidate": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ],
+    "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+    "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+  },
+  "repairReviewRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/049-review-delivery-repair/run.md",
+  "groups": [
+    {
+      "stage": "F01-check",
+      "startedAt": "2026-10-21T10:08:38.041Z",
+      "finishedAt": "2026-10-21T10:08:52.743Z",
+      "expectedSteps": 1,
+      "steps": [
+        {
+          "label": "check",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "check"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:08:38.046Z",
+          "endedAt": "2026-10-21T10:08:52.743Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F01-check-check.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F01-check-check.stderr.log"
+          }
+        }
+      ],
+      "counts": null,
+      "allStepsSucceeded": true,
+      "businessValid": true,
+      "stageOutcome": "passed",
+      "sourceBasis": {
+        "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+        "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+        "packageVersion": "0.2.0",
+        "materials": [
+          "package.json",
+          "pnpm-lock.yaml",
+          "src/",
+          "scripts/",
+          "tests/",
+          "skills/",
+          "openspec/specs/",
+          "README.md"
+        ],
+        "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+        "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+      }
+    },
+    {
+      "stage": "F02-root",
+      "startedAt": "2026-10-21T10:13:48.240Z",
+      "finishedAt": "2026-10-21T10:46:15.629Z",
+      "expectedSteps": 1,
+      "steps": [
+        {
+          "label": "root",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "test"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:48.244Z",
+          "endedAt": "2026-10-21T10:46:15.629Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F02-root-root.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F02-root-root.stderr.log"
+          },
+          "counts": {
+            "tests": 336,
+            "suites": 0,
+            "pass": 336,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 1941423.6094
+          }
+        }
+      ],
+      "counts": {
+        "tests": 336,
+        "suites": 0,
+        "pass": 336,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1941423.6094
+      },
+      "allStepsSucceeded": true,
+      "businessValid": true,
+      "stageOutcome": "passed",
+      "sourceBasis": {
+        "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+        "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+        "packageVersion": "0.2.0",
+        "materials": [
+          "package.json",
+          "pnpm-lock.yaml",
+          "src/",
+          "scripts/",
+          "tests/",
+          "skills/",
+          "openspec/specs/",
+          "README.md"
+        ],
+        "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+        "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+      }
+    },
+    {
+      "stage": "F03-ui",
+      "startedAt": "2026-10-21T10:09:22.911Z",
+      "finishedAt": "2026-10-21T10:11:31.077Z",
+      "expectedSteps": 2,
+      "steps": [
+        {
+          "label": "ui-prepare",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "prepare:ui-tests",
+            "D:\\Projects\\MenDi\\.tmp\\d05-full-test-050-ui"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:09:22.917Z",
+          "endedAt": "2026-10-21T10:09:48.345Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F03-ui-ui-prepare.stderr.log"
+          }
+        },
+        {
+          "label": "ui",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "test:ui"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:09:48.347Z",
+          "endedAt": "2026-10-21T10:11:31.077Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F03-ui-ui.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F03-ui-ui.stderr.log"
+          },
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 88125.0498
+          }
+        }
+      ],
+      "counts": {
+        "tests": 5,
+        "suites": 0,
+        "pass": 5,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 88125.0498
+      },
+      "allStepsSucceeded": true,
+      "businessValid": true,
+      "stageOutcome": "passed",
+      "sourceBasis": {
+        "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+        "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+        "packageVersion": "0.2.0",
+        "materials": [
+          "package.json",
+          "pnpm-lock.yaml",
+          "src/",
+          "scripts/",
+          "tests/",
+          "skills/",
+          "openspec/specs/",
+          "README.md"
+        ],
+        "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+        "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+      }
+    },
+    {
+      "stage": "F04-installation",
+      "startedAt": "2026-10-21T10:11:44.129Z",
+      "finishedAt": "2026-10-21T10:12:58.994Z",
+      "expectedSteps": 2,
+      "steps": [
+        {
+          "label": "installation-prepare",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "prepare:installation-tests",
+            "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\installation",
+            "D:/tools/mendi/acceptance/d05-full-test-050"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:11:44.133Z",
+          "endedAt": "2026-10-21T10:12:05.831Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F04-installation-installation-prepare.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F04-installation-installation-prepare.stderr.log"
+          }
+        },
+        {
+          "label": "installation",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+            "test:installation"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:12:05.833Z",
+          "endedAt": "2026-10-21T10:12:58.994Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F04-installation-installation.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F04-installation-installation.stderr.log"
+          },
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 51974.2009
+          }
+        }
+      ],
+      "counts": {
+        "tests": 4,
+        "suites": 0,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 51974.2009
+      },
+      "allStepsSucceeded": true,
+      "businessValid": true,
+      "stageOutcome": "passed",
+      "sourceBasis": {
+        "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+        "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+        "packageVersion": "0.2.0",
+        "materials": [
+          "package.json",
+          "pnpm-lock.yaml",
+          "src/",
+          "scripts/",
+          "tests/",
+          "skills/",
+          "openspec/specs/",
+          "README.md"
+        ],
+        "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+        "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+      }
+    },
+    {
+      "stage": "F05-spec-status",
+      "startedAt": "2026-10-21T10:13:34.461Z",
+      "finishedAt": "2026-10-21T10:13:40.437Z",
+      "expectedSteps": 10,
+      "steps": [
+        {
+          "label": "spec-action-runs",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "action-runs",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:34.465Z",
+          "endedAt": "2026-10-21T10:13:35.065Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-action-runs.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-action-runs.stderr.log"
+          }
+        },
+        {
+          "label": "spec-delivery-lifecycle",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "delivery-lifecycle",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:35.067Z",
+          "endedAt": "2026-10-21T10:13:35.745Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-lifecycle.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-lifecycle.stderr.log"
+          }
+        },
+        {
+          "label": "spec-delivery-verification",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "delivery-verification",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:35.748Z",
+          "endedAt": "2026-10-21T10:13:36.299Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-verification.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-verification.stderr.log"
+          }
+        },
+        {
+          "label": "spec-delivery-workspace",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "delivery-workspace",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:36.301Z",
+          "endedAt": "2026-10-21T10:13:36.764Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-workspace.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-delivery-workspace.stderr.log"
+          }
+        },
+        {
+          "label": "spec-project-entry",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "project-entry",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:36.766Z",
+          "endedAt": "2026-10-21T10:13:37.220Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-project-entry.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-project-entry.stderr.log"
+          }
+        },
+        {
+          "label": "spec-run-post-submission",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "run-post-submission",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:37.222Z",
+          "endedAt": "2026-10-21T10:13:37.690Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-run-post-submission.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-run-post-submission.stderr.log"
+          }
+        },
+        {
+          "label": "spec-storybook-integration",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "storybook-integration",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:37.692Z",
+          "endedAt": "2026-10-21T10:13:38.138Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-storybook-integration.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-storybook-integration.stderr.log"
+          }
+        },
+        {
+          "label": "spec-test-execution",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+            "validate",
+            "test-execution",
+            "--type",
+            "spec",
+            "--strict",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:38.140Z",
+          "endedAt": "2026-10-21T10:13:38.717Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-test-execution.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-spec-test-execution.stderr.log"
+          }
+        },
+        {
+          "label": "source-status",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "dist/drivers/cli.js",
+            "status",
+            "--project",
+            "D:\\Projects\\MenDi",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:38.720Z",
+          "endedAt": "2026-10-21T10:13:39.554Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-source-status.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-source-status.stderr.log"
+          }
+        },
+        {
+          "label": "source-next",
+          "command": [
+            "C:\\nvm4w\\nodejs\\node.exe",
+            "dist/drivers/cli.js",
+            "next",
+            "--project",
+            "D:\\Projects\\MenDi",
+            "--json"
+          ],
+          "cwd": "D:\\Projects\\MenDi",
+          "startedAt": "2026-10-21T10:13:39.556Z",
+          "endedAt": "2026-10-21T10:13:40.437Z",
+          "exitCode": 0,
+          "signal": null,
+          "error": null,
+          "timedOut": false,
+          "logs": {
+            "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-source-next.stdout.log",
+            "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F05-spec-status-source-next.stderr.log"
+          }
+        }
+      ],
+      "counts": null,
+      "allStepsSucceeded": true,
+      "businessValid": true,
+      "stageOutcome": "passed",
+      "sourceBasis": {
+        "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+        "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+        "packageVersion": "0.2.0",
+        "materials": [
+          "package.json",
+          "pnpm-lock.yaml",
+          "src/",
+          "scripts/",
+          "tests/",
+          "skills/",
+          "openspec/specs/",
+          "README.md"
+        ],
+        "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+        "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+      }
+    }
+  ],
+  "actualCleanup": {
+    "previewStopRef": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts/ui/preview/preview-stop.json",
+    "portsObservedAfterRef": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts/postflight.json"
+  },
+  "previousFailuresRetained": [
+    "046",
+    "047"
+  ],
+  "priorPassReused": false,
+  "finishedAt": "2026-10-21T10:47:18.170Z",
+  "limitation": "本次为已授权 manual-bootstrap F01–F05；不执行 Close/Git/稳定安装/DreMo。"
+}

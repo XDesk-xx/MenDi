@@ -1,0 +1,67 @@
+{
+  "stage": "F02-root",
+  "startedAt": "2026-10-21T10:13:48.240Z",
+  "finishedAt": "2026-10-21T10:46:15.629Z",
+  "expectedSteps": 1,
+  "steps": [
+    {
+      "label": "root",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T10:13:48.244Z",
+      "endedAt": "2026-10-21T10:46:15.629Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "timedOut": false,
+      "logs": {
+        "stdout": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F02-root-root.stdout.log",
+        "stderr": ".mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\F02-root-root.stderr.log"
+      },
+      "counts": {
+        "tests": 336,
+        "suites": 0,
+        "pass": 336,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1941423.6094
+      }
+    }
+  ],
+  "counts": {
+    "tests": 336,
+    "suites": 0,
+    "pass": 336,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 1941423.6094
+  },
+  "allStepsSucceeded": true,
+  "businessValid": true,
+  "stageOutcome": "passed",
+  "sourceBasis": {
+    "commit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+    "branch": "delivery/20261020-05-full-test-and-workflow-repairs",
+    "packageVersion": "0.2.0",
+    "materials": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/",
+      "scripts/",
+      "tests/",
+      "skills/",
+      "openspec/specs/",
+      "README.md"
+    ],
+    "workingTreePatch": "048/049 approved one-line tests/fixtures/storybook-project/vitest.config.ts browser.api 127.0.0.1:64115 strictPort",
+    "workingTreeStatus": " M tests/fixtures/storybook-project/vitest.config.ts"
+  }
+}

@@ -10,7 +10,7 @@
 
 首版规模：**3 个 Delivery、10 个 Change，其中前 7 个 Change 完成核心手动交付链。**
 
-当前交付与待办：**D04 的 3 个 Change 已归档且 Delivery 已 Close；D05 规划 4 个 Change，已于 2026-10-20 经 Owner 授权 Open。** 累计为 5 个 Delivery、17 个规划/已交付槽位；D05-A/B/C/D 均已独立审核、原生归档 014/015/016/017，项目累计归档 17；D05-D 由 043 Apply、044 独立 Review Apply approved、045 Archive 完成，当前无活动 Change，待独立 change-checkpoint；D05 整体尚未正式 Full Test、Close 或发布。
+当前交付与待办：**D04 与 D05 均已 Close。** D05 四项 Change 已独立审核、原生归档014/015/016/017，累计归档17；050完整人工正式 Full Test passed（根336/336、UI 5/5、安装4/4），051 Author Close完成。Git checkpoint/push、版本发布与稳定安装切换分别按Owner指令执行；当前候选和验收边界见manifest/最近Run。
 
 本文是 MenDi 重新开始后的唯一产品总设计与开发规划。它描述产品目标，实际完成情况以项目记录和最近交接 Run 为准。清除旧工程并重新建立代码与历史是初始化时的决定，不是后续工作的重复清理授权。
 

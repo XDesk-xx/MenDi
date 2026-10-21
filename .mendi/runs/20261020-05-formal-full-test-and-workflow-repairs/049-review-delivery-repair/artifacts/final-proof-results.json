@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-21T09:29:19.673Z",
+  "strictTypes": {
+    "command": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules/typescript/bin/tsc",
+      "-p",
+      ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/049-review-delivery-repair/artifacts/tsconfig.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "signal": null,
+    "error": null
+  },
+  "scope": "Three maintained Reviewer TS proofs, F03 real UI/browser checks and prepare/check baseline; no formal all-groups Full Test",
+  "validatedResults": {
+    "uiFive": true,
+    "cleanClose": true,
+    "oneLineConfig": true,
+    "check": true,
+    "sandboxClean": true
+  }
+}

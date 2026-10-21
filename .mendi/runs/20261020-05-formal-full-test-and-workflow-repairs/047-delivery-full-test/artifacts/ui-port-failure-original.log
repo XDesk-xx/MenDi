@@ -1,0 +1,17 @@
+$ vitest run --project storybook
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Errors [49m[22m[31m⎯⎯⎯⎯⎯⎯[39m
+[31m[1m
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Error [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[31m[1mError[22m: listen EACCES: permission denied ::1:63315[39m
+[90m [2m❯[22m Server.setupListenHandle [as _listen2] node:net:[2m1919:21[22m[39m
+[90m [2m❯[22m listenInCluster node:net:[2m1998:12[22m[39m
+[90m [2m❯[22m GetAddrInfoReqWrap.callback node:net:[2m2207:7[22m[39m
+[90m [2m❯[22m GetAddrInfoReqWrap.onlookupall [as oncomplete] node:dns:[2m134:8[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22m[39m
+[31m[1mSerialized Error:[22m[39m [90m{ code: 'EACCES', errno: -4092, syscall: 'listen', address: '::1', port: 63315 }[39m
+[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+

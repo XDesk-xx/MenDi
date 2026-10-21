@@ -1,0 +1,1 @@
+$ node scripts/prepare-installation-tests.ts "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\050-delivery-full-test\\artifacts\\installation" "D:/tools/mendi/acceptance/d05-full-test-050"

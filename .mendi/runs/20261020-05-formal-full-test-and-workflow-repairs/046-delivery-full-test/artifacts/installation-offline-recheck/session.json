@@ -1,0 +1,14 @@
+{
+  "installation": "D:\\tools\\mendi\\acceptance\\d05-full-test-046-offline-recheck",
+  "installedRoot": "D:\\tools\\mendi\\acceptance\\d05-full-test-046-offline-recheck\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_149705fc2616c06fe5c7b4fd4f06abc9\\node_modules\\mendi",
+  "installedCLI": "D:\\tools\\mendi\\acceptance\\d05-full-test-046-offline-recheck\\node_modules\\.pnpm\\mendi@file+..+..+..+..+Proj_149705fc2616c06fe5c7b4fd4f06abc9\\node_modules\\mendi\\dist\\drivers\\cli.js",
+  "targets": [
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-QTzcaj\\alpha",
+    "D:\\Projects\\MenDi\\.tmp\\mendi-installation-QTzcaj\\beta"
+  ],
+  "openspecEntry": "D:/tools/openspec/1.14.1/node_modules/@fission-ai/openspec/bin/openspec.js",
+  "evidence": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation-offline-recheck",
+  "packagePath": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\046-delivery-full-test\\artifacts\\installation\\mendi-0.2.0.tgz",
+  "packageVersion": "0.2.0",
+  "packageSha256": "cd68fff20f85ee29ac22d7e84b4dc027957d7d8cefa22586796fbc619cec8d6b"
+}

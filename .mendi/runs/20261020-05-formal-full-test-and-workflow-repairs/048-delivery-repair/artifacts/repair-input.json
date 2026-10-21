@@ -1,0 +1,20 @@
+{
+  "ownerMessage": "delivery-repair",
+  "kind": "scoped-delivery-repair",
+  "deliveryId": "20261020-05-formal-full-test-and-workflow-repairs",
+  "failedRunRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/run.md",
+  "failedGroup": "F03-ui",
+  "candidateCommit": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "allowChanges": [
+    "tests/fixtures/storybook-project/vitest.config.ts"
+  ],
+  "reason": "Vitest nested Storybook browser server default ::1:63315 is Windows excluded tcp port 63290-63389. Isolated fixture with explicit 127.0.0.1:64115 strictPort passed 2/2.",
+  "behaviorImpact": "Test-runner browser API bind configuration only. No production code or test expectations altered.",
+  "scopeReTest": [
+    "F03 targeted complete UI 5 tests",
+    "pnpm check",
+    "independent reviewer",
+    "later new complete F01-F05 formal attempt"
+  ],
+  "priorHistoryImmutable": true
+}

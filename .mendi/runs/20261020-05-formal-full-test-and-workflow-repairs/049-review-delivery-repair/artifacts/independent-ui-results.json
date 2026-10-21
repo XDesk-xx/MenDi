@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-21T09:25:46.200Z",
+  "review": "049-review-delivery-repair",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/048-delivery-repair/run.md",
+  "fixedFailed": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/run.md",
+  "candidateBase": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "repairFile": "tests/fixtures/storybook-project/vitest.config.ts",
+  "diffLines": 1,
+  "scope": "independent F03 full 5 UI tests, NOT entire F01-F05 Full Test",
+  "temporaryTarget": "D:\\Projects\\MenDi\\.tmp\\d05-049-independent-review-ui",
+  "evidenceDir": "D:\\Projects\\MenDi\\.mendi\\runs\\20261020-05-formal-full-test-and-workflow-repairs\\049-review-delivery-repair\\artifacts\\ui-evidence",
+  "results": [
+    {
+      "stage": "prepare-ui",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "prepare:ui-tests",
+        "D:\\Projects\\MenDi\\.tmp\\d05-049-independent-review-ui"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T09:24:13.517Z",
+      "endedAt": "2026-10-21T09:24:32.731Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdoutRef": "prepare-ui.stdout.log",
+      "stderrRef": "prepare-ui.stderr.log"
+    },
+    {
+      "stage": "test-ui",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+        "test:ui"
+      ],
+      "cwd": "D:\\Projects\\MenDi",
+      "startedAt": "2026-10-21T09:24:32.732Z",
+      "endedAt": "2026-10-21T09:25:46.197Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdoutRef": "test-ui.stdout.log",
+      "stderrRef": "test-ui.stderr.log",
+      "counts": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      }
+    }
+  ],
+  "allFivePassed": true,
+  "limit": [
+    "This validates one local Win32 environment and the changed Storybook fixture",
+    "Port ownership is only the actual run; no external project/port excluded ranges modified",
+    "No prior failed Full Test outcome rewritten",
+    "No F01/F02/F04/F05 full formal pass inferred"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:/nvm4w/nodejs/node_modules/corepack/dist/pnpm.js",
+    "check"
+  ],
+  "start": "2026-10-21T08:44:03.299Z",
+  "finish": "2026-10-21T08:44:16.843Z",
+  "exit": 0,
+  "signal": null,
+  "error": null,
+  "stdoutRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/048-delivery-repair/artifacts/check.stdout.log",
+  "stderrRef": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/048-delivery-repair/artifacts/check.stderr.log"
+}

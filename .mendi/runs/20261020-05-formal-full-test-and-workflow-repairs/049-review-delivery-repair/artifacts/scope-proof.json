@@ -1,0 +1,33 @@
+{
+  "reviewedAt": "2026-10-21T09:26:35.087Z",
+  "fixedAuthor": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/048-delivery-repair/run.md",
+  "fixedFailed": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/047-delivery-full-test/run.md",
+  "preexistingFailed": ".mendi/runs/20261020-05-formal-full-test-and-workflow-repairs/046-delivery-full-test/run.md",
+  "projectBranchHead": "7445a9f765e91c5574dd649667bee5349dd6a413",
+  "affectedTrackedFiles": [
+    ".mendi/delivery-groups/20261020-05-formal-full-test-and-workflow-repairs/manifest.json",
+    "tests/fixtures/storybook-project/vitest.config.ts"
+  ],
+  "repairDiffVerifiedAsOneAdd": true,
+  "configBaselineGitAndAuthorBeforeIdentical": true,
+  "sourceConfigSha256": "98a75cdd3fd3f466154420ea2a41de0f9bf55fce648112a10b80e4e2e63a2b00",
+  "originalError": "EACCES ::1:63315, Vitest unhandled listen prior to Storybook suite",
+  "candidatePort": {
+    "host": "127.0.0.1",
+    "port": 64115,
+    "strictPort": true
+  },
+  "fullCoveragePreserved": {
+    "F01": "pnpm check",
+    "F02": "pnpm test 336",
+    "F03": "UI 5",
+    "F04": "installation 4",
+    "F05": "strict specs + status/next 10"
+  },
+  "actualProofScope": "Direct source+historical failure scope only. Separate new Reviewer F03 UI execution required.",
+  "limitations": [
+    "Does not constitute new F01-F05 formal Full Test",
+    "No prior 046/047 Run or error modified",
+    "No OS excluded port table or external service edited"
+  ]
+}

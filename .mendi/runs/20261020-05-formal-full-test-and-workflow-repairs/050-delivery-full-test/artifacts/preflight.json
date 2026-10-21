@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-21T10:08:33.0387750Z",
+  "installationTargetAlreadyExists": false,
+  "rootWriteLockExists": false,
+  "listeners": [],
+  "pnpm": "11.22.0",
+  "ports": [
+    6113,
+    64115
+  ],
+  "node": "v22.23.2",
+  "scope": "Only this attempt isolated targets; no unknown process stopped",
+  "bindingLimit": "Preflight is an observation; actual strict binding and per-test ownership remain required",
+  "uiTargetAlreadyExists": false
+}

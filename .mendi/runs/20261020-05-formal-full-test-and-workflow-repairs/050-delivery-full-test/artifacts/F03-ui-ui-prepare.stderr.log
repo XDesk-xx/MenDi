@@ -1,0 +1,1 @@
+$ node scripts/prepare-ui-tests.ts "D:\\Projects\\MenDi\\.tmp\\d05-full-test-050-ui"
